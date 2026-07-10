@@ -1,0 +1,41 @@
+---
+description: モバイルボトムナビの確定デザイン（アイコン+ピル型アクティブ）
+globs: apps/web/src/components/BottomNav.tsx,apps/web/src/app/globals.css,apps/web/src/app/layout.tsx
+alwaysApply: false
+---
+
+# ボトムナビ スタイル（確定版）
+
+ユーザー承認済み。変更・追加時はこのテイストを維持する。テキストのみのタブバーには戻さない。
+
+## 参考
+
+Material Design 3（ピル型インジケーター）、Apple HIG / BBC GEL（アイコン+短ラベル、48px タップ）
+
+## 構成
+
+- `BottomNav.tsx`: `NavIconChip` + `getBottomNavItems()`
+- `bottom-nav-config.ts`: 5 項目の唯一の定義源
+- `IconFlowStrip` / `NavIconChip`: はじめての方フロー等（`.cursor/rules/icon-nav-pattern.mdc`）
+- 768px 以下のみ表示、`body.has-bottom-nav` で safe-area 分の padding-bottom
+
+## 見た目
+
+| 状態 | 色・装飾 |
+|------|----------|
+| バー | `rgba(255,255,255,0.92)` + `backdrop-filter: blur(12px)`、上ボーダー、軽いネイビー系シャドウ |
+| 非アクティブ | `color: var(--muted)` |
+| ホバー（非アクティブ） | `color: var(--accent)` |
+| アクティブ | `color: var(--lf-navy)`、`.nav-icon-chip.active` に `background: var(--accent-soft)` のピル（`border-radius: 999px`） |
+| アクティブアイコン | `stroke-width: 2.1` |
+
+## ラベル
+
+- `0.625rem`、`font-weight: 500`（アクティブは 600）
+- `max-width: 4.5rem`、ellipsis、5タブ向けに短い文言
+
+## 避けること
+
+- アイコンなしのテキストのみナビ
+- 上線のみのアクティブ表示（旧テキスト版）
+- 強いアクセント色の全面ハイライト

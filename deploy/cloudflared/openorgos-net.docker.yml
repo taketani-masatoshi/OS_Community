@@ -1,0 +1,15 @@
+# openorgos.net / openorgos.org → Community web (Docker host port 3000)
+# oorgos.org → Vercel + community.oorgos.org → oorgos-org tunnel (see docs/oorgos-subdomain-setup.md)
+tunnel: 3eec3f29-6743-4028-b443-ac5f6cd5e65b
+credentials-file: /etc/cloudflared/creds/3eec3f29-6743-4028-b443-ac5f6cd5e65b.json
+
+ingress:
+  - hostname: openorgos.net
+    service: http://host.docker.internal:3000
+  - hostname: www.openorgos.net
+    service: http://host.docker.internal:3000
+  - hostname: openorgos.org
+    service: http://host.docker.internal:3000
+  - hostname: www.openorgos.org
+    service: http://host.docker.internal:3000
+  - service: http_status:404

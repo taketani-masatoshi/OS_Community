@@ -1,0 +1,12 @@
+{
+  "steward_export": true,
+  "steward_export_at": "2026-07-09T23:16:21.023Z",
+  "readiness_score": 95,
+  "community_ui": true,
+  "sla_dashboard": true,
+  "lifecycle_page": true,
+  "trusted_operators_page": true,
+  "governance_api": true,
+  "e2e_green": true,
+  "community_integration_at": "2026-07-09T23:16:40.066Z"
+}

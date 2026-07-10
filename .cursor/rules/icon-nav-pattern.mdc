@@ -1,0 +1,44 @@
+---
+description: アイコン+短ラベルチップ（ボトムナビ・オンボーディングフロー共通）
+globs: apps/web/src/components/nav/**,apps/web/src/components/BottomNav.tsx,apps/web/src/components/GettingStartedWizard.tsx,apps/web/src/app/globals.css
+alwaysApply: false
+---
+
+# アイコンチップナビ（共通パターン）
+
+ボトムナビと「はじめての方」等のフロー説明は **同じ見た目** を使う。個別 CSS を増やさない。
+
+## 必須コンポーネント
+
+| 用途 | コンポーネント | 設定 |
+|------|----------------|------|
+| モバイル 5 タブ | `BottomNav` | `getBottomNavItems()` |
+| 横並びフロー（見る→ログイン→応募） | `IconFlowStrip` | `NavIconChip` を内包 |
+| チップ単体 | `NavIconChip` | icon 22px + `.nav-icon-chip-label` |
+
+## ボトムナビ 5 項目（固定）
+
+`bottom-nav-config.ts` のみ編集。順序・ラベル・ icon をここ以外でハードコードしない。
+
+1. ホーム `/`
+2. はじめて `/getting-started` — `gettingStartedShort`
+3. モジュール `/modules`
+4. 学ぶ `/learning`
+5. マイページ `/mypage` — 未ログイン時は mypage → login へリダイレクト
+
+## CSS クラス（globals.css）
+
+- `.nav-icon-chip` / `.nav-icon-chip-label` — チップ本体（非アクティブ: muted）
+- `.nav-icon-chip.active` — ピル背景 `var(--accent-soft)`、文字 `var(--lf-navy)`
+- `.icon-flow-strip` — フロー用コンテナ（border + surface-muted）
+- `.bottom-nav-item.active .nav-icon-chip` — ボトムナビのアクティブ
+
+## 避けること
+
+- `.participation-flow-*` など別系統のフロー CSS を復活させる
+- ボトムナビ 5 項目目を `ログイン` に差し替える（マイページ固定）
+- フロー用に accent 色アイコンのみ・大きいラベルなどチップと異なるスタイル
+
+## 関連
+
+- `.cursor/rules/bottom-nav-style.mdc` — バー固定・safe-area・768px 以下表示

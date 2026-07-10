@@ -1,0 +1,97 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: oscommunity
+      POSTGRES_PASSWORD: oscommunity
+      POSTGRES_DB: oscommunity
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U oscommunity"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      target: dev
+    env_file:
+      - .env
+    expose:
+      - "3000"
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_OPTIONS: "--max-old-space-size=4096"
+      DATABASE_URL: postgresql://oscommunity:oscommunity@db:5432/oscommunity
+      AUTH_SECRET: ${AUTH_SECRET:-dev-secret-change-in-production}
+      # Browser URL must match AUTH_URL for OAuth (see docs/google-oauth-setup.md).
+      # Production uses docker-compose.prod.yml with https://${DOMAIN}.
+      AUTH_URL: ${AUTH_URL:-http://localhost:3000}
+      AUTH_GITHUB_ID: ${AUTH_GITHUB_ID:-}
+      AUTH_GITHUB_SECRET: ${AUTH_GITHUB_SECRET:-}
+      AUTH_GOOGLE_ID: ${AUTH_GOOGLE_ID:-}
+      AUTH_GOOGLE_SECRET: ${AUTH_GOOGLE_SECRET:-}
+      AUTH_LINKEDIN_ID: ${AUTH_LINKEDIN_ID:-}
+      AUTH_LINKEDIN_SECRET: ${AUTH_LINKEDIN_SECRET:-}
+      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
+      CONTENT_ROOT: /app/content
+      ACADEMY_API_URL: ${ACADEMY_API_URL:-http://host.docker.internal:8787}
+      ACADEMY_INTERNAL_TOKEN: ${ACADEMY_INTERNAL_TOKEN:-dev-internal-token}
+      STEWARD_REPO_PATH: ${STEWARD_REPO_PATH:-/steward}
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/apps/web/node_modules
+      - /app/apps/web/.next
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1:3000/api/health >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 15s
+      retries: 5
+      start_period: 120s
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: sh -c "npm run generate -w @os-community/db && if [ \"$$RUN_DB_PUSH\" = \"1\" ]; then npm run push -w @os-community/db; fi && npm run dev -w @os-community/web"
+
+  cloudflared-inc:
+    image: cloudflare/cloudflared:2026.6.1
+    restart: unless-stopped
+    network_mode: "service:web"
+    env_file:
+      - .env
+    depends_on:
+      web:
+        condition: service_healthy
+    command:
+      - tunnel
+      - --no-autoupdate
+      - run
+      - --token
+      - ${CLOUDFLARE_TUNNEL_TOKEN:?Set CLOUDFLARE_TUNNEL_TOKEN in .env — see docs/oorgos-org-setup.md}
+
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile.dev:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  caddy_data:
+  caddy_config:

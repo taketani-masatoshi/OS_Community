@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OrgOS Dashboard — southwood.cloud</title>
+  <style>
+    :root { --fg: #1a1a1a; --muted: #666; --border: #ddd; --bg: #fafafa; }
+    body { font-family: system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--fg); }
+    main { max-width: 48rem; margin: 2rem auto; padding: 0 1rem; }
+    h1 { font-size: 1.35rem; }
+    .card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem; }
+    .online { background: #dcfce7; color: #166534; }
+    .offline { background: #fee2e2; color: #991b1b; }
+    a { color: #2563eb; }
+    p.note { color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>OrgOS Dashboard</h1>
+    <p class="note">L3 read-only · dash.southwood.cloud（スケルトン）</p>
+    <div id="agents">Loading…</div>
+  </main>
+  <script>
+    fetch("/api/agents")
+      .then((r) => r.json())
+      .then(({ agents }) => {
+        const el = document.getElementById("agents");
+        if (!agents.length) {
+          el.innerHTML = "<p class=\"note\">接続中の Org Agent がありません。</p>";
+          return;
+        }
+        el.innerHTML = agents.map((a) => `
+          <div class="card">
+            <strong>${a.orgSlug}</strong>
+            <span class="badge ${a.online ? "online" : "offline"}">${a.online ? "online" : "offline"}</span>
+            <p class="note">version: ${a.version || "—"} · last seen: ${new Date(a.lastSeen).toLocaleString()}</p>
+            <p><a href="https://${a.orgSlug}.southwood.cloud/" target="_blank" rel="noopener">Open Console →</a></p>
+          </div>
+        `).join("");
+      })
+      .catch(() => {
+        document.getElementById("agents").textContent = "Control Plane に接続できません。";
+      });
+  </script>
+</body>
+</html>

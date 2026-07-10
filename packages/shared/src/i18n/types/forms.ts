@@ -1,0 +1,93 @@
+export type FormMessages = {
+  moduleRole: {
+    roleLabel: string;
+    messageLabel: string;
+    placeholder: string;
+    submit: string;
+    submitting: string;
+    success: string;
+    memberJoined: string;
+    error: string;
+    errorUnauthorized: string;
+    errorPending: string;
+    errorProfileIncomplete: string;
+    pendingReview: string;
+    roles: { CONTRIBUTOR: string; DEPUTY: string; MAINTAINER: string };
+  };
+  wildModule: {
+    slug: string;
+    slugHint: string;
+    name: string;
+    nameHint: string;
+    repoUrl: string;
+    repoUrlHint: string;
+    manifestUrl: string;
+    manifestUrlHint: string;
+    authorName: string;
+    description: string;
+    agree: string;
+    disclaimerLink: string;
+    submit: string;
+    error: string;
+    errorSlugConflict: string;
+    errorRepoNotFound: string;
+    successNextTitle: string;
+    successNextSteps: string[];
+  };
+  modulePromotion: {
+    desc: string;
+    messageLabel: string;
+    placeholder: string;
+    submit: string;
+    submitting: string;
+    error: string;
+    errorPending: string;
+    errorForbidden: string;
+  };
+  certification: {
+    typeLabel: string;
+    statementLabel: string;
+    placeholder: string;
+    submit: string;
+    error: string;
+    types: { STEWARD_OPERATOR: string; STEWARD_DESIGNER: string };
+  };
+  githubConnect: {
+    label: string;
+    placeholder: string;
+    submit: string;
+    success: string;
+    error: string;
+    errorUnauthorized: string;
+    errorNetwork: string;
+    errorNotFound: string;
+    errorProfileIncomplete: string;
+  };
+  admin: {
+    approve: string;
+    reject: string;
+    errorAction: string;
+    reviewNoteLabel: string;
+    approvePromotion: string;
+    rejectPromotion: string;
+  };
+  committeeMembership: {
+    roleLabel: string;
+    messageLabel: string;
+    placeholder: string;
+    bridgeExpertiseLabel: string;
+    bridgeExpertisePlaceholder: string;
+    bridgeRegionLabel: string;
+    bridgeRegionPlaceholder: string;
+    nominatorLabel: string;
+    nominatorPlaceholder: string;
+    conflictLabel: string;
+    conflictRequired: string;
+    submit: string;
+    submitting: string;
+    success: string;
+    error: string;
+    pendingReview: string;
+    roles: { MEMBER: string; REVIEWER: string };
+  };
+};

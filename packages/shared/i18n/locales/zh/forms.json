@@ -1,0 +1,97 @@
+{
+  "moduleRole": {
+    "roleLabel": "希望角色",
+    "messageLabel": "留言",
+    "placeholder": " 的贡献内容",
+    "submit": "提交申请",
+    "submitting": "提交中…",
+    "success": "申请已受理。",
+    "error": "发生错误。",
+    "errorUnauthorized": "需要登录。请重新使用 GitHub 登录。",
+    "errorPending": "该模块已有待审核的申请。",
+    "pendingReview": "申请审核中，请等待结果。",
+    "roles": {
+      "CONTRIBUTOR": "贡献者",
+      "DEPUTY": "副维护者",
+      "MAINTAINER": "模块维护者"
+    },
+    "errorProfileIncomplete": "申请前请先完善个人资料。",
+    "memberJoined": "你已成为模块成员。打开 Developer 标签页查看仓库。"
+  },
+  "wildModule": {
+    "slug": "slug（小写、连字符）",
+    "name": "显示名称",
+    "repoUrl": "GitHub 仓库 URL",
+    "manifestUrl": "manifest URL（可选）",
+    "authorName": "作者名",
+    "description": "说明（可选）",
+    "agree": "我同意野模块不受维护、无运行保障。",
+    "disclaimerLink": "免责声明",
+    "submit": "注册",
+    "error": "注册失败",
+    "slugHint": "示例：my-accounting-rules",
+    "nameHint": "示例：我的会计规则",
+    "repoUrlHint": "示例：https://github.com/you/my-rules",
+    "manifestUrlHint": "示例：https://raw.githubusercontent.com/you/my-rules/main/module.manifest.yaml",
+    "errorSlugConflict": "此 slug 已被占用。请选择不同的 slug。",
+    "errorRepoNotFound": "未找到 GitHub 仓库。请检查 URL。",
+    "successNextTitle": "接下来做什么"
+  },
+  "certification": {
+    "typeLabel": "资格类型",
+    "statementLabel": "自我声明 · 经验",
+    "placeholder": "搭建经验、负责模块、validate 实绩等",
+    "submit": "申请",
+    "error": "错误"
+  },
+  "githubConnect": {
+    "label": "GitHub 仓库 URL",
+    "submit": "连接",
+    "success": "已连接。运行 sync-modules 同步 manifest。",
+    "error": "错误",
+    "errorUnauthorized": "需要登录。请重新使用 GitHub 登录。",
+    "errorNetwork": "无法连接 GitHub，请稍后重试。",
+    "errorNotFound": "未找到仓库，请检查 URL。",
+    "errorProfileIncomplete": "连接仓库前请先在 /register 完善个人资料。"
+  },
+  "admin": {
+    "approve": "批准",
+    "reject": "拒绝",
+    "errorAction": "操作失败，请重试。",
+    "reviewNoteLabel": "审查备注（可选）",
+    "approvePromotion": "批准晋级",
+    "rejectPromotion": "拒绝晋级"
+  },
+  "modulePromotion": {
+    "desc": "请求 Standard Committee 审查，将模块从 Wild（未审查）晋级为社区模块。",
+    "messageLabel": "申请说明",
+    "placeholder": "模块用途、实施状态、计划的社区贡献等。",
+    "submit": "申请晋级",
+    "submitting": "提交中…",
+    "error": "请求失败。",
+    "errorPending": "已有待审核的晋级申请。",
+    "errorForbidden": "只有模块注册者或 Maintainer 才能申请晋级。"
+  },
+  "committeeMembership": {
+    "roleLabel": "期望的委员会角色",
+    "messageLabel": "申请说明",
+    "placeholder": "领域专业、司法管辖区跨界经验、委员会贡献计划等。",
+    "bridgeExpertiseLabel": "跨界专业（领域）",
+    "bridgeExpertisePlaceholder": "例：会计、合同、QMS",
+    "bridgeRegionLabel": "目标司法管辖区/地区",
+    "bridgeRegionPlaceholder": "例：中国、日本、欧盟跨境",
+    "nominatorLabel": "提名人（现有成员或参考）",
+    "nominatorPlaceholder": "推荐人姓名或同等参考",
+    "conflictLabel": "我确认此委员会角色没有利益冲突（Trust First）。",
+    "conflictRequired": "需要确认无利益冲突。",
+    "submit": "提交委员会申请",
+    "submitting": "提交中…",
+    "success": "申请已受理。",
+    "error": "发生错误。",
+    "pendingReview": "你的委员会申请正在审查中。",
+    "roles": {
+      "MEMBER": "委员会成员",
+      "REVIEWER": "委员会审查员"
+    }
+  }
+}

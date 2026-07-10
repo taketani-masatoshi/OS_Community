@@ -1,0 +1,102 @@
+{
+  "moduleRole": {
+    "roleLabel": "希望する役割",
+    "messageLabel": "メッセージ",
+    "placeholder": "への貢献内容",
+    "submit": "申請する",
+    "submitting": "送信中…",
+    "success": "申請を受け付けました。",
+    "memberJoined": "モジュールメンバーになりました。Developer タブからリポジトリを確認できます。",
+    "error": "エラーが発生しました。",
+    "errorUnauthorized": "ログインが必要です。再度 GitHub ログインしてください。",
+    "errorPending": "このモジュールへの審査中の申請が既にあります。",
+    "errorProfileIncomplete": "申請前にプロフィール登録を完了してください。",
+    "pendingReview": "申請を審査中です。結果をお待ちください。",
+    "roles": {
+      "CONTRIBUTOR": "コントリビュータ",
+      "DEPUTY": "共同メンテナ",
+      "MAINTAINER": "メンテナ"
+    }
+  },
+  "wildModule": {
+    "slug": "slug（小文字・ハイフン）",
+    "slugHint": "例: my-accounting-rules",
+    "name": "表示名",
+    "nameHint": "例: 自社会計ルール",
+    "repoUrl": "GitHub リポジトリ URL",
+    "repoUrlHint": "例: https://github.com/you/my-rules",
+    "manifestUrl": "manifest URL（任意）",
+    "manifestUrlHint": "例: https://raw.githubusercontent.com/you/my-rules/main/module.manifest.yaml",
+    "authorName": "作者名",
+    "description": "説明（任意）",
+    "agree": "コミュニティ提案モジュールは未審査であり、動作保証がないことに同意します。",
+    "disclaimerLink": "免責事項",
+    "submit": "登録する",
+    "error": "登録に失敗しました",
+    "errorSlugConflict": "この slug は既に使用されています。別の slug を選んでください。",
+    "errorRepoNotFound": "GitHub リポジトリが見つかりません。URL を確認してください。",
+    "successNextTitle": "登録後の次のステップ",
+    "successNextSteps": [
+      "モジュールページを共有して協力者を募る",
+      "準備ができたらコミュニティ昇格を申請（任意）",
+      "GitHub 連携は任意 — マイページから後で設定できます"
+    ]
+  },
+  "modulePromotion": {
+    "desc": "Standard Committee の審査を経て、Wild（未審査）から Community モジュールへ昇格できます。",
+    "messageLabel": "申請メッセージ",
+    "placeholder": "モジュールの目的、実装状況、コミュニティへの貢献計画など",
+    "submit": "昇格を申請",
+    "submitting": "送信中…",
+    "error": "申請に失敗しました。",
+    "errorPending": "審査中の昇格申請が既にあります。",
+    "errorForbidden": "昇格申請はモジュール登録者または Maintainer のみ可能です。"
+  },
+  "certification": {
+    "typeLabel": "資格種別",
+    "statementLabel": "自己申告 · 経験",
+    "placeholder": "セットアップ経験、担当モジュール、validate 実績など",
+    "submit": "申請する",
+    "error": "エラー"
+  },
+  "githubConnect": {
+    "label": "GitHub リポジトリ URL",
+    "submit": "接続",
+    "success": "接続しました。sync-modules で manifest を同期できます。",
+    "error": "エラー",
+    "errorUnauthorized": "ログインが必要です。再度 GitHub ログインしてください。",
+    "errorNetwork": "GitHub に接続できません。しばらくしてから再試行してください。",
+    "errorNotFound": "リポジトリが見つかりません。URL を確認してください。",
+    "errorProfileIncomplete": "リポジトリ接続の前に /register でプロフィール登録を完了してください。"
+  },
+  "admin": {
+    "approve": "承認",
+    "reject": "却下",
+    "errorAction": "操作に失敗しました。再度お試しください。",
+    "reviewNoteLabel": "審査メモ（任意）",
+    "approvePromotion": "昇格を承認",
+    "rejectPromotion": "昇格を却下"
+  },
+  "committeeMembership": {
+    "roleLabel": "希望する委員会役割",
+    "messageLabel": "申請メッセージ",
+    "placeholder": "専門分野、法域ブリッジの経験、委員会での貢献予定など",
+    "bridgeExpertiseLabel": "ブリッジ専門性（分野）",
+    "bridgeExpertisePlaceholder": "例：会計、契約、QMS",
+    "bridgeRegionLabel": "対象法域・地域",
+    "bridgeRegionPlaceholder": "例：日中、EU 越境",
+    "nominatorLabel": "推薦者（既存委員または参照）",
+    "nominatorPlaceholder": "推薦者名または同等の参照",
+    "conflictLabel": "この委員会役割に利益相反がないことを確認します（Trust First）。",
+    "conflictRequired": "利益相反の確認が必要です。",
+    "submit": "委員会参加を申請",
+    "submitting": "送信中…",
+    "success": "申請を受け付けました。",
+    "error": "エラーが発生しました。",
+    "pendingReview": "委員会参加申請を審査中です。",
+    "roles": {
+      "MEMBER": "委員会メンバー",
+      "REVIEWER": "委員会レビュアー"
+    }
+  }
+}

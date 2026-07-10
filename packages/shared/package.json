@@ -1,0 +1,22 @@
+{
+  "name": "@os-community/shared",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "i18n:export": "tsx scripts/i18n/export-canonical.ts",
+    "i18n:dict": "node scripts/i18n/write-dictionaries.mjs",
+    "i18n:fill": "node scripts/i18n/fill-untranslated.mjs",
+    "i18n:build": "node scripts/i18n/build-i18n.mjs",
+    "i18n:check": "node scripts/i18n/check-i18n.mjs --strict",
+    "i18n:check:api": "node scripts/i18n/check-api-errors.mjs",
+    "i18n:sync": "npm run i18n:dict && npm run i18n:fill && npm run i18n:build && npm run i18n:check && npm run i18n:check:api"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.4"
+  }
+}

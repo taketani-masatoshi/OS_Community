@@ -1,0 +1,131 @@
+entries:
+  - id: mission
+    title: OpenOrgOS Mission
+    description: 組織運営の共通基盤
+    file: published/docs/mission.md
+    route: /content/mission
+    category: docs
+    status: published
+    order: 1
+
+  - id: openness-policy
+    title: 公開範囲および企業資産保護ポリシー
+    description: 非競争領域の標準化と企業資産の保護
+    file: published/docs/openness-policy.md
+    route: /content/openness-policy
+    category: docs
+    status: published
+    order: 2
+
+  - id: language-policy
+    title: Language Policy
+    description: Governance in English, execution in local languages
+    file: published/docs/language-policy.md
+    route: /content/language-policy
+    category: docs
+    status: published
+    order: 3
+
+  - id: stewardship-model
+    title: Stewardship Model
+    description: Maintainer roles and reference certifications (OOO/OOD)
+    file: published/docs/stewardship-model.md
+    route: /content/stewardship-model
+    category: docs
+    status: published
+    order: 4
+
+  - id: brand-guidelines
+    title: Brand Guidelines
+    description: Logo, colors, and acceptable use of OpenOrgOS marks
+    file: published/docs/brand-guidelines.md
+    route: /content/brand-guidelines
+    category: docs
+    status: published
+    order: 5
+
+  - id: module-and-agent
+    title: Module and Agent — OrgOS Terminology
+    description: Module vs Agent for CEOs — extension pack, bounded LLM operator, Skill/CLI/Data, medical device proxy example
+    file: published/docs/module-and-agent.md
+    route: /content/module-and-agent
+    category: docs
+    status: published
+    order: 6
+
+  - id: module-ecosystem
+    title: Module Ecosystem — WILD, Candidate, and Commercial
+    description: Trust tiers, Community vs Commercial, Program Fund, Hub cohorts, and rollout phases
+    file: published/docs/module-ecosystem.md
+    route: /content/module-ecosystem
+    category: docs
+    status: published
+    order: 7
+
+  - id: implementation-status
+    title: OpenOrgOS Implementation Status
+    description: Global protocol, Wire, Community site, Commercial Hub, and X-Road-class gateway interoperability — what is live today
+    file: published/docs/implementation-status.md
+    route: /content/implementation-status
+    category: docs
+    status: published
+    order: 8
+
+  - id: startup-setup
+    title: Getting Started
+    description: 導入ガイド（外部生成）
+    file: published/guides/startup-setup.md
+    route: /content/startup-setup
+    category: guides
+    status: archived
+    order: 10
+
+  - id: orgos-install-setup
+    title: OrgOS Install & Digital Twin Setup
+    description: Install OrgOS, gather organization information, and prepare your digital twin environment
+    file: published/guides/orgos-install-setup.md
+    route: /content/orgos-install-setup
+    category: guides
+    status: published
+    order: 11
+
+  - id: orgos-ai-agents
+    title: OrgOS with AI Agents (Cursor)
+    description: Use Cursor and AI agents to operate OrgOS through natural language
+    file: published/guides/orgos-ai-agents.md
+    route: /content/orgos-ai-agents
+    category: guides
+    status: published
+    order: 12
+
+  - id: disclaimer
+    title: Disclaimer
+    file: published/legal/disclaimer.md
+    route: /legal/disclaimer
+    category: legal
+    status: published
+    order: 1
+
+  - id: terms
+    title: Terms of Use
+    file: published/legal/terms.md
+    route: /legal/terms
+    category: legal
+    status: published
+    order: 2
+
+  - id: privacy
+    title: Privacy Policy
+    file: published/legal/privacy.md
+    route: /legal/privacy
+    category: legal
+    status: published
+    order: 3
+
+  - id: trademark-usage
+    title: Trademark Usage
+    file: published/legal/trademark-usage.md
+    route: /legal/trademark-usage
+    category: legal
+    status: published
+    order: 4

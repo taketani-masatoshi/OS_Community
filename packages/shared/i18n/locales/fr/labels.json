@@ -1,0 +1,81 @@
+{
+  "moduleType": {
+    "BUSINESS": "Module métier",
+    "JURISDICTION": "Pack organisationnel",
+    "WILD": "Communauté / Non révisé"
+  },
+  "moduleRole": {
+    "MAINTAINER": "Mainteneur",
+    "DEPUTY": "Adjoint",
+    "CONTRIBUTOR": "Contributeur"
+  },
+  "siteRole": {
+    "GUEST": "Invité",
+    "MEMBER": "Membre",
+    "CONTRIBUTOR": "Contributeur",
+    "DEPUTY": "Adjoint",
+    "ADMIN": "Administrateur",
+    "CERT_REVIEWER": "Réviseur de certification",
+    "MAINTAINER": "Mainteneur"
+  },
+  "communityRoles": [
+    {
+      "id": "USER",
+      "title": "User",
+      "titleLocal": "Utilisateur",
+      "desc": "Adopter et utiliser OpenOrgOS."
+    },
+    {
+      "id": "CONTRIBUTOR",
+      "title": "Contributor",
+      "titleLocal": "Contributeur",
+      "desc": "Règles, code, docs, traductions — bienvenus quelle que soit la spécialité ou la région."
+    },
+    {
+      "id": "REVIEWER",
+      "title": "Reviewer",
+      "titleLocal": "Réviseur",
+      "desc": "Révisions qualité — participation largement ouverte."
+    },
+    {
+      "id": "MAINTAINER",
+      "title": "Maintainer",
+      "titleLocal": "Mainteneur",
+      "desc": "Maintenir un module spécifique."
+    },
+    {
+      "id": "COMMITTEE",
+      "title": "Committee Member",
+      "titleLocal": "Membre du comité",
+      "desc": "Développer et approuver les standards. Les comités de domaine d'origine sont par défaut ; les sièges inter-régions nécessitent une expertise de passerelle et une révision."
+    },
+    {
+      "id": "FELLOW",
+      "title": "Foundation Fellow",
+      "titleLocal": "Fellow de la fondation",
+      "desc": "Impact à long terme sur la communauté."
+    }
+  ],
+  "promotionFlow": [
+    {
+      "from": "Contributeur",
+      "to": "Réviseur",
+      "criteria": "Contributions soutenues aux révisions et jugements de qualité."
+    },
+    {
+      "from": "Réviseur",
+      "to": "Mainteneur",
+      "criteria": "Expertise du domaine et engagement de maintenance."
+    },
+    {
+      "from": "Mainteneur",
+      "to": "Membre du comité",
+      "criteria": "Contributions aux standards, nomination, examen de gouvernance (inter-régions : domaine aligné et expertise de passerelle)."
+    },
+    {
+      "from": "Membre du comité",
+      "to": "Fellow de la fondation",
+      "criteria": "Impact à long terme sur la communauté."
+    }
+  ]
+}

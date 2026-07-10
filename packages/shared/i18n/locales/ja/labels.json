@@ -1,0 +1,81 @@
+{
+  "moduleType": {
+    "BUSINESS": "ビジネスモジュール",
+    "JURISDICTION": "組織パック",
+    "WILD": "コミュニティ提案"
+  },
+  "moduleRole": {
+    "MAINTAINER": "メンテナ",
+    "DEPUTY": "共同メンテナ",
+    "CONTRIBUTOR": "コントリビュータ"
+  },
+  "siteRole": {
+    "GUEST": "ゲスト",
+    "MEMBER": "メンバー",
+    "CONTRIBUTOR": "コントリビュータ",
+    "MAINTAINER": "メンテナ",
+    "DEPUTY": "共同メンテナ",
+    "ADMIN": "管理者",
+    "CERT_REVIEWER": "認定審査者"
+  },
+  "communityRoles": [
+    {
+      "id": "USER",
+      "title": "User",
+      "titleLocal": "利用者",
+      "desc": "OpenOrgOS を導入・利用する。"
+    },
+    {
+      "id": "CONTRIBUTOR",
+      "title": "Contributor",
+      "titleLocal": "コントリビューター",
+      "desc": "ルール、コード、ドキュメント、翻訳等 — 専門分野・地域を問わず広く歓迎。"
+    },
+    {
+      "id": "REVIEWER",
+      "title": "Reviewer",
+      "titleLocal": "レビュアー",
+      "desc": "品質レビューを担当。広く参加可能。"
+    },
+    {
+      "id": "MAINTAINER",
+      "title": "Maintainer",
+      "titleLocal": "メンテナ",
+      "desc": "特定モジュールの保守責任者。"
+    },
+    {
+      "id": "COMMITTEE",
+      "title": "Committee Member",
+      "titleLocal": "委員会メンバー",
+      "desc": "標準仕様の策定・承認。自領域の委員会が基本。他地域・他法域はブリッジ専門性と審査を要する。"
+    },
+    {
+      "id": "FELLOW",
+      "title": "Foundation Fellow",
+      "titleLocal": "フェロー",
+      "desc": "長期的にコミュニティへ貢献した人物。"
+    }
+  ],
+  "promotionFlow": [
+    {
+      "from": "コントリビューター",
+      "to": "レビュアー",
+      "criteria": "継続的なレビュー貢献・品質判定の実績"
+    },
+    {
+      "from": "レビュアー",
+      "to": "メンテナ",
+      "criteria": "特定モジュール領域の専門性・保守コミットメント"
+    },
+    {
+      "from": "メンテナ",
+      "to": "委員会メンバー",
+      "criteria": "標準策定への貢献・委員会推薦・ガバナンス審査（他地域委員会は専門分野の一致・ブリッジ専門性を確認）"
+    },
+    {
+      "from": "委員会メンバー",
+      "to": "フェロー",
+      "criteria": "長期貢献・コミュニティ全体への影響"
+    }
+  ]
+}

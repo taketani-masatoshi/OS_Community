@@ -1,0 +1,97 @@
+{
+  "moduleRole": {
+    "roleLabel": "Soovitud roll",
+    "messageLabel": "Sõnum",
+    "placeholder": " panuse üksikasjad",
+    "submit": "Esita taotlus",
+    "submitting": "Esitamine…",
+    "success": "Taotlus vastu võetud.",
+    "error": "Tekkis viga.",
+    "errorUnauthorized": "Sisselogimine on vajalik. Palun logi GitHubiga uuesti sisse.",
+    "errorPending": "Selle mooduli kohta on juba ootel taotlus.",
+    "pendingReview": "Teie taotlus on läbivaatamisel. Oodake tulemust.",
+    "errorProfileIncomplete": "Enne taotlemist täitke oma profiil.",
+    "roles": {
+      "CONTRIBUTOR": "Kaasautaja",
+      "DEPUTY": "Asetäitja Maintainer",
+      "MAINTAINER": "Mooduli Maintainer"
+    },
+    "memberJoined": "Oled nüüd mooduli liige. Ava vahekaart Developer, et vaadata repositooriumi."
+  },
+  "wildModule": {
+    "slug": "slug (väiketähed, sidekriipsud)",
+    "name": "Kuvatav nimi",
+    "repoUrl": "GitHubi repositooriumi URL",
+    "manifestUrl": "manifesti URL (valikuline)",
+    "authorName": "Autori nimi",
+    "description": "Kirjeldus (valikuline)",
+    "agree": "Nõustun, et wild-moodulid ei ole toetatud ega garanteeritud töötama.",
+    "disclaimerLink": "Lahtiütlus",
+    "submit": "Registreeri",
+    "error": "Registreerimine ebaõnnestus",
+    "slugHint": "Näide: my-accounting-rules",
+    "nameHint": "Näide: Minu raamatupidamisreeglid",
+    "repoUrlHint": "Näide: https://github.com/you/my-rules",
+    "manifestUrlHint": "Näide: https://raw.githubusercontent.com/you/my-rules/main/module.manifest.yaml",
+    "errorSlugConflict": "See kiigtunnus on juba kasutusel. Vali erinev kiigtunnus.",
+    "errorRepoNotFound": "GitHubi repositooriumi ei leitud. Kontrolli URL-i.",
+    "successNextTitle": "Mida teha järgmisena"
+  },
+  "certification": {
+    "typeLabel": "Sertifikaadi tüüp",
+    "statementLabel": "Enesedeklaratsioon · kogemus",
+    "placeholder": "Seadistuskogemus, hallatavad moodulid, valideerimise ajalugu jne.",
+    "submit": "Taotle",
+    "error": "Viga"
+  },
+  "githubConnect": {
+    "label": "GitHubi repositooriumi URL",
+    "submit": "Ühenda",
+    "success": "Ühendatud. Käivitage sync-modules manifesti sünkroonimiseks.",
+    "error": "Viga",
+    "errorUnauthorized": "Sisselogimine on vajalik. Palun logi GitHubiga uuesti sisse.",
+    "errorNetwork": "GitHubiga ei saanud ühendust. Proovige hiljem uuesti.",
+    "errorNotFound": "Repositooriumit ei leitud. Kontrollige URL-i.",
+    "errorProfileIncomplete": "Enne repositooriumi ühendamist täitke profiil aadressil /register."
+  },
+  "admin": {
+    "approve": "Kinnita",
+    "reject": "Lükka tagasi",
+    "errorAction": "Toiming ebaõnnestus. Proovige uuesti.",
+    "reviewNoteLabel": "Läbivaatuse märkus (valikuline)",
+    "approvePromotion": "Kinnita edutamine",
+    "rejectPromotion": "Lükka edutamine tagasi"
+  },
+  "modulePromotion": {
+    "desc": "Taotle Standard Committee läbivaatust, et edutada Wild (läbi vaatamata) kogukonna mooduliks.",
+    "messageLabel": "Avalduse sõnum",
+    "placeholder": "Mooduli eesmärk, rakendamise olek, kavandatav kogukonna panus jne.",
+    "submit": "Taotle edutamist",
+    "submitting": "Esitamine…",
+    "error": "Taotlus ebaõnnestus.",
+    "errorPending": "Menetluses on juba üks edutamistaotlus.",
+    "errorForbidden": "Ainult mooduli registreerija või Hooldaja saab edutamist taotleda."
+  },
+  "committeeMembership": {
+    "roleLabel": "Soovitud komitee roll",
+    "messageLabel": "Avalduse sõnum",
+    "placeholder": "Domeeni ekspertiiis, jurisdiktsiooni sillakogemus, komiteesse panustamise plaan jne.",
+    "bridgeExpertiseLabel": "Sildekspertiiis (domeen)",
+    "bridgeExpertisePlaceholder": "nt raamatupidamine, lepingud, QMS",
+    "bridgeRegionLabel": "Sihtkohaks olev jurisdiktsioon / piirkond",
+    "bridgeRegionPlaceholder": "nt CN, JP, EL piiriülene",
+    "nominatorLabel": "Nomineerija (olemasolev liige või viide)",
+    "nominatorPlaceholder": "Soovitaja nimi või samaväärne viide",
+    "conflictLabel": "Kinnitan, et mul puuduvad huvide konfliktid selle komitee rolli puhul (Trust First).",
+    "conflictRequired": "Nõutav on huvide konflikti kinnituse puudumine.",
+    "submit": "Esita komitee taotlus",
+    "submitting": "Esitamine…",
+    "success": "Taotlus vastu võetud.",
+    "error": "Tekkis viga.",
+    "pendingReview": "Sinu komitee taotlus on läbivaatamisel.",
+    "roles": {
+      "MEMBER": "Komitee liige",
+      "REVIEWER": "Komitee hindaja"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "moduleRole": {
+    "roleLabel": "Desired role",
+    "messageLabel": "Message",
+    "placeholder": " contribution details",
+    "submit": "Submit application",
+    "submitting": "Submitting…",
+    "success": "Application received.",
+    "memberJoined": "You are now a module member. Open the Developer tab to view the repository.",
+    "error": "An error occurred.",
+    "errorUnauthorized": "Sign in required. Please sign in with GitHub again.",
+    "errorPending": "You already have a pending application for this module.",
+    "errorProfileIncomplete": "Complete your profile before applying.",
+    "pendingReview": "Your application is under review. Please wait for the result.",
+    "roles": {
+      "CONTRIBUTOR": "Contributor",
+      "DEPUTY": "Co-maintainer",
+      "MAINTAINER": "Maintainer"
+    }
+  },
+  "wildModule": {
+    "slug": "slug (lowercase, hyphens)",
+    "slugHint": "Example: my-accounting-rules",
+    "name": "Display name",
+    "nameHint": "Example: My Accounting Rules",
+    "repoUrl": "GitHub repository URL",
+    "repoUrlHint": "Example: https://github.com/you/my-rules",
+    "manifestUrl": "manifest URL (optional)",
+    "manifestUrlHint": "Example: https://raw.githubusercontent.com/you/my-rules/main/module.manifest.yaml",
+    "authorName": "Author name",
+    "description": "Description (optional)",
+    "agree": "I agree that community proposal modules are unreviewed and not guaranteed to work.",
+    "disclaimerLink": "Disclaimer",
+    "submit": "Register",
+    "error": "Registration failed",
+    "errorSlugConflict": "This slug is already taken. Choose a different slug.",
+    "errorRepoNotFound": "GitHub repository not found. Check the URL.",
+    "successNextTitle": "What to do next",
+    "successNextSteps": [
+      "Share your module page with collaborators",
+      "Apply for community promotion when ready (optional)",
+      "GitHub linking is optional — connect later from My Page"
+    ]
+  },
+  "modulePromotion": {
+    "desc": "Request Standard Committee review to promote from Wild (unreviewed) to Community module.",
+    "messageLabel": "Application message",
+    "placeholder": "Module purpose, implementation status, planned community contribution, etc.",
+    "submit": "Request promotion",
+    "submitting": "Submitting…",
+    "error": "Request failed.",
+    "errorPending": "A promotion request is already pending.",
+    "errorForbidden": "Only the module registrant or Maintainer can request promotion."
+  },
+  "certification": {
+    "typeLabel": "Certification type",
+    "statementLabel": "Self-declaration · experience",
+    "placeholder": "Setup experience, modules owned, validate track record, etc.",
+    "submit": "Apply",
+    "error": "Error",
+    "types": {
+      "STEWARD_OPERATOR": "OpenOrgOS Operator (OOO)",
+      "STEWARD_DESIGNER": "OpenOrgOS Designer (OOD)"
+    }
+  },
+  "githubConnect": {
+    "label": "GitHub repository URL",
+    "placeholder": "https://github.com/YOUR_USER/OS_Steward",
+    "submit": "Connect",
+    "success": "Connected. Run sync-modules to sync manifests.",
+    "error": "Error",
+    "errorUnauthorized": "Sign in required. Please sign in with GitHub again.",
+    "errorNetwork": "Could not reach GitHub. Please try again later.",
+    "errorNotFound": "Repository not found. Check the URL.",
+    "errorProfileIncomplete": "Complete your profile at /settings/profile before connecting a repository."
+  },
+  "admin": {
+    "approve": "Approve",
+    "reject": "Reject",
+    "errorAction": "Action failed. Please try again.",
+    "reviewNoteLabel": "Review note (optional)",
+    "approvePromotion": "Approve promotion",
+    "rejectPromotion": "Reject promotion"
+  },
+  "committeeMembership": {
+    "roleLabel": "Desired committee role",
+    "messageLabel": "Application message",
+    "placeholder": "Domain expertise, jurisdiction bridge experience, committee contribution plan, etc.",
+    "bridgeExpertiseLabel": "Bridge expertise (domain)",
+    "bridgeExpertisePlaceholder": "e.g. accounting, contracts, QMS",
+    "bridgeRegionLabel": "Target jurisdiction / region",
+    "bridgeRegionPlaceholder": "e.g. CN, JP, EU cross-border",
+    "nominatorLabel": "Nominator (existing member or reference)",
+    "nominatorPlaceholder": "Name of recommender or equivalent reference",
+    "conflictLabel": "I confirm no conflicts of interest for this committee role (Trust First).",
+    "conflictRequired": "Conflict-of-interest confirmation is required.",
+    "submit": "Submit committee application",
+    "submitting": "Submitting…",
+    "success": "Application received.",
+    "error": "An error occurred.",
+    "pendingReview": "Your committee application is under review.",
+    "roles": {
+      "MEMBER": "Committee member",
+      "REVIEWER": "Committee reviewer"
+    }
+  }
+}

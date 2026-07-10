@@ -1,0 +1,97 @@
+{
+  "moduleRole": {
+    "roleLabel": "Gewünschte Rolle",
+    "messageLabel": "Nachricht",
+    "placeholder": " Beitragsdetails",
+    "submit": "Bewerbung einreichen",
+    "submitting": "Wird eingereicht…",
+    "success": "Bewerbung erhalten.",
+    "error": "Ein Fehler ist aufgetreten.",
+    "errorUnauthorized": "Anmeldung erforderlich. Bitte erneut mit GitHub anmelden.",
+    "errorPending": "Für dieses Modul liegt bereits ein offener Antrag vor.",
+    "pendingReview": "Ihr Antrag wird geprüft. Bitte warten Sie auf das Ergebnis.",
+    "roles": {
+      "MAINTAINER": "Modul-Maintainer",
+      "CONTRIBUTOR": "Mitwirkende",
+      "DEPUTY": "Stellvertreter-Maintainer"
+    },
+    "errorProfileIncomplete": "Vervollständigen Sie Ihr Profil vor der Bewerbung.",
+    "memberJoined": "Du bist jetzt Modulmitglied. Öffne den Tab Developer, um das Repository anzuzeigen."
+  },
+  "wildModule": {
+    "slug": "Slug (Kleinbuchstaben, Bindestriche)",
+    "name": "Anzeigename",
+    "repoUrl": "GitHub-Repository-URL",
+    "manifestUrl": "Manifest-URL (optional)",
+    "authorName": "Autorenname",
+    "description": "Beschreibung (optional)",
+    "agree": "Ich bin damit einverstanden, dass Wild-Module nicht unterstützt werden und nicht garantiert funktionieren.",
+    "disclaimerLink": "Haftungsausschluss",
+    "submit": "Registrieren",
+    "error": "Registrierung fehlgeschlagen",
+    "slugHint": "Beispiel: my-accounting-rules",
+    "nameHint": "Beispiel: Meine Buchhaltungsregeln",
+    "repoUrlHint": "Beispiel: https://github.com/you/my-rules",
+    "manifestUrlHint": "Beispiel: https://raw.githubusercontent.com/you/my-rules/main/module.manifest.yaml",
+    "errorSlugConflict": "Dieser Slug ist bereits vergeben. Wähle einen anderen Slug.",
+    "errorRepoNotFound": "GitHub-Repository nicht gefunden. Überprüfe die URL.",
+    "successNextTitle": "Was als nächstes tun"
+  },
+  "certification": {
+    "typeLabel": "Zertifizierungstyp",
+    "statementLabel": "Selbstauskunft · Erfahrung",
+    "placeholder": "Einrichtungserfahrung, verantwortete Module, Validierungsnachweise usw.",
+    "submit": "Bewerben",
+    "error": "Fehler"
+  },
+  "githubConnect": {
+    "label": "GitHub-Repository-URL",
+    "submit": "Verbinden",
+    "success": "Verbunden. sync-modules ausführen, um Manifeste zu synchronisieren.",
+    "error": "Fehler",
+    "errorUnauthorized": "Anmeldung erforderlich. Bitte erneut mit GitHub anmelden.",
+    "errorNetwork": "GitHub nicht erreichbar. Bitte später erneut versuchen.",
+    "errorNotFound": "Repository nicht gefunden. URL prüfen.",
+    "errorProfileIncomplete": "Vervollständigen Sie Ihr Profil unter /register, bevor Sie ein Repository verbinden."
+  },
+  "admin": {
+    "approve": "Genehmigen",
+    "reject": "Ablehnen",
+    "errorAction": "Aktion fehlgeschlagen. Bitte erneut versuchen.",
+    "reviewNoteLabel": "Überprüfungsnotiz (optional)",
+    "approvePromotion": "Beförderung genehmigen",
+    "rejectPromotion": "Beförderung ablehnen"
+  },
+  "modulePromotion": {
+    "desc": "Beantrage eine Standard-Committee-Überprüfung, um von einem Wild-Modul (nicht überprüft) zu einem Community-Modul zu wechseln.",
+    "messageLabel": "Bewerbungsnachricht",
+    "placeholder": "Modulzweck, Implementierungsstatus, geplanter Community-Beitrag usw.",
+    "submit": "Beförderung beantragen",
+    "submitting": "Wird eingereicht…",
+    "error": "Anfrage fehlgeschlagen.",
+    "errorPending": "Es gibt bereits einen ausstehenden Beförderungsantrag.",
+    "errorForbidden": "Nur der Modul-Registrant oder Maintainer kann eine Beförderung beantragen."
+  },
+  "committeeMembership": {
+    "roleLabel": "Gewünschte Komiteerolle",
+    "messageLabel": "Bewerbungsnachricht",
+    "placeholder": "Domänenexpertise, Jurisdiktions-Brückenerfahrung, Komiteebeitragsplan usw.",
+    "bridgeExpertiseLabel": "Brückenexpertise (Domäne)",
+    "bridgeExpertisePlaceholder": "z. B. Buchhaltung, Verträge, QMS",
+    "bridgeRegionLabel": "Ziel-Jurisdiktion / -Region",
+    "bridgeRegionPlaceholder": "z. B. CN, JP, EU grenzüberschreitend",
+    "nominatorLabel": "Nominierender (bestehendes Mitglied oder Referenz)",
+    "nominatorPlaceholder": "Name des Empfehlenden oder gleichwertiger Referenz",
+    "conflictLabel": "Ich bestätige, dass ich für diese Komiteerolle keine Interessenkonflikte habe (Trust First).",
+    "conflictRequired": "Eine Bestätigung der Interessenfreiheit ist erforderlich.",
+    "submit": "Komiteeantrag einreichen",
+    "submitting": "Wird eingereicht…",
+    "success": "Bewerbung erhalten.",
+    "error": "Ein Fehler ist aufgetreten.",
+    "pendingReview": "Dein Komiteeantrag wird überprüft.",
+    "roles": {
+      "MEMBER": "Komiteemitglied",
+      "REVIEWER": "Komitee-Gutachter"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "moduleType": {
+    "BUSINESS": "Ärimoodul",
+    "JURISDICTION": "Organisatsioonipakk",
+    "WILD": "Kogukond / Ülevaatamata"
+  },
+  "moduleRole": {
+    "MAINTAINER": "Mooduli haldaja",
+    "DEPUTY": "Asetäitja",
+    "CONTRIBUTOR": "Kaastöötaja"
+  },
+  "siteRole": {
+    "GUEST": "Külaline",
+    "MEMBER": "Liige",
+    "ADMIN": "Administraator",
+    "CERT_REVIEWER": "Sertifitseerimise ülevaataja",
+    "CONTRIBUTOR": "Kaastöötaja",
+    "MAINTAINER": "Haldaja",
+    "DEPUTY": "Asetäitja"
+  },
+  "communityRoles": [
+    {
+      "id": "USER",
+      "title": "User",
+      "titleLocal": "Kasutaja",
+      "desc": "OpenOrgOS-i kasutuselevõtmine ja kasutamine."
+    },
+    {
+      "id": "CONTRIBUTOR",
+      "title": "Contributor",
+      "titleLocal": "Kaastöötaja",
+      "desc": "Reeglid, kood, dokumendid, tõlked — teretulnud olenemata erialast või piirkonnast."
+    },
+    {
+      "id": "REVIEWER",
+      "title": "Reviewer",
+      "titleLocal": "Ülevaataja",
+      "desc": "Kvaliteediülevaatused — laialdaselt avatud osalemine."
+    },
+    {
+      "id": "MAINTAINER",
+      "title": "Maintainer",
+      "titleLocal": "Haldaja",
+      "desc": "Konkreetse mooduli haldamine."
+    },
+    {
+      "id": "COMMITTEE",
+      "title": "Committee Member",
+      "titleLocal": "Komiteeliige",
+      "desc": "Standardite arendamine ja kinnitamine. Kodu-domeeni komiteed on vaikimisi; piirkondadeülesed kohad nõuavad sildekspertiisi ja ülevaatust."
+    },
+    {
+      "id": "FELLOW",
+      "title": "Foundation Fellow",
+      "titleLocal": "Sihtasutuse fellow",
+      "desc": "Pikaajaline mõju kogukonnale."
+    }
+  ],
+  "promotionFlow": [
+    {
+      "from": "Kaastöötaja",
+      "to": "Ülevaataja",
+      "criteria": "Jätkusuutlikud ülevaatuspanused ja kvaliteedihinnangud."
+    },
+    {
+      "from": "Ülevaataja",
+      "to": "Haldaja",
+      "criteria": "Valdkonna ekspertiis ja hooldusse pühendumine."
+    },
+    {
+      "from": "Haldaja",
+      "to": "Komiteeliige",
+      "criteria": "Standardipanused, nomineerimine, juhtimisülevaatus (piirkondadeülene: ühilduv valdkond ja sildekspertiis)."
+    },
+    {
+      "from": "Komiteeliige",
+      "to": "Sihtasutuse fellow",
+      "criteria": "Pikaajaline mõju kogukonnale."
+    }
+  ]
+}

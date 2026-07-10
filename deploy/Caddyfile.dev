@@ -1,0 +1,20 @@
+# Local development HTTPS (Caddy internal CA).
+# Proxies to Next.js on the host (npm run dev) or Docker web when both are aligned.
+# Access: https://localhost / https://openorgos.org
+
+localhost, openorgos.org, www.openorgos.org, openorgos.net, www.openorgos.net {
+	tls internal
+	reverse_proxy host.docker.internal:3000 {
+		header_up Host {host}
+		header_up X-Forwarded-Host {host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+	encode gzip
+}
+
+:80 {
+	@local host localhost
+	redir @local https://localhost{uri} permanent
+	@openorgos host openorgos.org www.openorgos.org openorgos.net www.openorgos.net
+	redir @openorgos https://{host}{uri} permanent
+}

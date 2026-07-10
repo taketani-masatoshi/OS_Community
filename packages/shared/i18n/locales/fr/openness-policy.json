@@ -1,0 +1,75 @@
+{
+  "title": "Portée de l'ouverture et protection des actifs d'entreprise",
+  "subtitle": "Un OS qui standardise les domaines non concurrentiels pour que les ressources se concentrent sur ce qui vous différencie",
+  "philosophyTitle": "Philosophie fondamentale",
+  "philosophyLead": "OpenOrgOS ne vise pas à supprimer l'avantage concurrentiel d'une entreprise.",
+  "philosophyGoal": "Nous visons à fournir le socle commun dont les organisations ont besoin pour fonctionner — non pas à homogénéiser ce qui rend chaque entreprise unique.",
+  "standardizeTitle": "Domaines que nous visons à standardiser",
+  "standardizeIntro": "Pour les fonctions organisationnelles communes à de nombreuses entreprises, nous encourageons leur modularisation et leur retour à la communauté dans la mesure du possible. Ce sont des infrastructures partagées pour l'activité commerciale — non des sources d'avantage concurrentiel.",
+  "standardizeItems": [
+    "Comptabilité",
+    "Ressources humaines",
+    "Gestion des temps et des présences",
+    "Gestion des contrats",
+    "Gestion de la propriété intellectuelle",
+    "Workflow",
+    "Chaînes d'approbation",
+    "Gouvernance",
+    "Contrôles internes",
+    "Conformité ISO",
+    "Conformité ISMS",
+    "Préparation aux audits",
+    "Gestion des subventions",
+    "Opérations du conseil d'administration",
+    "Relations actionnaires"
+  ],
+  "nonStandardizeTitle": "Domaines que nous ne visons pas à standardiser",
+  "nonStandardizeIntro": "Les actifs qui définissent l'avantage concurrentiel spécifique à l'entreprise doivent rester séparés d'OpenOrgOS et être gérés par chaque entreprise. OpenOrgOS n'exige jamais de les partager ou de les publier.",
+  "nonStandardizeItems": [
+    "Conception de produits",
+    "Dessins techniques",
+    "Données CAO",
+    "Modèles IA",
+    "Données d'entraînement",
+    "Données clients",
+    "Savoir-faire de fabrication",
+    "Savoir-faire commercial",
+    "Données de recherche",
+    "Algorithmes propriétaires",
+    "Stratégie de brevets",
+    "Stratégie commerciale",
+    "Processus métier propriétaires"
+  ],
+  "privateModuleTitle": "Modules privés",
+  "privateModuleIntro": "Les modules construits sur OpenOrgOS n'ont pas à être publics. Les entreprises peuvent librement combiner :",
+  "privateModuleTypes": [
+    {
+      "label": "Module communautaire",
+      "desc": "Public — contribué à la communauté"
+    },
+    {
+      "label": "Module privé",
+      "desc": "Privé — interne à l'entreprise"
+    }
+  ],
+  "privateModuleNote": "OpenOrgOS accueille le retour des bons modules à la communauté mais ne l'exige pas.",
+  "principlesTitle": "Principe fondamental",
+  "principlesNot": "OpenOrgOS ne vise pas à partager les domaines concurrentiels.",
+  "principlesYes": "Nous visons un monde où les domaines non concurrentiels sont partagés afin que chaque entreprise puisse se concentrer sur son véritable avantage concurrentiel.",
+  "messageLead": "Adopter OpenOrgOS ne rend pas toutes les entreprises identiques.",
+  "messageSame": "Seul le socle opérationnel organisationnel est mis en commun. Ce qui définit la valeur de l'entreprise reste protégé :",
+  "messageProtectedTitle": "Actifs d'entreprise protégés",
+  "messageProtectedItems": [
+    "Technologie",
+    "Produits",
+    "Clients",
+    "Savoir-faire",
+    "Marque",
+    "Stratégie"
+  ],
+  "messageBody": "OpenOrgOS ne supprime pas ce qui rend votre entreprise unique.",
+  "messageClosing": "C'est le socle qui vous permet de vous concentrer sur les domaines où l'unicité est importante.",
+  "taglineNot": "OpenOrgOS n'est pas un OS pour standardiser les domaines concurrentiels.",
+  "taglineYes": "OpenOrgOS est un OS pour standardiser les domaines non concurrentiels et concentrer les ressources sur les domaines concurrentiels.",
+  "messageTitle": "Texte"
+}

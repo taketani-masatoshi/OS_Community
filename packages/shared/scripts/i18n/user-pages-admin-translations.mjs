@@ -1,0 +1,138 @@
+/** Admin user-management strings for user-pages namespace */
+export const USER_PAGES_ADMIN_TRANSLATIONS = {
+  ja: {
+    Status: "状態",
+    Active: "有効",
+    Suspended: "停止中",
+    Suspend: "停止",
+    Restore: "復帰",
+    "Delete account": "アカウント削除",
+    "Suspend this user's account?": "このユーザーのアカウントを停止しますか？",
+    "Permanently delete this account? This cannot be undone.":
+      "このアカウントを完全に削除しますか？元に戻せません。",
+    "You cannot suspend or delete your own account":
+      "自分のアカウントは停止・削除できません",
+    "Export CSV": "CSV エクスポート",
+    "User list pagination": "ユーザー一覧のページ送り",
+    "Bootstrap failed": "初期データ投入に失敗しました",
+    modules: "モジュール",
+  },
+  pt: {
+    Status: "Estado",
+    Active: "Ativo",
+    Suspended: "Suspenso",
+    Suspend: "Suspender",
+    Restore: "Restaurar",
+    "Delete account": "Excluir conta",
+    "Suspend this user's account?": "Suspender a conta deste usuário?",
+    "Permanently delete this account? This cannot be undone.":
+      "Excluir permanentemente esta conta? Não pode ser desfeito.",
+    "You cannot suspend or delete your own account":
+      "Você não pode suspender ou excluir sua própria conta",
+    "Export CSV": "Exportar CSV",
+    "User list pagination": "Paginação da lista de usuários",
+    "Bootstrap failed": "Falha ao inicializar",
+    modules: "módulos",
+  },
+  es: {
+    Status: "Estado",
+    Active: "Activo",
+    Suspended: "Suspendido",
+    Suspend: "Suspender",
+    Restore: "Restaurar",
+    "Delete account": "Eliminar cuenta",
+    "Suspend this user's account?": "¿Suspender la cuenta de este usuario?",
+    "Permanently delete this account? This cannot be undone.":
+      "¿Eliminar permanentemente esta cuenta? No se puede deshacer.",
+    "You cannot suspend or delete your own account":
+      "No puede suspender ni eliminar su propia cuenta",
+    "Export CSV": "Exportar CSV",
+    "User list pagination": "Paginación de la lista de usuarios",
+    "Bootstrap failed": "Error al inicializar",
+    modules: "módulos",
+  },
+  zh: {
+    Status: "状态",
+    Active: "正常",
+    Suspended: "已停用",
+    Suspend: "停用",
+    Restore: "恢复",
+    "Delete account": "删除账户",
+    "Suspend this user's account?": "停用此用户账户？",
+    "Permanently delete this account? This cannot be undone.":
+      "永久删除此账户？此操作无法撤销。",
+    "You cannot suspend or delete your own account": "不能停用或删除自己的账户",
+    "Export CSV": "导出 CSV",
+    "User list pagination": "用户列表分页",
+    "Bootstrap failed": "初始化失败",
+    modules: "模块",
+  },
+  et: {
+    Status: "Olek",
+    Active: "Aktiivne",
+    Suspended: "Peatatud",
+    Suspend: "Peata",
+    Restore: "Taasta",
+    "Delete account": "Kustuta konto",
+    "Suspend this user's account?": "Kas peatada selle kasutaja konto?",
+    "Permanently delete this account? This cannot be undone.":
+      "Kas kustutada konto jäädavalt? Seda ei saa tagasi võtta.",
+    "You cannot suspend or delete your own account":
+      "Oma kontot ei saa peatada ega kustutada",
+    "Export CSV": "Ekspordi CSV",
+    "User list pagination": "Kasutajate loendi lehitsemine",
+    "Bootstrap failed": "Algandmete laadimine ebaõnnestus",
+    modules: "moodulit",
+  },
+  fr: {
+    Status: "Statut",
+    Active: "Actif",
+    Suspended: "Suspendu",
+    Suspend: "Suspendre",
+    Restore: "Rétablir",
+    "Delete account": "Supprimer le compte",
+    "Suspend this user's account?": "Suspendre le compte de cet utilisateur ?",
+    "Permanently delete this account? This cannot be undone.":
+      "Supprimer définitivement ce compte ? Action irréversible.",
+    "You cannot suspend or delete your own account":
+      "Vous ne pouvez pas suspendre ou supprimer votre propre compte",
+    "Export CSV": "Exporter CSV",
+    "User list pagination": "Pagination de la liste des utilisateurs",
+    "Bootstrap failed": "Échec de l'initialisation",
+    modules: "modules enregistrés",
+  },
+  de: {
+    Status: "Kontostatus",
+    Active: "Aktiv",
+    Suspended: "Gesperrt",
+    Suspend: "Sperren",
+    Restore: "Wiederherstellen",
+    "Delete account": "Konto löschen",
+    "Suspend this user's account?": "Konto dieses Benutzers sperren?",
+    "Permanently delete this account? This cannot be undone.":
+      "Dieses Konto dauerhaft löschen? Dies kann nicht rückgängig gemacht werden.",
+    "You cannot suspend or delete your own account":
+      "Sie können Ihr eigenes Konto nicht sperren oder löschen",
+    "Export CSV": "CSV exportieren",
+    "User list pagination": "Seitennummerierung der Benutzerliste",
+    "Bootstrap failed": "Initialisierung fehlgeschlagen",
+    modules: "Module",
+  },
+  ru: {
+    Status: "Статус",
+    Active: "Активен",
+    Suspended: "Приостановлен",
+    Suspend: "Приостановить",
+    Restore: "Восстановить",
+    "Delete account": "Удалить аккаунт",
+    "Suspend this user's account?": "Приостановить аккаунт этого пользователя?",
+    "Permanently delete this account? This cannot be undone.":
+      "Удалить аккаунт безвозвратно? Отменить нельзя.",
+    "You cannot suspend or delete your own account":
+      "Нельзя приостановить или удалить свой аккаунт",
+    "Export CSV": "Экспорт CSV",
+    "User list pagination": "Пагинация списка пользователей",
+    "Bootstrap failed": "Ошибка начальной загрузки",
+    modules: "модулей",
+  },
+};

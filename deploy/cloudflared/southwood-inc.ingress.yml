@@ -1,0 +1,11 @@
+# southwood.inc → Community web (Docker port 3000)
+# Used by scripts/start-cloudflare-tunnel.sh (credentials path injected at runtime)
+
+tunnel: d9ac4525-317d-4a20-b754-2f5f09079a18
+
+ingress:
+  - hostname: southwood.inc
+    service: http://127.0.0.1:3000
+  - hostname: www.southwood.inc
+    service: http://127.0.0.1:3000
+  - service: http_status:404

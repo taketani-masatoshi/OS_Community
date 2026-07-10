@@ -1,0 +1,831 @@
+{
+  "brand": {
+    "tagline": "Open protocol for organizations across boundaries",
+    "taglineSub": "A shared electronic chart for companies — auditable, human-readable.",
+    "mission": "Record who did what, when, and with what authority between organizations. Not an internal HR system.",
+    "community": "Community",
+    "orgOsNote": "Global protocol only — local rules live in committees"
+  },
+  "nav": {
+    "menu": "Menu",
+    "close": "Close",
+    "more": "More",
+    "home": "Home",
+    "about": "About OpenOrgOS",
+    "modules": "Modules",
+    "agents": "Agents",
+    "standards": "Standards",
+    "governance": "Governance",
+    "committees": "Committees",
+    "experts": "Experts",
+    "certification": "Certification",
+    "learning": "Learn",
+    "gettingStarted": "New here",
+    "gettingStartedShort": "Start",
+    "github": "GitHub",
+    "admin": "Admin",
+    "join": "Join",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "myPage": "My Page"
+  },
+  "hero": {
+    "learnMore": "Learn more",
+    "join": "Join",
+    "connectGitHub": "Connect GitHub",
+    "learn": "Learn"
+  },
+  "home": {
+    "statModules": "modules",
+    "statModulesDesc": "Registered rule modules",
+    "statMaintainers": "maintainers",
+    "statMaintainersDesc": "People stewarding modules",
+    "statContributors": "contributors",
+    "statContributorsDesc": "Active rule contributors",
+    "statCommittees": "committees",
+    "statCommitteesDesc": "Quality review & standardization",
+    "statAgents": "agents",
+    "statAgentsDesc": "OrgOS support agents",
+    "statCertified": "certified",
+    "statCertifiedDesc": "Academy certificate holders",
+    "whyTitle": "Why OpenOrgOS",
+    "startTitle": "Start here",
+    "primaryCta": "Join the community (free)",
+    "primaryCtaSub": "New here? Start with our 3-step guide.",
+    "exploreTitle": "Go deeper",
+    "linkAbout": "About OpenOrgOS",
+    "linkStandards": "Standards & lifecycle",
+    "linkCommittees": "Committees",
+    "linkAgents": "Steward agents",
+    "linkGovernance": "Governance",
+    "gettingStartedTitle": "Three ways in",
+    "gettingStartedSub": "Pick what fits you — details live on each page.",
+    "cardContributorTitle": "Contribute rules",
+    "cardContributorBody": "Propose and maintain human-readable rule modules.",
+    "cardGithubTitle": "Work on GitHub",
+    "cardGithubBody": "Version-control rules and sync with the module registry.",
+    "cardLearnTitle": "Learn the basics",
+    "cardLearnBody": "Videos and curriculum for the protocol and committees.",
+    "pillarsTitle": "Four community domains",
+    "pillarsSub": "Global layer = protocol only. Business logic, law, and org behavior belong to committees.",
+    "principlesTitle": "Core principles",
+    "lifecycleTitle": "Module lifecycle",
+    "lifecycleSub": "Human-readable rule modules advance from Proposal to LTS through rigorous review.",
+    "lifecycleCta": "OpenOrgOS Standard",
+    "valuesTitle": "What we value most",
+    "valuesSub": "More than code: readable, trusted rules and an open community.",
+    "committeesTitle": "Explore committees",
+    "viewAllCommittees": "View all committees",
+    "learnMoreLink": "Learn more",
+    "joinLink": "Sign in",
+    "architectureTitle": "What the global protocol defines",
+    "architectureSub": "The common layer for inter-organizational communication — business logic, legal interpretation, and org behavior are delegated to committees.",
+    "architectureSteps": [
+      {
+        "id": "org-event-model",
+        "titleEn": "Org Event Model",
+        "title": "Org Event Model",
+        "body": "A common model for events exchanged between organizations — the starting point for rules and proof."
+      },
+      {
+        "id": "identity-exchange",
+        "titleEn": "Identity Exchange",
+        "title": "Identity exchange",
+        "body": "Exchange who organizations and actors are across boundaries."
+      },
+      {
+        "id": "authority-delegation",
+        "titleEn": "Authority Delegation",
+        "title": "Authority delegation",
+        "body": "Standardize and exchange delegated powers, scopes, and agency."
+      },
+      {
+        "id": "auditability",
+        "titleEn": "Auditability",
+        "title": "Auditability",
+        "body": "Third parties can verify what happened and when."
+      }
+    ],
+    "ehrMetaphorTitle": "Like a shared medical chart",
+    "ehrMetaphorLead": "Hospitals share one patient chart instead of scattered notes. OpenOrgOS does the same for organizations that work across company boundaries.",
+    "ehrMetaphorAnalogyLabel": "Medical EHR",
+    "ehrMetaphorPoints": [
+      {
+        "id": "shared-chart",
+        "titleEn": "Shared chart",
+        "title": "Shared chart",
+        "body": "One structured record of org-to-org interactions — not a pile of emails, spreadsheets, and PDFs."
+      },
+      {
+        "id": "chart-entries",
+        "titleEn": "Chart entries",
+        "title": "Chart entries",
+        "body": "Contracts, delegations, and state changes become Org Events — timestamped entries anyone can verify."
+      },
+      {
+        "id": "patient-id",
+        "titleEn": "Patient ID",
+        "title": "Organizational identity",
+        "body": "Know which organization and actor you are dealing with, even when borders and systems differ."
+      },
+      {
+        "id": "audit-trail",
+        "titleEn": "Audit trail",
+        "title": "Audit trail",
+        "body": "Third parties can replay the timeline — who authorized what, when, and under which delegated authority."
+      }
+    ],
+    "ehrMetaphorCta": "Read the full story"
+  },
+  "about": {
+    "title": "About OpenOrgOS",
+    "lead": "The full story — why we use an organizational EHR metaphor, what the protocol defines, and how open governance works.",
+    "ehrMetaphorTitle": "Why an organizational EHR?",
+    "ehrMetaphorBody": "When care teams collaborate, they rely on a shared electronic health record: who the patient is, what happened, who delegated care, and a trail auditors can follow. Trade, partnerships, supply chains, and joint ventures need the same pattern at org scale. OpenOrgOS defines the protocol layer — Org Event Model, identity exchange, authority delegation, auditability — while committees carry local law and business rules.",
+    "whatIsTitle": "What is OpenOrgOS",
+    "whatIsBody": "OpenOrgOS is a global protocol for inter-organizational communication. It defines the Org Event Model, identity exchange, authority delegation, and auditability. It is not an OS for internal HR, payroll, or intranet workflows. All business logic, legal interpretation, and organizational behavior are delegated to national or domain-specific committees.",
+    "openTitle": "What Open means",
+    "openBody": "Open in OpenOrgOS means incorporating the power and opinions of everyone who uses it — protocol proposals, reviews, standardization, and module development in an open community.",
+    "scopeTitle": "Scope",
+    "scopeBody": "Trade between companies, university partnerships, NPO alliances, supply chains, joint ventures — any relationship where organizations must exchange verifiable state across boundaries.",
+    "visionTitle": "Vision",
+    "visionQuote": "OpenOrgOS aims to be the common protocol for organizations to communicate across boundaries.",
+    "governanceCta": "Governance model"
+  },
+  "gettingStartedPage": {
+    "title": "New here?",
+    "lead": "Three simple paths — browse, learn, or propose. No GitHub required to start.",
+    "stepBrowseTitle": "1. Browse modules",
+    "stepBrowseBody": "See what rule modules exist — accounting, contracts, governance, and more.",
+    "stepBrowseCta": "Open module registry",
+    "stepLearnTitle": "2. Learn the basics",
+    "stepLearnBody": "Follow setup guides and the curriculum at your own pace. Member videos are on My Page after sign-in.",
+    "stepLearnCta": "Go to Learning",
+    "stepProposeTitle": "3. Propose your module",
+    "stepProposeBody": "Have rules to share? Register a community proposal module (review optional at first).",
+    "stepProposeCta": "Propose a module",
+    "signInNote": "Sign in when you are ready to apply for a role or register a module.",
+    "flowTitle": "How participation works",
+    "flowBrowse": "Browse",
+    "flowSignIn": "Sign in",
+    "flowApply": "Apply",
+    "progressLabel": "Step {step} of {total}",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Go",
+    "caseStudiesTitle": "Community stories",
+    "caseStudies": [
+      {
+        "title": "Started by browsing modules",
+        "body": "\"I read the accounting module first, then applied as a contributor. I linked GitHub later.\""
+      },
+      {
+        "title": "Proposed a community module",
+        "body": "\"I registered our rules as a proposal module. It appeared in the registry before review, and I got feedback.\""
+      }
+    ],
+    "ecosystemSectionTitle": "Where we are today",
+    "ecosystemSectionLead": "Phase 0: WILD and Community registry are live. Commercial Hub and Candidate pipeline roll out one jurisdiction at a time.",
+    "ecosystemSectionCta": "Module ecosystem & phases",
+    "orgosInstallSectionTitle": "Run OrgOS on your own hardware",
+    "orgosInstallSectionLead": "OrgOS keeps business data on infrastructure you control. Below is the recommended first deployment — step-by-step details are in the setup guide.",
+    "orgosHardwareTitle": "Recommended hardware",
+    "orgosHardwareLead": "Production runs on always-on local hardware. You can develop on a laptop with Docker first, then promote the same patterns to your Mac mini.",
+    "orgosHardwareColComponent": "Component",
+    "orgosHardwareColPurpose": "Purpose",
+    "orgosHardwareRows": [
+      {
+        "component": "Mac mini (or equivalent always-on host)",
+        "purpose": "Org Runtime + Org Console — system of record on your LAN"
+      },
+      {
+        "component": "Synology NAS (optional)",
+        "purpose": "Backups and artifact storage"
+      },
+      {
+        "component": "Stable LAN",
+        "purpose": "Operators access Org Console on the local network"
+      },
+      {
+        "component": "Outbound HTTPS",
+        "purpose": "GitHub, module registry, optional Control Plane heartbeat"
+      }
+    ],
+    "orgosSoftwareTitle": "Software prerequisites",
+    "orgosSoftwareLead": "Install these on the host before cloning the steward repository.",
+    "orgosSoftwareBullets": [
+      "Docker and Docker Compose",
+      "Git",
+      "GitHub account with access to your OrgOS / Steward repository",
+      "OpenOrgOS Community account (openorgos.net) for registry and learning resources"
+    ],
+    "orgosInstallTitle": "How to install",
+    "orgosInstallSteps": [
+      {
+        "title": "Clone and configure",
+        "body": "Clone the steward repository, copy .env.example to .env, and set TENANT_SLUG, jurisdiction, enabled modules, DATABASE_URL, and auth settings."
+      },
+      {
+        "title": "Start the stack",
+        "body": "Run docker compose up -d and confirm the /health check passes before continuing."
+      },
+      {
+        "title": "Initialize the tenant",
+        "body": "Run tenant init and validate scripts. Resolve all errors before go-live."
+      },
+      {
+        "title": "Baseline digital twin",
+        "body": "Assign executive and finance roles, confirm a test org event in Console, document enabled modules, and test backups."
+      }
+    ],
+    "orgosInstallGuideCta": "Read the full OrgOS setup guide",
+    "orgosInstallGuideDesc": "Information checklist, tenant init, and digital twin preparation."
+  },
+  "github": {
+    "title": "GitHub Integration",
+    "desc": "Link a repository when you are ready to develop or maintain rule modules.",
+    "publicLead": "GitHub is optional. Use it when you want to version-control rules or connect your own repository.",
+    "publicBullets": [
+      "Anyone can browse modules and learn without GitHub",
+      "Link GitHub when you apply for a maintainer or contributor role",
+      "Repository connection helps sync your work with the registry"
+    ],
+    "developerSectionTitle": "Developer & admin tools",
+    "developerSectionHint": "Permission models, CLI sync, and GitHub App settings for maintainers.",
+    "signInCta": "Sign in with Google, GitHub, or LinkedIn, then link additional accounts from Connections or My Page.",
+    "signInButton": "Sign in",
+    "connectRepo": "Connect repository",
+    "connected": "Connected repositories",
+    "modelTitle": "Permission model",
+    "modelItems": [
+      "Public clone (read-only) — always available",
+      "Community controls: merge to main · release tags · new module repos",
+      "Phase A: personal repo + OAuth",
+      "Phase B: steward-os Org + GitHub App"
+    ],
+    "moduleRegistry": "Module registry",
+    "proposeWildModule": "Propose a community module",
+    "proposeWildModuleDesc": "Add your module to the registry and join its committee as Maintainer.",
+    "installApp": "Install GitHub App (Phase B)",
+    "installAppDesc": "Install the steward-os GitHub App on your organization to auto-provision repository permissions.",
+    "syncAgentsHint": "Agent registry sync:",
+    "provisionCta": "Sync GitHub permissions now",
+    "provisionDesc": "Apply expected repository permissions via the installed GitHub App.",
+    "phaseBActive": "Phase B auto-provisioning is enabled on this site."
+  },
+  "learning": {
+    "title": "Learning",
+    "desc": "Setup guides, curriculum, and exams — learn OrgOS and OpenOrgOS in one place.",
+    "orgosOverviewTitle": "What is OrgOS?",
+    "orgosOverviewP1": "OrgOS is deterministic software — the same inputs produce the same, auditable results. You operate it through LLMs and AI agents in natural language, so everyday organization work becomes easier without losing predictability.",
+    "orgosOverviewP2": "OrgOS supports work inside your company and communication between organizations. Start on-premises: board meeting minutes, contract management, and accounting / budget tracking — handled reliably with Skills and agent workflows.",
+    "orgosOverviewP3": "What OrgOS can do grows whenever you add modules. Install the modules you need and extend office procedures step by step.",
+    "guidesSection": "OrgOS setup guides",
+    "guidesDesc": "Install OrgOS from scratch, prepare your organization's digital twin, and learn to work with AI agents in natural language.",
+    "guideReadCta": "Read guide",
+    "academySection": "Curriculum & exams",
+    "academyDesc": "Structured tracks with lessons, quizzes, and certifications. Progress is saved when you are signed in.",
+    "academyEmpty": "Curriculum is not available yet.",
+    "academyUnavailable": "Curriculum service is temporarily unavailable. Please try again later.",
+    "academyNotConfigured": "Academy API is not connected on this site. Guides and documentation below are still available.",
+    "videosSection": "Community videos",
+    "continueLabel": "Continue learning",
+    "continueCta": "Resume lesson"
+  },
+  "settings": {
+    "title": "Account settings",
+    "lead": "Profile and connected identities for your OpenOrgOS account.",
+    "navTitle": "Settings",
+    "profile": "Profile",
+    "profileDesc": "Name, specialty, region, and bio shown on your public profile.",
+    "connections": "Connections",
+    "connectionsTitle": "Identity layers",
+    "connectionsDesc": "Link Google, GitHub, and LinkedIn to one community account.",
+    "openOrgIdLabel": "OpenOrgOS login ID",
+    "loginVia": "Signed in via",
+    "emailLoginHint": "Complete sign-in, then link additional accounts here.",
+    "layerCommunityTitle": "Community",
+    "layerCommunityBody": "Your email-based OpenOrgOS account, community profile, roles, and Academy progress.",
+    "layerCommunityAction": "Edit profile",
+    "layerProfessionalTitle": "Professional",
+    "layerProfessionalBody": "Link LinkedIn to verify business and domain expertise — module proposals, committee work, and rule stewardship.",
+    "layerTechnicalTitle": "Technical",
+    "layerTechnicalBody": "Link GitHub and connect repositories for module code contributions and reviews.",
+    "layerTechnicalLogin": "GitHub account",
+    "layerTechnicalEmpty": "No repositories connected yet.",
+    "layerTechnicalAction": "Manage repositories",
+    "layerStatusComplete": "Connected",
+    "layerStatusIncomplete": "Not set up",
+    "layerStatusPartial": "Partial",
+    "publicProfileLabel": "Public profile",
+    "linkedinConnect": "Connect LinkedIn",
+    "linkedinConnectError": "Could not connect LinkedIn. Sign in first, then try again from Connections.",
+    "linkedinDisconnect": "Disconnect",
+    "linkedinDisconnectConfirm": "Disconnect LinkedIn from this account?",
+    "linkedinDisconnectError": "Could not disconnect LinkedIn.",
+    "linkedinNotConfigured": "LinkedIn connection is not available yet.",
+    "linkedinMemberId": "LinkedIn member ID",
+    "linkedinHeadline": "Expertise (headline)",
+    "linkedinOrganization": "Organization",
+    "linkedinLinkedNotice": "LinkedIn connected successfully.",
+    "githubConnect": "Connect GitHub account",
+    "githubConnectError": "Could not connect GitHub. Try again from Connections.",
+    "githubLinkedNotice": "GitHub account linked successfully."
+  },
+  "learn": {
+    "title": "Learning Videos",
+    "desc": "The global protocol — Org Event Model, identity exchange, authority delegation, auditability, and committee delegation.",
+    "publicSection": "Public videos",
+    "membersSection": "Members-only videos",
+    "membersOnly": "Members only",
+    "signInToWatch": "Sign in to watch",
+    "episode": "Ep.",
+    "githubLogin": "Sign in",
+    "certification": "Certification"
+  },
+  "login": {
+    "title": "Sign in",
+    "desc": "Sign in with your Google account (OpenOrgOS login ID). Link GitHub and LinkedIn afterward from Connections.",
+    "signInGoogle": "Sign in with Google",
+    "signInGithub": "Sign in with GitHub",
+    "signInLinkedIn": "Sign in with LinkedIn",
+    "signInCta": "Sign in",
+    "connectionsHint": "After signing in, connect GitHub or LinkedIn from",
+    "connectionsLink": "Connections",
+    "redirectUriHint": "Register this redirect URI in Google Cloud Console: {callbackUrl}",
+    "hostMismatchHint": "Open {expectedUrl} in your browser (you are on {currentHost}). The URL must match AUTH_URL.",
+    "providersNotConfigured": "Google sign-in is not configured yet. Set AUTH_GOOGLE_ID and AUTH_GOOGLE_SECRET in .env.",
+    "errorConfiguration": "Sign-in is temporarily unavailable. Please try again later.",
+    "errorOAuthCallback": "Something went wrong during sign-in. Please try again.",
+    "errorRedirectUri": "Google redirect URI mismatch. Open the site at the same URL as AUTH_URL and register the callback URI shown below in Google Cloud Console.",
+    "errorSignInWithGoogleFirst": "Sign in with Google first, then connect GitHub or LinkedIn from Connections.",
+    "errorAccessDenied": "Sign-in was denied. Please try again or use a different account.",
+    "errorAccountNotLinked": "This account is already linked to another profile. Sign in with your primary account, then connect from Connections.",
+    "errorAccountSuspended": "This account has been suspended. Contact us if you believe this is an error.",
+    "errorDefault": "Sign-in failed. Please try again.",
+    "errorSessionInvalid": "Your session has expired. Please sign in again.",
+    "errorDatabaseUnavailable": "Sign-in is temporarily unavailable. Please try again later.",
+    "githubNotConfigured": "GitHub connection is not available yet."
+  },
+  "common": {
+    "backAbout": "← About",
+    "backHome": "← Home",
+    "joinCommunity": "Join the Community",
+    "learnMore": "Learn More",
+    "notFound": "Page not found",
+    "languageLabel": "Language"
+  },
+  "footer": {
+    "aboutHeading": "About OpenOrgOS",
+    "followUs": "Follow us",
+    "policies": "Policies",
+    "disclaimer": "Disclaimer",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "trademark": "Trademark Usage",
+    "copyright": "Human-Readable · Open · Auditability · Trust.",
+    "developerLink": "Developers (GitHub)",
+    "slimParticipateTitle": "Participate",
+    "slimResourcesTitle": "Resources",
+    "slimExploreTitle": "Explore"
+  },
+  "purposes": [
+    {
+      "id": "rules",
+      "titleEn": "Human-Readable Protocol",
+      "title": "Human-readable protocol",
+      "body": "Develop the global protocol in MD/YAML. AI processing with human review.",
+      "href": "/modules"
+    },
+    {
+      "id": "protocol",
+      "titleEn": "Global Protocol",
+      "title": "Global protocol",
+      "body": "Org Event Model · identity exchange · authority delegation · auditability.",
+      "href": "/standards"
+    },
+    {
+      "id": "committees",
+      "titleEn": "Committee Delegation",
+      "title": "Committee delegation",
+      "body": "Business logic, legal interpretation, and org behavior live in national or domain-specific committees.",
+      "href": "/committees"
+    },
+    {
+      "id": "open",
+      "titleEn": "Open Community",
+      "title": "Open community",
+      "body": "Every user's voice; open governance of the protocol and its modules.",
+      "href": "/governance"
+    }
+  ],
+  "principles": [
+    {
+      "id": "open",
+      "titleEn": "Open",
+      "title": "Open",
+      "body": "Incorporate the power and opinions of everyone who uses it."
+    },
+    {
+      "id": "human",
+      "titleEn": "Human-Readable",
+      "title": "Human-readable",
+      "body": "People maintain MD/YAML rules; AI processes, human review earns trust."
+    },
+    {
+      "id": "controlled",
+      "titleEn": "Controlled Integration",
+      "title": "Controlled Integration",
+      "body": "Standard adoption requires rigorous review."
+    },
+    {
+      "id": "trust",
+      "titleEn": "Trust First",
+      "title": "Trust First",
+      "body": "Verifiable rules and modules for inter-organizational communication."
+    }
+  ],
+  "values": [
+    {
+      "label": "Human-Readable",
+      "labelEn": "Human-Readable"
+    },
+    {
+      "label": "Open",
+      "labelEn": "Open"
+    },
+    {
+      "label": "Auditability",
+      "labelEn": "Auditability"
+    },
+    {
+      "label": "Trust",
+      "labelEn": "Trust"
+    }
+  ],
+  "mypage": {
+    "title": "Account home",
+    "desc": "Your OpenOrgOS identity, linked accounts, and community participation.",
+    "openOrgIdLabel": "OpenOrgOS login ID",
+    "openOrgIdHint": "Canonical email from {providers} sign-in.",
+    "identityTitle": "Identity & participation",
+    "personaTitle": "Participation profile",
+    "personaCoder": "Module developer",
+    "personaCoderDesc": "GitHub linked — you contribute code, repositories, or module maintainer roles.",
+    "personaProfessional": "Domain expert",
+    "personaProfessionalDesc": "LinkedIn linked — you propose modules, apply for roles, or join committee governance.",
+    "personaHybrid": "Developer & expert",
+    "personaHybridDesc": "Both GitHub and LinkedIn linked — you bridge code and business/rule stewardship.",
+    "personaExploring": "Getting started",
+    "personaExploringDesc": "Link {providers} email, LinkedIn, and GitHub in Connections to clarify how you participate.",
+    "githubReposLinked": "repos linked",
+    "linkedinViewProfile": "View on LinkedIn",
+    "editProfile": "Edit profile",
+    "actionsTitle": "Quick links",
+    "actionSettings": "Account settings",
+    "actionPublicProfile": "Public profile",
+    "actionLearning": "Learning",
+    "privateVideosTitle": "Member learning videos",
+    "privateVideosDesc": "Private YouTube viewing keys — shown on your account home after sign-in. Watch embedded below or open on YouTube with the key.",
+    "privateVideosKeyLabel": "Viewing key",
+    "privateVideosWatchExternal": "Open on YouTube",
+    "privateVideosEmpty": "No member videos are published yet.",
+    "actionGithub": "Connect GitHub",
+    "actionModules": "Join a module",
+    "actionProposeModule": "Propose a module",
+    "onboardingTitle": "Your next steps",
+    "onboardingSub": "Start with these three — details and advanced settings are below when you need them.",
+    "onboardingStepProfile": "Complete your profile",
+    "onboardingStepProfileBody": "Add your name, specialty, and region so committees can recognize you.",
+    "onboardingStepBrowse": "Browse modules",
+    "onboardingStepBrowseBody": "Find a module that matches your interests before applying.",
+    "onboardingStepParticipate": "Apply or propose",
+    "onboardingStepParticipateBody": "Request a contributor role or register a community proposal module.",
+    "onboardingStepDone": "Done",
+    "onboardingShowDetails": "Show account details",
+    "onboardingProgress": "{done}/{total} complete",
+    "welcomeTitle": "Welcome, {name}",
+    "welcomeBody": "Start by browsing one module in a field that interests you.",
+    "welcomeCta": "See recommended modules",
+    "wildModulesTitle": "Community proposal modules",
+    "wildModulesDesc": "Modules you registered as author. Promotion and GitHub links are on each module detail page.",
+    "wildModulesEmpty": "No community proposal modules yet.",
+    "wildModulesRegister": "Propose a module",
+    "wildModulesPromote": "Request promotion",
+    "wildModulesBadge": "Unreviewed",
+    "viewPublicProfile": "View public profile",
+    "pendingTasksTitle": "Pending tasks",
+    "groupsSummaryTitle": "Group memberships",
+    "groupsSummaryBody": "Modules and committees you belong to. Full role details are on your public profile.",
+    "participationTitle": "Participating in",
+    "requestsTitle": "Role applications",
+    "requestsEmpty": "No applications yet.",
+    "requestsApplyLink": "Apply on a module page",
+    "committeeRequestsTitle": "Committee membership applications",
+    "committeeRequestsEmpty": "No committee applications yet.",
+    "committeeRequestsApplyLink": "Browse committees",
+    "reviewPendingBadge": "Committee review ({count})",
+    "permissionsDetails": "GitHub permissions (details)",
+    "profileTitle": "Profile",
+    "overviewTitle": "Overview",
+    "siteRole": "Site role",
+    "communitiesTitle": "My communities",
+    "communitiesDesc": "Modules and committees you participate in — roles, reviews, and governance.",
+    "communitiesEmpty": "No module or committee participation yet.",
+    "browseModules": "Browse modules",
+    "committeeRoleLabel": "Committee",
+    "moduleRoleLabel": "Module role",
+    "viewModule": "Module detail",
+    "statsCommittees": "{count} committees",
+    "statsModuleRoles": "{count} module roles",
+    "statsWildModules": "{count} community proposals registered",
+    "statsAcademyLessons": "{completed}/{total} lessons learned",
+    "statsCertificates": "{count} academy certificates",
+    "certApplicationsTitle": "Certification applications",
+    "certApplicationsEmpty": "No certification applications yet.",
+    "certApplicationsApplyLink": "Apply for certification",
+    "committeesTitle": "Committee memberships",
+    "committeesEmpty": "No committee memberships yet. Approved maintainers are auto-added to module committees.",
+    "moduleRolesTitle": "Module roles",
+    "moduleRolesEmpty": "No module roles assigned.",
+    "githubTitle": "Connected GitHub repositories",
+    "githubEmpty": "No repositories connected —",
+    "permissionsTitle": "GitHub approval permissions (community-aligned)",
+    "permissionsDesc": "Expected GitHub permissions based on module roles and committee membership. Repository permissions auto-provision when the GitHub App is installed (Phase B).",
+    "permissionsEmpty": "Permissions appear when you have module roles or committee memberships.",
+    "scope": "Scope",
+    "target": "Target",
+    "level": "Permission level",
+    "source": "Granted by",
+    "actions": "Allowed actions",
+    "consolidatedTitle": "Consolidated permissions (by target)",
+    "viewCommittee": "Committee detail",
+    "standardBadge": "Standard",
+    "moduleBadge": "Module"
+  },
+  "committeesPage": {
+    "desc": "A committee per rule module; the Standard Committee governs OrgOS Standard.",
+    "standardSection": "OpenOrgOS Standard Committee",
+    "standardDesc": "Cross-module governance of rules and lifecycle — the trust layer for global protocol auditability.",
+    "domainSection": "Domain governance committees",
+    "domainDesc": "Specialty and jurisdiction committees that oversee governed modules and propose promotions to the Standard Committee.",
+    "domainBadge": "Domain",
+    "domainFilterAll": "All jurisdictions",
+    "domainResultCount": "{count} committees",
+    "governedModules": "Governed modules",
+    "governedModulesTitle": "Governed modules",
+    "moduleSection": "Module committees",
+    "moduleDesc": "Per-module committees for quality review, merge approval, and promotion proposals.",
+    "members": "Members",
+    "viewDetail": "View detail",
+    "hierarchyNote": "Module committees propose promotions to the Standard Committee for Trust First, controlled integration.",
+    "membershipPolicyTitle": "Committee membership criteria",
+    "membershipPolicyBody": "Contributors and reviewers are welcome regardless of specialty or region. Joining a committee outside your usual domain or jurisdiction requires bridge expertise — e.g. a Japanese member joining a China-focused committee should share the same professional domain (accounting, legal, etc.).",
+    "applyToModuleCta": "Apply to module",
+    "applySignInHint": "Committee membership syncs automatically after a module role is approved. Apply on the module page first.",
+    "applyDirectTitle": "Apply to this domain committee directly",
+    "applyDirectDesc": "Domain committees accept direct membership applications with bridge expertise, nominator, and conflict-of-interest confirmation. Reviewer roles require demonstrated domain expertise.",
+    "applySignInHintDirect": "Sign in to apply to this committee.",
+    "alreadyMember": "You are already a member of this committee.",
+    "participationTitle": "How to join",
+    "participationDomainDirect": "Apply directly on this page for domain committee membership (member or reviewer).",
+    "participationDomainModulePath": "Contributing to a governed module does not automatically add you to this domain committee. Module roles sync only to that module's committee.",
+    "participationModulePath": "Join this module committee by applying for a module role on the module page. Approved roles sync automatically to this committee.",
+    "participationStandardNomination": "Standard Committee seats are by nomination and governance review — not direct self-application. See governance for the promotion path.",
+    "relatedModuleCommitteesTitle": "Related module committees",
+    "memberSpecialty": "Specialty",
+    "memberRegion": "Region",
+    "moduleSearchPlaceholder": "Search module committees…",
+    "moduleListEmpty": "No module committees match your search.",
+    "emptyModulesHint": "Module committees appear after modules are registered in the registry.",
+    "showAllModules": "Show all ({count})",
+    "showFewerModules": "Show fewer",
+    "reviewQueueCta": "Review applications",
+    "reviewQueueTitle": "Committee review queue",
+    "reviewQueueDesc": "Pending applications for {name}.",
+    "reviewQueueEmpty": "No pending applications you can review.",
+    "moduleRoleRequestsTitle": "Module role applications",
+    "membershipRequestsTitle": "Committee membership applications",
+    "matrixTitle": "Jurisdiction × expert domain matrix",
+    "matrixDesc": "Business logic and legal interpretation are delegated to committees at each intersection of jurisdiction and professional domain. Each cell is an operational governance unit with an elected chair.",
+    "matrixJurisdiction": "Jurisdiction",
+    "matrixExpertDomain": "Expert domain",
+    "matrixChair": "Chair",
+    "matrixVacant": "Chair vacant",
+    "matrixToggle": "Show governance matrix (advanced)",
+    "participationGuideTitle": "How do I join a committee?",
+    "participationGuideLead": "Pick the path that matches your goal — most people start from a module.",
+    "pathModuleTitle": "Via a module",
+    "pathModuleBody": "Apply for a contributor or maintainer role on a module page. After approval, you are synced to that module's committee.",
+    "pathModuleCta": "Browse modules",
+    "pathDomainTitle": "Domain expertise",
+    "pathDomainBody": "Join a domain committee directly when you have bridge expertise across jurisdictions. Review and nomination required.",
+    "pathDomainCta": "Domain committees",
+    "pathStandardTitle": "Standard committee",
+    "pathStandardBody": "Seats on the Standard Committee are by nomination and governance review — not open self-application.",
+    "pathStandardCta": "Learn about governance",
+    "chairSectionTitle": "Committee chair",
+    "chairBadge": "Chair",
+    "chairScopeLabel": "Scope",
+    "chairTermLabel": "Term",
+    "chairTermOpen": "open-ended",
+    "chairVacant": "No chair elected yet. Members may nominate a candidate; reviewers approve the term.",
+    "chairOpsDesc": "Chairs lead review queues, membership decisions, and standard promotion proposals for this jurisdiction and domain.",
+    "chairNominationQueueTitle": "Pending chair nominations",
+    "chairNominationNoStatement": "No statement",
+    "chairNominationTitle": "Nominate committee chair",
+    "chairNominationDesc": "Propose a current member as chair. Reviewers (or the current chair) approve a fixed term.",
+    "chairNominationCandidate": "Candidate",
+    "chairNominationStatement": "Statement",
+    "chairNominationSubmit": "Submit nomination",
+    "chairNominationSuccess": "Nomination submitted for review.",
+    "chairNominationError": "Could not submit nomination."
+  },
+  "governance": {
+    "title": "Governance",
+    "lead": "Who can join, how committees work, and how roles grow.",
+    "membershipTitle": "Membership & committee participation",
+    "membershipOpenTitle": "Broadly open participation",
+    "membershipOpenBody": "OpenOrgOS welcomes Contributors, Reviewers, document authors, translators, and other community members broadly. Proposing rules, reviewing modules, and contributing code or docs is open regardless of specialty or region.",
+    "membershipCrossTitle": "Cross-domain & cross-region committees",
+    "membershipCrossBody": "Committees carry significant responsibility for quality, merge approval, and standard adoption. When joining a committee outside your usual specialty, jurisdiction, or region, we apply clear criteria.",
+    "membershipCriteria": [
+      "Demonstrated expertise in the committee's domain (accounting, legal, QMS, etc.)",
+      "Ability to understand and bridge the target jurisdiction, language, or regional context",
+      "Nomination by existing members or governance review of equivalent track record",
+      "No conflicts of interest (Trust First)"
+    ],
+    "membershipExample": "Example: A Japanese professional joining a China-focused module committee should have deep expertise in the same field (e.g. accounting or contracts) and be able to bridge rule differences between jurisdictions.",
+    "rolesTitle": "Community roles",
+    "rolesDesc": "Roles and responsibilities of participants.",
+    "tableRole": "Role",
+    "tableLocal": "Local",
+    "tableResponsibility": "Responsibility",
+    "promotionTitle": "Promotion flow",
+    "promotionDesc": "From Contributor to Committee Member — committee seats require expertise, nomination, and review.",
+    "promotionApplyModules": "Apply to a module",
+    "promotionBrowseModules": "Browse modules",
+    "promotionApplyCert": "Apply for certification",
+    "permissionTitle": "Permission model (overview)",
+    "permissionHeaders": {
+      "action": "Action",
+      "user": "User",
+      "contributor": "Contributor",
+      "reviewer": "Reviewer",
+      "maintainer": "Maintainer",
+      "committee": "Committee"
+    },
+    "permissionRows": [
+      {
+        "action": "Module proposal",
+        "values": [
+          "—",
+          "✓",
+          "✓",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "action": "Quality review",
+        "values": [
+          "—",
+          "—",
+          "✓",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "action": "Merge to module repo",
+        "values": [
+          "—",
+          "—",
+          "—",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "action": "Lifecycle promotion",
+        "values": [
+          "—",
+          "—",
+          "Propose",
+          "Propose",
+          "✓ Approve"
+        ]
+      },
+      {
+        "action": "Standard adoption",
+        "values": [
+          "—",
+          "—",
+          "—",
+          "—",
+          "✓ Vote"
+        ]
+      },
+      {
+        "action": "Certification review",
+        "values": [
+          "—",
+          "—",
+          "—",
+          "—",
+          "Cert Committee"
+        ]
+      }
+    ],
+    "longTermTitle": "Long-term governance",
+    "ecosystemTitle": "Module ecosystem",
+    "ecosystemBody": "WILD, Candidate, and Commercial tiers — how Community registry relates to the Hub Marketplace, Program Fund, and jurisdiction cohorts.",
+    "ctaEcosystem": "Module ecosystem",
+    "ctaCommittees": "Committees",
+    "ctaExperts": "Expert directory",
+    "ctaCompliance": "Compliance registry",
+    "ctaOpenness": "Openness & asset protection",
+    "reviewQueueDesc": "As committee chair or reviewer, approve module role and membership applications from each committee's review queue."
+  },
+  "modulesPage": {
+    "title": "Module Registry",
+    "lead": "Accounting, contracts, IP, ISO13485, J-SOX, research, governance — developed, reviewed, and standardized per module.",
+    "ctaApplyMaintainer": "Browse modules to apply",
+    "ctaJoin": "Join to contribute",
+    "proposeCta": "Propose a new module",
+    "proposeLead": "Register a module you are building. It appears in the registry as a community proposal (unreviewed at first). Disclaimer required.",
+    "proposeLink": "Propose / register",
+    "wildEmpty": "Unreviewed modules:",
+    "wildRegisterLink": "register",
+    "emptySeedHint": "Module committees appear after modules are registered in the registry.",
+    "badgeUnreviewed": "Unreviewed",
+    "badgeMaintainerWanted": "Maintainer wanted",
+    "githubCta": "GitHub integration",
+    "searchPlaceholder": "e.g. contracts, accounting, inventory",
+    "searchEmpty": "No modules match your search.",
+    "filterAll": "All",
+    "resultCount": "{count} modules",
+    "recommendedTitle": "Recommended for newcomers",
+    "recommendedSub": "Three modules to explore first — no login required.",
+    "communityMaintainerLabel": "Community maintainer",
+    "maintainerLabel": "Maintainer",
+    "ecosystemTitle": "Trust tiers vs quality lifecycle",
+    "ecosystemLead": "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.",
+    "ecosystemCta": "Module ecosystem guide"
+  },
+  "agentsPage": {
+    "title": "Agent Registry",
+    "lead": "Core Steward OS agents — executive, finance, compliance, and operations roles that orchestrate human-readable rules alongside modules.",
+    "ctaModules": "Browse modules",
+    "ctaLearning": "Learn Steward OS",
+    "searchPlaceholder": "Search by name, role, or domain…",
+    "searchEmpty": "No agents match your search.",
+    "filterAll": "All",
+    "resultCount": "{count} agents",
+    "viewAgent": "View agent",
+    "badgeCore": "Core agent",
+    "detailBack": "← Agent registry",
+    "detailDomainLabel": "Domain",
+    "detailIdLabel": "Agent ID",
+    "detailDescTitle": "Role",
+    "relatedModulesCta": "Browse related modules",
+    "githubConnectCta": "Connect GitHub",
+    "joinMemberCta": "Join as member",
+    "joinMemberDone": "Member",
+    "joinMemberSignIn": "Sign in to join",
+    "joinMemberSubmitting": "Joining…",
+    "joinMemberError": "Could not join this agent.",
+    "manifestPathLabel": "Manifest path",
+    "domainLabels": {
+      "governance": "Governance",
+      "finance": "Finance & legal",
+      "operations": "Operations"
+    },
+    "entries": {
+      "executive": {
+        "name": "Executive Steward",
+        "description": "Coordinates organizational priorities, delegates authority, and keeps cross-module decisions auditable."
+      },
+      "secretary": {
+        "name": "Secretary",
+        "description": "Manages documents, meeting records, and official communications between organizations."
+      },
+      "finance": {
+        "name": "Finance",
+        "description": "Handles accounting, treasury, and financial reporting aligned with finance modules."
+      },
+      "contract": {
+        "name": "Contract",
+        "description": "Supports contract lifecycle, legal review, and obligation tracking across parties."
+      },
+      "compliance": {
+        "name": "Compliance",
+        "description": "Monitors regulatory requirements, controls, and audit readiness."
+      },
+      "operations": {
+        "name": "Operations",
+        "description": "Runs day-to-day workflows, handoffs, and operational follow-through."
+      }
+    }
+  }
+}

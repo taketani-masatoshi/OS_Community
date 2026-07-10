@@ -1,0 +1,15 @@
+# southwood.cloud → Cloud stack (Tunnel bypasses Caddy TLS; Host header routes org subdomains)
+# cloud-control :8080 handles control.* and {org}.* ; cloud-dash :8082 handles dash.*
+
+tunnel: c66d11fa-f940-4892-a232-408bf755a79e
+
+ingress:
+  - hostname: control.southwood.cloud
+    service: http://localhost:8080
+  - hostname: dash.southwood.cloud
+    service: http://localhost:8082
+  - hostname: demo.southwood.cloud
+    service: http://localhost:8080
+  - hostname: "*.southwood.cloud"
+    service: http://localhost:8080
+  - service: http_status:404

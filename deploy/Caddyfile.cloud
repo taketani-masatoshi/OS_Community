@@ -1,0 +1,52 @@
+# southwood.cloud — local dev HTTPS (Caddy internal CA)
+# Cloudflare Tunnel in production points to CLOUD_HTTPS_PORT (default 8443).
+
+{
+	auto_https off
+}
+
+(common) {
+	encode gzip
+}
+
+:443 {
+	tls internal
+
+	import common
+
+	@control host control.{$CLOUD_DOMAIN:southwood.cloud}
+	handle @control {
+		reverse_proxy cloud-control:8080 {
+			header_up Host {host}
+			header_up X-Forwarded-Host {host}
+			header_up X-Forwarded-Proto https
+		}
+	}
+
+	@dash host dash.{$CLOUD_DOMAIN:southwood.cloud}
+	handle @dash {
+		reverse_proxy cloud-dash:8082 {
+			header_up Host {host}
+			header_up X-Forwarded-Host {host}
+			header_up X-Forwarded-Proto https
+		}
+	}
+
+	@org host *.{$CLOUD_DOMAIN:southwood.cloud}
+	handle @org {
+		reverse_proxy cloud-control:8080 {
+			header_up Host {host}
+			header_up X-Forwarded-Host {host}
+			header_up X-Forwarded-Proto https
+		}
+	}
+
+	handle {
+		reverse_proxy cloud-control:8080
+	}
+}
+
+:80 {
+	import common
+	redir https://{host}{uri} permanent
+}

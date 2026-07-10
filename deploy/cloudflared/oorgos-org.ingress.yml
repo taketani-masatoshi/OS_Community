@@ -1,0 +1,9 @@
+# community.oorgos.org → Community web (host port 3000)
+# Apex/www on Vercel — docs/oorgos-subdomain-setup.md
+
+tunnel: acca19b1-31b7-47c8-8a3f-fb80a71e5a2c
+
+ingress:
+  - hostname: community.oorgos.org
+    service: http://host.docker.internal:3000
+  - service: http_status:404

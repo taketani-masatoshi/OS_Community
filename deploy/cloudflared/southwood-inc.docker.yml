@@ -1,0 +1,10 @@
+# southwood.inc → Community web (Docker host port 3000)
+tunnel: d9ac4525-317d-4a20-b754-2f5f09079a18
+credentials-file: /etc/cloudflared/creds/d9ac4525-317d-4a20-b754-2f5f09079a18.json
+
+ingress:
+  - hostname: southwood.inc
+    service: http://host.docker.internal:3000
+  - hostname: www.southwood.inc
+    service: http://host.docker.internal:3000
+  - service: http_status:404

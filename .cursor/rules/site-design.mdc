@@ -1,0 +1,42 @@
+---
+description: ホーム基準のサイト全体デザイン（カード・ボタン・リンク）
+alwaysApply: true
+---
+
+# サイト UI（ホーム基準）
+
+## カードナビ
+
+- 遷移先が1つのとき: `Link.lf-card-link-wrap` > `div.lf-card.lf-card-full`（タイトル + 説明のみ）
+- カード内に「詳しく→」「モジュール→」などの冗長ラベルは付けない
+- アクセント左線: `module-card-accent`（開始セクション用）
+
+## ボタン
+
+- 主要 CTA: `btn btn-primary btn-sm`（ネイビー塗り）
+- ダークヒーロー内: `btn-outline-light`（ログイン等の副次のみ）
+- 戻る・フィルタ非選択: `btn btn-ghost btn-sm`
+- `btn-outline` は管理・キャンセル等の例外のみ。CTA に並べない
+
+## テキストリンク
+
+- 本文中: クラスなし（`.page-wrap a:not([class])` がネイビー）
+- 独立 CTA: `lf-card-link` または `btn btn-primary btn-sm`（見た目同一）
+- 末尾の `→` は付けない
+
+## セクション
+
+- ヒーロー: `lf-hero lf-hero-compact` + `lf-hero-title-sm` + `lf-hero-lead`
+- 本文: `page-wrap` 内 `section-title` / `page-desc` / `lf-card-grid`
+- 下部 CTA 行: `section-cta` または `section-actions`
+
+## グリッド・余白
+
+- `.cursor/rules/grid-discipline.mdc` — 8px スケール・カラム・縦リズムの統制基準
+- 余白は `globals.css` の `--space-*` を使用（任意 px は避ける）
+- カード列は `lf-card-grid`（`minmax(260px, 1fr)` + `gap: var(--grid-gap)`）
+
+## ボトムナビ
+
+- `.cursor/rules/bottom-nav-style.mdc` を参照
+- `.cursor/rules/icon-nav-pattern.mdc` — チップ共通 CSS・5 項目固定

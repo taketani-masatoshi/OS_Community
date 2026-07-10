@@ -1,0 +1,81 @@
+{
+  "moduleType": {
+    "BUSINESS": "Módulo de Negocio",
+    "JURISDICTION": "Paquete de Organización",
+    "WILD": "Comunidad / No revisado"
+  },
+  "moduleRole": {
+    "MAINTAINER": "Responsable de módulo",
+    "DEPUTY": "Adjunto",
+    "CONTRIBUTOR": "Contribuidor"
+  },
+  "siteRole": {
+    "GUEST": "Invitado",
+    "MEMBER": "Miembro",
+    "CONTRIBUTOR": "Contribuidor",
+    "DEPUTY": "Adjunto",
+    "ADMIN": "Administrador",
+    "CERT_REVIEWER": "Revisor de certificación",
+    "MAINTAINER": "Mantenedor"
+  },
+  "communityRoles": [
+    {
+      "id": "USER",
+      "title": "User",
+      "titleLocal": "Usuario",
+      "desc": "Adoptar y usar OpenOrgOS."
+    },
+    {
+      "id": "CONTRIBUTOR",
+      "title": "Contributor",
+      "titleLocal": "Contribuidor",
+      "desc": "Reglas, código, documentación, traducciones — bienvenidos independientemente de especialidad o región."
+    },
+    {
+      "id": "REVIEWER",
+      "title": "Reviewer",
+      "titleLocal": "Revisor",
+      "desc": "Revisiones de calidad — participación ampliamente abierta."
+    },
+    {
+      "id": "MAINTAINER",
+      "title": "Maintainer",
+      "titleLocal": "Responsable de módulo",
+      "desc": "Mantener un módulo específico."
+    },
+    {
+      "id": "COMMITTEE",
+      "title": "Committee Member",
+      "titleLocal": "Miembro del Comité",
+      "desc": "Desarrollar y aprobar estándares. Los comités de dominio de origen son el predeterminado; los puestos entre regiones requieren experiencia puente y revisión."
+    },
+    {
+      "id": "FELLOW",
+      "title": "Foundation Fellow",
+      "titleLocal": "Fellow de la fundación",
+      "desc": "Impacto a largo plazo en la comunidad."
+    }
+  ],
+  "promotionFlow": [
+    {
+      "from": "Contribuidor",
+      "to": "Revisor",
+      "criteria": "Contribuciones de revisión sostenidas y juicios de calidad."
+    },
+    {
+      "from": "Revisor",
+      "to": "Responsable de módulo",
+      "criteria": "Experiencia en el dominio y compromiso de mantenimiento."
+    },
+    {
+      "from": "Responsable de módulo",
+      "to": "Miembro del Comité",
+      "criteria": "Contribuciones a estándares, nominación, revisión de gobernanza (entre regiones: dominio alineado y experiencia puente)."
+    },
+    {
+      "from": "Miembro del Comité",
+      "to": "Fellow de la fundación",
+      "criteria": "Impacto a largo plazo en la comunidad."
+    }
+  ]
+}

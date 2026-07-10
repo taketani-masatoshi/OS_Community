@@ -1,0 +1,14 @@
+{
+  "name": "@os-community/cloud-dash",
+  "private": true,
+  "version": "0.1.0",
+  "description": "southwood.cloud L3 read-only dashboard (dash.southwood.cloud)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

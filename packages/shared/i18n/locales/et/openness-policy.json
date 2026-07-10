@@ -1,0 +1,75 @@
+{
+  "title": "Avatuse ulatus ja ettevõtte varade kaitse",
+  "subtitle": "OS, mis standardiseerib mittekonkurentsivaldkonnad, et ressursid fokuseeruksid sellele, mis sind eristab",
+  "philosophyTitle": "Põhifilosoofia",
+  "philosophyLead": "OpenOrgOS ei püüa võtta ära ettevõtte konkurentsieelist.",
+  "philosophyGoal": "Meie eesmärk on pakkuda ühist alust, mida organisatsioonid vajavad toimimiseks — mitte ühtlustada seda, mis teeb iga ettevõtte ainulaadseks.",
+  "standardizeTitle": "Valdkonnad, mida püüame standardiseerida",
+  "standardizeIntro": "Organisatsiooniliste funktsioonide puhul, mis on paljudele ettevõtetele ühised, julgustame neid võimalusel mooduliseerima ja kogukonnale tagasi andma. Need on äritegevust toetav ühine infrastruktuur — mitte konkurentsieelise allikad.",
+  "standardizeItems": [
+    "Raamatupidamine",
+    "Personalijuhtimine",
+    "Tööaja arvestus",
+    "Lepinguhaldus",
+    "IP-haldus",
+    "Töövoog",
+    "Kinnitusahelad",
+    "Juhtimine",
+    "Sisekontroll",
+    "ISO-nõuetele vastavus",
+    "ISMS-nõuetele vastavus",
+    "Auditiineks valmisolek",
+    "Toetusfondide haldamine",
+    "Juhatuse toimingud",
+    "Aktsionärisuhted"
+  ],
+  "nonStandardizeTitle": "Valdkonnad, mida me ei standardiseeri",
+  "nonStandardizeIntro": "Varad, mis määravad ettevõtespetsiifilise konkurentsieelise, tuleks hoida OpenOrgOS-ist eraldi ja hallata iga ettevõte ise. OpenOrgOS ei nõua kunagi nende jagamist ega avaldamist.",
+  "nonStandardizeItems": [
+    "Tootedesain",
+    "Joonised",
+    "CAD-andmed",
+    "AI-mudelid",
+    "Treeningandmed",
+    "Kliendiandmed",
+    "Tootmise oskusteave",
+    "Müügi oskusteave",
+    "Uurimisandmed",
+    "Patenteeritud algoritmid",
+    "Patentstrateegia",
+    "Äristrateegia",
+    "Patenteeritud äriprotsessid"
+  ],
+  "privateModuleTitle": "Privaatsed moodulid",
+  "privateModuleIntro": "OpenOrgOS-il ehitatud moodulid ei pea olema avalikud. Ettevõtted võivad vabalt kombineerida:",
+  "privateModuleTypes": [
+    {
+      "label": "Kogukonna moodul",
+      "desc": "Avalik — kogukonnale panustatud"
+    },
+    {
+      "label": "Privaatne moodul",
+      "desc": "Privaatne — ettevõtte sisene"
+    }
+  ],
+  "privateModuleNote": "OpenOrgOS tervitab heade moodulite tagasi andmist kogukonnale, kuid ei nõua seda.",
+  "principlesTitle": "Alusprintsiip",
+  "principlesNot": "OpenOrgOS ei püüa jagada konkurentsivaldkondi.",
+  "principlesYes": "Meie eesmärk on maailm, kus mittekonkurentsivaldkonnad on jagatud, et iga ettevõte saaks keskenduda oma tegelikule konkurentsieelisele.",
+  "messageTitle": "Sõnum",
+  "messageLead": "OpenOrgOS-i kasutuselevõtt ei tee iga ettevõtet ühesuguseks.",
+  "messageSame": "Ühistatakse ainult organisatsiooni toimimise alus. See, mis määrab ettevõtte väärtuse, jääb kaitstud:",
+  "messageProtectedTitle": "Kaitstud ettevõtte varad",
+  "messageProtectedItems": [
+    "Tehnoloogia",
+    "Tooted",
+    "Kliendid",
+    "Oskusteave",
+    "Bränd",
+    "Strateegia"
+  ],
+  "messageBody": "OpenOrgOS ei eemalda seda, mis teeb teie ettevõtte ainulaadseks.",
+  "messageClosing": "See on alus, mis laseb teil koonduda valdkondadele, kus ainulaadsus on oluline.",
+  "taglineNot": "OpenOrgOS ei ole OS konkurentsivaldkondade standardiseerimiseks.",
+  "taglineYes": "OpenOrgOS on OS mittekonkurentsivaldkondade standardiseerimiseks ja ressursside fokuseerimiseks konkurentsivaldkondadele."
+}

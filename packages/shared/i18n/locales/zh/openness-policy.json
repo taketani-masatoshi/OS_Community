@@ -1,0 +1,75 @@
+{
+  "title": "公开范围与企业资产保护政策",
+  "subtitle": "标准化组织间通信的非竞争领域，使各组织集中于竞争领域",
+  "philosophyTitle": "基本理念",
+  "philosophyLead": "OpenOrgOS 不以夺取组织竞争优势为目的。",
+  "philosophyGoal": "我们提供组织边界间可验证状态交换的共通协议。业务逻辑、法律解释与组织行为委托给各国或各域委员会。",
+  "standardizeTitle": "力求标准化的领域",
+  "standardizeIntro": "对多数组织间关系共通的协议扩展（identity exchange、authority delegation、审计联动等），尽可能模块化并回馈社区。这些不是竞争优势，而是支撑组织间通信的共通基础设施。",
+  "standardizeItems": [
+    "会计",
+    "人事",
+    "考勤",
+    "合同管理",
+    "知识产权管理",
+    "工作流",
+    "审批",
+    "治理",
+    "内部控制",
+    "ISO 合规",
+    "ISMS 合规",
+    "审计应对",
+    "资助管理",
+    "董事会运作",
+    "股东关系"
+  ],
+  "nonStandardizeTitle": "不力求标准化的领域",
+  "nonStandardizeIntro": "构成企业特有竞争优势的资产应与 OpenOrgOS 分离，由企业自行管理。OpenOrgOS 不要求共享或公开这些内容。",
+  "nonStandardizeItems": [
+    "产品设计",
+    "图纸",
+    "CAD 数据",
+    "AI 模型",
+    "训练数据",
+    "客户数据",
+    "制造诀窍",
+    "销售诀窍",
+    "研究数据",
+    "专有算法",
+    "专利战略",
+    "事业战略",
+    "专有业务流程"
+  ],
+  "privateModuleTitle": "Private Module 的理念",
+  "privateModuleIntro": "在 OpenOrgOS 上开发的模块不必公开。企业可自由组合：",
+  "privateModuleTypes": [
+    {
+      "label": "社区模块",
+      "desc": "公开模块 — 回馈社区"
+    },
+    {
+      "label": "私有模块",
+      "desc": "非公开模块 — 仅限企业内部"
+    }
+  ],
+  "privateModuleNote": "OpenOrgOS 欢迎将优质模块回馈社区，但不强制。",
+  "principlesTitle": "OpenOrgOS 的基本原则",
+  "principlesNot": "OpenOrgOS 不以「共享竞争领域」为目标。",
+  "principlesYes": "我们追求「共享非竞争领域，使各企业集中于本来的竞争领域」的世界。",
+  "messageTitle": "讯息",
+  "messageLead": "导入 OpenOrgOS 后，企业不会变成同一家公司。",
+  "messageSame": "被共通化的是协议基盘；决定组织价值的以下资产仍受保护：",
+  "messageProtectedTitle": "受保护的企业资产",
+  "messageProtectedItems": [
+    "技术",
+    "产品",
+    "客户",
+    "诀窍",
+    "品牌",
+    "战略"
+  ],
+  "messageBody": "OpenOrgOS 不会夺走企业的独特性。",
+  "messageClosing": "它是让企业能在应发挥独特性的领域集中资源的基盘。",
+  "taglineNot": "OpenOrgOS 不是「为标准化竞争领域而存在的内部运营 OS」。",
+  "taglineYes": "OpenOrgOS 是「标准化组织间通信非竞争领域，使各组织集中于竞争领域」的全球协议。"
+}

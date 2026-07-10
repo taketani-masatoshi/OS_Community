@@ -1,0 +1,85 @@
+{
+  "moduleType": {
+    "BUSINESS": "Business Module",
+    "JURISDICTION": "Organization Pack",
+    "WILD": "Community proposal"
+  },
+  "moduleRole": {
+    "MAINTAINER": "Maintainer",
+    "DEPUTY": "Co-maintainer",
+    "CONTRIBUTOR": "Contributor"
+  },
+  "siteRole": {
+    "GUEST": "Guest",
+    "MEMBER": "Member",
+    "CONTRIBUTOR": "Contributor",
+    "MAINTAINER": "Maintainer",
+    "DEPUTY": "Co-maintainer",
+    "ADMIN": "Administrator",
+    "CERT_REVIEWER": "Certification reviewer"
+  },
+  "certification": {
+    "STEWARD_OPERATOR": "OpenOrgOS Operator (OOO)",
+    "STEWARD_DESIGNER": "OpenOrgOS Designer (OOD)"
+  },
+  "communityRoles": [
+    {
+      "id": "USER",
+      "title": "User",
+      "titleLocal": "User",
+      "desc": "Adopt and use OpenOrgOS."
+    },
+    {
+      "id": "CONTRIBUTOR",
+      "title": "Contributor",
+      "titleLocal": "Contributor",
+      "desc": "Rules, code, docs, translations — welcome regardless of specialty or region."
+    },
+    {
+      "id": "REVIEWER",
+      "title": "Reviewer",
+      "titleLocal": "Reviewer",
+      "desc": "Quality reviews — broadly open participation."
+    },
+    {
+      "id": "MAINTAINER",
+      "title": "Maintainer",
+      "titleLocal": "Maintainer",
+      "desc": "Maintain a specific module."
+    },
+    {
+      "id": "COMMITTEE",
+      "title": "Committee Member",
+      "titleLocal": "Committee Member",
+      "desc": "Develop and approve standards. Home domain committees are default; cross-region seats require bridge expertise and review."
+    },
+    {
+      "id": "FELLOW",
+      "title": "Foundation Fellow",
+      "titleLocal": "Foundation Fellow",
+      "desc": "Long-term community impact."
+    }
+  ],
+  "promotionFlow": [
+    {
+      "from": "Contributor",
+      "to": "Reviewer",
+      "criteria": "Sustained review contributions and quality judgments."
+    },
+    {
+      "from": "Reviewer",
+      "to": "Maintainer",
+      "criteria": "Domain expertise and maintenance commitment."
+    },
+    {
+      "from": "Maintainer",
+      "to": "Committee Member",
+      "criteria": "Standard contributions, nomination, governance review (cross-region: aligned domain & bridge expertise)."
+    },
+    {
+      "from": "Committee Member",
+      "to": "Foundation Fellow",
+      "criteria": "Long-term impact on the community."
+    }
+  ]
+}

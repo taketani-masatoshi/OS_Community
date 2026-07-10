@@ -1,0 +1,723 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum SiteRole {
+  GUEST
+  MEMBER
+  CONTRIBUTOR
+  MAINTAINER
+  DEPUTY
+  ADMIN
+  CERT_REVIEWER
+}
+
+enum ModuleType {
+  BUSINESS
+  JURISDICTION
+  WILD
+}
+
+enum TrustLevel {
+  COMMUNITY
+  WILD
+}
+
+enum ModuleRoleType {
+  MAINTAINER
+  DEPUTY
+  CONTRIBUTOR
+}
+
+enum RoleRequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum CommitteeType {
+  STANDARD
+  DOMAIN
+  MODULE
+}
+
+enum CommitteeMemberRole {
+  CHAIR
+  MEMBER
+  REVIEWER
+  OBSERVER
+}
+
+enum CommitteeReviewAction {
+  MEMBERSHIP_APPLIED
+  MEMBERSHIP_APPROVED
+  MEMBERSHIP_REJECTED
+  MODULE_ROLE_APPROVED
+  MODULE_ROLE_REJECTED
+  CHAIR_NOMINATED
+  CHAIR_APPROVED
+  CHAIR_REJECTED
+}
+
+enum CommitteeMembershipDesiredRole {
+  MEMBER
+  REVIEWER
+}
+
+enum CertificationType {
+  STEWARD_OPERATOR
+  STEWARD_DESIGNER
+}
+
+enum CertificationStatus {
+  PENDING
+  UNDER_REVIEW
+  APPROVED
+  REJECTED
+  EXPIRED
+  REVOKED
+}
+
+enum UserAccountStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+enum UserStatusAuditAction {
+  SUSPEND
+  RESTORE
+  DELETE
+}
+
+enum ComplianceRegistryCategory {
+  REGULATED_PROFESSION
+  ISO_AUDIT_QUALIFICATION
+  COMPLIANCE_SPECIALIST
+}
+
+enum ComplianceChecklistType {
+  CONFLICT_OF_INTEREST
+  SANCTIONS_SCREENING
+  ANTI_SOCIAL_FORCES
+  IMPORT_EXPORT_CONTROLS
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  githubLogin   String?   @unique
+  publicSlug    String?   @unique
+  siteRole      SiteRole  @default(MEMBER)
+  accountStatus UserAccountStatus @default(ACTIVE)
+  deletedAt     DateTime?
+  bio           String?   @db.Text
+  specialty     String?
+  region        String?
+  organization  String?
+  profileCompletedAt DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts              Account[]
+  sessions              Session[]
+  moduleRoles           ModuleRole[]
+  moduleRoleRequests    ModuleRoleRequest[]    @relation("Requester")
+  reviewedRoleRequests  ModuleRoleRequest[]    @relation("Reviewer")
+  agentMembers          AgentMember[]
+  certifications        Certification[]
+  certApplications      CertificationApplication[] @relation("Applicant")
+  reviewedApplications  CertificationApplication[] @relation("CertReviewer")
+  wildModuleRegistrations WildModuleRegistration[]
+  githubConnections     GitHubConnection[]
+  githubPermissionGrants GitHubPermissionGrant[]
+  professionalProfile   ProfessionalProfile?
+  committeeMemberships  CommitteeMember[]
+  committeeMembershipRequests CommitteeMembershipRequest[] @relation("CommitteeMembershipApplicant")
+  reviewedCommitteeMembershipRequests CommitteeMembershipRequest[] @relation("CommitteeMembershipReviewer")
+  committeeReviewsReceived CommitteeReviewAuditLog[] @relation("CommitteeReviewTarget")
+  committeeReviewsMade CommitteeReviewAuditLog[] @relation("CommitteeReviewActor")
+  academyEnrollments    AcademyEnrollment[]
+  academyCertificates   AcademyCertificate[]
+  roleChangesReceived   UserRoleAuditLog[] @relation("RoleChangeTarget")
+  roleChangesMade       UserRoleAuditLog[] @relation("RoleChangeActor")
+  statusChangesReceived UserStatusAuditLog[] @relation("StatusChangeTarget")
+  statusChangesMade     UserStatusAuditLog[] @relation("StatusChangeActor")
+  expertiseTags         UserExpertise[]
+  chairNominations      CommitteeChairNomination[] @relation("ChairNominee")
+  chairNominationsMade  CommitteeChairNomination[] @relation("ChairNominator")
+  chairNominationsReviewed CommitteeChairNomination[] @relation("ChairNominationReviewer")
+  complianceCredentialHolders ComplianceCredentialHolder[]
+}
+
+model ProfessionalProfile {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  linkedinId   String   @unique
+  vanityName   String?
+  headline     String?
+  organization String?
+  profileUrl   String?
+  verifiedAt   DateTime @default(now())
+  rawProfile   Json?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserStatusAuditLog {
+  id        String                @id @default(cuid())
+  userId    String
+  actorId   String
+  action    UserStatusAuditAction
+  createdAt DateTime              @default(now())
+
+  user  User @relation("StatusChangeTarget", fields: [userId], references: [id], onDelete: Cascade)
+  actor User @relation("StatusChangeActor", fields: [actorId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([createdAt])
+}
+
+model UserRoleAuditLog {
+  id        String   @id @default(cuid())
+  userId    String
+  actorId   String
+  oldRole   SiteRole
+  newRole   SiteRole
+  createdAt DateTime @default(now())
+
+  user  User @relation("RoleChangeTarget", fields: [userId], references: [id], onDelete: Cascade)
+  actor User @relation("RoleChangeActor", fields: [actorId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([createdAt])
+}
+
+enum LessonProgressStatus {
+  STARTED
+  COMPLETED
+}
+
+enum ExamAttemptStatus {
+  IN_PROGRESS
+  PASSED
+  FAILED
+}
+
+model AcademyEnrollment {
+  id                String    @id @default(cuid())
+  userId            String
+  trackId           String
+  curriculumVersion String
+  startedAt         DateTime  @default(now())
+  completedAt       DateTime?
+
+  user           User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonProgress LessonProgress[]
+  examAttempts   ExamAttempt[]
+
+  @@unique([userId, trackId, curriculumVersion])
+  @@index([userId, trackId])
+}
+
+model LessonProgress {
+  id           String               @id @default(cuid())
+  enrollmentId String
+  lessonId     String
+  status       LessonProgressStatus
+  completedAt  DateTime?
+  updatedAt    DateTime             @updatedAt
+  metadata     Json?
+
+  enrollment AcademyEnrollment @relation(fields: [enrollmentId], references: [id], onDelete: Cascade)
+
+  @@unique([enrollmentId, lessonId])
+  @@index([lessonId])
+}
+
+model ExamAttempt {
+  id                String            @id @default(cuid())
+  enrollmentId      String
+  bankId            String
+  formId            String
+  curriculumVersion String
+  score             Int
+  passScore         Int
+  passed            Boolean
+  status            ExamAttemptStatus
+  answers           Json
+  itemResults       Json?
+  startedAt         DateTime          @default(now())
+  submittedAt       DateTime?
+
+  enrollment AcademyEnrollment @relation(fields: [enrollmentId], references: [id], onDelete: Cascade)
+
+  @@index([enrollmentId, bankId, formId])
+}
+
+model AcademyCertificate {
+  id                String   @id @default(cuid())
+  userId            String
+  certificationId   String
+  certificateNo     String   @unique
+  curriculumVersion String
+  issuedAt          DateTime @default(now())
+  metadata          Json?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, certificationId, curriculumVersion])
+  @@index([userId])
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Module {
+  id              String      @id @default(cuid())
+  slug            String      @unique
+  name            String
+  description     String?
+  moduleType      ModuleType
+  trustLevel      TrustLevel  @default(COMMUNITY)
+  readinessTier   String?
+  githubRepo      String?
+  manifestPath    String?
+  version         String?
+  ownerOrg        String?
+  maintainers     String[]    @default([])
+  jurisdictionCode String?
+  metadata        Json?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  roles           ModuleRole[]
+  roleRequests    ModuleRoleRequest[]
+  committee       Committee?
+  domainAssignments ModuleDomainCommittee[]
+}
+
+model ModuleRole {
+  id        String         @id @default(cuid())
+  moduleId  String
+  userId    String
+  role      ModuleRoleType
+  termStart DateTime       @default(now())
+  termEnd   DateTime?
+  createdAt DateTime       @default(now())
+
+  module Module @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([moduleId, userId, role])
+}
+
+model ModuleRoleRequest {
+  id          String            @id @default(cuid())
+  moduleId    String
+  userId      String
+  role        ModuleRoleType
+  message     String?
+  status      RoleRequestStatus @default(PENDING)
+  reviewNote  String?
+  reviewerId  String?
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  user     User   @relation("Requester", fields: [userId], references: [id], onDelete: Cascade)
+  reviewer User?  @relation("Reviewer", fields: [reviewerId], references: [id])
+}
+
+model Certification {
+  id              String              @id @default(cuid())
+  userId          String
+  type            CertificationType
+  certificateNo   String              @unique
+  status          CertificationStatus @default(APPROVED)
+  issuedAt        DateTime            @default(now())
+  expiresAt       DateTime
+  revokedAt       DateTime?
+  notes           String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model CertificationApplication {
+  id          String              @id @default(cuid())
+  userId      String
+  type        CertificationType
+  status      CertificationStatus @default(PENDING)
+  statement   String?
+  reviewNote  String?
+  reviewerId  String?
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+
+  user     User  @relation("Applicant", fields: [userId], references: [id], onDelete: Cascade)
+  reviewer User? @relation("CertReviewer", fields: [reviewerId], references: [id])
+}
+
+model WildModuleRegistration {
+  id              String   @id @default(cuid())
+  userId          String
+  slug            String
+  name            String
+  repoUrl         String
+  manifestUrl     String?
+  authorName      String
+  description     String?
+  disclaimerAcceptedAt DateTime
+  createdAt       DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([slug])
+}
+
+model GitHubConnection {
+  id        String   @id @default(cuid())
+  userId    String
+  repoUrl   String
+  repoOwner String
+  repoName  String
+  isDefault Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, repoUrl])
+}
+
+model Agent {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  domain       String
+  githubRepo   String?
+  manifestPath String?
+  version      String?
+  metadata     Json?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model AgentMember {
+  id        String   @id @default(cuid())
+  agentSlug String
+  userId    String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([agentSlug, userId])
+  @@index([userId])
+}
+
+model GitHubAppInstallation {
+  id             String   @id @default(cuid())
+  installationId Int      @unique
+  accountLogin   String
+  accountType    String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model GitHubPermissionGrant {
+  id           String   @id @default(cuid())
+  userId       String
+  githubLogin  String
+  scope        String
+  target       String
+  level        String
+  sourceKey    String
+  status       String
+  lastError    String?
+  lastSyncedAt DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, scope, target, sourceKey])
+  @@index([userId])
+  @@index([githubLogin])
+}
+
+model Committee {
+  id               String         @id @default(cuid())
+  slug             String         @unique
+  name             String
+  type             CommitteeType
+  moduleId         String?        @unique
+  domainKey        String?
+  jurisdictionCode String?
+  expertDomainKey  String?
+  description      String?
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+
+  module             Module?                      @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  members            CommitteeMember[]
+  governedModules    ModuleDomainCommittee[]
+  membershipRequests CommitteeMembershipRequest[]
+  reviewAuditLogs    CommitteeReviewAuditLog[]
+  chairNominations   CommitteeChairNomination[]
+
+  @@unique([jurisdictionCode, expertDomainKey])
+}
+
+model ModuleDomainCommittee {
+  id          String @id @default(cuid())
+  moduleId    String
+  committeeId String
+
+  module    Module    @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  committee Committee @relation(fields: [committeeId], references: [id], onDelete: Cascade)
+
+  @@unique([moduleId, committeeId])
+}
+
+model CommitteeMember {
+  id          String              @id @default(cuid())
+  committeeId String
+  userId      String
+  role        CommitteeMemberRole @default(MEMBER)
+  termStart   DateTime            @default(now())
+  termEnd     DateTime?
+  createdAt   DateTime            @default(now())
+
+  committee Committee @relation(fields: [committeeId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([committeeId, userId])
+}
+
+model CommitteeMembershipRequest {
+  id                   String                         @id @default(cuid())
+  committeeId          String
+  userId               String
+  desiredRole          CommitteeMembershipDesiredRole @default(MEMBER)
+  message              String?
+  bridgeExpertise      String?
+  bridgeRegion         String?
+  nominatorName        String?
+  conflictAcceptedAt   DateTime?
+  status               RoleRequestStatus              @default(PENDING)
+  reviewNote           String?
+  reviewerId           String?
+  createdAt            DateTime                       @default(now())
+  updatedAt            DateTime                       @updatedAt
+
+  committee Committee @relation(fields: [committeeId], references: [id], onDelete: Cascade)
+  user      User      @relation("CommitteeMembershipApplicant", fields: [userId], references: [id], onDelete: Cascade)
+  reviewer  User?     @relation("CommitteeMembershipReviewer", fields: [reviewerId], references: [id])
+
+  @@index([committeeId, status])
+  @@index([userId, status])
+}
+
+model ExpertiseTag {
+  id               String   @id @default(cuid())
+  slug             String   @unique
+  name             String
+  jurisdictionCode String?
+  expertDomainKey  String?
+  createdAt        DateTime @default(now())
+
+  users UserExpertise[]
+}
+
+model UserExpertise {
+  id         String   @id @default(cuid())
+  userId     String
+  tagId      String
+  verifiedAt DateTime @default(now())
+
+  user User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tag  ExpertiseTag @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, tagId])
+  @@index([tagId])
+}
+
+model CommitteeChairNomination {
+  id              String            @id @default(cuid())
+  committeeId     String
+  candidateUserId String
+  nominatedById   String
+  statement       String?
+  termMonths      Int               @default(24)
+  status          RoleRequestStatus @default(PENDING)
+  reviewNote      String?
+  reviewerId      String?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  committee Committee @relation(fields: [committeeId], references: [id], onDelete: Cascade)
+  candidate User      @relation("ChairNominee", fields: [candidateUserId], references: [id], onDelete: Cascade)
+  nominator User      @relation("ChairNominator", fields: [nominatedById], references: [id], onDelete: Cascade)
+  reviewer  User?     @relation("ChairNominationReviewer", fields: [reviewerId], references: [id])
+
+  @@index([committeeId, status])
+  @@index([candidateUserId, status])
+}
+
+model CommitteeReviewAuditLog {
+  id           String                @id @default(cuid())
+  committeeId  String
+  targetUserId String
+  actorId      String
+  action       CommitteeReviewAction
+  referenceId  String?
+  note         String?
+  createdAt    DateTime              @default(now())
+
+  committee Committee @relation(fields: [committeeId], references: [id], onDelete: Cascade)
+  target    User      @relation("CommitteeReviewTarget", fields: [targetUserId], references: [id], onDelete: Cascade)
+  actor     User      @relation("CommitteeReviewActor", fields: [actorId], references: [id], onDelete: Cascade)
+
+  @@index([committeeId, createdAt])
+  @@index([targetUserId, createdAt])
+}
+
+model ComplianceProfession {
+  id                   String                     @id @default(cuid())
+  slug                 String                     @unique
+  category             ComplianceRegistryCategory
+  jurisdictionCode     String?
+  name                 String
+  nameLocal            String?
+  description          String?                    @db.Text
+  regulatoryBody       String?
+  licenseRequired      Boolean                    @default(true)
+  relatedExpertDomainKey String?
+  sortOrder            Int                        @default(0)
+  createdAt            DateTime                   @default(now())
+  updatedAt            DateTime                   @updatedAt
+
+  credentialTypes ComplianceCredentialType[]
+
+  @@index([category, jurisdictionCode])
+}
+
+model ComplianceCredentialType {
+  id             String   @id @default(cuid())
+  professionId   String
+  slug           String   @unique
+  name           String
+  nameLocal      String?
+  issuingBody    String?
+  standardCode   String?
+  description    String?  @db.Text
+  validityYears  Int?
+  sortOrder      Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  profession ComplianceProfession       @relation(fields: [professionId], references: [id], onDelete: Cascade)
+  holders    ComplianceCredentialHolder[]
+
+  @@index([professionId])
+}
+
+model ComplianceCredentialHolder {
+  id                 String    @id @default(cuid())
+  credentialTypeId   String
+  userId             String?
+  holderName         String
+  holderOrganization String?
+  jurisdictionCode   String?
+  licenseNumber      String?
+  verifiedAt         DateTime?
+  expiresAt          DateTime?
+  publicProfile      Boolean   @default(false)
+  notes              String?   @db.Text
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  credentialType ComplianceCredentialType @relation(fields: [credentialTypeId], references: [id], onDelete: Cascade)
+  user           User?                    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([credentialTypeId])
+  @@index([userId])
+  @@index([jurisdictionCode])
+}
+
+model ComplianceChecklist {
+  id               String                  @id @default(cuid())
+  slug             String                  @unique
+  type             ComplianceChecklistType
+  jurisdictionCode String?
+  name             String
+  nameLocal        String?
+  description      String?                 @db.Text
+  expertRoleHint   String?
+  expertRoleHintLocal String?
+  version          String                  @default("1.0")
+  sortOrder        Int                     @default(0)
+  createdAt        DateTime                @default(now())
+  updatedAt        DateTime                @updatedAt
+
+  items ComplianceChecklistItem[]
+
+  @@index([type, jurisdictionCode])
+}
+
+model ComplianceChecklistItem {
+  id           String   @id @default(cuid())
+  checklistId  String
+  code         String
+  sortOrder    Int      @default(0)
+  title        String
+  titleLocal   String?
+  description  String?  @db.Text
+  required     Boolean  @default(true)
+  referenceUrl String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  checklist ComplianceChecklist @relation(fields: [checklistId], references: [id], onDelete: Cascade)
+
+  @@unique([checklistId, code])
+  @@index([checklistId, sortOrder])
+}

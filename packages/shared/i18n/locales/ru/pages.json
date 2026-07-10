@@ -1,0 +1,498 @@
+{
+  "ui": {
+    "role": "Роль",
+    "members": "Участники",
+    "name": "Имя",
+    "verify": "Проверить",
+    "none": "Нет",
+    "unknown": "Неизвестно",
+    "default": "по умолчанию",
+    "expert": "Эксперт",
+    "module": "Модуль",
+    "lifecycle": "Жизненный цикл",
+    "focus": "Фокус",
+    "renewal": "Продление",
+    "status": "Статус",
+    "action": "Действие"
+  },
+  "about": {
+    "title": "О OpenOrgOS",
+    "lead": "Open-source сообщество протокола — не ОС для внутреннего управления организацией.",
+    "scopeTitle": "Область применения",
+    "scopeBody": "Торговля между компаниями, университетские партнёрства, альянсы НКО, цепочки поставок — любые отношения, требующие проверяемого обмена через организационные границы.",
+    "visionTitle": "Видение",
+    "visionQuote": "OpenOrgOS стремится стать общим протоколом коммуникации между организациями.",
+    "governanceCta": "Модель управления →"
+  },
+  "aboutSub": {
+    "back": "← О нас",
+    "join": "Присоединиться к сообществу",
+    "notFound": "Страница не найдена",
+    "contact": {
+      "title": "Связаться с нами",
+      "body": "По вопросам сообщества используйте GitHub Issues. Данные арендаторов и операции отдельных организаций не входят в область поддержки."
+    },
+    "brand": {
+      "title": "Руководство по бренду OpenOrgOS",
+      "body": "Логотип, цвета и допустимое использование знаков OpenOrgOS. Только для сообщества; коммерческое использование — по предварительному согласованию."
+    },
+    "inclusion": {
+      "title": "Инклюзивность и доступность",
+      "body": "Мы приветствуем контрибьюторов из разных сфер деятельности, юрисдикций и специализаций. Мы постоянно улучшаем доступную документацию и интерфейс."
+    },
+    "careers": {
+      "title": "Участие",
+      "body": "Присоединяйтесь как Maintainer, Reviewer или Committee Member. Почётный вклад — не оплачиваемая работа."
+    }
+  },
+  "experts": {
+    "title": "Каталог экспертов",
+    "lead": "Публичный реестр мейнтейнеров и сертифицированных специалистов. Trust First.",
+    "maintainersTitle": "Мейнтейнеры",
+    "maintainersEmpty": "Мейнтейнеры ещё не зарегистрированы.",
+    "deputiesTitle": "Со-мейнтейнеры",
+    "certifiedTitle": "Сертифицированные специалисты",
+    "certifiedEmpty": " сертифицированные держатели будут отображаться здесь.",
+    "filterLabel": "Фильтр по слою идентичности",
+    "filterAll": "Все",
+    "filterLinkedIn": "LinkedIn подключён",
+    "filterGitHub": "Репозитории GitHub подключены",
+    "filterBoth": "Оба слоя",
+    "filterEmpty": "Нет экспертов по этим фильтрам.",
+    "filterClear": "Сбросить фильтры",
+    "registryCta": "Реестр соответствия и квалификаций"
+  },
+  "modules": {
+    "title": "Реестр модулей",
+    "lead": "Бухгалтерия, договоры, интеллектуальная собственность, ISO13485, J-SOX, исследования, управление — разрабатывается, проверяется и стандартизируется по каждому модулю.",
+    "ctaApplyMaintainer": "Подать заявку на роль Maintainer",
+    "ctaJoin": "Присоединиться и внести вклад",
+    "wildEmpty": "Непроверенные модули:",
+    "wildRegisterLink": "зарегистрировать",
+    "badgeUnreviewed": "Не проверен",
+    "badgeMaintainerWanted": "Ищем Maintainer",
+    "viewModule": "Просмотреть модуль →",
+    "githubCta": "Интеграция с GitHub →",
+    "emptySeedHint": "Модули появятся здесь после регистрации в реестре."
+  },
+  "moduleDetail": {
+    "backToRegistry": "← Реестр модулей",
+    "badgeUnreviewed": "Не проверен",
+    "wildWarningTitle": "Непроверенный модуль",
+    "wildWarningBody": "Сообщество не гарантирует работу или обслуживание. Trust First — используйте на свой страх и риск.",
+    "lifecycleTitle": "Позиция в жизненном цикле",
+    "committeeTitle": "Комитет модуля",
+    "committeeDesc": "У этого модуля есть выделенный комитет для проверки качества и одобрения слияния.",
+    "committeeCta": "Просмотреть комитет →",
+    "rolesTitle": "Мейнтейнеры и контрибьюторы",
+    "maintainerOpen": "Открыто — подать заявку ниже",
+    "applyTitle": "Подать заявку как мейнтейнер / контрибьютор",
+    "tabOverview": "Обзор",
+    "githubMissing": "Репозиторий ещё не связан. Подключитесь через интеграцию GitHub или проверьте URL из регистрации.",
+    "githubConnectCta": "Подключить GitHub",
+    "applyCta": "Подать заявку",
+    "signInToApply": "Войти для подачи заявки",
+    "applySignInHint": "Войдите, чтобы подать заявку на роль модуля.",
+    "wildContributorHint": "Модули предложений сообщества принимают заявки участников и со-обслуживающих (Обслуживающий является регистрантом).",
+    "githubRequiredHint": "Рекомендуется подключить GitHub.",
+    "mypageLink": "Проверить статус заявки на Моей странице",
+    "registeredNotice": "Модуль зарегистрирован. Вы назначены Обслуживающим и добавлены в комитет модуля.",
+    "registeredNextSteps": "Чтобы перейти в модуль сообщества, отправьте запрос на повышение в сообществе ниже для проверки Standard Committee.",
+    "promotionTitle": "Запрос на повышение в сообществе",
+    "promotionPending": "Запрос на повышение на проверке. Ожидает одобрения Standard Committee.",
+    "promotionRejected": "Ваш предыдущий запрос на повышение был отклонён. Вы можете пересмотреть и подать заявку повторно.",
+    "promotionApproved": "Одобрен как модуль сообщества.",
+    "promotionStandardsLink": "Просмотреть критерии повышения (Standards)",
+    "tabParticipate": "Участвовать",
+    "tabDeveloper": "Подробности (разработчики)",
+    "stickyApplyCta": "Присоединиться к этому модулю",
+    "overviewDescFallback": "Человекочитаемые правила для данного бизнес-домена.",
+    "slugLabel": "ID модуля",
+    "roleHelpTitle": "Руководство по ролям",
+    "roleHelpContributor": "Предлагайте и улучшайте правила — хороший первый шаг.",
+    "roleHelpDeputy": "Совместно обслуживает модуль с обслуживающим.",
+    "roleHelpMaintainer": "Управляет качеством, проверками и руководством комитета."
+  },
+  "certifications": {
+    "title": "Обучение и сертификация",
+    "lead": "Обучение, сертификация и квалификации для безопасного внедрения.",
+    "tracksTitle": "Треки сертификации",
+    "operatorFocus": "Операции · настройка · валидация",
+    "designerFocus": "Архитектура · дизайн модулей",
+    "renewal2y": "2 года",
+    "renewal3y": "3 года",
+    "disclaimer": "Только справочная сертификация — не юридическая гарантия. Управляется Сертификационным комитетом.",
+    "applyCta": "Подать заявку на сертификацию",
+    "signInToApply": "для подачи заявки.",
+    "directoryTitle": "Реестр сертифицированных",
+    "directoryEmpty": "Сертифицированных специалистов пока нет.",
+    "expertsCta": "Каталог экспертов →"
+  },
+  "certificationsApply": {
+    "title": "Подать заявку на сертификацию",
+    "desc": "Номер сертификата выдаётся после проверки."
+  },
+  "certificationsVerify": {
+    "title": "Проверка сертификата",
+    "desc": "Номер сертификата:",
+    "valid": "Действителен",
+    "invalid": "Недействителен",
+    "labelType": "Сертификация",
+    "labelHolder": "Держатель",
+    "labelIssued": "Выдан",
+    "labelExpires": "Истекает",
+    "labelStatus": "Статус"
+  },
+  "wildModules": {
+    "title": "Дикие модули",
+    "desc": "Вы можете подключать самостоятельно созданные модули, но они не поддерживаются.",
+    "disclaimerTitle": "Отказ от ответственности",
+    "disclaimerItems": [
+      "Сообщество не гарантирует работоспособность или проверки безопасности",
+      "Совместимость с `steward modules check` — ваша ответственность",
+      "При регистрации необходимо принять отказ от ответственности"
+    ],
+    "registerCta": "Зарегистрировать дикий модуль",
+    "registeredTitle": "Зарегистрирован",
+    "badgeUnmaintained": "Не поддерживается"
+  },
+  "wildModulesRegister": {
+    "title": "Зарегистрировать дикий модуль",
+    "desc": "Необходимо принять отказ от ответственности."
+  },
+  "members": {
+    "title": "Участники",
+    "desc": "Участники сообщества, вошедшие через GitHub.",
+    "empty": "Участников пока нет. Войдите через GitHub."
+  },
+  "content": {
+    "title": "Контент",
+    "desc": "Размещайте Markdown в content/published/ и связывайте через registry.yaml.",
+    "locationTitle": "Расположение контента",
+    "workflowHint": "Новый контент → inbox/ → проверка → published/ → добавить в registry.yaml",
+    "draftBadge": " черновиков",
+    "draftHint": "Измените статус на published для отображения в интернете",
+    "categoryDocs": "Документация",
+    "categoryGuides": "Руководства",
+    "categoryEmpty": "Нет опубликованного контента."
+  },
+  "contentDetail": {
+    "back": "← Список контента"
+  },
+  "legal": {
+    "disclaimer": "Отказ от ответственности",
+    "terms": "Условия использования",
+    "privacy": "Политика конфиденциальности",
+    "trademark": "Правила использования товарных знаков"
+  },
+  "admin": {
+    "title": "Администрирование",
+    "desc": "Очередь проверки запросов на роли и сертификации.",
+    "roleRequestsTitle": "Запросы на роли в модулях",
+    "roleRequestsEmpty": "Нет ожидающих запросов.",
+    "certApplicationsTitle": "Заявки на сертификацию",
+    "certApplicationsEmpty": "Нет ожидающих заявок на сертификацию.",
+    "reviewButton": "Проверить",
+    "roleRequestsMovedTitle": "Проверка ролей модуля перенесена в комитеты",
+    "roleRequestsMovedHint": "Заявки на роли модуля рассматриваются председателем/рецензентом каждого комитета модуля (администраторы сайта могут использовать страницы проверки комитета как запасной вариант).",
+    "roleRequestsMovedLink": "Открытое управление и проверка комитета",
+    "promotionRequestsTitle": "Запросы на повышение в сообществе (Wild → Community)",
+    "promotionRequestsEmpty": "Ожидающих запросов на повышение нет.",
+    "navCommittees": "Комитеты →",
+    "navGovernance": "Управление",
+    "committeesSummaryTitle": "Комитеты →",
+    "committeesApplyFilters": "Подать заявку",
+    "committeesTableName": "Имя",
+    "committeesTableChair": "Председатель",
+    "committeesTableActions": "Действия",
+    "committeesTypeStandard": "Стандарт",
+    "committeesTypeDomain": "Домен",
+    "committeesTypeModule": "Модуль",
+    "committeesNameLabel": "Имя",
+    "committeesModuleLabel": "Модуль",
+    "committeesMemberRole": "Роль",
+    "committeesPendingChair": "Ожидающие номинации председателя",
+    "navDashboard": "Панель",
+    "navUsers": "Пользователи",
+    "committeesSummaryTotal": "Зарегистрировано комитетов: {total}",
+    "committeesSummaryPending": "{count} элементов на рассмотрении в комитетах",
+    "committeesManageLink": "Управление комитетами",
+    "committeesTitle": "Управление комитетами",
+    "committeesDesc": "Просмотр комитетов, добавление участников и обработка заявок.",
+    "committeesCreate": "Создать комитет",
+    "committeesSync": "Синхронизировать из определений",
+    "committeesSyncDone": "Комитеты синхронизированы.",
+    "committeesSearchPlaceholder": "Поиск по имени или slug",
+    "committeesFilterAllTypes": "Все типы",
+    "committeesFilterType": "Тип",
+    "committeesTableType": "Тип",
+    "committeesTableSlug": "Идентификатор",
+    "committeesTableMembers": "Участники",
+    "committeesTablePending": "Ожидает",
+    "committeesEmpty": "Нет комитетов по вашим фильтрам.",
+    "committeesViewDetail": "Управлять",
+    "committeesViewPublic": "Публичная страница",
+    "committeesViewReview": "Очередь рассмотрения",
+    "committeesPageSummary": "Показано {from}–{to} из {total}",
+    "committeesNewTitle": "Создать комитет",
+    "committeesNewDesc": "Добавить комитет STANDARD, DOMAIN или MODULE.",
+    "committeesSlugLabel": "Идентификатор",
+    "committeesDescriptionLabel": "Описание",
+    "committeesJurisdictionLabel": "Код юрисдикции",
+    "committeesExpertDomainLabel": "Ключ экспертной области",
+    "committeesSubmitCreate": "Создать",
+    "committeesCreated": "Комитет создан.",
+    "committeesDetailBack": "Назад к комитетам",
+    "committeesMembersTitle": "Участники",
+    "committeesAddMember": "Добавить участника",
+    "committeesAddMemberSearch": "Поиск пользователей",
+    "committeesRemoveMember": "Удалить",
+    "committeesChangeRole": "Обновить роль",
+    "committeesConfirmRemove": "Удалить этого участника из комитета?",
+    "committeesPendingMembership": "Заявки на участие на рассмотрении",
+    "committeesPendingModuleRole": "Заявки на роль модуля на рассмотрении",
+    "committeesErrorGeneric": "Что-то пошло не так. Попробуйте снова.",
+    "committeesErrorLastChair": "Нельзя удалить или понизить единственного активного председателя.",
+    "committeesErrorDuplicateMember": "Пользователь уже является участником.",
+    "committeesErrorNotFound": "Не найдено.",
+    "committeesNoMembers": "Активных участников пока нет.",
+    "committeesNoPending": "Нет ожидающих элементов."
+  },
+  "adminCert": {
+    "title": "Проверка сертификации"
+  },
+  "standards": {
+    "stageHeader": "Этап",
+    "lifecycleStageHeader": "Этап жизненного цикла",
+    "readinessTitle": "Уровень готовности",
+    "stewardTierHeader": "Уровень OS_Steward",
+    "readinessTiers": {
+      "skeleton": "Каркас",
+      "activation_ready": "Готов к активации",
+      "production_ready": "Готов к эксплуатации",
+      "unsupported": "Не поддерживается"
+    }
+  },
+  "academy": {
+    "selectTrack": "Выберите трек, чтобы начать обучение.",
+    "viewTrack": "Открыть трек",
+    "lessons": "уроков",
+    "minutes": "мин",
+    "takeExamFor": "Пройти {title}",
+    "moduleTest": "Тест модуля",
+    "signInForModuleTest": "Войти для теста модуля",
+    "backToTrack": "Вернуться к треку",
+    "trackProgress": "Прогресс трека",
+    "examSummary": "{title} — {count} вопросов (проход {score}%)",
+    "moduleQuizSummary": "{title} — {count} вопросов",
+    "quizResultTitle": "Результат теста",
+    "quizScoreLine": "Баллы: {score}% (проход {pass}%) — {result}",
+    "quizPass": "Сдан",
+    "quizFail": "Не сдан",
+    "issueCert": "Выдать сертификат CCU",
+    "issuing": "Выдача…",
+    "certNo": "№ сертификата",
+    "gradeFailed": "Ошибка оценки",
+    "issueFailed": "Ошибка выдачи сертификата",
+    "quizTimeLimit": "Лимит времени",
+    "quizRemaining": "Осталось",
+    "quizPassScore": "Проход",
+    "quizQuestion": "В",
+    "quizSubmitting": "Оценка…",
+    "quizTimedOut": "Время истекло",
+    "quizSubmit": "Отправить",
+    "dashboardTitle": "Прогресс Academy",
+    "dashboardEmpty": "Прогресса пока нет.",
+    "dashboardEmptySuffix": "Начните обучение в Academy.",
+    "lessonsCompleteLine": "{completed}/{total} уроков завершено ({percent}%)",
+    "certificatesTitle": "Сертификаты Academy",
+    "ccuTitle": "Сертификация CCU",
+    "ccuEligible": "Можно выдать",
+    "ccuExamCta": "Экзамен CCU / сертификат",
+    "lessonCompleted": "Завершено",
+    "noBody": "Содержимое недоступно.",
+    "signInPromptBefore": "Чтобы сохранить прогресс,",
+    "signInLink": "войдите",
+    "layoutLead": "Официальная программа OpenOrgOS — документы · тесты · видео",
+    "markLessonComplete": "Отметить как прочитанное",
+    "markLessonDone": "✓ Прочитано",
+    "markVideoComplete": "Отметить видео просмотренным",
+    "markVideoDone": "✓ Просмотрено",
+    "savingProgress": "Сохранение…",
+    "saveProgressFailed": "Не удалось сохранить прогресс",
+    "prevLesson": "Предыдущий урок",
+    "nextLesson": "Следующий урок",
+    "levelPrefix": "Уровень",
+    "signInPromptAfter": ".",
+    "viewAllAcademy": "Всё в Academy →",
+    "continueLearning": "Продолжить обучение",
+    "continueLessonCta": "Продолжить {title} →",
+    "trackCompleteBadge": "Трек завершён",
+    "recentActivityTitle": "Недавняя активность",
+    "recentLessonsTitle": "Недавние уроки",
+    "recentExamsTitle": "Недавние экзамены",
+    "lessonInProgress": "В процессе",
+    "lessonCompletedBadge": "Завершено",
+    "examPassed": "Сдан",
+    "examFailed": "Не сдан",
+    "examScoreLine": "Балл {score}%"
+  },
+  "siteMap": {
+    "sectionLabels": {
+      "community": "Сообщество",
+      "platform": "Платформа",
+      "about": "О OpenOrgOS",
+      "protocol": "Протокол и модули",
+      "newsroom": "Пресс-центр",
+      "resources": "Ресурсы",
+      "research": "Исследования",
+      "education": "Образование",
+      "events": "Мероприятия",
+      "legal": "Право и политики"
+    },
+    "title": "Карта сайта",
+    "lead": "Все публичные разделы платформы сообщества OpenOrgOS — активные страницы и разделы в подготовке.",
+    "readinessLive": "Активно",
+    "readinessPartial": "Только вход",
+    "readinessSkeleton": "В подготовке"
+  },
+  "leadership": {
+    "back": "← О нас",
+    "filterAll": "Все",
+    "title": "Руководство",
+    "lead": "Управление, стандарты и руководство сообществом для OpenOrgOS — глобального межорганизационного протокола.",
+    "filterLabel": "Фильтр по:",
+    "emptyCategory": "Участники будут перечислены здесь по мере роста сообщества.",
+    "viewProfile": "Просмотреть профиль",
+    "viewLinkedIn": "Смотреть на LinkedIn",
+    "categories": {
+      "founder": "Основатель",
+      "board": "Совет по управлению",
+      "leadership": "Руководство",
+      "fellows": "Стипендиаты Фонда",
+      "standard-committee": "Комитет стандартов",
+      "module-leads": "Ведущие модулей"
+    }
+  },
+  "skeleton": {
+    "statusBadge": "В подготовке",
+    "statusNote": "Этот раздел готовится. Контент будет опубликован здесь по мере запуска сообщества.",
+    "plannedTitle": "Запланированный контент",
+    "relatedTitle": "Связанные",
+    "emptyList": "Элементов пока не опубликовано.",
+    "contactCta": "Свяжитесь с нами",
+    "joinCta": "Присоединиться к сообществу",
+    "pages": {
+      "newsroom": {
+        "title": "Пресс-центр",
+        "lead": "Официальные объявления, пресс-релизы и медиаресурсы OpenOrgOS."
+      },
+      "pressReleases": {
+        "title": "Пресс-релизы",
+        "lead": "Официальные объявления сообщества OpenOrgOS для СМИ и партнёров."
+      },
+      "mediaContacts": {
+        "title": "Медиаконтакты",
+        "lead": "Запросы в прессу, запросы на интервью и загрузка брендовых материалов."
+      },
+      "blog": {
+        "title": "Блог",
+        "lead": "Обновления от обслуживающих модули, комитетов и сообщества OpenOrgOS."
+      },
+      "publications": {
+        "title": "Публикации",
+        "lead": "Белые книги, спецификации и справочные документы."
+      },
+      "guides": {
+        "title": "Руководства по открытому исходному коду",
+        "lead": "Как вносить вклад в модули, вступать в комитеты и безопасно внедрять OpenOrgOS."
+      },
+      "caseStudies": {
+        "title": "Практические примеры",
+        "lead": "Как организации принимают модули и паттерны управления с OpenOrgOS."
+      },
+      "research": {
+        "title": "Исследования OpenOrgOS",
+        "lead": "Исследования межорганизационных протоколов, проверяемости и проектирования управления."
+      },
+      "events": {
+        "title": "События OpenOrgOS",
+        "lead": "Встречи сообщества, вебинары и конференц-сессии."
+      },
+      "eventsSponsor": {
+        "title": "Спонсор",
+        "lead": "Поддержите мероприятия сообщества, исследования и образовательные программы."
+      },
+      "eventsSubmitTalk": {
+        "title": "Предложить доклад",
+        "lead": "Предлагайте сессии по модулям, управлению, сертификации или внедрению."
+      },
+      "memberships": {
+        "title": "Корпоративные участники",
+        "lead": "Членство для организаций, управляющих модулями и спонсирующих программы сообщества."
+      },
+      "supporters": {
+        "title": "Индивидуальные сторонники",
+        "lead": "Индивидуальные участники, которые обслуживают модули, проверяют стандарты или преподают в Academy."
+      },
+      "partners": {
+        "title": "Партнёрская программа",
+        "lead": "Интеграция с GitHub, хостинг модулей и техническое партнёрство с платформой сообщества."
+      },
+      "contact": {
+        "title": "Связаться с нами",
+        "lead": "Запросы сообщества, запросы СМИ и вопросы партнёрства."
+      },
+      "inclusion": {
+        "title": "Инклюзивность и доступность",
+        "lead": "Наша приверженность разнообразным участникам и доступной документации."
+      },
+      "careers": {
+        "title": "Участие",
+        "lead": "Почётные роли — Обслуживающий, Рецензент, Член комитета — не являются оплачиваемой занятостью."
+      }
+    }
+  },
+  "compliance": {
+    "title": "Реестр соответствия и квалификаций",
+    "lead": "Справочная база регулируемых профессий, ISO-квалификаций и чек-листов соответствия.",
+    "summaryProfessions": "{count} типов профессий",
+    "summaryChecklists": "{count} чек-листов",
+    "sectionProfessionsTitle": "Регулируемые профессии и специалисты",
+    "sectionProfessionsDesc": "Юристы, налоговые консультанты, CPA, таможенные брокеры и другие лицензируемые роли.",
+    "sectionIsoTitle": "ISO-квалификации аудита",
+    "sectionIsoDesc": "Ведущий аудитор и компетенция ISO 19011 для систем менеджмента.",
+    "sectionChecklistsTitle": "Чек-листы соответствия",
+    "sectionChecklistsDesc": "Конфликт интересов, санкции, антиобщественные силы и экспортный контроль.",
+    "viewProfessions": "Просмотр профессий",
+    "viewIso": "Просмотр ISO-квалификаций",
+    "viewChecklists": "Просмотр чек-листов",
+    "professionsTitle": "Профессии и квалификации",
+    "professionsLead": "Национально лицензируемые профессии и специалисты по compliance.",
+    "checklistsTitle": "Чек-листы соответствия",
+    "checklistsLead": "Операционные чек-листы для COI, санкций и торговли.",
+    "filterCategory": "Категория",
+    "filterJurisdiction": "Юрисдикция",
+    "filterType": "Тип чек-листа",
+    "filterAll": "Все",
+    "searchPlaceholder": "Поиск по имени или регулятору",
+    "tableName": "Название",
+    "tableCategory": "Категория",
+    "tableJurisdiction": "Юрисдикция",
+    "tableRegulator": "Регулятор",
+    "tableCredentials": "Типы credential",
+    "tableType": "Тип",
+    "tableItems": "Пункты",
+    "tableExpert": "Рекомендуемый эксперт",
+    "viewChecklist": "Открыть чек-лист",
+    "backToRegistry": "Назад к реестру",
+    "checklistVersion": "Версия {version}",
+    "itemRequired": "Обязательно",
+    "itemOptional": "Необязательно",
+    "itemReference": "Ссылка",
+    "emptyProfessions": "Нет профессий по вашим фильтрам.",
+    "emptyChecklists": "Нет чек-листов по вашим фильтрам.",
+    "international": "Международный",
+    "expertsLink": "Каталог людей"
+  }
+}

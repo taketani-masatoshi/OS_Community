@@ -1,0 +1,586 @@
+{
+  "ui": {
+    "role": "役割",
+    "members": "メンバー",
+    "name": "名前",
+    "verify": "検証",
+    "none": "なし",
+    "unknown": "不明",
+    "default": "デフォルト",
+    "expert": "エキスパート",
+    "module": "モジュール",
+    "lifecycle": "ライフサイクル",
+    "focus": "重点",
+    "renewal": "更新",
+    "status": "ステータス",
+    "action": "操作"
+  },
+  "about": {
+    "title": "OpenOrgOS について",
+    "lead": "組織間通信プロトコルのオープンソースコミュニティ — 組織内部の運営管理 OS ではありません。",
+    "scopeTitle": "適用範囲",
+    "scopeBody": "企業間取引、大学・研究機関の共同、NPO 連携、サプライチェーンなど、組織境界を越えて検証可能な状態を交換する必要がある関係すべてに適用できます。",
+    "visionTitle": "目指す世界",
+    "visionQuote": "OpenOrgOS は組織間の共通通信プロトコルとなることを目指します。",
+    "governanceCta": "ガバナンスモデル"
+  },
+  "aboutSub": {
+    "back": "← OpenOrgOS について",
+    "join": "コミュニティに参加",
+    "notFound": "ページが見つかりません",
+    "contact": {
+      "title": "お問い合わせ",
+      "body": "コミュニティに関するお問い合わせは GitHub Issues をご利用ください。テナントデータ・個社運用のサポートは対象外です。"
+    },
+    "brand": {
+      "title": "OpenOrgOS ブランドガイドライン",
+      "body": "ロゴ、カラー、OpenOrgOS マークの適切な使用。コミュニティ目的に限り、商用利用は事前にご相談ください。"
+    },
+    "inclusion": {
+      "title": "インクルージョン & アクセシビリティ",
+      "body": "OpenOrgOS Community は多様な背景・法域・専門性を持つ貢献者を歓迎します。アクセシブルなドキュメントと UI の改善を継続します。"
+    },
+    "careers": {
+      "title": "コントリビュート",
+      "body": "Maintainer · Reviewer · Committee Member として参加できます。報酬付き雇用ではなく、栄誉的コントリビューションです。"
+    }
+  },
+  "skeleton": {
+    "statusBadge": "準備中",
+    "statusNote": "このセクションは公開に向けて準備中です。ローンチに合わせて順次掲載します。",
+    "plannedTitle": "掲載予定",
+    "relatedTitle": "関連リンク",
+    "emptyList": "まだ公開された項目はありません。",
+    "contactCta": "お問い合わせ",
+    "joinCta": "コミュニティに参加",
+    "pages": {
+      "newsroom": {
+        "title": "ニュースルーム",
+        "lead": "OpenOrgOS の公式発表・プレスリリース・メディア向けリソース。",
+        "planned": [
+          "プレスリリース一覧",
+          "ローンチ告知",
+          "メディアキット・ロゴ"
+        ]
+      },
+      "pressReleases": {
+        "title": "プレスリリース",
+        "lead": "メディア・パートナー向けの OpenOrgOS コミュニティ公式発表。",
+        "planned": [
+          "コミュニティローンチ",
+          "モジュールレジストリの節目",
+          "認証制度のアップデート"
+        ]
+      },
+      "mediaContacts": {
+        "title": "メディア向け連絡先",
+        "lead": "取材・インタビュー依頼、ブランド素材のダウンロード。",
+        "planned": [
+          "メディア問合せ",
+          "ロゴ・ブランド素材",
+          "経営陣プロフィール"
+        ]
+      },
+      "blog": {
+        "title": "ブログ",
+        "lead": "モジュール Maintainer、委員会、コミュニティからの更新。",
+        "planned": [
+          "ガバナンスノート",
+          "モジュールスポットライト",
+          "リリースハイライト"
+        ]
+      },
+      "publications": {
+        "title": "出版物",
+        "lead": "ホワイトペーパー、仕様書、参考ドキュメント。",
+        "planned": [
+          "プロトコル概要",
+          "モジュール契約",
+          "ガバナンス概要"
+        ]
+      },
+      "guides": {
+        "title": "オープンソースガイド",
+        "lead": "モジュール貢献、委員会参加、OpenOrgOS の安全な導入方法。",
+        "planned": [
+          "創業セットアップ",
+          "モジュール構成",
+          "野良モジュール方針"
+        ]
+      },
+      "caseStudies": {
+        "title": "事例紹介",
+        "lead": "組織がモジュールとガバナンスを OpenOrgOS で採用した事例。",
+        "planned": [
+          "パイロット導入",
+          "委員会ワークフロー",
+          "認証取得の道のり"
+        ]
+      },
+      "research": {
+        "title": "OpenOrgOS 研究",
+        "lead": "組織間プロトコル、監査可能性、ガバナンス設計に関する研究。",
+        "planned": [
+          "研究アジェンダ",
+          "ワーキングペーパー",
+          "フォーラム議事"
+        ]
+      },
+      "events": {
+        "title": "OpenOrgOS イベント",
+        "lead": "コミュニティミーティング、ウェビナー、カンファレンスセッション。",
+        "planned": [
+          "イベントカレンダー",
+          "オンデマンド配信",
+          "CFP スケジュール"
+        ]
+      },
+      "eventsSponsor": {
+        "title": "スポンサー",
+        "lead": "コミュニティイベント、研究、教育プログラムへの支援。",
+        "planned": [
+          "スポンサーシップ枠",
+          "ブランド露出",
+          "委員会連携"
+        ]
+      },
+      "eventsSubmitTalk": {
+        "title": "トークを提案",
+        "lead": "モジュール、ガバナンス、認証、導入に関するセッション提案。",
+        "planned": [
+          "CFP ガイドライン",
+          "レビュープロセス",
+          "スピーカー向け資料"
+        ]
+      },
+      "memberships": {
+        "title": "コーポレートメンバー",
+        "lead": "モジュールを運営し、コミュニティプログラムを支援する組織向けメンバーシップ。",
+        "planned": [
+          "メンバー特典",
+          "ガバナンス参加",
+          "モジュールスチュワードシップ"
+        ]
+      },
+      "supporters": {
+        "title": "個人サポーター",
+        "lead": "モジュール保守、標準レビュー、Academy 教育に貢献する個人。",
+        "planned": [
+          "貢献パス",
+          "認証トラック",
+          "コミュニティ表彰"
+        ]
+      },
+      "partners": {
+        "title": "パートナープログラム",
+        "lead": "GitHub 連携、モジュールホスティング、コミュニティプラットフォームとの技術連携。",
+        "planned": [
+          "GitHub OAuth・リポ",
+          "モジュールレジストリ",
+          "技術オンボーディング"
+        ]
+      },
+      "contact": {
+        "title": "お問い合わせ",
+        "lead": "コミュニティ、メディア、パートナーシップに関する問合せ。",
+        "planned": [
+          "一般問合せ",
+          "メディア窓口",
+          "セキュリティ報告"
+        ]
+      },
+      "inclusion": {
+        "title": "インクルージョン & アクセシビリティ",
+        "lead": "多様な貢献者とアクセシブルなドキュメントへの取り組み。",
+        "planned": [
+          "アクセシビリティ方針",
+          "言語カバレッジ",
+          "行動規範"
+        ]
+      },
+      "careers": {
+        "title": "コントリビュート",
+        "lead": "Maintainer · Reviewer · Committee Member — 報酬付き雇用ではありません。",
+        "planned": [
+          "役割説明",
+          "応募の流れ",
+          "栄誉モデル"
+        ]
+      }
+    }
+  },
+  "siteMap": {
+    "title": "サイトマップ",
+    "lead": "OpenOrgOS コミュニティの公開セクション一覧 — 稼働中のページと準備中のセクション。",
+    "readinessLive": "公開中",
+    "readinessPartial": "一部公開",
+    "readinessSkeleton": "準備中",
+    "sectionLabels": {
+      "platform": "プラットフォーム",
+      "about": "OpenOrgOS について",
+      "protocol": "プロトコル & モジュール",
+      "community": "コミュニティ",
+      "newsroom": "ニュースルーム",
+      "resources": "リソース",
+      "research": "研究",
+      "education": "教育",
+      "events": "イベント",
+      "legal": "法務・ポリシー"
+    }
+  },
+  "leadership": {
+    "title": "リーダーシップ",
+    "lead": "OpenOrgOS — 組織間通信のグローバルプロトコル — のガバナンス・標準・コミュニティリーダーシップ。",
+    "back": "← OpenOrgOS について",
+    "filterLabel": "絞り込み:",
+    "filterAll": "すべて",
+    "emptyCategory": "コミュニティの成長に伴い、ここにメンバーが掲載されます。",
+    "viewProfile": "プロフィール",
+    "viewLinkedIn": "LinkedIn で見る",
+    "categories": {
+      "founder": "創設者",
+      "board": "ガバナンスボード",
+      "leadership": "リーダーシップ",
+      "fellows": "フェロー",
+      "standard-committee": "標準委員会",
+      "module-leads": "モジュールリード"
+    }
+  },
+  "experts": {
+    "title": "専門家ディレクトリ",
+    "lead": "Maintainer と認定プロフェッショナルの公開台帳。Trust First。",
+    "maintainersTitle": "メンテナ",
+    "maintainersEmpty": "メンテナが未登録です。",
+    "deputiesTitle": "共同メンテナ",
+    "certifiedTitle": "認定プロフェッショナル",
+    "certifiedEmpty": "の認定者がここに掲載されます。",
+    "filterLabel": "Identity レイヤーで絞り込み",
+    "filterAll": "すべて",
+    "filterLinkedIn": "LinkedIn 連携済み",
+    "filterGitHub": "GitHub リポ連携済み",
+    "filterBoth": "両方",
+    "filterEmpty": "条件に一致する専門家がいません。",
+    "filterClear": "フィルタを解除",
+    "badgeLinkedIn": "in",
+    "badgeGitHub": "GH",
+    "registryCta": "コンプライアンス・資格レジストリ"
+  },
+  "compliance": {
+    "title": "コンプライアンス・資格レジストリ",
+    "lead": "国家資格Profession、ISO 監査資格、利益相反・制裁・反社・輸出入チェックリストの参照データベース。",
+    "summaryProfessions": "職種 {count} 件",
+    "summaryChecklists": "チェックリスト {count} 件",
+    "sectionProfessionsTitle": "国家資格・規制職・専門家",
+    "sectionProfessionsDesc": "弁護士、税理士、公認会計士、通関士など、各国で資格が必要な専門職。",
+    "sectionIsoTitle": "ISO 監査資格",
+    "sectionIsoDesc": "ISO 9001 / 27001 / 13485 等のリード監査員・ISO 19011 監査ガイドライン。",
+    "sectionChecklistsTitle": "コンプライアンスチェックリスト",
+    "sectionChecklistsDesc": "利益相反、制裁国スクリーニング、反社会的勢力（反社）、輸出入管理。",
+    "viewProfessions": "職種一覧",
+    "viewIso": "ISO 資格一覧",
+    "viewChecklists": "チェックリスト一覧",
+    "professionsTitle": "職種・資格",
+    "professionsLead": "各国の国家資格Professionとコンプライアンス専門家ロール。",
+    "checklistsTitle": "コンプライアンスチェックリスト",
+    "checklistsLead": "利益相反・制裁・反社・貿易コンプライアンスの運用チェックリスト。",
+    "filterCategory": "カテゴリ",
+    "filterJurisdiction": "法域",
+    "filterType": "種別",
+    "filterAll": "すべて",
+    "searchPlaceholder": "名称・規制機関で検索",
+    "tableName": "名称",
+    "tableCategory": "カテゴリ",
+    "tableJurisdiction": "法域",
+    "tableRegulator": "規制機関",
+    "tableCredentials": "資格種別",
+    "tableType": "種別",
+    "tableItems": "項目数",
+    "tableExpert": "推奨専門家",
+    "viewChecklist": "チェックリストを見る",
+    "backToRegistry": "レジストリへ戻る",
+    "checklistVersion": "版 {version}",
+    "itemRequired": "必須",
+    "itemOptional": "任意",
+    "itemReference": "参照",
+    "emptyProfessions": "条件に一致する職種がありません。",
+    "emptyChecklists": "条件に一致するチェックリストがありません。",
+    "international": "国際共通",
+    "expertsLink": "メンバー・専門家ディレクトリ"
+  },
+  "modules": {
+    "title": "モジュールレジストリ",
+    "lead": "会計、契約、知財、ISO13485、J-SOX、研究管理、ガバナンス——モジュール単位で開発・レビュー・標準化。",
+    "ctaApplyMaintainer": "Maintainer に応募",
+    "ctaJoin": "コミュニティに参加",
+    "wildEmpty": "未審査モジュール：",
+    "wildRegisterLink": "登録",
+    "badgeUnreviewed": "未審査",
+    "badgeMaintainerWanted": "Maintainer 募集中",
+    "viewModule": "モジュールを見る",
+    "githubCta": "GitHub 連携",
+    "emptySeedHint": "モジュールはレジストリに登録されると、ここに表示されます。"
+  },
+  "moduleDetail": {
+    "backToRegistry": "← モジュールレジストリ",
+    "badgeUnreviewed": "未審査",
+    "wildWarningTitle": "未審査モジュール",
+    "wildWarningBody": "コミュニティは動作保証・保守を行いません。Trust First — 自己責任でご利用ください。",
+    "lifecycleTitle": "ライフサイクル位置",
+    "committeeTitle": "モジュール委員会",
+    "committeeDesc": "品質レビューと merge 承認を担う専門委員会があります。",
+    "committeeCta": "委員会を見る",
+    "githubTitle": "GitHub",
+    "githubMissing": "リポジトリが未連携です。GitHub 連携ページから接続するか、登録時の URL を確認してください。",
+    "githubConnectCta": "GitHub を連携",
+    "rolesTitle": "メンテナとコントリビュータ",
+    "maintainerOpen": "募集中 — 下記から応募",
+    "applyTitle": "メンテナ / コントリビュータに応募",
+    "applyCta": "応募する",
+    "signInToApply": "ログインして応募",
+    "applySignInHint": "モジュールへの参加申請にはログインが必要です。",
+    "wildContributorHint": "コミュニティ提案モジュールでもコントリビュータ / 共同メンテナへの応募が可能です（メンテナは登録者が担当）。",
+    "githubRequiredHint": "GitHub 連携が推奨されます。",
+    "mypageLink": "マイページで申請状況を確認",
+    "registeredNotice": "モジュールを登録しました。あなたはメンテナとして委員会に追加されています。",
+    "registeredNextSteps": "コミュニティ昇格を希望する場合は、下の「コミュニティ昇格申請」から Standard Committee への審査を申請できます。",
+    "promotionTitle": "コミュニティ昇格申請",
+    "promotionPending": "昇格申請を審査中です。Standard Committee の承認をお待ちください。",
+    "promotionRejected": "前回の昇格申請は却下されました。内容を見直して再申請できます。",
+    "promotionApproved": "コミュニティモジュールとして承認済みです。",
+    "promotionStandardsLink": "昇格基準（Standards）を確認",
+    "tabOverview": "概要",
+    "tabParticipate": "参加する",
+    "tabDeveloper": "詳細（開発者向け）",
+    "stickyApplyCta": "このモジュールに参加",
+    "overviewDescFallback": "この分野のルールを人が読める形でまとめたモジュールです。",
+    "slugLabel": "モジュール ID",
+    "roleHelpTitle": "役割の違い",
+    "roleHelpContributor": "ルールの提案・改善 — はじめての参加に最適。",
+    "roleHelpDeputy": "メンテナと共同でモジュールを運営します。",
+    "roleHelpMaintainer": "品質管理・レビュー・委員会のリードを担います。"
+  },
+  "certifications": {
+    "title": "教育と認定",
+    "lead": "プロトコル導入のための教育コンテンツ・認定制度を提供します。",
+    "tracksTitle": "認定トラック",
+    "operatorFocus": "運用 · セットアップ · validate",
+    "designerFocus": "アーキテクチャ · モジュール設計",
+    "renewal2y": "2年",
+    "renewal3y": "3年",
+    "disclaimer": "参考認定のみ — 法的保証ではありません。Certification Committee が管理。",
+    "applyCta": "認定を申請",
+    "signInToApply": "して申請。",
+    "directoryTitle": "認定者ディレクトリ",
+    "directoryEmpty": "認定プロフェッショナルはまだいません。",
+    "expertsCta": "専門家ディレクトリ"
+  },
+  "certificationsApply": {
+    "title": "資格認定を申請",
+    "desc": "審査後、認定番号が発行されます。"
+  },
+  "certificationsVerify": {
+    "title": "資格検証",
+    "desc": "認定番号:",
+    "valid": "有効",
+    "invalid": "無効",
+    "labelType": "資格",
+    "labelHolder": "認定者",
+    "labelIssued": "発行日",
+    "labelExpires": "有効期限",
+    "labelStatus": "ステータス"
+  },
+  "wildModules": {
+    "title": "コミュニティ提案モジュール",
+    "desc": "自作モジュールを提案できます。最初は未審査として掲載されます。",
+    "disclaimerTitle": "免責",
+    "disclaimerItems": [
+      "コミュニティは動作保証・セキュリティ監査を行いません",
+      "互換性の確認は自己責任です",
+      "登録時に免責同意が必要です"
+    ],
+    "registerCta": "モジュールを提案",
+    "registeredTitle": "登録済み",
+    "badgeUnmaintained": "未審査"
+  },
+  "wildModulesRegister": {
+    "title": "コミュニティ提案モジュールの登録",
+    "desc": "免責同意が必要です。"
+  },
+  "members": {
+    "title": "メンバー",
+    "desc": "GitHub でログインしたコミュニティメンバー。",
+    "empty": "まだメンバーがいません。GitHub でログインしてください。"
+  },
+  "content": {
+    "title": "コンテンツ",
+    "desc": "別プロジェクトで生成した Markdown を content/published/ に配置し、registry.yaml で Web に紐付けます。",
+    "locationTitle": "コンテンツの置き場所",
+    "workflowHint": "新規コンテンツ → inbox/ → レビュー → published/ → registry.yaml に追加",
+    "draftBadge": "件の draft",
+    "draftHint": "status: published に変更すると Web 表示されます",
+    "categoryDocs": "ドキュメント",
+    "categoryGuides": "手順書",
+    "categoryEmpty": "公開コンテンツがありません。"
+  },
+  "contentDetail": {
+    "back": "← コンテンツ一覧"
+  },
+  "legal": {
+    "disclaimer": "免責事項",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "trademark": "商標使用ガイドライン"
+  },
+  "admin": {
+    "title": "管理",
+    "desc": "資格認定とモジュール昇格の審査キュー。モジュール役割申請は各委員会の審査ページで処理します。",
+    "navDashboard": "ダッシュボード",
+    "navUsers": "ユーザー",
+    "navCommittees": "委員会",
+    "navGovernance": "ガバナンス",
+    "roleRequestsTitle": "モジュール役割申請",
+    "roleRequestsEmpty": "保留中の申請はありません。",
+    "roleRequestsMovedTitle": "モジュール役割審査は委員会へ移行",
+    "roleRequestsMovedHint": "モジュール役割申請は各モジュール委員会の chair/reviewer が審査します（サイト管理者は委員会審査ページをフォールバックとして利用可能）。",
+    "roleRequestsMovedLink": "ガバナンスと委員会審査を開く",
+    "promotionRequestsTitle": "コミュニティ昇格申請（Wild → Community）",
+    "promotionRequestsEmpty": "保留中の昇格申請はありません。",
+    "certApplicationsTitle": "資格認定申請",
+    "certApplicationsEmpty": "保留中の資格申請はありません。",
+    "reviewButton": "審査",
+    "committeesSummaryTitle": "委員会",
+    "committeesSummaryTotal": "登録委員会 {total} 件",
+    "committeesSummaryPending": "委員会全体で {count} 件の審査待ち",
+    "committeesManageLink": "委員会を管理",
+    "committeesTitle": "委員会管理",
+    "committeesDesc": "委員会の一覧、メンバー追加、審査待ちの処理。",
+    "committeesCreate": "委員会を作成",
+    "committeesSync": "定義から同期",
+    "committeesSyncDone": "委員会を同期しました。",
+    "committeesSearchPlaceholder": "名称または slug で検索",
+    "committeesFilterAllTypes": "すべての種別",
+    "committeesFilterType": "種別",
+    "committeesApplyFilters": "適用",
+    "committeesTableName": "名称",
+    "committeesTableType": "種別",
+    "committeesTableSlug": "スラッグ",
+    "committeesTableChair": "委員長",
+    "committeesTableMembers": "メンバー",
+    "committeesTablePending": "審査待ち",
+    "committeesTableActions": "操作",
+    "committeesEmpty": "条件に一致する委員会がありません。",
+    "committeesViewDetail": "管理",
+    "committeesViewPublic": "公開ページ",
+    "committeesViewReview": "審査キュー",
+    "committeesPageSummary": "{total} 件中 {from}–{to} 件を表示",
+    "committeesNewTitle": "委員会を作成",
+    "committeesNewDesc": "STANDARD / DOMAIN / MODULE 委員会を追加します。",
+    "committeesTypeStandard": "全体標準",
+    "committeesTypeDomain": "ドメイン",
+    "committeesTypeModule": "モジュール",
+    "committeesSlugLabel": "スラッグ",
+    "committeesNameLabel": "名称",
+    "committeesDescriptionLabel": "説明",
+    "committeesJurisdictionLabel": "法域コード",
+    "committeesExpertDomainLabel": "専門ドメインキー",
+    "committeesModuleLabel": "モジュール",
+    "committeesSubmitCreate": "作成",
+    "committeesCreated": "委員会を作成しました。",
+    "committeesDetailBack": "委員会一覧へ",
+    "committeesMembersTitle": "メンバー",
+    "committeesAddMember": "メンバーを追加",
+    "committeesAddMemberSearch": "ユーザーを検索",
+    "committeesMemberRole": "役割",
+    "committeesRemoveMember": "除名",
+    "committeesChangeRole": "役割を更新",
+    "committeesConfirmRemove": "このメンバーを委員会から除名しますか？",
+    "committeesPendingMembership": "参加申請（審査待ち）",
+    "committeesPendingChair": "委員長指名（審査待ち）",
+    "committeesPendingModuleRole": "モジュール役割申請（審査待ち）",
+    "committeesErrorGeneric": "エラーが発生しました。もう一度お試しください。",
+    "committeesErrorLastChair": "唯一の active な委員長は除名・降格できません。",
+    "committeesErrorDuplicateMember": "ユーザーは既にメンバーです。",
+    "committeesErrorNotFound": "見つかりません。",
+    "committeesNoMembers": "アクティブなメンバーがいません。",
+    "committeesNoPending": "審査待ちはありません。"
+  },
+  "adminCert": {
+    "title": "資格審査"
+  },
+  "standards": {
+    "stageHeader": "段階",
+    "lifecycleStageHeader": "ライフサイクル段階",
+    "readinessTitle": "Readiness ティア",
+    "stewardTierHeader": "OS_Steward ティア",
+    "readinessTiers": {
+      "skeleton": "スケルトン",
+      "activation_ready": "アクティベーション準備完了",
+      "production_ready": "本番準備完了",
+      "unsupported": "サポート対象外"
+    }
+  },
+  "academy": {
+    "selectTrack": "トラックを選んで学習を開始してください。",
+    "viewTrack": "トラックを見る",
+    "lessons": "レッスン",
+    "minutes": "分",
+    "takeExamFor": "{title} を受ける",
+    "moduleTest": "モジュールテスト",
+    "signInForModuleTest": "ログインしてモジュールテスト",
+    "backToTrack": "トラックに戻る",
+    "trackProgress": "トラック進捗",
+    "examSummary": "{title} — 全 {count} 問（合格 {score}%）",
+    "moduleQuizSummary": "{title} — 全 {count} 問",
+    "quizResultTitle": "テスト結果",
+    "quizScoreLine": "スコア: {score}%（合格ライン {pass}%）— {result}",
+    "quizPass": "合格",
+    "quizFail": "不合格",
+    "issueCert": "CCU 認定書を発行",
+    "issuing": "発行中…",
+    "certNo": "認定番号",
+    "gradeFailed": "採点に失敗しました",
+    "issueFailed": "認定書の発行に失敗しました",
+    "quizTimeLimit": "制限時間",
+    "quizRemaining": "残り",
+    "quizPassScore": "合格",
+    "quizQuestion": "問",
+    "quizSubmitting": "採点中…",
+    "quizTimedOut": "時間切れ",
+    "quizSubmit": "提出する",
+    "dashboardTitle": "Academy 進捗",
+    "dashboardEmpty": "まだ進捗がありません。",
+    "dashboardEmptySuffix": "から学習を開始してください。",
+    "lessonsCompleteLine": "{completed}/{total} レッスン完了 ({percent}%)",
+    "certificatesTitle": "Academy 認定書",
+    "ccuTitle": "CCU 認定",
+    "ccuEligible": "発行可能",
+    "ccuExamCta": "CCU 試験 / 認定書",
+    "lessonCompleted": "完了",
+    "noBody": "本文がありません。",
+    "signInPromptBefore": "進捗を記録するには",
+    "signInLink": "ログイン",
+    "signInPromptAfter": "してください。",
+    "layoutLead": "OpenOrgOS 公式カリキュラム — ドキュメント · テスト · ビデオ",
+    "markLessonComplete": "読了としてマーク",
+    "markLessonDone": "✓ 読了済み",
+    "markVideoComplete": "視聴完了としてマーク",
+    "markVideoDone": "✓ 視聴済み",
+    "savingProgress": "保存中…",
+    "saveProgressFailed": "進捗の保存に失敗しました",
+    "prevLesson": "前のレッスン",
+    "nextLesson": "次のレッスン",
+    "levelPrefix": "レベル",
+    "viewAllAcademy": "アカデミー全体を見る",
+    "continueLearning": "学習を続ける",
+    "continueLessonCta": "{title} を再開",
+    "trackCompleteBadge": "トラック完了",
+    "recentActivityTitle": "最近の活動",
+    "recentLessonsTitle": "最近のレッスン",
+    "recentExamsTitle": "最近の試験",
+    "lessonInProgress": "学習中",
+    "lessonCompletedBadge": "完了",
+    "examPassed": "合格",
+    "examFailed": "不合格",
+    "examScoreLine": "スコア {score}%"
+  }
+}

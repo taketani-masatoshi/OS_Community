@@ -1,0 +1,75 @@
+{
+  "title": "Alcance de Apertura y Protección de Activos Empresariales",
+  "subtitle": "Un OS que estandariza dominios no competitivos para que los recursos se centren en lo que te diferencia",
+  "philosophyTitle": "Filosofía central",
+  "philosophyLead": "OpenOrgOS no tiene como objetivo eliminar la ventaja competitiva de una empresa.",
+  "philosophyGoal": "Nuestro objetivo es proporcionar la base común que las organizaciones necesitan para funcionar, no homogeneizar lo que hace única a cada empresa.",
+  "standardizeTitle": "Dominios que buscamos estandarizar",
+  "standardizeIntro": "Para las funciones organizativas comunes en muchas empresas, fomentamos su modularización y devolución a la comunidad donde sea posible. Se trata de infraestructura compartida para la actividad empresarial, no de fuentes de ventaja competitiva.",
+  "standardizeItems": [
+    "Contabilidad",
+    "RRHH",
+    "Control de presencia",
+    "Gestión de contratos",
+    "Gestión de PI",
+    "Flujo de trabajo",
+    "Cadenas de aprobación",
+    "Gobernanza",
+    "Controles internos",
+    "Cumplimiento ISO",
+    "Cumplimiento ISMS",
+    "Preparación para auditorías",
+    "Gestión de subvenciones",
+    "Operaciones del consejo",
+    "Relaciones con accionistas"
+  ],
+  "nonStandardizeTitle": "Dominios que no buscamos estandarizar",
+  "nonStandardizeIntro": "Los activos que definen la ventaja competitiva específica de una empresa deben mantenerse separados de OpenOrgOS y ser gestionados por cada empresa. OpenOrgOS nunca exige compartirlos ni publicarlos.",
+  "nonStandardizeItems": [
+    "Diseño de producto",
+    "Planos técnicos",
+    "Datos CAD",
+    "Modelos de IA",
+    "Datos de entrenamiento",
+    "Datos de clientes",
+    "Know-how de fabricación",
+    "Know-how de ventas",
+    "Datos de investigación",
+    "Algoritmos propietarios",
+    "Estrategia de patentes",
+    "Estrategia de negocio",
+    "Procesos de negocio propietarios"
+  ],
+  "privateModuleTitle": "Módulos privados",
+  "privateModuleIntro": "Los módulos desarrollados con OpenOrgOS no tienen que ser públicos. Las empresas pueden combinar libremente:",
+  "privateModuleTypes": [
+    {
+      "label": "Módulo comunitario",
+      "desc": "Público — contribuido a la comunidad"
+    },
+    {
+      "label": "Módulo privado",
+      "desc": "Privado — interno a la empresa"
+    }
+  ],
+  "privateModuleNote": "OpenOrgOS valora la devolución de buenos módulos a la comunidad, pero no lo requiere.",
+  "principlesTitle": "Principio fundamental",
+  "principlesNot": "OpenOrgOS no tiene como objetivo compartir dominios competitivos.",
+  "principlesYes": "Nuestro objetivo es un mundo donde los dominios no competitivos se comparten para que cada empresa pueda centrarse en su verdadera ventaja competitiva.",
+  "messageTitle": "Mensaje",
+  "messageLead": "Adoptar OpenOrgOS no hace que todas las empresas sean iguales.",
+  "messageSame": "Solo se comparte la base operacional organizativa. Lo que define el valor empresarial permanece protegido:",
+  "messageProtectedTitle": "Activos empresariales protegidos",
+  "messageProtectedItems": [
+    "Tecnología",
+    "Productos",
+    "Clientes",
+    "Know-how",
+    "Marca",
+    "Estrategia"
+  ],
+  "messageBody": "OpenOrgOS no elimina lo que hace única a tu empresa.",
+  "messageClosing": "Es la base que permite concentrar esfuerzos en los dominios donde la singularidad importa.",
+  "taglineNot": "OpenOrgOS no es un OS para estandarizar dominios competitivos.",
+  "taglineYes": "OpenOrgOS es un OS para estandarizar dominios no competitivos y enfocar los recursos en los competitivos."
+}

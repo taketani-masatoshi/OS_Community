@@ -1,0 +1,57 @@
+{
+  "name": "os-community",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "predev": "npm run i18n:build -w @os-community/shared",
+    "dev": "bash scripts/ensure-db.sh && bash scripts/guard-dev-build.mjs && set -a && . ./.env && set +a && AUTH_URL=http://localhost:3000 NEXT_PUBLIC_SITE_URL=http://localhost:3000 npm run dev -w @os-community/web",
+    "dev:start": "bash scripts/dev-start.sh",
+    "dev:local": "npm run dev",
+    "prebuild": "npm run i18n:build -w @os-community/shared",
+    "db:ensure": "bash scripts/ensure-db.sh",
+    "auth:github:check": "node scripts/check-github-auth.mjs",
+    "auth:check": "node scripts/check-auth-env.mjs",
+    "build": "npm run build -w @os-community/web",
+    "start": "npm run start -w @os-community/web",
+    "db:generate": "npm run generate -w @os-community/db",
+    "db:migrate": "bash scripts/with-env.sh npm run migrate -w @os-community/db",
+    "db:migrate:deploy": "bash scripts/with-env.sh npm run migrate:deploy -w @os-community/db",
+    "db:push": "bash scripts/with-env.sh npm run push -w @os-community/db",
+    "db:seed": "bash scripts/with-env.sh npm run seed -w @os-community/db",
+    "sync:modules": "node scripts/sync-modules.mjs",
+    "sync:agents": "node scripts/sync-agents.mjs",
+    "i18n:build": "npm run i18n:build -w @os-community/shared",
+    "i18n:check": "npm run i18n:check -w @os-community/shared",
+    "i18n:check:api": "npm run i18n:check:api -w @os-community/shared",
+    "i18n:sync": "npm run i18n:sync -w @os-community/shared",
+    "test": "npm run test -w @os-community/web",
+    "test:e2e": "bash scripts/test-e2e.sh",
+    "smoke:prod": "bash scripts/smoke-prod.sh",
+    "auth:github:open": "node scripts/configure-github-auth.mjs --open",
+    "auth:github:configure": "node scripts/configure-github-auth.mjs",
+    "auth:github:setup": "node scripts/configure-github-auth-interactive.mjs",
+    "auth:google:open": "node scripts/configure-primary-auth.mjs --open google",
+    "auth:microsoft:open": "node scripts/configure-primary-auth.mjs --open microsoft",
+    "auth:primary:configure": "node scripts/configure-primary-auth.mjs",
+    "auth:primary:setup": "node scripts/configure-primary-auth-interactive.mjs",
+    "auth:linkedin:open": "node scripts/configure-linkedin-auth.mjs --open",
+    "auth:linkedin:configure": "node scripts/configure-linkedin-auth.mjs",
+    "auth:linkedin:setup": "node scripts/configure-linkedin-auth-interactive.mjs",
+    "auth:linkedin:check": "node scripts/check-linkedin-oauth.mjs",
+    "lint": "npm run lint -w @os-community/web",
+    "quality": "bash scripts/quality-gate.sh",
+    "quality:full": "bash scripts/quality-gate.sh && bash scripts/test-e2e.sh -- e2e/resilience.spec.ts",
+    "audit:web-stability": "node scripts/audit-web-stability.mjs",
+    "audit:web-stability:write": "node scripts/audit-web-stability.mjs --write"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.9.0",
+    "yaml": "^2.8.0"
+  }
+}

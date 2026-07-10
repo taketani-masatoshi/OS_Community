@@ -1,0 +1,64 @@
+---
+description: グリッドの規律（8px スペーシング・カラム・縦リズム）
+alwaysApply: true
+---
+
+# グリッドの規律
+
+Web デザイン変更時は、装飾の追加より **整列・余白・カラム** の規律を優先する。`globals.css` の `--space-*` / `--page-gutter` / `--grid-gap` を使い、任意の px 値を増やさない。
+
+## 8px ベーススケール
+
+| 変数 | 値 | 用途 |
+|------|-----|------|
+| `--space-1` | 4px | 極小（バッジ内・微調整のみ） |
+| `--space-2` | 8px | チップ間・インライン gap |
+| `--space-3` | 12px | 小見出し下・リスト項間 |
+| `--space-4` | 16px | カード内段落・ボタン横 gap |
+| `--space-5` | 24px | **カードグリッド gap**（`--grid-gap`） |
+| `--space-6` | 32px | セクション内ブロック間 |
+| `--space-7` | 40px | `page-wrap` 縦 padding（上） |
+| `--space-8` | 48px | ヒーロー・大セクション縦 padding |
+| `--space-9` | 56px | `lf-section` 縦 padding |
+| `--space-10` | 64px | ヒーロー上段 |
+
+**禁止**: 5px, 7px, 10px, 13px, 18px, 20px などスケール外の余白。既存の `1.25rem`（20px）は段階的に `--space-5` へ寄せる。
+
+## カラム・コンテナ
+
+- 最大幅: `--max-width`（1140px）。`page-wrap` / `lf-hero-inner` / `site-header-inner` で共有
+- 横ガター: デスクトップ `--page-gutter`（24px）、モバイル `--page-gutter-sm`（16px）
+- カードグリッド: `lf-card-grid` — `repeat(auto-fit, minmax(260px, 1fr))` + `gap: var(--grid-gap)`
+- 新規グリッドも `display: grid` + `minmax()`。float や ad-hoc flex 幅は避ける
+
+## 縦リズム（ベースライン）
+
+- ページ: `page-title` → `page-desc`（下 `2rem`）→ `section-title`（上 `2rem` 下 `1rem`）
+- セクション末尾 CTA: `section-cta` / `section-actions`（上 `1.5rem`）
+- 見出し直後の本文: 下マージンは `--space-3` か `--space-4` に統一
+- `line-height`: 本文 1.6、見出し 1.2〜1.3
+
+## 優先順位の表現
+
+グリッド内で情報の序列を示す。装飾でなく **サイズ・余白・配置** で差をつける。
+
+1. ヒーロー（全幅・最大余白）
+2. `page-title` / `section-title`
+3. `page-desc` / カード本文（muted）
+4. 副次アクション（`btn-ghost`）
+
+## 意図的なはみ出し
+
+全要素をグリッドに閉じ込めない。次のみ例外的に許可:
+
+- ヒーロー背景の全幅ブロック
+- カード hover のシャドウ（視覚のみ、レイアウト幅は変えない）
+- モバイルボトムナビの safe-area
+
+## チェックリスト（変更時）
+
+- [ ] 新しい padding/margin/gap は `--space-*` か既存ユーティリティクラス
+- [ ] 横位置は `page-wrap` または `max-width: var(--max-width)` 内
+- [ ] カード列は `lf-card-grid` または同型の grid + `minmax`
+- [ ] モバイル（768px 以下）でガター・見出しサイズがルールと一致
+- [ ] CTA・カード・リンクは `.cursor/rules/site-design.mdc` に準拠

@@ -1,0 +1,498 @@
+{
+  "ui": {
+    "role": "角色",
+    "members": "成员",
+    "name": "名称",
+    "verify": "验证",
+    "none": "无",
+    "unknown": "未知",
+    "default": "默认",
+    "expert": "专家",
+    "module": "模块",
+    "lifecycle": "生命周期",
+    "focus": "重点",
+    "renewal": "续期",
+    "status": "状态",
+    "action": "操作"
+  },
+  "about": {
+    "title": "关于 OpenOrgOS",
+    "lead": "组织间通信协议的开源社区 — 不是组织内部运营管理 OS。",
+    "scopeTitle": "适用范围",
+    "scopeBody": "企业间交易、大学与研究合作、NPO 联盟、供应链 — 凡需跨越组织边界交换可验证状态的关系，均适用。",
+    "visionTitle": "愿景",
+    "visionQuote": "OpenOrgOS 致力于成为组织间通信的通用协议。",
+    "governanceCta": "治理模型 →"
+  },
+  "aboutSub": {
+    "back": "← 关于",
+    "join": "加入社区",
+    "notFound": "页面未找到",
+    "contact": {
+      "title": "联系我们",
+      "body": "社区相关咨询请使用 GitHub Issues。租户数据与单组织运营支持不在范围内。"
+    },
+    "brand": {
+      "title": "OpenOrgOS 品牌指南",
+      "body": "标识、色彩及 OpenOrgOS 商标的合理使用。仅限社区用途；商业使用请事先咨询。"
+    },
+    "inclusion": {
+      "title": "包容性与无障碍",
+      "body": "欢迎来自不同背景、法域与专业领域的贡献者。我们持续改进无障碍文档与 UI。"
+    },
+    "careers": {
+      "title": "参与贡献",
+      "body": "可作为 Maintainer、Reviewer 或 Committee Member 参与。荣誉性贡献，非有偿雇佣。"
+    }
+  },
+  "experts": {
+    "title": "专家目录",
+    "lead": "Maintainer 与认证专家的公开名录。Trust First。",
+    "maintainersTitle": "维护者",
+    "maintainersEmpty": "尚无维护者注册。",
+    "deputiesTitle": "共同维护者",
+    "certifiedTitle": "认证专家",
+    "certifiedEmpty": " 的认证者将在此列出。",
+    "filterLabel": "按身份层级筛选",
+    "filterAll": "全部",
+    "filterLinkedIn": "已关联 LinkedIn",
+    "filterGitHub": "已关联 GitHub 仓库",
+    "filterBoth": "两层均已关联",
+    "filterEmpty": "没有符合筛选条件的专家。",
+    "filterClear": "清除筛选",
+    "registryCta": "合规与资质登记库"
+  },
+  "modules": {
+    "title": "模块注册表",
+    "lead": "会计、合同、知识产权、ISO13485、J-SOX、研究管理、治理 — 按模块开发、审查与标准化。",
+    "ctaApplyMaintainer": "申请成为 Maintainer",
+    "ctaJoin": "加入贡献",
+    "wildEmpty": "未审查模块：",
+    "wildRegisterLink": "注册",
+    "badgeUnreviewed": "未审查",
+    "badgeMaintainerWanted": "招募 Maintainer",
+    "viewModule": "查看模块 →",
+    "githubCta": "GitHub 集成 →",
+    "emptySeedHint": "模块在注册表中注册后，将显示在此处。"
+  },
+  "moduleDetail": {
+    "backToRegistry": "← 模块注册表",
+    "badgeUnreviewed": "未审查",
+    "wildWarningTitle": "未审查模块",
+    "wildWarningBody": "社区不保证运行与维护。Trust First — 请自行承担使用风险。",
+    "lifecycleTitle": "生命周期位置",
+    "committeeTitle": "模块委员会",
+    "committeeDesc": "该模块设有专门委员会，负责质量审查与 merge 审批。",
+    "committeeCta": "查看委员会 →",
+    "rolesTitle": "Maintainer 与贡献者",
+    "maintainerOpen": "开放 — 请在下方申请",
+    "applyTitle": "申请成为模块负责人 / 贡献者",
+    "tabOverview": "概览",
+    "githubMissing": "尚未关联仓库。通过 GitHub 集成连接或验证注册时的 URL。",
+    "githubConnectCta": "连接 GitHub",
+    "applyCta": "申请",
+    "signInToApply": "登录以申请",
+    "applySignInHint": "登录以申请模块角色。",
+    "wildContributorHint": "社区提案模块接受贡献者和共同维护者申请（Maintainer 为注册者）。",
+    "githubRequiredHint": "建议关联 GitHub。",
+    "mypageLink": "在我的页面查看申请状态",
+    "registeredNotice": "模块已注册。你已被指定为 Maintainer 并添加到模块委员会。",
+    "registeredNextSteps": "要晋级为社区模块，请在下方提交社区晋级申请供 Standard Committee 审查。",
+    "promotionTitle": "社区晋级申请",
+    "promotionPending": "晋级申请审核中。等待 Standard Committee 批准。",
+    "promotionRejected": "你之前的晋级申请已被拒绝。你可以修改后重新申请。",
+    "promotionApproved": "已批准为社区模块。",
+    "promotionStandardsLink": "查看晋级标准（Standards）",
+    "tabParticipate": "参与",
+    "tabDeveloper": "详情（开发者）",
+    "stickyApplyCta": "加入此模块",
+    "overviewDescFallback": "此业务领域的人类可读规则。",
+    "slugLabel": "模块 ID",
+    "roleHelpTitle": "角色指南",
+    "roleHelpContributor": "提案和改进规则 — 良好的第一步。",
+    "roleHelpDeputy": "与 Maintainer 共同维护模块。",
+    "roleHelpMaintainer": "负责质量、审查和委员会领导。"
+  },
+  "certifications": {
+    "title": "教育与认证",
+    "lead": "提供培训、认证与资格制度，支持安心导入。",
+    "tracksTitle": "认证轨道",
+    "renewal2y": "2 年",
+    "renewal3y": "3 年",
+    "disclaimer": "仅供参考的认证 — 非法律保证。由认证委员会管理。",
+    "applyCta": "申请认证",
+    "signInToApply": "后申请。",
+    "directoryTitle": "认证目录",
+    "directoryEmpty": "尚无认证专家。",
+    "expertsCta": "专家目录 →",
+    "operatorFocus": "运维 · 配置 · 验证",
+    "designerFocus": "架构 · 模块设计"
+  },
+  "certificationsApply": {
+    "title": "申请资格认证",
+    "desc": "审查通过后将颁发认证编号。"
+  },
+  "certificationsVerify": {
+    "title": "资格验证",
+    "desc": "认证编号：",
+    "valid": "有效",
+    "invalid": "无效",
+    "labelType": "资格",
+    "labelHolder": "认证者",
+    "labelIssued": "发行日",
+    "labelExpires": "有效期",
+    "labelStatus": "状态"
+  },
+  "wildModules": {
+    "title": "野模块",
+    "desc": "可连接自制模块，但不受社区维护。",
+    "disclaimerTitle": "免责声明",
+    "disclaimerItems": [
+      "社区不保证运行与安全审计",
+      "`steward modules check` 兼容性自行负责",
+      "连接时需同意免责声明"
+    ],
+    "registerCta": "注册野模块",
+    "registeredTitle": "已注册",
+    "badgeUnmaintained": "不受维护"
+  },
+  "wildModulesRegister": {
+    "title": "注册野模块",
+    "desc": "需同意免责声明。"
+  },
+  "members": {
+    "title": "成员",
+    "desc": "使用 GitHub 登录的社区成员。",
+    "empty": "尚无成员。请使用 GitHub 登录。"
+  },
+  "content": {
+    "title": "内容",
+    "desc": "将 Markdown 放入 content/published/，通过 registry.yaml 关联到 Web。",
+    "locationTitle": "内容存放位置",
+    "workflowHint": "新内容 → inbox/ → 审查 → published/ → 添加到 registry.yaml",
+    "draftBadge": " 个 draft",
+    "draftHint": "将 status 改为 published 即可在 Web 显示",
+    "categoryDocs": "文档",
+    "categoryGuides": "指南",
+    "categoryEmpty": "暂无公开内容。"
+  },
+  "contentDetail": {
+    "back": "← 内容列表"
+  },
+  "legal": {
+    "disclaimer": "免责声明",
+    "terms": "使用条款",
+    "privacy": "隐私政策",
+    "trademark": "商标使用指南"
+  },
+  "admin": {
+    "title": "管理",
+    "desc": "角色申请与资格认证的审查队列。",
+    "roleRequestsTitle": "模块角色申请",
+    "roleRequestsEmpty": "无待审申请。",
+    "certApplicationsTitle": "资格认证申请",
+    "certApplicationsEmpty": "无待审资格申请。",
+    "reviewButton": "审查",
+    "roleRequestsMovedTitle": "模块角色审查已移至委员会",
+    "roleRequestsMovedHint": "模块角色申请由各模块委员会的主席/审查员审核（站点管理员可将委员会审查页面作为备用）。",
+    "roleRequestsMovedLink": "开放治理与委员会审查",
+    "promotionRequestsTitle": "社区晋级申请（Wild → Community）",
+    "promotionRequestsEmpty": "没有待处理的晋级申请。",
+    "navCommittees": "委员会 →",
+    "navGovernance": "治理",
+    "committeesSummaryTitle": "委员会 →",
+    "committeesApplyFilters": "申请",
+    "committeesTableName": "名称",
+    "committeesTableChair": "主席",
+    "committeesTableActions": "操作",
+    "committeesTypeStandard": "整体标准",
+    "committeesTypeDomain": "领域",
+    "committeesTypeModule": "模块",
+    "committeesNameLabel": "名称",
+    "committeesModuleLabel": "模块",
+    "committeesMemberRole": "角色",
+    "committeesPendingChair": "待处理的主席提名",
+    "navDashboard": "仪表板",
+    "navUsers": "用户",
+    "committeesSummaryTotal": "已注册 {total} 个委员会",
+    "committeesSummaryPending": "各委员会共有 {count} 项待审核",
+    "committeesManageLink": "管理委员会",
+    "committeesTitle": "委员会管理",
+    "committeesDesc": "浏览委员会、添加成员并处理待审核项。",
+    "committeesCreate": "创建委员会",
+    "committeesSync": "从定义同步",
+    "committeesSyncDone": "委员会已同步。",
+    "committeesSearchPlaceholder": "按名称或 slug 搜索",
+    "committeesFilterAllTypes": "所有类型",
+    "committeesFilterType": "类型",
+    "committeesTableType": "类型",
+    "committeesTableSlug": "标识符",
+    "committeesTableMembers": "成员",
+    "committeesTablePending": "待审核",
+    "committeesEmpty": "没有符合筛选条件的委员会。",
+    "committeesViewDetail": "管理",
+    "committeesViewPublic": "公开页面",
+    "committeesViewReview": "审核队列",
+    "committeesPageSummary": "显示 {total} 条中的第 {from}–{to} 条",
+    "committeesNewTitle": "创建委员会",
+    "committeesNewDesc": "添加 STANDARD、DOMAIN 或 MODULE 委员会。",
+    "committeesSlugLabel": "标识符",
+    "committeesDescriptionLabel": "描述",
+    "committeesJurisdictionLabel": "司法管辖区代码",
+    "committeesExpertDomainLabel": "专家领域键",
+    "committeesSubmitCreate": "创建",
+    "committeesCreated": "委员会已创建。",
+    "committeesDetailBack": "返回委员会列表",
+    "committeesMembersTitle": "成员",
+    "committeesAddMember": "添加成员",
+    "committeesAddMemberSearch": "搜索用户",
+    "committeesRemoveMember": "移除",
+    "committeesChangeRole": "更新角色",
+    "committeesConfirmRemove": "从委员会移除此成员？",
+    "committeesPendingMembership": "待审核的成员申请",
+    "committeesPendingModuleRole": "待审核的模块角色申请",
+    "committeesErrorGeneric": "出现问题。请重试。",
+    "committeesErrorLastChair": "无法移除或降级唯一的主席。",
+    "committeesErrorDuplicateMember": "用户已是成员。",
+    "committeesErrorNotFound": "未找到。",
+    "committeesNoMembers": "尚无活跃成员。",
+    "committeesNoPending": "没有待处理项。"
+  },
+  "adminCert": {
+    "title": "资格审查"
+  },
+  "standards": {
+    "stageHeader": "阶段",
+    "lifecycleStageHeader": "生命周期阶段",
+    "readinessTitle": "就绪等级",
+    "stewardTierHeader": "OS_Steward 等级",
+    "readinessTiers": {
+      "skeleton": "骨架",
+      "activation_ready": "可激活",
+      "production_ready": "生产就绪",
+      "unsupported": "不受支持"
+    }
+  },
+  "academy": {
+    "selectTrack": "选择学习路径开始学习。",
+    "viewTrack": "查看路径",
+    "lessons": "课时",
+    "minutes": "分钟",
+    "takeExamFor": "参加 {title}",
+    "moduleTest": "模块测验",
+    "signInForModuleTest": "登录后参加模块测验",
+    "backToTrack": "返回路径",
+    "trackProgress": "路径进度",
+    "examSummary": "{title} — 共 {count} 题（及格 {score}%）",
+    "moduleQuizSummary": "{title} — 共 {count} 题",
+    "quizResultTitle": "测验结果",
+    "quizScoreLine": "得分：{score}%（及格线 {pass}%）— {result}",
+    "quizPass": "及格",
+    "quizFail": "不及格",
+    "issueCert": "颁发 CCU 证书",
+    "issuing": "颁发中…",
+    "certNo": "证书编号",
+    "gradeFailed": "评分失败",
+    "issueFailed": "证书颁发失败",
+    "quizTimeLimit": "时限",
+    "quizRemaining": "剩余",
+    "quizPassScore": "及格",
+    "quizQuestion": "题",
+    "quizSubmitting": "评分中…",
+    "quizTimedOut": "时间到",
+    "quizSubmit": "提交",
+    "dashboardTitle": "Academy 进度",
+    "dashboardEmpty": "尚无进度。",
+    "dashboardEmptySuffix": "从 Academy 开始学习。",
+    "lessonsCompleteLine": "{completed}/{total} 课时已完成（{percent}%）",
+    "certificatesTitle": "Academy 证书",
+    "ccuTitle": "CCU 认证",
+    "ccuEligible": "可颁发",
+    "ccuExamCta": "CCU 考试 / 证书",
+    "lessonCompleted": "已完成",
+    "noBody": "暂无正文。",
+    "signInPromptBefore": "要记录进度，请",
+    "signInLink": "登录",
+    "signInPromptAfter": "。",
+    "layoutLead": "OpenOrgOS 官方课程 — 文档 · 测验 · 视频",
+    "markLessonComplete": "标记为已读",
+    "markLessonDone": "✓ 已读",
+    "markVideoComplete": "标记视频已观看",
+    "markVideoDone": "✓ 已观看",
+    "savingProgress": "保存中…",
+    "saveProgressFailed": "进度保存失败",
+    "prevLesson": "上一课",
+    "nextLesson": "下一课",
+    "levelPrefix": "级别",
+    "viewAllAcademy": "在 Academy 查看全部 →",
+    "continueLearning": "继续学习",
+    "continueLessonCta": "继续 {title} →",
+    "trackCompleteBadge": "课程完成",
+    "recentActivityTitle": "近期活动",
+    "recentLessonsTitle": "近期课程",
+    "recentExamsTitle": "近期考试",
+    "lessonInProgress": "进行中",
+    "lessonCompletedBadge": "已完成",
+    "examPassed": "通过",
+    "examFailed": "未通过",
+    "examScoreLine": "得分 {score}%"
+  },
+  "siteMap": {
+    "sectionLabels": {
+      "community": "社区",
+      "platform": "平台",
+      "about": "关于 OpenOrgOS",
+      "protocol": "协议与模块",
+      "newsroom": "新闻中心",
+      "resources": "资源",
+      "research": "研究",
+      "education": "教育",
+      "events": "活动",
+      "legal": "法律与政策"
+    },
+    "title": "网站地图",
+    "lead": "OpenOrgOS 社区平台的所有公开部分 — 已上线页面和准备中的内容。",
+    "readinessLive": "已上线",
+    "readinessPartial": "仅登录",
+    "readinessSkeleton": "准备中"
+  },
+  "leadership": {
+    "back": "← 关于",
+    "filterAll": "全部",
+    "title": "领导力",
+    "lead": "OpenOrgOS 的治理、标准和社区领导 — 全球组织间协议。",
+    "filterLabel": "筛选：",
+    "emptyCategory": "随着社区的发展，成员将在此列出。",
+    "viewProfile": "查看个人资料",
+    "viewLinkedIn": "在 LinkedIn 上查看",
+    "categories": {
+      "founder": "创始人",
+      "board": "治理委员会",
+      "leadership": "领导力",
+      "fellows": "基金会 Fellow",
+      "standard-committee": "标准委员会",
+      "module-leads": "模块负责人"
+    }
+  },
+  "skeleton": {
+    "statusBadge": "准备中",
+    "statusNote": "此部分正在准备中。内容将随社区启动陆续发布。",
+    "plannedTitle": "计划内容",
+    "relatedTitle": "相关",
+    "emptyList": "暂无已发布项目。",
+    "contactCta": "联系我们",
+    "joinCta": "加入社区",
+    "pages": {
+      "newsroom": {
+        "title": "新闻中心",
+        "lead": "OpenOrgOS 的官方公告、新闻稿和媒体资源。"
+      },
+      "pressReleases": {
+        "title": "新闻稿",
+        "lead": "面向媒体和合作伙伴的 OpenOrgOS 社区官方公告。"
+      },
+      "mediaContacts": {
+        "title": "媒体联系人",
+        "lead": "媒体咨询、采访请求和品牌素材下载。"
+      },
+      "blog": {
+        "title": "博客",
+        "lead": "来自模块维护者、委员会和 OpenOrgOS 社区的更新。"
+      },
+      "publications": {
+        "title": "出版物",
+        "lead": "白皮书、规范和参考文档。"
+      },
+      "guides": {
+        "title": "开源指南",
+        "lead": "如何贡献模块、加入委员会并安全采用 OpenOrgOS。"
+      },
+      "caseStudies": {
+        "title": "案例研究",
+        "lead": "组织如何通过 OpenOrgOS 采用模块和治理模式。"
+      },
+      "research": {
+        "title": "OpenOrgOS 研究",
+        "lead": "关于组织间协议、可审计性和治理设计的研究。"
+      },
+      "events": {
+        "title": "OpenOrgOS 活动",
+        "lead": "社区会议、网络研讨会和会议议程。"
+      },
+      "eventsSponsor": {
+        "title": "赞助商",
+        "lead": "支持社区活动、研究和教育项目。"
+      },
+      "eventsSubmitTalk": {
+        "title": "提交演讲",
+        "lead": "提案关于模块、治理、认证或采用的议题。"
+      },
+      "memberships": {
+        "title": "企业会员",
+        "lead": "面向管理模块并赞助社区项目的组织的成员资格。"
+      },
+      "supporters": {
+        "title": "个人支持者",
+        "lead": "维护模块、审查标准或在 Academy 教学的个人贡献者。"
+      },
+      "partners": {
+        "title": "合作伙伴计划",
+        "lead": "GitHub 集成、模块托管和社区平台技术合作。"
+      },
+      "contact": {
+        "title": "联系我们",
+        "lead": "社区咨询、媒体请求和合作伙伴问题。"
+      },
+      "inclusion": {
+        "title": "包容性与无障碍",
+        "lead": "我们对多元贡献者和无障碍文档的承诺。"
+      },
+      "careers": {
+        "title": "参与贡献",
+        "lead": "荣誉职位 — Maintainer、Reviewer、Committee Member — 不是有偿就业。"
+      }
+    }
+  },
+  "compliance": {
+    "title": "合规与资质登记库",
+    "lead": "各国受监管职业、ISO 审核资质及合规检查清单的参考数据库。",
+    "summaryProfessions": "{count} 种职业",
+    "summaryChecklists": "{count} 份检查清单",
+    "sectionProfessionsTitle": "受监管职业与专家",
+    "sectionProfessionsDesc": "律师、税务师、注册会计师、报关员等各国需持证角色。",
+    "sectionIsoTitle": "ISO 审核资质",
+    "sectionIsoDesc": "质量管理体系主审员及 ISO 19011 审核能力。",
+    "sectionChecklistsTitle": "合规检查清单",
+    "sectionChecklistsDesc": "利益冲突、制裁筛查、反社会势力及进出口管制。",
+    "viewProfessions": "浏览职业",
+    "viewIso": "浏览 ISO 资质",
+    "viewChecklists": "浏览检查清单",
+    "professionsTitle": "职业与资质",
+    "professionsLead": "各国需持证职业及合规专家角色。",
+    "checklistsTitle": "合规检查清单",
+    "checklistsLead": "利益冲突、制裁、反社及贸易合规操作清单。",
+    "filterCategory": "类别",
+    "filterJurisdiction": "司法管辖区",
+    "filterType": "清单类型",
+    "filterAll": "全部",
+    "searchPlaceholder": "按名称或监管机构搜索",
+    "tableName": "名称",
+    "tableCategory": "类别",
+    "tableJurisdiction": "司法管辖区",
+    "tableRegulator": "监管机构",
+    "tableCredentials": "资质类型",
+    "tableType": "类型",
+    "tableItems": "条目",
+    "tableExpert": "推荐专家",
+    "viewChecklist": "查看清单",
+    "backToRegistry": "返回登记库",
+    "checklistVersion": "版本 {version}",
+    "itemRequired": "必填",
+    "itemOptional": "可选",
+    "itemReference": "参考",
+    "emptyProfessions": "没有符合筛选条件的职业。",
+    "emptyChecklists": "没有符合筛选条件的清单。",
+    "international": "国际通用",
+    "expertsLink": "人员目录"
+  }
+}

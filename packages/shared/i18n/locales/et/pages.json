@@ -1,0 +1,498 @@
+{
+  "ui": {
+    "role": "Roll",
+    "members": "Liikmed",
+    "name": "Nimi",
+    "verify": "Kinnita",
+    "none": "Puudub",
+    "unknown": "Tundmatu",
+    "default": "vaikimisi",
+    "expert": "Ekspert",
+    "module": "Moodul",
+    "lifecycle": "Elutsükkel",
+    "focus": "Fookus",
+    "renewal": "Uuendus",
+    "status": "Olek",
+    "action": "Toiming"
+  },
+  "about": {
+    "title": "Teave OpenOrgOS-i kohta",
+    "lead": "Mitte ainult tarkvaraprojekt — organisatsioonidevahelise suhtluse protokoll, mitte sisemise juhtimise OS.",
+    "scopeTitle": "Ulatus",
+    "scopeBody": "Ettevõtete vaheline kaubandus, ülikoolide partnerlused, MTÜde liidud, tarneahelad — suhted, kus organisatsioonid peavad piire ületades kontrollitavat infot vahetama.",
+    "visionTitle": "Visioon",
+    "visionQuote": "OpenOrgOS püüab olla organisatsioonide ühine suhtlusprotokoll.",
+    "governanceCta": "Juhtimismudel →"
+  },
+  "aboutSub": {
+    "back": "← Teave",
+    "join": "Liitu kogukonnaga",
+    "notFound": "Lehte ei leitud",
+    "contact": {
+      "title": "Võta meiega ühendust",
+      "body": "Kogukonnaga seotud päringuteks kasutage GitHub Issues-t. Rentnike andmed ja organisatsioonispetsiifilised toimingud ei kuulu meie pädevusse."
+    },
+    "brand": {
+      "title": "OpenOrgOS brändi juhised",
+      "body": "Logo, värvid ja OpenOrgOS märkide lubatav kasutus. Ainult kogukondlikuks kasutamiseks; äriline kasutus nõuab eelnevat konsultatsiooni."
+    },
+    "inclusion": {
+      "title": "Kaasamine ja juurdepääsetavus",
+      "body": "Tervitame kaastöötajaid erinevatest taustadest, jurisdiktsioonidest ja erialadest. Parandame pidevalt juurdepääsetavaid dokumente ja kasutajaliidest."
+    },
+    "careers": {
+      "title": "Karjäär",
+      "body": "Liitu Maintaineri, Revieweri või komiteeliikmena. Austatav panus — mitte tasuline töösuhe."
+    }
+  },
+  "experts": {
+    "title": "Ekspertide kataloog",
+    "lead": "Maintainerite ja sertifitseeritud spetsialistide avalik register. Trust First.",
+    "maintainersTitle": "Haldajad",
+    "maintainersEmpty": "Haldajaid pole veel registreeritud.",
+    "deputiesTitle": "Kaas-haldajad",
+    "certifiedTitle": "Sertifitseeritud spetsialistid",
+    "certifiedEmpty": " sertifitseeritud hoidjat kuvatakse siin.",
+    "filterLabel": "Filtreeri identiteedi kihi järgi",
+    "filterAll": "Kõik",
+    "filterLinkedIn": "LinkedIn ühendatud",
+    "filterGitHub": "GitHub repo ühendatud",
+    "filterBoth": "Mõlemad kihid",
+    "filterEmpty": "Ükski ekspert ei vasta filtritele.",
+    "filterClear": "Eemalda filtrid",
+    "registryCta": "Vastavuse ja kvalifikatsioonide register"
+  },
+  "modules": {
+    "title": "Mooduli register",
+    "lead": "Raamatupidamine, lepingud, IP, ISO13485, J-SOX, teadusjuhtimine, juhtimine — arendatud, ülevaadatud ja standardiseeritud mooduli kaupa.",
+    "ctaApplyMaintainer": "Taotle Maintaineriks",
+    "ctaJoin": "Liitu panustamiseks",
+    "wildEmpty": "Ülevaatamata moodulid:",
+    "wildRegisterLink": "registreeri",
+    "badgeUnreviewed": "Ülevaatamata",
+    "badgeMaintainerWanted": "Otsitakse Maintainerit",
+    "viewModule": "Vaata moodulit →",
+    "githubCta": "GitHubi integratsioon →",
+    "emptySeedHint": "Moodulid ilmuvad siia pärast registrisse kandmist."
+  },
+  "moduleDetail": {
+    "backToRegistry": "← Mooduli register",
+    "badgeUnreviewed": "Ülevaatamata",
+    "wildWarningTitle": "Ülevaatamata moodul",
+    "wildWarningBody": "Kogukond ei garanteeri toimimist ega hooldust. Trust First — kasuta omal vastutusel.",
+    "lifecycleTitle": "Elutsükli positsioon",
+    "committeeTitle": "Mooduli komitee",
+    "committeeDesc": "Sellel moodulil on pühendunud komitee kvaliteediülevaatuseks ja merge-kinnituseks.",
+    "committeeCta": "Vaata komiteed →",
+    "rolesTitle": "Maintainerid ja kaastöötajad",
+    "maintainerOpen": "Avatud — taotle allpool",
+    "applyTitle": "Kandideeri haldaja / kaastöötajana",
+    "tabOverview": "Ülevaade",
+    "githubMissing": "Repositooriumi pole veel ühendatud. Ühenda GitHubi integratsiooni kaudu või kontrolli registreerimise URL-i.",
+    "githubConnectCta": "Ühenda GitHub",
+    "applyCta": "Taotle",
+    "signInToApply": "Logi sisse taotlemiseks",
+    "applySignInHint": "Logi sisse mooduli rolli taotlemiseks.",
+    "wildContributorHint": "Kogukonna ettepanekumoodulid aktsepteerivad kaastöötajate ja kaashooldajate taotlusi (Hooldaja on registreerija).",
+    "githubRequiredHint": "GitHubi ühendus on soovitatav.",
+    "mypageLink": "Kontrolli taotluse olekut Minu Lehel",
+    "registeredNotice": "Moodul registreeritud. Sind on määratud Hooldajaks ja lisatud mooduli komiteesse.",
+    "registeredNextSteps": "Kogukonna mooduliks edutamiseks esita allpool kogukonna edutamistaotlus Standard Committee läbivaatamiseks.",
+    "promotionTitle": "Kogukonna edutamistaotlus",
+    "promotionPending": "Edutamistaotlus on läbivaatamisel. Ootab Standard Committee heakskiitu.",
+    "promotionRejected": "Sinu eelmine edutamistaotlus lükati tagasi. Võid seda muuta ja uuesti taotleda.",
+    "promotionApproved": "Kinnitatud kogukonna moodulina.",
+    "promotionStandardsLink": "Vaata edutamise kriteeriume (Standards)",
+    "tabParticipate": "Osale",
+    "tabDeveloper": "Üksikasjad (arendajad)",
+    "stickyApplyCta": "Liitu selle mooduliga",
+    "overviewDescFallback": "Inimloetavad reeglid selle ärivaldkonna jaoks.",
+    "slugLabel": "Mooduli ID",
+    "roleHelpTitle": "Rollide juhend",
+    "roleHelpContributor": "Paku välja ja täiusta reegleid — hea esimene samm.",
+    "roleHelpDeputy": "Hoiab moodulit koos hooldajaga.",
+    "roleHelpMaintainer": "Haldab kvaliteeti, läbivaatusi ja komitee juhtimist."
+  },
+  "certifications": {
+    "title": "Haridus ja sertifitseerimine",
+    "lead": "Koolitus, sertifitseerimine ja mandaadid ohutuks kasutuselevõtuks.",
+    "tracksTitle": "Sertifitseerimisrajad",
+    "operatorFocus": "Toimingud · seadistamine · valideerimine",
+    "designerFocus": "Arhitektuur · mooduli disain",
+    "renewal2y": "2 aastat",
+    "renewal3y": "3 aastat",
+    "disclaimer": "Ainult viitesertifitseerimine — mitte juriidiline garantii. Hallatav sertifitseerimiskomitee poolt.",
+    "applyCta": "Taotle sertifitseerimist",
+    "signInToApply": "taotlemiseks.",
+    "directoryTitle": "Sertifitseeritud kataloog",
+    "directoryEmpty": "Sertifitseeritud spetsialiste pole veel.",
+    "expertsCta": "Ekspertide kataloog →"
+  },
+  "certificationsApply": {
+    "title": "Taotle sertifitseerimist",
+    "desc": "Pärast ülevaatust väljastatakse sertifikaadi number."
+  },
+  "certificationsVerify": {
+    "title": "Sertifikaadi kinnitus",
+    "desc": "Sertifikaadi nr:",
+    "valid": "Kehtiv",
+    "invalid": "Kehtetu",
+    "labelType": "Sertifikaat",
+    "labelHolder": "Hoidja",
+    "labelIssued": "Väljastatud",
+    "labelExpires": "Aegub",
+    "labelStatus": "Olek"
+  },
+  "wildModules": {
+    "title": "Wild-moodulid",
+    "desc": "Saate ühendada ise ehitatud mooduleid, kuid need ei ole toetatud.",
+    "disclaimerTitle": "Lahtiütlus",
+    "disclaimerItems": [
+      "Kogukond ei garanteeri toimimist ega turvalisuse auditeid",
+      "`steward modules check` ühilduvus on teie vastutus",
+      "Registreerimisel on nõutav lahtiütlusega nõustumine"
+    ],
+    "registerCta": "Registreeri wild-moodul",
+    "registeredTitle": "Registreeritud",
+    "badgeUnmaintained": "Toetamata"
+  },
+  "wildModulesRegister": {
+    "title": "Registreeri wild-moodul",
+    "desc": "Lahtiütlusega nõustumine on kohustuslik."
+  },
+  "members": {
+    "title": "Liikmed",
+    "desc": "Kogukonna liikmed, kes on GitHubiga sisse loginud.",
+    "empty": "Liikmeid pole veel. Logi sisse GitHubiga."
+  },
+  "content": {
+    "title": "Sisu",
+    "desc": "Aseta Markdown content/published/ kausta ja lingi registry.yaml kaudu.",
+    "locationTitle": "Sisu asukoht",
+    "workflowHint": "Uus sisu → inbox/ → ülevaatus → published/ → lisa registry.yaml-i",
+    "draftBadge": " mustandit",
+    "draftHint": "Muuda olek published-iks, et kuvada veebis",
+    "categoryDocs": "Dokumentatsioon",
+    "categoryGuides": "Juhendid",
+    "categoryEmpty": "Avaldatud sisu puudub."
+  },
+  "contentDetail": {
+    "back": "← Sisu register"
+  },
+  "legal": {
+    "disclaimer": "Lahtiütlus",
+    "terms": "Kasutustingimused",
+    "privacy": "Privaatsuspoliitika",
+    "trademark": "Kaubamärgi kasutusjuhend"
+  },
+  "admin": {
+    "title": "Haldus",
+    "desc": "Rollisoovide ja sertifitseerimiste ülevaatuse järjekord.",
+    "roleRequestsTitle": "Mooduli rollitaotlused",
+    "roleRequestsEmpty": "Ootel taotlusi pole.",
+    "certApplicationsTitle": "Sertifitseerimise taotlused",
+    "certApplicationsEmpty": "Ootel sertifitseerimise taotlusi pole.",
+    "reviewButton": "Vaata üle",
+    "roleRequestsMovedTitle": "Mooduli rolli läbivaatus on viidud komiteedesse",
+    "roleRequestsMovedHint": "Mooduli rolli taotlused vaatab üle iga mooduli komitee esimees/hindaja (saidi administraatorid võivad kasutada komitee läbivaatamislehti tagavaravalikuna).",
+    "roleRequestsMovedLink": "Avatud juhtimine ja komitee läbivaatus",
+    "promotionRequestsTitle": "Kogukonna edutamistaotlused (Wild → Community)",
+    "promotionRequestsEmpty": "Ootel edutamistaotlusi pole.",
+    "navCommittees": "Komiteed →",
+    "navGovernance": "Juhtimine",
+    "committeesSummaryTitle": "Komiteed →",
+    "committeesApplyFilters": "Taotle",
+    "committeesTableName": "Nimi",
+    "committeesTableChair": "Esimees",
+    "committeesTableActions": "Toimingud",
+    "committeesTypeStandard": "Standardne tase",
+    "committeesTypeDomain": "Domeen",
+    "committeesTypeModule": "Moodul",
+    "committeesNameLabel": "Nimi",
+    "committeesModuleLabel": "Moodul",
+    "committeesMemberRole": "Roll",
+    "committeesPendingChair": "Ootel esimehe nomineerimised",
+    "navDashboard": "Töölaud",
+    "navUsers": "Kasutajad",
+    "committeesSummaryTotal": "Registreeritud {total} komiteed",
+    "committeesSummaryPending": "{count} ootel ülevaate kirjet komiteedes",
+    "committeesManageLink": "Halda komiteesid",
+    "committeesTitle": "Komitee haldus",
+    "committeesDesc": "Sirvi komiteesid, lisa liikmeid ja vaata ootel taotlusi.",
+    "committeesCreate": "Loo komitee",
+    "committeesSync": "Sünkroniseeri definitsioonidest",
+    "committeesSyncDone": "Komiteed sünkroniseeritud.",
+    "committeesSearchPlaceholder": "Otsi nime või slugi järgi",
+    "committeesFilterAllTypes": "Kõik tüübid",
+    "committeesFilterType": "Tüüp",
+    "committeesTableType": "Tüüp",
+    "committeesTableSlug": "Lühiaadress",
+    "committeesTableMembers": "Liikmed",
+    "committeesTablePending": "Ootel",
+    "committeesEmpty": "Ükski komitee ei vasta filtritele.",
+    "committeesViewDetail": "Halda",
+    "committeesViewPublic": "Avalik leht",
+    "committeesViewReview": "Ülevaate järjekord",
+    "committeesPageSummary": "Kuvatakse {from}–{to} / {total}",
+    "committeesNewTitle": "Loo komitee",
+    "committeesNewDesc": "Lisa STANDARD, DOMAIN või MODULE komitee.",
+    "committeesSlugLabel": "Lühiaadress",
+    "committeesDescriptionLabel": "Kirjeldus",
+    "committeesJurisdictionLabel": "Jurisdiktsiooni kood",
+    "committeesExpertDomainLabel": "Ekspertvaldkonna võti",
+    "committeesSubmitCreate": "Loo",
+    "committeesCreated": "Komitee loodud.",
+    "committeesDetailBack": "Tagasi komiteede juurde",
+    "committeesMembersTitle": "Liikmed",
+    "committeesAddMember": "Lisa liige",
+    "committeesAddMemberSearch": "Otsi kasutajaid",
+    "committeesRemoveMember": "Eemalda",
+    "committeesChangeRole": "Uuenda rolli",
+    "committeesConfirmRemove": "Eemaldada see liige komitee hulgast?",
+    "committeesPendingMembership": "Ootel liikmestaotlused",
+    "committeesPendingModuleRole": "Ootel mooduli rolli taotlused",
+    "committeesErrorGeneric": "Midagi läks valesti. Proovi uuesti.",
+    "committeesErrorLastChair": "Ainsat aktiivset esimeest ei saa eemaldada ega alandada.",
+    "committeesErrorDuplicateMember": "Kasutaja on juba liige.",
+    "committeesErrorNotFound": "Ei leitud.",
+    "committeesNoMembers": "Aktiivseid liikmeid pole veel.",
+    "committeesNoPending": "Ootel kirjeid pole."
+  },
+  "adminCert": {
+    "title": "Sertifitseerimise ülevaatus"
+  },
+  "standards": {
+    "stageHeader": "Etapp",
+    "lifecycleStageHeader": "Elutsükli etapp",
+    "readinessTitle": "Valmisoleku tase",
+    "stewardTierHeader": "OS_Steward tase",
+    "readinessTiers": {
+      "skeleton": "Skelett",
+      "activation_ready": "Aktiveerimiseks valmis",
+      "production_ready": "Tootmisvalmis",
+      "unsupported": "Toetamata"
+    }
+  },
+  "academy": {
+    "selectTrack": "Vali rada, et alustada õppimist.",
+    "viewTrack": "Vaata rada",
+    "lessons": "tundi",
+    "takeExamFor": "Tee {title}",
+    "moduleTest": "Mooduli test",
+    "signInForModuleTest": "Logi sisse mooduli testiks",
+    "backToTrack": "Tagasi rajale",
+    "trackProgress": "Raja edenemine",
+    "examSummary": "{title} — {count} küsimust (läbiminek {score}%)",
+    "moduleQuizSummary": "{title} — {count} küsimust",
+    "quizResultTitle": "Testi tulemus",
+    "quizScoreLine": "Skoor: {score}% (läbiminek {pass}%) — {result}",
+    "quizPass": "Läbitud",
+    "quizFail": "Ebaõnnestus",
+    "issueCert": "Väljasta CCU sertifikaat",
+    "issuing": "Väljastamine…",
+    "certNo": "Sertifikaadi nr",
+    "gradeFailed": "Hindamine ebaõnnestus",
+    "issueFailed": "Sertifikaadi väljastamine ebaõnnestus",
+    "quizTimeLimit": "Ajalimiit",
+    "quizRemaining": "Jäänud",
+    "quizPassScore": "Läbiminek",
+    "quizQuestion": "K",
+    "quizSubmitting": "Hindamine…",
+    "quizTimedOut": "Aeg sai otsa",
+    "quizSubmit": "Esita",
+    "dashboardTitle": "Academy edenemine",
+    "dashboardEmpty": "Edenemist pole veel.",
+    "dashboardEmptySuffix": "Alusta õppimist Academy'st.",
+    "lessonsCompleteLine": "{completed}/{total} tundi lõpetatud ({percent}%)",
+    "certificatesTitle": "Academy sertifikaadid",
+    "ccuTitle": "CCU sertifitseerimine",
+    "ccuEligible": "Väljastamiseks sobiv",
+    "ccuExamCta": "CCU eksam / sertifikaat",
+    "lessonCompleted": "Lõpetatud",
+    "noBody": "Sisu pole saadaval.",
+    "signInPromptBefore": "Edenemise salvestamiseks",
+    "signInLink": "logi sisse",
+    "layoutLead": "OpenOrgOS ametlik õppekava — dokumendid · testid · video",
+    "markLessonComplete": "Märgi loetuks",
+    "markLessonDone": "✓ Loetud",
+    "markVideoComplete": "Märgi video vaadatuks",
+    "markVideoDone": "✓ Vaadatud",
+    "savingProgress": "Salvestamine…",
+    "saveProgressFailed": "Edenemise salvestamine ebaõnnestus",
+    "prevLesson": "Eelmine tund",
+    "nextLesson": "Järgmine tund",
+    "levelPrefix": "Tase",
+    "minutes": "min",
+    "signInPromptAfter": ".",
+    "viewAllAcademy": "Vaata kõike Academys →",
+    "continueLearning": "Jätka õppimist",
+    "continueLessonCta": "Jätka: {title} →",
+    "trackCompleteBadge": "Rada lõpetatud",
+    "recentActivityTitle": "Hiljutine tegevus",
+    "recentLessonsTitle": "Hiljutised õppetunnid",
+    "recentExamsTitle": "Hiljutised eksamid",
+    "lessonInProgress": "Pooleli",
+    "lessonCompletedBadge": "Lõpetatud",
+    "examPassed": "Läbitud",
+    "examFailed": "Mitte läbitud",
+    "examScoreLine": "Skoor {score}%"
+  },
+  "siteMap": {
+    "sectionLabels": {
+      "community": "Kogukond",
+      "platform": "Platvorm",
+      "about": "Teave OpenOrgOS-i kohta",
+      "protocol": "Protokoll ja moodulid",
+      "newsroom": "Pressiruum",
+      "resources": "Ressursid",
+      "research": "Teadustegevus",
+      "education": "Haridus",
+      "events": "Üritused",
+      "legal": "Õigus ja poliitikad"
+    },
+    "title": "Saidikaart",
+    "lead": "Kõik OpenOrgOS-i kogukonna platvormi avalikud jaotised — aktiivsed lehed ja ettevalmistamisel olevad jaotised.",
+    "readinessLive": "Aktiivne",
+    "readinessPartial": "Ainult sisselogimine",
+    "readinessSkeleton": "Ettevalmistamisel"
+  },
+  "leadership": {
+    "back": "← Teave",
+    "filterAll": "Kõik",
+    "title": "Juhtimine",
+    "lead": "Juhtimine, standardid ja kogukonna juhtimine OpenOrgOS-ile — globaalne organisatsioonidevaheline protokoll.",
+    "filterLabel": "Filtreeri:",
+    "emptyCategory": "Liikmed lisatakse siia kogukonna kasvades.",
+    "viewProfile": "Vaata profiili",
+    "viewLinkedIn": "Vaata LinkedInis",
+    "categories": {
+      "founder": "Asutaja",
+      "board": "Juhtimise nõukogu",
+      "leadership": "Juhtimine",
+      "fellows": "Sihtasutuse stipendiaadid",
+      "standard-committee": "Standardikomitee",
+      "module-leads": "Mooduli juhid"
+    }
+  },
+  "skeleton": {
+    "statusBadge": "Ettevalmistamisel",
+    "statusNote": "See jaotis on ettevalmistamisel. Sisu avaldatakse siin kogukonna käivitamisega.",
+    "plannedTitle": "Kavandatav sisu",
+    "relatedTitle": "Seotud",
+    "emptyList": "Üksusi pole veel avaldatud.",
+    "contactCta": "Võta meiega ühendust",
+    "joinCta": "Liitu kogukonnaga",
+    "pages": {
+      "newsroom": {
+        "title": "Pressiruum",
+        "lead": "OpenOrgOS-i ametlikud teadaanded, pressiteated ja meediaressursid."
+      },
+      "pressReleases": {
+        "title": "Pressiteated",
+        "lead": "OpenOrgOS-i kogukonna ametlikud teadaanded meediaväljaannetele ja partneritele."
+      },
+      "mediaContacts": {
+        "title": "Meediakontaktid",
+        "lead": "Meediapäringud, intervjuutaotlused ja brändivarade allalaadimine."
+      },
+      "blog": {
+        "title": "Blogi",
+        "lead": "Uuendused mooduli hooldajatelt, komiteedelt ja OpenOrgOS-i kogukonnalt."
+      },
+      "publications": {
+        "title": "Väljaanded",
+        "lead": "Valged raamatud, spetsifikatsioonid ja viitedokumendid."
+      },
+      "guides": {
+        "title": "Avatud lähtekoodiga juhendid",
+        "lead": "Kuidas panustada moodulitesse, liituda komiteedega ja võtta OpenOrgOS turvaliselt kasutusele."
+      },
+      "caseStudies": {
+        "title": "Juhtumiuuringud",
+        "lead": "Kuidas organisatsioonid võtavad OpenOrgOS-iga kasutusele mooduleid ja juhtimismustreid."
+      },
+      "research": {
+        "title": "OpenOrgOS uurimused",
+        "lead": "Teadustegevus organisatsioonidevaheliste protokollide, auditeeritavuse ja juhtimise disaini kohta."
+      },
+      "events": {
+        "title": "OpenOrgOS sündmused",
+        "lead": "Kogukonna kohtumised, veebiseminarid ja konverentsiseansid."
+      },
+      "eventsSponsor": {
+        "title": "Sponsorlus",
+        "lead": "Toeta kogukonna üritusi, teadustegevust ja haridusprogramme."
+      },
+      "eventsSubmitTalk": {
+        "title": "Esita ettekanne",
+        "lead": "Paku välja seansse moodulite, juhtimise, sertifitseerimise või kasutuselevõtu kohta."
+      },
+      "memberships": {
+        "title": "Ettevõtteliikmed",
+        "lead": "Liikmesus organisatsioonidele, kes haldavad mooduleid ja sponsoreerivad kogukonna programme."
+      },
+      "supporters": {
+        "title": "Individuaalsed toetajad",
+        "lead": "Individuaalsed kaastöötajad, kes hooldavad mooduleid, vaatavad üle standardeid või õpetavad Academys."
+      },
+      "partners": {
+        "title": "Partnerluseprogramm",
+        "lead": "GitHubi integratsioon, moodulite majutus ja tehniline partnerlus kogukonna platvormiga."
+      },
+      "contact": {
+        "title": "Võta meiega ühendust",
+        "lead": "Kogukonna päringud, meediataotlused ja partnerluse küsimused."
+      },
+      "inclusion": {
+        "title": "Kaasamine ja juurdepääsetavus",
+        "lead": "Meie pühendumus mitmekesistele kaastöötajatele ja juurdepääsetavale dokumentatsioonile."
+      },
+      "careers": {
+        "title": "Karjäär",
+        "lead": "Aunimetused — Hooldaja, Hindaja, Komitee liige — mitte tasustatav töö."
+      }
+    }
+  },
+  "compliance": {
+    "title": "Vastavuse ja kvalifikatsioonide register",
+    "lead": "Reguleeritud ametite, ISO auditikvalifikatsioonide ja vastavuskontrollide andmebaas.",
+    "summaryProfessions": "{count} ametitüüpi",
+    "summaryChecklists": "{count} kontrollnimekirja",
+    "sectionProfessionsTitle": "Reguleeritud ametid ja spetsialistid",
+    "sectionProfessionsDesc": "Advokaadid, maksunõustajad, CPA-d, tollimaksjad ja muud litsentsitud rollid.",
+    "sectionIsoTitle": "ISO auditikvalifikatsioonid",
+    "sectionIsoDesc": "Juhtauditor ja ISO 19011 pädevus haldussüsteemide auditiks.",
+    "sectionChecklistsTitle": "Vastavuskontrollid",
+    "sectionChecklistsDesc": "Huvide konflikt, sanktsioonid, antisotsiaalsed jõud ja kaubanduskontroll.",
+    "viewProfessions": "Sirvi ameteid",
+    "viewIso": "Sirvi ISO kvalifikatsioone",
+    "viewChecklists": "Sirvi nimekirju",
+    "professionsTitle": "Ametid ja kvalifikatsioonid",
+    "professionsLead": "Riikliku litsentsiga ametid ja vastavusspecialistid.",
+    "checklistsTitle": "Vastavuskontrollid",
+    "checklistsLead": "Operatiivsed nimekirjad COI, sanktsioonide ja kaubanduse jaoks.",
+    "filterCategory": "Kategooria",
+    "filterJurisdiction": "Jurisdiktsioon",
+    "filterType": "Nimekirja tüüp",
+    "filterAll": "Kõik",
+    "searchPlaceholder": "Otsi nime või regulaatori järgi",
+    "tableName": "Nimi",
+    "tableCategory": "Kategooria",
+    "tableJurisdiction": "Jurisdiktsioon",
+    "tableRegulator": "Regulaator",
+    "tableCredentials": "Kvalifikatsiooni tüübid",
+    "tableType": "Tüüp",
+    "tableItems": "Kirjed",
+    "tableExpert": "Soovitatud ekspert",
+    "viewChecklist": "Vaata nimekirja",
+    "backToRegistry": "Tagasi registrisse",
+    "checklistVersion": "Versioon {version}",
+    "itemRequired": "Kohustuslik",
+    "itemOptional": "Valikuline",
+    "itemReference": "Viide",
+    "emptyProfessions": "Ükski amet ei vasta filtritele.",
+    "emptyChecklists": "Ükski nimekiri ei vasta filtritele.",
+    "international": "Rahvusvaheline",
+    "expertsLink": "Inimeste kataloog"
+  }
+}

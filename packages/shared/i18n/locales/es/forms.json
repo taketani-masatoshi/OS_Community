@@ -1,0 +1,97 @@
+{
+  "moduleRole": {
+    "roleLabel": "Función deseada",
+    "messageLabel": "Mensaje",
+    "placeholder": " detalles de la contribución",
+    "submit": "Enviar solicitud",
+    "submitting": "Enviando…",
+    "success": "Solicitud recibida.",
+    "error": "Se produjo un error.",
+    "errorUnauthorized": "Debe iniciar sesión. Vuelva a entrar con GitHub.",
+    "errorPending": "Ya hay una solicitud pendiente para este módulo.",
+    "pendingReview": "Su solicitud está en revisión. Espere el resultado.",
+    "roles": {
+      "CONTRIBUTOR": "Contribuidor",
+      "MAINTAINER": "Maintainer de Módulo",
+      "DEPUTY": "Adjunto Maintainer"
+    },
+    "errorProfileIncomplete": "Complete su perfil antes de solicitar.",
+    "memberJoined": "Ahora eres miembro del módulo. Abre la pestaña Developer para ver el repositorio."
+  },
+  "wildModule": {
+    "slug": "slug (minúsculas, guiones)",
+    "name": "Nombre de visualización",
+    "repoUrl": "URL del repositorio de GitHub",
+    "manifestUrl": "URL del manifiesto (opcional)",
+    "authorName": "Nombre del autor",
+    "description": "Descripción (opcional)",
+    "agree": "Acepto que los módulos wild no están soportados y no se garantiza su funcionamiento.",
+    "disclaimerLink": "Aviso Legal",
+    "submit": "Registrar",
+    "error": "Error en el registro",
+    "slugHint": "Ejemplo: my-accounting-rules",
+    "nameHint": "Ejemplo: Mis Reglas Contables",
+    "repoUrlHint": "Ejemplo: https://github.com/you/my-rules",
+    "manifestUrlHint": "Ejemplo: https://raw.githubusercontent.com/you/my-rules/main/module.manifest.yaml",
+    "errorSlugConflict": "Este slug ya está en uso. Elige un slug diferente.",
+    "errorRepoNotFound": "Repositorio de GitHub no encontrado. Comprueba la URL.",
+    "successNextTitle": "Qué hacer a continuación"
+  },
+  "certification": {
+    "typeLabel": "Tipo de certificación",
+    "statementLabel": "Autodeclaración · experiencia",
+    "placeholder": "Experiencia de configuración, módulos propios, historial de validación, etc.",
+    "submit": "Solicitar",
+    "error": "Error del sistema"
+  },
+  "githubConnect": {
+    "label": "URL del repositorio de GitHub",
+    "submit": "Conectar",
+    "success": "Conectado. Ejecuta sync-modules para sincronizar manifiestos.",
+    "errorUnauthorized": "Debe iniciar sesión. Vuelva a entrar con GitHub.",
+    "errorNetwork": "No se pudo contactar con GitHub. Inténtelo más tarde.",
+    "errorNotFound": "Repositorio no encontrado. Compruebe la URL.",
+    "error": "Error del sistema",
+    "errorProfileIncomplete": "Complete su perfil en /register antes de conectar un repositorio."
+  },
+  "admin": {
+    "approve": "Aprobar",
+    "reject": "Rechazar",
+    "errorAction": "La acción falló. Inténtelo de nuevo.",
+    "reviewNoteLabel": "Nota de revisión (opcional)",
+    "approvePromotion": "Aprobar promoción",
+    "rejectPromotion": "Rechazar promoción"
+  },
+  "modulePromotion": {
+    "desc": "Solicita la revisión del Standard Committee para promover de módulo Wild (no revisado) a módulo Comunitario.",
+    "messageLabel": "Mensaje de solicitud",
+    "placeholder": "Propósito del módulo, estado de implementación, contribución comunitaria planificada, etc.",
+    "submit": "Solicitar promoción",
+    "submitting": "Enviando…",
+    "error": "La solicitud falló.",
+    "errorPending": "Ya hay una solicitud de promoción pendiente.",
+    "errorForbidden": "Solo el registrante del módulo o el Mantenedor puede solicitar la promoción."
+  },
+  "committeeMembership": {
+    "roleLabel": "Rol deseado en el comité",
+    "messageLabel": "Mensaje de solicitud",
+    "placeholder": "Experiencia en dominio, experiencia de puente jurisdiccional, plan de contribución al comité, etc.",
+    "bridgeExpertiseLabel": "Experiencia puente (dominio)",
+    "bridgeExpertisePlaceholder": "ej.: contabilidad, contratos, QMS",
+    "bridgeRegionLabel": "Jurisdicción / región objetivo",
+    "bridgeRegionPlaceholder": "ej.: CN, JP, UE transfronterizo",
+    "nominatorLabel": "Nominador (miembro existente o referencia)",
+    "nominatorPlaceholder": "Nombre del recomendador o referencia equivalente",
+    "conflictLabel": "Confirmo que no hay conflictos de intereses para este rol en el comité (Trust First).",
+    "conflictRequired": "Se requiere confirmación de ausencia de conflicto de intereses.",
+    "submit": "Enviar solicitud al comité",
+    "submitting": "Enviando…",
+    "success": "Solicitud recibida.",
+    "error": "Se produjo un error.",
+    "pendingReview": "Tu solicitud al comité está en revisión.",
+    "roles": {
+      "MEMBER": "Miembro del comité",
+      "REVIEWER": "Revisor del comité"
+    }
+  }
+}

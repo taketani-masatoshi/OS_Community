@@ -1,0 +1,75 @@
+{
+  "title": "公開範囲および企業資産保護ポリシー",
+  "subtitle": "組織間通信の非競争領域を標準化し、各組織が競争領域に集中できるプロトコル",
+  "philosophyTitle": "基本理念",
+  "philosophyLead": "OpenOrgOS は、組織の競争優位を奪うことを目的としない。",
+  "philosophyGoal": "組織境界を越えて検証可能な状態を交換するための共通プロトコルを提供することを目指す。ビジネスロジック・法解釈・組織行動は各国・各ドメインの委員会に委任する。",
+  "standardizeTitle": "標準化を目指す領域",
+  "standardizeIntro": "多くの組織関係で共通するプロトコル拡張（identity exchange、authority delegation、監査連携など）については、可能な限り共通モジュール化し、コミュニティへ還元することを推奨する。これらは競争優位ではなく、組織間通信を支える共通インフラである。",
+  "standardizeItems": [
+    "会計",
+    "人事",
+    "勤怠",
+    "契約管理",
+    "知財管理",
+    "ワークフロー",
+    "稟議",
+    "ガバナンス",
+    "内部統制",
+    "ISO 対応",
+    "ISMS 対応",
+    "監査対応",
+    "補助金管理",
+    "取締役会運営",
+    "株主対応"
+  ],
+  "nonStandardizeTitle": "標準化を目指さない領域",
+  "nonStandardizeIntro": "企業固有の競争優位を構成する資産については、OpenOrgOS から分離し、各企業が独自に管理することを推奨する。OpenOrgOS はそれらの共有や公開を要求しない。",
+  "nonStandardizeItems": [
+    "製品設計",
+    "図面",
+    "CAD データ",
+    "AI モデル",
+    "学習データ",
+    "顧客データ",
+    "製造ノウハウ",
+    "営業ノウハウ",
+    "研究データ",
+    "独自アルゴリズム",
+    "特許戦略",
+    "事業戦略",
+    "独自業務プロセス"
+  ],
+  "privateModuleTitle": "プライベートモジュールの考え方",
+  "privateModuleIntro": "OpenOrgOS で開発されたモジュールは、必ずしも公開する必要はない。企業は次を自由に組み合わせられる。",
+  "privateModuleTypes": [
+    {
+      "label": "コミュニティモジュール",
+      "desc": "公開モジュール — コミュニティへ還元"
+    },
+    {
+      "label": "プライベートモジュール",
+      "desc": "非公開モジュール — 社内のみ"
+    }
+  ],
+  "privateModuleNote": "OpenOrgOS は、良いモジュールのコミュニティへの還元を歓迎するが、それを義務化するものではない。",
+  "principlesTitle": "OpenOrgOS の基本原則",
+  "principlesNot": "OpenOrgOS は「競争領域を共有する」ことを目指さない。",
+  "principlesYes": "我々が目指すのは、「非競争領域を共有し、各企業が本来の競争領域に集中できる世界」である。",
+  "messageTitle": "メッセージ",
+  "messageLead": "OpenOrgOS を導入しても、企業は同じ会社にはならない。",
+  "messageSame": "共通化されるのはプロトコル基盤のみであり、組織の価値を決定する以下は引き続き各組織の資産として保護される。",
+  "messageProtectedTitle": "保護される企業資産",
+  "messageProtectedItems": [
+    "技術",
+    "製品",
+    "顧客",
+    "ノウハウ",
+    "ブランド",
+    "戦略"
+  ],
+  "messageBody": "OpenOrgOS は企業の独自性を奪うものではない。",
+  "messageClosing": "むしろ、企業が独自性を発揮すべき領域へ集中できる環境を提供するための基盤である。",
+  "taglineNot": "OpenOrgOS は、「競争領域を標準化するための内部運営 OS」ではない。",
+  "taglineYes": "OpenOrgOS は、「組織間通信の非競争領域を標準化し、各組織が競争領域へ集中できるグローバルプロトコル」である。"
+}

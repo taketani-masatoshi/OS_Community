@@ -1,0 +1,75 @@
+{
+  "title": "Openness Scope & Enterprise Asset Protection",
+  "subtitle": "A protocol that standardizes non-competitive domains so organizations focus on what differentiates them",
+  "philosophyTitle": "Core philosophy",
+  "philosophyLead": "OpenOrgOS does not aim to take away an organization's competitive advantage.",
+  "philosophyGoal": "We provide the common protocol for verifiable exchange across organizational boundaries. Business logic, legal interpretation, and organizational behavior are delegated to national or domain-specific committees.",
+  "standardizeTitle": "Domains we aim to standardize",
+  "standardizeIntro": "For protocol extensions common across many inter-organizational relationships (identity exchange, authority delegation, audit linkage, and similar), we encourage modularizing and returning them to the community where possible. These are shared infrastructure for inter-organizational communication — not sources of competitive advantage.",
+  "standardizeItems": [
+    "Accounting",
+    "HR",
+    "Time & attendance",
+    "Contract management",
+    "IP management",
+    "Workflow",
+    "Approval chains",
+    "Governance",
+    "Internal controls",
+    "ISO compliance",
+    "ISMS compliance",
+    "Audit readiness",
+    "Grant management",
+    "Board operations",
+    "Shareholder relations"
+  ],
+  "nonStandardizeTitle": "Domains we do not aim to standardize",
+  "nonStandardizeIntro": "Assets that define company-specific competitive advantage should stay separate from OpenOrgOS and be managed by each company. OpenOrgOS never requires sharing or publishing them.",
+  "nonStandardizeItems": [
+    "Product design",
+    "Drawings",
+    "CAD data",
+    "AI models",
+    "Training data",
+    "Customer data",
+    "Manufacturing know-how",
+    "Sales know-how",
+    "Research data",
+    "Proprietary algorithms",
+    "Patent strategy",
+    "Business strategy",
+    "Proprietary business processes"
+  ],
+  "privateModuleTitle": "Private modules",
+  "privateModuleIntro": "Modules built on OpenOrgOS do not have to be public. Companies may freely combine:",
+  "privateModuleTypes": [
+    {
+      "label": "Community Module",
+      "desc": "Public — contributed to the community"
+    },
+    {
+      "label": "Private Module",
+      "desc": "Private — internal to the company"
+    }
+  ],
+  "privateModuleNote": "OpenOrgOS welcomes returning good modules to the community but does not require it.",
+  "principlesTitle": "Fundamental principle",
+  "principlesNot": "OpenOrgOS does not aim to share competitive domains.",
+  "principlesYes": "We aim for a world where non-competitive domains are shared so each company can focus on its true competitive edge.",
+  "messageTitle": "Message",
+  "messageLead": "Adopting OpenOrgOS does not make every company the same.",
+  "messageSame": "Only the protocol foundation is commonized. What defines organizational value remains protected:",
+  "messageProtectedTitle": "Protected enterprise assets",
+  "messageProtectedItems": [
+    "Technology",
+    "Products",
+    "Customers",
+    "Know-how",
+    "Brand",
+    "Strategy"
+  ],
+  "messageBody": "OpenOrgOS does not strip away what makes your company unique.",
+  "messageClosing": "It is the foundation that lets you concentrate on the domains where uniqueness matters.",
+  "taglineNot": "OpenOrgOS is not an internal operations OS to standardize competitive domains.",
+  "taglineYes": "OpenOrgOS is a global protocol to standardize non-competitive inter-organizational domains and focus resources on competitive ones."
+}

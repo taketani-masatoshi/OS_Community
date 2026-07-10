@@ -1,0 +1,117 @@
+# southwood.cloud SaaS stack (MacBook Air · Docker)
+#
+#   cp .env.cloud.example .env.cloud
+#   docker compose -f docker-compose.cloud.yml up -d
+#
+# Local HTTPS (Caddy internal CA):
+#   https://control.southwood.cloud:8443/health
+#   https://demo.southwood.cloud:8443/
+#   https://dash.southwood.cloud:8443/
+#
+# Requires /etc/hosts entries — run: ./scripts/setup-local-southwood-cloud-hosts.sh
+#
+# Dev profile (Org Agent + Console stub for Phase 1 testing):
+#   docker compose -f docker-compose.cloud.yml --profile dev up -d
+#
+# Production (Cloudflare Tunnel — separate Tunnel ID from southwood.inc):
+#   ./scripts/start-cloudflare-tunnel-cloud.sh
+
+name: os-cloud
+
+services:
+  cp-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${CP_POSTGRES_USER:-southwood_cloud}
+      POSTGRES_PASSWORD: ${CP_POSTGRES_PASSWORD:-southwood_cloud_dev}
+      POSTGRES_DB: ${CP_POSTGRES_DB:-southwood_cloud}
+    volumes:
+      - cp_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${CP_POSTGRES_USER:-southwood_cloud}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  cloud-control:
+    build:
+      context: .
+      dockerfile: apps/cloud-control/Dockerfile
+    environment:
+      PORT: 8080
+      CLOUD_DOMAIN: ${CLOUD_DOMAIN:-southwood.cloud}
+      AGENT_TOKEN: ${AGENT_TOKEN:-dev-agent-token-change-me}
+      DATABASE_URL: postgresql://${CP_POSTGRES_USER:-southwood_cloud}:${CP_POSTGRES_PASSWORD:-southwood_cloud_dev}@cp-db:5432/${CP_POSTGRES_DB:-southwood_cloud}
+    ports:
+      - "${CLOUD_CONTROL_PORT:-8080}:8080"
+    expose:
+      - "8080"
+    depends_on:
+      cp-db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  cloud-dash:
+    build:
+      context: .
+      dockerfile: apps/cloud-dash/Dockerfile
+    environment:
+      PORT: 8082
+      CONTROL_PLANE_URL: http://cloud-control:8080
+    ports:
+      - "${CLOUD_DASH_PORT:-8082}:8082"
+    expose:
+      - "8082"
+    depends_on:
+      - cloud-control
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "${CLOUD_HTTPS_PORT:-8443}:443"
+      - "${CLOUD_HTTP_PORT:-8088}:80"
+    volumes:
+      - ./deploy/Caddyfile.cloud:/etc/caddy/Caddyfile:ro
+      - caddy_cloud_data:/data
+      - caddy_cloud_config:/config
+    environment:
+      CLOUD_DOMAIN: ${CLOUD_DOMAIN:-southwood.cloud}
+    depends_on:
+      - cloud-control
+      - cloud-dash
+    restart: unless-stopped
+
+  org-console-stub:
+    profiles: ["dev"]
+    build:
+      context: .
+      dockerfile: apps/org-console-stub/Dockerfile
+    environment:
+      ORG_SLUG: ${ORG_SLUG:-demo}
+      PORT: 3000
+    expose:
+      - "3000"
+    restart: unless-stopped
+
+  org-agent:
+    profiles: ["dev"]
+    build:
+      context: .
+      dockerfile: apps/org-agent/Dockerfile
+    environment:
+      CONTROL_PLANE_URL: ws://cloud-control:8080/api/v1/tunnel
+      LOCAL_CONSOLE_URL: http://org-console-stub:3000
+      ORG_SLUG: ${ORG_SLUG:-demo}
+      AGENT_TOKEN: ${AGENT_TOKEN:-dev-agent-token-change-me}
+      AGENT_VERSION: ${AGENT_VERSION:-0.1.0-skeleton}
+    depends_on:
+      - cloud-control
+      - org-console-stub
+    restart: unless-stopped
+
+volumes:
+  cp_pgdata:
+  caddy_cloud_data:
+  caddy_cloud_config:

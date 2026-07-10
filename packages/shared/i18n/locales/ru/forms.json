@@ -1,0 +1,97 @@
+{
+  "moduleRole": {
+    "roleLabel": "Желаемая роль",
+    "messageLabel": "Сообщение",
+    "placeholder": " детали вклада",
+    "submit": "Подать заявку",
+    "submitting": "Отправка…",
+    "success": "Заявка получена.",
+    "error": "Произошла ошибка.",
+    "errorUnauthorized": "Требуется вход. Войдите снова через GitHub.",
+    "errorPending": "Для этого модуля уже есть заявка на рассмотрении.",
+    "pendingReview": "Ваша заявка на рассмотрении. Дождитесь результата.",
+    "roles": {
+      "MAINTAINER": "Мейнтейнер модуля",
+      "CONTRIBUTOR": "Участник",
+      "DEPUTY": "Заместитель Maintainer"
+    },
+    "errorProfileIncomplete": "Заполните профиль перед подачей заявки.",
+    "memberJoined": "Вы стали участником модуля. Откройте вкладку Developer, чтобы просмотреть репозиторий."
+  },
+  "wildModule": {
+    "slug": "Slug (строчные буквы, дефисы)",
+    "name": "Отображаемое имя",
+    "repoUrl": "URL репозитория GitHub",
+    "manifestUrl": "URL манифеста (необязательно)",
+    "authorName": "Имя автора",
+    "description": "Описание (необязательно)",
+    "agree": "Я согласен, что дикие модули не поддерживаются и не гарантируют работоспособность.",
+    "disclaimerLink": "Отказ от ответственности",
+    "submit": "Зарегистрировать",
+    "error": "Регистрация не удалась",
+    "slugHint": "Пример: my-accounting-rules",
+    "nameHint": "Пример: Мои правила бухгалтерского учёта",
+    "repoUrlHint": "Пример: https://github.com/you/my-rules",
+    "manifestUrlHint": "Пример: https://raw.githubusercontent.com/you/my-rules/main/module.manifest.yaml",
+    "errorSlugConflict": "Этот слаг уже занят. Выберите другой слаг.",
+    "errorRepoNotFound": "Репозиторий GitHub не найден. Проверьте URL.",
+    "successNextTitle": "Что делать дальше"
+  },
+  "certification": {
+    "typeLabel": "Тип сертификации",
+    "statementLabel": "Самодекларация · опыт",
+    "placeholder": "Опыт настройки, ответственные модули, записи о валидации и т.д.",
+    "submit": "Подать заявку",
+    "error": "Ошибка"
+  },
+  "githubConnect": {
+    "label": "URL репозитория GitHub",
+    "submit": "Подключить",
+    "success": "Подключено. Запустите sync-modules для синхронизации манифестов.",
+    "error": "Ошибка",
+    "errorUnauthorized": "Требуется вход. Войдите снова через GitHub.",
+    "errorNetwork": "Не удалось связаться с GitHub. Попробуйте позже.",
+    "errorNotFound": "Репозиторий не найден. Проверьте URL.",
+    "errorProfileIncomplete": "Завершите профиль на /register перед подключением репозитория."
+  },
+  "admin": {
+    "approve": "Одобрить",
+    "reject": "Отклонить",
+    "errorAction": "Не удалось выполнить действие. Попробуйте снова.",
+    "reviewNoteLabel": "Примечание к проверке (необязательно)",
+    "approvePromotion": "Одобрить повышение",
+    "rejectPromotion": "Отклонить повышение"
+  },
+  "modulePromotion": {
+    "desc": "Запросите проверку Standard Committee для повышения с Wild (непроверенного) до модуля сообщества.",
+    "messageLabel": "Сообщение заявки",
+    "placeholder": "Назначение модуля, статус реализации, планируемый вклад в сообщество и т. д.",
+    "submit": "Запросить повышение",
+    "submitting": "Отправка…",
+    "error": "Запрос не выполнен.",
+    "errorPending": "Запрос на повышение уже ожидает рассмотрения.",
+    "errorForbidden": "Только регистрант модуля или Обслуживающий может запросить повышение."
+  },
+  "committeeMembership": {
+    "roleLabel": "Желаемая роль в комитете",
+    "messageLabel": "Сообщение заявки",
+    "placeholder": "Экспертиза в домене, опыт юрисдикционного моста, план вклада в комитет и т. д.",
+    "bridgeExpertiseLabel": "Экспертиза-мост (домен)",
+    "bridgeExpertisePlaceholder": "напр. бухгалтерия, договоры, QMS",
+    "bridgeRegionLabel": "Целевая юрисдикция / регион",
+    "bridgeRegionPlaceholder": "напр. CN, JP, трансграничный ЕС",
+    "nominatorLabel": "Номинатор (существующий участник или ссылка)",
+    "nominatorPlaceholder": "Имя рекомендателя или эквивалентная ссылка",
+    "conflictLabel": "Подтверждаю отсутствие конфликтов интересов для данной роли в комитете (Trust First).",
+    "conflictRequired": "Требуется подтверждение отсутствия конфликта интересов.",
+    "submit": "Отправить заявку в комитет",
+    "submitting": "Отправка…",
+    "success": "Заявка получена.",
+    "error": "Произошла ошибка.",
+    "pendingReview": "Ваша заявка в комитет находится на рассмотрении.",
+    "roles": {
+      "MEMBER": "Член комитета",
+      "REVIEWER": "Рецензент комитета"
+    }
+  }
+}

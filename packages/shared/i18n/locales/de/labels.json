@@ -1,0 +1,81 @@
+{
+  "moduleType": {
+    "BUSINESS": "Business-Modul",
+    "JURISDICTION": "Organisations-Paket",
+    "WILD": "Community / Nicht geprüft"
+  },
+  "moduleRole": {
+    "MAINTAINER": "Modul-Maintainer",
+    "DEPUTY": "Stellvertreter",
+    "CONTRIBUTOR": "Mitwirkender"
+  },
+  "siteRole": {
+    "GUEST": "Gast",
+    "MEMBER": "Mitglied",
+    "DEPUTY": "Stellvertreter",
+    "CERT_REVIEWER": "Zertifizierungsprüfer",
+    "CONTRIBUTOR": "Mitwirkender",
+    "MAINTAINER": "Modul-Maintainer",
+    "ADMIN": "Site-Administrator"
+  },
+  "communityRoles": [
+    {
+      "id": "USER",
+      "title": "User",
+      "titleLocal": "Benutzer",
+      "desc": "OpenOrgOS einführen und nutzen."
+    },
+    {
+      "id": "CONTRIBUTOR",
+      "title": "Contributor",
+      "titleLocal": "Mitwirkender",
+      "desc": "Regeln, Code, Dokumentation, Übersetzungen — willkommen unabhängig von Fachrichtung oder Region."
+    },
+    {
+      "id": "REVIEWER",
+      "title": "Reviewer",
+      "titleLocal": "Prüfer",
+      "desc": "Qualitätsprüfungen — breit offene Beteiligung."
+    },
+    {
+      "id": "MAINTAINER",
+      "title": "Maintainer",
+      "titleLocal": "Modul-Maintainer",
+      "desc": "Ein spezifisches Modul pflegen."
+    },
+    {
+      "id": "COMMITTEE",
+      "title": "Committee Member",
+      "titleLocal": "Komiteemitglied",
+      "desc": "Standards entwickeln und genehmigen. Heimatbereichs-Komitees sind Standard; regionsübergreifende Sitze erfordern Brückenexpertise und Überprüfung."
+    },
+    {
+      "id": "FELLOW",
+      "title": "Foundation Fellow",
+      "titleLocal": "Foundation-Fellow",
+      "desc": "Langfristige Wirkung auf die Community."
+    }
+  ],
+  "promotionFlow": [
+    {
+      "from": "Mitwirkender",
+      "to": "Prüfer",
+      "criteria": "Nachhaltige Prüfungsbeiträge und Qualitätsurteile."
+    },
+    {
+      "from": "Prüfer",
+      "to": "Modul-Maintainer",
+      "criteria": "Fachbereichs-Expertise und Wartungsverpflichtung."
+    },
+    {
+      "from": "Modul-Maintainer",
+      "to": "Komiteemitglied",
+      "criteria": "Standardbeiträge, Nominierung, Governance-Überprüfung (regionsübergreifend: abgestimmter Bereich & Brückenexpertise)."
+    },
+    {
+      "from": "Komiteemitglied",
+      "to": "Foundation-Fellow",
+      "criteria": "Langfristige Wirkung auf die Community."
+    }
+  ]
+}

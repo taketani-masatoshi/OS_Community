@@ -1,0 +1,17 @@
+{
+  "name": "@os-community/cloud-control",
+  "private": true,
+  "version": "0.1.0",
+  "description": "southwood.cloud Control Plane + edge proxy for {org-slug}.southwood.cloud",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

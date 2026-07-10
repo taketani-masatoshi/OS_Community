@@ -1,0 +1,498 @@
+{
+  "ui": {
+    "role": "Função",
+    "members": "Membros",
+    "name": "Nome",
+    "verify": "Verificar",
+    "none": "Nenhum",
+    "unknown": "Desconhecido",
+    "default": "padrão",
+    "expert": "Especialista",
+    "module": "Módulo",
+    "lifecycle": "Ciclo de vida",
+    "focus": "Foco",
+    "renewal": "Renovação",
+    "action": "Ação",
+    "status": "Estado"
+  },
+  "about": {
+    "title": "Sobre o OpenOrgOS",
+    "lead": "A comunidade open-source de um protocolo — não um OS de gestão interna das organizações.",
+    "scopeTitle": "Escopo",
+    "scopeBody": "Comércio entre empresas, parcerias universitárias, alianças de ONGs, cadeias de suprimentos — qualquer relação que exija troca verificável além das fronteiras organizacionais.",
+    "visionTitle": "Visão",
+    "visionQuote": "O OpenOrgOS aspira ser o protocolo comum de comunicação entre organizações.",
+    "governanceCta": "Modelo de governança →"
+  },
+  "aboutSub": {
+    "back": "← Sobre",
+    "join": "Junte-se à Comunidade",
+    "notFound": "Página não encontrada",
+    "contact": {
+      "title": "Contato",
+      "body": "Para consultas sobre a comunidade, use o GitHub Issues. Dados de tenants e operações por organização estão fora do escopo."
+    },
+    "brand": {
+      "title": "Diretrizes de marca OpenOrgOS",
+      "body": "Logo, cores e uso aceitável das marcas OpenOrgOS. Apenas uso comunitário; uso comercial requer consulta prévia."
+    },
+    "inclusion": {
+      "title": "Inclusão e Acessibilidade",
+      "body": "Recebemos contribuidores de diversas origens, jurisdições e especializações. Melhoramos continuamente a acessibilidade de documentos e UI."
+    },
+    "careers": {
+      "title": "Carreiras",
+      "body": "Participe como Maintainer, Revisor ou Membro do Comitê. Contribuição honorária — não é emprego remunerado."
+    }
+  },
+  "experts": {
+    "title": "Diretório de Especialistas",
+    "lead": "Registro público de Maintainers e profissionais certificados. Trust First.",
+    "maintainersTitle": "Mantenedores",
+    "maintainersEmpty": "Nenhum mantenedor registrado ainda.",
+    "certifiedTitle": "Profissionais Certificados",
+    "certifiedEmpty": " titulares certificados aparecerão aqui.",
+    "deputiesTitle": "Co-mantenedores",
+    "filterLabel": "Filtrar por camada de identidade",
+    "filterAll": "Todos",
+    "filterLinkedIn": "LinkedIn ligado",
+    "filterGitHub": "Repos GitHub ligados",
+    "filterBoth": "Ambas as camadas",
+    "filterEmpty": "Nenhum especialista corresponde a estes filtros.",
+    "filterClear": "Limpar filtros",
+    "registryCta": "Registro de conformidade e qualificações"
+  },
+  "modules": {
+    "title": "Registro de Módulos",
+    "lead": "Contabilidade, contratos, PI, ISO13485, J-SOX, pesquisa, governança — desenvolvidos, revisados e padronizados por módulo.",
+    "ctaApplyMaintainer": "Candidatar-se como Maintainer",
+    "ctaJoin": "Participar para contribuir",
+    "wildEmpty": "Módulos não revisados:",
+    "wildRegisterLink": "registrar",
+    "badgeUnreviewed": "Não revisado",
+    "badgeMaintainerWanted": "Maintainer procurado",
+    "viewModule": "Ver módulo →",
+    "githubCta": "Integração com GitHub →",
+    "emptySeedHint": "Os módulos aparecerão aqui depois que forem registrados no registro."
+  },
+  "moduleDetail": {
+    "backToRegistry": "← Registro de Módulos",
+    "badgeUnreviewed": "Não revisado",
+    "wildWarningTitle": "Módulo não revisado",
+    "wildWarningBody": "A comunidade não garante operação ou manutenção. Trust First — use por sua conta e risco.",
+    "lifecycleTitle": "Posição no ciclo de vida",
+    "committeeTitle": "Comitê do módulo",
+    "committeeDesc": "Este módulo possui um comitê dedicado para revisão de qualidade e aprovação de merge.",
+    "committeeCta": "Ver comitê →",
+    "rolesTitle": "Maintainers e contribuidores",
+    "maintainerOpen": "Aberto — candidatar-se abaixo",
+    "applyTitle": "Candidatar-se como responsável / contribuidor",
+    "tabOverview": "Visão geral",
+    "githubMissing": "Nenhum repositório vinculado ainda. Conecte via integração GitHub ou verifique o URL do registro.",
+    "githubConnectCta": "Conectar GitHub",
+    "applyCta": "Solicitar",
+    "signInToApply": "Fazer login para candidatar-se",
+    "applySignInHint": "Faça login para candidatar-se a uma função de módulo.",
+    "wildContributorHint": "Módulos de proposta comunitária aceitam candidaturas de Contribuidor e Co-mantenedor (o Mantenedor é o registrante).",
+    "githubRequiredHint": "A conexão com o GitHub é recomendada.",
+    "mypageLink": "Verificar status da candidatura em Minha Página",
+    "registeredNotice": "Módulo registrado. Você foi atribuído como Mantenedor e adicionado ao comitê do módulo.",
+    "registeredNextSteps": "Para promover para um módulo comunitário, envie uma solicitação de promoção comunitária abaixo para revisão do Standard Committee.",
+    "promotionTitle": "Solicitação de promoção comunitária",
+    "promotionPending": "Solicitação de promoção em revisão. Aguardando aprovação do Standard Committee.",
+    "promotionRejected": "Sua solicitação de promoção anterior foi rejeitada. Você pode revisar e reaplicar.",
+    "promotionApproved": "Aprovado como módulo comunitário.",
+    "promotionStandardsLink": "Ver critérios de promoção (Standards)",
+    "tabParticipate": "Participar",
+    "tabDeveloper": "Detalhes (desenvolvedores)",
+    "stickyApplyCta": "Participar deste módulo",
+    "overviewDescFallback": "Regras legíveis por humanos para este domínio de negócios.",
+    "slugLabel": "ID do Módulo",
+    "roleHelpTitle": "Guia de funções",
+    "roleHelpContributor": "Propor e melhorar regras — um bom primeiro passo.",
+    "roleHelpDeputy": "Co-mantém o módulo com o mantenedor.",
+    "roleHelpMaintainer": "Gerencia qualidade, revisões e liderança de comitê."
+  },
+  "certifications": {
+    "title": "Educação e Certificação",
+    "lead": "Treinamento, certificação e credenciais para adoção segura.",
+    "tracksTitle": "Trilhas de certificação",
+    "operatorFocus": "Operações · configuração · validação",
+    "designerFocus": "Arquitetura · design de módulos",
+    "renewal2y": "2 anos",
+    "renewal3y": "3 anos",
+    "disclaimer": "Certificação de referência apenas — não é uma garantia legal. Gerenciada pelo Comitê de Certificação.",
+    "applyCta": "Solicitar certificação",
+    "signInToApply": "para solicitar.",
+    "directoryTitle": "Diretório certificado",
+    "directoryEmpty": "Nenhum profissional certificado ainda.",
+    "expertsCta": "Diretório de especialistas →"
+  },
+  "certificationsApply": {
+    "title": "Solicitar certificação",
+    "desc": "Um número de certificado é emitido após a revisão."
+  },
+  "certificationsVerify": {
+    "title": "Verificação de certificado",
+    "desc": "Nº do certificado:",
+    "valid": "Válido",
+    "invalid": "Inválido",
+    "labelType": "Certificação",
+    "labelHolder": "Titular",
+    "labelIssued": "Emitido",
+    "labelExpires": "Expira",
+    "labelStatus": "Estado"
+  },
+  "wildModules": {
+    "title": "Módulos wild",
+    "desc": "Você pode conectar módulos próprios, mas eles não são suportados.",
+    "disclaimerTitle": "Aviso Legal",
+    "disclaimerItems": [
+      "A comunidade não garante operação ou auditorias de segurança",
+      "A compatibilidade com `steward modules check` é de sua responsabilidade",
+      "A aceitação do aviso legal é necessária no registro"
+    ],
+    "registerCta": "Registrar módulo wild",
+    "registeredTitle": "Registrado",
+    "badgeUnmaintained": "Sem suporte"
+  },
+  "wildModulesRegister": {
+    "title": "Registrar módulo wild",
+    "desc": "Aceitação do aviso legal obrigatória."
+  },
+  "members": {
+    "title": "Membros",
+    "desc": "Membros da comunidade que fizeram login com GitHub.",
+    "empty": "Nenhum membro ainda. Faça login com GitHub."
+  },
+  "content": {
+    "title": "Conteúdo",
+    "desc": "Coloque Markdown em content/published/ e vincule via registry.yaml.",
+    "locationTitle": "Localização do conteúdo",
+    "workflowHint": "Novo conteúdo → inbox/ → revisão → published/ → adicionar ao registry.yaml",
+    "draftBadge": " rascunhos",
+    "draftHint": "Altere o status para publicado para exibir na web",
+    "categoryDocs": "Documentação",
+    "categoryGuides": "Guias",
+    "categoryEmpty": "Nenhum conteúdo publicado."
+  },
+  "contentDetail": {
+    "back": "← Índice de conteúdo"
+  },
+  "legal": {
+    "disclaimer": "Aviso Legal",
+    "terms": "Termos de Uso",
+    "privacy": "Política de Privacidade",
+    "trademark": "Diretrizes de uso de marcas"
+  },
+  "admin": {
+    "desc": "Fila de revisão para solicitações de função e certificações.",
+    "roleRequestsTitle": "Solicitações de função de módulo",
+    "roleRequestsEmpty": "Nenhuma solicitação pendente.",
+    "certApplicationsTitle": "Solicitações de certificação",
+    "certApplicationsEmpty": "Nenhuma solicitação de certificação pendente.",
+    "reviewButton": "Revisar",
+    "title": "Administração",
+    "roleRequestsMovedTitle": "Revisão de funções de módulo transferida para comitês",
+    "roleRequestsMovedHint": "As candidaturas de função de módulo são revisadas pelo chair/revisor de cada comitê de módulo (administradores do site podem usar páginas de revisão do comitê como fallback).",
+    "roleRequestsMovedLink": "Governança aberta e revisão de comitê",
+    "promotionRequestsTitle": "Solicitações de promoção comunitária (Wild → Community)",
+    "promotionRequestsEmpty": "Nenhuma solicitação de promoção pendente.",
+    "navCommittees": "Comitês →",
+    "navGovernance": "Governança",
+    "committeesSummaryTitle": "Comitês →",
+    "committeesApplyFilters": "Solicitar",
+    "committeesTableName": "Nome",
+    "committeesTableChair": "Presidente",
+    "committeesTableActions": "Ações",
+    "committeesTypeStandard": "Padrão",
+    "committeesTypeDomain": "Domínio",
+    "committeesTypeModule": "Módulo",
+    "committeesNameLabel": "Nome",
+    "committeesModuleLabel": "Módulo",
+    "committeesMemberRole": "Função",
+    "committeesPendingChair": "Indicações de chair pendentes",
+    "navDashboard": "Painel",
+    "navUsers": "Usuários",
+    "committeesSummaryTotal": "{total} comitês registrados",
+    "committeesSummaryPending": "{count} itens pendentes de revisão nos comitês",
+    "committeesManageLink": "Gerenciar comitês",
+    "committeesTitle": "Gestão de comitês",
+    "committeesDesc": "Veja comitês, adicione membros e revise pendências.",
+    "committeesCreate": "Criar comitê",
+    "committeesSync": "Sincronizar das definições",
+    "committeesSyncDone": "Comitês sincronizados.",
+    "committeesSearchPlaceholder": "Buscar por nome ou slug",
+    "committeesFilterAllTypes": "Todos os tipos",
+    "committeesFilterType": "Tipo",
+    "committeesTableType": "Tipo",
+    "committeesTableSlug": "Identificador",
+    "committeesTableMembers": "Membros",
+    "committeesTablePending": "Pendente",
+    "committeesEmpty": "Nenhum comitê corresponde aos filtros.",
+    "committeesViewDetail": "Gerenciar",
+    "committeesViewPublic": "Página pública",
+    "committeesViewReview": "Fila de revisão",
+    "committeesPageSummary": "Mostrando {from}–{to} de {total}",
+    "committeesNewTitle": "Criar comitê",
+    "committeesNewDesc": "Adicionar comitê STANDARD, DOMAIN ou MODULE.",
+    "committeesSlugLabel": "Identificador",
+    "committeesDescriptionLabel": "Descrição",
+    "committeesJurisdictionLabel": "Código de jurisdição",
+    "committeesExpertDomainLabel": "Chave de domínio especializado",
+    "committeesSubmitCreate": "Criar",
+    "committeesCreated": "Comitê criado.",
+    "committeesDetailBack": "Voltar aos comitês",
+    "committeesMembersTitle": "Membros",
+    "committeesAddMember": "Adicionar membro",
+    "committeesAddMemberSearch": "Buscar usuários",
+    "committeesRemoveMember": "Remover",
+    "committeesChangeRole": "Atualizar função",
+    "committeesConfirmRemove": "Remover este membro do comitê?",
+    "committeesPendingMembership": "Solicitações de participação pendentes",
+    "committeesPendingModuleRole": "Solicitações de função de módulo pendentes",
+    "committeesErrorGeneric": "Algo deu errado. Tente novamente.",
+    "committeesErrorLastChair": "Não é possível remover ou rebaixar o único chair ativo.",
+    "committeesErrorDuplicateMember": "O usuário já é membro.",
+    "committeesErrorNotFound": "Não encontrado.",
+    "committeesNoMembers": "Ainda não há membros ativos.",
+    "committeesNoPending": "Nenhum item pendente."
+  },
+  "adminCert": {
+    "title": "Revisão de certificação"
+  },
+  "standards": {
+    "stageHeader": "Estágio",
+    "lifecycleStageHeader": "Estágio do ciclo de vida",
+    "readinessTitle": "Nível de prontidão",
+    "stewardTierHeader": "Nível OS_Steward",
+    "readinessTiers": {
+      "skeleton": "Esqueleto",
+      "activation_ready": "Pronto para ativação",
+      "production_ready": "Pronto para produção",
+      "unsupported": "Sem suporte"
+    }
+  },
+  "academy": {
+    "selectTrack": "Escolha uma trilha para começar a aprender.",
+    "viewTrack": "Ver trilha",
+    "lessons": "lições",
+    "takeExamFor": "Fazer {title}",
+    "moduleTest": "Quiz do módulo",
+    "signInForModuleTest": "Entrar para o quiz do módulo",
+    "backToTrack": "Voltar à trilha",
+    "trackProgress": "Progresso da trilha",
+    "examSummary": "{title} — {count} questões (aprovação {score}%)",
+    "moduleQuizSummary": "{title} — {count} questões",
+    "quizResultTitle": "Resultado do quiz",
+    "quizScoreLine": "Pontuação: {score}% (aprovação {pass}%) — {result}",
+    "quizPass": "Aprovado",
+    "quizFail": "Reprovado",
+    "issueCert": "Emitir certificado CCU",
+    "issuing": "Emitindo…",
+    "certNo": "Nº do certificado",
+    "gradeFailed": "Falha na correção",
+    "issueFailed": "Falha na emissão do certificado",
+    "quizTimeLimit": "Limite de tempo",
+    "quizRemaining": "Restante",
+    "quizPassScore": "Aprovação",
+    "quizSubmitting": "Corrigindo…",
+    "quizTimedOut": "Tempo esgotado",
+    "quizSubmit": "Enviar",
+    "dashboardTitle": "Progresso da Academy",
+    "dashboardEmpty": "Ainda não há progresso.",
+    "dashboardEmptySuffix": "Comece a aprender pela Academy.",
+    "lessonsCompleteLine": "{completed}/{total} lições concluídas ({percent}%)",
+    "certificatesTitle": "Certificados da Academy",
+    "ccuTitle": "Certificação CCU",
+    "ccuEligible": "Elegível para emissão",
+    "ccuExamCta": "Exame CCU / certificado",
+    "lessonCompleted": "Concluído",
+    "noBody": "Nenhum conteúdo disponível.",
+    "signInPromptBefore": "Para registrar o progresso,",
+    "signInLink": "entre",
+    "layoutLead": "Currículo oficial OpenOrgOS — docs · quizzes · vídeo",
+    "markLessonComplete": "Marcar como lido",
+    "markLessonDone": "✓ Lido",
+    "markVideoComplete": "Marcar vídeo como assistido",
+    "markVideoDone": "✓ Assistido",
+    "savingProgress": "Salvando…",
+    "saveProgressFailed": "Falha ao salvar progresso",
+    "prevLesson": "Lição anterior",
+    "nextLesson": "Próxima lição",
+    "levelPrefix": "Nível",
+    "minutes": "min",
+    "quizQuestion": "P",
+    "signInPromptAfter": ".",
+    "viewAllAcademy": "Ver tudo na Academy →",
+    "continueLearning": "Continuar aprendendo",
+    "continueLessonCta": "Retomar {title} →",
+    "trackCompleteBadge": "Trilha concluída",
+    "recentActivityTitle": "Atividade recente",
+    "recentLessonsTitle": "Lições recentes",
+    "recentExamsTitle": "Exames recentes",
+    "lessonInProgress": "Em andamento",
+    "lessonCompletedBadge": "Concluído",
+    "examPassed": "Aprovado",
+    "examFailed": "Reprovado",
+    "examScoreLine": "Pontuação {score}%"
+  },
+  "siteMap": {
+    "sectionLabels": {
+      "community": "Comunidade",
+      "platform": "Plataforma",
+      "about": "Sobre o OpenOrgOS",
+      "protocol": "Protocolo e módulos",
+      "newsroom": "Sala de Imprensa",
+      "resources": "Recursos",
+      "research": "Pesquisa",
+      "education": "Educação",
+      "events": "Eventos",
+      "legal": "Jurídico e políticas"
+    },
+    "title": "Mapa do site",
+    "lead": "Todas as seções públicas da plataforma comunitária OpenOrgOS — páginas ativas e seções em preparação.",
+    "readinessLive": "Ativo",
+    "readinessPartial": "Apenas login",
+    "readinessSkeleton": "Em preparação"
+  },
+  "leadership": {
+    "back": "← Sobre",
+    "filterAll": "Todos",
+    "title": "Liderança",
+    "lead": "Governança, padrões e liderança comunitária para OpenOrgOS — o protocolo interorganizacional global.",
+    "filterLabel": "Filtrar por:",
+    "emptyCategory": "Os membros serão listados aqui conforme a comunidade crescer.",
+    "viewProfile": "Ver perfil",
+    "viewLinkedIn": "Ver no LinkedIn",
+    "categories": {
+      "founder": "Fundador",
+      "board": "Conselho de Governança",
+      "leadership": "Liderança",
+      "fellows": "Fellows da Fundação",
+      "standard-committee": "Comitê de Padrões",
+      "module-leads": "Líderes de Módulo"
+    }
+  },
+  "skeleton": {
+    "statusBadge": "Em preparação",
+    "statusNote": "Esta seção está sendo preparada. O conteúdo será publicado aqui conforme a comunidade for lançada.",
+    "plannedTitle": "Conteúdo planejado",
+    "relatedTitle": "Relacionados",
+    "emptyList": "Nenhum item publicado ainda.",
+    "contactCta": "Fale conosco",
+    "joinCta": "Participar da comunidade",
+    "pages": {
+      "newsroom": {
+        "title": "Sala de Imprensa",
+        "lead": "Anúncios oficiais, comunicados à imprensa e recursos de mídia para OpenOrgOS."
+      },
+      "pressReleases": {
+        "title": "Comunicados à Imprensa",
+        "lead": "Anúncios oficiais da comunidade OpenOrgOS para mídia e parceiros."
+      },
+      "mediaContacts": {
+        "title": "Contatos de Mídia",
+        "lead": "Consultas de imprensa, pedidos de entrevista e download de ativos de marca."
+      },
+      "blog": {
+        "title": "Blogue",
+        "lead": "Atualizações de mantenedores de módulos, comitês e da comunidade OpenOrgOS."
+      },
+      "publications": {
+        "title": "Publicações",
+        "lead": "White papers, especificações e documentos de referência."
+      },
+      "guides": {
+        "title": "Guias de Código Aberto",
+        "lead": "Como contribuir com módulos, participar de comitês e adotar o OpenOrgOS com segurança."
+      },
+      "caseStudies": {
+        "title": "Estudos de Caso",
+        "lead": "Como as organizações adotam módulos e padrões de governança com o OpenOrgOS."
+      },
+      "research": {
+        "title": "Pesquisa OpenOrgOS",
+        "lead": "Pesquisa sobre protocolos interorganizacionais, auditabilidade e design de governança."
+      },
+      "events": {
+        "title": "Eventos OpenOrgOS",
+        "lead": "Reuniões da comunidade, webinars e sessões de conferência."
+      },
+      "eventsSponsor": {
+        "title": "Patrocinador",
+        "lead": "Apoie eventos comunitários, pesquisa e programas educacionais."
+      },
+      "eventsSubmitTalk": {
+        "title": "Enviar uma Palestra",
+        "lead": "Proponha sessões sobre módulos, governança, certificação ou adoção."
+      },
+      "memberships": {
+        "title": "Membros Corporativos",
+        "lead": "Associação para organizações que gerenciam módulos e patrocinam programas comunitários."
+      },
+      "supporters": {
+        "title": "Apoiadores Individuais",
+        "lead": "Contribuidores individuais que mantêm módulos, revisam padrões ou ensinam na Academy."
+      },
+      "partners": {
+        "title": "Programa de Parceiros",
+        "lead": "Integração com GitHub, hospedagem de módulos e parceria técnica com a plataforma comunitária."
+      },
+      "contact": {
+        "title": "Contato",
+        "lead": "Consultas da comunidade, pedidos de mídia e questões de parceria."
+      },
+      "inclusion": {
+        "title": "Inclusão e Acessibilidade",
+        "lead": "Nosso compromisso com contribuidores diversos e documentação acessível."
+      },
+      "careers": {
+        "title": "Carreiras",
+        "lead": "Funções honorárias — Mantenedor, Revisor, Membro do Comitê — não são emprego remunerado."
+      }
+    }
+  },
+  "compliance": {
+    "title": "Registro de conformidade e qualificações",
+    "lead": "Base de referência de profissões regulamentadas, qualificações ISO e checklists de conformidade por jurisdição.",
+    "summaryProfessions": "{count} tipos de profissão",
+    "summaryChecklists": "{count} listas de verificação",
+    "sectionProfessionsTitle": "Profissões regulamentadas e especialistas",
+    "sectionProfessionsDesc": "Advogados, contadores fiscais, CPAs, despachantes aduaneiros e outras funções licenciadas por país.",
+    "sectionIsoTitle": "Qualificações de auditoria ISO",
+    "sectionIsoDesc": "Auditor líder e competência ISO 19011 para sistemas de gestão.",
+    "sectionChecklistsTitle": "Checklists de conformidade",
+    "sectionChecklistsDesc": "Conflito de interesses, sanções, forças anti-sociais e controles de comércio.",
+    "viewProfessions": "Ver profissões",
+    "viewIso": "Ver qualificações ISO",
+    "viewChecklists": "Ver checklists",
+    "professionsTitle": "Profissões e qualificações",
+    "professionsLead": "Profissões licenciadas e funções de especialistas em conformidade.",
+    "checklistsTitle": "Checklists de conformidade",
+    "checklistsLead": "Checklists operacionais para COI, sanções, anti-sociais e comércio.",
+    "filterCategory": "Categoria",
+    "filterJurisdiction": "Jurisdição",
+    "filterType": "Tipo de checklist",
+    "filterAll": "Todos",
+    "searchPlaceholder": "Buscar por nome ou regulador",
+    "tableName": "Nome",
+    "tableCategory": "Categoria",
+    "tableJurisdiction": "Jurisdição",
+    "tableRegulator": "Órgão regulador",
+    "tableCredentials": "Tipos de credencial",
+    "tableType": "Tipo",
+    "tableItems": "Itens",
+    "tableExpert": "Especialista recomendado",
+    "viewChecklist": "Ver checklist",
+    "backToRegistry": "Voltar ao registro",
+    "checklistVersion": "Versão {version}",
+    "itemRequired": "Obrigatório",
+    "itemOptional": "Opcional",
+    "itemReference": "Referência",
+    "emptyProfessions": "Nenhuma profissão corresponde aos filtros.",
+    "emptyChecklists": "Nenhum checklist corresponde aos filtros.",
+    "international": "Internacional",
+    "expertsLink": "Diretório de pessoas"
+  }
+}

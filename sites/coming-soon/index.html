@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpenOrgOS</title>
+    <meta
+      name="description"
+      content="OpenOrgOS — global protocol for inter-organizational communication."
+    />
+    <style>
+      :root {
+        --navy: #003366;
+        --navy-dark: #1a1a2e;
+        --accent: #0066cc;
+        --accent-soft: #e8f2fc;
+        --muted: #5c6370;
+        --surface: #f7f8fa;
+        --surface-alt: #f0f3f7;
+        --border: #e2e5ea;
+        --max-width: 1140px;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.5rem;
+        --space-6: 2rem;
+        --space-7: 2.5rem;
+        --space-8: 3rem;
+        --page-gutter: 1.5rem;
+        --grid-gap: 1.5rem;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI", system-ui,
+          sans-serif;
+        background: #fff;
+        color: var(--navy-dark);
+        line-height: 1.6;
+      }
+
+      html:lang(ja) body {
+        font-family:
+          "Helvetica Neue",
+          "Hiragino Sans",
+          "Hiragino Kaku Gothic ProN",
+          "Noto Sans JP",
+          "Yu Gothic UI",
+          Meiryo,
+          sans-serif;
+      }
+
+      .site-header {
+        border-bottom: 1px solid var(--border);
+        background: #fff;
+      }
+
+      .site-header-inner,
+      .page-wrap,
+      .hero-inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
+      }
+
+      .site-header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+        padding-top: var(--space-4);
+        padding-bottom: var(--space-4);
+      }
+
+      .brand {
+        font-weight: 700;
+        font-size: 1.125rem;
+        color: var(--navy);
+        letter-spacing: -0.01em;
+      }
+
+      .lang-switch {
+        display: flex;
+        gap: var(--space-3);
+      }
+
+      .lang-btn {
+        padding: 0.375rem 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: #fff;
+        color: var(--muted);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .lang-btn:hover {
+        border-color: var(--accent);
+        color: var(--navy);
+      }
+
+      .lang-btn.active {
+        background: var(--accent-soft);
+        border-color: var(--accent);
+        color: var(--navy);
+      }
+
+      .hero {
+        background: var(--navy-dark);
+        color: #fff;
+        padding: var(--space-8) 0;
+      }
+
+      .hero-label {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #b8c0cc;
+        margin-bottom: var(--space-4);
+      }
+
+      html:lang(ja) .hero-label {
+        text-transform: none;
+        letter-spacing: 0.04em;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.875rem, 4.5vw, 2.75rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 var(--space-4);
+        max-width: 36rem;
+      }
+
+      .hero-lead {
+        font-size: clamp(1.05rem, 2vw, 1.2rem);
+        color: #b8c0cc;
+        margin: 0;
+        max-width: 40rem;
+      }
+
+      .page-wrap {
+        padding-top: var(--space-7);
+        padding-bottom: var(--space-8);
+      }
+
+      .section-title {
+        font-size: 1.375rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin: var(--space-6) 0 var(--space-3);
+        line-height: 1.3;
+      }
+
+      .section-title:first-child {
+        margin-top: 0;
+      }
+
+      .page-desc {
+        color: var(--muted);
+        margin: 0 0 var(--space-5);
+        max-width: 42rem;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: var(--grid-gap);
+        margin: var(--space-5) 0;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: var(--space-5);
+      }
+
+      .card-accent {
+        border-left: 4px solid var(--navy);
+      }
+
+      .card h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin: 0 0 var(--space-3);
+        line-height: 1.3;
+      }
+
+      .card p {
+        margin: 0;
+        font-size: 0.9375rem;
+        color: var(--muted);
+      }
+
+      .compare-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: var(--space-5) 0;
+        font-size: 0.9375rem;
+      }
+
+      .compare-table th,
+      .compare-table td {
+        border: 1px solid var(--border);
+        padding: var(--space-3) var(--space-4);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .compare-table th {
+        background: var(--surface-alt);
+        color: var(--navy);
+        font-weight: 600;
+      }
+
+      .compare-table td {
+        color: var(--muted);
+      }
+
+      .quote-block {
+        margin: var(--space-6) 0;
+        padding: var(--space-5) var(--space-6);
+        background: var(--accent-soft);
+        border-left: 4px solid var(--accent);
+        border-radius: 0 8px 8px 0;
+      }
+
+      .quote-block p {
+        margin: 0;
+        font-size: 1.05rem;
+        color: var(--navy);
+        font-weight: 500;
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--border);
+        background: var(--surface);
+        padding: var(--space-6) 0;
+        font-size: 0.875rem;
+        color: var(--muted);
+      }
+
+      .site-footer-inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 var(--page-gutter);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--space-4);
+      }
+
+      .community-status {
+        border-bottom: 1px solid var(--border);
+        background: var(--surface);
+      }
+
+      .community-status-inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: var(--space-5) var(--page-gutter);
+      }
+
+      .community-status-card {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+        padding: var(--space-4) var(--space-5);
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      .community-status-main {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-4);
+        min-width: 0;
+      }
+
+      .status-dot {
+        flex-shrink: 0;
+        width: 0.625rem;
+        height: 0.625rem;
+        margin-top: 0.45rem;
+        border-radius: 50%;
+        background: var(--muted);
+      }
+
+      .status-dot[data-state="checking"] {
+        background: var(--accent);
+        animation: status-pulse 1.2s ease-in-out infinite;
+      }
+
+      .status-dot[data-state="operational"] {
+        background: #1a7f37;
+      }
+
+      .status-dot[data-state="unavailable"] {
+        background: #b54708;
+      }
+
+      @keyframes status-pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.35;
+        }
+      }
+
+      .community-status-title {
+        margin: 0 0 var(--space-3);
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--navy);
+        line-height: 1.3;
+      }
+
+      .community-status-text {
+        margin: 0;
+        font-size: 0.9375rem;
+        color: var(--muted);
+      }
+
+      .community-status-text strong {
+        color: var(--navy);
+        font-weight: 600;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.2;
+        text-decoration: none;
+        border: 1px solid transparent;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .btn-primary {
+        background: var(--navy);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: var(--accent);
+      }
+
+      .btn-primary:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      .community-visit-btn[hidden] {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --page-gutter: 1rem;
+        }
+
+        .hero {
+          padding: var(--space-6) 0;
+        }
+
+        .compare-table {
+          display: block;
+          overflow-x: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <span class="brand">OpenOrgOS</span>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn active" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="ja">日本語</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="hero-label" data-i18n="heroLabel"></span>
+        <h1 data-i18n="heroTitle"></h1>
+        <p class="hero-lead" data-i18n="heroLead"></p>
+      </div>
+    </section>
+
+    <section
+      class="community-status"
+      id="community-status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <div class="community-status-inner">
+        <div class="community-status-card">
+          <div class="community-status-main">
+            <span
+              class="status-dot"
+              id="community-status-dot"
+              data-state="checking"
+              aria-hidden="true"
+            ></span>
+            <div>
+              <h2
+                class="community-status-title"
+                data-i18n="communityTitle"
+              ></h2>
+              <p
+                class="community-status-text"
+                id="community-status-text"
+                data-i18n="communityStatusChecking"
+              ></p>
+            </div>
+          </div>
+          <a
+            class="btn btn-primary community-visit-btn"
+            id="community-visit-btn"
+            href="https://community.oorgos.org"
+            hidden
+            data-i18n="communityVisitBtn"
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <main class="page-wrap">
+      <h2 class="section-title" data-i18n="whatIsTitle"></h2>
+      <p class="page-desc" data-i18n="whatIsBody" data-i18n-html></p>
+
+      <div class="quote-block">
+        <p data-i18n="visionQuote"></p>
+      </div>
+
+      <h2 class="section-title" data-i18n="protocolTitle"></h2>
+      <p class="page-desc" data-i18n="protocolLead"></p>
+
+      <div class="card-grid">
+        <article class="card card-accent">
+          <h3 data-i18n="cardEventTitle"></h3>
+          <p data-i18n="cardEventBody"></p>
+        </article>
+        <article class="card card-accent">
+          <h3 data-i18n="cardIdentityTitle"></h3>
+          <p data-i18n="cardIdentityBody"></p>
+        </article>
+        <article class="card card-accent">
+          <h3 data-i18n="cardAuthorityTitle"></h3>
+          <p data-i18n="cardAuthorityBody"></p>
+        </article>
+        <article class="card card-accent">
+          <h3 data-i18n="cardAuditTitle"></h3>
+          <p data-i18n="cardAuditBody"></p>
+        </article>
+      </div>
+
+      <h2 class="section-title" data-i18n="ehrTitle"></h2>
+      <p class="page-desc" data-i18n="ehrLead"></p>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th scope="col" data-i18n="tableColEhr"></th>
+            <th scope="col" data-i18n="tableColOorgos"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-i18n="row1Ehr"></td>
+            <td data-i18n="row1Oorgos"></td>
+          </tr>
+          <tr>
+            <td data-i18n="row2Ehr"></td>
+            <td data-i18n="row2Oorgos"></td>
+          </tr>
+          <tr>
+            <td data-i18n="row3Ehr"></td>
+            <td data-i18n="row3Oorgos"></td>
+          </tr>
+          <tr>
+            <td data-i18n="row4Ehr"></td>
+            <td data-i18n="row4Oorgos"></td>
+          </tr>
+          <tr>
+            <td data-i18n="row5Ehr"></td>
+            <td data-i18n="row5Oorgos"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="section-title" data-i18n="stewardTitle"></h2>
+      <p class="page-desc" data-i18n="stewardLead" data-i18n-html></p>
+
+      <div class="card-grid">
+        <article class="card">
+          <h3 data-i18n="cardModulesTitle"></h3>
+          <p data-i18n="cardModulesBody"></p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="cardCommitteesTitle"></h3>
+          <p data-i18n="cardCommitteesBody"></p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="cardOpenTitle"></h3>
+          <p data-i18n="cardOpenBody"></p>
+        </article>
+      </div>
+
+      <h2 class="section-title" data-i18n="scopeTitle"></h2>
+      <p class="page-desc" data-i18n="scopeBody" data-i18n-html></p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <span data-i18n="footerCopy"></span>
+        <span>www.oorgos.org</span>
+      </div>
+    </footer>
+
+    <script>
+      const copy = {
+        en: {
+          pageTitle:
+            "OpenOrgOS — Global protocol for inter-organizational communication",
+          metaDescription:
+            "OpenOrgOS defines the global protocol for inter-organizational communication — Org Event Model, identity exchange, authority delegation, and auditability.",
+          heroLabel: "Global protocol",
+          heroTitle: "Inter-organizational communication, made verifiable",
+          heroLead:
+            "OpenOrgOS is an open-source community building the protocol layer organizations use when they exchange state across boundaries — trade, partnerships, supply chains, and joint ventures.",
+          whatIsTitle: "What is OpenOrgOS?",
+          whatIsBody:
+            "OpenOrgOS is a <strong>global protocol for inter-organizational communication</strong>. It defines how organizations record events, exchange identity, delegate authority, and leave an audit trail others can verify. It is <strong>not</strong> an OS for internal HR, payroll, or intranet workflows — business logic, legal interpretation, and organizational behavior are delegated to national or domain-specific committees.",
+          visionQuote:
+            "OpenOrgOS aims to be the common protocol for organizations to communicate across boundaries.",
+          protocolTitle: "What the global protocol defines",
+          protocolLead:
+            "The global layer covers exchange mechanics only. Local law and industry rules live in modules stewarded by committees.",
+          cardEventTitle: "Org Event Model",
+          cardEventBody:
+            "A common model for events exchanged between organizations — contracts, delegations, and state changes.",
+          cardIdentityTitle: "Identity exchange",
+          cardIdentityBody:
+            "Standardized exchange of organizational and actor identity so parties know who they are dealing with.",
+          cardAuthorityTitle: "Authority delegation",
+          cardAuthorityBody:
+            "Scoped powers, agency, and handoffs — who may act on whose behalf, and within what limits.",
+          cardAuditTitle: "Auditability",
+          cardAuditBody:
+            "Timelines and evidence third parties can verify — what happened, when, and under which authority.",
+          ehrTitle: "Why an organizational EHR?",
+          ehrLead:
+            "When care teams collaborate, they rely on a shared electronic health record: patient identity, history, delegation, and a trail auditors can follow. Organizations at scale need the same pattern.",
+          tableColEhr: "Medical EHR",
+          tableColOorgos: "OpenOrgOS",
+          row1Ehr: "Shared patient chart",
+          row1Oorgos: "Structured record of org-to-org interactions",
+          row2Ehr: "Chart entries",
+          row2Oorgos:
+            "Org Event Model — contracts, delegations, state changes",
+          row3Ehr: "Patient ID",
+          row3Oorgos: "Identity exchange — who organizations and actors are",
+          row4Ehr: "Referrals & handoffs",
+          row4Oorgos: "Authority delegation — scoped powers and agency",
+          row5Ehr: "Audit trail",
+          row5Oorgos: "Auditability — timelines third parties can verify",
+          stewardTitle: "Modules, committees, open stewardship",
+          stewardLead:
+            "Human-readable rule modules implement the protocol for jurisdictions, industries, and use cases. National and domain committees review, standardize, and steward those modules. <strong>Open</strong> in OpenOrgOS means anyone can propose, review, and contribute — an open-source community where the protocol grows through transparent governance.",
+          cardModulesTitle: "Modules",
+          cardModulesBody:
+            "Rule modules for accounting, contracts, governance, and more — registered in the community catalog and advanced through a defined lifecycle.",
+          cardCommitteesTitle: "Committees",
+          cardCommitteesBody:
+            "Quality review and standardization by jurisdiction and domain. Law and business rules stay local; the global layer stays thin.",
+          cardOpenTitle: "Open stewardship",
+          cardOpenBody:
+            "Competitive business assets stay protected. What is shared is the exchange protocol — not products, customers, or strategy.",
+          scopeTitle: "Scope",
+          scopeBody:
+            "Trade between companies, university partnerships, NPO alliances, supply chains, joint ventures — any relationship where organizations must exchange <strong>verifiable state across boundaries</strong>.",
+          communityTitle: "OpenOrgOS Community",
+          communityStatusChecking: "Checking whether the community site is available…",
+          communityStatusOperational:
+            "<strong>Operational</strong> — modules, committees, and login are served at community.oorgos.org.",
+          communityStatusUnavailable:
+            "Currently unavailable — the community site is not responding. Please try again later.",
+          communityVisitBtn: "Visit Community",
+          footerCopy: "© OpenOrgOS Community",
+        },
+        ja: {
+          pageTitle: "OpenOrgOS — 組織間通信のグローバルプロトコル",
+          metaDescription:
+            "OpenOrgOS は組織間通信のグローバルプロトコルです。Org Event Model、identity exchange、authority delegation、auditability を定義します。",
+          heroLabel: "グローバルプロトコル",
+          heroTitle: "組織間通信を、検証可能に",
+          heroLead:
+            "OpenOrgOS は、企業間取引・パートナーシップ・サプライチェーン・ジョイントベンチャーなど、組織境界を越えて状態を交換するときのプロトコル層を、オープンソースコミュニティとして構築しています。",
+          whatIsTitle: "OpenOrgOS とは",
+          whatIsBody:
+            "OpenOrgOS は<strong>組織間通信のグローバルプロトコル</strong>です。組織がイベントを記録し、identity を交換し、権限を委任し、第三者が検証できる監査証跡を残す方法を定義します。組織内部の人事・勤怠・社内ワークフローなどを置き換える OS ではありません。ビジネスロジック・法解釈・組織行動は、各国・各ドメインの委員会に委ねられます。",
+          visionQuote:
+            "OpenOrgOS は組織間の共通通信プロトコルとなることを目指します。",
+          protocolTitle: "グローバルプロトコルが定義するもの",
+          protocolLead:
+            "グローバル層が担うのは交換の仕組みのみです。各国の法や業界ルールは、委員会が運営するモジュールに実装されます。",
+          cardEventTitle: "Org Event Model",
+          cardEventBody:
+            "組織間で交換されるイベントの共通モデル — 契約、委任、状態変化など。",
+          cardIdentityTitle: "Identity exchange",
+          cardIdentityBody:
+            "組織およびアクターの identity を標準化して交換し、取引相手を明確にします。",
+          cardAuthorityTitle: "Authority delegation",
+          cardAuthorityBody:
+            "権限の範囲、代理、引き継ぎ — 誰が誰に代わって何をできるかを定義します。",
+          cardAuditTitle: "Auditability",
+          cardAuditBody:
+            "第三者が検証できる時系列と証拠 — 何が、いつ、どの権限のもとで起きたか。",
+          ehrTitle: "なぜ「組織の電子カルテ」なのか",
+          ehrLead:
+            "診療チームが協力するとき、患者の電子カルテが頼りになります — 誰の記録か、何が起きたか、誰に委任したか、監査人が辿れる証跡。企業間取引や共同研究も、組織のスケールで同じパターンが必要です。",
+          tableColEhr: "医療の電子カルテ",
+          tableColOorgos: "OpenOrgOS",
+          row1Ehr: "共有される患者カルテ",
+          row1Oorgos: "組織間インタラクションの構造化記録",
+          row2Ehr: "カルテ記載",
+          row2Oorgos: "Org Event Model — 契約、委任、状態変化",
+          row3Ehr: "患者 ID",
+          row3Oorgos: "Identity exchange — 組織とアクターの同一性",
+          row4Ehr: "紹介・引き継ぎ",
+          row4Oorgos: "Authority delegation — 権限の範囲と代理",
+          row5Ehr: "監査証跡",
+          row5Oorgos: "Auditability — 第三者が検証できる時系列",
+          stewardTitle: "モジュール、委員会、オープンな運営",
+          stewardLead:
+            "人間が読めるルールモジュールが、法域・業界・ユースケースごとにプロトコルを実装します。各国・各ドメインの委員会がレビュー・標準化・運営を担います。OpenOrgOS の<strong>Open</strong>は、誰もが提案・レビュー・貢献できるオープンソースコミュニティであることを意味します。",
+          cardModulesTitle: "モジュール",
+          cardModulesBody:
+            "会計、契約、ガバナンスなどのルールモジュール — コミュニティカタログに登録され、定義されたライフサイクルを経て進化します。",
+          cardCommitteesTitle: "委員会",
+          cardCommitteesBody:
+            "法域・ドメインごとの品質レビューと標準化。法とビジネスルールはローカルに、グローバル層は薄く保ちます。",
+          cardOpenTitle: "オープンな運営",
+          cardOpenBody:
+            "競争上の資産は保護されます。共有されるのは交換プロトコルであり、製品・顧客・戦略ではありません。",
+          scopeTitle: "適用範囲",
+          scopeBody:
+            "企業間取引、大学・研究機関の共同、NPO 連携、サプライチェーン、ジョイントベンチャーなど、組織境界を越えて<strong>検証可能な状態を交換する必要がある関係</strong>すべてに適用できます。",
+          communityTitle: "OpenOrgOS Community",
+          communityStatusChecking:
+            "コミュニティサイトの稼働状況を確認しています…",
+          communityStatusOperational:
+            "<strong>稼働中</strong> — モジュール・委員会・ログインは community.oorgos.org で利用できます。",
+          communityStatusUnavailable:
+            "現在利用できません — コミュニティサイトに接続できません。しばらくしてから再度お試しください。",
+          communityVisitBtn: "Community サイトへ",
+          footerCopy: "© OpenOrgOS Community",
+        },
+      };
+
+      const COMMUNITY_HEALTH_URL = "https://community.oorgos.org/api/health";
+      const COMMUNITY_STATUS_REFRESH_MS = 60_000;
+      let communityStatusState = "checking";
+      let communityStatusTimer;
+
+      function detectLang() {
+        const saved = localStorage.getItem("oorgos-lang");
+        if (saved === "en" || saved === "ja") return saved;
+        const browser = navigator.language || "";
+        return browser.startsWith("ja") ? "ja" : "en";
+      }
+
+      function applyLang(lang) {
+        const strings = copy[lang];
+        document.documentElement.lang = lang;
+        document.title = strings.pageTitle;
+        document
+          .querySelector('meta[name="description"]')
+          .setAttribute("content", strings.metaDescription);
+
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const value = strings[key];
+          if (el.hasAttribute("data-i18n-html")) {
+            el.innerHTML = value;
+          } else {
+            el.textContent = value;
+          }
+        });
+
+        document.querySelectorAll(".lang-btn").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.lang === lang);
+        });
+
+        renderCommunityStatus(communityStatusState);
+        localStorage.setItem("oorgos-lang", lang);
+      }
+
+      function renderCommunityStatus(state) {
+        communityStatusState = state;
+        const lang = document.documentElement.lang || "en";
+        const strings = copy[lang];
+        const dot = document.getElementById("community-status-dot");
+        const text = document.getElementById("community-status-text");
+        const visitBtn = document.getElementById("community-visit-btn");
+
+        if (!dot || !text || !visitBtn) return;
+
+        dot.dataset.state = state;
+
+        if (state === "operational") {
+          text.innerHTML = strings.communityStatusOperational;
+          visitBtn.hidden = false;
+        } else if (state === "unavailable") {
+          text.textContent = strings.communityStatusUnavailable;
+          visitBtn.hidden = true;
+        } else {
+          text.textContent = strings.communityStatusChecking;
+          visitBtn.hidden = true;
+        }
+      }
+
+      async function refreshCommunityStatus() {
+        renderCommunityStatus("checking");
+
+        try {
+          const response = await fetch(COMMUNITY_HEALTH_URL, {
+            mode: "cors",
+            headers: { Accept: "application/json" },
+          });
+          const data = await response.json();
+          renderCommunityStatus(data.status === "ok" ? "operational" : "unavailable");
+        } catch {
+          renderCommunityStatus("unavailable");
+        }
+      }
+
+      function scheduleCommunityStatusRefresh() {
+        clearTimeout(communityStatusTimer);
+        communityStatusTimer = setTimeout(async () => {
+          await refreshCommunityStatus();
+          scheduleCommunityStatusRefresh();
+        }, COMMUNITY_STATUS_REFRESH_MS);
+      }
+
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+      });
+
+      applyLang(detectLang());
+      refreshCommunityStatus().then(scheduleCommunityStatusRefresh);
+    </script>
+  </body>
+</html>

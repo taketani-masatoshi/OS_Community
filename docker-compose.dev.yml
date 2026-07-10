@@ -1,0 +1,52 @@
+# Community + Content 開発スタック（親ディレクトリから実行想定）
+#
+#   export ACADEMY_INTERNAL_TOKEN=dev-internal-token
+#   docker compose -f docker-compose.dev.yml up
+#
+services:
+  academy-api:
+    build: ../OS_Content
+    ports:
+      - "8787:8787"
+    environment:
+      ACADEMY_INTERNAL_TOKEN: ${ACADEMY_INTERNAL_TOKEN:-dev-internal-token}
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://127.0.0.1:8787/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: oscommunity
+      POSTGRES_PASSWORD: oscommunity
+      POSTGRES_DB: oscommunity
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U oscommunity"]
+      interval: 5s
+      retries: 5
+
+  community-web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      target: dev
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://oscommunity:oscommunity@postgres:5432/oscommunity
+      ACADEMY_API_URL: http://academy-api:8787
+      ACADEMY_INTERNAL_TOKEN: ${ACADEMY_INTERNAL_TOKEN:-dev-internal-token}
+      AUTH_SECRET: dev-secret-minimum-32-characters-long
+      AUTH_URL: http://localhost:3000
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      CONTENT_ROOT: /app/content
+    depends_on:
+      academy-api:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    command: sh -c "npm run db:push && npm run dev -w @os-community/web"

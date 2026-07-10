@@ -1,0 +1,75 @@
+{
+  "title": "Offenheit und Schutz von Unternehmensressourcen",
+  "subtitle": "Ein OS, das nicht-kompetitive Bereiche standardisiert, damit Ressourcen auf das Differenzierende fokussiert werden",
+  "philosophyTitle": "Grundphilosophie",
+  "philosophyLead": "OpenOrgOS zielt nicht darauf ab, den Wettbewerbsvorteil eines Unternehmens zu nehmen.",
+  "philosophyGoal": "Wir streben danach, die gemeinsame Grundlage bereitzustellen, die Organisationen zum Funktionieren benötigen — nicht das zu vereinheitlichen, was jedes Unternehmen einzigartig macht.",
+  "standardizeTitle": "Bereiche, die wir standardisieren möchten",
+  "standardizeIntro": "Für Organisationsfunktionen, die in vielen Unternehmen gemeinsam sind, fördern wir die Modularisierung und Rückgabe an die Community. Dies ist gemeinsame Infrastruktur für Geschäftsaktivitäten — keine Quelle von Wettbewerbsvorteilen.",
+  "standardizeItems": [
+    "Buchhaltung",
+    "Personal",
+    "Zeit & Anwesenheit",
+    "Vertragsmanagement",
+    "IP-Management",
+    "Workflow",
+    "Genehmigungsketten",
+    "Governance",
+    "Interne Kontrollen",
+    "ISO-Compliance",
+    "ISMS-Compliance",
+    "Audit-Bereitschaft",
+    "Fördermittelmanagement",
+    "Vorstandsbetrieb",
+    "Aktionärsbeziehungen"
+  ],
+  "nonStandardizeTitle": "Bereiche, die wir nicht standardisieren möchten",
+  "nonStandardizeIntro": "Vermögenswerte, die den unternehmensspezifischen Wettbewerbsvorteil definieren, sollten von OpenOrgOS getrennt und von jedem Unternehmen selbst verwaltet werden. OpenOrgOS verlangt niemals, diese zu teilen oder zu veröffentlichen.",
+  "nonStandardizeItems": [
+    "Produktdesign",
+    "Zeichnungen",
+    "CAD-Daten",
+    "KI-Modelle",
+    "Trainingsdaten",
+    "Kundendaten",
+    "Fertigungs-Know-how",
+    "Vertriebs-Know-how",
+    "Forschungsdaten",
+    "Proprietäre Algorithmen",
+    "Patentstrategie",
+    "Geschäftsstrategie",
+    "Proprietäre Geschäftsprozesse"
+  ],
+  "privateModuleTitle": "Private Module",
+  "privateModuleIntro": "Auf OpenOrgOS entwickelte Module müssen nicht öffentlich sein. Unternehmen können frei kombinieren:",
+  "privateModuleTypes": [
+    {
+      "label": "Community-Modul",
+      "desc": "Öffentlich — zur Community beigetragen"
+    },
+    {
+      "label": "Privates Modul",
+      "desc": "Privat — unternehmensintern"
+    }
+  ],
+  "privateModuleNote": "OpenOrgOS begrüßt die Rückgabe guter Module an die Community, schreibt es aber nicht vor.",
+  "principlesTitle": "Grundprinzip",
+  "principlesNot": "OpenOrgOS zielt nicht darauf ab, kompetitive Bereiche zu teilen.",
+  "principlesYes": "Wir streben eine Welt an, in der nicht-kompetitive Bereiche geteilt werden, damit jedes Unternehmen sich auf seinen echten Wettbewerbsvorteil konzentrieren kann.",
+  "messageTitle": "Botschaft",
+  "messageLead": "Die Einführung von OpenOrgOS macht nicht jedes Unternehmen gleich.",
+  "messageSame": "Nur die organisationale Betriebsgrundlage wird vereinheitlicht. Was den Unternehmenswert definiert, bleibt geschützt:",
+  "messageProtectedTitle": "Geschützte Unternehmensressourcen",
+  "messageProtectedItems": [
+    "Technologie",
+    "Produkte",
+    "Kunden",
+    "Know-how",
+    "Marke",
+    "Strategie"
+  ],
+  "messageBody": "OpenOrgOS entzieht nicht, was Ihr Unternehmen einzigartig macht.",
+  "messageClosing": "Es ist die Grundlage, die es ermöglicht, sich auf die Bereiche zu konzentrieren, in denen Einzigartigkeit wichtig ist.",
+  "taglineNot": "OpenOrgOS ist kein OS zur Standardisierung kompetitiver Bereiche.",
+  "taglineYes": "OpenOrgOS ist ein OS zur Standardisierung nicht-kompetitiver Bereiche und zur Fokussierung von Ressourcen auf kompetitive Bereiche."
+}

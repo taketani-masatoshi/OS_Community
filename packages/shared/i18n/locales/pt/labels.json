@@ -1,0 +1,81 @@
+{
+  "moduleType": {
+    "BUSINESS": "Módulo de Negócios",
+    "JURISDICTION": "Pacote de Organização",
+    "WILD": "Comunidade / Não revisado"
+  },
+  "moduleRole": {
+    "MAINTAINER": "Responsável de módulo",
+    "DEPUTY": "Adjunto",
+    "CONTRIBUTOR": "Contribuidor"
+  },
+  "siteRole": {
+    "GUEST": "Convidado",
+    "MEMBER": "Membro",
+    "CONTRIBUTOR": "Contribuidor",
+    "DEPUTY": "Adjunto",
+    "ADMIN": "Administrador",
+    "CERT_REVIEWER": "Revisor de certificação",
+    "MAINTAINER": "Mantenedor"
+  },
+  "communityRoles": [
+    {
+      "id": "USER",
+      "title": "User",
+      "titleLocal": "Usuário",
+      "desc": "Adotar e usar o OpenOrgOS."
+    },
+    {
+      "id": "CONTRIBUTOR",
+      "title": "Contributor",
+      "titleLocal": "Contribuidor",
+      "desc": "Regras, código, documentação, traduções — bem-vindos independentemente de especialidade ou região."
+    },
+    {
+      "id": "REVIEWER",
+      "title": "Reviewer",
+      "titleLocal": "Revisor",
+      "desc": "Revisões de qualidade — participação amplamente aberta."
+    },
+    {
+      "id": "MAINTAINER",
+      "title": "Maintainer",
+      "titleLocal": "Responsável de módulo",
+      "desc": "Manter um módulo específico."
+    },
+    {
+      "id": "COMMITTEE",
+      "title": "Committee Member",
+      "titleLocal": "Membro do Comitê",
+      "desc": "Desenvolver e aprovar padrões. Comitês de domínio de origem são o padrão; vagas entre regiões requerem expertise de ponte e revisão."
+    },
+    {
+      "id": "FELLOW",
+      "title": "Foundation Fellow",
+      "titleLocal": "Fellow da fundação",
+      "desc": "Impacto de longo prazo na comunidade."
+    }
+  ],
+  "promotionFlow": [
+    {
+      "from": "Contribuidor",
+      "to": "Revisor",
+      "criteria": "Contribuições contínuas de revisão e julgamentos de qualidade."
+    },
+    {
+      "from": "Revisor",
+      "to": "Responsável de módulo",
+      "criteria": "Expertise de domínio e compromisso de manutenção."
+    },
+    {
+      "from": "Responsável de módulo",
+      "to": "Membro do Comitê",
+      "criteria": "Contribuições de padrões, indicação, revisão de governança (entre regiões: domínio alinhado e expertise de ponte)."
+    },
+    {
+      "from": "Membro do Comitê",
+      "to": "Fellow da fundação",
+      "criteria": "Impacto de longo prazo na comunidade."
+    }
+  ]
+}

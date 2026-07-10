@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-06-28T22:12:34.827Z",
+  "api": {
+    "total": 29,
+    "rawJsonRoutes": [],
+    "directAuthRoutes": [],
+    "withoutReadJsonBody": []
+  },
+  "layouts": {
+    "forceDynamic": [],
+    "adminLayout": true
+  },
+  "tests": {
+    "libModules": 69,
+    "libTestFiles": 24,
+    "e2eSpecs": 7,
+    "hasResilienceSpec": true
+  },
+  "quality": {
+    "hasQualityScript": true,
+    "qualityGateIncludesResilience": true,
+    "ciIncludesResilience": true,
+    "ciIncludesI18nSync": true
+  },
+  "gaps": {
+    "p0": {
+      "rawJsonRoutes": 0,
+      "directAuthRoutes": 0,
+      "noAdminLayout": false,
+      "resilienceNotInQualityGate": false
+    },
+    "p1": {
+      "forceDynamicLayouts": 0
+    }
+  }
+}

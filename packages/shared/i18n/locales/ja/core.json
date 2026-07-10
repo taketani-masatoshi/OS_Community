@@ -1,0 +1,830 @@
+{
+  "brand": {
+    "tagline": "組織をつなぐ、オープンな共通プロトコル",
+    "taglineSub": "組織の電子カルテ — 境界を越えて追える記録",
+    "mission": "組織間の「誰が・いつ・何を・どの権限で」を、検証可能な共通記録に残します。社内HRの置き換えではありません。",
+    "orgOsNote": "グローバル層はプロトコルのみ — ローカルな意味は委員会が決める",
+    "community": "コミュニティ"
+  },
+  "nav": {
+    "menu": "メニュー",
+    "close": "閉じる",
+    "more": "その他",
+    "home": "ホーム",
+    "about": "OpenOrgOS について",
+    "modules": "モジュール",
+    "agents": "エージェント",
+    "standards": "標準",
+    "governance": "運営",
+    "committees": "委員会",
+    "experts": "専門家",
+    "certification": "認定",
+    "learning": "学ぶ",
+    "gettingStarted": "はじめての方",
+    "gettingStartedShort": "はじめて",
+    "admin": "管理",
+    "join": "参加する",
+    "signIn": "ログイン",
+    "github": "GitHub",
+    "signOut": "ログアウト",
+    "myPage": "マイページ"
+  },
+  "hero": {
+    "learnMore": "くわしく",
+    "join": "参加する",
+    "connectGitHub": "GitHub 連携",
+    "learn": "学ぶ"
+  },
+  "home": {
+    "statModules": "モジュール",
+    "statModulesDesc": "登録済みのルールモジュール数",
+    "statMaintainers": "メンテナ",
+    "statMaintainersDesc": "モジュールを運営するメンバー",
+    "statContributors": "コントリビューター",
+    "statContributorsDesc": "ルール改善に参加中",
+    "statCommittees": "委員会",
+    "statCommitteesDesc": "品質レビューと標準化",
+    "statAgents": "エージェント",
+    "statAgentsDesc": "OrgOS 支援エージェント",
+    "statCertified": "認定",
+    "statCertifiedDesc": "アカデミー認定取得者",
+    "whyTitle": "OpenOrgOS とは",
+    "startTitle": "はじめ方",
+    "primaryCta": "コミュニティに参加（無料）",
+    "primaryCtaSub": "初めての方は、3ステップのガイドからどうぞ。",
+    "exploreTitle": "もっと知る",
+    "linkAbout": "OpenOrgOS について",
+    "linkStandards": "標準とライフサイクル",
+    "linkCommittees": "委員会",
+    "linkAgents": "Steward エージェント",
+    "linkGovernance": "運営・参加ルール",
+    "gettingStartedTitle": "3つの入口",
+    "gettingStartedSub": "自分に合うところから — 詳細は各ページへ。",
+    "cardContributorTitle": "ルールに貢献",
+    "cardContributorBody": "人が読めるルールモジュールを提案・メンテ。",
+    "cardGithubTitle": "GitHub で開発",
+    "cardGithubBody": "ルールを版管理し、レジストリと連携。",
+    "cardLearnTitle": "基礎を学ぶ",
+    "cardLearnBody": "プロトコルと委員会の動画・カリキュラム。",
+    "pillarsTitle": "コミュニティが担う4つの領域",
+    "pillarsSub": "グローバル層はプロトコルのみ。ビジネスロジック・法解釈・組織行動は委員会へ。",
+    "principlesTitle": "コア原則",
+    "lifecycleTitle": "モジュールライフサイクル",
+    "lifecycleSub": "人が可読なルールモジュールは Proposal から LTS まで昇格。標準採用は厳格なレビューを経ます。",
+    "valuesTitle": "最も大切にしている価値",
+    "valuesSub": "コードより大切なのは、人が読めて信頼できるルールと、オープンな共同体です。",
+    "committeesTitle": "委員会を探索",
+    "viewAllCommittees": "すべての委員会を見る",
+    "learnMoreLink": "詳しく見る",
+    "joinLink": "ログイン",
+    "architectureTitle": "グローバルプロトコルが定義するもの",
+    "architectureSub": "組織間通信の共通層 — ビジネスロジック・法解釈・組織行動は委員会に委任。",
+    "architectureSteps": [
+      {
+        "id": "org-event-model",
+        "titleEn": "Org Event Model",
+        "title": "組織イベント",
+        "body": "組織間で交換するイベントの共通モデル。下流のルールと証明の起点。"
+      },
+      {
+        "id": "identity-exchange",
+        "titleEn": "Identity Exchange",
+        "title": "主体の同一性確認",
+        "body": "組織境界を越えて、組織・主体が誰であるかを交換する。"
+      },
+      {
+        "id": "authority-delegation",
+        "titleEn": "Authority Delegation",
+        "title": "権限の委任",
+        "body": "委任された権限・スコープ・代理行為を標準化して交換する。"
+      },
+      {
+        "id": "auditability",
+        "titleEn": "Auditability",
+        "title": "監査可能性",
+        "body": "何がいつ起きたかを第三者が検証できる監査可能性。"
+      }
+    ],
+    "ehrMetaphorTitle": "医療の電子カルテのように",
+    "ehrMetaphorLead": "病院は患者カルテを共有し、バラバラなメモに頼りません。組織間協働にも同じ発想を当てはめます。",
+    "ehrMetaphorAnalogyLabel": "医療の電子カルテ",
+    "ehrMetaphorPoints": [
+      {
+        "id": "shared-chart",
+        "titleEn": "Shared chart",
+        "title": "共有カルテ",
+        "body": "組織間のやり取りを一本化 — メール・表計算・PDF の寄せ集めではなく、構造化された共通記録。"
+      },
+      {
+        "id": "chart-entries",
+        "titleEn": "Chart entries",
+        "title": "カルテ記載",
+        "body": "契約・委任・状態変化が Org Event として記録され、いつ誰が何をしたかを後から検証できる。"
+      },
+      {
+        "id": "patient-id",
+        "titleEn": "Patient ID",
+        "title": "組織・主体の同一性",
+        "body": "国境やシステムが違っても、相手がどの組織・どの主体かを Identity Exchange で特定。"
+      },
+      {
+        "id": "audit-trail",
+        "titleEn": "Audit trail",
+        "title": "監査証跡",
+        "body": "第三者がタイムラインを辿れる — 誰が・いつ・どの委任権限の下で行ったか。"
+      }
+    ],
+    "ehrMetaphorCta": "比喩の背景を読む"
+  },
+  "about": {
+    "title": "OpenOrgOS について",
+    "lead": "組織の電子カルテという比喩から、プロトコルの定義、オープンな運営まで — OpenOrgOS の全体像をまとめました。",
+    "ehrMetaphorTitle": "なぜ「組織の電子カルテ」なのか",
+    "ehrMetaphorBody": "診療チームが協力するとき、患者の電子カルテが頼りになります — 誰の記録か、何が起きたか、誰に委任したか、監査人が辿れる証跡。企業間取引、共同研究、サプライチェーン、ジョイントベンチャーも、組織のスケールで同じパターンが必要です。OpenOrgOS はそのプロトコル層（Org Event Model · identity exchange · authority delegation · auditability）を定義し、法解釈とビジネスルールは委員会が担います。",
+    "whatIsTitle": "OpenOrgOS とは",
+    "whatIsBody": "OpenOrgOS は組織間通信のグローバルプロトコルです。Org Event Model、identity exchange、authority delegation、auditability を定義します。組織内部の人事・勤怠・社内ワークフローなどを置き換える OS ではありません。ビジネスロジック・法解釈・組織行動はすべて、各国・各ドメインの委員会に委ねられます。",
+    "openTitle": "Open の意味",
+    "openBody": "OpenOrgOS の「Open」は、利用するすべての人々の力と意見を取り入れる思想を表します。プロトコルの提案、レビュー、標準化、モジュール開発 — 誰もが参加できるオープンソースコミュニティです。",
+    "scopeTitle": "適用範囲",
+    "scopeBody": "企業間取引、大学・研究機関の共同、NPO 連携、サプライチェーン、ジョイントベンチャーなど、組織境界を越えて検証可能な状態を交換する必要がある関係すべてに適用できます。",
+    "visionTitle": "目指す世界",
+    "visionQuote": "OpenOrgOS は組織間の共通通信プロトコルとなることを目指します。",
+    "governanceCta": "ガバナンスモデル"
+  },
+  "gettingStartedPage": {
+    "title": "はじめての方へ",
+    "lead": "3つの入口 — 見る・学ぶ・提案する。最初から GitHub は不要です。",
+    "stepBrowseTitle": "1. モジュールを見る",
+    "stepBrowseBody": "会計・契約・ガバナンスなど、どんなルールモジュールがあるか一覧できます。",
+    "stepBrowseCta": "モジュール一覧を見る",
+    "stepLearnTitle": "2. 基礎を学ぶ",
+    "stepLearnBody": "セットアップガイドとカリキュラムを自分のペースで進められます。会員向け動画はログイン後マイページで視聴キーを確認できます。",
+    "stepLearnCta": "学習ページへ",
+    "stepProposeTitle": "3. モジュールを提案する",
+    "stepProposeBody": "ルールを公開したい方は、コミュニティ提案モジュールとして登録できます（最初は未審査のまま掲載）。",
+    "stepProposeCta": "モジュールを提案",
+    "signInNote": "役割に応募したりモジュールを登録するときだけ、ログインが必要です。",
+    "flowTitle": "参加の流れ",
+    "flowBrowse": "見る",
+    "flowSignIn": "ログイン",
+    "flowApply": "応募",
+    "progressLabel": "ステップ {step} / {total}",
+    "back": "戻る",
+    "next": "次へ",
+    "finish": "進む",
+    "caseStudiesTitle": "参加事例",
+    "caseStudies": [
+      {
+        "title": "モジュールを見てから参加",
+        "body": "「まずクリニック向けモジュールを読んで、コントリビュータに応募。GitHub は後から連携しました。」"
+      },
+      {
+        "title": "提案モジュールを登録",
+        "body": "「自社のルールを提案として登録。未審査でも一覧に載り、コメントをもらえました。」"
+      }
+    ],
+    "ecosystemSectionTitle": "現在のフェーズ",
+    "ecosystemSectionLead": "Phase 0: WILD と Community レジストリは稼働中。Commercial Hub と Candidate パイプラインは法域を1つずつ展開します。",
+    "ecosystemSectionCta": "エコシステムとフェーズ",
+    "orgosInstallSectionTitle": "自社ハードウェアで OrgOS を動かす",
+    "orgosInstallSectionLead": "OrgOS の業務データは自社が管理するインフラ上に保持されます。以下は初回導入の推奨構成です — 詳細手順はセットアップガイドを参照してください。",
+    "orgosHardwareTitle": "推奨ハードウェア構成",
+    "orgosHardwareLead": "本番は常時稼働のローカル機器で運用します。開発は Docker 付きノート PC から始め、同じ構成を Mac mini に移せます。",
+    "orgosHardwareColComponent": "構成要素",
+    "orgosHardwareColPurpose": "用途",
+    "orgosHardwareRows": [
+      {
+        "component": "Mac mini（または同等の常時稼働ホスト）",
+        "purpose": "Org Runtime + Org Console — 社内 LAN 上の正本"
+      },
+      {
+        "component": "Synology NAS（任意）",
+        "purpose": "バックアップと成果物保管"
+      },
+      {
+        "component": "安定した LAN",
+        "purpose": "社内ネットワークから Org Console にアクセス"
+      },
+      {
+        "component": "アウトバウンド HTTPS",
+        "purpose": "GitHub、モジュールレジストリ、任意の Control Plane ハートビート"
+      }
+    ],
+    "orgosSoftwareTitle": "必要なソフトウェア",
+    "orgosSoftwareLead": "steward リポジトリを clone する前に、ホストに以下を用意してください。",
+    "orgosSoftwareBullets": [
+      "Docker と Docker Compose",
+      "Git",
+      "OrgOS / Steward リポジトリへアクセスできる GitHub アカウント",
+      "OpenOrgOS Community アカウント（openorgos.net）— レジストリと学習リソース用"
+    ],
+    "orgosInstallTitle": "インストールの流れ",
+    "orgosInstallSteps": [
+      {
+        "title": "clone と設定",
+        "body": "steward リポジトリを clone し、.env.example を .env にコピー。TENANT_SLUG、法域、有効モジュール、DATABASE_URL、認証設定を編集します。"
+      },
+      {
+        "title": "スタック起動",
+        "body": "docker compose up -d を実行し、/health が通ることを確認してから次へ進みます。"
+      },
+      {
+        "title": "テナント初期化",
+        "body": "tenant init と validate を実行。本番宣言前にエラーをすべて解消します。"
+      },
+      {
+        "title": "デジタルツインのベースライン",
+        "body": "経営・財務ロールを割り当て、Console でテスト Org Event を確認し、有効モジュールを記録し、バックアップをテストします。"
+      }
+    ],
+    "orgosInstallGuideCta": "OrgOS セットアップガイド（全文）",
+    "orgosInstallGuideDesc": "事前情報チェックリスト、tenant init、デジタルツイン準備の詳細。"
+  },
+  "github": {
+    "title": "GitHub 連携",
+    "desc": "ルールの開発・メンテを始めるときに、リポジトリを連携できます。",
+    "publicLead": "GitHub 連携は任意です。ルールを版管理したい方・自分のリポジトリをつなぎたい方向けです。",
+    "publicBullets": [
+      "モジュールの閲覧や学習は GitHub なしでできます",
+      "メンテナ・コントリビュータに応募するときに連携すると便利",
+      "リポジトリ連携で、作業内容をレジストリと揃えやすくなります"
+    ],
+    "developerSectionTitle": "開発者・管理者向け",
+    "developerSectionHint": "権限モデル、CLI 同期、GitHub App 設定（メンテナ向け）。",
+    "signInCta": "Google、GitHub、LinkedIn のいずれかでログインし、必要に応じてマイページまたは Connections から追加アカウントを連携してください。",
+    "signInButton": "ログイン",
+    "connectRepo": "リポジトリを接続",
+    "connected": "接続済みリポジトリ",
+    "modelTitle": "権限モデル",
+    "modelItems": [
+      "Public clone（read-only）は常に可能",
+      "コミュニティ管理: main merge · リリース tag · 新規モジュール repo",
+      "Phase A: 個人リポ + OAuth 接続",
+      "Phase B: steward-os Org + GitHub App"
+    ],
+    "moduleRegistry": "モジュールレジストリ",
+    "proposeWildModule": "コミュニティ提案モジュールを登録",
+    "proposeWildModuleDesc": "自作モジュールをレジストリに追加し、Maintainer として委員会に参加できます。",
+    "installApp": "GitHub App をインストール（Phase B）",
+    "installAppDesc": "steward-os GitHub App を組織にインストールすると、リポジトリ権限を自動付与できます。",
+    "syncAgentsHint": "エージェントレジストリ同期:",
+    "provisionCta": "GitHub 権限を今すぐ同期",
+    "provisionDesc": "インストール済み GitHub App 経由で、想定リポジトリ権限を反映します。",
+    "phaseBActive": "このサイトでは Phase B の自動付与が有効です。"
+  },
+  "learn": {
+    "title": "学習ビデオ",
+    "desc": "グローバルプロトコル — Org Event Model、identity exchange、authority delegation、auditability、および委員会委任モデル。",
+    "publicSection": "公開ビデオ",
+    "membersSection": "メンバー限定ビデオ",
+    "membersOnly": "メンバー限定",
+    "signInToWatch": "視聴するにはログイン",
+    "episode": "第",
+    "githubLogin": "ログイン",
+    "certification": "認証制度"
+  },
+  "learning": {
+    "title": "学習",
+    "desc": "セットアップガイド・カリキュラム・試験 — OrgOS と OpenOrgOS を一か所で学べます。",
+    "orgosOverviewTitle": "OrgOS とは",
+    "orgosOverviewP1": "OrgOS は確定的なプログラムです。同じ条件なら同じ結果が再現でき、監査にも耐えます。その OrgOS を LLM・AI エージェントに自然言語で指示して操作することで、日々の組織運営を楽にできます。",
+    "orgosOverviewP2": "社内の事務だけでなく、組織間の通信（Org Event）も行えます。まずは社内から — 役員会の議事録、契約書の管理、会計・予算実績の管理などを、Cursor の Skill 等を使って安定的に処理できます。",
+    "orgosOverviewP3": "OrgOS にモジュールを組み込むことで、できることをいつでも拡張できます。必要な業務ごとにモジュールを追加し、事務手続きを段階的に広げてください。",
+    "guidesSection": "OrgOS セットアップガイド",
+    "guidesDesc": "OrgOS の新規インストール、初期設定、組織情報の整理、デジタルツイン構築の環境準備、および Cursor 等の AI エージェントを使った自然言語での操作までを解説します。",
+    "guideReadCta": "ガイドを読む",
+    "academySection": "カリキュラムと試験",
+    "academyDesc": "トラック・レッスン・クイズ・認定の体系的な学習。ログイン中は進捗が保存されます。",
+    "academyEmpty": "カリキュラムはまだ利用できません。",
+    "academyUnavailable": "カリキュラムサービスは一時的に利用できません。しばらくしてから再度お試しください。",
+    "academyNotConfigured": "このサイトでは Academy API が未接続です。下記のガイドとドキュメントは引き続きご利用いただけます。",
+    "videosSection": "コミュニティ動画",
+    "continueLabel": "学習を続ける",
+    "continueCta": "レッスンを再開"
+  },
+  "settings": {
+    "title": "アカウント設定",
+    "lead": "OpenOrgOS アカウントのプロフィールと連携 identity。",
+    "navTitle": "設定",
+    "profile": "プロフィール",
+    "profileDesc": "公開プロフィールに表示される名前・専門分野・地域・自己紹介。",
+    "connections": "連携",
+    "connectionsTitle": "Identity レイヤー",
+    "connectionsDesc": "Google、GitHub、LinkedIn を一つのコミュニティアカウントに連携します。",
+    "openOrgIdLabel": "OpenOrgOS ログイン ID",
+    "loginVia": "ログイン方法",
+    "emailLoginHint": "サインインを完了したら、ここから追加アカウントを連携できます。",
+    "layerCommunityTitle": "コミュニティ",
+    "layerCommunityBody": "メールベースの OpenOrgOS アカウント、コミュニティプロフィール、役割、アカデミー進捗。",
+    "layerCommunityAction": "プロフィール編集",
+    "layerProfessionalTitle": "プロフェッショナル",
+    "layerProfessionalBody": "LinkedIn を連携 — モジュール提案・委員会・ルール監視などビジネス・専門家としての identity。",
+    "layerTechnicalTitle": "テクニカル",
+    "layerTechnicalBody": "GitHub アカウントとリポジトリを連携 — モジュールコードの改善・レビュー用。",
+    "layerTechnicalLogin": "GitHub アカウント",
+    "layerTechnicalEmpty": "接続リポジトリはまだありません。",
+    "layerTechnicalAction": "リポジトリ管理",
+    "layerStatusComplete": "連携済み",
+    "layerStatusIncomplete": "未設定",
+    "layerStatusPartial": "一部連携",
+    "publicProfileLabel": "公開プロフィール",
+    "linkedinConnect": "LinkedIn を連携",
+    "linkedinConnectError": "LinkedIn を連携できませんでした。先にログインしてから Connections でお試しください。",
+    "linkedinDisconnect": "連携解除",
+    "linkedinDisconnectConfirm": "LinkedIn 連携を解除しますか？",
+    "linkedinDisconnectError": "LinkedIn 連携を解除できませんでした。",
+    "linkedinNotConfigured": "LinkedIn 連携は現在ご利用いただけません。",
+    "linkedinMemberId": "LinkedIn メンバー ID",
+    "linkedinHeadline": "専門分野（ヘッドライン）",
+    "linkedinOrganization": "所属・組織",
+    "linkedinLinkedNotice": "LinkedIn を連携しました。",
+    "githubConnect": "GitHub アカウントを連携",
+    "githubConnectError": "GitHub を連携できませんでした。Connections から再試行してください。",
+    "githubLinkedNotice": "GitHub アカウントを連携しました。"
+  },
+  "login": {
+    "title": "ログイン",
+    "desc": "Google アカウント（OpenOrgOS ログイン ID）でサインインしてください。GitHub / LinkedIn はログイン後に Connections から連携できます。",
+    "signInGoogle": "Google でログイン",
+    "signInGithub": "GitHub でログイン",
+    "signInLinkedIn": "LinkedIn でログイン",
+    "signInCta": "ログイン",
+    "connectionsHint": "ログイン後、GitHub / LinkedIn は",
+    "connectionsLink": "連携",
+    "redirectUriHint": "Google Cloud Console に次の Redirect URI を登録してください: {callbackUrl}",
+    "hostMismatchHint": "ブラウザで {expectedUrl} を開いてください（現在: {currentHost}）。URL は AUTH_URL と一致している必要があります。",
+    "providersNotConfigured": "Google サインインが未設定です。.env に AUTH_GOOGLE_ID / AUTH_GOOGLE_SECRET を設定してください。",
+    "errorConfiguration": "サインインは現在ご利用いただけません。しばらくしてから再度お試しください。",
+    "errorOAuthCallback": "サインイン中にエラーが発生しました。もう一度お試しください。",
+    "errorRedirectUri": "Google の redirect URI が一致しません。AUTH_URL と同じ URL でサイトを開き、下記のコールバック URI を Google Cloud Console に登録してください。",
+    "errorSignInWithGoogleFirst": "先に Google でログインし、Connections から GitHub / LinkedIn を連携してください。",
+    "errorAccessDenied": "サインインが拒否されました。別のアカウントでお試しいただくか、再度お試しください。",
+    "errorAccountNotLinked": "このアカウントは別のプロフィールに連携済みです。メインのアカウントでログインし、Connections から連携してください。",
+    "errorAccountSuspended": "このアカウントは停止されています。誤りと思われる場合はお問い合わせください。",
+    "errorDefault": "ログインに失敗しました。もう一度お試しください。",
+    "errorSessionInvalid": "セッションの有効期限が切れました。再度ログインしてください。",
+    "errorDatabaseUnavailable": "サインインは現在ご利用いただけません。しばらくしてから再度お試しください。",
+    "githubNotConfigured": "GitHub 連携は現在ご利用いただけません。"
+  },
+  "common": {
+    "joinCommunity": "コミュニティに参加",
+    "learnMore": "詳しく見る",
+    "notFound": "ページが見つかりません",
+    "backAbout": "← 概要",
+    "backHome": "← ホーム",
+    "languageLabel": "言語"
+  },
+  "footer": {
+    "aboutHeading": "OpenOrgOS について",
+    "followUs": "フォローする",
+    "policies": "ポリシー",
+    "disclaimer": "免責事項",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "trademark": "商標使用ガイドライン",
+    "copyright": "人が可読 · オープン · 監査可能性 · 信頼。",
+    "developerLink": "開発者向け（GitHub）",
+    "slimParticipateTitle": "参加する",
+    "slimResourcesTitle": "リソース",
+    "slimExploreTitle": "もっと知る"
+  },
+  "purposes": [
+    {
+      "id": "rules",
+      "titleEn": "Human-Readable Protocol",
+      "title": "人が可読なプロトコル",
+      "body": "MD/YAML でグローバルプロトコルを開発・メンテ。AI 処理と人間のレビューを両立。",
+      "href": "/modules"
+    },
+    {
+      "id": "protocol",
+      "titleEn": "Global Protocol",
+      "title": "グローバルプロトコル",
+      "body": "Org Event Model · identity exchange · authority delegation · auditability。",
+      "href": "/standards"
+    },
+    {
+      "id": "committees",
+      "titleEn": "Committee Delegation",
+      "title": "委員会への委任",
+      "body": "ビジネスロジック・法解釈・組織行動は各国・各ドメインの委員会が担う。",
+      "href": "/committees"
+    },
+    {
+      "id": "open",
+      "titleEn": "Open Community",
+      "title": "オープンコミュニティ",
+      "body": "すべての利用者の意見を取り入れ、プロトコルとモジュールを公開的に育てる。",
+      "href": "/governance"
+    }
+  ],
+  "principles": [
+    {
+      "id": "open",
+      "titleEn": "Open",
+      "title": "Open（オープン）",
+      "body": "利用するすべての人々の力と意見を取り入れる。"
+    },
+    {
+      "id": "human",
+      "titleEn": "Human-Readable",
+      "title": "人が可読",
+      "body": "MD/YAML のルールを人がメンテ。AI は処理するが、最終的な信頼は人間のレビューにある。"
+    },
+    {
+      "id": "controlled",
+      "titleEn": "Controlled Integration",
+      "title": "統制された統合",
+      "body": "モジュールの標準採用は厳格なレビューを経る。"
+    },
+    {
+      "id": "trust",
+      "titleEn": "Trust First",
+      "title": "信頼を最優先",
+      "body": "組織間通信で検証可能なルールとモジュールが最大の価値。"
+    }
+  ],
+  "values": [
+    {
+      "label": "人が可読",
+      "labelEn": "Human-Readable"
+    },
+    {
+      "label": "オープン",
+      "labelEn": "Open"
+    },
+    {
+      "label": "監査可能性",
+      "labelEn": "Auditability"
+    },
+    {
+      "label": "信頼",
+      "labelEn": "Trust"
+    }
+  ],
+  "mypage": {
+    "title": "アカウントホーム",
+    "desc": "OpenOrgOS identity、連携アカウント、コミュニティ参加状況。",
+    "openOrgIdLabel": "OpenOrgOS ログイン ID",
+    "openOrgIdHint": "{providers} サインインのメールが正本 ID です。",
+    "identityTitle": "Identity と参加形態",
+    "personaTitle": "参加プロフィール",
+    "personaCoder": "モジュール開発者",
+    "personaCoderDesc": "GitHub 連携 — コード・リポジトリ・モジュール Maintainer として貢献。",
+    "personaProfessional": "ドメイン専門家",
+    "personaProfessionalDesc": "LinkedIn 連携 — モジュール提案・役割申請・委員会ガバナンス。",
+    "personaHybrid": "開発者 & 専門家",
+    "personaHybridDesc": "GitHub と LinkedIn 両方 — コードとビジネス/ルール監視の橋渡し。",
+    "personaExploring": "はじめの一歩",
+    "personaExploringDesc": "Connections で {providers}・LinkedIn・GitHub を連携し、参加形態を明確にしてください。",
+    "githubReposLinked": "リポジトリ連携済み",
+    "linkedinViewProfile": "LinkedIn で見る",
+    "editProfile": "プロフィール編集",
+    "actionsTitle": "ショートカット",
+    "actionSettings": "アカウント設定",
+    "actionPublicProfile": "公開プロフィール",
+    "actionLearning": "学習",
+    "privateVideosTitle": "会員向け学習動画",
+    "privateVideosDesc": "ログイン後にのみ表示されるプライベート YouTube の視聴キーです。下で埋め込み再生できます。制限がある場合はキーで YouTube を開いてください。",
+    "privateVideosKeyLabel": "視聴キー",
+    "privateVideosWatchExternal": "YouTube で開く",
+    "privateVideosEmpty": "公開中の会員向け動画はありません。",
+    "actionGithub": "GitHub 連携",
+    "actionModules": "モジュール参加",
+    "actionProposeModule": "モジュールを提案",
+    "onboardingTitle": "次にやること",
+    "onboardingSub": "まずはこの3つから。詳しい設定は必要になったら下の「詳細を表示」へ。",
+    "onboardingStepProfile": "プロフィールを完成させる",
+    "onboardingStepProfileBody": "名前・専門分野・地域を入力すると、委員会から認識されやすくなります。",
+    "onboardingStepBrowse": "モジュールを見る",
+    "onboardingStepBrowseBody": "興味のある分野のモジュールを探してから応募しましょう。",
+    "onboardingStepParticipate": "応募または提案",
+    "onboardingStepParticipateBody": "コントリビュータに応募するか、コミュニティ提案モジュールを登録します。",
+    "onboardingStepDone": "完了",
+    "onboardingShowDetails": "アカウントの詳細を表示",
+    "onboardingProgress": "{done}/{total} 完了",
+    "welcomeTitle": "{name} さん、ようこそ",
+    "welcomeBody": "まずモジュールを1つ見て、興味のある分野から始めましょう。",
+    "welcomeCta": "おすすめモジュールを見る",
+    "wildModulesTitle": "コミュニティ提案モジュール",
+    "wildModulesDesc": "あなたが author として登録した提案モジュール。昇格申請や GitHub 連携は各モジュール詳細から。",
+    "wildModulesEmpty": "登録した提案モジュールはまだありません。",
+    "wildModulesRegister": "モジュールを提案",
+    "wildModulesPromote": "昇格申請",
+    "wildModulesBadge": "未審査",
+    "viewPublicProfile": "公開プロフィールを見る",
+    "pendingTasksTitle": "保留タスク",
+    "groupsSummaryTitle": "グループ所属",
+    "groupsSummaryBody": "参加中のモジュールと委員会。詳細な役割は公開プロフィールに表示されます。",
+    "participationTitle": "参加中",
+    "requestsTitle": "役割申請",
+    "requestsEmpty": "申請はありません。",
+    "requestsApplyLink": "モジュールページから申請",
+    "committeeRequestsTitle": "委員会参加申請",
+    "committeeRequestsEmpty": "委員会への申請はまだありません。",
+    "committeeRequestsApplyLink": "委員会一覧",
+    "reviewPendingBadge": "委員会審査 ({count})",
+    "permissionsDetails": "GitHub 権限（詳細）",
+    "profileTitle": "プロフィール",
+    "siteRole": "サイトロール",
+    "committeesTitle": "所属委員会",
+    "committeesEmpty": "まだ委員会に所属していません。メンテナとして承認されると、モジュール委員会に自動追加されます。",
+    "moduleRolesTitle": "モジュール役割",
+    "moduleRolesEmpty": "モジュール役割はありません。",
+    "githubTitle": "接続 GitHub リポジトリ",
+    "githubEmpty": "リポジトリ未接続 —",
+    "permissionsTitle": "GitHub 承認権限（コミュニティロール連動）",
+    "permissionsDesc": "モジュール役割と委員会所属に基づく GitHub 上の想定権限です。GitHub App インストール後、リポジトリ権限を Phase B で自動付与します。",
+    "permissionsEmpty": "権限はモジュール役割または委員会所属があると表示されます。",
+    "scope": "スコープ",
+    "target": "対象",
+    "level": "権限レベル",
+    "source": "付与元",
+    "actions": "可能な操作",
+    "consolidatedTitle": "統合権限（対象ごと）",
+    "viewCommittee": "委員会詳細",
+    "standardBadge": "全体標準",
+    "moduleBadge": "モジュール",
+    "overviewTitle": "概要",
+    "communitiesTitle": "参加コミュニティ",
+    "communitiesDesc": "参加中のモジュールと委員会 — 役割・レビュー・ガバナンス活動。",
+    "communitiesEmpty": "まだモジュールや委員会に参加していません。",
+    "browseModules": "モジュールを見る",
+    "committeeRoleLabel": "委員会",
+    "moduleRoleLabel": "モジュール役割",
+    "viewModule": "モジュール詳細",
+    "statsCommittees": "委員会 {count} 件",
+    "statsModuleRoles": "モジュール役割 {count} 件",
+    "statsWildModules": "提案モジュール {count} 件",
+    "statsAcademyLessons": "学習 {completed}/{total} レッスン",
+    "statsCertificates": "アカデミー証明書 {count} 件",
+    "certApplicationsTitle": "資格認定申請",
+    "certApplicationsEmpty": "資格認定の申請はありません。",
+    "certApplicationsApplyLink": "資格認定を申請"
+  },
+  "committeesPage": {
+    "desc": "人が可読なルールモジュールごとに委員会。全体標準委員会が OrgOS Standard を管轄します。",
+    "standardSection": "OpenOrgOS 標準委員会",
+    "standardDesc": "全モジュールのルールとライフサイクル昇格を横断管轄。グローバルプロトコル（auditability）の信頼基盤。",
+    "domainSection": "ドメインガバナンス委員会",
+    "domainDesc": "会計・法務・QMS 等の専門分野・法域ごとに管轄モジュールを監督し、標準委員会へ昇格を提案します。",
+    "domainBadge": "ドメイン",
+    "domainFilterAll": "すべての法域",
+    "domainResultCount": "{count} 件の委員会",
+    "governedModules": "管轄モジュール",
+    "governedModulesTitle": "管轄モジュール",
+    "moduleSection": "モジュール委員会",
+    "moduleDesc": "各モジュールごとに品質レビュー・merge 承認・昇格提案を担う委員会です。",
+    "members": "メンバー",
+    "viewDetail": "詳細を見る",
+    "hierarchyNote": "モジュール委員会 → 標準委員会への昇格提案フローで、Trust First の統制された統合を実現します。",
+    "membershipPolicyTitle": "委員会参加の基準",
+    "membershipPolicyBody": "コントリビューター・レビュアーなどへの参加は専門分野・地域を問わず広く歓迎します。一方、自分の専門分野・地域以外の委員会への参加には、ブリッジとなる専門性が必要です（例：日本人が中国向け委員会に参加する場合、当該分野の専門知識が一致していること）。",
+    "applyToModuleCta": "モジュールに応募",
+    "applySignInHint": "委員会参加はモジュール役割の承認後に自動同期されます。まずモジュールページから応募してください。",
+    "applyDirectTitle": "このドメイン委員会へ直接応募",
+    "applyDirectDesc": "ドメイン委員会は、ブリッジ専門性・推薦者・利益相反確認を伴う直接参加申請を受け付けます。レビュアー役には当該分野の専門性が必要です。",
+    "applySignInHintDirect": "委員会へ応募するにはログインしてください。",
+    "alreadyMember": "すでにこの委員会のメンバーです。",
+    "participationTitle": "参加方法",
+    "participationDomainDirect": "ドメイン委員会メンバー（委員・レビュアー）への直接応募は、このページから行います。",
+    "participationDomainModulePath": "管轄モジュールへの参加が、このドメイン委員会へ自動反映されることはありません。モジュール役割は当該モジュール委員会へのみ同期されます。",
+    "participationModulePath": "モジュールページからモジュール役割に応募してください。承認後、このモジュール委員会へ自動同期されます。",
+    "participationStandardNomination": "標準委員会の席は推薦とガバナンス審査により決定します（直接自己応募は不可）。昇格フローはガバナンスを参照してください。",
+    "relatedModuleCommitteesTitle": "関連モジュール委員会",
+    "memberSpecialty": "専門分野",
+    "memberRegion": "地域",
+    "moduleSearchPlaceholder": "モジュール委員会を検索…",
+    "moduleListEmpty": "条件に一致するモジュール委員会がありません。",
+    "emptyModulesHint": "モジュール委員会はレジストリにモジュールが登録されると表示されます。",
+    "showAllModules": "すべて表示 ({count})",
+    "showFewerModules": "折りたたむ",
+    "reviewQueueCta": "申請を審査",
+    "reviewQueueTitle": "委員会審査キュー",
+    "reviewQueueDesc": "{name} の保留中申請",
+    "reviewQueueEmpty": "審査可能な保留申請はありません。",
+    "moduleRoleRequestsTitle": "モジュール役割申請",
+    "membershipRequestsTitle": "委員会参加申請",
+    "matrixTitle": "法域 × 専門ドメイン マトリクス",
+    "matrixDesc": "ビジネスロジックと法解釈は、法域と専門ドメインの交点ごとの委員会に委任されます。各セルが運用単位となり、委員長が選出・任期管理されます。",
+    "matrixJurisdiction": "法域",
+    "matrixExpertDomain": "専門ドメイン",
+    "matrixChair": "委員長",
+    "matrixVacant": "委員長未定",
+    "matrixToggle": "ガバナンスマトリクスを表示（詳細）",
+    "participationGuideTitle": "委員会への参加方法",
+    "participationGuideLead": "目的に合った入口を選んでください。多くの方はモジュールから始めます。",
+    "pathModuleTitle": "モジュールから入る",
+    "pathModuleBody": "モジュール詳細でコントリビュータまたはメンテナに応募。承認後、そのモジュール委員会へ自動追加されます。",
+    "pathModuleCta": "モジュール一覧へ",
+    "pathDomainTitle": "専門分野から入る",
+    "pathDomainBody": "法域をまたぐ専門性がある場合、ドメイン委員会へ直接応募できます（推薦・審査あり）。",
+    "pathDomainCta": "ドメイン委員会へ",
+    "pathStandardTitle": "全体標準委員会",
+    "pathStandardBody": "標準委員会の席は推薦とガバナンス審査で決まります（自己応募は不可）。",
+    "pathStandardCta": "運営ルールを読む",
+    "chairSectionTitle": "委員長",
+    "chairBadge": "委員長",
+    "chairScopeLabel": "管轄",
+    "chairTermLabel": "任期",
+    "chairTermOpen": "終了日未定",
+    "chairVacant": "委員長が未選出です。メンバーが候補を提名し、レビュアーが任期付きで承認します。",
+    "chairOpsDesc": "委員長は審査キュー、参加審査、標準昇格提案をこの法域・ドメインで統括します。",
+    "chairNominationQueueTitle": "委員長提名（審査待ち）",
+    "chairNominationNoStatement": "記載なし",
+    "chairNominationTitle": "委員長を提名",
+    "chairNominationDesc": "現役メンバーを委員長候補として提案します。レビュアー（または現委員長）が任期付きで承認します。",
+    "chairNominationCandidate": "候補者",
+    "chairNominationStatement": "提名理由",
+    "chairNominationSubmit": "提名を送信",
+    "chairNominationSuccess": "提名を送信しました。審査待ちです。",
+    "chairNominationError": "提名を送信できませんでした。"
+  },
+  "governance": {
+    "title": "運営",
+    "lead": "誰が参加でき、委員会がどう動き、役割がどう育つか。",
+    "membershipTitle": "メンバーシップと委員会参加",
+    "membershipOpenTitle": "広く歓迎する参加",
+    "membershipOpenBody": "OpenOrgOS はコントリビューター、レビュアー、ドキュメント・翻訳の貢献者など、コミュニティメンバーを広く求めます。ルールの提案、レビュー、モジュール開発への参加に、専門分野や居住地域による制限は設けません。",
+    "membershipCrossTitle": "他地域・他法域の委員会への参加",
+    "membershipCrossBody": "委員会はモジュールの品質、merge 承認、標準採用など高い責任を担います。自分の専門分野・通常の法域・地域以外の委員会に参加する場合は、一定の基準を設けます。",
+    "membershipCriteria": [
+      "当該委員会のドメイン（会計・法務・QMS 等）において、実務または研究の専門性があること",
+      "参加先の法域・言語・地域の文脈を理解し、ブリッジ役として機能できること",
+      "既存委員の推薦、または同等の実績・ポートフォリオによるガバナンス審査を経ること",
+      "利益相反がないこと（Trust First）"
+    ],
+    "membershipExample": "例：日本人が中国向けモジュール委員会に参加する場合、少なくとも同じ専門分野（例：会計・契約）における深い知見があり、日中のルール差分を橋渡しできることが望ましい。",
+    "rolesTitle": "コミュニティの役割",
+    "rolesDesc": "参加者の役割と責任範囲。",
+    "tableRole": "役割",
+    "tableLocal": "英語（参照）",
+    "tableResponsibility": "責務",
+    "promotionTitle": "昇格フロー",
+    "promotionDesc": "コントリビューターから委員会メンバーへの昇格。委員会所属は専門性・推薦・審査を経ます。",
+    "promotionApplyModules": "モジュールに応募",
+    "promotionBrowseModules": "モジュール一覧",
+    "promotionApplyCert": "資格認定を申請",
+    "permissionTitle": "権限モデル（概要）",
+    "permissionHeaders": {
+      "action": "操作",
+      "user": "一般ユーザー",
+      "contributor": "コントリビューター",
+      "reviewer": "レビュアー",
+      "maintainer": "メンテナ",
+      "committee": "委員会"
+    },
+    "permissionRows": [
+      {
+        "action": "モジュール提案",
+        "values": [
+          "—",
+          "✓",
+          "✓",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "action": "品質レビュー",
+        "values": [
+          "—",
+          "—",
+          "✓",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "action": "モジュール repo への merge",
+        "values": [
+          "—",
+          "—",
+          "—",
+          "✓",
+          "✓"
+        ]
+      },
+      {
+        "action": "ライフサイクル昇格",
+        "values": [
+          "—",
+          "—",
+          "提案",
+          "提案",
+          "✓ 承認"
+        ]
+      },
+      {
+        "action": "Standard 採用",
+        "values": [
+          "—",
+          "—",
+          "—",
+          "—",
+          "✓ 投票"
+        ]
+      },
+      {
+        "action": "資格認定審査",
+        "values": [
+          "—",
+          "—",
+          "—",
+          "—",
+          "認定委員会"
+        ]
+      }
+    ],
+    "longTermTitle": "長期的なガバナンス",
+    "ecosystemTitle": "モジュールエコシステム",
+    "ecosystemBody": "WILD・Candidate・Commercial の信頼段階 — Community レジストリと Hub Marketplace、Program Fund、法域コホートの関係。",
+    "ctaEcosystem": "モジュールエコシステム",
+    "ctaCommittees": "委員会一覧",
+    "ctaExperts": "専門家ディレクトリ",
+    "ctaCompliance": "コンプライアンス・資格レジストリ",
+    "ctaOpenness": "公開範囲・資産保護ポリシー",
+    "reviewQueueDesc": "委員会の chair / reviewer として、各委員会の審査キューからモジュール役割申請と参加申請を承認できます。"
+  },
+  "modulesPage": {
+    "title": "モジュールレジストリ",
+    "lead": "会計、契約、知財、ISO13485、J-SOX、研究管理、ガバナンス——モジュール単位で開発・レビュー・標準化。",
+    "ctaApplyMaintainer": "モジュール一覧から応募",
+    "ctaJoin": "コミュニティに参加",
+    "proposeCta": "新規モジュールを提案",
+    "proposeLead": "開発中のモジュールを Web から提案・登録できます。コミュニティ提案として掲載されます（最初は未審査）。免責同意が必要です。",
+    "proposeLink": "提案・登録",
+    "wildEmpty": "未審査モジュール：",
+    "wildRegisterLink": "登録",
+    "emptySeedHint": "モジュール委員会はレジストリにモジュールが登録されると表示されます。",
+    "badgeUnreviewed": "未審査",
+    "badgeMaintainerWanted": "メンテナ募集中",
+    "githubCta": "GitHub 連携",
+    "searchPlaceholder": "例: 契約、会計、在庫",
+    "searchEmpty": "条件に一致するモジュールがありません。",
+    "filterAll": "すべて",
+    "resultCount": "{count} 件",
+    "recommendedTitle": "はじめての方におすすめ",
+    "recommendedSub": "まずはこの3つから — ログイン不要で閲覧できます。",
+    "communityMaintainerLabel": "コミュニティメンテナ",
+    "maintainerLabel": "メンテナ",
+    "ecosystemTitle": "信頼段階と品質ライフサイクル",
+    "ecosystemLead": "WILD 提案は未審査・無保証です。Community の REVIEWED は Commercial 準備完了を意味しません。WILD / Candidate / Commercial と品質段階の関係を確認してください。",
+    "ecosystemCta": "エコシステムガイド"
+  },
+  "agentsPage": {
+    "title": "エージェントレジストリ",
+    "lead": "Steward OS のコアエージェント — 経営・財務・コンプライアンス・運用など、モジュールと連携して人が読めるルールを実行します。",
+    "ctaModules": "モジュール一覧",
+    "ctaLearning": "Steward OS を学ぶ",
+    "searchPlaceholder": "名前・役割・ドメインで検索…",
+    "searchEmpty": "条件に一致するエージェントがありません。",
+    "filterAll": "すべて",
+    "resultCount": "{count} 件",
+    "viewAgent": "エージェントを見る",
+    "badgeCore": "コアエージェント",
+    "detailBack": "← エージェント一覧",
+    "detailDomainLabel": "ドメイン",
+    "detailIdLabel": "エージェント ID",
+    "detailDescTitle": "役割",
+    "relatedModulesCta": "関連モジュールを見る",
+    "githubConnectCta": "GitHub を連携",
+    "joinMemberCta": "メンバーになる",
+    "joinMemberDone": "参加済み",
+    "joinMemberSignIn": "ログインして参加",
+    "joinMemberSubmitting": "参加中…",
+    "joinMemberError": "エージェントへの参加に失敗しました。",
+    "manifestPathLabel": "マニフェストパス",
+    "domainLabels": {
+      "governance": "ガバナンス",
+      "finance": "財務・法務",
+      "operations": "運用"
+    },
+    "entries": {
+      "executive": {
+        "name": "エグゼクティブ・スチュワード",
+        "description": "組織の優先順位を調整し、権限委任とモジュール横断の意思決定を監査可能に保ちます。"
+      },
+      "secretary": {
+        "name": "秘書スチュワード",
+        "description": "文書・議事録・組織間の公式連絡を管理します。"
+      },
+      "finance": {
+        "name": "財務",
+        "description": "会計・資金管理・財務報告を、財務系モジュールと整合させます。"
+      },
+      "contract": {
+        "name": "契約",
+        "description": "契約ライフサイクル、法務レビュー、当事者間の義務追跡を支援します。"
+      },
+      "compliance": {
+        "name": "コンプライアンス",
+        "description": "規制要件、内部統制、監査 readiness をモニタリングします。"
+      },
+      "operations": {
+        "name": "運用",
+        "description": "日常ワークフロー、引き継ぎ、運用上のフォロースルーを担います。"
+      }
+    }
+  }
+}

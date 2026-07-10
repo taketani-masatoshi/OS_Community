@@ -1,0 +1,81 @@
+{
+  "moduleType": {
+    "BUSINESS": "业务模块",
+    "JURISDICTION": "组织包",
+    "WILD": "社区 / 未审查"
+  },
+  "moduleRole": {
+    "MAINTAINER": "模块负责人",
+    "DEPUTY": "副管理员",
+    "CONTRIBUTOR": "贡献者"
+  },
+  "siteRole": {
+    "GUEST": "访客",
+    "MEMBER": "成员",
+    "CONTRIBUTOR": "贡献者",
+    "MAINTAINER": "维护者",
+    "DEPUTY": "副管理员",
+    "ADMIN": "管理员",
+    "CERT_REVIEWER": "认证审查员"
+  },
+  "communityRoles": [
+    {
+      "id": "USER",
+      "title": "User",
+      "titleLocal": "用户",
+      "desc": "导入并使用 OpenOrgOS。"
+    },
+    {
+      "id": "CONTRIBUTOR",
+      "title": "Contributor",
+      "titleLocal": "贡献者",
+      "desc": "规则、代码、文档、翻译等 — 不限专业与地域，广泛欢迎。"
+    },
+    {
+      "id": "REVIEWER",
+      "title": "Reviewer",
+      "titleLocal": "审查员",
+      "desc": "负责质量审查，广泛开放参与。"
+    },
+    {
+      "id": "MAINTAINER",
+      "title": "Maintainer",
+      "titleLocal": "维护者",
+      "desc": "特定模块的维护负责人。"
+    },
+    {
+      "id": "COMMITTEE",
+      "title": "Committee Member",
+      "titleLocal": "委员会委员",
+      "desc": "制定并批准标准。以本领域委员会为主；跨地域·跨法域须具备桥接专精并经审查。"
+    },
+    {
+      "id": "FELLOW",
+      "title": "Foundation Fellow",
+      "titleLocal": "基金会 Fellow",
+      "desc": "长期贡献社区的人士。"
+    }
+  ],
+  "promotionFlow": [
+    {
+      "from": "贡献者",
+      "to": "审查员",
+      "criteria": "持续审查贡献与质量判定实绩。"
+    },
+    {
+      "from": "审查员",
+      "to": "维护者",
+      "criteria": "模块领域专业性与维护承诺。"
+    },
+    {
+      "from": "维护者",
+      "to": "委员会委员",
+      "criteria": "标准贡献、委员会推荐、治理审查（跨地域委员会须确认专业一致与桥接能力）。"
+    },
+    {
+      "from": "委员会委员",
+      "to": "基金会 Fellow",
+      "criteria": "对社区的长期影响。"
+    }
+  ]
+}

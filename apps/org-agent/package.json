@@ -1,0 +1,17 @@
+{
+  "name": "@os-community/org-agent",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Outbound agent for Org Console on Mac mini (HTTPS Outbound only)",
+  "main": "src/agent.js",
+  "scripts": {
+    "start": "node src/agent.js",
+    "dev": "node --watch src/agent.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

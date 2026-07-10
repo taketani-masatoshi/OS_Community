@@ -1,0 +1,75 @@
+videos:
+  - id: intro-openorgos
+    order: 1
+    access: members
+    youtubeId: "jNQXAC9IVRw"
+    title:
+      ja: "OpenOrgOS 入門 — 組織運営 OS とは"
+      en: "Introduction to OpenOrgOS"
+      zh: "OpenOrgOS 入门 — 什么是组织运营 OS"
+      pt: "Introdução ao OpenOrgOS"
+      es: "Introducción a OpenOrgOS"
+      et: "OpenOrgOS tutvustus"
+      fr: "Introduction à OpenOrgOS"
+      de: "Einführung in OpenOrgOS"
+      ru: "Введение в OpenOrgOS"
+    description:
+      ja: "OpenOrgOS の目的、Trust First、コミュニティの4つの柱を概説します。"
+      en: "Overview of OpenOrgOS purpose, Trust First, and the four community pillars."
+      zh: "概述 OpenOrgOS 的目标、Trust First 以及社区四大支柱。"
+      pt: "Visão geral do propósito do OpenOrgOS, Trust First e os quatro pilares da comunidade."
+      es: "Visión general del propósito de OpenOrgOS, Trust First y los cuatro pilares de la comunidad."
+      et: "OpenOrgOS eesmärgi, Trust First ja kogukonna nelja sammast ülevaade."
+      fr: "Aperçu de la mission d'OpenOrgOS, Trust First et des quatre piliers de la communauté."
+      de: "Überblick über den Zweck von OpenOrgOS, Trust First und die vier Säulen der Community."
+      ru: "Обзор целей OpenOrgOS, Trust First и четырёх столпов сообщества."
+
+  - id: module-lifecycle
+    order: 2
+    access: members
+    youtubeId: "8aGhZQkoFbQ"
+    title:
+      ja: "モジュールライフサイクルとレビュー"
+      en: "Module Lifecycle & Review"
+      zh: "模块生命周期与审查"
+      pt: "Ciclo de vida de módulos e revisão"
+      es: "Ciclo de vida del módulo y revisión"
+      et: "Mooduli elutsükkel ja ülevaatus"
+      fr: "Cycle de vie des modules et revue"
+      de: "Modul-Lebenszyklus und Review"
+      ru: "Жизненный цикл модуля и ревью"
+    description:
+      ja: "Proposal から LTS までの昇格フローと品質レビューの実務。"
+      en: "Promotion from Proposal to LTS and quality review practices."
+      zh: "从 Proposal 到 LTS 的晋升流程与质量审查实务。"
+      pt: "Promoção de Proposal a LTS e práticas de revisão de qualidade."
+      es: "Promoción de Proposal a LTS y prácticas de revisión de calidad."
+      et: "Tõstmine Proposalist LTS-ni ja kvaliteediülevaatuse praktika."
+      fr: "Promotion de Proposal à LTS et pratiques de revue qualité."
+      de: "Beförderung von Proposal zu LTS und Qualitätsprüfung."
+      ru: "Продвижение от Proposal до LTS и практики проверки качества."
+
+  - id: github-workflow
+    order: 3
+    access: members
+    youtubeId: "qsTqtEsaQXQ"
+    title:
+      ja: "GitHub 連携とモジュール開発"
+      en: "GitHub Integration & Module Development"
+      zh: "GitHub 集成与模块开发"
+      pt: "Integração GitHub e desenvolvimento de módulos"
+      es: "Integración con GitHub y desarrollo de módulos"
+      et: "GitHub integratsioon ja mooduliarendus"
+      fr: "Intégration GitHub et développement de modules"
+      de: "GitHub-Integration und Modulentwicklung"
+      ru: "Интеграция с GitHub и разработка модулей"
+    description:
+      ja: "リポジトリ接続、Contributor から Maintainer への参加方法。"
+      en: "Repository connection and path from Contributor to Maintainer."
+      zh: "仓库连接，以及从 Contributor 到 Maintainer 的参与方式。"
+      pt: "Conexão de repositório e caminho de Contributor a Maintainer."
+      es: "Conexión del repositorio y camino de Contributor a Maintainer."
+      et: "Repohoidla ühendamine ja tee Contributorist Maintaineriks."
+      fr: "Connexion du dépôt et parcours de Contributor à Maintainer."
+      de: "Repository-Anbindung und Weg vom Contributor zum Maintainer."
+      ru: "Подключение репозитория и путь от Contributor до Maintainer."
