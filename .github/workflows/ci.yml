@@ -1,0 +1,133 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: oscommunity
+          POSTGRES_PASSWORD: oscommunity
+          POSTGRES_DB: oscommunity
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgresql://oscommunity:oscommunity@localhost:5432/oscommunity
+      AUTH_SECRET: ci-test-secret-minimum-32-characters-long
+      AUTH_URL: http://localhost:3000
+      ACADEMY_API_URL: http://127.0.0.1:8787
+      ACADEMY_INTERNAL_TOKEN: ci-test-token
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm install
+      - run: npm run i18n:sync
+      - run: npm run db:generate
+      - run: npm run db:push -w @os-community/db
+      - run: npm run lint
+      - run: npm run test -w @os-community/web -- --run
+      - run: npm test -w @os-community/academy-client
+      - run: npm run build
+      - run: npm run audit:web-stability:write
+
+  docker-build:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build production Docker image
+        run: docker build -f apps/web/Dockerfile --target runner -t os-community-web:ci .
+
+  e2e:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: oscommunity
+          POSTGRES_PASSWORD: oscommunity
+          POSTGRES_DB: oscommunity
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgresql://oscommunity:oscommunity@localhost:5432/oscommunity
+      AUTH_SECRET: ci-test-secret-minimum-32-characters-long
+      AUTH_URL: http://127.0.0.1:3000
+      PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout OrgOS Steward (when vars.STEWARD_REPO set)
+        if: vars.STEWARD_REPO != ''
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.STEWARD_REPO }}
+          path: orgos-steward
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm install
+      - run: npm run db:generate
+      - run: npm run db:push -w @os-community/db
+      - run: npm run db:seed -w @os-community/db
+      - run: bash scripts/sync-steward-protocol.sh
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e -w @os-community/web -- e2e/resilience.spec.ts e2e/governance-protocol.spec.ts
+      - name: Write Community integration flags (Steward eco cap)
+        env:
+          COMMUNITY_E2E_GREEN: "1"
+        run: |
+          if [[ -f "${{ github.workspace }}/orgos-steward/package.json" ]]; then
+            STEWARD_ORGOS_ROOT="${{ github.workspace }}/orgos-steward" bash scripts/write-community-integration.sh
+          elif [[ -f "${{ github.workspace }}/../OS_Steward/package.json" ]]; then
+            STEWARD_ORGOS_ROOT="${{ github.workspace }}/../OS_Steward" bash scripts/write-community-integration.sh
+          else
+            echo "::error::Steward repo missing — set repository variable vars.STEWARD_REPO (e.g. owner/OpenOrgOS)"
+            exit 1
+          fi
+
+  deploy:
+    needs: [build, docker-build]
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate production compose and audit
+        run: bash scripts/ci-deploy-verify.sh
+      - name: Production deploy checklist
+        run: |
+          echo "Deploy on VPS with secrets configured:"
+          echo "  cp .env.example .env  # fill AUTH_*, POSTGRES_PASSWORD, DOMAIN, ACADEMY_*"
+          echo "  docker compose -f docker-compose.prod.yml up -d --build"
+          echo "Migrations run automatically via deploy/entrypoint.sh (SKIP_DB_MIGRATE=1 to disable)."
+          echo "Health: curl -fsS https://\${DOMAIN}/api/health"
