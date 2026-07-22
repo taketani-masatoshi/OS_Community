@@ -36,7 +36,6 @@ export async function POST(
     if (result.code === "USER_NOT_FOUND" || result.code === "NOT_FOUND") {
       return apiErrorResponse("NOT_FOUND", 404);
     }
-    if (result.code === "LAST_CHAIR") return apiErrorResponse("LAST_CHAIR", 409);
     return apiErrorResponse("VALIDATION", 400);
   }
 

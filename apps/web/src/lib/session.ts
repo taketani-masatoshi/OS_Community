@@ -1,12 +1,21 @@
 import { cache } from "react";
 import { NextResponse } from "next/server";
 import type { SiteRole } from "@os-community/db";
+import type { Session } from "next-auth";
 import { prisma } from "@/lib/prisma";
 import { apiErrorResponse } from "@/lib/api-error";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { isDatabaseAvailable, isPrismaConnectionError } from "@/lib/db-health";
 import { isProfileComplete } from "@/lib/user-profile";
+
+type AppSession = Session & {
+  user: Session["user"] & {
+    id: string;
+    siteRole?: SiteRole | string | null;
+    profileComplete?: boolean;
+  };
+};
 
 const getAuthAccountStatus = cache(async (userId: string) => {
   return prisma.user
@@ -29,9 +38,7 @@ const getAuthAccountStatus = cache(async (userId: string) => {
     });
 });
 
-async function syncSessionRoleFromDb(
-  session: NonNullable<Awaited<ReturnType<typeof auth>>>,
-): Promise<NonNullable<Awaited<ReturnType<typeof auth>>>> {
+async function syncSessionRoleFromDb(session: AppSession): Promise<AppSession> {
   const dbUser = await getAuthAccountStatus(session.user.id);
   if (dbUser?.siteRole) {
     session.user.siteRole = dbUser.siteRole;
@@ -43,14 +50,14 @@ async function syncSessionRoleFromDb(
 }
 
 /** Session with siteRole loaded from DB (JWT may lag up to AUTH_CLAIMS_REFRESH_MS). */
-export async function getAuthSession() {
-  const session = await auth();
+export async function getAuthSession(): Promise<AppSession | null> {
+  const session = (await auth()) as AppSession | null;
   if (!session?.user?.id) return null;
   return syncSessionRoleFromDb(session);
 }
 
 export async function requireAuth(returnTo?: string) {
-  const session = await auth();
+  const session = (await auth()) as AppSession | null;
   if (!session?.user?.id) {
     redirect(returnTo ? `/login?callbackUrl=${encodeURIComponent(returnTo)}` : "/login");
   }
@@ -63,7 +70,7 @@ export async function requireAuth(returnTo?: string) {
 }
 
 export async function requireAuthApi() {
-  const session = await auth();
+  const session = (await auth()) as AppSession | null;
   if (!session?.user?.id) {
     return { error: await apiErrorResponse("UNAUTHORIZED", 401) };
   }
