@@ -1,13 +1,13 @@
 {
   "product": "os-community",
   "channel": "beta",
-  "latest": "0.1.0-beta.1",
+  "latest": "0.1.0-beta.2",
   "minSupported": "0.1.0-beta.1",
-  "releasedAt": "2026-07-22T16:00:00.000Z",
+  "releasedAt": "2026-07-22T16:25:58.000Z",
   "image": "ghcr.io/taketani-masatoshi/os-community-web",
   "releasesUrl": "https://github.com/taketani-masatoshi/OS_Community/releases",
   "docsUrl": "https://github.com/taketani-masatoshi/OS_Community/blob/main/docs/beta-operations.md",
   "securityNotice": "Beta software. Run only in an isolated environment you control (private network, hardened host, no production secrets shared with other tenants). Rotate credentials after each upgrade.",
-  "updateMessage": "A newer beta is available. Pull the tagged image from GHCR and recreate the web service.",
+  "updateMessage": "Beta 0.1.0-beta.2 is available (build fix). Pull ghcr.io/taketani-masatoshi/os-community-web:0.1.0-beta.2 or :beta and recreate web.",
   "breaking": false
 }
