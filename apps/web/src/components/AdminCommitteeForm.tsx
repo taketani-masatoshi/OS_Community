@@ -21,6 +21,7 @@ type Labels = {
   committeesSubmitCreate: string;
   committeesCreated: string;
   committeesErrorGeneric: string;
+  committeesFilterType: string;
 };
 
 export function AdminCommitteeForm({
