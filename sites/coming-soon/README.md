@@ -2,7 +2,7 @@
 
 | Host | Role |
 |------|------|
-| `oorgos.org` | Overview (static, EN/ja) |
+| `oorgos.org` | Overview (static, EN / 日本語 / 中文) |
 | `www.oorgos.org` | Redirect → apex |
 | `community.oorgos.org` | Community app (Mac mini — **not** this project) |
 

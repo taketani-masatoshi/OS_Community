@@ -6,7 +6,7 @@
     <title>OpenOrgOS</title>
     <meta
       name="description"
-      content="OpenOrgOS — global protocol for inter-organizational communication."
+      content="OpenOrgOS — global protocol for inter-organizational communication. Built with AI agents (AIA), language-agnostic by design."
     />
     <style>
       :root {
@@ -58,6 +58,16 @@
           sans-serif;
       }
 
+      html:lang(zh) body {
+        font-family:
+          "Helvetica Neue",
+          "PingFang SC",
+          "Microsoft YaHei",
+          "Noto Sans SC",
+          "Segoe UI",
+          sans-serif;
+      }
+
       .site-header {
         border-bottom: 1px solid var(--border);
         background: #fff;
@@ -88,31 +98,44 @@
         letter-spacing: -0.01em;
       }
 
-      .lang-switch {
+      .lang-select-wrap {
         display: flex;
+        align-items: center;
         gap: var(--space-3);
       }
 
-      .lang-btn {
-        padding: 0.375rem 0.75rem;
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        background: #fff;
-        color: var(--muted);
+      .lang-select-label {
         font-size: 0.8125rem;
         font-weight: 600;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .lang-select {
+        min-width: 8.5rem;
+        padding: 0.375rem 2rem 0.375rem 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: #fff
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235c6370' d='M2 4l4 4 4-4'/%3E%3C/svg%3E")
+          no-repeat right 0.625rem center;
+        color: var(--navy);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        line-height: 1.2;
         cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
       }
 
-      .lang-btn:hover {
+      .lang-select:hover,
+      .lang-select:focus-visible {
         border-color: var(--accent);
-        color: var(--navy);
+        outline: none;
       }
 
-      .lang-btn.active {
-        background: var(--accent-soft);
-        border-color: var(--accent);
-        color: var(--navy);
+      .lang-select:focus-visible {
+        box-shadow: 0 0 0 2px var(--accent-soft);
       }
 
       .hero {
@@ -132,6 +155,11 @@
       }
 
       html:lang(ja) .hero-label {
+        text-transform: none;
+        letter-spacing: 0.04em;
+      }
+
+      html:lang(zh) .hero-label {
         text-transform: none;
         letter-spacing: 0.04em;
       }
@@ -244,6 +272,66 @@
         font-size: 1.05rem;
         color: var(--navy);
         font-weight: 500;
+      }
+
+      .motto-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: var(--grid-gap);
+        margin: var(--space-5) 0;
+      }
+
+      .motto-item {
+        padding: var(--space-4) var(--space-5);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      .motto-item strong {
+        display: block;
+        font-size: 0.9375rem;
+        color: var(--navy);
+        margin-bottom: var(--space-3);
+        line-height: 1.35;
+      }
+
+      .motto-item span {
+        font-size: 0.875rem;
+        color: var(--muted);
+      }
+
+      .flow-block {
+        margin: var(--space-5) 0;
+        padding: var(--space-5);
+        background: var(--surface-alt);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+        font-size: 0.8125rem;
+        line-height: 1.7;
+        color: var(--navy);
+        overflow-x: auto;
+        white-space: pre;
+      }
+
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        margin: var(--space-4) 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .pill-list li {
+        padding: 0.25rem 0.625rem;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--navy);
       }
 
       .site-footer {
@@ -378,6 +466,14 @@
         display: none;
       }
 
+      .section-cta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--space-3);
+        margin-top: var(--space-5);
+      }
+
       @media (max-width: 768px) {
         :root {
           --page-gutter: 1rem;
@@ -398,9 +494,15 @@
     <header class="site-header">
       <div class="site-header-inner">
         <span class="brand">OpenOrgOS</span>
-        <div class="lang-switch" role="group" aria-label="Language">
-          <button type="button" class="lang-btn active" data-lang="en">EN</button>
-          <button type="button" class="lang-btn" data-lang="ja">日本語</button>
+        <div class="lang-select-wrap">
+          <label class="lang-select-label" for="lang-select" data-i18n="langLabel"
+            >Language</label
+          >
+          <select id="lang-select" class="lang-select" aria-label="Language">
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="zh">中文</option>
+          </select>
         </div>
       </div>
     </header>
@@ -533,6 +635,142 @@
         </article>
       </div>
 
+      <h2 class="section-title" data-i18n="philosophyTitle"></h2>
+      <p class="page-desc" data-i18n="philosophyLead" data-i18n-html></p>
+
+      <div class="motto-grid">
+        <div class="motto-item">
+          <strong data-i18n="motto1Strong"></strong>
+          <span data-i18n="motto1Span"></span>
+        </div>
+        <div class="motto-item">
+          <strong data-i18n="motto2Strong"></strong>
+          <span data-i18n="motto2Span"></span>
+        </div>
+        <div class="motto-item">
+          <strong data-i18n="motto3Strong"></strong>
+          <span data-i18n="motto3Span"></span>
+        </div>
+        <div class="motto-item">
+          <strong data-i18n="motto4Strong"></strong>
+          <span data-i18n="motto4Span"></span>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <article class="card card-accent">
+          <h3 data-i18n="cardRulesTitle"></h3>
+          <p data-i18n="cardRulesBody"></p>
+        </article>
+        <article class="card card-accent">
+          <h3 data-i18n="cardDeterministicTitle"></h3>
+          <p data-i18n="cardDeterministicBody"></p>
+        </article>
+        <article class="card card-accent">
+          <h3 data-i18n="cardThinTitle"></h3>
+          <p data-i18n="cardThinBody"></p>
+        </article>
+      </div>
+
+      <h2 class="section-title" data-i18n="aiaTitle"></h2>
+      <p class="page-desc" data-i18n="aiaLead" data-i18n-html></p>
+
+      <div class="quote-block">
+        <p data-i18n="aiaQuote"></p>
+      </div>
+
+      <pre class="flow-block" data-i18n="aiaFlow"></pre>
+
+      <div class="card-grid">
+        <article class="card">
+          <h3 data-i18n="cardAiaBuildTitle"></h3>
+          <p data-i18n="cardAiaBuildBody" data-i18n-html></p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="cardAiaOperateTitle"></h3>
+          <p data-i18n="cardAiaOperateBody" data-i18n-html></p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="cardAiaChoiceTitle"></h3>
+          <p data-i18n="cardAiaChoiceBody"></p>
+          <ul class="pill-list" aria-label="AI agent examples">
+            <li>AIA</li>
+            <li>Cursor</li>
+            <li>Claude Code</li>
+            <li>Copilot</li>
+            <li data-i18n="pillCustomAgent"></li>
+          </ul>
+        </article>
+      </div>
+
+      <h2 class="section-title" data-i18n="implTitle"></h2>
+      <p class="page-desc" data-i18n="implLead" data-i18n-html></p>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th scope="col" data-i18n="implColLayer"></th>
+            <th scope="col" data-i18n="implColToday"></th>
+            <th scope="col" data-i18n="implColOpen"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-i18n="implRowRules"></td>
+            <td data-i18n="implRowRulesToday"></td>
+            <td data-i18n="implRowRulesOpen"></td>
+          </tr>
+          <tr>
+            <td data-i18n="implRowCli"></td>
+            <td data-i18n="implRowCliToday"></td>
+            <td data-i18n="implRowCliOpen"></td>
+          </tr>
+          <tr>
+            <td data-i18n="implRowCommunity"></td>
+            <td data-i18n="implRowCommunityToday"></td>
+            <td data-i18n="implRowCommunityOpen"></td>
+          </tr>
+          <tr>
+            <td data-i18n="implRowModules"></td>
+            <td data-i18n="implRowModulesToday"></td>
+            <td data-i18n="implRowModulesOpen"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="page-desc" data-i18n="implFootnote" data-i18n-html></p>
+
+      <h2 class="section-title" data-i18n="orgosIsoTitle"></h2>
+      <p class="page-desc" data-i18n="orgosIsoLead" data-i18n-html></p>
+
+      <div class="card-grid">
+        <article class="card">
+          <h3 data-i18n="orgosIsoCardProvideTitle"></h3>
+          <p data-i18n="orgosIsoCardProvideBody"></p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="orgosIsoCardInitTitle"></h3>
+          <p data-i18n="orgosIsoCardInitBody"></p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="orgosIsoCardScopeTitle"></h3>
+          <p data-i18n="orgosIsoCardScopeBody"></p>
+        </article>
+      </div>
+
+      <p class="section-cta">
+        <a
+          class="btn btn-primary"
+          href="https://community.oorgos.org/content/iso-37000-orgos"
+          data-i18n="orgosIsoCta"
+        ></a>
+        <a
+          class="btn btn-primary"
+          href="https://community.oorgos.org/getting-started"
+          data-i18n="orgosIsoCtaStart"
+        ></a>
+      </p>
+
       <h2 class="section-title" data-i18n="scopeTitle"></h2>
       <p class="page-desc" data-i18n="scopeBody" data-i18n-html></p>
     </main>
@@ -550,11 +788,11 @@
           pageTitle:
             "OpenOrgOS — Global protocol for inter-organizational communication",
           metaDescription:
-            "OpenOrgOS defines the global protocol for inter-organizational communication — Org Event Model, identity exchange, authority delegation, and auditability.",
+            "OpenOrgOS — global protocol for inter-organizational communication. OrgOS initialization provides a practical foundation for ISO 37000–aligned governance self-declaration. Built with AI agents (AIA).",
           heroLabel: "Global protocol",
           heroTitle: "Inter-organizational communication, made verifiable",
           heroLead:
-            "OpenOrgOS is an open-source community building the protocol layer organizations use when they exchange state across boundaries — trade, partnerships, supply chains, and joint ventures.",
+            "OpenOrgOS is an open-source community building the protocol layer organizations use when they exchange state across boundaries — developed with AI agents (AIA), governed in English, implemented in any language.",
           whatIsTitle: "What is OpenOrgOS?",
           whatIsBody:
             "OpenOrgOS is a <strong>global protocol for inter-organizational communication</strong>. It defines how organizations record events, exchange identity, delegate authority, and leave an audit trail others can verify. It is <strong>not</strong> an OS for internal HR, payroll, or intranet workflows — business logic, legal interpretation, and organizational behavior are delegated to national or domain-specific committees.",
@@ -603,6 +841,77 @@
           cardOpenTitle: "Open stewardship",
           cardOpenBody:
             "Competitive business assets stay protected. What is shared is the exchange protocol — not products, customers, or strategy.",
+          philosophyTitle: "Design philosophy",
+          philosophyLead:
+            "OpenOrgOS follows a Linux-style split: <strong>one thin global protocol</strong>, many local implementations. Governance stays in English; execution adapts to each jurisdiction. Tools and languages are choices — the protocol is not locked to any single stack.",
+          motto1Strong: "Design globally. Implement locally.",
+          motto1Span: "Org Event Model and identity exchange are universal; law and workflows live in community modules.",
+          motto2Strong: "Govern universally. Comply locally.",
+          motto2Span: "RFCs and APIs in English; national committees own tax, labor, and industry rules.",
+          motto3Strong: "One protocol. Many implementations.",
+          motto3Span: "Like a kernel and distributions — reference code is a starting point, not the only valid build.",
+          motto4Strong: "Deterministic core. Natural-language interface.",
+          motto4Span: "Skills and CLI produce auditable results; AI agents help you draft and navigate — they do not replace approval.",
+          cardRulesTitle: "Human-readable rules",
+          cardRulesBody:
+            "Markdown and YAML are the canonical formats. People maintain rules; machines execute them. No proprietary DSL required.",
+          cardDeterministicTitle: "Deterministic execution",
+          cardDeterministicBody:
+            "Same inputs, same auditable outputs. Agents propose; humans approve; CLI and Skills apply changes to source-of-truth data.",
+          cardThinTitle: "Thin global layer",
+          cardThinBody:
+            "The global project defines exchange mechanics only. Business logic, legal interpretation, and organizational behavior are delegated to committees.",
+          aiaTitle: "Built and operated with AI agents (AIA)",
+          aiaLead:
+            "OpenOrgOS is developed and operated using <strong>AIA</strong> — AI Agent assistants that read the repository, explain structure, draft configs, and help stewards navigate OrgOS in natural language. <strong>AIA is our primary tool today, but it is not required.</strong> Any capable AI agent environment works the same way.",
+          aiaQuote:
+            "Agents draft. Humans approve. CLI and Skills execute — deterministically.",
+          aiaFlow:
+            "You (natural language)\n    ↓\nAI Agent — AIA, Cursor, Claude Code, Copilot, …\n    ↓\nSteward repo — manifests, modules, rules\n    ↓\nSkill → CLI → Data (auditable, repeatable)\n    ↓\nOptional: OpenOrgOS Community (public protocol & registry)",
+          cardAiaBuildTitle: "Building with AIA",
+          cardAiaBuildBody:
+            "The Community site, documentation, modules, and reference steward stack are actively built with <strong>AIA</strong>. Agents accelerate RFC drafts, i18n, tests, and module scaffolding — always under human review and governance.",
+          cardAiaOperateTitle: "Operating OrgOS",
+          cardAiaOperateBody:
+            "Inside your tenant, agents explain manifests, validate configs, and draft committee proposals. They are <strong>Steward assistants</strong>, not autonomous executives. Approvals and audit rules still apply.",
+          cardAiaChoiceTitle: "Your agent, your choice",
+          cardAiaChoiceBody:
+            "AIA is explicit and preferred in our workflow. Cursor, Claude Code, GitHub Copilot, or a custom agent with repository access are equally valid — attach the same rules and safety constraints.",
+          pillCustomAgent: "Custom agents",
+          implTitle: "Language-agnostic by design",
+          implLead:
+            "The protocol is defined in <strong>human-readable rules and open specifications</strong>, not in a single programming language. The reference Steward CLI is implemented in <strong>TypeScript</strong> today — a practical choice for the current codebase, not a permanent constraint.",
+          implColLayer: "Layer",
+          implColToday: "Reference today",
+          implColOpen: "Open to",
+          implRowRules: "Rules & protocol",
+          implRowRulesToday: "Markdown · YAML · English RFCs",
+          implRowRulesOpen: "Any editor, any locale module",
+          implRowCli: "Steward CLI",
+          implRowCliToday: "TypeScript (reference)",
+          implRowCliOpen: "Python · C · Rust · Go · …",
+          implRowCommunity: "Community web",
+          implRowCommunityToday: "TypeScript · Next.js",
+          implRowCommunityOpen: "Any stack that serves the APIs",
+          implRowModules: "Domain modules",
+          implRowModulesToday: "Per-domain packs (mixed)",
+          implRowModulesOpen: "Committee-maintained, any language",
+          implFootnote:
+            "Interoperability comes from shared event models and audit rules — not from mandating one runtime. Implement the protocol in the language that fits your organization; validate against the same schemas and CLI contracts.",
+          orgosIsoTitle: "OrgOS and ISO 37000",
+          orgosIsoLead:
+            "Shared infrastructure makes good practice the default path. <strong>OrgOS</strong> applies that idea to organizational governance: deploy OrgOS and configure your organization during <strong>initialization</strong> to establish purpose, roles, oversight, and auditability in one coherent baseline — a practical foundation for <strong>ISO 37000</strong>–aligned self-declaration.",
+          orgosIsoCardProvideTitle: "What this community provides",
+          orgosIsoCardProvideBody:
+            "A neutral home for protocol, modules, learning, and operator pathways. Member organizations retain responsibility for governance claims, policies, and culture.",
+          orgosIsoCardInitTitle: "Initialize as you govern",
+          orgosIsoCardInitBody:
+            "Organization setup and governance setup advance together. An OpenOrgOS Operator (OOO) typically leads deployment, tenant initialization, and day-to-day operation.",
+          orgosIsoCardScopeTitle: "Self-declaration readiness",
+          orgosIsoCardScopeBody:
+            "Supports a credible self-declaration of alignment with ISO 37000 guidance. OpenOrgOS Community does not issue third-party ISO certificates.",
+          orgosIsoCta: "Read the guidance",
+          orgosIsoCtaStart: "Get started",
           scopeTitle: "Scope",
           scopeBody:
             "Trade between companies, university partnerships, NPO alliances, supply chains, joint ventures — any relationship where organizations must exchange <strong>verifiable state across boundaries</strong>.",
@@ -614,15 +923,16 @@
             "Currently unavailable — the community site is not responding. Please try again later.",
           communityVisitBtn: "Visit Community",
           footerCopy: "© OpenOrgOS Community",
+          langLabel: "Language",
         },
         ja: {
           pageTitle: "OpenOrgOS — 組織間通信のグローバルプロトコル",
           metaDescription:
-            "OpenOrgOS は組織間通信のグローバルプロトコルです。Org Event Model、identity exchange、authority delegation、auditability を定義します。",
+            "OpenOrgOS — 組織間通信のグローバルプロトコル。OrgOS の初期化は ISO 37000 に沿った組織統治の自己宣言を支える実務基盤。AIA（AI エージェント）で構築・運用。",
           heroLabel: "グローバルプロトコル",
           heroTitle: "組織間通信を、検証可能に",
           heroLead:
-            "OpenOrgOS は、企業間取引・パートナーシップ・サプライチェーン・ジョイントベンチャーなど、組織境界を越えて状態を交換するときのプロトコル層を、オープンソースコミュニティとして構築しています。",
+            "OpenOrgOS は、組織境界を越えて状態を交換するときのプロトコル層をオープンソースコミュニティとして構築しています — AIA（AI エージェント）で開発・運用し、ガバナンスは英語、実装は任意の言語で。",
           whatIsTitle: "OpenOrgOS とは",
           whatIsBody:
             "OpenOrgOS は<strong>組織間通信のグローバルプロトコル</strong>です。組織がイベントを記録し、identity を交換し、権限を委任し、第三者が検証できる監査証跡を残す方法を定義します。組織内部の人事・勤怠・社内ワークフローなどを置き換える OS ではありません。ビジネスロジック・法解釈・組織行動は、各国・各ドメインの委員会に委ねられます。",
@@ -670,6 +980,77 @@
           cardOpenTitle: "オープンな運営",
           cardOpenBody:
             "競争上の資産は保護されます。共有されるのは交換プロトコルであり、製品・顧客・戦略ではありません。",
+          philosophyTitle: "設計思想",
+          philosophyLead:
+            "OpenOrgOS は Linux と同様の分離を採ります — <strong>薄いグローバルプロトコル</strong>と、各地域の実装。ガバナンスは英語で統一し、実行は各国・各業界に委ねます。ツールも言語も選択肢であり、プロトコルは特定のスタックに縛られません。",
+          motto1Strong: "Design globally. Implement locally.",
+          motto1Span: "Org Event Model と identity exchange は普遍。法令とワークフローはコミュニティモジュールに実装。",
+          motto2Strong: "Govern universally. Comply locally.",
+          motto2Span: "RFC と API は英語。各国委員会が税務・労務・業界ルールを所有。",
+          motto3Strong: "One protocol. Many implementations.",
+          motto3Span: "カーネルとディストリビューションの関係 — リファレンス実装は出発点であり、唯一の正解ではない。",
+          motto4Strong: "Deterministic core. Natural-language interface.",
+          motto4Span: "Skill と CLI が監査可能な結果を出す。AI エージェントは起草とナビに使う — 承認の代わりにはならない。",
+          cardRulesTitle: "人間が読めるルール",
+          cardRulesBody:
+            "Markdown と YAML が正規形式。人がルールを保守し、機械が実行する。独自 DSL は不要。",
+          cardDeterministicTitle: "確定的な実行",
+          cardDeterministicBody:
+            "同じ入力なら同じ監査可能な出力。エージェントが提案し、人間が承認し、CLI と Skill が正本データに反映する。",
+          cardThinTitle: "薄いグローバル層",
+          cardThinBody:
+            "グローバル層は交換の仕組みだけを定義。ビジネスロジック・法解釈・組織行動は委員会に委任。",
+          aiaTitle: "AI エージェント（AIA）で構築・運用",
+          aiaLead:
+            "OpenOrgOS は <strong>AIA</strong>（AI Agent アシスタント）を使って開発・運用しています。リポジトリを読み、構造を説明し、設定を起草し、自然言語で OrgOS をナビゲートします。<strong>AIA は現在の主要ツールですが、必須ではありません。</strong>同等の AI エージェント環境なら同じように使えます。",
+          aiaQuote:
+            "エージェントが起草する。人間が承認する。CLI と Skill が確定的に実行する。",
+          aiaFlow:
+            "あなた（自然言語）\n    ↓\nAI エージェント — AIA、Cursor、Claude Code、Copilot など\n    ↓\nSteward リポジトリ — manifest、モジュール、ルール\n    ↓\nSkill → CLI → Data（監査可能・再現可能）\n    ↓\n任意: OpenOrgOS Community（公開プロトコルとレジストリ）",
+          cardAiaBuildTitle: "AIA での構築",
+          cardAiaBuildBody:
+            "Community サイト、ドキュメント、モジュール、リファレンス steward スタックは <strong>AIA</strong> を使って積極的に構築しています。RFC 草案、i18n、テスト、モジュール骨格の作成を加速 — 常に人間のレビューとガバナンスの下で。",
+          cardAiaOperateTitle: "OrgOS の運用",
+          cardAiaOperateBody:
+            "テナント内では、エージェントが manifest の説明、設定検証、委員会提案の起草を支援します。<strong>Steward のアシスタント</strong>であり、自律的な意思決定者ではありません。承認と監査ルールは変わりません。",
+          cardAiaChoiceTitle: "エージェントは選べる",
+          cardAiaChoiceBody:
+            "AIA はワークフローで明示的に使っています。Cursor、Claude Code、GitHub Copilot、リポジトリアクセス付きのカスタムエージェントも同様に有効 — 同じルールと安全制約を適用してください。",
+          pillCustomAgent: "カスタムエージェント",
+          implTitle: "言語に依存しない設計",
+          implLead:
+            "プロトコルは <strong>人間が読めるルールとオープンな仕様</strong>で定義され、特定のプログラミング言語に閉じていません。リファレンス Steward CLI は現時点で <strong>TypeScript</strong> 実装 — 現在のコードベースに合った実用的な選択であり、永続的な制約ではありません。",
+          implColLayer: "レイヤー",
+          implColToday: "現行リファレンス",
+          implColOpen: "選択可能",
+          implRowRules: "ルール・プロトコル",
+          implRowRulesToday: "Markdown · YAML · 英語 RFC",
+          implRowRulesOpen: "任意のエディタ、各国モジュール",
+          implRowCli: "Steward CLI",
+          implRowCliToday: "TypeScript（リファレンス）",
+          implRowCliOpen: "Python · C · Rust · Go など",
+          implRowCommunity: "Community Web",
+          implRowCommunityToday: "TypeScript · Next.js",
+          implRowCommunityOpen: "API を提供できる任意のスタック",
+          implRowModules: "ドメインモジュール",
+          implRowModulesToday: "ドメイン別パック（混在）",
+          implRowModulesOpen: "委員会運営、任意の言語",
+          implFootnote:
+            "相互運用性は共通のイベントモデルと監査ルールから生まれ — 単一ランタイムの強制ではありません。組織に合った言語でプロトコルを実装し、同じスキーマと CLI 契約で検証してください。",
+          orgosIsoTitle: "OrgOS と ISO 37000",
+          orgosIsoLead:
+            "共有インフラが「よい実務」を標準経路にするとき、オープンな協働は拡張します。<strong>OrgOS</strong> は、その考え方を組織統治に適用します。OrgOS を展開し、<strong>初期化</strong>の過程で組織を設定すると、目的・役割・監督・監査可能性を一体のベースラインとして確立できます — <strong>ISO 37000</strong> に沿った自己宣言を支える実務基盤です。",
+          orgosIsoCardProvideTitle: "コミュニティが提供するもの",
+          orgosIsoCardProvideBody:
+            "プロトコル・モジュール・学習・オペレータ経路のための中立な拠点。統治に関する表明・方針・文化の責任は、各会員組織に留まります。",
+          orgosIsoCardInitTitle: "初期化と統治を同時に",
+          orgosIsoCardInitBody:
+            "組織設定と統治設定は後付けではなく一体の経路です。OpenOrgOS Operator（OOO）が展開・テナント初期化・日常運用を主導するのが一般的です。",
+          orgosIsoCardScopeTitle: "自己宣言の準備",
+          orgosIsoCardScopeBody:
+            "ISO 37000 ガイダンスへの整合について、信頼に足る自己宣言を支えます。OpenOrgOS Community は第三者 ISO 認証を発行しません。",
+          orgosIsoCta: "ガイダンスを読む",
+          orgosIsoCtaStart: "はじめる",
           scopeTitle: "適用範囲",
           scopeBody:
             "企業間取引、大学・研究機関の共同、NPO 連携、サプライチェーン、ジョイントベンチャーなど、組織境界を越えて<strong>検証可能な状態を交換する必要がある関係</strong>すべてに適用できます。",
@@ -682,6 +1063,140 @@
             "現在利用できません — コミュニティサイトに接続できません。しばらくしてから再度お試しください。",
           communityVisitBtn: "Community サイトへ",
           footerCopy: "© OpenOrgOS Community",
+          langLabel: "言語",
+        },
+        zh: {
+          pageTitle: "OpenOrgOS — 组织间通信的全球协议",
+          metaDescription:
+            "OpenOrgOS 是组织间通信的全球协议。使用 AIA（AI 代理）构建与运营。语言无关的设计 — TypeScript 参考 CLI，也可选用 Python、C 等。",
+          heroLabel: "全球协议",
+          heroTitle: "让组织间通信可验证",
+          heroLead:
+            "OpenOrgOS 是一个开源社区，正在构建组织跨越边界交换状态时所使用的协议层 — 使用 AIA（AI 代理）开发与运营，治理语言为英语，实现语言任意选择。",
+          whatIsTitle: "什么是 OpenOrgOS？",
+          whatIsBody:
+            "OpenOrgOS 是<strong>组织间通信的全球协议</strong>。它定义组织如何记录事件、交换身份、委派权限，并留下他人可验证的审计轨迹。它<strong>不是</strong>替代内部人事、薪酬或内网工作流的 OS — 业务逻辑、法律解释与组织行为由各国家或领域委员会负责。",
+          visionQuote: "OpenOrgOS 致力于成为组织跨越边界通信的通用协议。",
+          protocolTitle: "全球协议定义的内容",
+          protocolLead:
+            "全球层仅涵盖交换机制。各国法律与行业规则由委员会管理的模块承载。",
+          cardEventTitle: "Org Event Model",
+          cardEventBody: "组织间交换事件的通用模型 — 合同、委派与状态变化。",
+          cardIdentityTitle: "Identity exchange",
+          cardIdentityBody: "标准化交换组织与主体的身份，使各方明确交易对象。",
+          cardAuthorityTitle: "Authority delegation",
+          cardAuthorityBody: "权限范围、代理与交接 — 定义谁可代表谁、在何种限制内行事。",
+          cardAuditTitle: "Auditability",
+          cardAuditBody: "第三方可验证的时间线与证据 — 发生了什么、何时、依据何种权限。",
+          ehrTitle: "为何是「组织的电子病历」？",
+          ehrLead:
+            "诊疗团队协作时依赖共享电子病历：患者身份、病史、委派关系与审计人可追踪的轨迹。企业间交易与联合研究在组织规模上同样需要这一模式。",
+          tableColEhr: "医疗电子病历",
+          tableColOorgos: "OpenOrgOS",
+          row1Ehr: "共享患者病历",
+          row1Oorgos: "组织间交互的结构化记录",
+          row2Ehr: "病历记录",
+          row2Oorgos: "Org Event Model — 合同、委派、状态变化",
+          row3Ehr: "患者 ID",
+          row3Oorgos: "Identity exchange — 组织与主体的同一性",
+          row4Ehr: "转诊与交接",
+          row4Oorgos: "Authority delegation — 权限范围与代理",
+          row5Ehr: "审计轨迹",
+          row5Oorgos: "Auditability — 第三方可验证的时间线",
+          stewardTitle: "模块、委员会与开放治理",
+          stewardLead:
+            "人类可读的规则模块按法域、行业与用例实现协议。各国与领域委员会负责审查、标准化与治理。<strong>Open</strong> 在 OpenOrgOS 中意味着任何人都可以提案、审查与贡献 — 协议在透明治理中成长的开源社区。",
+          cardModulesTitle: "模块",
+          cardModulesBody:
+            "会计、合同、治理等规则模块 — 在社区目录中注册，并按定义的生命周期推进。",
+          cardCommitteesTitle: "委员会",
+          cardCommitteesBody:
+            "按法域与领域的质量审查与标准化。法律与业务规则本地化，全球层保持精简。",
+          cardOpenTitle: "开放治理",
+          cardOpenBody:
+            "竞争性商业资产受到保护。共享的是交换协议 — 而非产品、客户或战略。",
+          philosophyTitle: "设计思想",
+          philosophyLead:
+            "OpenOrgOS 采用 Linux 式分层：<strong>精简的全球协议</strong>与多处本地实现。治理使用英语；执行适配各法域。工具与语言是选择 — 协议不绑定单一技术栈。",
+          motto1Strong: "Design globally. Implement locally.",
+          motto1Span: "Org Event Model 与 identity exchange 具有普遍性；法律与工作流由社区模块承载。",
+          motto2Strong: "Govern universally. Comply locally.",
+          motto2Span: "RFC 与 API 使用英语；各国委员会拥有税务、劳动与行业规则。",
+          motto3Strong: "One protocol. Many implementations.",
+          motto3Span: "如同内核与发行版 — 参考实现是起点，而非唯一正确答案。",
+          motto4Strong: "Deterministic core. Natural-language interface.",
+          motto4Span: "Skill 与 CLI 产生可审计结果；AI 代理辅助起草与导航 — 不替代审批。",
+          cardRulesTitle: "人类可读的规则",
+          cardRulesBody:
+            "Markdown 与 YAML 为正规范式。人维护规则，机器执行。无需专有 DSL。",
+          cardDeterministicTitle: "确定性执行",
+          cardDeterministicBody:
+            "相同输入，相同可审计输出。代理提案，人类审批，CLI 与 Skill 将变更写入正本数据。",
+          cardThinTitle: "精简的全球层",
+          cardThinBody:
+            "全球项目仅定义交换机制。业务逻辑、法律解释与组织行为委派给委员会。",
+          aiaTitle: "使用 AI 代理（AIA）构建与运营",
+          aiaLead:
+            "OpenOrgOS 使用 <strong>AIA</strong>（AI Agent 助理）进行开发与运营 — 读取仓库、解释结构、起草配置，并以自然语言帮助管理员导航 OrgOS。<strong>AIA 是今日主要工具，但并非必需。</strong>任何成熟的 AI 代理环境均可同样使用。",
+          aiaQuote: "代理起草。人类审批。CLI 与 Skill 确定性执行。",
+          aiaFlow:
+            "你（自然语言）\n    ↓\nAI 代理 — AIA、Cursor、Claude Code、Copilot 等\n    ↓\nSteward 仓库 — manifest、模块、规则\n    ↓\nSkill → CLI → Data（可审计、可重复）\n    ↓\n可选：OpenOrgOS Community（公开协议与注册表）",
+          cardAiaBuildTitle: "用 AIA 构建",
+          cardAiaBuildBody:
+            "Community 站点、文档、模块与参考 steward 栈均积极使用 <strong>AIA</strong> 构建。代理加速 RFC 草案、i18n、测试与模块脚手架 — 始终在人工审查与治理之下。",
+          cardAiaOperateTitle: "运营 OrgOS",
+          cardAiaOperateBody:
+            "在租户内，代理解释 manifest、验证配置并起草委员会提案。它们是 <strong>Steward 助理</strong>，而非自主决策者。审批与审计规则仍然适用。",
+          cardAiaChoiceTitle: "代理由你选择",
+          cardAiaChoiceBody:
+            "AIA 在工作流中明确且优先。Cursor、Claude Code、GitHub Copilot 或具备仓库访问的自定义代理同样有效 — 请附加相同规则与安全约束。",
+          pillCustomAgent: "自定义代理",
+          implTitle: "语言无关的设计",
+          implLead:
+            "协议由<strong>人类可读的规则与开放规范</strong>定义，而非单一编程语言。参考 Steward CLI 目前为 <strong>TypeScript</strong> 实现 — 对当前代码库的务实选择，而非永久约束。",
+          implColLayer: "层级",
+          implColToday: "当前参考实现",
+          implColOpen: "可选",
+          implRowRules: "规则与协议",
+          implRowRulesToday: "Markdown · YAML · 英语 RFC",
+          implRowRulesOpen: "任意编辑器、各国模块",
+          implRowCli: "Steward CLI",
+          implRowCliToday: "TypeScript（参考）",
+          implRowCliOpen: "Python · C · Rust · Go 等",
+          implRowCommunity: "Community Web",
+          implRowCommunityToday: "TypeScript · Next.js",
+          implRowCommunityOpen: "可提供 API 的任意技术栈",
+          implRowModules: "领域模块",
+          implRowModulesToday: "按领域打包（混合）",
+          implRowModulesOpen: "委员会维护，任意语言",
+          implFootnote:
+            "互操作性来自共享事件模型与审计规则 — 而非强制单一运行时。用适合组织的语言实现协议；按相同模式与 CLI 契约验证。",
+          orgosIsoTitle: "OrgOS 与 ISO 37000",
+          orgosIsoLead:
+            "共享基础设施让良好实践成为默认路径。<strong>OrgOS</strong> 将该理念应用于组织治理：部署 OrgOS，并在<strong>初始化</strong>过程中配置组织，即可一体建立目的、角色、监督与可审计性 — 为符合 <strong>ISO 37000</strong> 的自我声明提供实务基础。",
+          orgosIsoCardProvideTitle: "社区提供什么",
+          orgosIsoCardProvideBody:
+            "协议、模块、学习与运营者路径的中立家园。治理主张、政策与文化的责任仍由各成员组织承担。",
+          orgosIsoCardInitTitle: "初始化即治理",
+          orgosIsoCardInitBody:
+            "组织配置与治理配置同步推进，而非事后补建。通常由 OpenOrgOS Operator（OOO）主导部署、租户初始化与日常运营。",
+          orgosIsoCardScopeTitle: "自我声明的准备",
+          orgosIsoCardScopeBody:
+            "支持对 ISO 37000 指南作出可信的自我声明。OpenOrgOS Community 不颁发第三方 ISO 证书。",
+          orgosIsoCta: "阅读指南",
+          orgosIsoCtaStart: "开始使用",
+          scopeTitle: "适用范围",
+          scopeBody:
+            "企业间交易、高校与研究合作、NPO 联盟、供应链、合资企业 — 任何需要跨越组织边界<strong>交换可验证状态</strong>的关系。",
+          communityTitle: "OpenOrgOS Community",
+          communityStatusChecking: "正在检查社区站点是否可用…",
+          communityStatusOperational:
+            "<strong>运行中</strong> — 模块、委员会与登录服务于 community.oorgos.org。",
+          communityStatusUnavailable:
+            "当前不可用 — 社区站点无响应。请稍后重试。",
+          communityVisitBtn: "访问 Community",
+          footerCopy: "© OpenOrgOS Community",
+          langLabel: "语言",
         },
       };
 
@@ -692,13 +1207,15 @@
 
       function detectLang() {
         const saved = localStorage.getItem("oorgos-lang");
-        if (saved === "en" || saved === "ja") return saved;
-        const browser = navigator.language || "";
-        return browser.startsWith("ja") ? "ja" : "en";
+        if (saved === "en" || saved === "ja" || saved === "zh") return saved;
+        const browser = (navigator.language || "").toLowerCase();
+        if (browser.startsWith("ja")) return "ja";
+        if (browser.startsWith("zh")) return "zh";
+        return "en";
       }
 
       function applyLang(lang) {
-        const strings = copy[lang];
+        const strings = copy[lang] || copy.en;
         document.documentElement.lang = lang;
         document.title = strings.pageTitle;
         document
@@ -715,9 +1232,8 @@
           }
         });
 
-        document.querySelectorAll(".lang-btn").forEach((btn) => {
-          btn.classList.toggle("active", btn.dataset.lang === lang);
-        });
+        const langSelect = document.getElementById("lang-select");
+        if (langSelect) langSelect.value = lang;
 
         renderCommunityStatus(communityStatusState);
         localStorage.setItem("oorgos-lang", lang);
@@ -756,7 +1272,11 @@
             headers: { Accept: "application/json" },
           });
           const data = await response.json();
-          renderCommunityStatus(data.status === "ok" ? "operational" : "unavailable");
+          const operational =
+            response.ok &&
+            data.checks?.database !== false &&
+            data.checks?.authSecret !== false;
+          renderCommunityStatus(operational ? "operational" : "unavailable");
         } catch {
           renderCommunityStatus("unavailable");
         }
@@ -770,8 +1290,8 @@
         }, COMMUNITY_STATUS_REFRESH_MS);
       }
 
-      document.querySelectorAll(".lang-btn").forEach((btn) => {
-        btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+      document.getElementById("lang-select")?.addEventListener("change", (event) => {
+        applyLang(event.target.value);
       });
 
       applyLang(detectLang());
