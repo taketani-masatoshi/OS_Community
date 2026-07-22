@@ -80,25 +80,25 @@ export default async function LearningPage() {
           <p className="page-desc">{t.learning.orgosOverviewP4}</p>
           {designPhilosophyDoc && (
             <p className="learning-related-links">
-              <Link href={`/content/${designPhilosophyDoc.id}`}>{designPhilosophyDoc.title}</Link>
+              <Link href={`/content/${designPhilosophyDoc.meta.id}`}>{designPhilosophyDoc.meta.title}</Link>
               {designPhilosophyDoc.description ? ` — ${designPhilosophyDoc.description}` : null}
             </p>
           )}
           {moduleAgentDoc && (
             <p className="learning-related-links">
-              <Link href={`/content/${moduleAgentDoc.id}`}>{moduleAgentDoc.title}</Link>
+              <Link href={`/content/${moduleAgentDoc.meta.id}`}>{moduleAgentDoc.meta.title}</Link>
               {moduleAgentDoc.description ? ` — ${moduleAgentDoc.description}` : null}
             </p>
           )}
           {implementationStatusDoc && (
             <p className="learning-related-links">
-              <Link href={`/content/${implementationStatusDoc.id}`}>{implementationStatusDoc.title}</Link>
+              <Link href={`/content/${implementationStatusDoc.meta.id}`}>{implementationStatusDoc.meta.title}</Link>
               {implementationStatusDoc.description ? ` — ${implementationStatusDoc.description}` : null}
             </p>
           )}
           {iso37000Doc && (
             <p className="learning-related-links">
-              <Link href={`/content/${iso37000Doc.id}`}>{iso37000Doc.title}</Link>
+              <Link href={`/content/${iso37000Doc.meta.id}`}>{iso37000Doc.meta.title}</Link>
               {iso37000Doc.description ? ` — ${iso37000Doc.description}` : null}
             </p>
           )}

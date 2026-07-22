@@ -9,7 +9,9 @@ export default async function AboutPage() {
   const locale = await getLocale();
   const lp = getPageMessages(locale).leadership;
   const mission = getContentById("mission", locale);
+  const designPhilosophyDoc = getContentById("design-philosophy", locale);
   const implementationStatusDoc = getContentById("implementation-status", locale);
+  const iso37000Doc = getContentById("iso-37000-orgos", locale);
   const a = t.about;
 
   return (
@@ -74,9 +76,19 @@ export default async function AboutPage() {
             <Link href="/governance/openness" className="btn btn-primary btn-sm">
               {t.governance.ctaOpenness}
             </Link>
+            {designPhilosophyDoc && (
+              <Link href={`/content/${designPhilosophyDoc.meta.id}`} className="btn btn-primary btn-sm">
+                {designPhilosophyDoc.meta.title}
+              </Link>
+            )}
             {implementationStatusDoc && (
-              <Link href={`/content/${implementationStatusDoc.id}`} className="btn btn-primary btn-sm">
-                {implementationStatusDoc.title}
+              <Link href={`/content/${implementationStatusDoc.meta.id}`} className="btn btn-primary btn-sm">
+                {implementationStatusDoc.meta.title}
+              </Link>
+            )}
+            {iso37000Doc && (
+              <Link href={`/content/${iso37000Doc.meta.id}`} className="btn btn-primary btn-sm">
+                {iso37000Doc.meta.title}
               </Link>
             )}
           </nav>

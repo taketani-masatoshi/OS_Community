@@ -13,6 +13,7 @@ export default async function GovernancePage() {
   const cp = t.committeesPage;
   const labels = getLabelMessages(locale);
   const implementationStatusDoc = getContentById("implementation-status", locale);
+  const iso37000Doc = getContentById("iso-37000-orgos", locale);
   const session = await getAuthSession();
   const reviewableCommittees =
     session?.user?.id != null
@@ -121,13 +122,13 @@ export default async function GovernancePage() {
 
         {implementationStatusDoc && (
           <>
-            <h2 className="section-title">{implementationStatusDoc.title}</h2>
+            <h2 className="section-title">{implementationStatusDoc.meta.title}</h2>
             <div className="lf-card" style={{ marginBottom: "var(--space-6)" }}>
               <p className="page-desc" style={{ marginBottom: "var(--space-4)" }}>
                 {implementationStatusDoc.description}
               </p>
-              <Link href={`/content/${implementationStatusDoc.id}`} className="btn btn-primary btn-sm">
-                {implementationStatusDoc.title}
+              <Link href={`/content/${implementationStatusDoc.meta.id}`} className="btn btn-primary btn-sm">
+                {implementationStatusDoc.meta.title}
               </Link>
             </div>
           </>
@@ -174,13 +175,18 @@ export default async function GovernancePage() {
             {g.ctaEcosystem}
           </Link>
           {implementationStatusDoc && (
-            <Link href={`/content/${implementationStatusDoc.id}`} className="btn btn-primary btn-sm">
-              {implementationStatusDoc.title}
+            <Link href={`/content/${implementationStatusDoc.meta.id}`} className="btn btn-primary btn-sm">
+              {implementationStatusDoc.meta.title}
             </Link>
           )}
           <Link href="/governance/openness" className="btn btn-primary btn-sm">
             {g.ctaOpenness}
           </Link>
+          {iso37000Doc && (
+            <Link href={`/content/${iso37000Doc.meta.id}`} className="btn btn-primary btn-sm">
+              {iso37000Doc.meta.title}
+            </Link>
+          )}
           <Link href="/committees" className="btn btn-primary btn-sm">
             {g.ctaCommittees}
           </Link>
@@ -198,6 +204,12 @@ export default async function GovernancePage() {
           </Link>
           <Link href="/protocol/trusted-operators" className="btn btn-primary btn-sm">
             Trusted operators
+          </Link>
+          <Link href="/protocol/wire-node/apply" className="btn btn-primary btn-sm">
+            Wire node apply
+          </Link>
+          <Link href="/protocol/wire-node/review" className="btn btn-primary btn-sm">
+            Wire node review
           </Link>
         </p>
 

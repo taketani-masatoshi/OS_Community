@@ -87,8 +87,8 @@ export default async function GettingStartedPage() {
               {g.ecosystemSectionCta}
             </Link>
             {implementationStatusDoc && (
-              <Link href={`/content/${implementationStatusDoc.id}`} className="btn btn-primary btn-sm">
-                {implementationStatusDoc.title}
+              <Link href={`/content/${implementationStatusDoc.meta.id}`} className="btn btn-primary btn-sm">
+                {implementationStatusDoc.meta.title}
               </Link>
             )}
           </p>
@@ -168,6 +168,16 @@ export default async function GettingStartedPage() {
                 <span className="page-muted-note">{g.orgosInstallGuideDesc}</span>
               </p>
             </article>
+          </div>
+
+          <div style={{ marginTop: "var(--space-6)" }}>
+            <h3 className="section-title">{g.iso37000SectionTitle}</h3>
+            <p className="page-desc">{g.iso37000SectionLead}</p>
+            <p className="section-cta">
+              <Link href="/content/iso-37000-orgos" className="btn btn-primary btn-sm">
+                {g.iso37000SectionCta}
+              </Link>
+            </p>
           </div>
         </section>
       </div>
