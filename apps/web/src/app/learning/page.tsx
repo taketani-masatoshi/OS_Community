@@ -39,7 +39,9 @@ export default async function LearningPage() {
       : null;
 
   const moduleAgentDoc = getContentById("module-and-agent", locale);
+  const designPhilosophyDoc = getContentById("design-philosophy", locale);
   const implementationStatusDoc = getContentById("implementation-status", locale);
+  const iso37000Doc = getContentById("iso-37000-orgos", locale);
 
   return (
     <>
@@ -75,6 +77,13 @@ export default async function LearningPage() {
           <p className="page-desc">{t.learning.orgosOverviewP1}</p>
           <p className="page-desc">{t.learning.orgosOverviewP2}</p>
           <p className="page-desc">{t.learning.orgosOverviewP3}</p>
+          <p className="page-desc">{t.learning.orgosOverviewP4}</p>
+          {designPhilosophyDoc && (
+            <p className="learning-related-links">
+              <Link href={`/content/${designPhilosophyDoc.id}`}>{designPhilosophyDoc.title}</Link>
+              {designPhilosophyDoc.description ? ` — ${designPhilosophyDoc.description}` : null}
+            </p>
+          )}
           {moduleAgentDoc && (
             <p className="learning-related-links">
               <Link href={`/content/${moduleAgentDoc.id}`}>{moduleAgentDoc.title}</Link>
@@ -85,6 +94,12 @@ export default async function LearningPage() {
             <p className="learning-related-links">
               <Link href={`/content/${implementationStatusDoc.id}`}>{implementationStatusDoc.title}</Link>
               {implementationStatusDoc.description ? ` — ${implementationStatusDoc.description}` : null}
+            </p>
+          )}
+          {iso37000Doc && (
+            <p className="learning-related-links">
+              <Link href={`/content/${iso37000Doc.id}`}>{iso37000Doc.title}</Link>
+              {iso37000Doc.description ? ` — ${iso37000Doc.description}` : null}
             </p>
           )}
         </section>
@@ -130,7 +145,7 @@ export default async function LearningPage() {
                 </Link>
               ))}
             </div>
-          )}
+          ) : null}
         </section>
 
         <p className="section-cta">
