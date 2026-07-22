@@ -25,6 +25,7 @@ When you finish this guide you will have:
 2. A checklist of organization facts captured (structure, jurisdictions, modules)
 3. An initialized tenant with validated configuration
 4. A baseline digital twin scope: org chart, enabled modules, and audit trail hooks
+5. A practical governance baseline suitable for an **ISO 37000** (governance of organizations) **self-declaration** — see [OrgOS and ISO 37000](/content/iso-37000-orgos)
 
 ## Phase 0 — Information to gather first
 
@@ -155,6 +156,7 @@ Minimum checklist:
 
 ## Related reading
 
+- [OrgOS and ISO 37000](/content/iso-37000-orgos) — why init builds a self-declaration-ready governance baseline
 - [OpenOrgOS Mission](/content/mission)
 - [Stewardship model](/content/stewardship-model)
 - [Agent registry](/agents)

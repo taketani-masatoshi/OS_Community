@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 const STEPS = [
-  { id: "apply", title: "Apply", detail: "Module role · WILD · operator certification (Steward governance submit)" },
-  { id: "pending", title: "Pending", detail: "mypage + /api/protocol/governance pending list" },
-  { id: "review", title: "Review", detail: "Committee CHAIR · /committees/[slug]/review" },
-  { id: "decide", title: "Decide", detail: "Steward protocol community governance decide (BFF when STEWARD_ORGOS_ROOT set)" },
-  { id: "active", title: "Active", detail: "trusted-operators registry · Wire delivery" },
+  { id: "apply", title: "Apply", detail: "Wire node registration — /protocol/wire-node/apply (C4-W1)" },
+  { id: "pending", title: "Pending", detail: "Steward governance_requests · /api/protocol/wire-node/pending" },
+  { id: "review", title: "Review", detail: "Committee CHAIR · /protocol/governance (C4-W2)" },
+  { id: "decide", title: "Decide", detail: "Steward wire-node decide via BFF (STEWARD_API_URL or WIRE_NODE_MOCK)" },
+  { id: "active", title: "Active", detail: "wire-trust-registry · Wire delivery" },
 ];
 
 export default function GovernanceLifecyclePage() {
@@ -32,6 +32,14 @@ export default function GovernanceLifecyclePage() {
           <Link href="/mypage" className="lf-card">
             <strong>My applications</strong>
             <p className="page-muted-note">Role · committee · WILD status</p>
+          </Link>
+          <Link href="/protocol/wire-node/apply" className="lf-card">
+            <strong>Wire node apply</strong>
+            <p className="page-muted-note">C4-W1 · pk-DID registration</p>
+          </Link>
+          <Link href="/protocol/governance" className="lf-card">
+            <strong>Wire node governance</strong>
+            <p className="page-muted-note">C4-W2 · CHAIR pending queue · audit trail</p>
           </Link>
           <Link href="/protocol/trusted-operators" className="lf-card">
             <strong>Trusted operators</strong>

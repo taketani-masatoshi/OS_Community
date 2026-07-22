@@ -26,6 +26,15 @@ entries:
     status: published
     order: 3
 
+  - id: design-philosophy
+    title: Design Philosophy
+    description: AIA-first development, language-agnostic protocol, and global/local split
+    file: published/docs/design-philosophy.md
+    route: /content/design-philosophy
+    category: docs
+    status: published
+    order: 3.5
+
   - id: stewardship-model
     title: Stewardship Model
     description: Maintainer roles and reference certifications (OOO/OOD)
@@ -71,6 +80,15 @@ entries:
     status: published
     order: 8
 
+  - id: iso-37000-orgos
+    title: OrgOS and ISO 37000
+    description: How OrgOS initialization provides a practical foundation for ISO 37000–aligned governance self-declaration
+    file: published/docs/iso-37000-orgos.md
+    route: /content/iso-37000-orgos
+    category: docs
+    status: published
+    order: 9
+
   - id: startup-setup
     title: Getting Started
     description: 導入ガイド（外部生成）
@@ -90,8 +108,8 @@ entries:
     order: 11
 
   - id: orgos-ai-agents
-    title: OrgOS with AI Agents (Cursor)
-    description: Use Cursor and AI agents to operate OrgOS through natural language
+    title: OrgOS with AI Agents (AIA)
+    description: Build and operate OrgOS with AIA and other AI agents through natural language
     file: published/guides/orgos-ai-agents.md
     route: /content/orgos-ai-agents
     category: guides

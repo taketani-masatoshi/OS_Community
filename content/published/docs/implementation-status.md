@@ -62,7 +62,7 @@ Common correction: **“Agent sends Wire”** is wrong. Wire is protocol-level; 
 | In-tenant operations (Skills, CLI, agents, modules) | **Usable** on installed OrgOS |
 | **Org Event relay** (inter-org gateway) | **Pilot P2** — mal Wire pilot · relay/Gateway systemd in OrgOS reference |
 | Public Wire endpoint on `community.oorgos.org` | **Not offered** — Community is registry/governance, not a Wire hub |
-| **Eco / Trusted operators UI** | **Live (2026-07)** — `/protocol/trusted-operators` · `/protocol/jurisdiction` · `/governance/sla` · Steward mirror |
+| **Eco / Trusted operators UI** | **Live (2026-07)** — `/protocol/trusted-operators` · `/protocol/jurisdiction` · `/protocol/wire-node/*` · `/governance/sla` · Steward mirror |
 
 When Org Event relay ships, it will **not** replace jurisdiction-specific gateways; it carries **OpenOrgOS-shaped events** between participating orgs.
 
@@ -140,6 +140,8 @@ What `community.oorgos.org` implements today:
 | Protocol SLA dashboard | **Live** — [/governance/sla](/governance/sla) |
 | Trusted operators registry | **Live** — [/protocol/trusted-operators](/protocol/trusted-operators) |
 | Application lifecycle hub | **Live** — [/governance/lifecycle](/governance/lifecycle) |
+| Wire node application (C4-W1) | **Live** — [/protocol/wire-node/apply](/protocol/wire-node/apply) |
+| Wire node governance review (C4-W2) | **Live** — [/protocol/wire-node/review](/protocol/wire-node/review) |
 
 Infrastructure: overview at [oorgos.org](https://oorgos.org); Community runs on steward-operated deployment with Cloudflare Tunnel (see project runbooks in repo `docs/`).
 
@@ -177,6 +179,7 @@ For stewards installing OrgOS on their own hardware:
 |----------|------|
 | Module ecosystem (Hub phases) | [/content/module-ecosystem](/content/module-ecosystem) |
 | Module / Agent / Wire terminology | [/content/module-and-agent](/content/module-and-agent) |
+| Design philosophy (AIA, language-agnostic) | [/content/design-philosophy](/content/design-philosophy) |
 | Mission and global protocol | [/content/mission](/content/mission) |
 | Module registry | [/modules](/modules) |
 | Governance | [/governance](/governance) |
