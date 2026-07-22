@@ -6,31 +6,45 @@
     <title>OpenOrgOS</title>
     <meta
       name="description"
-      content="OpenOrgOS — global protocol for inter-organizational communication. Built with AI agents (AIA), language-agnostic by design."
+      content="Too many tools to start. Become an OpenOrgOS Operator (OOO) — deploy, initialize, and run one coherent organizational baseline."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+      rel="stylesheet"
     />
     <style>
       :root {
+        --ink: #1d1d1f;
+        --ink-soft: #6e6e73;
         --navy: #003366;
-        --navy-dark: #1a1a2e;
-        --accent: #0066cc;
-        --accent-soft: #e8f2fc;
-        --muted: #5c6370;
-        --surface: #f7f8fa;
-        --surface-alt: #f0f3f7;
-        --border: #e2e5ea;
-        --max-width: 1140px;
-        --space-3: 0.75rem;
-        --space-4: 1rem;
-        --space-5: 1.5rem;
-        --space-6: 2rem;
-        --space-7: 2.5rem;
-        --space-8: 3rem;
-        --page-gutter: 1.5rem;
-        --grid-gap: 1.5rem;
+        --navy-deep: #0a1628;
+        --accent: #0071e3;
+        --accent-soft: rgba(0, 113, 227, 0.12);
+        --surface: #f5f5f7;
+        --surface-elevated: #ffffff;
+        --border: rgba(0, 0, 0, 0.08);
+        --max-width: 980px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 24px;
+        --space-6: 32px;
+        --space-7: 40px;
+        --space-8: 48px;
+        --space-9: 64px;
+        --space-10: 80px;
+        --page-gutter: 24px;
+        --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
       }
 
       * {
         box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       html,
@@ -40,16 +54,17 @@
       }
 
       body {
-        font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI", system-ui,
-          sans-serif;
-        background: #fff;
-        color: var(--navy-dark);
-        line-height: 1.6;
+        font-family: "Instrument Sans", "Helvetica Neue", Helvetica, sans-serif;
+        background: var(--surface);
+        color: var(--ink);
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
       }
 
       html:lang(ja) body {
         font-family:
-          "Helvetica Neue",
+          "Instrument Sans",
           "Hiragino Sans",
           "Hiragino Kaku Gothic ProN",
           "Noto Sans JP",
@@ -60,22 +75,35 @@
 
       html:lang(zh) body {
         font-family:
-          "Helvetica Neue",
+          "Instrument Sans",
           "PingFang SC",
           "Microsoft YaHei",
           "Noto Sans SC",
-          "Segoe UI",
           sans-serif;
       }
 
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
       .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: saturate(180%) blur(16px);
+        -webkit-backdrop-filter: saturate(180%) blur(16px);
+        background: rgba(245, 245, 247, 0.72);
         border-bottom: 1px solid var(--border);
-        background: #fff;
       }
 
       .site-header-inner,
-      .page-wrap,
-      .hero-inner {
+      .shell {
         max-width: var(--max-width);
         margin: 0 auto;
         padding-left: var(--page-gutter);
@@ -87,15 +115,14 @@
         align-items: center;
         justify-content: space-between;
         gap: var(--space-4);
-        padding-top: var(--space-4);
-        padding-bottom: var(--space-4);
+        min-height: 52px;
       }
 
       .brand {
-        font-weight: 700;
-        font-size: 1.125rem;
-        color: var(--navy);
-        letter-spacing: -0.01em;
+        font-weight: 600;
+        font-size: 1.0625rem;
+        letter-spacing: -0.02em;
+        color: var(--ink);
       }
 
       .lang-select-wrap {
@@ -105,387 +132,441 @@
       }
 
       .lang-select-label {
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
         font-weight: 600;
-        color: var(--muted);
-        white-space: nowrap;
+        color: var(--ink-soft);
       }
 
       .lang-select {
-        min-width: 8.5rem;
-        padding: 0.375rem 2rem 0.375rem 0.75rem;
+        min-width: 7.5rem;
+        padding: 0.375rem 1.75rem 0.375rem 0.625rem;
         border: 1px solid var(--border);
-        border-radius: 6px;
-        background: #fff
-          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235c6370' d='M2 4l4 4 4-4'/%3E%3C/svg%3E")
+        border-radius: 980px;
+        background: rgba(255, 255, 255, 0.8)
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236e6e73' d='M2 4l4 4 4-4'/%3E%3C/svg%3E")
           no-repeat right 0.625rem center;
-        color: var(--navy);
+        color: var(--ink);
+        font: inherit;
         font-size: 0.8125rem;
-        font-weight: 600;
-        line-height: 1.2;
-        cursor: pointer;
+        font-weight: 500;
         appearance: none;
         -webkit-appearance: none;
-      }
-
-      .lang-select:hover,
-      .lang-select:focus-visible {
-        border-color: var(--accent);
-        outline: none;
+        cursor: pointer;
       }
 
       .lang-select:focus-visible {
-        box-shadow: 0 0 0 2px var(--accent-soft);
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
       }
 
+      /* Hero — one composition */
       .hero {
-        background: var(--navy-dark);
-        color: #fff;
-        padding: var(--space-8) 0;
+        position: relative;
+        overflow: hidden;
+        padding: var(--space-10) 0 var(--space-9);
+        background:
+          radial-gradient(
+            120% 80% at 70% -10%,
+            rgba(0, 113, 227, 0.18),
+            transparent 55%
+          ),
+          radial-gradient(
+            90% 70% at 10% 100%,
+            rgba(0, 51, 102, 0.12),
+            transparent 50%
+          ),
+          linear-gradient(180deg, #eef1f6 0%, var(--surface) 72%);
       }
 
-      .hero-label {
-        display: inline-block;
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #b8c0cc;
-        margin-bottom: var(--space-4);
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto -20% -40% 40%;
+        height: 70%;
+        background: radial-gradient(
+          closest-side,
+          rgba(255, 255, 255, 0.85),
+          transparent 70%
+        );
+        pointer-events: none;
+        animation: glow-drift 14s var(--ease) infinite alternate;
       }
 
-      html:lang(ja) .hero-label {
-        text-transform: none;
-        letter-spacing: 0.04em;
+      @keyframes glow-drift {
+        from {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        to {
+          transform: translate3d(-4%, 3%, 0) scale(1.06);
+        }
       }
 
-      html:lang(zh) .hero-label {
-        text-transform: none;
-        letter-spacing: 0.04em;
+      @media (prefers-reduced-motion: reduce) {
+        .hero::after {
+          animation: none;
+        }
+
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
+      }
+
+      .hero-brand {
+        display: block;
+        font-size: clamp(2.5rem, 7vw, 4.5rem);
+        font-weight: 700;
+        letter-spacing: -0.045em;
+        line-height: 1.05;
+        color: var(--ink);
+        margin: 0 0 var(--space-5);
       }
 
       .hero h1 {
-        font-size: clamp(1.875rem, 4.5vw, 2.75rem);
-        font-weight: 700;
-        line-height: 1.2;
         margin: 0 0 var(--space-4);
-        max-width: 36rem;
+        max-width: 18ch;
+        font-family: "Newsreader", "Instrument Sans", Georgia, serif;
+        font-size: clamp(1.75rem, 4.2vw, 2.75rem);
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        color: var(--ink);
       }
 
       .hero-lead {
-        font-size: clamp(1.05rem, 2vw, 1.2rem);
-        color: #b8c0cc;
-        margin: 0;
-        max-width: 40rem;
+        margin: 0 0 var(--space-6);
+        max-width: 34rem;
+        font-size: clamp(1.0625rem, 2vw, 1.25rem);
+        color: var(--ink-soft);
+        font-weight: 400;
       }
 
-      .page-wrap {
-        padding-top: var(--space-7);
-        padding-bottom: var(--space-8);
-      }
-
-      .section-title {
-        font-size: 1.375rem;
-        font-weight: 700;
-        color: var(--navy);
-        margin: var(--space-6) 0 var(--space-3);
-        line-height: 1.3;
-      }
-
-      .section-title:first-child {
-        margin-top: 0;
-      }
-
-      .page-desc {
-        color: var(--muted);
-        margin: 0 0 var(--space-5);
-        max-width: 42rem;
-      }
-
-      .card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: var(--grid-gap);
-        margin: var(--space-5) 0;
-      }
-
-      .card {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: var(--space-5);
-      }
-
-      .card-accent {
-        border-left: 4px solid var(--navy);
-      }
-
-      .card h3 {
-        font-size: 1rem;
-        font-weight: 700;
-        color: var(--navy);
-        margin: 0 0 var(--space-3);
-        line-height: 1.3;
-      }
-
-      .card p {
-        margin: 0;
-        font-size: 0.9375rem;
-        color: var(--muted);
-      }
-
-      .compare-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: var(--space-5) 0;
-        font-size: 0.9375rem;
-      }
-
-      .compare-table th,
-      .compare-table td {
-        border: 1px solid var(--border);
-        padding: var(--space-3) var(--space-4);
-        text-align: left;
-        vertical-align: top;
-      }
-
-      .compare-table th {
-        background: var(--surface-alt);
-        color: var(--navy);
-        font-weight: 600;
-      }
-
-      .compare-table td {
-        color: var(--muted);
-      }
-
-      .quote-block {
-        margin: var(--space-6) 0;
-        padding: var(--space-5) var(--space-6);
-        background: var(--accent-soft);
-        border-left: 4px solid var(--accent);
-        border-radius: 0 8px 8px 0;
-      }
-
-      .quote-block p {
-        margin: 0;
-        font-size: 1.05rem;
-        color: var(--navy);
-        font-weight: 500;
-      }
-
-      .motto-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: var(--grid-gap);
-        margin: var(--space-5) 0;
-      }
-
-      .motto-item {
-        padding: var(--space-4) var(--space-5);
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-      }
-
-      .motto-item strong {
-        display: block;
-        font-size: 0.9375rem;
-        color: var(--navy);
-        margin-bottom: var(--space-3);
-        line-height: 1.35;
-      }
-
-      .motto-item span {
-        font-size: 0.875rem;
-        color: var(--muted);
-      }
-
-      .flow-block {
-        margin: var(--space-5) 0;
-        padding: var(--space-5);
-        background: var(--surface-alt);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-        font-size: 0.8125rem;
-        line-height: 1.7;
-        color: var(--navy);
-        overflow-x: auto;
-        white-space: pre;
-      }
-
-      .pill-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-3);
-        margin: var(--space-4) 0 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .pill-list li {
-        padding: 0.25rem 0.625rem;
-        background: #fff;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        font-size: 0.8125rem;
-        font-weight: 600;
-        color: var(--navy);
-      }
-
-      .site-footer {
-        border-top: 1px solid var(--border);
-        background: var(--surface);
-        padding: var(--space-6) 0;
-        font-size: 0.875rem;
-        color: var(--muted);
-      }
-
-      .site-footer-inner {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        padding: 0 var(--page-gutter);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: var(--space-4);
-      }
-
-      .community-status {
-        border-bottom: 1px solid var(--border);
-        background: var(--surface);
-      }
-
-      .community-status-inner {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        padding: var(--space-5) var(--page-gutter);
-      }
-
-      .community-status-card {
+      .hero-cta {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: space-between;
         gap: var(--space-4);
-        padding: var(--space-4) var(--space-5);
-        background: #fff;
-        border: 1px solid var(--border);
-        border-radius: 8px;
-      }
-
-      .community-status-main {
-        display: flex;
-        align-items: flex-start;
-        gap: var(--space-4);
-        min-width: 0;
-      }
-
-      .status-dot {
-        flex-shrink: 0;
-        width: 0.625rem;
-        height: 0.625rem;
-        margin-top: 0.45rem;
-        border-radius: 50%;
-        background: var(--muted);
-      }
-
-      .status-dot[data-state="checking"] {
-        background: var(--accent);
-        animation: status-pulse 1.2s ease-in-out infinite;
-      }
-
-      .status-dot[data-state="operational"] {
-        background: #1a7f37;
-      }
-
-      .status-dot[data-state="unavailable"] {
-        background: #b54708;
-      }
-
-      @keyframes status-pulse {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.35;
-        }
-      }
-
-      .community-status-title {
-        margin: 0 0 var(--space-3);
-        font-size: 1rem;
-        font-weight: 700;
-        color: var(--navy);
-        line-height: 1.3;
-      }
-
-      .community-status-text {
-        margin: 0;
-        font-size: 0.9375rem;
-        color: var(--muted);
-      }
-
-      .community-status-text strong {
-        color: var(--navy);
-        font-weight: 600;
       }
 
       .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-        font-size: 0.875rem;
+        min-height: 44px;
+        padding: 0.75rem 1.375rem;
+        border-radius: 980px;
+        font: inherit;
+        font-size: 1rem;
         font-weight: 600;
-        line-height: 1.2;
+        letter-spacing: -0.01em;
         text-decoration: none;
-        border: 1px solid transparent;
+        border: none;
         cursor: pointer;
-        white-space: nowrap;
+        transition: transform 160ms var(--ease), background 160ms var(--ease),
+          box-shadow 160ms var(--ease);
+      }
+
+      .btn:hover {
+        text-decoration: none;
+        transform: scale(1.02);
+      }
+
+      .btn:active {
+        transform: scale(0.98);
       }
 
       .btn-primary {
-        background: var(--navy);
+        background: var(--accent);
         color: #fff;
+        box-shadow: 0 8px 24px rgba(0, 113, 227, 0.28);
       }
 
       .btn-primary:hover {
-        background: var(--accent);
+        background: #0077ed;
       }
 
       .btn-primary:focus-visible {
         outline: 2px solid var(--accent);
-        outline-offset: 2px;
+        outline-offset: 3px;
       }
 
-      .community-visit-btn[hidden] {
-        display: none;
+      .btn-ghost {
+        background: transparent;
+        color: var(--accent);
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        box-shadow: none;
       }
 
-      .section-cta {
+      .btn-ghost:hover {
+        background: var(--accent-soft);
+      }
+
+      /* Sections */
+      .section {
+        padding: var(--space-9) 0;
+      }
+
+      .section-story {
+        background: var(--surface-elevated);
+      }
+
+      .section-path {
+        background: var(--navy-deep);
+        color: #f5f5f7;
+      }
+
+      .section-path .section-kicker,
+      .section-path .section-lead {
+        color: rgba(245, 245, 247, 0.72);
+      }
+
+      .section-path .section-title {
+        color: #fff;
+      }
+
+      .section-try {
+        background: var(--surface);
+      }
+
+      .section-kicker {
+        margin: 0 0 var(--space-3);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+      }
+
+      html:lang(ja) .section-kicker,
+      html:lang(zh) .section-kicker {
+        text-transform: none;
+        letter-spacing: 0.04em;
+      }
+
+      .section-title {
+        margin: 0 0 var(--space-4);
+        max-width: 18ch;
+        font-size: clamp(1.75rem, 3.5vw, 2.375rem);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        color: var(--ink);
+      }
+
+      .section-lead {
+        margin: 0;
+        max-width: 38rem;
+        font-size: 1.125rem;
+        color: var(--ink-soft);
+      }
+
+      .story-text {
+        margin: var(--space-6) 0 0;
+        max-width: 40rem;
+        font-family: "Newsreader", Georgia, serif;
+        font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+        font-weight: 400;
+        line-height: 1.45;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+      }
+
+      .story-text + .story-text {
+        margin-top: var(--space-5);
+      }
+
+      .path-list {
+        list-style: none;
+        margin: var(--space-7) 0 0;
+        padding: 0;
+        display: grid;
+        gap: var(--space-5);
+      }
+
+      .path-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--space-4);
+        align-items: start;
+        padding-top: var(--space-5);
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .path-item:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .path-num {
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: rgba(245, 245, 247, 0.55);
+        padding-top: 0.2rem;
+      }
+
+      .path-item h3 {
+        margin: 0 0 var(--space-2);
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: #fff;
+      }
+
+      .path-item p {
+        margin: 0;
+        color: rgba(245, 245, 247, 0.72);
+        max-width: 36rem;
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: var(--space-6);
+        margin-top: var(--space-7);
+      }
+
+      .why-item h3 {
+        margin: 0 0 var(--space-3);
+        font-size: 1.125rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+
+      .why-item p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 0.9875rem;
+      }
+
+      .try-panel {
+        margin-top: var(--space-7);
+        padding: var(--space-6);
+        border-radius: 24px;
+        background: var(--surface-elevated);
+        border: 1px solid var(--border);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.04);
+      }
+
+      .try-steps {
+        list-style: none;
+        margin: 0 0 var(--space-6);
+        padding: 0;
+        display: grid;
+        gap: var(--space-4);
+      }
+
+      .try-steps li {
+        display: grid;
+        grid-template-columns: 2rem 1fr;
+        gap: var(--space-3);
+        align-items: start;
+        color: var(--ink-soft);
+      }
+
+      .try-steps strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .try-index {
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.8125rem;
+        font-weight: 700;
+      }
+
+      .try-note {
+        margin: var(--space-4) 0 0;
+        font-size: 0.875rem;
+        color: var(--ink-soft);
+      }
+
+      .community-link {
+        padding: var(--space-5) 0 var(--space-8);
+        background: var(--surface);
+      }
+
+      .community-link-card {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+        padding: var(--space-4) var(--space-5);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid var(--border);
+      }
+
+      .community-link-title {
+        margin: 0 0 0.25rem;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .community-link-text {
+        margin: 0;
+        font-size: 0.875rem;
+        color: var(--ink-soft);
+        max-width: 36rem;
+      }
+
+      .community-visit-btn {
+        min-height: 36px;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        box-shadow: none;
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--border);
+        background: #fff;
+        padding: var(--space-5) 0;
+      }
+
+      .site-footer-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         gap: var(--space-3);
-        margin-top: var(--space-5);
+        font-size: 0.8125rem;
+        color: var(--ink-soft);
       }
 
       @media (max-width: 768px) {
         :root {
-          --page-gutter: 1rem;
+          --page-gutter: 16px;
         }
 
         .hero {
-          padding: var(--space-6) 0;
+          padding: var(--space-8) 0 var(--space-7);
         }
 
-        .compare-table {
-          display: block;
-          overflow-x: auto;
+        .section {
+          padding: var(--space-8) 0;
+        }
+
+        .try-panel {
+          padding: var(--space-5);
+          border-radius: 20px;
         }
       }
     </style>
@@ -509,274 +590,135 @@
 
     <section class="hero">
       <div class="hero-inner">
-        <span class="hero-label" data-i18n="heroLabel"></span>
+        <span class="hero-brand">OpenOrgOS</span>
         <h1 data-i18n="heroTitle"></h1>
         <p class="hero-lead" data-i18n="heroLead"></p>
+        <div class="hero-cta">
+          <a
+            class="btn btn-primary"
+            href="https://community.oorgos.org/getting-started"
+            data-i18n="heroCta"
+          ></a>
+          <a
+            class="btn btn-ghost"
+            href="https://community.oorgos.org/content/orgos-install-setup"
+            data-i18n="heroCtaSecondary"
+          ></a>
+        </div>
       </div>
     </section>
 
-    <section
-      class="community-status"
-      id="community-status"
-      aria-live="polite"
-      aria-atomic="true"
-    >
-      <div class="community-status-inner">
-        <div class="community-status-card">
-          <div class="community-status-main">
-            <span
-              class="status-dot"
-              id="community-status-dot"
-              data-state="checking"
-              aria-hidden="true"
-            ></span>
+    <section class="section section-story">
+      <div class="shell">
+        <p class="section-kicker" data-i18n="storyKicker"></p>
+        <h2 class="section-title" data-i18n="storyTitle"></h2>
+        <p class="section-lead" data-i18n="storyLead"></p>
+        <p class="story-text" data-i18n="storyBody1"></p>
+        <p class="story-text" data-i18n="storyBody2"></p>
+      </div>
+    </section>
+
+    <section class="section section-path">
+      <div class="shell">
+        <p class="section-kicker" data-i18n="pathKicker"></p>
+        <h2 class="section-title" data-i18n="pathTitle"></h2>
+        <p class="section-lead" data-i18n="pathLead"></p>
+        <ol class="path-list">
+          <li class="path-item">
+            <span class="path-num">01</span>
             <div>
-              <h2
-                class="community-status-title"
-                data-i18n="communityTitle"
-              ></h2>
-              <p
-                class="community-status-text"
-                id="community-status-text"
-                data-i18n="communityStatusChecking"
-              ></p>
+              <h3 data-i18n="path1Title"></h3>
+              <p data-i18n="path1Body"></p>
             </div>
+          </li>
+          <li class="path-item">
+            <span class="path-num">02</span>
+            <div>
+              <h3 data-i18n="path2Title"></h3>
+              <p data-i18n="path2Body"></p>
+            </div>
+          </li>
+          <li class="path-item">
+            <span class="path-num">03</span>
+            <div>
+              <h3 data-i18n="path3Title"></h3>
+              <p data-i18n="path3Body"></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-story">
+      <div class="shell">
+        <p class="section-kicker" data-i18n="whyKicker"></p>
+        <h2 class="section-title" data-i18n="whyTitle"></h2>
+        <p class="section-lead" data-i18n="whyLead" data-i18n-html></p>
+        <div class="why-grid">
+          <div class="why-item">
+            <h3 data-i18n="why1Title"></h3>
+            <p data-i18n="why1Body"></p>
+          </div>
+          <div class="why-item">
+            <h3 data-i18n="why2Title"></h3>
+            <p data-i18n="why2Body"></p>
+          </div>
+          <div class="why-item">
+            <h3 data-i18n="why3Title"></h3>
+            <p data-i18n="why3Body"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-try" id="try">
+      <div class="shell">
+        <p class="section-kicker" data-i18n="tryKicker"></p>
+        <h2 class="section-title" data-i18n="tryTitle"></h2>
+        <p class="section-lead" data-i18n="tryLead"></p>
+        <div class="try-panel">
+          <ol class="try-steps">
+            <li>
+              <span class="try-index" aria-hidden="true">1</span>
+              <span data-i18n="tryStep1" data-i18n-html></span>
+            </li>
+            <li>
+              <span class="try-index" aria-hidden="true">2</span>
+              <span data-i18n="tryStep2" data-i18n-html></span>
+            </li>
+            <li>
+              <span class="try-index" aria-hidden="true">3</span>
+              <span data-i18n="tryStep3" data-i18n-html></span>
+            </li>
+          </ol>
+          <a
+            class="btn btn-primary"
+            href="https://community.oorgos.org/getting-started"
+            data-i18n="tryCta"
+          ></a>
+          <p class="try-note" data-i18n="tryNote" data-i18n-html></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="community-link">
+      <div class="shell">
+        <div class="community-link-card">
+          <div>
+            <h2 class="community-link-title" data-i18n="communityTitle"></h2>
+            <p class="community-link-text" data-i18n="communityBody"></p>
           </div>
           <a
             class="btn btn-primary community-visit-btn"
-            id="community-visit-btn"
             href="https://community.oorgos.org"
-            hidden
             data-i18n="communityVisitBtn"
           ></a>
         </div>
       </div>
     </section>
 
-    <main class="page-wrap">
-      <h2 class="section-title" data-i18n="whatIsTitle"></h2>
-      <p class="page-desc" data-i18n="whatIsBody" data-i18n-html></p>
-
-      <div class="quote-block">
-        <p data-i18n="visionQuote"></p>
-      </div>
-
-      <h2 class="section-title" data-i18n="protocolTitle"></h2>
-      <p class="page-desc" data-i18n="protocolLead"></p>
-
-      <div class="card-grid">
-        <article class="card card-accent">
-          <h3 data-i18n="cardEventTitle"></h3>
-          <p data-i18n="cardEventBody"></p>
-        </article>
-        <article class="card card-accent">
-          <h3 data-i18n="cardIdentityTitle"></h3>
-          <p data-i18n="cardIdentityBody"></p>
-        </article>
-        <article class="card card-accent">
-          <h3 data-i18n="cardAuthorityTitle"></h3>
-          <p data-i18n="cardAuthorityBody"></p>
-        </article>
-        <article class="card card-accent">
-          <h3 data-i18n="cardAuditTitle"></h3>
-          <p data-i18n="cardAuditBody"></p>
-        </article>
-      </div>
-
-      <h2 class="section-title" data-i18n="ehrTitle"></h2>
-      <p class="page-desc" data-i18n="ehrLead"></p>
-
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th scope="col" data-i18n="tableColEhr"></th>
-            <th scope="col" data-i18n="tableColOorgos"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-i18n="row1Ehr"></td>
-            <td data-i18n="row1Oorgos"></td>
-          </tr>
-          <tr>
-            <td data-i18n="row2Ehr"></td>
-            <td data-i18n="row2Oorgos"></td>
-          </tr>
-          <tr>
-            <td data-i18n="row3Ehr"></td>
-            <td data-i18n="row3Oorgos"></td>
-          </tr>
-          <tr>
-            <td data-i18n="row4Ehr"></td>
-            <td data-i18n="row4Oorgos"></td>
-          </tr>
-          <tr>
-            <td data-i18n="row5Ehr"></td>
-            <td data-i18n="row5Oorgos"></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2 class="section-title" data-i18n="stewardTitle"></h2>
-      <p class="page-desc" data-i18n="stewardLead" data-i18n-html></p>
-
-      <div class="card-grid">
-        <article class="card">
-          <h3 data-i18n="cardModulesTitle"></h3>
-          <p data-i18n="cardModulesBody"></p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="cardCommitteesTitle"></h3>
-          <p data-i18n="cardCommitteesBody"></p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="cardOpenTitle"></h3>
-          <p data-i18n="cardOpenBody"></p>
-        </article>
-      </div>
-
-      <h2 class="section-title" data-i18n="philosophyTitle"></h2>
-      <p class="page-desc" data-i18n="philosophyLead" data-i18n-html></p>
-
-      <div class="motto-grid">
-        <div class="motto-item">
-          <strong data-i18n="motto1Strong"></strong>
-          <span data-i18n="motto1Span"></span>
-        </div>
-        <div class="motto-item">
-          <strong data-i18n="motto2Strong"></strong>
-          <span data-i18n="motto2Span"></span>
-        </div>
-        <div class="motto-item">
-          <strong data-i18n="motto3Strong"></strong>
-          <span data-i18n="motto3Span"></span>
-        </div>
-        <div class="motto-item">
-          <strong data-i18n="motto4Strong"></strong>
-          <span data-i18n="motto4Span"></span>
-        </div>
-      </div>
-
-      <div class="card-grid">
-        <article class="card card-accent">
-          <h3 data-i18n="cardRulesTitle"></h3>
-          <p data-i18n="cardRulesBody"></p>
-        </article>
-        <article class="card card-accent">
-          <h3 data-i18n="cardDeterministicTitle"></h3>
-          <p data-i18n="cardDeterministicBody"></p>
-        </article>
-        <article class="card card-accent">
-          <h3 data-i18n="cardThinTitle"></h3>
-          <p data-i18n="cardThinBody"></p>
-        </article>
-      </div>
-
-      <h2 class="section-title" data-i18n="aiaTitle"></h2>
-      <p class="page-desc" data-i18n="aiaLead" data-i18n-html></p>
-
-      <div class="quote-block">
-        <p data-i18n="aiaQuote"></p>
-      </div>
-
-      <pre class="flow-block" data-i18n="aiaFlow"></pre>
-
-      <div class="card-grid">
-        <article class="card">
-          <h3 data-i18n="cardAiaBuildTitle"></h3>
-          <p data-i18n="cardAiaBuildBody" data-i18n-html></p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="cardAiaOperateTitle"></h3>
-          <p data-i18n="cardAiaOperateBody" data-i18n-html></p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="cardAiaChoiceTitle"></h3>
-          <p data-i18n="cardAiaChoiceBody"></p>
-          <ul class="pill-list" aria-label="AI agent examples">
-            <li>AIA</li>
-            <li>Cursor</li>
-            <li>Claude Code</li>
-            <li>Copilot</li>
-            <li data-i18n="pillCustomAgent"></li>
-          </ul>
-        </article>
-      </div>
-
-      <h2 class="section-title" data-i18n="implTitle"></h2>
-      <p class="page-desc" data-i18n="implLead" data-i18n-html></p>
-
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th scope="col" data-i18n="implColLayer"></th>
-            <th scope="col" data-i18n="implColToday"></th>
-            <th scope="col" data-i18n="implColOpen"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-i18n="implRowRules"></td>
-            <td data-i18n="implRowRulesToday"></td>
-            <td data-i18n="implRowRulesOpen"></td>
-          </tr>
-          <tr>
-            <td data-i18n="implRowCli"></td>
-            <td data-i18n="implRowCliToday"></td>
-            <td data-i18n="implRowCliOpen"></td>
-          </tr>
-          <tr>
-            <td data-i18n="implRowCommunity"></td>
-            <td data-i18n="implRowCommunityToday"></td>
-            <td data-i18n="implRowCommunityOpen"></td>
-          </tr>
-          <tr>
-            <td data-i18n="implRowModules"></td>
-            <td data-i18n="implRowModulesToday"></td>
-            <td data-i18n="implRowModulesOpen"></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p class="page-desc" data-i18n="implFootnote" data-i18n-html></p>
-
-      <h2 class="section-title" data-i18n="orgosIsoTitle"></h2>
-      <p class="page-desc" data-i18n="orgosIsoLead" data-i18n-html></p>
-
-      <div class="card-grid">
-        <article class="card">
-          <h3 data-i18n="orgosIsoCardProvideTitle"></h3>
-          <p data-i18n="orgosIsoCardProvideBody"></p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="orgosIsoCardInitTitle"></h3>
-          <p data-i18n="orgosIsoCardInitBody"></p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="orgosIsoCardScopeTitle"></h3>
-          <p data-i18n="orgosIsoCardScopeBody"></p>
-        </article>
-      </div>
-
-      <p class="section-cta">
-        <a
-          class="btn btn-primary"
-          href="https://community.oorgos.org/content/iso-37000-orgos"
-          data-i18n="orgosIsoCta"
-        ></a>
-        <a
-          class="btn btn-primary"
-          href="https://community.oorgos.org/getting-started"
-          data-i18n="orgosIsoCtaStart"
-        ></a>
-      </p>
-
-      <h2 class="section-title" data-i18n="scopeTitle"></h2>
-      <p class="page-desc" data-i18n="scopeBody" data-i18n-html></p>
-    </main>
-
     <footer class="site-footer">
-      <div class="site-footer-inner">
+      <div class="shell site-footer-inner">
         <span data-i18n="footerCopy"></span>
         <span>www.oorgos.org</span>
       </div>
@@ -785,425 +727,194 @@
     <script>
       const copy = {
         en: {
-          pageTitle:
-            "OpenOrgOS — Global protocol for inter-organizational communication",
+          pageTitle: "OpenOrgOS — Start as an OOO",
           metaDescription:
-            "OpenOrgOS — global protocol for inter-organizational communication. OrgOS initialization provides a practical foundation for ISO 37000–aligned governance self-declaration. Built with AI agents (AIA).",
-          heroLabel: "Global protocol",
-          heroTitle: "Inter-organizational communication, made verifiable",
+            "Too many tools to start. Become an OpenOrgOS Operator (OOO) — deploy OrgOS, initialize your organization, and run one coherent baseline.",
+          heroTitle: "When everything else is too much",
           heroLead:
-            "OpenOrgOS is an open-source community building the protocol layer organizations use when they exchange state across boundaries — developed with AI agents (AIA), governed in English, implemented in any language.",
-          whatIsTitle: "What is OpenOrgOS?",
-          whatIsBody:
-            "OpenOrgOS is a <strong>global protocol for inter-organizational communication</strong>. It defines how organizations record events, exchange identity, delegate authority, and leave an audit trail others can verify. It is <strong>not</strong> an OS for internal HR, payroll, or intranet workflows — business logic, legal interpretation, and organizational behavior are delegated to national or domain-specific committees.",
-          visionQuote:
-            "OpenOrgOS aims to be the common protocol for organizations to communicate across boundaries.",
-          protocolTitle: "What the global protocol defines",
-          protocolLead:
-            "The global layer covers exchange mechanics only. Local law and industry rules live in modules stewarded by committees.",
-          cardEventTitle: "Org Event Model",
-          cardEventBody:
-            "A common model for events exchanged between organizations — contracts, delegations, and state changes.",
-          cardIdentityTitle: "Identity exchange",
-          cardIdentityBody:
-            "Standardized exchange of organizational and actor identity so parties know who they are dealing with.",
-          cardAuthorityTitle: "Authority delegation",
-          cardAuthorityBody:
-            "Scoped powers, agency, and handoffs — who may act on whose behalf, and within what limits.",
-          cardAuditTitle: "Auditability",
-          cardAuditBody:
-            "Timelines and evidence third parties can verify — what happened, when, and under which authority.",
-          ehrTitle: "Why an organizational EHR?",
-          ehrLead:
-            "When care teams collaborate, they rely on a shared electronic health record: patient identity, history, delegation, and a trail auditors can follow. Organizations at scale need the same pattern.",
-          tableColEhr: "Medical EHR",
-          tableColOorgos: "OpenOrgOS",
-          row1Ehr: "Shared patient chart",
-          row1Oorgos: "Structured record of org-to-org interactions",
-          row2Ehr: "Chart entries",
-          row2Oorgos:
-            "Org Event Model — contracts, delegations, state changes",
-          row3Ehr: "Patient ID",
-          row3Oorgos: "Identity exchange — who organizations and actors are",
-          row4Ehr: "Referrals & handoffs",
-          row4Oorgos: "Authority delegation — scoped powers and agency",
-          row5Ehr: "Audit trail",
-          row5Oorgos: "Auditability — timelines third parties can verify",
-          stewardTitle: "Modules, committees, open stewardship",
-          stewardLead:
-            "Human-readable rule modules implement the protocol for jurisdictions, industries, and use cases. National and domain committees review, standardize, and steward those modules. <strong>Open</strong> in OpenOrgOS means anyone can propose, review, and contribute — an open-source community where the protocol grows through transparent governance.",
-          cardModulesTitle: "Modules",
-          cardModulesBody:
-            "Rule modules for accounting, contracts, governance, and more — registered in the community catalog and advanced through a defined lifecycle.",
-          cardCommitteesTitle: "Committees",
-          cardCommitteesBody:
-            "Quality review and standardization by jurisdiction and domain. Law and business rules stay local; the global layer stays thin.",
-          cardOpenTitle: "Open stewardship",
-          cardOpenBody:
-            "Competitive business assets stay protected. What is shared is the exchange protocol — not products, customers, or strategy.",
-          philosophyTitle: "Design philosophy",
-          philosophyLead:
-            "OpenOrgOS follows a Linux-style split: <strong>one thin global protocol</strong>, many local implementations. Governance stays in English; execution adapts to each jurisdiction. Tools and languages are choices — the protocol is not locked to any single stack.",
-          motto1Strong: "Design globally. Implement locally.",
-          motto1Span: "Org Event Model and identity exchange are universal; law and workflows live in community modules.",
-          motto2Strong: "Govern universally. Comply locally.",
-          motto2Span: "RFCs and APIs in English; national committees own tax, labor, and industry rules.",
-          motto3Strong: "One protocol. Many implementations.",
-          motto3Span: "Like a kernel and distributions — reference code is a starting point, not the only valid build.",
-          motto4Strong: "Deterministic core. Natural-language interface.",
-          motto4Span: "Skills and CLI produce auditable results; AI agents help you draft and navigate — they do not replace approval.",
-          cardRulesTitle: "Human-readable rules",
-          cardRulesBody:
-            "Markdown and YAML are the canonical formats. People maintain rules; machines execute them. No proprietary DSL required.",
-          cardDeterministicTitle: "Deterministic execution",
-          cardDeterministicBody:
-            "Same inputs, same auditable outputs. Agents propose; humans approve; CLI and Skills apply changes to source-of-truth data.",
-          cardThinTitle: "Thin global layer",
-          cardThinBody:
-            "The global project defines exchange mechanics only. Business logic, legal interpretation, and organizational behavior are delegated to committees.",
-          aiaTitle: "Built and operated with AI agents (AIA)",
-          aiaLead:
-            "OpenOrgOS is developed and operated using <strong>AIA</strong> — AI Agent assistants that read the repository, explain structure, draft configs, and help stewards navigate OrgOS in natural language. <strong>AIA is our primary tool today, but it is not required.</strong> Any capable AI agent environment works the same way.",
-          aiaQuote:
-            "Agents draft. Humans approve. CLI and Skills execute — deterministically.",
-          aiaFlow:
-            "You (natural language)\n    ↓\nAI Agent — AIA, Cursor, Claude Code, Copilot, …\n    ↓\nSteward repo — manifests, modules, rules\n    ↓\nSkill → CLI → Data (auditable, repeatable)\n    ↓\nOptional: OpenOrgOS Community (public protocol & registry)",
-          cardAiaBuildTitle: "Building with AIA",
-          cardAiaBuildBody:
-            "The Community site, documentation, modules, and reference steward stack are actively built with <strong>AIA</strong>. Agents accelerate RFC drafts, i18n, tests, and module scaffolding — always under human review and governance.",
-          cardAiaOperateTitle: "Operating OrgOS",
-          cardAiaOperateBody:
-            "Inside your tenant, agents explain manifests, validate configs, and draft committee proposals. They are <strong>Steward assistants</strong>, not autonomous executives. Approvals and audit rules still apply.",
-          cardAiaChoiceTitle: "Your agent, your choice",
-          cardAiaChoiceBody:
-            "AIA is explicit and preferred in our workflow. Cursor, Claude Code, GitHub Copilot, or a custom agent with repository access are equally valid — attach the same rules and safety constraints.",
-          pillCustomAgent: "Custom agents",
-          implTitle: "Language-agnostic by design",
-          implLead:
-            "The protocol is defined in <strong>human-readable rules and open specifications</strong>, not in a single programming language. The reference Steward CLI is implemented in <strong>TypeScript</strong> today — a practical choice for the current codebase, not a permanent constraint.",
-          implColLayer: "Layer",
-          implColToday: "Reference today",
-          implColOpen: "Open to",
-          implRowRules: "Rules & protocol",
-          implRowRulesToday: "Markdown · YAML · English RFCs",
-          implRowRulesOpen: "Any editor, any locale module",
-          implRowCli: "Steward CLI",
-          implRowCliToday: "TypeScript (reference)",
-          implRowCliOpen: "Python · C · Rust · Go · …",
-          implRowCommunity: "Community web",
-          implRowCommunityToday: "TypeScript · Next.js",
-          implRowCommunityOpen: "Any stack that serves the APIs",
-          implRowModules: "Domain modules",
-          implRowModulesToday: "Per-domain packs (mixed)",
-          implRowModulesOpen: "Committee-maintained, any language",
-          implFootnote:
-            "Interoperability comes from shared event models and audit rules — not from mandating one runtime. Implement the protocol in the language that fits your organization; validate against the same schemas and CLI contracts.",
-          orgosIsoTitle: "OrgOS and ISO 37000",
-          orgosIsoLead:
-            "Shared infrastructure makes good practice the default path. <strong>OrgOS</strong> applies that idea to organizational governance: deploy OrgOS and configure your organization during <strong>initialization</strong> to establish purpose, roles, oversight, and auditability in one coherent baseline — a practical foundation for <strong>ISO 37000</strong>–aligned self-declaration.",
-          orgosIsoCardProvideTitle: "What this community provides",
-          orgosIsoCardProvideBody:
-            "A neutral home for protocol, modules, learning, and operator pathways. Member organizations retain responsibility for governance claims, policies, and culture.",
-          orgosIsoCardInitTitle: "Initialize as you govern",
-          orgosIsoCardInitBody:
-            "Organization setup and governance setup advance together. An OpenOrgOS Operator (OOO) typically leads deployment, tenant initialization, and day-to-day operation.",
-          orgosIsoCardScopeTitle: "Self-declaration readiness",
-          orgosIsoCardScopeBody:
-            "Supports a credible self-declaration of alignment with ISO 37000 guidance. OpenOrgOS Community does not issue third-party ISO certificates.",
-          orgosIsoCta: "Read the guidance",
-          orgosIsoCtaStart: "Get started",
-          scopeTitle: "Scope",
-          scopeBody:
-            "Trade between companies, university partnerships, NPO alliances, supply chains, joint ventures — any relationship where organizations must exchange <strong>verifiable state across boundaries</strong>.",
+            "Solo founders and early teams drown in apps, policies, and half-finished setups. OpenOrgOS gives you one operator path — deploy, initialize, operate.",
+          heroCta: "Try as an OOO",
+          heroCtaSecondary: "Install guide",
+          storyKicker: "The problem",
+          storyTitle: "Starting should not require a second career",
+          storyLead:
+            "You want to ship the work. Instead you inherit a pile of tools that never quite become an organization.",
+          storyBody1:
+            "A one-person company. A startup before the first hire. A project that suddenly needs roles, approvals, and a trail someone else can trust.",
+          storyBody2:
+            "OpenOrgOS exists so those beginnings have a coherent operating system for organizational truth — not another dashboard to babysit.",
+          pathKicker: "The role",
+          pathTitle: "Become an OpenOrgOS Operator",
+          pathLead:
+            "An OOO leads the practical path: put OrgOS on infrastructure you control, initialize the organization, and keep day-to-day operation auditable.",
+          path1Title: "Deploy",
+          path1Body:
+            "Install OrgOS where your data stays under your control. The reference path is documented and intended for a first steward.",
+          path2Title: "Initialize",
+          path2Body:
+            "Configure purpose, structure, and roles while you go live — governance is part of setup, not a retrofit after chaos.",
+          path3Title: "Operate",
+          path3Body:
+            "Run with a durable trail of decisions. AI agents can draft and explain; humans approve; CLI and Skills execute deterministically.",
+          whyKicker: "Why OpenOrgOS",
+          whyTitle: "A thin protocol. A clear operator path.",
+          whyLead:
+            "Like a Linux-style split: <strong>one global exchange protocol</strong>, many local rules. You are not buying another all-in-one SaaS stack — you are learning to operate OrgOS.",
+          why1Title: "Less pile-up",
+          why1Body:
+            "Stop collecting disconnected tools. Start from one baseline for identity, events, authority, and audit inside your tenant.",
+          why2Title: "Built for operators",
+          why2Body:
+            "Community learning, install docs, and the OOO pathway exist so a first operator can try the path without waiting for a large IT team.",
+          why3Title: "Honest scope",
+          why3Body:
+            "Community registry and operator pathways are live. Cross-org Wire relay and commercial Hub sales are still rolling out — we say what is ready.",
+          tryKicker: "Try it",
+          tryTitle: "Start your OOO trial path today",
+          tryLead:
+            "No purchase required to begin. Use Community to orient, then follow the install and initialization guide on your own infrastructure.",
+          tryStep1:
+            "<strong>Open Getting Started</strong> on Community — browse modules, learning, and the operator path.",
+          tryStep2:
+            "<strong>Follow OrgOS Install &amp; Digital Twin Setup</strong> — deploy and initialize as the first OOO.",
+          tryStep3:
+            "<strong>Optionally apply for OOO certification</strong> when you want a public operator credential.",
+          tryCta: "Start trying as an OOO",
+          tryNote:
+            'Also useful: <a href="https://community.oorgos.org/content/iso-37000-orgos">OrgOS and ISO 37000</a> · <a href="https://community.oorgos.org/certifications">Certifications</a> · <a href="https://community.oorgos.org/content/implementation-status">Implementation status</a>',
           communityTitle: "OpenOrgOS Community",
-          communityStatusChecking: "Checking whether the community site is available…",
-          communityStatusOperational:
-            "<strong>Operational</strong> — modules, committees, and login are served at community.oorgos.org.",
-          communityStatusUnavailable:
-            "Currently unavailable — the community site is not responding. Please try again later.",
+          communityBody:
+            "Trial, login, and modules live on a separate host. This overview page stays static and does not probe that server.",
           communityVisitBtn: "Visit Community",
           footerCopy: "© OpenOrgOS Community",
           langLabel: "Language",
         },
         ja: {
-          pageTitle: "OpenOrgOS — 組織間通信のグローバルプロトコル",
+          pageTitle: "OpenOrgOS — OOO として始める",
           metaDescription:
-            "OpenOrgOS — 組織間通信のグローバルプロトコル。OrgOS の初期化は ISO 37000 に沿った組織統治の自己宣言を支える実務基盤。AIA（AI エージェント）で構築・運用。",
-          heroLabel: "グローバルプロトコル",
-          heroTitle: "組織間通信を、検証可能に",
+            "始めるのにツールが多すぎる。OpenOrgOS Operator（OOO）として OrgOS を展開・初期化し、ひとつの組織ベースラインを運用する。",
+          heroTitle: "それ以外が、多すぎるとき",
           heroLead:
-            "OpenOrgOS は、組織境界を越えて状態を交換するときのプロトコル層をオープンソースコミュニティとして構築しています — AIA（AI エージェント）で開発・運用し、ガバナンスは英語、実装は任意の言語で。",
-          whatIsTitle: "OpenOrgOS とは",
-          whatIsBody:
-            "OpenOrgOS は<strong>組織間通信のグローバルプロトコル</strong>です。組織がイベントを記録し、identity を交換し、権限を委任し、第三者が検証できる監査証跡を残す方法を定義します。組織内部の人事・勤怠・社内ワークフローなどを置き換える OS ではありません。ビジネスロジック・法解釈・組織行動は、各国・各ドメインの委員会に委ねられます。",
-          visionQuote:
-            "OpenOrgOS は組織間の共通通信プロトコルとなることを目指します。",
-          protocolTitle: "グローバルプロトコルが定義するもの",
-          protocolLead:
-            "グローバル層が担うのは交換の仕組みのみです。各国の法や業界ルールは、委員会が運営するモジュールに実装されます。",
-          cardEventTitle: "Org Event Model",
-          cardEventBody:
-            "組織間で交換されるイベントの共通モデル — 契約、委任、状態変化など。",
-          cardIdentityTitle: "Identity exchange",
-          cardIdentityBody:
-            "組織およびアクターの identity を標準化して交換し、取引相手を明確にします。",
-          cardAuthorityTitle: "Authority delegation",
-          cardAuthorityBody:
-            "権限の範囲、代理、引き継ぎ — 誰が誰に代わって何をできるかを定義します。",
-          cardAuditTitle: "Auditability",
-          cardAuditBody:
-            "第三者が検証できる時系列と証拠 — 何が、いつ、どの権限のもとで起きたか。",
-          ehrTitle: "なぜ「組織の電子カルテ」なのか",
-          ehrLead:
-            "診療チームが協力するとき、患者の電子カルテが頼りになります — 誰の記録か、何が起きたか、誰に委任したか、監査人が辿れる証跡。企業間取引や共同研究も、組織のスケールで同じパターンが必要です。",
-          tableColEhr: "医療の電子カルテ",
-          tableColOorgos: "OpenOrgOS",
-          row1Ehr: "共有される患者カルテ",
-          row1Oorgos: "組織間インタラクションの構造化記録",
-          row2Ehr: "カルテ記載",
-          row2Oorgos: "Org Event Model — 契約、委任、状態変化",
-          row3Ehr: "患者 ID",
-          row3Oorgos: "Identity exchange — 組織とアクターの同一性",
-          row4Ehr: "紹介・引き継ぎ",
-          row4Oorgos: "Authority delegation — 権限の範囲と代理",
-          row5Ehr: "監査証跡",
-          row5Oorgos: "Auditability — 第三者が検証できる時系列",
-          stewardTitle: "モジュール、委員会、オープンな運営",
-          stewardLead:
-            "人間が読めるルールモジュールが、法域・業界・ユースケースごとにプロトコルを実装します。各国・各ドメインの委員会がレビュー・標準化・運営を担います。OpenOrgOS の<strong>Open</strong>は、誰もが提案・レビュー・貢献できるオープンソースコミュニティであることを意味します。",
-          cardModulesTitle: "モジュール",
-          cardModulesBody:
-            "会計、契約、ガバナンスなどのルールモジュール — コミュニティカタログに登録され、定義されたライフサイクルを経て進化します。",
-          cardCommitteesTitle: "委員会",
-          cardCommitteesBody:
-            "法域・ドメインごとの品質レビューと標準化。法とビジネスルールはローカルに、グローバル層は薄く保ちます。",
-          cardOpenTitle: "オープンな運営",
-          cardOpenBody:
-            "競争上の資産は保護されます。共有されるのは交換プロトコルであり、製品・顧客・戦略ではありません。",
-          philosophyTitle: "設計思想",
-          philosophyLead:
-            "OpenOrgOS は Linux と同様の分離を採ります — <strong>薄いグローバルプロトコル</strong>と、各地域の実装。ガバナンスは英語で統一し、実行は各国・各業界に委ねます。ツールも言語も選択肢であり、プロトコルは特定のスタックに縛られません。",
-          motto1Strong: "Design globally. Implement locally.",
-          motto1Span: "Org Event Model と identity exchange は普遍。法令とワークフローはコミュニティモジュールに実装。",
-          motto2Strong: "Govern universally. Comply locally.",
-          motto2Span: "RFC と API は英語。各国委員会が税務・労務・業界ルールを所有。",
-          motto3Strong: "One protocol. Many implementations.",
-          motto3Span: "カーネルとディストリビューションの関係 — リファレンス実装は出発点であり、唯一の正解ではない。",
-          motto4Strong: "Deterministic core. Natural-language interface.",
-          motto4Span: "Skill と CLI が監査可能な結果を出す。AI エージェントは起草とナビに使う — 承認の代わりにはならない。",
-          cardRulesTitle: "人間が読めるルール",
-          cardRulesBody:
-            "Markdown と YAML が正規形式。人がルールを保守し、機械が実行する。独自 DSL は不要。",
-          cardDeterministicTitle: "確定的な実行",
-          cardDeterministicBody:
-            "同じ入力なら同じ監査可能な出力。エージェントが提案し、人間が承認し、CLI と Skill が正本データに反映する。",
-          cardThinTitle: "薄いグローバル層",
-          cardThinBody:
-            "グローバル層は交換の仕組みだけを定義。ビジネスロジック・法解釈・組織行動は委員会に委任。",
-          aiaTitle: "AI エージェント（AIA）で構築・運用",
-          aiaLead:
-            "OpenOrgOS は <strong>AIA</strong>（AI Agent アシスタント）を使って開発・運用しています。リポジトリを読み、構造を説明し、設定を起草し、自然言語で OrgOS をナビゲートします。<strong>AIA は現在の主要ツールですが、必須ではありません。</strong>同等の AI エージェント環境なら同じように使えます。",
-          aiaQuote:
-            "エージェントが起草する。人間が承認する。CLI と Skill が確定的に実行する。",
-          aiaFlow:
-            "あなた（自然言語）\n    ↓\nAI エージェント — AIA、Cursor、Claude Code、Copilot など\n    ↓\nSteward リポジトリ — manifest、モジュール、ルール\n    ↓\nSkill → CLI → Data（監査可能・再現可能）\n    ↓\n任意: OpenOrgOS Community（公開プロトコルとレジストリ）",
-          cardAiaBuildTitle: "AIA での構築",
-          cardAiaBuildBody:
-            "Community サイト、ドキュメント、モジュール、リファレンス steward スタックは <strong>AIA</strong> を使って積極的に構築しています。RFC 草案、i18n、テスト、モジュール骨格の作成を加速 — 常に人間のレビューとガバナンスの下で。",
-          cardAiaOperateTitle: "OrgOS の運用",
-          cardAiaOperateBody:
-            "テナント内では、エージェントが manifest の説明、設定検証、委員会提案の起草を支援します。<strong>Steward のアシスタント</strong>であり、自律的な意思決定者ではありません。承認と監査ルールは変わりません。",
-          cardAiaChoiceTitle: "エージェントは選べる",
-          cardAiaChoiceBody:
-            "AIA はワークフローで明示的に使っています。Cursor、Claude Code、GitHub Copilot、リポジトリアクセス付きのカスタムエージェントも同様に有効 — 同じルールと安全制約を適用してください。",
-          pillCustomAgent: "カスタムエージェント",
-          implTitle: "言語に依存しない設計",
-          implLead:
-            "プロトコルは <strong>人間が読めるルールとオープンな仕様</strong>で定義され、特定のプログラミング言語に閉じていません。リファレンス Steward CLI は現時点で <strong>TypeScript</strong> 実装 — 現在のコードベースに合った実用的な選択であり、永続的な制約ではありません。",
-          implColLayer: "レイヤー",
-          implColToday: "現行リファレンス",
-          implColOpen: "選択可能",
-          implRowRules: "ルール・プロトコル",
-          implRowRulesToday: "Markdown · YAML · 英語 RFC",
-          implRowRulesOpen: "任意のエディタ、各国モジュール",
-          implRowCli: "Steward CLI",
-          implRowCliToday: "TypeScript（リファレンス）",
-          implRowCliOpen: "Python · C · Rust · Go など",
-          implRowCommunity: "Community Web",
-          implRowCommunityToday: "TypeScript · Next.js",
-          implRowCommunityOpen: "API を提供できる任意のスタック",
-          implRowModules: "ドメインモジュール",
-          implRowModulesToday: "ドメイン別パック（混在）",
-          implRowModulesOpen: "委員会運営、任意の言語",
-          implFootnote:
-            "相互運用性は共通のイベントモデルと監査ルールから生まれ — 単一ランタイムの強制ではありません。組織に合った言語でプロトコルを実装し、同じスキーマと CLI 契約で検証してください。",
-          orgosIsoTitle: "OrgOS と ISO 37000",
-          orgosIsoLead:
-            "共有インフラが「よい実務」を標準経路にするとき、オープンな協働は拡張します。<strong>OrgOS</strong> は、その考え方を組織統治に適用します。OrgOS を展開し、<strong>初期化</strong>の過程で組織を設定すると、目的・役割・監督・監査可能性を一体のベースラインとして確立できます — <strong>ISO 37000</strong> に沿った自己宣言を支える実務基盤です。",
-          orgosIsoCardProvideTitle: "コミュニティが提供するもの",
-          orgosIsoCardProvideBody:
-            "プロトコル・モジュール・学習・オペレータ経路のための中立な拠点。統治に関する表明・方針・文化の責任は、各会員組織に留まります。",
-          orgosIsoCardInitTitle: "初期化と統治を同時に",
-          orgosIsoCardInitBody:
-            "組織設定と統治設定は後付けではなく一体の経路です。OpenOrgOS Operator（OOO）が展開・テナント初期化・日常運用を主導するのが一般的です。",
-          orgosIsoCardScopeTitle: "自己宣言の準備",
-          orgosIsoCardScopeBody:
-            "ISO 37000 ガイダンスへの整合について、信頼に足る自己宣言を支えます。OpenOrgOS Community は第三者 ISO 認証を発行しません。",
-          orgosIsoCta: "ガイダンスを読む",
-          orgosIsoCtaStart: "はじめる",
-          scopeTitle: "適用範囲",
-          scopeBody:
-            "企業間取引、大学・研究機関の共同、NPO 連携、サプライチェーン、ジョイントベンチャーなど、組織境界を越えて<strong>検証可能な状態を交換する必要がある関係</strong>すべてに適用できます。",
+            "一人社長も、スタートアップも、何かの始まりも — アプリと規程と未完の設定に溺れる。OpenOrgOS は、展開・初期化・運用という一つのオペレータ経路を渡します。",
+          heroCta: "OOO として試す",
+          heroCtaSecondary: "インストールガイド",
+          storyKicker: "課題",
+          storyTitle: "始めるのに、もう一つの仕事は要らない",
+          storyLead:
+            "やりたいのは本業なのに、組織になる前からツールの山だけが残る。",
+          storyBody1:
+            "一人会社。最初の採用前のスタートアップ。突然、役割・承認・誰かが信頼できる証跡が必要になったプロジェクト。",
+          storyBody2:
+            "OpenOrgOS は、そうした始まりに「組織の真実」を扱う一貫した基盤を渡すためにある — また世話をするダッシュボードを増やすためではない。",
+          pathKicker: "役割",
+          pathTitle: "OpenOrgOS Operator になる",
+          pathLead:
+            "OOO は実務の経路を主導します。自分で制御できる基盤に OrgOS を置き、組織を初期化し、日常運用を監査可能に保つ。",
+          path1Title: "展開",
+          path1Body:
+            "データを自前で制御できる場所に OrgOS をインストール。最初のスチュワード向けの手順が公開されています。",
+          path2Title: "初期化",
+          path2Body:
+            "稼働と同時に目的・構造・役割を設定する。統治は後付けではなく、セットアップの一部です。",
+          path3Title: "運用",
+          path3Body:
+            "決定の証跡を残して回す。AI エージェントは起草と説明、人間が承認、CLI と Skill が確定的に実行します。",
+          whyKicker: "なぜ OpenOrgOS か",
+          whyTitle: "薄いプロトコル。はっきりしたオペレータ経路。",
+          whyLead:
+            "Linux 風の分離です。<strong>一つのグローバル交換プロトコル</strong>と、多くのローカルルール。もう一つのオールインワン SaaS を買うのではなく、OrgOS を運用する学びです。",
+          why1Title: "積み上げを減らす",
+          why1Body:
+            "バラバラなツールを集め続けるのをやめ、テナント内の identity・イベント・権限・監査のベースラインから始める。",
+          why2Title: "オペレータ向け",
+          why2Body:
+            "Community の学習、インストール文書、OOO 経路があるので、大きな IT 部門を待たずに最初のオペレータが試せます。",
+          why3Title: "正直な範囲",
+          why3Body:
+            "Community のレジストリとオペレータ経路は稼働中。組織間 Wire リレーや商用 Hub 販売はこれから — できることと未完を分けて示します。",
+          tryKicker: "試す",
+          tryTitle: "今日から OOO の試用経路を",
+          tryLead:
+            "始めるのに購入は不要です。Community で向きをつかみ、自前の基盤でインストールと初期化のガイドに進みます。",
+          tryStep1:
+            "<strong>Community の Getting Started</strong> を開く — モジュール、学習、オペレータ経路を確認。",
+          tryStep2:
+            "<strong>OrgOS Install &amp; Digital Twin Setup</strong> に従う — 最初の OOO として展開と初期化。",
+          tryStep3:
+            "<strong>必要なら OOO 認定に申請</strong> — 公開オペレータ資格が欲しいとき。",
+          tryCta: "OOO として試し始める",
+          tryNote:
+            'あわせて: <a href="https://community.oorgos.org/content/iso-37000-orgos">OrgOS と ISO 37000</a> · <a href="https://community.oorgos.org/certifications">認定</a> · <a href="https://community.oorgos.org/content/implementation-status">実装状況</a>',
           communityTitle: "OpenOrgOS Community",
-          communityStatusChecking:
-            "コミュニティサイトの稼働状況を確認しています…",
-          communityStatusOperational:
-            "<strong>稼働中</strong> — モジュール・委員会・ログインは community.oorgos.org で利用できます。",
-          communityStatusUnavailable:
-            "現在利用できません — コミュニティサイトに接続できません。しばらくしてから再度お試しください。",
-          communityVisitBtn: "Community サイトへ",
+          communityBody:
+            "試用・ログイン・モジュールは別ホストで動きます。この概要ページは静的のまま、そちらへ自動接続はしません。",
+          communityVisitBtn: "Community へ",
           footerCopy: "© OpenOrgOS Community",
           langLabel: "言語",
         },
         zh: {
-          pageTitle: "OpenOrgOS — 组织间通信的全球协议",
+          pageTitle: "OpenOrgOS — 以 OOO 身份开始",
           metaDescription:
-            "OpenOrgOS 是组织间通信的全球协议。使用 AIA（AI 代理）构建与运营。语言无关的设计 — TypeScript 参考 CLI，也可选用 Python、C 等。",
-          heroLabel: "全球协议",
-          heroTitle: "让组织间通信可验证",
+            "起步时工具太多。成为 OpenOrgOS Operator（OOO）— 部署 OrgOS、初始化组织，并运行一套连贯的组织基线。",
+          heroTitle: "当其他一切都太多",
           heroLead:
-            "OpenOrgOS 是一个开源社区，正在构建组织跨越边界交换状态时所使用的协议层 — 使用 AIA（AI 代理）开发与运营，治理语言为英语，实现语言任意选择。",
-          whatIsTitle: "什么是 OpenOrgOS？",
-          whatIsBody:
-            "OpenOrgOS 是<strong>组织间通信的全球协议</strong>。它定义组织如何记录事件、交换身份、委派权限，并留下他人可验证的审计轨迹。它<strong>不是</strong>替代内部人事、薪酬或内网工作流的 OS — 业务逻辑、法律解释与组织行为由各国家或领域委员会负责。",
-          visionQuote: "OpenOrgOS 致力于成为组织跨越边界通信的通用协议。",
-          protocolTitle: "全球协议定义的内容",
-          protocolLead:
-            "全球层仅涵盖交换机制。各国法律与行业规则由委员会管理的模块承载。",
-          cardEventTitle: "Org Event Model",
-          cardEventBody: "组织间交换事件的通用模型 — 合同、委派与状态变化。",
-          cardIdentityTitle: "Identity exchange",
-          cardIdentityBody: "标准化交换组织与主体的身份，使各方明确交易对象。",
-          cardAuthorityTitle: "Authority delegation",
-          cardAuthorityBody: "权限范围、代理与交接 — 定义谁可代表谁、在何种限制内行事。",
-          cardAuditTitle: "Auditability",
-          cardAuditBody: "第三方可验证的时间线与证据 — 发生了什么、何时、依据何种权限。",
-          ehrTitle: "为何是「组织的电子病历」？",
-          ehrLead:
-            "诊疗团队协作时依赖共享电子病历：患者身份、病史、委派关系与审计人可追踪的轨迹。企业间交易与联合研究在组织规模上同样需要这一模式。",
-          tableColEhr: "医疗电子病历",
-          tableColOorgos: "OpenOrgOS",
-          row1Ehr: "共享患者病历",
-          row1Oorgos: "组织间交互的结构化记录",
-          row2Ehr: "病历记录",
-          row2Oorgos: "Org Event Model — 合同、委派、状态变化",
-          row3Ehr: "患者 ID",
-          row3Oorgos: "Identity exchange — 组织与主体的同一性",
-          row4Ehr: "转诊与交接",
-          row4Oorgos: "Authority delegation — 权限范围与代理",
-          row5Ehr: "审计轨迹",
-          row5Oorgos: "Auditability — 第三方可验证的时间线",
-          stewardTitle: "模块、委员会与开放治理",
-          stewardLead:
-            "人类可读的规则模块按法域、行业与用例实现协议。各国与领域委员会负责审查、标准化与治理。<strong>Open</strong> 在 OpenOrgOS 中意味着任何人都可以提案、审查与贡献 — 协议在透明治理中成长的开源社区。",
-          cardModulesTitle: "模块",
-          cardModulesBody:
-            "会计、合同、治理等规则模块 — 在社区目录中注册，并按定义的生命周期推进。",
-          cardCommitteesTitle: "委员会",
-          cardCommitteesBody:
-            "按法域与领域的质量审查与标准化。法律与业务规则本地化，全球层保持精简。",
-          cardOpenTitle: "开放治理",
-          cardOpenBody:
-            "竞争性商业资产受到保护。共享的是交换协议 — 而非产品、客户或战略。",
-          philosophyTitle: "设计思想",
-          philosophyLead:
-            "OpenOrgOS 采用 Linux 式分层：<strong>精简的全球协议</strong>与多处本地实现。治理使用英语；执行适配各法域。工具与语言是选择 — 协议不绑定单一技术栈。",
-          motto1Strong: "Design globally. Implement locally.",
-          motto1Span: "Org Event Model 与 identity exchange 具有普遍性；法律与工作流由社区模块承载。",
-          motto2Strong: "Govern universally. Comply locally.",
-          motto2Span: "RFC 与 API 使用英语；各国委员会拥有税务、劳动与行业规则。",
-          motto3Strong: "One protocol. Many implementations.",
-          motto3Span: "如同内核与发行版 — 参考实现是起点，而非唯一正确答案。",
-          motto4Strong: "Deterministic core. Natural-language interface.",
-          motto4Span: "Skill 与 CLI 产生可审计结果；AI 代理辅助起草与导航 — 不替代审批。",
-          cardRulesTitle: "人类可读的规则",
-          cardRulesBody:
-            "Markdown 与 YAML 为正规范式。人维护规则，机器执行。无需专有 DSL。",
-          cardDeterministicTitle: "确定性执行",
-          cardDeterministicBody:
-            "相同输入，相同可审计输出。代理提案，人类审批，CLI 与 Skill 将变更写入正本数据。",
-          cardThinTitle: "精简的全球层",
-          cardThinBody:
-            "全球项目仅定义交换机制。业务逻辑、法律解释与组织行为委派给委员会。",
-          aiaTitle: "使用 AI 代理（AIA）构建与运营",
-          aiaLead:
-            "OpenOrgOS 使用 <strong>AIA</strong>（AI Agent 助理）进行开发与运营 — 读取仓库、解释结构、起草配置，并以自然语言帮助管理员导航 OrgOS。<strong>AIA 是今日主要工具，但并非必需。</strong>任何成熟的 AI 代理环境均可同样使用。",
-          aiaQuote: "代理起草。人类审批。CLI 与 Skill 确定性执行。",
-          aiaFlow:
-            "你（自然语言）\n    ↓\nAI 代理 — AIA、Cursor、Claude Code、Copilot 等\n    ↓\nSteward 仓库 — manifest、模块、规则\n    ↓\nSkill → CLI → Data（可审计、可重复）\n    ↓\n可选：OpenOrgOS Community（公开协议与注册表）",
-          cardAiaBuildTitle: "用 AIA 构建",
-          cardAiaBuildBody:
-            "Community 站点、文档、模块与参考 steward 栈均积极使用 <strong>AIA</strong> 构建。代理加速 RFC 草案、i18n、测试与模块脚手架 — 始终在人工审查与治理之下。",
-          cardAiaOperateTitle: "运营 OrgOS",
-          cardAiaOperateBody:
-            "在租户内，代理解释 manifest、验证配置并起草委员会提案。它们是 <strong>Steward 助理</strong>，而非自主决策者。审批与审计规则仍然适用。",
-          cardAiaChoiceTitle: "代理由你选择",
-          cardAiaChoiceBody:
-            "AIA 在工作流中明确且优先。Cursor、Claude Code、GitHub Copilot 或具备仓库访问的自定义代理同样有效 — 请附加相同规则与安全约束。",
-          pillCustomAgent: "自定义代理",
-          implTitle: "语言无关的设计",
-          implLead:
-            "协议由<strong>人类可读的规则与开放规范</strong>定义，而非单一编程语言。参考 Steward CLI 目前为 <strong>TypeScript</strong> 实现 — 对当前代码库的务实选择，而非永久约束。",
-          implColLayer: "层级",
-          implColToday: "当前参考实现",
-          implColOpen: "可选",
-          implRowRules: "规则与协议",
-          implRowRulesToday: "Markdown · YAML · 英语 RFC",
-          implRowRulesOpen: "任意编辑器、各国模块",
-          implRowCli: "Steward CLI",
-          implRowCliToday: "TypeScript（参考）",
-          implRowCliOpen: "Python · C · Rust · Go 等",
-          implRowCommunity: "Community Web",
-          implRowCommunityToday: "TypeScript · Next.js",
-          implRowCommunityOpen: "可提供 API 的任意技术栈",
-          implRowModules: "领域模块",
-          implRowModulesToday: "按领域打包（混合）",
-          implRowModulesOpen: "委员会维护，任意语言",
-          implFootnote:
-            "互操作性来自共享事件模型与审计规则 — 而非强制单一运行时。用适合组织的语言实现协议；按相同模式与 CLI 契约验证。",
-          orgosIsoTitle: "OrgOS 与 ISO 37000",
-          orgosIsoLead:
-            "共享基础设施让良好实践成为默认路径。<strong>OrgOS</strong> 将该理念应用于组织治理：部署 OrgOS，并在<strong>初始化</strong>过程中配置组织，即可一体建立目的、角色、监督与可审计性 — 为符合 <strong>ISO 37000</strong> 的自我声明提供实务基础。",
-          orgosIsoCardProvideTitle: "社区提供什么",
-          orgosIsoCardProvideBody:
-            "协议、模块、学习与运营者路径的中立家园。治理主张、政策与文化的责任仍由各成员组织承担。",
-          orgosIsoCardInitTitle: "初始化即治理",
-          orgosIsoCardInitBody:
-            "组织配置与治理配置同步推进，而非事后补建。通常由 OpenOrgOS Operator（OOO）主导部署、租户初始化与日常运营。",
-          orgosIsoCardScopeTitle: "自我声明的准备",
-          orgosIsoCardScopeBody:
-            "支持对 ISO 37000 指南作出可信的自我声明。OpenOrgOS Community 不颁发第三方 ISO 证书。",
-          orgosIsoCta: "阅读指南",
-          orgosIsoCtaStart: "开始使用",
-          scopeTitle: "适用范围",
-          scopeBody:
-            "企业间交易、高校与研究合作、NPO 联盟、供应链、合资企业 — 任何需要跨越组织边界<strong>交换可验证状态</strong>的关系。",
+            "一人公司、早期创业团队、任何刚起步的项目 — 都会被应用、规章与半成品配置淹没。OpenOrgOS 提供一条清晰的运营者路径：部署、初始化、运营。",
+          heroCta: "以 OOO 身份试用",
+          heroCtaSecondary: "安装指南",
+          storyKicker: "问题",
+          storyTitle: "起步不该变成第二份职业",
+          storyLead: "你想推进正事，却先继承了一堆从未真正变成组织的工具。",
+          storyBody1:
+            "一人公司。还没招到第一位员工的创业团队。突然需要角色、审批与可被他人信任的轨迹的项目。",
+          storyBody2:
+            "OpenOrgOS 的存在，是为这些开端提供一套连贯的组织真相操作系统 — 而不是又一个需要照看的仪表盘。",
+          pathKicker: "角色",
+          pathTitle: "成为 OpenOrgOS Operator",
+          pathLead:
+            "OOO 主导实务路径：把 OrgOS 放在你可控制的基础设施上，初始化组织，并让日常运营可审计。",
+          path1Title: "部署",
+          path1Body:
+            "在数据仍由你掌控的环境中安装 OrgOS。面向首位 steward 的参考路径已公开。",
+          path2Title: "初始化",
+          path2Body:
+            "上线同时配置目的、结构与角色 — 治理是设置的一部分，而非混乱之后的补救。",
+          path3Title: "运营",
+          path3Body:
+            "以持久的决策轨迹运转。AI 代理可起草与解释；人类审批；CLI 与 Skill 确定性执行。",
+          whyKicker: "为何选择 OpenOrgOS",
+          whyTitle: "精简协议。清晰的运营者路径。",
+          whyLead:
+            "如同 Linux 式分层：<strong>一套全球交换协议</strong>与诸多本地规则。你不是再买一套全能 SaaS，而是学习运营 OrgOS。",
+          why1Title: "减少堆叠",
+          why1Body:
+            "停止收集互不相关的工具。从租户内的身份、事件、权限与审计基线开始。",
+          why2Title: "为运营者而建",
+          why2Body:
+            "Community 学习、安装文档与 OOO 路径，让首位运营者无需等待庞大 IT 团队即可试用。",
+          why3Title: "诚实范围",
+          why3Body:
+            "Community 注册表与运营者路径已上线。跨组织 Wire 中继与商业 Hub 销售仍在推进 — 我们如实说明就绪程度。",
+          tryKicker: "试用",
+          tryTitle: "今天开始你的 OOO 试用路径",
+          tryLead:
+            "开始无需购买。先在 Community 定位方向，再在自有基础设施上跟随安装与初始化指南。",
+          tryStep1:
+            "<strong>打开 Community 的 Getting Started</strong> — 浏览模块、学习与运营者路径。",
+          tryStep2:
+            "<strong>跟随 OrgOS Install &amp; Digital Twin Setup</strong> — 作为首位 OOO 部署并初始化。",
+          tryStep3:
+            "<strong>可选申请 OOO 认证</strong> — 当你需要公开的运营者资质时。",
+          tryCta: "开始以 OOO 身份试用",
+          tryNote:
+            '也可参考：<a href="https://community.oorgos.org/content/iso-37000-orgos">OrgOS 与 ISO 37000</a> · <a href="https://community.oorgos.org/certifications">认证</a> · <a href="https://community.oorgos.org/content/implementation-status">实现状态</a>',
           communityTitle: "OpenOrgOS Community",
-          communityStatusChecking: "正在检查社区站点是否可用…",
-          communityStatusOperational:
-            "<strong>运行中</strong> — 模块、委员会与登录服务于 community.oorgos.org。",
-          communityStatusUnavailable:
-            "当前不可用 — 社区站点无响应。请稍后重试。",
+          communityBody:
+            "试用、登录与模块运行在另一主机。本概要页保持静态，不会自动探测该服务器。",
           communityVisitBtn: "访问 Community",
           footerCopy: "© OpenOrgOS Community",
           langLabel: "语言",
         },
       };
-
-      const COMMUNITY_HEALTH_URL = "https://community.oorgos.org/api/health";
-      const COMMUNITY_STATUS_REFRESH_MS = 60_000;
-      let communityStatusState = "checking";
-      let communityStatusTimer;
 
       function detectLang() {
         const saved = localStorage.getItem("oorgos-lang");
@@ -1225,6 +936,7 @@
         document.querySelectorAll("[data-i18n]").forEach((el) => {
           const key = el.getAttribute("data-i18n");
           const value = strings[key];
+          if (value == null) return;
           if (el.hasAttribute("data-i18n-html")) {
             el.innerHTML = value;
           } else {
@@ -1234,60 +946,7 @@
 
         const langSelect = document.getElementById("lang-select");
         if (langSelect) langSelect.value = lang;
-
-        renderCommunityStatus(communityStatusState);
         localStorage.setItem("oorgos-lang", lang);
-      }
-
-      function renderCommunityStatus(state) {
-        communityStatusState = state;
-        const lang = document.documentElement.lang || "en";
-        const strings = copy[lang];
-        const dot = document.getElementById("community-status-dot");
-        const text = document.getElementById("community-status-text");
-        const visitBtn = document.getElementById("community-visit-btn");
-
-        if (!dot || !text || !visitBtn) return;
-
-        dot.dataset.state = state;
-
-        if (state === "operational") {
-          text.innerHTML = strings.communityStatusOperational;
-          visitBtn.hidden = false;
-        } else if (state === "unavailable") {
-          text.textContent = strings.communityStatusUnavailable;
-          visitBtn.hidden = true;
-        } else {
-          text.textContent = strings.communityStatusChecking;
-          visitBtn.hidden = true;
-        }
-      }
-
-      async function refreshCommunityStatus() {
-        renderCommunityStatus("checking");
-
-        try {
-          const response = await fetch(COMMUNITY_HEALTH_URL, {
-            mode: "cors",
-            headers: { Accept: "application/json" },
-          });
-          const data = await response.json();
-          const operational =
-            response.ok &&
-            data.checks?.database !== false &&
-            data.checks?.authSecret !== false;
-          renderCommunityStatus(operational ? "operational" : "unavailable");
-        } catch {
-          renderCommunityStatus("unavailable");
-        }
-      }
-
-      function scheduleCommunityStatusRefresh() {
-        clearTimeout(communityStatusTimer);
-        communityStatusTimer = setTimeout(async () => {
-          await refreshCommunityStatus();
-          scheduleCommunityStatusRefresh();
-        }, COMMUNITY_STATUS_REFRESH_MS);
       }
 
       document.getElementById("lang-select")?.addEventListener("change", (event) => {
@@ -1295,7 +954,6 @@
       });
 
       applyLang(detectLang());
-      refreshCommunityStatus().then(scheduleCommunityStatusRefresh);
     </script>
   </body>
 </html>

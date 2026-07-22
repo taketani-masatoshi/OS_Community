@@ -2,9 +2,11 @@
 
 | Host | Role |
 |------|------|
-| `oorgos.org` | Overview (static, EN / 日本語 / 中文) |
+| `oorgos.org` | Overview for aspiring OOOs — static only (EN / 日本語 / 中文). Does **not** probe Community. |
 | `www.oorgos.org` | Redirect → apex |
 | `community.oorgos.org` | Community app (Mac mini — **not** this project) |
+
+**Boundary:** Overview CTAs are plain links. Community liveness is owned by Mac mini / Tunnel ops — never by browser `fetch` from this site.
 
 **Setup runbook:** [`docs/oorgos-subdomain-setup.md`](../../docs/oorgos-subdomain-setup.md)  
 **Architecture:** [`docs/vercel-macmini-architecture.md`](../../docs/vercel-macmini-architecture.md)
