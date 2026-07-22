@@ -33,7 +33,14 @@ export default async function LeadershipPage() {
         professionalProfile: { select: { profileUrl: true } },
       },
     })
-    .catch(() => []);
+    .catch(
+      (): {
+        publicSlug: string | null;
+        name: string | null;
+        image: string | null;
+        professionalProfile: { profileUrl: string | null } | null;
+      }[] => [],
+    );
 
   const userBySlug = new Map(
     dbUsers.flatMap((user) => {
