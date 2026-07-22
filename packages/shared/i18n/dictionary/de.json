@@ -156,6 +156,9 @@
   "Trust tiers vs quality lifecycle": "Vertrauensstufen vs Qualitätslebenszyklus",
   "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.": "WILD-Vorschläge sind ungeprüft und ungarantiert. Community REVIEWED bedeutet nicht Commercial-bereit. Sehen Sie, wie WILD, Candidate und Commercial zu Qualitätsstufen stehen.",
   "Module ecosystem guide": "Leitfaden Modul-Ökosystem",
+  "Active governance committees with members": "Aktive Governance-Gremien mit Mitgliedern",
+  "OrgOS support agents in the registry": "OrgOS-Support-Agenten im Register",
+  "Active OOO / OOD professionals": "Aktive OOO-/OOD-Fachkräfte",
   "The electronic chart for organizations — auditable across boundaries.": "Die elektronische Akte der Organisationen — über Grenzen hinweg prüfbar.",
   "OpenOrgOS is the electronic chart for organizations: a global, auditable protocol for what happened between companies, who acted, and with what authority. Like a medical EHR shares events and audit trails across care teams, we record org events across boundaries — not an internal HR OS. Local rules live in committees.": "OpenOrgOS ist die elektronische Akte der Organisationen: ein globales, prüfbares Protokoll dessen, was zwischen Unternehmen geschah, wer handelte und mit welcher Autorität. Wie ein medizinisches EHR Ereignisse und Audit-Trails teilt, erfassen wir Org-Ereignisse über Grenzen — kein internes HR-OS. Lokale Regeln leben in Ausschüssen.",
   "The organizational electronic chart": "Die elektronische Organisationsakte",
@@ -751,5 +754,7 @@
   "protocol.vocabulary.wireTrustRegistry": "Wire Trust Registry",
   "protocol.vocabulary.moduleRoleRequest": "Modulrollenantrag",
   "protocol.vocabulary.reviewAuditTrail": "Prüfungs-Audit-Trail",
-  "protocol.vocabulary.jurisdictionRegistry": "Rechtsraum-Register des Komitees"
+  "protocol.vocabulary.jurisdictionRegistry": "Rechtsraum-Register des Komitees",
+  "protocol.vocabulary.wireNodeApplication": "Wire-Knoten-Antrag",
+  "protocol.vocabulary.wireNodeReview": "Wire-Knoten-Governance-Prüfung"
 }

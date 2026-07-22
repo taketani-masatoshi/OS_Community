@@ -6,6 +6,7 @@ import {
   isPrimaryLoginConfigured,
   resolveGoogleOAuthCredentials,
 } from "@/lib/auth-env";
+import { getReleaseInfo } from "@/lib/release-info";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -31,7 +32,11 @@ export async function OPTIONS(request: Request) {
 }
 
 export async function GET(request: Request) {
-  const [db, academy] = await Promise.all([checkDatabaseHealth(), checkAcademyHealth()]);
+  const [db, academy, release] = await Promise.all([
+    checkDatabaseHealth(),
+    checkAcademyHealth(),
+    getReleaseInfo(),
+  ]);
   const authConfigured = Boolean(process.env.AUTH_SECRET?.trim());
   const loginConfigured = isPrimaryLoginConfigured();
   const google = resolveGoogleOAuthCredentials();
@@ -46,12 +51,14 @@ export async function GET(request: Request) {
     linkedInConnect: isLinkedInAuthConfigured(),
   };
 
-  const ok = db.ok && authConfigured && loginConfigured;
+  const livenessOk = db.ok && authConfigured;
+  const fullyOk = livenessOk && loginConfigured;
 
   return Response.json(
     {
-      status: ok ? "ok" : "degraded",
+      status: fullyOk ? "ok" : "degraded",
       checks,
+      release,
       authUrl: authBaseUrl,
       googleCallbackUrl: google.callbackUrl,
       databaseLatencyMs: db.latencyMs,
@@ -60,6 +67,6 @@ export async function GET(request: Request) {
         : {}),
       ...(db.error ? { databaseError: db.error } : {}),
     },
-    { status: ok ? 200 : 503, headers: corsHeaders(request) },
+    { status: livenessOk ? 200 : 503, headers: corsHeaders(request) },
   );
 }

@@ -156,6 +156,9 @@
   "Trust tiers vs quality lifecycle": "Уровни доверия vs жизненный цикл качества",
   "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.": "Предложения WILD не проверены и без гарантий. REVIEWED в Community не означает готовность к Commercial. Как WILD, Candidate и Commercial соотносятся со стадиями качества.",
   "Module ecosystem guide": "Руководство по экосистеме модулей",
+  "Active governance committees with members": "Действующие комитеты управления с участниками",
+  "OrgOS support agents in the registry": "Агенты поддержки OrgOS в реестре",
+  "Active OOO / OOD professionals": "Действующие специалисты OOO / OOD",
   "The electronic chart for organizations — auditable across boundaries.": "Электронная карта организаций — проверяемая через границы.",
   "OpenOrgOS is the electronic chart for organizations: a global, auditable protocol for what happened between companies, who acted, and with what authority. Like a medical EHR shares events and audit trails across care teams, we record org events across boundaries — not an internal HR OS. Local rules live in committees.": "OpenOrgOS — электронная карта организаций: глобальный проверяемый протокол того, что произошло между компаниями, кто действовал и с каким полномочием. Как медицинская ЭМК делится событиями между командами, мы фиксируем org-события через границы — не внутренняя HR-ОС. Локальные правила — у комитетов.",
   "The organizational electronic chart": "Электронная карта организации",
@@ -751,5 +754,7 @@
   "protocol.vocabulary.wireTrustRegistry": "Реестр доверия Wire",
   "protocol.vocabulary.moduleRoleRequest": "Запрос роли модуля",
   "protocol.vocabulary.reviewAuditTrail": "Аудит-цепочка ревью",
-  "protocol.vocabulary.jurisdictionRegistry": "Реестр юрисдикций комитета"
+  "protocol.vocabulary.jurisdictionRegistry": "Реестр юрисдикций комитета",
+  "protocol.vocabulary.wireNodeApplication": "Заявка на узел Wire",
+  "protocol.vocabulary.wireNodeReview": "Ревью governance узла Wire"
 }

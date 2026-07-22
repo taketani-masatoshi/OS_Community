@@ -2,7 +2,32 @@
 
 **Decentralized organization. Built on trust.**
 
+> **Public beta (`0.1.0-beta.x`)** — expect frequent updates.  
+> Run only in an **isolated environment you control** (private network / hardened host, unique secrets, TLS).  
+> Ops guide: [`docs/beta-operations.md`](docs/beta-operations.md) · Update feed: [`channel/latest.json`](channel/latest.json)
+
 Linux Foundation スタイルの中立ハブ — 組織運営 OS のモジュール開発、品質レビュー、標準化、教育・認証。
+
+## Beta install (recommended)
+
+Published container (GHCR):
+
+```bash
+git clone https://github.com/taketani-masatoshi/OS_Community.git
+cd OS_Community
+git checkout v0.1.0-beta.1
+cp .env.example .env   # set DOMAIN, AUTH_SECRET, POSTGRES_PASSWORD, …
+docker compose -f docker-compose.release.yml pull
+docker compose -f docker-compose.release.yml up -d
+curl -sS http://localhost:3000/api/health | jq '.release'
+```
+
+| Image | Notes |
+|-------|--------|
+| `ghcr.io/taketani-masatoshi/os-community-web:0.1.0-beta.1` | Pinned beta |
+| `ghcr.io/taketani-masatoshi/os-community-web:beta` | Latest beta |
+
+When `release.updateAvailable` is `true` on `/api/health`, pull the newer tag and recreate `web` (see beta ops doc).
 
 ## 設計思想
 

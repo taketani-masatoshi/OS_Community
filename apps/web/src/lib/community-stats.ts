@@ -27,6 +27,7 @@ export async function countWildModules(): Promise<number> {
   return prisma.module.count({ where: { trustLevel: "WILD" } });
 }
 
+/** Distinct people with active OOO / OOD (or other) professional certifications. */
 export async function countActiveCertifiedProfessionals(): Promise<number> {
   const now = new Date();
   const rows = await prisma.certification.groupBy({
@@ -40,11 +41,26 @@ export async function countActiveCertifiedProfessionals(): Promise<number> {
   return rows.length;
 }
 
-/** Domain + Standard governance committees (excludes per-module committees). */
+/** Domain + Standard seats in the governance catalog (includes empty jurisdiction shells). */
 export async function countGovernanceCommittees(): Promise<number> {
   return prisma.committee.count({
     where: { type: { in: ["DOMAIN", "STANDARD"] } },
   });
+}
+
+/**
+ * Governance committees that currently have at least one member —
+ * the home-page “active review” signal (excludes empty jurisdiction shells).
+ */
+export async function countActiveGovernanceCommittees(): Promise<number> {
+  const rows = await prisma.committee.findMany({
+    where: {
+      type: { in: ["DOMAIN", "STANDARD"] },
+      members: { some: {} },
+    },
+    select: { id: true },
+  });
+  return rows.length;
 }
 
 export async function countDomainCommittees(): Promise<number> {
@@ -65,6 +81,12 @@ export function countCoreAgents(): number {
   return CORE_AGENTS.length;
 }
 
+/** Prefer DB agent registry; fall back to shared CORE_AGENTS when table is empty. */
+export async function countRegisteredAgents(): Promise<number> {
+  const dbCount = await prisma.agent.count();
+  return dbCount > 0 ? dbCount : countCoreAgents();
+}
+
 export async function getCommunityStats(): Promise<CommunityStats> {
   const [
     moduleCount,
@@ -73,13 +95,15 @@ export async function getCommunityStats(): Promise<CommunityStats> {
     contributorCount,
     certCount,
     committeeCount,
+    agentCount,
   ] = await Promise.all([
     countRegistryModules({ includeWild: true }),
     countWildModules(),
     countDistinctModuleRoleHolders("MAINTAINER"),
     countDistinctModuleRoleHolders("CONTRIBUTOR"),
     countActiveCertifiedProfessionals(),
-    countGovernanceCommittees(),
+    countActiveGovernanceCommittees(),
+    countRegisteredAgents(),
   ]);
 
   return {
@@ -89,6 +113,6 @@ export async function getCommunityStats(): Promise<CommunityStats> {
     contributorCount,
     certCount,
     committeeCount,
-    agentCount: countCoreAgents(),
+    agentCount,
   };
 }

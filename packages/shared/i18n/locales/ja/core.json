@@ -43,11 +43,11 @@
     "statContributors": "コントリビューター",
     "statContributorsDesc": "ルール改善に参加中",
     "statCommittees": "委員会",
-    "statCommitteesDesc": "品質レビューと標準化",
+    "statCommitteesDesc": "メンバーがいる活動中のガバナンス委員会",
     "statAgents": "エージェント",
-    "statAgentsDesc": "OrgOS 支援エージェント",
+    "statAgentsDesc": "レジストリ上の OrgOS 支援エージェント",
     "statCertified": "認定",
-    "statCertifiedDesc": "アカデミー認定取得者",
+    "statCertifiedDesc": "有効な OOO / OOD 認定者",
     "whyTitle": "OpenOrgOS とは",
     "startTitle": "はじめ方",
     "primaryCta": "コミュニティに参加（無料）",
@@ -238,7 +238,10 @@
       }
     ],
     "orgosInstallGuideCta": "OrgOS セットアップガイド（全文）",
-    "orgosInstallGuideDesc": "事前情報チェックリスト、tenant init、デジタルツイン準備の詳細。"
+    "orgosInstallGuideDesc": "事前情報チェックリスト、tenant init、デジタルツイン準備の詳細。",
+    "iso37000SectionTitle": "OrgOS と ISO 37000",
+    "iso37000SectionLead": "OrgOS を展開し、初期化の過程で組織を設定します。そのベースラインは、ISO 37000 に沿った組織統治の自己宣言を支える実務基盤となります。OpenOrgOS Community は第三者 ISO 認証を発行しません。経路は通常、OpenOrgOS Operator（OOO）が主導します。",
+    "iso37000SectionCta": "ガイダンスを読む"
   },
   "github": {
     "title": "GitHub 連携",
@@ -290,8 +293,9 @@
     "orgosOverviewP1": "OrgOS は確定的なプログラムです。同じ条件なら同じ結果が再現でき、監査にも耐えます。その OrgOS を LLM・AI エージェントに自然言語で指示して操作することで、日々の組織運営を楽にできます。",
     "orgosOverviewP2": "社内の事務だけでなく、組織間の通信（Org Event）も行えます。まずは社内から — 役員会の議事録、契約書の管理、会計・予算実績の管理などを、Cursor の Skill 等を使って安定的に処理できます。",
     "orgosOverviewP3": "OrgOS にモジュールを組み込むことで、できることをいつでも拡張できます。必要な業務ごとにモジュールを追加し、事務手続きを段階的に広げてください。",
+    "orgosOverviewP4": "OpenOrgOS は AIA（AI Agent アシスタント）で構築・運用しています — 主要ワークフローですが、Cursor・Claude Code・Copilot・カスタムエージェントも同等に使えます。ルールは Markdown/YAML、リファレンス CLI は現時点 TypeScript、Python・C 等でも同じプロトコルを実装できます。",
     "guidesSection": "OrgOS セットアップガイド",
-    "guidesDesc": "OrgOS の新規インストール、初期設定、組織情報の整理、デジタルツイン構築の環境準備、および Cursor 等の AI エージェントを使った自然言語での操作までを解説します。",
+    "guidesDesc": "OrgOS の新規インストール、初期設定、組織情報の整理、デジタルツイン構築の環境準備、および AIA 等の AI エージェントを使った自然言語での操作までを解説します。",
     "guideReadCta": "ガイドを読む",
     "academySection": "カリキュラムと試験",
     "academyDesc": "トラック・レッスン・クイズ・認定の体系的な学習。ログイン中は進捗が保存されます。",
@@ -745,6 +749,22 @@
     "ctaCompliance": "コンプライアンス・資格レジストリ",
     "ctaOpenness": "公開範囲・資産保護ポリシー",
     "reviewQueueDesc": "委員会の chair / reviewer として、各委員会の審査キューからモジュール役割申請と参加申請を承認できます。"
+  },
+  "wireNodePage": {
+    "applyTitle": "Wire ノード申請",
+    "applyLead": "C4-W1 · Wire ノード登録と委員会ガバナンス審査",
+    "applyDesc": "テナント ID、任意の Wire メール・法人番号・ゲートウェイ URL を送信します。Steward が pk-DID と重複チェック後、pending キューに載せます。",
+    "reviewTitle": "Wire ノードガバナンス審査",
+    "reviewLead": "C4-W2 · 委員会 CHAIR pending キュー",
+    "reviewDesc": "pending の Wire ノード登録申請を承認または却下します。接続時は Steward wire-trust-registry に反映されます。",
+    "governanceTitle": "Wire ノードガバナンス",
+    "governanceLead": "C4-W2 · 委員会 CHAIR pending キューと監査証跡",
+    "governanceDesc": "pending の Wire ノード申請を審査・承認/却下し、決定の監査証跡を確認します。委員会 CHAIR またはサイト ADMIN が必要です。",
+    "applyLink": "Wire ノード申請",
+    "reviewLink": "pending 申請を審査",
+    "lifecycleLink": "申請ライフサイクル",
+    "governanceLink": "← 運営",
+    "jurisdictionLink": "法域レジストリ"
   },
   "modulesPage": {
     "title": "モジュールレジストリ",

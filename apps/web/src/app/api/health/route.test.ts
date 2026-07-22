@@ -8,8 +8,13 @@ vi.mock("@/lib/academy/health", () => ({
   checkAcademyHealth: vi.fn(),
 }));
 
+vi.mock("@/lib/release-info", () => ({
+  getReleaseInfo: vi.fn(),
+}));
+
 import { checkDatabaseHealth } from "@/lib/db-health";
 import { checkAcademyHealth } from "@/lib/academy/health";
+import { getReleaseInfo } from "@/lib/release-info";
 import { GET, OPTIONS } from "./route";
 
 function healthRequest(origin?: string) {
@@ -30,6 +35,19 @@ describe("/api/health", () => {
     };
     vi.mocked(checkDatabaseHealth).mockResolvedValue({ ok: true, latencyMs: 2 });
     vi.mocked(checkAcademyHealth).mockResolvedValue({ configured: false, reachable: true });
+    vi.mocked(getReleaseInfo).mockResolvedValue({
+      version: "0.1.0-beta.1",
+      channel: "beta",
+      image: "ghcr.io/taketani-masatoshi/os-community-web",
+      releasesUrl: "https://github.com/taketani-masatoshi/OS_Community/releases",
+      docsUrl: "https://github.com/taketani-masatoshi/OS_Community/blob/main/docs/beta-operations.md",
+      securityNotice: "Beta",
+      updateAvailable: false,
+      belowMinSupported: false,
+      channelLatest: "0.1.0-beta.1",
+      updateMessage: null,
+      channelFetched: true,
+    });
   });
 
   afterEach(() => {
@@ -42,6 +60,8 @@ describe("/api/health", () => {
     const body = await res.json();
     expect(body.status).toBe("ok");
     expect(body.checks.database).toBe(true);
+    expect(body.release.version).toBe("0.1.0-beta.1");
+    expect(body.release.channel).toBe("beta");
   });
 
   it("returns degraded 503 when database is down", async () => {
@@ -69,14 +89,14 @@ describe("/api/health", () => {
     expect(body.checks.authSecret).toBe(false);
   });
 
-  it("returns degraded 503 when primary login is not configured", async () => {
+  it("returns degraded 200 when primary login is not configured (liveness still ok)", async () => {
     delete process.env.AUTH_GOOGLE_ID;
     delete process.env.AUTH_GOOGLE_SECRET;
     delete process.env.GOOGLE_CLIENT_ID;
     delete process.env.GOOGLE_CLIENT_SECRET;
 
     const res = await GET(healthRequest());
-    expect(res.status).toBe(503);
+    expect(res.status).toBe(200);
     const body = await res.json();
     expect(body.status).toBe("degraded");
     expect(body.checks.primaryLogin).toBe(false);

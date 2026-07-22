@@ -4,6 +4,9 @@ import { auth } from "@/auth";
 import { getT } from "@/lib/i18n";
 import { isSignedInSession } from "@/lib/session-display";
 
+/** Stats are DB-backed; never bake a stale homepage shell. */
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const session = await auth();
   const isSignedIn = isSignedInSession(session);

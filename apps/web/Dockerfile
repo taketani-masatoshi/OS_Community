@@ -24,6 +24,9 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ARG DATABASE_URL=postgresql://build:build@localhost:5432/build
 ENV DATABASE_URL=$DATABASE_URL
 ENV AUTH_SECRET=build-time-secret-minimum-32-characters
+ARG APP_VERSION=0.0.0-dev
+ENV APP_VERSION=$APP_VERSION
+ENV NEXT_PUBLIC_APP_VERSION=$APP_VERSION
 RUN npm run db:generate
 RUN npm run i18n:build -w @os-community/shared
 RUN npm run build -w @os-community/web
@@ -31,12 +34,18 @@ RUN npm run build -w @os-community/web
 FROM base AS runner
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
+ARG APP_VERSION=0.0.0-dev
+ENV APP_VERSION=$APP_VERSION
+ENV APP_CHANNEL=beta
+ENV NEXT_PUBLIC_APP_VERSION=$APP_VERSION
 RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/apps/web/public ./apps/web/public
 COPY --from=builder --chown=nextjs:nodejs /app/apps/web/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/apps/web/.next/static ./apps/web/.next/static
 COPY --from=builder /app/content ./content
+COPY --from=builder /app/VERSION ./VERSION
+COPY --from=builder /app/channel ./channel
 COPY --from=builder /app/packages/db/prisma ./packages/db/prisma
 COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma

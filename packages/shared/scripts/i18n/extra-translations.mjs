@@ -61,6 +61,9 @@ export const EXTRA_TRANSLATIONS = {
     "Joining…": "参加中…",
     "Could not join this agent.": "このエージェントに参加できませんでした。",
     "You are now a module member. Open the Developer tab to view the repository.": "モジュールメンバーになりました。Developer タブからリポジトリを確認できます。",
+    "Active governance committees with members": "メンバーがいる活動中のガバナンス委員会",
+    "OrgOS support agents in the registry": "レジストリ上の OrgOS 支援エージェント",
+    "Active OOO / OOD professionals": "有効な OOO / OOD 認定者",
   },
   pt: {
     "Too many requests": "Muitas solicitações",
@@ -131,6 +134,9 @@ export const EXTRA_TRANSLATIONS = {
     "Trust tiers vs quality lifecycle": "Níveis de confiança vs ciclo de qualidade",
     "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.": "Propostas WILD são não revistas e sem garantia. REVIEWED na Community não significa prontidão Commercial. Veja como WILD, Candidate e Commercial se relacionam com as fases de qualidade.",
     "Module ecosystem guide": "Guia do ecossistema de módulos",
+    "Active governance committees with members": "Comités de governação ativos com membros",
+    "OrgOS support agents in the registry": "Agentes de suporte OrgOS no registo",
+    "Active OOO / OOD professionals": "Profissionais OOO / OOD ativos",
   },
   es: {
     "Too many requests": "Demasiadas solicitudes",
@@ -201,6 +207,9 @@ export const EXTRA_TRANSLATIONS = {
     "Trust tiers vs quality lifecycle": "Niveles de confianza vs ciclo de calidad",
     "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.": "Las propuestas WILD no están revisadas ni garantizadas. REVIEWED en Community no significa listo para Commercial. Vea cómo WILD, Candidate y Commercial se relacionan con las etapas de calidad.",
     "Module ecosystem guide": "Guía del ecosistema de módulos",
+    "Active governance committees with members": "Comités de gobernanza activos con miembros",
+    "OrgOS support agents in the registry": "Agentes de soporte OrgOS en el registro",
+    "Active OOO / OOD professionals": "Profesionales OOO / OOD activos",
   },
   zh: {
     "Too many requests": "请求过多",
@@ -271,6 +280,9 @@ export const EXTRA_TRANSLATIONS = {
     "Trust tiers vs quality lifecycle": "信任层级与质量生命周期",
     "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.": "WILD 提案未经审查且无担保。Community 的 REVIEWED 不代表 Commercial 就绪。了解 WILD、Candidate、Commercial 与质量阶段的关系。",
     "Module ecosystem guide": "模块生态指南",
+    "Active governance committees with members": "有成员的活跃治理委员会",
+    "OrgOS support agents in the registry": "注册表中的 OrgOS 支持代理",
+    "Active OOO / OOD professionals": "有效的 OOO / OOD 认证者",
   },
   et: {
     "Too many requests": "Liiga palju päringuid",
@@ -341,6 +353,9 @@ export const EXTRA_TRANSLATIONS = {
     "Trust tiers vs quality lifecycle": "Usaldustasemed vs kvaliteeditsükkel",
     "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.": "WILD ettepanekud on läbi vaatamata ja garantiita. Community REVIEWED ei tähenda Commercial valmisolekut. Vaadake, kuidas WILD, Candidate ja Commercial seonduvad kvaliteedietappidega.",
     "Module ecosystem guide": "Mooduli ökosüsteemi juhend",
+    "Active governance committees with members": "Aktiivsed juhtimiskomiteed liikmetega",
+    "OrgOS support agents in the registry": "OrgOS-i toetusagendid registris",
+    "Active OOO / OOD professionals": "Aktiivsed OOO / OOD spetsialistid",
   },
   fr: {
     "Too many requests": "Trop de requêtes",
@@ -411,6 +426,9 @@ export const EXTRA_TRANSLATIONS = {
     "Trust tiers vs quality lifecycle": "Niveaux de confiance vs cycle de qualité",
     "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.": "Les propositions WILD ne sont pas revues ni garanties. REVIEWED dans Community ne signifie pas prêt pour Commercial. Voyez le lien entre WILD, Candidate, Commercial et les étapes de qualité.",
     "Module ecosystem guide": "Guide de l'écosystème de modules",
+    "Active governance committees with members": "Comités de gouvernance actifs avec membres",
+    "OrgOS support agents in the registry": "Agents de support OrgOS dans le registre",
+    "Active OOO / OOD professionals": "Professionnels OOO / OOD actifs",
   },
   de: {
     "Too many requests": "Zu viele Anfragen",
@@ -481,6 +499,9 @@ export const EXTRA_TRANSLATIONS = {
     "Trust tiers vs quality lifecycle": "Vertrauensstufen vs Qualitätslebenszyklus",
     "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.": "WILD-Vorschläge sind ungeprüft und ungarantiert. Community REVIEWED bedeutet nicht Commercial-bereit. Sehen Sie, wie WILD, Candidate und Commercial zu Qualitätsstufen stehen.",
     "Module ecosystem guide": "Leitfaden Modul-Ökosystem",
+    "Active governance committees with members": "Aktive Governance-Gremien mit Mitgliedern",
+    "OrgOS support agents in the registry": "OrgOS-Support-Agenten im Register",
+    "Active OOO / OOD professionals": "Aktive OOO-/OOD-Fachkräfte",
   },
   ru: {
     "Too many requests": "Слишком много запросов",
@@ -551,5 +572,8 @@ export const EXTRA_TRANSLATIONS = {
     "Trust tiers vs quality lifecycle": "Уровни доверия vs жизненный цикл качества",
     "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.": "Предложения WILD не проверены и без гарантий. REVIEWED в Community не означает готовность к Commercial. Как WILD, Candidate и Commercial соотносятся со стадиями качества.",
     "Module ecosystem guide": "Руководство по экосистеме модулей",
+    "Active governance committees with members": "Действующие комитеты управления с участниками",
+    "OrgOS support agents in the registry": "Агенты поддержки OrgOS в реестре",
+    "Active OOO / OOD professionals": "Действующие специалисты OOO / OOD",
   },
 };

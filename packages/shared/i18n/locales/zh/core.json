@@ -95,10 +95,10 @@
     "statModulesDesc": "已注册规则模块",
     "statMaintainersDesc": "管理模块的人员",
     "statContributorsDesc": "活跃规则贡献者",
-    "statCommitteesDesc": "质量审查与标准化",
+    "statCommitteesDesc": "有成员的活跃治理委员会",
     "statAgents": "代理",
-    "statAgentsDesc": "OrgOS 支持代理",
-    "statCertifiedDesc": "Academy 认证持有者",
+    "statAgentsDesc": "注册表中的 OrgOS 支持代理",
+    "statCertifiedDesc": "有效的 OOO / OOD 认证者",
     "whyTitle": "为什么选择 OpenOrgOS",
     "startTitle": "从这里开始",
     "primaryCta": "加入社区（免费）",
@@ -604,12 +604,13 @@
     "academyUnavailable": "课程服务暂时不可用。请稍后重试。",
     "academyNotConfigured": "此站点尚未连接 Academy API。下方的指南和文档仍可正常使用。",
     "guidesSection": "OrgOS 设置指南",
-    "guidesDesc": "从零安装 OrgOS，准备组织的数字孪生环境，并学习用自然语言与 AI 代理协作。",
+    "guidesDesc": "从零安装 OrgOS，准备组织的数字孪生环境，并学习用 AIA 等 AI 代理以自然语言协作。",
     "guideReadCta": "阅读指南",
     "orgosOverviewTitle": "什么是 OrgOS？",
     "orgosOverviewP1": "OrgOS 是确定性程序 — 相同输入产生相同、可审计的结果。通过 LLM 与 AI 代理用自然语言操作它，日常组织工作更轻松，同时保持可预测性。",
     "orgosOverviewP2": "OrgOS 支持公司内部工作以及组织间通信。先从本地开始：董事会会议纪要、合同管理、会计与预算实绩 — 借助 Skill 与代理工作流稳定处理。",
-    "orgosOverviewP3": "通过向 OrgOS 添加模块随时扩展能力。按需安装模块，逐步扩展行政流程。"
+    "orgosOverviewP3": "通过向 OrgOS 添加模块随时扩展能力。按需安装模块，逐步扩展行政流程。",
+    "orgosOverviewP4": "OpenOrgOS 使用 AIA（AI Agent 助理）构建和运营 — 这是我们的主要工作流，但 Cursor、Claude Code、Copilot 和自定义代理同样适用。规则采用 Markdown/YAML；参考 CLI 目前为 TypeScript，也可用 Python、C 等语言实现同一协议。"
   },
   "settings": {
     "title": "账户设置",
@@ -783,6 +784,9 @@
     ],
     "ecosystemSectionTitle": "当前阶段",
     "ecosystemSectionLead": "Phase 0：WILD 与 Community 注册表已上线。Commercial Hub 与 Candidate 管道将逐法域展开。",
-    "ecosystemSectionCta": "模块生态与阶段"
+    "ecosystemSectionCta": "模块生态与阶段",
+    "iso37000SectionTitle": "OrgOS 与 ISO 37000",
+    "iso37000SectionLead": "部署 OrgOS，并在初始化过程中配置组织。该基线为符合 ISO 37000 的治理自我声明提供实务基础。OpenOrgOS Community 不颁发第三方 ISO 证书。通常由 OpenOrgOS Operator（OOO）主导该路径。",
+    "iso37000SectionCta": "阅读指南"
   }
 }

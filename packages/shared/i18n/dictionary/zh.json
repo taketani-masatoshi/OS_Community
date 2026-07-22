@@ -156,6 +156,9 @@
   "Trust tiers vs quality lifecycle": "信任层级与质量生命周期",
   "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.": "WILD 提案未经审查且无担保。Community 的 REVIEWED 不代表 Commercial 就绪。了解 WILD、Candidate、Commercial 与质量阶段的关系。",
   "Module ecosystem guide": "模块生态指南",
+  "Active governance committees with members": "有成员的活跃治理委员会",
+  "OrgOS support agents in the registry": "注册表中的 OrgOS 支持代理",
+  "Active OOO / OOD professionals": "有效的 OOO / OOD 认证者",
   "The electronic chart for organizations — auditable across boundaries.": "组织的电子病历 — 跨边界可审计。",
   "OpenOrgOS is the electronic chart for organizations: a global, auditable protocol for what happened between companies, who acted, and with what authority. Like a medical EHR shares events and audit trails across care teams, we record org events across boundaries — not an internal HR OS. Local rules live in committees.": "OpenOrgOS 是组织的电子病历：全球可审计的协议，记录企业间发生了什么、谁行动、以何种授权。如同医疗 EHR 在诊疗团队间共享事件与审计轨迹，我们跨组织边界记录组织事件 — 而非内部 HR 系统。本地规则由委员会承载。",
   "The organizational electronic chart": "组织电子病历",
@@ -751,5 +754,7 @@
   "protocol.vocabulary.wireTrustRegistry": "Wire 信任注册表",
   "protocol.vocabulary.moduleRoleRequest": "模块角色申请",
   "protocol.vocabulary.reviewAuditTrail": "审查审计追踪",
-  "protocol.vocabulary.jurisdictionRegistry": "委员会法域注册表"
+  "protocol.vocabulary.jurisdictionRegistry": "委员会法域注册表",
+  "protocol.vocabulary.wireNodeApplication": "Wire 节点申请",
+  "protocol.vocabulary.wireNodeReview": "Wire 节点治理审查"
 }

@@ -43,11 +43,11 @@
     "statContributors": "contributors",
     "statContributorsDesc": "Active rule contributors",
     "statCommittees": "committees",
-    "statCommitteesDesc": "Quality review & standardization",
+    "statCommitteesDesc": "Active governance committees with members",
     "statAgents": "agents",
-    "statAgentsDesc": "OrgOS support agents",
+    "statAgentsDesc": "OrgOS support agents in the registry",
     "statCertified": "certified",
-    "statCertifiedDesc": "Academy certificate holders",
+    "statCertifiedDesc": "Active OOO / OOD professionals",
     "whyTitle": "Why OpenOrgOS",
     "startTitle": "Start here",
     "primaryCta": "Join the community (free)",
@@ -239,7 +239,10 @@
       }
     ],
     "orgosInstallGuideCta": "Read the full OrgOS setup guide",
-    "orgosInstallGuideDesc": "Information checklist, tenant init, and digital twin preparation."
+    "orgosInstallGuideDesc": "Information checklist, tenant init, and digital twin preparation.",
+    "iso37000SectionTitle": "OrgOS and ISO 37000",
+    "iso37000SectionLead": "Deploy OrgOS and configure your organization during initialization. That baseline enables a practical foundation for ISO 37000–aligned governance self-declaration. OpenOrgOS Community does not issue third-party ISO certificates. An OpenOrgOS Operator (OOO) typically leads the path.",
+    "iso37000SectionCta": "Read the guidance"
   },
   "github": {
     "title": "GitHub Integration",
@@ -280,8 +283,9 @@
     "orgosOverviewP1": "OrgOS is deterministic software — the same inputs produce the same, auditable results. You operate it through LLMs and AI agents in natural language, so everyday organization work becomes easier without losing predictability.",
     "orgosOverviewP2": "OrgOS supports work inside your company and communication between organizations. Start on-premises: board meeting minutes, contract management, and accounting / budget tracking — handled reliably with Skills and agent workflows.",
     "orgosOverviewP3": "What OrgOS can do grows whenever you add modules. Install the modules you need and extend office procedures step by step.",
+    "orgosOverviewP4": "OpenOrgOS is built with AIA (AI Agent assistants) — our primary workflow, though Cursor, Claude Code, Copilot, and custom agents work equally well. Rules are Markdown/YAML; the reference CLI is TypeScript today, and Python, C, or other languages can implement the same protocol.",
     "guidesSection": "OrgOS setup guides",
-    "guidesDesc": "Install OrgOS from scratch, prepare your organization's digital twin, and learn to work with AI agents in natural language.",
+    "guidesDesc": "Install OrgOS from scratch, prepare your organization's digital twin, and learn to work with AIA and other AI agents in natural language.",
     "guideReadCta": "Read guide",
     "academySection": "Curriculum & exams",
     "academyDesc": "Structured tracks with lessons, quizzes, and certifications. Progress is saved when you are signed in.",
@@ -746,6 +750,22 @@
     "ctaCompliance": "Compliance registry",
     "ctaOpenness": "Openness & asset protection",
     "reviewQueueDesc": "As committee chair or reviewer, approve module role and membership applications from each committee's review queue."
+  },
+  "wireNodePage": {
+    "applyTitle": "Wire node application",
+    "applyLead": "C4-W1 · Register a Wire node for committee governance review",
+    "applyDesc": "Submit tenant identity, optional wire email, corporate number, and gateway URL. Steward validates pk-DID and duplicate checks before the request enters the pending queue.",
+    "reviewTitle": "Wire node governance review",
+    "reviewLead": "C4-W2 · Committee CHAIR pending queue",
+    "reviewDesc": "Approve or reject pending wire node registration requests. Decisions propagate to Steward wire-trust-registry when connected.",
+    "governanceTitle": "Wire node governance",
+    "governanceLead": "C4-W2 · Committee CHAIR pending queue and audit trail",
+    "governanceDesc": "Review pending wire node applications, approve or reject, and inspect the decision audit trail. Requires committee CHAIR or site ADMIN.",
+    "applyLink": "Apply for wire node",
+    "reviewLink": "Review pending requests",
+    "lifecycleLink": "Application lifecycle",
+    "governanceLink": "← Governance",
+    "jurisdictionLink": "Jurisdiction registry"
   },
   "modulesPage": {
     "title": "Module Registry",

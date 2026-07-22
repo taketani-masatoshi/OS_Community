@@ -148,6 +148,9 @@
   "Joining…": "参加中…",
   "Could not join this agent.": "このエージェントに参加できませんでした。",
   "You are now a module member. Open the Developer tab to view the repository.": "モジュールメンバーになりました。Developer タブからリポジトリを確認できます。",
+  "Active governance committees with members": "メンバーがいる活動中のガバナンス委員会",
+  "OrgOS support agents in the registry": "レジストリ上の OrgOS 支援エージェント",
+  "Active OOO / OOD professionals": "有効な OOO / OOD 認定者",
   "Sign in at https://southwood.inc/login (not http://localhost:3000). Run: node scripts/check-github-auth.mjs": "https://southwood.inc/login からサインインしてください（http://localhost:3000 ではなく）。node scripts/check-github-auth.mjs で設定を確認できます。",
   "Active": "有効",
   "Suspended": "停止中",
@@ -706,5 +709,7 @@
   "protocol.vocabulary.wireTrustRegistry": "Wire Trust Registry",
   "protocol.vocabulary.moduleRoleRequest": "モジュールロール申請",
   "protocol.vocabulary.reviewAuditTrail": "レビュー監査証跡",
-  "protocol.vocabulary.jurisdictionRegistry": "委員会法域レジストリ"
+  "protocol.vocabulary.jurisdictionRegistry": "委員会法域レジストリ",
+  "protocol.vocabulary.wireNodeApplication": "Wire ノード申請",
+  "protocol.vocabulary.wireNodeReview": "Wire ノードガバナンス審査"
 }

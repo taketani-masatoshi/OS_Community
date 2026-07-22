@@ -95,10 +95,10 @@
     "statModulesDesc": "Registreeritud reeglimoodulid",
     "statMaintainersDesc": "Mooduleid haldavad inimesed",
     "statContributorsDesc": "Aktiivsed reeglite kaastöötajad",
-    "statCommitteesDesc": "Kvaliteedi läbivaatus ja standardimine",
+    "statCommitteesDesc": "Aktiivsed juhtimiskomiteed liikmetega",
     "statAgents": "agendid",
-    "statAgentsDesc": "OrgOS-i toetusagendid",
-    "statCertifiedDesc": "Academy sertifikaadi omanikud",
+    "statAgentsDesc": "OrgOS-i toetusagendid registris",
+    "statCertifiedDesc": "Aktiivsed OOO / OOD spetsialistid",
     "whyTitle": "Miks OpenOrgOS",
     "startTitle": "Alusta siit",
     "primaryCta": "Liitu kogukonnaga (tasuta)",
@@ -604,12 +604,13 @@
     "academyUnavailable": "Õppekava teenus ei ole ajutiselt saadaval. Proovi hiljem uuesti.",
     "academyNotConfigured": "Academy API pole sellel saidil ühendatud. Allpool olevad juhendid ja dokumentatsioon on endiselt saadaval.",
     "guidesSection": "OrgOS seadistusjuhendid",
-    "guidesDesc": "Installige OrgOS nullist, valmistage ettevõtte digitaalne kaksik ette ja õppige tehisintellekti agentidega looduslikus keeles töötama.",
+    "guidesDesc": "Installige OrgOS nullist, valmistage ettevõtte digitaalne kaksik ette ja õppige töötama AIA ja teiste AI-agentidega looduslikus keeles.",
     "guideReadCta": "Loe juhendit",
     "orgosOverviewTitle": "Mis on OrgOS?",
     "orgosOverviewP1": "OrgOS on deterministlik tarkvara — samad sisendid annavad samad auditeeritavad tulemused. Juhtid seda LLM-ide ja AI-agentide kaudu looduslikus keeles, muutes igapäevase organisatsioonitöö lihtsamaks ilma ettearvatavust kaotamata.",
     "orgosOverviewP2": "OrgOS toetab ettevõttesisest tööd ja organisatsioonidevahelist suhtlust. Alusta kohapeal: juhatuse koosolekute protokollid, lepingute haldus ja raamatupidamine / eelarve jälgimine — stabiilselt Skillide ja agentide voogudega.",
-    "orgosOverviewP3": "OrgOS-i võimekust saab laiendada mooduleid lisades. Paigalda vajalikud moodulid ja laienda bürooprotsesse samm-sammult."
+    "orgosOverviewP3": "OrgOS-i võimekust saab laiendada mooduleid lisades. Paigalda vajalikud moodulid ja laienda bürooprotsesse samm-sammult.",
+    "orgosOverviewP4": "OpenOrgOS on ehitatud AIA-ga (AI agendi assistendid) — meie põhiline töövoog, kuigi Cursor, Claude Code, Copilot ja kohandatud agendid sobivad samuti. Reeglid on Markdown/YAML; viite CLI on praegu TypeScript ja Python, C või muud keeled saavad sama protokolli rakendada."
   },
   "settings": {
     "title": "Konto seaded",
@@ -783,6 +784,9 @@
     ],
     "ecosystemSectionTitle": "Kus me täna oleme",
     "ecosystemSectionLead": "Faas 0: WILD ja Community register on aktiivsed. Commercial Hub ja Candidate toru laienevad jurisdiktsioonide kaupa.",
-    "ecosystemSectionCta": "Mooduli ökosüsteem ja faasid"
+    "ecosystemSectionCta": "Mooduli ökosüsteem ja faasid",
+    "iso37000SectionTitle": "OrgOS ja ISO 37000",
+    "iso37000SectionLead": "Paigaldage OrgOS ja seadistage organisatsioon initsialiseerimise ajal. See baas võimaldab praktilise aluse ISO 37000-ga kooskõlaliseks juhtimise enesedeklaratsiooniks. OpenOrgOS Community ei väljasta kolmandate osapoolte ISO-sertifikaate. Teed juhib tavaliselt OpenOrgOS Operator (OOO).",
+    "iso37000SectionCta": "Loe juhendit"
   }
 }

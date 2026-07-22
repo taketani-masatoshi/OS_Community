@@ -156,6 +156,9 @@
   "Trust tiers vs quality lifecycle": "Usaldustasemed vs kvaliteeditsükkel",
   "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.": "WILD ettepanekud on läbi vaatamata ja garantiita. Community REVIEWED ei tähenda Commercial valmisolekut. Vaadake, kuidas WILD, Candidate ja Commercial seonduvad kvaliteedietappidega.",
   "Module ecosystem guide": "Mooduli ökosüsteemi juhend",
+  "Active governance committees with members": "Aktiivsed juhtimiskomiteed liikmetega",
+  "OrgOS support agents in the registry": "OrgOS-i toetusagendid registris",
+  "Active OOO / OOD professionals": "Aktiivsed OOO / OOD spetsialistid",
   "The electronic chart for organizations — auditable across boundaries.": "Organisatsiooni elektrooniline haiguslugu — auditeeritav üle piiride.",
   "OpenOrgOS is the electronic chart for organizations: a global, auditable protocol for what happened between companies, who acted, and with what authority. Like a medical EHR shares events and audit trails across care teams, we record org events across boundaries — not an internal HR OS. Local rules live in committees.": "OpenOrgOS on organisatsiooni elektrooniline haiguslugu: globaalne, auditeeritav protokoll selle kohta, mis ettevõtete vahel juhtus, kes tegutses ja millise volitusega. Nagu meditsiiniline EHR jagab sündmusi meeskondade vahel, salvestame organisatsioonisündmusi üle piiride — mitte sisemine personalios. Kohalikud reeglid on komiteedes.",
   "The organizational electronic chart": "Organisatsiooni elektrooniline haiguslugu",
@@ -751,5 +754,7 @@
   "protocol.vocabulary.wireTrustRegistry": "Wire usaldusregister",
   "protocol.vocabulary.moduleRoleRequest": "Mooduli rolli taotlus",
   "protocol.vocabulary.reviewAuditTrail": "Ülevaatuse auditi jälg",
-  "protocol.vocabulary.jurisdictionRegistry": "Komitee jurisdiktsiooni register"
+  "protocol.vocabulary.jurisdictionRegistry": "Komitee jurisdiktsiooni register",
+  "protocol.vocabulary.wireNodeApplication": "Wire sõlme taotlus",
+  "protocol.vocabulary.wireNodeReview": "Wire sõlme juhtimise ülevaatus"
 }

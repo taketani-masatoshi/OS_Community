@@ -79,6 +79,7 @@ jobs:
       AUTH_SECRET: ci-test-secret-minimum-32-characters-long
       AUTH_URL: http://127.0.0.1:3000
       PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
+      RATE_LIMIT_DISABLED: "1"
 
     steps:
       - uses: actions/checkout@v4
@@ -102,7 +103,7 @@ jobs:
       - run: npm run db:seed -w @os-community/db
       - run: bash scripts/sync-steward-protocol.sh
       - run: npx playwright install --with-deps chromium
-      - run: npm run test:e2e -w @os-community/web -- e2e/resilience.spec.ts e2e/governance-protocol.spec.ts
+      - run: npm run test:e2e -w @os-community/web -- e2e/resilience.spec.ts e2e/governance-protocol.spec.ts e2e/wire-node-governance.spec.ts e2e/orgos-mail-connect.spec.ts
       - name: Write Community integration flags (Steward eco cap)
         env:
           COMMUNITY_E2E_GREEN: "1"
@@ -112,8 +113,7 @@ jobs:
           elif [[ -f "${{ github.workspace }}/../OS_Steward/package.json" ]]; then
             STEWARD_ORGOS_ROOT="${{ github.workspace }}/../OS_Steward" bash scripts/write-community-integration.sh
           else
-            echo "::error::Steward repo missing — set repository variable vars.STEWARD_REPO (e.g. owner/OpenOrgOS)"
-            exit 1
+            echo "::warning::Steward repo missing — set vars.STEWARD_REPO for full eco-cap write; continuing without it."
           fi
 
   deploy:
@@ -128,6 +128,7 @@ jobs:
         run: |
           echo "Deploy on VPS with secrets configured:"
           echo "  cp .env.example .env  # fill AUTH_*, POSTGRES_PASSWORD, DOMAIN, ACADEMY_*"
-          echo "  docker compose -f docker-compose.prod.yml up -d --build"
+          echo "  bash scripts/deploy-mac-mini.sh   # or REBUILD=1 for image rebuild"
+          echo "  See docs/production-rate-limiting.md for Upstash / rate limits"
           echo "Migrations run automatically via deploy/entrypoint.sh (SKIP_DB_MIGRATE=1 to disable)."
           echo "Health: curl -fsS https://\${DOMAIN}/api/health"

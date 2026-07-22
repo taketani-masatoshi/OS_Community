@@ -95,10 +95,10 @@
     "statModulesDesc": "Módulos de regras registrados",
     "statMaintainersDesc": "Pessoas gerenciando módulos",
     "statContributorsDesc": "Contribuidores ativos de regras",
-    "statCommitteesDesc": "Revisão de qualidade e padronização",
+    "statCommitteesDesc": "Comités de governação ativos com membros",
     "statAgents": "agentes",
-    "statAgentsDesc": "Agentes de suporte OrgOS",
-    "statCertifiedDesc": "Titulares de certificado da Academy",
+    "statAgentsDesc": "Agentes de suporte OrgOS no registo",
+    "statCertifiedDesc": "Profissionais OOO / OOD ativos",
     "whyTitle": "Por que OpenOrgOS",
     "startTitle": "Comece aqui",
     "primaryCta": "Participar da comunidade (gratuito)",
@@ -604,12 +604,13 @@
     "academyUnavailable": "O serviço de currículo está temporariamente indisponível. Tente novamente mais tarde.",
     "academyNotConfigured": "A API da Academy não está conectada neste site. Os guias e a documentação abaixo continuam disponíveis.",
     "guidesSection": "Guias de configuração do OrgOS",
-    "guidesDesc": "Instale o OrgOS do zero, prepare o gêmeo digital da organização e aprenda a trabalhar com agentes de IA em linguagem natural.",
+    "guidesDesc": "Instale o OrgOS do zero, prepare o gêmeo digital da organização e aprenda a trabalhar com AIA e outros agentes de IA em linguagem natural.",
     "guideReadCta": "Ler guia",
     "orgosOverviewTitle": "O que é OrgOS?",
     "orgosOverviewP1": "OrgOS é software determinístico — as mesmas entradas produzem os mesmos resultados auditáveis. Você o opera com LLMs e agentes de IA em linguagem natural, facilitando o trabalho organizacional sem perder previsibilidade.",
     "orgosOverviewP2": "OrgOS apoia o trabalho interno e a comunicação entre organizações. Comece no local: atas de reuniões da diretoria, gestão de contratos e contabilidade / acompanhamento orçamentário — processados de forma estável com Skills e fluxos de agentes.",
-    "orgosOverviewP3": "O que o OrgOS faz cresce quando você adiciona módulos. Instale os módulos necessários e amplie os procedimentos administrativos passo a passo."
+    "orgosOverviewP3": "O que o OrgOS faz cresce quando você adiciona módulos. Instale os módulos necessários e amplie os procedimentos administrativos passo a passo.",
+    "orgosOverviewP4": "O OpenOrgOS é construído com AIA (assistentes de agentes de IA) — nosso fluxo principal, embora Cursor, Claude Code, Copilot e agentes personalizados funcionem igualmente bem. As regras são Markdown/YAML; a CLI de referência é TypeScript hoje, e Python, C ou outras linguagens podem implementar o mesmo protocolo."
   },
   "settings": {
     "title": "Definições da conta",
@@ -783,6 +784,9 @@
     ],
     "ecosystemSectionTitle": "Onde estamos hoje",
     "ecosystemSectionLead": "Fase 0: WILD e o registo Community estão ativos. O Hub Commercial e o pipeline Candidate expandem-se jurisdição a jurisdição.",
-    "ecosystemSectionCta": "Ecossistema de módulos e fases"
+    "ecosystemSectionCta": "Ecossistema de módulos e fases",
+    "iso37000SectionTitle": "OrgOS e ISO 37000",
+    "iso37000SectionLead": "Implante o OrgOS e configure sua organização na inicialização. Essa base fornece um fundamento prático para autodeclaração de governança alinhada à ISO 37000. A OpenOrgOS Community não emite certificados ISO de terceiros. Um OpenOrgOS Operator (OOO) normalmente lidera o caminho.",
+    "iso37000SectionCta": "Ler a orientação"
   }
 }

@@ -156,6 +156,9 @@
   "Trust tiers vs quality lifecycle": "Niveles de confianza vs ciclo de calidad",
   "WILD proposals are unreviewed and unwarranted. Community REVIEWED is not Commercial-ready. See how WILD, Candidate, and Commercial relate to the quality stages.": "Las propuestas WILD no están revisadas ni garantizadas. REVIEWED en Community no significa listo para Commercial. Vea cómo WILD, Candidate y Commercial se relacionan con las etapas de calidad.",
   "Module ecosystem guide": "Guía del ecosistema de módulos",
+  "Active governance committees with members": "Comités de gobernanza activos con miembros",
+  "OrgOS support agents in the registry": "Agentes de soporte OrgOS en el registro",
+  "Active OOO / OOD professionals": "Profesionales OOO / OOD activos",
   "The electronic chart for organizations — auditable across boundaries.": "La historia clínica electrónica de las organizaciones — auditable más allá de las fronteras.",
   "OpenOrgOS is the electronic chart for organizations: a global, auditable protocol for what happened between companies, who acted, and with what authority. Like a medical EHR shares events and audit trails across care teams, we record org events across boundaries — not an internal HR OS. Local rules live in committees.": "OpenOrgOS es la historia clínica electrónica de las organizaciones: un protocolo global y auditable de lo ocurrido entre empresas, quién actuó y con qué autoridad. Como un EHR médico comparte eventos y auditoría entre equipos, registramos eventos organizacionales más allá de las fronteras — no un OS de RR. HH. interno. Las reglas locales viven en los comités.",
   "The organizational electronic chart": "La historia clínica electrónica organizacional",
@@ -751,5 +754,7 @@
   "protocol.vocabulary.wireTrustRegistry": "Registro de confianza Wire",
   "protocol.vocabulary.moduleRoleRequest": "Solicitud de rol de módulo",
   "protocol.vocabulary.reviewAuditTrail": "Pista de auditoría de revisión",
-  "protocol.vocabulary.jurisdictionRegistry": "Registro de jurisdicción del comité"
+  "protocol.vocabulary.jurisdictionRegistry": "Registro de jurisdicción del comité",
+  "protocol.vocabulary.wireNodeApplication": "Solicitud de nodo Wire",
+  "protocol.vocabulary.wireNodeReview": "Revisión de gobernanza de nodo Wire"
 }
