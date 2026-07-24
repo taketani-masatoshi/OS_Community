@@ -650,7 +650,24 @@
     "linkedinOrganization": "Organización",
     "githubConnect": "Conectar cuenta de GitHub",
     "githubConnectError": "No se pudo conectar GitHub. Inténtalo de nuevo desde Conexiones.",
-    "githubLinkedNotice": "Cuenta de GitHub vinculada correctamente."
+    "githubLinkedNotice": "Cuenta de GitHub vinculada correctamente.",
+    "organization": "Organización",
+    "organizationDesc": "Declare su empleador u organización con el número corporativo japonés. Un administrador lo verifica.",
+    "organizationOperatorNote": "Obligatorio antes de solicitar la certificación OpenOrgOS Operator (OOO):",
+    "orgCorporateNumber": "Número corporativo",
+    "orgCorporateNumberHint": "Número corporativo japonés de 13 dígitos (法人番号).",
+    "orgLegalName": "Nombre legal",
+    "orgTitle": "Cargo (opcional)",
+    "orgSubmit": "Enviar a revisión",
+    "orgRemove": "Eliminar declaración",
+    "orgRemoveConfirm": "¿Eliminar esta declaración de organización?",
+    "orgStatusPending": "En revisión",
+    "orgStatusVerified": "Verificado",
+    "orgStatusRejected": "Rechazado",
+    "orgSaved": "Enviado a revisión",
+    "orgErrorGeneric": "No se pudo guardar la declaración",
+    "orgErrorInvalidNumber": "Introduzca un número corporativo japonés válido de 13 dígitos",
+    "orgEmpty": "Aún no hay organización vinculada."
   },
   "agentsPage": {
     "filterAll": "Todos",
@@ -788,5 +805,21 @@
     "iso37000SectionTitle": "OrgOS e ISO 37000",
     "iso37000SectionLead": "Despliegue OrgOS y configure su organización durante la inicialización. Esa base habilita un fundamento práctico para la autodeclaración de gobernanza alineada con ISO 37000. OpenOrgOS Community no emite certificados ISO de terceros. Un OpenOrgOS Operator (OOO) suele liderar el camino.",
     "iso37000SectionCta": "Leer la guía"
+  },
+  "wireNodePage": {
+    "applyTitle": "Solicitud de nodo Wire",
+    "applyLead": "C4-W1 · Registrar un nodo Wire para revisión de gobernanza",
+    "applyDesc": "Envíe identidad del tenant, correo Wire opcional, número corporativo y URL de puerta de enlace. Steward valida pk-DID y duplicados antes de la cola pendiente.",
+    "reviewTitle": "Revisión de gobernanza del nodo Wire",
+    "reviewLead": "C4-W2 · Cola pendiente del CHAIR del comité",
+    "reviewDesc": "Aprobar o rechazar solicitudes pendientes de registro de nodo Wire. Las decisiones se propagan al wire-trust-registry de Steward cuando está conectado.",
+    "governanceTitle": "Gobernanza del nodo Wire",
+    "governanceLead": "C4-W2 · Cola pendiente del CHAIR y pista de auditoría",
+    "governanceDesc": "Revisar solicitudes pendientes de nodo Wire, aprobar o rechazar, e inspeccionar la pista de auditoría. Requiere CHAIR del comité o ADMIN del sitio.",
+    "applyLink": "Solicitar nodo Wire",
+    "reviewLink": "Revisar solicitudes pendientes",
+    "lifecycleLink": "Ciclo de vida de la solicitud",
+    "governanceLink": "← Gobernanza",
+    "jurisdictionLink": "Registro de jurisdicción"
   }
 }

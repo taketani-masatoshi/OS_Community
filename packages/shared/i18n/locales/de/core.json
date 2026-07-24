@@ -650,7 +650,24 @@
     "linkedinOrganization": "Organisation",
     "githubConnect": "GitHub-Konto verbinden",
     "githubConnectError": "GitHub konnte nicht verbunden werden. Versuche es erneut über Verbindungen.",
-    "githubLinkedNotice": "GitHub-Konto erfolgreich verknüpft."
+    "githubLinkedNotice": "GitHub-Konto erfolgreich verknüpft.",
+    "organization": "Organisation",
+    "organizationDesc": "Melden Sie Arbeitgeber oder Organisation mit japanischer Unternehmensnummer. Ein Admin prüft.",
+    "organizationOperatorNote": "Erforderlich vor der Bewerbung um OpenOrgOS Operator (OOO):",
+    "orgCorporateNumber": "Unternehmensnummer",
+    "orgCorporateNumberHint": "13-stellige japanische Unternehmensnummer (法人番号).",
+    "orgLegalName": "Rechtsname",
+    "orgTitle": "Titel (optional)",
+    "orgSubmit": "Zur Prüfung einreichen",
+    "orgRemove": "Anspruch entfernen",
+    "orgRemoveConfirm": "Diesen Organisationsanspruch entfernen?",
+    "orgStatusPending": "In Prüfung",
+    "orgStatusVerified": "Verifiziert",
+    "orgStatusRejected": "Abgelehnt",
+    "orgSaved": "Zur Prüfung eingereicht",
+    "orgErrorGeneric": "Organisationsanspruch konnte nicht gespeichert werden",
+    "orgErrorInvalidNumber": "Geben Sie eine gültige 13-stellige japanische Unternehmensnummer ein",
+    "orgEmpty": "Noch keine Organisation verknüpft."
   },
   "agentsPage": {
     "filterAll": "Alle",
@@ -788,5 +805,21 @@
     "iso37000SectionTitle": "OrgOS und ISO 37000",
     "iso37000SectionLead": "Stellen Sie OrgOS bereit und konfigurieren Sie Ihre Organisation bei der Initialisierung. Diese Basis schafft ein praktisches Fundament für eine ISO-37000-konforme Governance-Selbstdeklaration. Die OpenOrgOS Community stellt keine Dritt-ISO-Zertifikate aus. Ein OpenOrgOS Operator (OOO) führt den Weg üblicherweise.",
     "iso37000SectionCta": "Leitfaden lesen"
+  },
+  "wireNodePage": {
+    "applyTitle": "Wire-Knoten-Antrag",
+    "applyLead": "C4-W1 · Wire-Knoten für Gremienprüfung registrieren",
+    "applyDesc": "Senden Sie Tenant-Identität, optionale Wire-E-Mail, Unternehmensnummer und Gateway-URL. Steward prüft pk-DID und Duplikate vor der Warteschlange.",
+    "reviewTitle": "Wire-Knoten-Governance-Prüfung",
+    "reviewLead": "C4-W2 · Ausschuss-CHAIR-Warteschlange",
+    "reviewDesc": "Ausstehende Wire-Knoten-Registrierungen genehmigen oder ablehnen. Entscheidungen gehen bei Verbindung an Steward wire-trust-registry.",
+    "governanceTitle": "Wire-Knoten-Governance",
+    "governanceLead": "C4-W2 · Ausschuss-CHAIR-Warteschlange und Audit-Trail",
+    "governanceDesc": "Ausstehende Wire-Knoten-Anträge prüfen, genehmigen oder ablehnen und den Entscheidungspfad einsehen. Erfordert Ausschuss-CHAIR oder Site-ADMIN.",
+    "applyLink": "Wire-Knoten beantragen",
+    "reviewLink": "Ausstehende Anträge prüfen",
+    "lifecycleLink": "Antragslebenszyklus",
+    "governanceLink": "← Steuerung",
+    "jurisdictionLink": "Rechtsraum-Register"
   }
 }

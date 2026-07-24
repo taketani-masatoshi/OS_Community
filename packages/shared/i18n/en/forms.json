@@ -58,6 +58,9 @@
     "placeholder": "Setup experience, modules owned, validate track record, etc.",
     "submit": "Apply",
     "error": "Error",
+    "orgRequiredNote": "OpenOrgOS Operator (OOO) applications require a claimed organization (corporate number). Pending review is enough to apply; issuance requires admin verification.",
+    "orgSettingsLink": "Link organization",
+    "orgRequiredError": "Link your organization with a corporate number before applying for OpenOrgOS Operator.",
     "types": {
       "STEWARD_OPERATOR": "OpenOrgOS Operator (OOO)",
       "STEWARD_DESIGNER": "OpenOrgOS Designer (OOD)"

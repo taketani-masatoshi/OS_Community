@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Instrument_Sans, Newsreader } from "next/font/google";
 import { localeToBcp47, BRAND } from "@os-community/shared";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -7,6 +8,18 @@ import { getBottomNavItems } from "@/components/nav/bottom-nav-config";
 import { AuthSessionProvider } from "@/components/AuthSessionProvider";
 import { getLocale, getT } from "@/lib/i18n";
 import "./globals.css";
+
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-instrument",
+  display: "swap",
+});
+
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  variable: "--font-newsreader",
+  display: "swap",
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -38,7 +51,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const bottomNavItems = getBottomNavItems(t);
 
   return (
-    <html lang={htmlLang}>
+    <html lang={htmlLang} className={`${instrumentSans.variable} ${newsreader.variable}`}>
       <body className="has-bottom-nav">
         <AuthSessionProvider>
           <Header />

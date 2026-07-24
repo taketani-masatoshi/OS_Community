@@ -4,6 +4,7 @@ import { enforceAdminRateLimit } from "@/lib/admin-rate-limit";
 import { apiErrorResponse } from "@/lib/api-error";
 import { readJsonBody } from "@/lib/api-body";
 import { prisma } from "@/lib/prisma";
+import { userHasVerifiedAffiliation } from "@/lib/org-affiliation";
 import { randomBytes } from "node:crypto";
 
 const postBodySchema = z.object({
@@ -46,6 +47,13 @@ export async function POST(req: Request) {
       data: { status: "REJECTED", reviewerId: session.user.id, reviewNote: body.note },
     });
     return Response.json({ ok: true });
+  }
+
+  if (app.type === "STEWARD_OPERATOR") {
+    const verified = await userHasVerifiedAffiliation(app.userId);
+    if (!verified) {
+      return apiErrorResponse("ORG_AFFILIATION_NOT_VERIFIED", 409);
+    }
   }
 
   const years = app.type === "STEWARD_OPERATOR" ? 2 : 3;

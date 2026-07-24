@@ -42,7 +42,10 @@
     "statementLabel": "自我声明 · 经验",
     "placeholder": "搭建经验、负责模块、validate 实绩等",
     "submit": "申请",
-    "error": "错误"
+    "error": "错误",
+    "orgRequiredNote": "OpenOrgOS Operator（OOO）申请需要已申报所属组织（法人番号）。审核中即可申请；签发需管理员核验。",
+    "orgSettingsLink": "关联所属组织",
+    "orgRequiredError": "申请 OpenOrgOS Operator 前请先用法人番号关联所属组织。"
   },
   "githubConnect": {
     "label": "GitHub 仓库 URL",

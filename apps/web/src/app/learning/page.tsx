@@ -50,9 +50,11 @@ export default async function LearningPage() {
           <h1 className="lf-hero-title-sm">{t.learning.title}</h1>
           <p className="lf-hero-lead">{t.learning.desc}</p>
           {!session?.user && (
-            <Link href="/login?callbackUrl=/learning" className="btn btn-outline-light btn-sm">
-              {t.nav.signIn}
-            </Link>
+            <div className="lf-hero-actions">
+              <Link href="/login?callbackUrl=/learning" className="btn btn-ghost btn-sm">
+                {t.nav.signIn}
+              </Link>
+            </div>
           )}
         </div>
       </section>

@@ -61,7 +61,7 @@ export default async function ModulesPage() {
                 <Link href="/wild-modules/register" className="btn btn-primary btn-sm">
                   {m.proposeCta}
                 </Link>
-                <Link href="#registry" className="btn btn-outline-light btn-sm">
+                <Link href="#registry" className="btn btn-ghost btn-sm">
                   {m.ctaApplyMaintainer}
                 </Link>
               </>
@@ -70,7 +70,7 @@ export default async function ModulesPage() {
                 <Link href="/login?callbackUrl=/wild-modules/register" className="btn btn-primary btn-sm">
                   {m.proposeCta}
                 </Link>
-                <Link href="/login" className="btn btn-outline-light btn-sm">
+                <Link href="/login" className="btn btn-ghost btn-sm">
                   {m.ctaJoin}
                 </Link>
               </>

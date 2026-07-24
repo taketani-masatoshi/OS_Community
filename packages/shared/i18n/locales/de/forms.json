@@ -42,7 +42,10 @@
     "statementLabel": "Selbstauskunft · Erfahrung",
     "placeholder": "Einrichtungserfahrung, verantwortete Module, Validierungsnachweise usw.",
     "submit": "Bewerben",
-    "error": "Fehler"
+    "error": "Fehler",
+    "orgRequiredNote": "OpenOrgOS Operator (OOO)-Bewerbungen erfordern eine gemeldete Organisation (Unternehmensnummer). Ausstehend reicht zum Bewerben; Ausstellung braucht Admin-Prüfung.",
+    "orgSettingsLink": "Organisation verknüpfen",
+    "orgRequiredError": "Verknüpfen Sie Ihre Organisation mit Unternehmensnummer vor der Bewerbung um OpenOrgOS Operator."
   },
   "githubConnect": {
     "label": "GitHub-Repository-URL",

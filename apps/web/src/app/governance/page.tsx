@@ -175,40 +175,40 @@ export default async function GovernancePage() {
             {g.ctaEcosystem}
           </Link>
           {implementationStatusDoc && (
-            <Link href={`/content/${implementationStatusDoc.meta.id}`} className="btn btn-primary btn-sm">
+            <Link href={`/content/${implementationStatusDoc.meta.id}`} className="btn btn-ghost btn-sm">
               {implementationStatusDoc.meta.title}
             </Link>
           )}
-          <Link href="/governance/openness" className="btn btn-primary btn-sm">
+          <Link href="/governance/openness" className="btn btn-ghost btn-sm">
             {g.ctaOpenness}
           </Link>
           {iso37000Doc && (
-            <Link href={`/content/${iso37000Doc.meta.id}`} className="btn btn-primary btn-sm">
+            <Link href={`/content/${iso37000Doc.meta.id}`} className="btn btn-ghost btn-sm">
               {iso37000Doc.meta.title}
             </Link>
           )}
-          <Link href="/committees" className="btn btn-primary btn-sm">
+          <Link href="/committees" className="btn btn-ghost btn-sm">
             {g.ctaCommittees}
           </Link>
-          <Link href="/experts" className="btn btn-primary btn-sm">
+          <Link href="/experts" className="btn btn-ghost btn-sm">
             {g.ctaExperts}
           </Link>
-          <Link href="/compliance" className="btn btn-primary btn-sm">
+          <Link href="/compliance" className="btn btn-ghost btn-sm">
             {g.ctaCompliance}
           </Link>
-          <Link href="/governance/sla" className="btn btn-primary btn-sm">
+          <Link href="/governance/sla" className="btn btn-ghost btn-sm">
             Protocol SLA
           </Link>
-          <Link href="/governance/lifecycle" className="btn btn-primary btn-sm">
+          <Link href="/governance/lifecycle" className="btn btn-ghost btn-sm">
             Application lifecycle
           </Link>
-          <Link href="/protocol/trusted-operators" className="btn btn-primary btn-sm">
+          <Link href="/protocol/trusted-operators" className="btn btn-ghost btn-sm">
             Trusted operators
           </Link>
-          <Link href="/protocol/wire-node/apply" className="btn btn-primary btn-sm">
+          <Link href="/protocol/wire-node/apply" className="btn btn-ghost btn-sm">
             Wire node apply
           </Link>
-          <Link href="/protocol/wire-node/review" className="btn btn-primary btn-sm">
+          <Link href="/protocol/wire-node/review" className="btn btn-ghost btn-sm">
             Wire node review
           </Link>
         </p>

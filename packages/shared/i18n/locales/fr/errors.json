@@ -53,5 +53,11 @@
   "GITHUB_APP_NOT_CONFIGURED": "GitHub App n'est pas configuré",
   "GITHUB_INSTALL_URL_UNAVAILABLE": "URL d'installation indisponible",
   "WEBHOOK_INVALID_SIGNATURE": "Signature invalide",
-  "ACADEMY_UPSTREAM_ERROR": "Erreur du service Academy"
+  "ACADEMY_UPSTREAM_ERROR": "Erreur du service Academy",
+  "INVALID_CORPORATE_NUMBER": "Numéro d'entreprise japonais invalide",
+  "LEGAL_NAME_REQUIRED": "La raison sociale est obligatoire",
+  "ALREADY_CLAIMED": "Cette organisation est déjà déclarée sur votre compte",
+  "INVALID_STATUS": "L'affiliation n'est pas en cours d'examen",
+  "ORG_AFFILIATION_REQUIRED": "Liez une organisation avec un numéro d'entreprise avant de postuler à OpenOrgOS Operator",
+  "ORG_AFFILIATION_NOT_VERIFIED": "L'affiliation doit être vérifiée avant d'émettre OpenOrgOS Operator"
 }

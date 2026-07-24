@@ -38,9 +38,11 @@ export default async function CommitteesPage() {
         <div className="lf-hero-inner">
           <h1 className="lf-hero-title-sm">{t.nav.committees}</h1>
           <p className="lf-hero-lead">{cp.desc}</p>
-          <Link href="/mypage" className="btn btn-outline-light btn-sm">
-            {t.nav.myPage}
-          </Link>
+          <div className="lf-hero-actions">
+            <Link href="/mypage" className="btn btn-ghost btn-sm">
+              {t.nav.myPage}
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -15,10 +15,10 @@ export default async function AgentsPage() {
           <h1 className="lf-hero-title-sm">{a.title}</h1>
           <p className="lf-hero-lead">{a.lead}</p>
           <div className="lf-hero-actions">
-            <Link href="/modules#registry" className="btn btn-outline-light btn-sm">
+            <Link href="/modules#registry" className="btn btn-primary btn-sm">
               {a.ctaModules}
             </Link>
-            <Link href="/learning" className="btn btn-outline-light btn-sm">
+            <Link href="/learning" className="btn btn-ghost btn-sm">
               {a.ctaLearning}
             </Link>
           </div>

@@ -53,5 +53,11 @@
   "LINKEDIN_CONNECT_REQUIRED": "Connect LinkedIn from My Page or Connections while signed in",
   "ACADEMY_UPSTREAM_ERROR": "Academy service error",
   "COMMITTEE_APPLY_NOT_SUPPORTED": "This committee accepts applications through its module page only",
-  "ALREADY_MEMBER": "You are already a member of this committee"
+  "ALREADY_MEMBER": "You are already a member of this committee",
+  "INVALID_CORPORATE_NUMBER": "Invalid Japanese corporate number",
+  "LEGAL_NAME_REQUIRED": "Legal name is required",
+  "ALREADY_CLAIMED": "This organization is already claimed on your account",
+  "INVALID_STATUS": "Affiliation is not pending review",
+  "ORG_AFFILIATION_REQUIRED": "Link an organization with a corporate number before applying for OpenOrgOS Operator",
+  "ORG_AFFILIATION_NOT_VERIFIED": "Organization affiliation must be verified before issuing OpenOrgOS Operator"
 }

@@ -2,6 +2,8 @@
 
 OpenOrgOS Community の **プライマリログイン**（Google メール = OpenOrgOS login ID）に必要な設定手順です。
 
+会員の正本 ID は Google アカウントのメールです。氏名はプロフィール完了時に必須、所属組織（法人番号）は自己申告→管理者承認で、OpenOrgOS Operator（OOO）申請時に必須になります。所属の設定 UI: `/settings/organization`。
+
 ## 1. Google Cloud OAuth クライアントを作成
 
 1. [Google Cloud Console → APIs & Services → Credentials](https://console.cloud.google.com/apis/credentials) を開く
@@ -64,5 +66,7 @@ npm run auth:check
 
 ## 関連
 
+- 所属組織（法人番号）: `/settings/organization`（申告）・`/admin/users`（承認）
 - GitHub / LinkedIn 連携: [linkedin-oauth-setup.md](./linkedin-oauth-setup.md)
 - GitHub（暫定 / 連携）: [github-oauth-setup.md](./github-oauth-setup.md)
+- Identity ADR: [adr/identity-3layer.md](./adr/identity-3layer.md)

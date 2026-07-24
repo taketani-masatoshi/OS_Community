@@ -42,7 +42,10 @@
     "statementLabel": "Auto-déclaration · expérience",
     "placeholder": "Expérience de configuration, modules gérés, historique de validation, etc.",
     "submit": "Candidater",
-    "error": "Erreur"
+    "error": "Erreur",
+    "orgRequiredNote": "Les candidatures OpenOrgOS Operator (OOO) exigent une organisation déclarée (numéro d'entreprise). En attente suffit pour postuler ; l'émission exige une vérification admin.",
+    "orgSettingsLink": "Lier l'organisation",
+    "orgRequiredError": "Liez votre organisation avec un numéro d'entreprise avant de postuler à OpenOrgOS Operator."
   },
   "githubConnect": {
     "label": "URL du dépôt GitHub",

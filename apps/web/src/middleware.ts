@@ -17,6 +17,7 @@ function isPublicOrRegisterPath(pathname: string) {
     "/settings",
     "/api/auth",
     "/api/user/profile",
+    "/api/user/organization",
     "/api/github",
     "/github",
     "/legal",

@@ -650,7 +650,24 @@
     "linkedinOrganization": "Organisatsioon",
     "githubConnect": "Ühenda GitHubi konto",
     "githubConnectError": "GitHubi ühendamine ebaõnnestus. Proovi uuesti Ühendustest.",
-    "githubLinkedNotice": "GitHubi konto ühendati edukalt."
+    "githubLinkedNotice": "GitHubi konto ühendati edukalt.",
+    "organization": "Organisatsioon",
+    "organizationDesc": "Esitage tööandja või organisatsioon Jaapani ettevõtte numbriga. Administraator kontrollib.",
+    "organizationOperatorNote": "Nõutav enne OpenOrgOS Operator (OOO) sertifikaadi taotlemist:",
+    "orgCorporateNumber": "Ettevõtte number",
+    "orgCorporateNumberHint": "13-kohaline Jaapani ettevõtte number (法人番号).",
+    "orgLegalName": "Juriidiline nimi",
+    "orgTitle": "Ametinimetus (valikuline)",
+    "orgSubmit": "Esita ülevaatamiseks",
+    "orgRemove": "Eemalda taotlus",
+    "orgRemoveConfirm": "Kas eemaldada see organisatsiooni taotlus?",
+    "orgStatusPending": "Ülevaatamisel",
+    "orgStatusVerified": "Kinnitatud",
+    "orgStatusRejected": "Tagasi lükatud",
+    "orgSaved": "Esitatud ülevaatamiseks",
+    "orgErrorGeneric": "Organisatsiooni taotlust ei saanud salvestada",
+    "orgErrorInvalidNumber": "Sisestage kehtiv 13-kohaline Jaapani ettevõtte number",
+    "orgEmpty": "Organisatsiooni pole veel seotud."
   },
   "agentsPage": {
     "filterAll": "Kõik",
@@ -788,5 +805,21 @@
     "iso37000SectionTitle": "OrgOS ja ISO 37000",
     "iso37000SectionLead": "Paigaldage OrgOS ja seadistage organisatsioon initsialiseerimise ajal. See baas võimaldab praktilise aluse ISO 37000-ga kooskõlaliseks juhtimise enesedeklaratsiooniks. OpenOrgOS Community ei väljasta kolmandate osapoolte ISO-sertifikaate. Teed juhib tavaliselt OpenOrgOS Operator (OOO).",
     "iso37000SectionCta": "Loe juhendit"
+  },
+  "wireNodePage": {
+    "applyTitle": "Wire-sõlme taotlus",
+    "applyLead": "C4-W1 · Registreeri Wire-sõlm komitee ülevaatamiseks",
+    "applyDesc": "Esitage rentniku identiteet, valikuline Wire-e-post, ettevõtte number ja lüüsi URL. Steward kontrollib pk-DID ja duplikaadid enne ootejärjekorda.",
+    "reviewTitle": "Wire-sõlme valitsemise ülevaatus",
+    "reviewLead": "C4-W2 · Komitee CHAIR ootejärjekord",
+    "reviewDesc": "Kinnita või lükka tagasi ootel Wire-sõlme registreerimistaotlused. Otsused jõuavad Steward wire-trust-registrysse ühenduse korral.",
+    "governanceTitle": "Wire-sõlme valitsemine",
+    "governanceLead": "C4-W2 · Komitee CHAIR ootejärjekord ja auditijälg",
+    "governanceDesc": "Vaadake üle ootel Wire-sõlme taotlused, kinnitage või lükake tagasi ning kontrollige otsuste auditijälge. Nõuab komitee CHAIR või saidi ADMIN.",
+    "applyLink": "Taotle Wire-sõlme",
+    "reviewLink": "Vaata ootel taotlusi",
+    "lifecycleLink": "Taotluse elutsükkel",
+    "governanceLink": "← Valitsemine",
+    "jurisdictionLink": "Õigusruumi register"
   }
 }

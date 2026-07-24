@@ -234,6 +234,23 @@ export type Messages = {
     githubConnect: string;
     githubConnectError: string;
     githubLinkedNotice: string;
+    organization: string;
+    organizationDesc: string;
+    organizationOperatorNote: string;
+    orgCorporateNumber: string;
+    orgCorporateNumberHint: string;
+    orgLegalName: string;
+    orgTitle: string;
+    orgSubmit: string;
+    orgRemove: string;
+    orgRemoveConfirm: string;
+    orgStatusPending: string;
+    orgStatusVerified: string;
+    orgStatusRejected: string;
+    orgSaved: string;
+    orgErrorGeneric: string;
+    orgErrorInvalidNumber: string;
+    orgEmpty: string;
   };
   login: {
     title: string;

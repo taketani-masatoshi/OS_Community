@@ -1,18 +1,34 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { FormMessages } from "@os-community/shared";
 
-export function CertificationApplyForm({ labels }: { labels: FormMessages["certification"] }) {
+export function CertificationApplyForm({
+  labels,
+  hasOrgAffiliation,
+}: {
+  labels: FormMessages["certification"];
+  hasOrgAffiliation: boolean;
+}) {
   const router = useRouter();
   const [type, setType] = useState("STEWARD_OPERATOR");
   const [statement, setStatement] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
+  const [errorKind, setErrorKind] = useState<"generic" | "org" | null>(null);
+
+  const needsOrg = type === "STEWARD_OPERATOR" && !hasOrgAffiliation;
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
+    if (needsOrg) {
+      setErrorKind("org");
+      setStatus("error");
+      return;
+    }
     setStatus("loading");
+    setErrorKind(null);
     const res = await fetch("/api/certifications/apply", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -21,9 +37,11 @@ export function CertificationApplyForm({ labels }: { labels: FormMessages["certi
     if (res.ok) {
       setStatus("done");
       router.push("/certifications");
-    } else {
-      setStatus("error");
+      return;
     }
+    const body = (await res.json().catch(() => null)) as { error?: string; code?: string } | null;
+    setErrorKind(body?.code === "ORG_AFFILIATION_REQUIRED" ? "org" : "generic");
+    setStatus("error");
   }
 
   return (
@@ -48,6 +66,17 @@ export function CertificationApplyForm({ labels }: { labels: FormMessages["certi
           <option value="STEWARD_DESIGNER">{labels.types.STEWARD_DESIGNER}</option>
         </select>
       </label>
+      {type === "STEWARD_OPERATOR" && (
+        <p className="page-muted-note" style={{ marginBottom: "0.75rem" }}>
+          {labels.orgRequiredNote}{" "}
+          <Link href="/settings/organization">{labels.orgSettingsLink}</Link>
+        </p>
+      )}
+      {needsOrg && (
+        <p className="membership-policy-callout" style={{ marginBottom: "0.75rem" }}>
+          {labels.orgRequiredError}
+        </p>
+      )}
       <label style={{ display: "block", marginBottom: "0.75rem" }}>
         {labels.statementLabel}
         <textarea
@@ -68,10 +97,18 @@ export function CertificationApplyForm({ labels }: { labels: FormMessages["certi
           }}
         />
       </label>
-      <button type="submit" className="btn btn-primary" disabled={status === "loading"}>
+      <button
+        type="submit"
+        className="btn btn-primary"
+        disabled={status === "loading" || needsOrg}
+      >
         {labels.submit}
       </button>
-      {status === "error" && <p style={{ color: "var(--danger)", marginTop: "0.5rem" }}>{labels.error}</p>}
+      {status === "error" && (
+        <p style={{ color: "var(--danger)", marginTop: "0.5rem" }}>
+          {errorKind === "org" ? labels.orgRequiredError : labels.error}
+        </p>
+      )}
     </form>
   );
 }

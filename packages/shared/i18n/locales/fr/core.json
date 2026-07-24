@@ -650,7 +650,24 @@
     "linkedinOrganization": "Organisation",
     "githubConnect": "Connecter le compte GitHub",
     "githubConnectError": "Impossible de connecter GitHub. Réessayez depuis Connexions.",
-    "githubLinkedNotice": "Compte GitHub lié avec succès."
+    "githubLinkedNotice": "Compte GitHub lié avec succès.",
+    "organization": "Organisation",
+    "organizationDesc": "Déclarez votre employeur ou organisation avec le numéro d'entreprise japonais. Un administrateur vérifie.",
+    "organizationOperatorNote": "Requis avant de postuler à la certification OpenOrgOS Operator (OOO) :",
+    "orgCorporateNumber": "Numéro d'entreprise",
+    "orgCorporateNumberHint": "Numéro d'entreprise japonais à 13 chiffres (法人番号).",
+    "orgLegalName": "Raison sociale",
+    "orgTitle": "Titre (facultatif)",
+    "orgSubmit": "Soumettre pour examen",
+    "orgRemove": "Retirer la déclaration",
+    "orgRemoveConfirm": "Retirer cette déclaration d'organisation ?",
+    "orgStatusPending": "En cours d'examen",
+    "orgStatusVerified": "Vérifié",
+    "orgStatusRejected": "Rejeté",
+    "orgSaved": "Soumis pour examen",
+    "orgErrorGeneric": "Impossible d'enregistrer la déclaration",
+    "orgErrorInvalidNumber": "Saisissez un numéro d'entreprise japonais valide à 13 chiffres",
+    "orgEmpty": "Aucune organisation liée pour l'instant."
   },
   "agentsPage": {
     "filterAll": "Tous",
@@ -788,5 +805,21 @@
     "iso37000SectionTitle": "OrgOS et ISO 37000",
     "iso37000SectionLead": "Déployez OrgOS et configurez votre organisation lors de l'initialisation. Cette base fournit un fondement pratique pour une autodéclaration de gouvernance alignée sur l'ISO 37000. OpenOrgOS Community n'émet pas de certificats ISO tiers. Un OpenOrgOS Operator (OOO) mène généralement le parcours.",
     "iso37000SectionCta": "Lire le guide"
+  },
+  "wireNodePage": {
+    "applyTitle": "Demande de nœud Wire",
+    "applyLead": "C4-W1 · Enregistrer un nœud Wire pour revue de gouvernance",
+    "applyDesc": "Soumettez l'identité du locataire, e-mail Wire optionnel, numéro d'entreprise et URL de passerelle. Steward valide pk-DID et les doublons avant la file d'attente.",
+    "reviewTitle": "Revue de gouvernance du nœud Wire",
+    "reviewLead": "C4-W2 · File d'attente CHAIR du comité",
+    "reviewDesc": "Approuver ou rejeter les demandes d'enregistrement de nœud Wire en attente. Les décisions se propagent au wire-trust-registry Steward si connecté.",
+    "governanceTitle": "Gouvernance du nœud Wire",
+    "governanceLead": "C4-W2 · File d'attente CHAIR et piste d'audit",
+    "governanceDesc": "Examiner les demandes de nœud Wire en attente, approuver ou rejeter, et consulter la piste d'audit. Nécessite CHAIR du comité ou ADMIN du site.",
+    "applyLink": "Demander un nœud Wire",
+    "reviewLink": "Examiner les demandes en attente",
+    "lifecycleLink": "Cycle de vie de la demande",
+    "governanceLink": "← Gouvernance",
+    "jurisdictionLink": "Registre de juridiction"
   }
 }

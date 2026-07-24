@@ -82,6 +82,7 @@ export type AdminUserListQuery = {
   q?: string;
   role?: SiteRole;
   page?: number;
+  affiliation?: "pending" | "verified" | "none";
 };
 
 export async function listUsersForAdmin(query: AdminUserListQuery = {}) {
@@ -89,15 +90,43 @@ export async function listUsersForAdmin(query: AdminUserListQuery = {}) {
   const pageSize = ADMIN_USERS_PAGE_SIZE;
   const q = query.q?.trim();
 
+  const affiliationFilter =
+    query.affiliation === "pending"
+      ? { orgAffiliations: { some: { status: "PENDING" as const } } }
+      : query.affiliation === "verified"
+        ? { orgAffiliations: { some: { status: "VERIFIED" as const } } }
+        : query.affiliation === "none"
+          ? {
+              NOT: {
+                orgAffiliations: {
+                  some: { status: { in: ["PENDING" as const, "VERIFIED" as const] } },
+                },
+              },
+            }
+          : {};
+
   const where = {
     deletedAt: null,
     ...(query.role ? { siteRole: query.role } : {}),
+    ...affiliationFilter,
     ...(q
       ? {
           OR: [
             { name: { contains: q, mode: "insensitive" as const } },
             { githubLogin: { contains: q, mode: "insensitive" as const } },
             { email: { contains: q, mode: "insensitive" as const } },
+            {
+              orgAffiliations: {
+                some: {
+                  organization: {
+                    OR: [
+                      { corporateNumber: { contains: q } },
+                      { legalName: { contains: q, mode: "insensitive" as const } },
+                    ],
+                  },
+                },
+              },
+            },
           ],
         }
       : {}),
@@ -114,10 +143,28 @@ export async function listUsersForAdmin(query: AdminUserListQuery = {}) {
           select: {
             id: true,
             name: true,
+            email: true,
             githubLogin: true,
             siteRole: true,
             accountStatus: true,
             createdAt: true,
+            accounts: {
+              where: { provider: "google" },
+              select: { provider: true, providerAccountId: true },
+              take: 1,
+            },
+            orgAffiliations: {
+              where: { status: { in: ["PENDING", "VERIFIED", "REJECTED"] } },
+              orderBy: [{ status: "asc" }, { claimedAt: "desc" }],
+              take: 3,
+              select: {
+                id: true,
+                status: true,
+                organization: {
+                  select: { legalName: true, corporateNumber: true },
+                },
+              },
+            },
             _count: {
               select: {
                 moduleRoles: true,
@@ -140,6 +187,54 @@ export async function listUsersForAdmin(query: AdminUserListQuery = {}) {
     pageSize,
     totalPages,
   };
+}
+
+export async function getAdminUserDetail(userId: string) {
+  return prisma.user.findFirst({
+    where: { id: userId, deletedAt: null },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      githubLogin: true,
+      publicSlug: true,
+      siteRole: true,
+      accountStatus: true,
+      organization: true,
+      specialty: true,
+      region: true,
+      profileCompletedAt: true,
+      createdAt: true,
+      accounts: {
+        select: { provider: true, providerAccountId: true, type: true },
+      },
+      orgAffiliations: {
+        include: {
+          organization: true,
+          verifiedBy: { select: { id: true, name: true, email: true } },
+          auditLogs: {
+            orderBy: { createdAt: "desc" },
+            take: 20,
+            include: {
+              actor: { select: { id: true, name: true, email: true } },
+            },
+          },
+        },
+        orderBy: [{ status: "asc" }, { claimedAt: "desc" }],
+      },
+      professionalProfile: {
+        select: { headline: true, organization: true, profileUrl: true, vanityName: true },
+      },
+      _count: {
+        select: {
+          moduleRoles: true,
+          certifications: true,
+          committeeMemberships: true,
+          githubConnections: true,
+        },
+      },
+    },
+  });
 }
 
 export async function listRecentRoleAuditLogs(limit = 25) {

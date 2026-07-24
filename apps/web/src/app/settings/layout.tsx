@@ -18,6 +18,7 @@ export default async function SettingsLayout({ children }: { children: React.Rea
           title={t.settings.navTitle}
           items={[
             { href: "/settings/profile", label: t.settings.profile },
+            { href: "/settings/organization", label: t.settings.organization },
             { href: "/settings/connections", label: t.settings.connections },
           ]}
         />

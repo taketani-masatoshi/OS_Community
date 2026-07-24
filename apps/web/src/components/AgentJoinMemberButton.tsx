@@ -27,7 +27,7 @@ export function AgentJoinMemberButton({
     return (
       <Link
         href={`/login?callbackUrl=${encodeURIComponent(`/agents/${agentId}`)}`}
-        className="btn btn-outline-light btn-sm"
+        className="btn btn-ghost btn-sm"
       >
         {labels.signIn}
       </Link>
@@ -61,7 +61,7 @@ export function AgentJoinMemberButton({
 
   return (
     <div style={{ display: "inline-flex", flexDirection: "column", gap: "0.35rem" }}>
-      <button type="button" className="btn btn-outline-light btn-sm" disabled={status === "loading"} onClick={join}>
+      <button type="button" className="btn btn-ghost btn-sm" disabled={status === "loading"} onClick={join}>
         {status === "loading" ? labels.submitting : labels.join}
       </button>
       {status === "error" && (

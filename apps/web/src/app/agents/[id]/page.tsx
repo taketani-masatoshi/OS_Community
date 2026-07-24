@@ -41,24 +41,24 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
           <p className="lf-hero-lead">
             {a.detailIdLabel}: {agent.id}
           </p>
-          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.75rem" }}>
+          <div className="lf-hero-actions">
+            <Link href="/modules#registry" className="btn btn-primary btn-sm">
+              {a.relatedModulesCta}
+            </Link>
             {agent.githubRepo ? (
               <a
                 href={agent.githubRepo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-outline-light btn-sm"
+                className="btn btn-ghost btn-sm"
               >
                 GitHub
               </a>
             ) : (
-              <Link href="/github" className="btn btn-outline-light btn-sm">
+              <Link href="/github" className="btn btn-ghost btn-sm">
                 {a.githubConnectCta}
               </Link>
             )}
-            <Link href="/modules#registry" className="btn btn-primary btn-sm">
-              {a.relatedModulesCta}
-            </Link>
             <AgentJoinMemberButton
               agentId={agent.id}
               isMember={isMember}

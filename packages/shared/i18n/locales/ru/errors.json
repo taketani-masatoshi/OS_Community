@@ -53,5 +53,11 @@
   "GITHUB_APP_NOT_CONFIGURED": "GitHub App не настроен",
   "GITHUB_INSTALL_URL_UNAVAILABLE": "URL установки недоступен",
   "WEBHOOK_INVALID_SIGNATURE": "Недействительная подпись",
-  "ACADEMY_UPSTREAM_ERROR": "Ошибка сервиса Academy"
+  "ACADEMY_UPSTREAM_ERROR": "Ошибка сервиса Academy",
+  "INVALID_CORPORATE_NUMBER": "Недействительный японский корпоративный номер",
+  "LEGAL_NAME_REQUIRED": "Юридическое название обязательно",
+  "ALREADY_CLAIMED": "Эта организация уже заявлена в вашем аккаунте",
+  "INVALID_STATUS": "Принадлежность не на проверке",
+  "ORG_AFFILIATION_REQUIRED": "Привяжите организацию с корпоративным номером перед подачей на OpenOrgOS Operator",
+  "ORG_AFFILIATION_NOT_VERIFIED": "Принадлежность к организации должна быть подтверждена перед выдачей OpenOrgOS Operator"
 }

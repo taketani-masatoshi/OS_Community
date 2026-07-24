@@ -53,5 +53,11 @@
   "GITHUB_APP_NOT_CONFIGURED": "GitHub App 未配置",
   "GITHUB_INSTALL_URL_UNAVAILABLE": "安装 URL 不可用",
   "WEBHOOK_INVALID_SIGNATURE": "签名无效",
-  "ACADEMY_UPSTREAM_ERROR": "学院服务错误"
+  "ACADEMY_UPSTREAM_ERROR": "学院服务错误",
+  "INVALID_CORPORATE_NUMBER": "无效的日本法人番号",
+  "LEGAL_NAME_REQUIRED": "法定名称为必填",
+  "ALREADY_CLAIMED": "此组织已在您的账户上申报",
+  "INVALID_STATUS": "所属不在审核中",
+  "ORG_AFFILIATION_REQUIRED": "申请 OpenOrgOS Operator 前请先用法人番号关联所属组织",
+  "ORG_AFFILIATION_NOT_VERIFIED": "签发 OpenOrgOS Operator 前必须核验所属组织"
 }

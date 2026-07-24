@@ -94,6 +94,19 @@ enum UserStatusAuditAction {
   DELETE
 }
 
+enum OrgAffiliationStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum OrgAffiliationAuditAction {
+  CLAIM
+  VERIFY
+  REJECT
+  REMOVE
+}
+
 enum ComplianceRegistryCategory {
   REGULATED_PROFESSION
   ISO_AUDIT_QUALIFICATION
@@ -155,6 +168,61 @@ model User {
   chairNominationsMade  CommitteeChairNomination[] @relation("ChairNominator")
   chairNominationsReviewed CommitteeChairNomination[] @relation("ChairNominationReviewer")
   complianceCredentialHolders ComplianceCredentialHolder[]
+  orgAffiliations             OrgAffiliation[]
+  orgAffiliationsVerified     OrgAffiliation[] @relation("OrgAffiliationVerifier")
+  orgAffiliationAuditsMade    OrgAffiliationAuditLog[] @relation("OrgAffiliationAuditActor")
+}
+
+model Organization {
+  id              String   @id @default(cuid())
+  jurisdiction    String   @default("JP")
+  corporateNumber String
+  legalName       String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  affiliations OrgAffiliation[]
+
+  @@unique([jurisdiction, corporateNumber])
+  @@index([corporateNumber])
+}
+
+model OrgAffiliation {
+  id             String               @id @default(cuid())
+  userId         String
+  organizationId String
+  status         OrgAffiliationStatus @default(PENDING)
+  title          String?
+  claimedAt      DateTime             @default(now())
+  verifiedAt     DateTime?
+  verifiedById   String?
+  rejectReason   String?
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime             @updatedAt
+
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  verifiedBy   User?        @relation("OrgAffiliationVerifier", fields: [verifiedById], references: [id], onDelete: SetNull)
+  auditLogs    OrgAffiliationAuditLog[]
+
+  @@unique([userId, organizationId])
+  @@index([status])
+  @@index([userId])
+}
+
+model OrgAffiliationAuditLog {
+  id            String                    @id @default(cuid())
+  affiliationId String
+  actorId       String
+  action        OrgAffiliationAuditAction
+  note          String?
+  createdAt     DateTime                  @default(now())
+
+  affiliation OrgAffiliation @relation(fields: [affiliationId], references: [id], onDelete: Cascade)
+  actor       User           @relation("OrgAffiliationAuditActor", fields: [actorId], references: [id], onDelete: Cascade)
+
+  @@index([affiliationId])
+  @@index([createdAt])
 }
 
 model ProfessionalProfile {

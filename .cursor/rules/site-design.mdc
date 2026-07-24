@@ -5,6 +5,8 @@ alwaysApply: true
 
 # サイト UI（ホーム基準）
 
+oorgos.org と色・フォント・ボタン階層を揃える。ヒーローはライトグラデーション（ネイビー帯にしない）。
+
 ## カードナビ
 
 - 遷移先が1つのとき: `Link.lf-card-link-wrap` > `div.lf-card.lf-card-full`（タイトル + 説明のみ）
@@ -13,20 +15,30 @@ alwaysApply: true
 
 ## ボタン
 
-- 主要 CTA: `btn btn-primary btn-sm`（ネイビー塗り）
-- ダークヒーロー内: `btn-outline-light`（ログイン等の副次のみ）
-- 戻る・フィルタ非選択: `btn btn-ghost btn-sm`
+- 主要 CTA: `btn btn-primary`（アクセント青 `#0071e3`・ピル型・1 グループに 1 つだけ）
+- 副次 CTA: `btn btn-ghost`（青文字・透明背景）— ヒーロー／`section-cta`／`about-actions` の 2 つ目以降
+- `btn-outline-light` は使わない（レガシー互換で ghost 相当）
 - `btn-outline` は管理・キャンセル等の例外のみ。CTA に並べない
+- CTA 行の gap: `--space-4`（16px）
 
 ## テキストリンク
 
-- 本文中: クラスなし（`.page-wrap a:not([class])` がネイビー）
-- 独立 CTA: `lf-card-link` または `btn btn-primary btn-sm`（見た目同一）
+- 本文中: クラスなし（`.page-wrap a:not([class])` がアクセント青）
+- 独立 CTA: `lf-card-link` または `btn btn-primary btn-sm`（見た目同一・ピル型）
 - 末尾の `→` は付けない
+
+## トーン（oorgos.org 共通）
+
+- フォント: Instrument Sans（見出しに Newsreader）
+- 文字: `--ink` `#1d1d1f` / `--ink-soft`・`--muted` `#6e6e73`
+- 背景: `--surface` `#f5f5f7` / セクション交互 `--section-alt` `#eef1f6`
+- 本文 `line-height`: 1.55
+- ヘッダー高さ: 52px（フロスト）
 
 ## セクション
 
-- ヒーロー: `lf-hero lf-hero-compact` + `lf-hero-title-sm` + `lf-hero-lead`
+- ヒーロー: `lf-hero` / `lf-hero-compact` + `lf-hero-title-sm` + `lf-hero-lead`（ライトグラデ）
+- ヒーロー CTA: `lf-hero-actions` 内 primary + 任意 ghost
 - 本文: `page-wrap` 内 `section-title` / `page-desc` / `lf-card-grid`
 - 下部 CTA 行: `section-cta` または `section-actions`
 

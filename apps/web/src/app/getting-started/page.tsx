@@ -45,9 +45,11 @@ export default async function GettingStartedPage() {
           <h1 className="lf-hero-title-sm">{g.title}</h1>
           <p className="lf-hero-lead">{g.lead}</p>
           {!session?.user && (
-            <Link href="/login?callbackUrl=/getting-started" className="btn btn-outline-light btn-sm">
-              {t.nav.signIn}
-            </Link>
+            <div className="lf-hero-actions">
+              <Link href="/login?callbackUrl=/getting-started" className="btn btn-ghost btn-sm">
+                {t.nav.signIn}
+              </Link>
+            </div>
           )}
         </div>
       </section>
@@ -87,7 +89,7 @@ export default async function GettingStartedPage() {
               {g.ecosystemSectionCta}
             </Link>
             {implementationStatusDoc && (
-              <Link href={`/content/${implementationStatusDoc.meta.id}`} className="btn btn-primary btn-sm">
+              <Link href={`/content/${implementationStatusDoc.meta.id}`} className="btn btn-ghost btn-sm">
                 {implementationStatusDoc.meta.title}
               </Link>
             )}
@@ -101,7 +103,7 @@ export default async function GettingStartedPage() {
             <Link href="/governance" className="btn btn-primary btn-sm">
               {t.nav.governance}
             </Link>
-            <Link href="/committees" className="btn btn-primary btn-sm">
+            <Link href="/committees" className="btn btn-ghost btn-sm">
               {t.nav.committees}
             </Link>
           </p>

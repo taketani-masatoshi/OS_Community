@@ -650,7 +650,24 @@
     "linkedinOrganization": "组织",
     "githubConnect": "连接 GitHub 账号",
     "githubConnectError": "无法连接 GitHub。请从「连接」页面重试。",
-    "githubLinkedNotice": "GitHub 账号关联成功。"
+    "githubLinkedNotice": "GitHub 账号关联成功。",
+    "organization": "组织",
+    "organizationDesc": "用日本法人番号申报雇主或运营组织。管理员将核验。",
+    "organizationOperatorNote": "申请 OpenOrgOS Operator（OOO）认证前需要：",
+    "orgCorporateNumber": "法人番号",
+    "orgCorporateNumberHint": "13 位日本法人番号。",
+    "orgLegalName": "法定名称",
+    "orgTitle": "职务（可选）",
+    "orgSubmit": "提交审核",
+    "orgRemove": "删除申报",
+    "orgRemoveConfirm": "删除此所属申报？",
+    "orgStatusPending": "审核中",
+    "orgStatusVerified": "已验证",
+    "orgStatusRejected": "已拒绝",
+    "orgSaved": "已提交审核",
+    "orgErrorGeneric": "无法保存所属申报",
+    "orgErrorInvalidNumber": "请输入有效的 13 位日本法人番号",
+    "orgEmpty": "尚未关联所属组织。"
   },
   "agentsPage": {
     "filterAll": "全部",
@@ -788,5 +805,21 @@
     "iso37000SectionTitle": "OrgOS 与 ISO 37000",
     "iso37000SectionLead": "部署 OrgOS，并在初始化过程中配置组织。该基线为符合 ISO 37000 的治理自我声明提供实务基础。OpenOrgOS Community 不颁发第三方 ISO 证书。通常由 OpenOrgOS Operator（OOO）主导该路径。",
     "iso37000SectionCta": "阅读指南"
+  },
+  "wireNodePage": {
+    "applyTitle": "Wire 节点申请",
+    "applyLead": "C4-W1 · 注册 Wire 节点供委员会治理审核",
+    "applyDesc": "提交租户身份、可选 Wire 邮箱、法人番号与网关 URL。Steward 校验 pk-DID 与重复后进入待审队列。",
+    "reviewTitle": "Wire 节点治理审核",
+    "reviewLead": "C4-W2 · 委员会 CHAIR 待审队列",
+    "reviewDesc": "批准或拒绝待审的 Wire 节点注册申请。连接后决策会同步到 Steward wire-trust-registry。",
+    "governanceTitle": "Wire 节点治理",
+    "governanceLead": "C4-W2 · 委员会 CHAIR 待审队列与审计轨迹",
+    "governanceDesc": "审核待审 Wire 节点申请、批准或拒绝，并查看决策审计轨迹。需要委员会 CHAIR 或站点 ADMIN。",
+    "applyLink": "申请 Wire 节点",
+    "reviewLink": "审核待审申请",
+    "lifecycleLink": "申请生命周期",
+    "governanceLink": "← 治理",
+    "jurisdictionLink": "法域注册表"
   }
 }

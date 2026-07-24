@@ -70,24 +70,24 @@ export default async function AboutPage() {
             <Link href="/about/leadership" className="btn btn-primary btn-sm">
               {lp.title}
             </Link>
-            <Link href="/governance" className="btn btn-primary btn-sm">
+            <Link href="/governance" className="btn btn-ghost btn-sm">
               {a.governanceCta}
             </Link>
-            <Link href="/governance/openness" className="btn btn-primary btn-sm">
+            <Link href="/governance/openness" className="btn btn-ghost btn-sm">
               {t.governance.ctaOpenness}
             </Link>
             {designPhilosophyDoc && (
-              <Link href={`/content/${designPhilosophyDoc.meta.id}`} className="btn btn-primary btn-sm">
+              <Link href={`/content/${designPhilosophyDoc.meta.id}`} className="btn btn-ghost btn-sm">
                 {designPhilosophyDoc.meta.title}
               </Link>
             )}
             {implementationStatusDoc && (
-              <Link href={`/content/${implementationStatusDoc.meta.id}`} className="btn btn-primary btn-sm">
+              <Link href={`/content/${implementationStatusDoc.meta.id}`} className="btn btn-ghost btn-sm">
                 {implementationStatusDoc.meta.title}
               </Link>
             )}
             {iso37000Doc && (
-              <Link href={`/content/${iso37000Doc.meta.id}`} className="btn btn-primary btn-sm">
+              <Link href={`/content/${iso37000Doc.meta.id}`} className="btn btn-ghost btn-sm">
                 {iso37000Doc.meta.title}
               </Link>
             )}
