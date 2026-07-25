@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import Link from "next/link";
 import { getCommunityStats } from "@/lib/community-stats";
 import { auth } from "@/auth";
@@ -10,6 +11,11 @@ export const dynamic = "force-dynamic";
 export default async function HomePage() {
   const session = await auth();
   const isSignedIn = isSignedInSession(session);
+  // Signed-in members use the workspace hub — marketing home is for visitors only.
+  if (isSignedIn) {
+    redirect("/mypage");
+  }
+
   const { messages: t } = await getT();
   const h = t.home;
   let stats = {
@@ -68,9 +74,9 @@ export default async function HomePage() {
               {h.primaryCta}
             </Link>
             {!isSignedIn && (
-              <Link href="/login?callbackUrl=/getting-started" className="btn btn-ghost btn-lg">
-                {t.nav.signIn}
-              </Link>
+            <Link href="/login/start?callbackUrl=%2Fmypage" className="btn btn-ghost btn-lg">
+              {t.nav.signIn}
+            </Link>
             )}
           </div>
         </div>

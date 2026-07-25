@@ -27,7 +27,7 @@ export default async function ModuleQuizPage({
 
   const session = await auth();
   if (!session?.user) {
-    redirect(`/login?callbackUrl=/academy/modules/${trackId}/${moduleSlug}/quiz`);
+    redirect(`/login/start?callbackUrl=/academy/modules/${trackId}/${moduleSlug}/quiz`);
   }
 
   let mod;

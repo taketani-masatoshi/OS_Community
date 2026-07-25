@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Locale } from "@os-community/shared";
 import { LanguageSelect } from "@/components/LanguageSelect";
+import { loginStartHref } from "@/lib/login-href";
 
 export type NavItem = { href: string; label: string };
 
@@ -19,7 +20,6 @@ type SiteNavProps = {
     github: string;
     myPage?: string;
     admin?: string;
-    proposeModule?: string;
   };
   session: {
     userName: string;
@@ -78,11 +78,6 @@ export function SiteNav({ locale, navItems, labels, session, signOutButton }: Si
                 {item.label}
               </Link>
             ))}
-            {session?.isAdmin && labels.admin && (
-              <Link href="/admin" onClick={() => setOpen(false)}>
-                {labels.admin}
-              </Link>
-            )}
           </nav>
 
           <div className="site-nav-actions">
@@ -96,26 +91,24 @@ export function SiteNav({ locale, navItems, labels, session, signOutButton }: Si
 
             {session ? (
               <>
-                {labels.proposeModule && (
+                {session.isAdmin && labels.admin && (
                   <Link
-                    href="/wild-modules/register"
+                    href="/admin"
                     className="btn btn-primary btn-sm"
                     onClick={() => setOpen(false)}
                   >
-                    {labels.proposeModule}
+                    {labels.admin}
                   </Link>
                 )}
-                <Link href="/mypage" className="btn btn-ghost btn-sm" onClick={() => setOpen(false)}>
-                  {labels.myPage ?? "My Page"}
-                </Link>
                 <span className="site-nav-user">{session.userName}</span>
-                <Link href="/github" className="btn btn-primary btn-sm" onClick={() => setOpen(false)}>
-                  {labels.github}
-                </Link>
                 {signOutButton}
               </>
             ) : (
-              <Link href="/login" className="btn btn-primary btn-sm" onClick={() => setOpen(false)}>
+              <Link
+                href={loginStartHref("/mypage")}
+                className="btn btn-primary btn-sm"
+                onClick={() => setOpen(false)}
+              >
                 {labels.signIn}
               </Link>
             )}

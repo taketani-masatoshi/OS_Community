@@ -8,6 +8,11 @@
       name="description"
       content="Too many tools to start. Become an OpenOrgOS Operator (OOO) — deploy, initialize, and run one coherent organizational baseline."
     />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,6 +20,7 @@
       rel="stylesheet"
     />
     <style>
+      /* Design tokens shared with OrgOS demo Chat/Wire (OpenOrgOS apps/shared/oorgos-theme.css) */
       :root {
         --ink: #1d1d1f;
         --ink-soft: #6e6e73;
@@ -123,6 +129,36 @@
         font-size: 1.0625rem;
         letter-spacing: -0.02em;
         color: var(--ink);
+        text-decoration: none;
+      }
+
+      .brand:hover {
+        text-decoration: none;
+      }
+
+      .header-nav {
+        display: flex;
+        align-items: center;
+        gap: var(--space-5);
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .header-nav a {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--ink-soft);
+        text-decoration: none;
+      }
+
+      .header-nav a:hover {
+        color: var(--ink);
+        text-decoration: none;
+      }
+
+      .header-nav a[aria-current="page"] {
+        color: var(--ink);
+        font-weight: 600;
       }
 
       .lang-select-wrap {
@@ -574,16 +610,21 @@
   <body>
     <header class="site-header">
       <div class="site-header-inner">
-        <span class="brand">OpenOrgOS</span>
-        <div class="lang-select-wrap">
-          <label class="lang-select-label" for="lang-select" data-i18n="langLabel"
-            >Language</label
-          >
-          <select id="lang-select" class="lang-select" aria-label="Language">
-            <option value="en">English</option>
-            <option value="ja">日本語</option>
-            <option value="zh">中文</option>
-          </select>
+        <a class="brand" href="/">OpenOrgOS</a>
+        <div class="header-nav">
+          <a href="/" aria-current="page" data-i18n="navOverview">Overview</a>
+          <a href="/demo" data-i18n="navDemo">Demo</a>
+          <a href="https://community.oorgos.org" data-i18n="navCommunity">Community</a>
+          <div class="lang-select-wrap">
+            <label class="lang-select-label" for="lang-select" data-i18n="langLabel"
+              >Language</label
+            >
+            <select id="lang-select" class="lang-select" aria-label="Language">
+              <option value="en">English</option>
+              <option value="ja">日本語</option>
+              <option value="zh">中文</option>
+            </select>
+          </div>
         </div>
       </div>
     </header>
@@ -729,20 +770,20 @@
         en: {
           pageTitle: "OpenOrgOS — Start as an OOO",
           metaDescription:
-            "Too many tools to start. Become an OpenOrgOS Operator (OOO) — deploy OrgOS, initialize your organization, and run one coherent baseline.",
-          heroTitle: "When everything else is too much",
+            "For organizations that focus on what matters. Become an OpenOrgOS Operator (OOO) — deploy OrgOS, initialize your organization, and run one coherent baseline.",
+          heroTitle: "For organizations that focus on what matters",
           heroLead:
-            "Solo founders and early teams drown in apps, policies, and half-finished setups. OpenOrgOS gives you one operator path — deploy, initialize, operate.",
+            "Solo founders and early teams need a clear baseline — not another pile of apps and half-finished setups. OpenOrgOS gives one operator path: deploy, initialize, operate.",
           heroCta: "Try as an OOO",
           heroCtaSecondary: "Install guide",
           storyKicker: "The problem",
           storyTitle: "Starting should not require a second career",
           storyLead:
-            "You want to ship the work. Instead you inherit a pile of tools that never quite become an organization.",
+            "You want to focus on the work that matters. Instead you inherit a pile of tools that never quite become an organization.",
           storyBody1:
             "A one-person company. A startup before the first hire. A project that suddenly needs roles, approvals, and a trail someone else can trust.",
           storyBody2:
-            "OpenOrgOS exists so those beginnings have a coherent operating system for organizational truth — not another dashboard to babysit.",
+            "OpenOrgOS exists so those beginnings have a coherent operating system for organizational truth — so you can stay focused on what the organization is for.",
           pathKicker: "The role",
           pathTitle: "Become an OpenOrgOS Operator",
           pathLead:
@@ -760,7 +801,7 @@
           whyTitle: "A thin protocol. A clear operator path.",
           whyLead:
             "Like a Linux-style split: <strong>one global exchange protocol</strong>, many local rules. You are not buying another all-in-one SaaS stack — you are learning to operate OrgOS.",
-          why1Title: "Less pile-up",
+          why1Title: "Focus on the essentials",
           why1Body:
             "Stop collecting disconnected tools. Start from one baseline for identity, events, authority, and audit inside your tenant.",
           why2Title: "Built for operators",
@@ -788,24 +829,27 @@
           communityVisitBtn: "Visit Community",
           footerCopy: "© OpenOrgOS Community",
           langLabel: "Language",
+          navOverview: "Overview",
+          navDemo: "Demo",
+          navCommunity: "Community",
         },
         ja: {
           pageTitle: "OpenOrgOS — OOO として始める",
           metaDescription:
-            "始めるのにツールが多すぎる。OpenOrgOS Operator（OOO）として OrgOS を展開・初期化し、ひとつの組織ベースラインを運用する。",
-          heroTitle: "それ以外が、多すぎるとき",
+            "本質に集中する組織へ。OpenOrgOS Operator（OOO）として OrgOS を展開・初期化し、ひとつの組織ベースラインを運用する。",
+          heroTitle: "本質に集中する組織へ",
           heroLead:
-            "一人社長も、スタートアップも、何かの始まりも — アプリと規程と未完の設定に溺れる。OpenOrgOS は、展開・初期化・運用という一つのオペレータ経路を渡します。",
+            "一人社長も、スタートアップも、何かの始まりも — 本業以外のツールと設定に時間を奪われない。OpenOrgOS は、展開・初期化・運用という一つのオペレータ経路を渡します。",
           heroCta: "OOO として試す",
           heroCtaSecondary: "インストールガイド",
           storyKicker: "課題",
           storyTitle: "始めるのに、もう一つの仕事は要らない",
           storyLead:
-            "やりたいのは本業なのに、組織になる前からツールの山だけが残る。",
+            "集中したいのは本質なのに、組織になる前からツールの山だけが残る。",
           storyBody1:
             "一人会社。最初の採用前のスタートアップ。突然、役割・承認・誰かが信頼できる証跡が必要になったプロジェクト。",
           storyBody2:
-            "OpenOrgOS は、そうした始まりに「組織の真実」を扱う一貫した基盤を渡すためにある — また世話をするダッシュボードを増やすためではない。",
+            "OpenOrgOS は、そうした始まりに「組織の真実」を扱う一貫した基盤を渡すためにある — 本質以外の世話に時間を取られないように。",
           pathKicker: "役割",
           pathTitle: "OpenOrgOS Operator になる",
           pathLead:
@@ -823,7 +867,7 @@
           whyTitle: "薄いプロトコル。はっきりしたオペレータ経路。",
           whyLead:
             "Linux 風の分離です。<strong>一つのグローバル交換プロトコル</strong>と、多くのローカルルール。もう一つのオールインワン SaaS を買うのではなく、OrgOS を運用する学びです。",
-          why1Title: "積み上げを減らす",
+          why1Title: "本質に集中する",
           why1Body:
             "バラバラなツールを集め続けるのをやめ、テナント内の identity・イベント・権限・監査のベースラインから始める。",
           why2Title: "オペレータ向け",
@@ -851,23 +895,26 @@
           communityVisitBtn: "Community へ",
           footerCopy: "© OpenOrgOS Community",
           langLabel: "言語",
+          navOverview: "概要",
+          navDemo: "デモ",
+          navCommunity: "Community",
         },
         zh: {
           pageTitle: "OpenOrgOS — 以 OOO 身份开始",
           metaDescription:
-            "起步时工具太多。成为 OpenOrgOS Operator（OOO）— 部署 OrgOS、初始化组织，并运行一套连贯的组织基线。",
-          heroTitle: "当其他一切都太多",
+            "面向专注本质的组织。成为 OpenOrgOS Operator（OOO）— 部署 OrgOS、初始化组织，并运行一套连贯的组织基线。",
+          heroTitle: "面向专注本质的组织",
           heroLead:
-            "一人公司、早期创业团队、任何刚起步的项目 — 都会被应用、规章与半成品配置淹没。OpenOrgOS 提供一条清晰的运营者路径：部署、初始化、运营。",
+            "一人公司、早期创业团队、任何刚起步的项目 — 不必把时间耗在工具与半成品配置上。OpenOrgOS 提供一条清晰的运营者路径：部署、初始化、运营。",
           heroCta: "以 OOO 身份试用",
           heroCtaSecondary: "安装指南",
           storyKicker: "问题",
           storyTitle: "起步不该变成第二份职业",
-          storyLead: "你想推进正事，却先继承了一堆从未真正变成组织的工具。",
+          storyLead: "你想专注于真正重要的事，却先继承了一堆从未真正变成组织的工具。",
           storyBody1:
             "一人公司。还没招到第一位员工的创业团队。突然需要角色、审批与可被他人信任的轨迹的项目。",
           storyBody2:
-            "OpenOrgOS 的存在，是为这些开端提供一套连贯的组织真相操作系统 — 而不是又一个需要照看的仪表盘。",
+            "OpenOrgOS 的存在，是为这些开端提供一套连贯的组织真相操作系统 — 让你把精力放在组织本身的目的上。",
           pathKicker: "角色",
           pathTitle: "成为 OpenOrgOS Operator",
           pathLead:
@@ -885,7 +932,7 @@
           whyTitle: "精简协议。清晰的运营者路径。",
           whyLead:
             "如同 Linux 式分层：<strong>一套全球交换协议</strong>与诸多本地规则。你不是再买一套全能 SaaS，而是学习运营 OrgOS。",
-          why1Title: "减少堆叠",
+          why1Title: "专注本质",
           why1Body:
             "停止收集互不相关的工具。从租户内的身份、事件、权限与审计基线开始。",
           why2Title: "为运营者而建",
@@ -913,6 +960,9 @@
           communityVisitBtn: "访问 Community",
           footerCopy: "© OpenOrgOS Community",
           langLabel: "语言",
+          navOverview: "概览",
+          navDemo: "演示",
+          navCommunity: "Community",
         },
       };
 

@@ -59,7 +59,11 @@ export async function getAuthSession(): Promise<AppSession | null> {
 export async function requireAuth(returnTo?: string) {
   const session = (await auth()) as AppSession | null;
   if (!session?.user?.id) {
-    redirect(returnTo ? `/login?callbackUrl=${encodeURIComponent(returnTo)}` : "/login");
+    redirect(
+      returnTo
+        ? `/login/start?callbackUrl=${encodeURIComponent(returnTo)}`
+        : "/login/start?callbackUrl=%2Fmypage",
+    );
   }
   await syncSessionRoleFromDb(session);
   const dbUser = await getAuthAccountStatus(session.user.id);

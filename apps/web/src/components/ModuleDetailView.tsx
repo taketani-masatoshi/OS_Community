@@ -101,7 +101,7 @@ export function ModuleDetailView({
 
   const applyHref = sessionUser
     ? `#apply`
-    : `/login?callbackUrl=${encodeURIComponent(`/modules/${mod.slug}#apply`)}`;
+    : `/login/start?callbackUrl=${encodeURIComponent(`/modules/${mod.slug}#apply`)}`;
 
   const tabs: { id: TabId; label: string }[] = [
     { id: "overview", label: labels.tabOverview },
@@ -257,7 +257,7 @@ export function ModuleDetailView({
                 <div className="lf-card">
                   <p className="page-muted-note">{labels.applySignInHint}</p>
                   <Link
-                    href={`/login?callbackUrl=${encodeURIComponent(`/modules/${mod.slug}#apply`)}`}
+                    href={`/login/start?callbackUrl=${encodeURIComponent(`/modules/${mod.slug}#apply`)}`}
                     className="btn btn-primary btn-sm"
                   >
                     {labels.signInToApply}

@@ -111,7 +111,7 @@ export default async function AcademyTrackPage({
                     </Link>
                   ) : (
                     <Link
-                      href={`/login?callbackUrl=/academy/modules/${trackId}/${mod.slug}/quiz`}
+                      href={`/login/start?callbackUrl=/academy/modules/${trackId}/${mod.slug}/quiz`}
                       className="btn btn-primary btn-sm"
                     >
                       {a.signInForModuleTest}

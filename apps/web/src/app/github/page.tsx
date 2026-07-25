@@ -32,7 +32,7 @@ export default async function GitHubPage() {
               {t.github.connectRepo}
             </a>
           ) : (
-            <Link href="/login?callbackUrl=/github" className="btn btn-primary btn-sm">
+            <Link href="/login/start?callbackUrl=/github" className="btn btn-primary btn-sm">
               {t.github.signInButton}
             </Link>
           )}
@@ -87,7 +87,7 @@ export default async function GitHubPage() {
         ) : (
           <div className="lf-card github-cta-box">
             <p style={{ margin: "0 0 1rem", fontSize: "1rem" }}>{t.github.signInCta}</p>
-            <Link href="/login?callbackUrl=/github" className="btn btn-primary btn-sm">
+            <Link href="/login/start?callbackUrl=/github" className="btn btn-primary btn-sm">
               {t.github.signInButton}
             </Link>
           </div>

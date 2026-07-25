@@ -23,7 +23,7 @@ export default async function CommitteeReviewPage({ params }: { params: Promise<
   const { slug } = await params;
   const session = await getAuthSession();
   if (!session?.user?.id) {
-    redirect(`/login?callbackUrl=${encodeURIComponent(`/committees/${slug}/review`)}`);
+    redirect(`/login/start?callbackUrl=${encodeURIComponent(`/committees/${slug}/review`)}`);
   }
 
   const committee = await getCommitteeBySlug(slug);

@@ -67,7 +67,7 @@ export default async function ModulesPage() {
               </>
             ) : (
               <>
-                <Link href="/login?callbackUrl=/wild-modules/register" className="btn btn-primary btn-sm">
+                <Link href="/login/start?callbackUrl=/wild-modules/register" className="btn btn-primary btn-sm">
                   {m.proposeCta}
                 </Link>
                 <Link href="/login" className="btn btn-ghost btn-sm">
@@ -118,7 +118,7 @@ export default async function ModulesPage() {
           <p className="page-desc">{m.proposeLead}</p>
           <p className="section-cta">
             <Link
-              href={session?.user ? "/wild-modules/register" : "/login?callbackUrl=/wild-modules/register"}
+              href={session?.user ? "/wild-modules/register" : "/login/start?callbackUrl=/wild-modules/register"}
               className="btn btn-primary btn-sm"
             >
               {m.proposeLink}

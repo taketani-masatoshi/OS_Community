@@ -26,7 +26,7 @@ export function AgentJoinMemberButton({
   if (!isSignedIn) {
     return (
       <Link
-        href={`/login?callbackUrl=${encodeURIComponent(`/agents/${agentId}`)}`}
+        href={`/login/start?callbackUrl=${encodeURIComponent(`/agents/${agentId}`)}`}
         className="btn btn-ghost btn-sm"
       >
         {labels.signIn}

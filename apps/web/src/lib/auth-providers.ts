@@ -1,13 +1,12 @@
-import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
-import LinkedIn from "next-auth/providers/linkedin";
 import type { Provider } from "next-auth/providers";
-import {
-  isGithubAuthConfigured,
-  resolveGoogleOAuthCredentials,
-  resolveLinkedInOAuthCredentials,
-} from "@/lib/auth-env";
+import { resolveGoogleOAuthCredentials } from "@/lib/auth-env";
 
+/**
+ * Auth providers for Community login.
+ * Stabilization: Google only. LinkedIn / GitHub OAuth providers are disabled
+ * until account-linking UX is re-enabled.
+ */
 export function buildAuthProviders(): Provider[] {
   const providers: Provider[] = [];
 
@@ -23,38 +22,10 @@ export function buildAuthProviders(): Provider[] {
           params: {
             access_type: "offline",
             response_type: "code",
+            // Always show the account picker so re-login is never fully silent SSO.
+            prompt: "select_account",
           },
         },
-      })
-    );
-  }
-
-  if (isGithubAuthConfigured()) {
-    providers.push(
-      GitHub({
-        clientId: process.env.AUTH_GITHUB_ID,
-        clientSecret: process.env.AUTH_GITHUB_SECRET,
-        allowDangerousEmailAccountLinking: true,
-        profile(profile) {
-          return {
-            id: profile.id.toString(),
-            name: profile.name ?? profile.login,
-            email: profile.email,
-            image: profile.avatar_url,
-            githubLogin: profile.login,
-          };
-        },
-      })
-    );
-  }
-
-  const linkedin = resolveLinkedInOAuthCredentials();
-  if (linkedin.configured && linkedin.clientId && linkedin.clientSecret) {
-    providers.push(
-      LinkedIn({
-        clientId: linkedin.clientId,
-        clientSecret: linkedin.clientSecret,
-        allowDangerousEmailAccountLinking: true,
       })
     );
   }

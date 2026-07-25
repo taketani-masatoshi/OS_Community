@@ -75,7 +75,7 @@ export default async function CommitteeDetailPage({ params }: { params: Promise<
   const moduleSlug = committee.module?.slug;
   const applyHref = moduleSlug ? `/modules/${moduleSlug}#apply` : null;
   const applyLoginHref = moduleSlug
-    ? `/login?callbackUrl=${encodeURIComponent(`/modules/${moduleSlug}#apply`)}`
+    ? `/login/start?callbackUrl=${encodeURIComponent(`/modules/${moduleSlug}#apply`)}`
     : null;
 
   const description = getCommitteeDescription(committee, locale);
@@ -319,7 +319,7 @@ export default async function CommitteeDetailPage({ params }: { params: Promise<
                 <p className="section-cta" style={{ marginBottom: 0 }}>
                   <span className="page-muted-note">{cp.applySignInHintDirect} </span>
                   <Link
-                    href={`/login?callbackUrl=${encodeURIComponent(`/committees/${slug}#apply-committee`)}`}
+                    href={`/login/start?callbackUrl=${encodeURIComponent(`/committees/${slug}#apply-committee`)}`}
                     className="btn btn-primary btn-sm"
                   >
                     {t.nav.signIn}

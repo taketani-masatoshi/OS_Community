@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { auth, signIn } from "@/auth";
 
 function connectionsLoginRedirect(): never {
-  redirect(`/login?callbackUrl=${encodeURIComponent("/settings/connections")}`);
+  redirect(`/login/start?callbackUrl=${encodeURIComponent("/settings/connections")}`);
 }
 
 export async function connectGithubAccount(
