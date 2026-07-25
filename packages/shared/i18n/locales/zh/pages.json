@@ -494,5 +494,20 @@
     "emptyChecklists": "没有符合筛选条件的清单。",
     "international": "国际通用",
     "expertsLink": "人员目录"
+  },
+  "partners": {
+    "back": "← 关于",
+    "relatedTitle": "相关",
+    "title": "合作组织",
+    "lead": "导入支持、故障排查，以及已在运行 OpenOrgOS 的组织联系方式。",
+    "supportTitle": "需要导入支持或故障排查？",
+    "supportBody": "若公开文档与演示仍不够，需要导入支持、故障排查或生产建议，请联系开发者。",
+    "contactLabel": "联系",
+    "directoryTitle": "已在运行 OpenOrgOS 的组织",
+    "directoryBody": "本页将列出可分享运营经验的合作组织；经同意后陆续登载。",
+    "directoryEmpty": "合作伙伴名录准备中。目前请使用上方联系方式。",
+    "relatedImplStatus": "当前可用内容",
+    "relatedInstall": "OrgOS 安装",
+    "relatedDemo": "试用演示"
   }
 }

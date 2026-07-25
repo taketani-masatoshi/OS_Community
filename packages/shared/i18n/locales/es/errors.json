@@ -59,5 +59,6 @@
   "ALREADY_CLAIMED": "Esta organización ya está declarada en su cuenta",
   "INVALID_STATUS": "La afiliación no está en revisión",
   "ORG_AFFILIATION_REQUIRED": "Vincule una organización con número corporativo antes de solicitar OpenOrgOS Operator",
-  "ORG_AFFILIATION_NOT_VERIFIED": "La afiliación debe verificarse antes de emitir OpenOrgOS Operator"
+  "ORG_AFFILIATION_NOT_VERIFIED": "La afiliación debe verificarse antes de emitir OpenOrgOS Operator",
+  "ORGANIZATION_REQUIRED": "Seleccione la organización a la que aplica esta certificación Operator"
 }

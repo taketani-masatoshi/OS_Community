@@ -58,6 +58,68 @@ export async function userHasVerifiedAffiliation(userId: string): Promise<boolea
   return count > 0;
 }
 
+/** Claimed (PENDING or VERIFIED) affiliation for a specific organization. */
+export async function getClaimedAffiliationForOrg(
+  userId: string,
+  organizationId: string,
+): Promise<OrgAffiliationWithOrg | null> {
+  return prisma.orgAffiliation.findFirst({
+    where: {
+      userId,
+      organizationId,
+      status: { in: ["PENDING", "VERIFIED"] },
+    },
+    include: affiliationInclude,
+  });
+}
+
+/** VERIFIED affiliation for a specific organization (issue gate). */
+export async function getVerifiedAffiliationForOrg(
+  userId: string,
+  organizationId: string,
+): Promise<OrgAffiliationWithOrg | null> {
+  return prisma.orgAffiliation.findFirst({
+    where: { userId, organizationId, status: "VERIFIED" },
+    include: affiliationInclude,
+  });
+}
+
+/** First VERIFIED affiliation (legacy issue fallback). */
+export async function getFirstVerifiedAffiliation(
+  userId: string,
+): Promise<OrgAffiliationWithOrg | null> {
+  return prisma.orgAffiliation.findFirst({
+    where: { userId, status: "VERIFIED" },
+    include: affiliationInclude,
+    orderBy: { verifiedAt: "desc" },
+  });
+}
+
+/** Active Operator certifications tied to organizations. */
+export async function listOperatorOrgCertifications(userId: string) {
+  return prisma.certification.findMany({
+    where: {
+      userId,
+      type: "STEWARD_OPERATOR",
+      status: "APPROVED",
+      revokedAt: null,
+      organizationId: { not: null },
+      expiresAt: { gt: new Date() },
+    },
+    include: {
+      organization: {
+        select: {
+          id: true,
+          legalName: true,
+          corporateNumber: true,
+          jurisdiction: true,
+        },
+      },
+    },
+    orderBy: { issuedAt: "desc" },
+  });
+}
+
 export type ClaimOrgInput = {
   corporateNumber: string;
   legalName: string;

@@ -121,9 +121,9 @@
         "planned": ["Contributor paths", "Certification tracks", "Community recognition"]
       },
       "partners": {
-        "title": "Partner Program",
-        "lead": "GitHub integration, module hosting, and technical partnership with the community platform.",
-        "planned": ["GitHub OAuth & repos", "Module registry", "Technical onboarding"]
+        "title": "Partner organizations",
+        "lead": "Introduction support and contacts for organizations already running OpenOrgOS.",
+        "planned": ["Partner directory", "Introduction support", "Operational experience sharing"]
       },
       "contact": {
         "title": "Contact Us",
@@ -178,6 +178,22 @@
       "standard-committee": "Standard Committee",
       "module-leads": "Module Leads"
     }
+  },
+  "partners": {
+    "title": "Partner organizations",
+    "lead": "Introduction support, troubleshooting, and contacts for organizations already running OpenOrgOS.",
+    "back": "← About",
+    "supportTitle": "Need introduction or troubleshooting help?",
+    "supportBody": "If you need introduction support, troubleshooting, or advice beyond the public docs and demo, contact the developer.",
+    "contactLabel": "Contact",
+    "contactEmail": "k.lab.masa@gmail.com",
+    "directoryTitle": "Organizations already running OpenOrgOS",
+    "directoryBody": "This page will list partner organizations that can share operational experience. Entries appear as partners opt in.",
+    "directoryEmpty": "Partner listings are being prepared. Until then, use the contact above.",
+    "relatedTitle": "Related",
+    "relatedImplStatus": "What is live today",
+    "relatedInstall": "OrgOS install",
+    "relatedDemo": "Try the demo"
   },
   "experts": {
     "title": "Expert Directory",

@@ -58,9 +58,13 @@
     "placeholder": "セットアップ経験、担当モジュール、validate 実績など",
     "submit": "申請する",
     "error": "エラー",
-    "orgRequiredNote": "OpenOrgOS Operator（OOO）申請には、法人番号による所属申告が必要です。申請は審査中でも可能で、発行には管理者の承認が必要です。",
+    "orgRequiredNote": "OpenOrgOS Operator（OOO）申請には、法人番号による所属申告が必要です。申請は審査中でも可能で、発行には管理者の承認が必要です。選択した組織が OOO の管理対象として保存されます。",
     "orgSettingsLink": "所属組織を連携",
-    "orgRequiredError": "OpenOrgOS Operator を申請する前に、法人番号で所属組織を連携してください。"
+    "orgRequiredError": "OpenOrgOS Operator を申請する前に、法人番号で所属組織を連携してください。",
+    "orgSelectLabel": "運用する組織",
+    "orgSelectPlaceholder": "組織を選択",
+    "orgPendingBadge": "承認待ち",
+    "orgVerifiedBadge": "承認済み"
   },
   "githubConnect": {
     "label": "GitHub リポジトリ URL",

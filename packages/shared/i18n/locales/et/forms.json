@@ -45,7 +45,11 @@
     "error": "Viga",
     "orgRequiredNote": "OpenOrgOS Operator (OOO) taotlused nõuavad organisatsiooni (ettevõtte number). Ülevaatamine piisab taotlemiseks; väljastamine nõuab admin kinnitust.",
     "orgSettingsLink": "Seo organisatsioon",
-    "orgRequiredError": "Seoge organisatsioon ettevõtte numbriga enne OpenOrgOS Operatori taotlemist."
+    "orgRequiredError": "Seoge organisatsioon ettevõtte numbriga enne OpenOrgOS Operatori taotlemist.",
+    "orgSelectLabel": "Hallatav organisatsioon",
+    "orgSelectPlaceholder": "Vali organisatsioon",
+    "orgPendingBadge": "Ootel kinnitus",
+    "orgVerifiedBadge": "Kinnitatud"
   },
   "githubConnect": {
     "label": "GitHubi repositooriumi URL",

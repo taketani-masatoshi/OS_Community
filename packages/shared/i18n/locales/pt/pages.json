@@ -494,5 +494,20 @@
     "emptyChecklists": "Nenhum checklist corresponde aos filtros.",
     "international": "Internacional",
     "expertsLink": "Diretório de pessoas"
+  },
+  "partners": {
+    "back": "← Sobre",
+    "relatedTitle": "Relacionados",
+    "title": "Organizações parceiras",
+    "lead": "Apoio à introdução, resolução de problemas e contactos de organizações que já operam o OpenOrgOS.",
+    "supportTitle": "Precisa de apoio à introdução ou resolução de problemas?",
+    "supportBody": "Se precisar de apoio à introdução, resolução de problemas ou aconselhamento além da documentação pública e da demo, contacte o programador.",
+    "contactLabel": "Contacto",
+    "directoryTitle": "Organizações que já operam o OpenOrgOS",
+    "directoryBody": "Esta página listará organizações parceiras que podem partilhar experiência operacional. As entradas aparecem à medida que os parceiros optam por participar.",
+    "directoryEmpty": "As listagens de parceiros estão a ser preparadas. Até lá, use o contacto acima.",
+    "relatedImplStatus": "O que está ativo hoje",
+    "relatedInstall": "Instalação do OrgOS",
+    "relatedDemo": "Experimentar a demo"
   }
 }

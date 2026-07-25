@@ -45,7 +45,11 @@
     "error": "Error del sistema",
     "orgRequiredNote": "Las solicitudes de OpenOrgOS Operator (OOO) requieren una organización declarada (número corporativo). Pendiente basta para solicitar; la emisión requiere verificación admin.",
     "orgSettingsLink": "Vincular organización",
-    "orgRequiredError": "Vincule su organización con número corporativo antes de solicitar OpenOrgOS Operator."
+    "orgRequiredError": "Vincule su organización con número corporativo antes de solicitar OpenOrgOS Operator.",
+    "orgSelectLabel": "Organización a operar",
+    "orgSelectPlaceholder": "Seleccionar organización",
+    "orgPendingBadge": "Verificación pendiente",
+    "orgVerifiedBadge": "Verificado"
   },
   "githubConnect": {
     "label": "URL del repositorio de GitHub",

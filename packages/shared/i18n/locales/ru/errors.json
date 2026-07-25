@@ -59,5 +59,6 @@
   "ALREADY_CLAIMED": "Эта организация уже заявлена в вашем аккаунте",
   "INVALID_STATUS": "Принадлежность не на проверке",
   "ORG_AFFILIATION_REQUIRED": "Привяжите организацию с корпоративным номером перед подачей на OpenOrgOS Operator",
-  "ORG_AFFILIATION_NOT_VERIFIED": "Принадлежность к организации должна быть подтверждена перед выдачей OpenOrgOS Operator"
+  "ORG_AFFILIATION_NOT_VERIFIED": "Принадлежность к организации должна быть подтверждена перед выдачей OpenOrgOS Operator",
+  "ORGANIZATION_REQUIRED": "Выберите организацию, к которой относится эта сертификация Operator"
 }

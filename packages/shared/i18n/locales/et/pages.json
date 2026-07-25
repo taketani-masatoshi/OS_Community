@@ -494,5 +494,20 @@
     "emptyChecklists": "Ükski nimekiri ei vasta filtritele.",
     "international": "Rahvusvaheline",
     "expertsLink": "Inimeste kataloog"
+  },
+  "partners": {
+    "back": "← Teave",
+    "relatedTitle": "Seotud",
+    "title": "Partnerorganisatsioonid",
+    "lead": "Käivitustoetus, tõrkeotsing ja kontaktid organisatsioonidele, kes juba kasutavad OpenOrgOS-i.",
+    "supportTitle": "Vajate käivitustuge või tõrkeotsingut?",
+    "supportBody": "Kui vajate käivitustuge, tõrkeotsingut või nõu peale avalikke dokumente ja demot, võtke ühendust arendajaga.",
+    "contactLabel": "Kontakt",
+    "directoryTitle": "Organisatsioonid, kes juba kasutavad OpenOrgOS-i",
+    "directoryBody": "Siin loetletakse partnerorganisatsioonid, kes saavad jagada kasutuskogemust. Kirjed ilmuvad partnerite nõusolekul.",
+    "directoryEmpty": "Partnerite loend on ettevalmistamisel. Seni kasutage ülaltoodud kontakti.",
+    "relatedImplStatus": "Mis on täna olemas",
+    "relatedInstall": "OrgOS-i paigaldus",
+    "relatedDemo": "Proovi demot"
   }
 }

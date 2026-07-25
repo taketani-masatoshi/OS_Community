@@ -494,5 +494,20 @@
     "emptyChecklists": "Keine Checklisten entsprechen den Filtern.",
     "international": "Weltweit",
     "expertsLink": "Personenverzeichnis"
+  },
+  "partners": {
+    "back": "← Über uns",
+    "relatedTitle": "Verwandte",
+    "title": "Partnerorganisationen",
+    "lead": "Einführungsunterstützung, Fehlerbehebung und Kontakte zu Organisationen, die OpenOrgOS bereits betreiben.",
+    "supportTitle": "Brauchen Sie Einführungsunterstützung oder Fehlerbehebung?",
+    "supportBody": "Wenn Sie Einführungsunterstützung, Fehlerbehebung oder Beratung über die öffentliche Doku und Demo hinaus brauchen, kontaktieren Sie den Entwickler.",
+    "contactLabel": "Kontakt",
+    "directoryTitle": "Organisationen, die OpenOrgOS bereits betreiben",
+    "directoryBody": "Hier werden Partnerorganisationen gelistet, die Betriebserfahrung teilen können. Einträge erscheinen, sobald Partner zustimmen.",
+    "directoryEmpty": "Die Partnerliste wird vorbereitet. Bis dahin nutzen Sie den Kontakt oben.",
+    "relatedImplStatus": "Was heute verfügbar ist",
+    "relatedInstall": "OrgOS-Installation",
+    "relatedDemo": "Demo ausprobieren"
   }
 }

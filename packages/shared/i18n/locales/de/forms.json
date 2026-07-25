@@ -45,7 +45,11 @@
     "error": "Fehler",
     "orgRequiredNote": "OpenOrgOS Operator (OOO)-Bewerbungen erfordern eine gemeldete Organisation (Unternehmensnummer). Ausstehend reicht zum Bewerben; Ausstellung braucht Admin-Prüfung.",
     "orgSettingsLink": "Organisation verknüpfen",
-    "orgRequiredError": "Verknüpfen Sie Ihre Organisation mit Unternehmensnummer vor der Bewerbung um OpenOrgOS Operator."
+    "orgRequiredError": "Verknüpfen Sie Ihre Organisation mit Unternehmensnummer vor der Bewerbung um OpenOrgOS Operator.",
+    "orgSelectLabel": "Zu betreibende Organisation",
+    "orgSelectPlaceholder": "Organisation wählen",
+    "orgPendingBadge": "Prüfung ausstehend",
+    "orgVerifiedBadge": "Verifiziert"
   },
   "githubConnect": {
     "label": "GitHub-Repository-URL",

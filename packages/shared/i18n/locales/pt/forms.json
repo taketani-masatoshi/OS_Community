@@ -45,7 +45,11 @@
     "error": "Erro",
     "orgRequiredNote": "Candidaturas a OpenOrgOS Operator (OOO) exigem organização declarada (número corporativo). Revisão pendente basta para candidatar; a emissão exige verificação admin.",
     "orgSettingsLink": "Ligar organização",
-    "orgRequiredError": "Ligue a organização com número corporativo antes de candidatar-se a OpenOrgOS Operator."
+    "orgRequiredError": "Ligue a organização com número corporativo antes de candidatar-se a OpenOrgOS Operator.",
+    "orgSelectLabel": "Organização a operar",
+    "orgSelectPlaceholder": "Selecionar organização",
+    "orgPendingBadge": "Verificação pendente",
+    "orgVerifiedBadge": "Verificado"
   },
   "githubConnect": {
     "label": "URL do repositório GitHub",

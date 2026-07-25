@@ -59,5 +59,6 @@
   "ALREADY_CLAIMED": "Diese Organisation ist bereits auf Ihrem Konto gemeldet",
   "INVALID_STATUS": "Zugehörigkeit ist nicht in Prüfung",
   "ORG_AFFILIATION_REQUIRED": "Verknüpfen Sie eine Organisation mit Unternehmensnummer vor der Bewerbung um OpenOrgOS Operator",
-  "ORG_AFFILIATION_NOT_VERIFIED": "Organisationszugehörigkeit muss vor Ausstellung von OpenOrgOS Operator verifiziert sein"
+  "ORG_AFFILIATION_NOT_VERIFIED": "Organisationszugehörigkeit muss vor Ausstellung von OpenOrgOS Operator verifiziert sein",
+  "ORGANIZATION_REQUIRED": "Wählen Sie die Organisation für diese Operator-Zertifizierung"
 }

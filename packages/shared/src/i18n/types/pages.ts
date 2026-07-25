@@ -85,6 +85,22 @@ export type PageMessages = {
       "module-leads": string;
     };
   };
+  partners: {
+    title: string;
+    lead: string;
+    back: string;
+    supportTitle: string;
+    supportBody: string;
+    contactLabel: string;
+    contactEmail: string;
+    directoryTitle: string;
+    directoryBody: string;
+    directoryEmpty: string;
+    relatedTitle: string;
+    relatedImplStatus: string;
+    relatedInstall: string;
+    relatedDemo: string;
+  };
   experts: {
     title: string;
     lead: string;

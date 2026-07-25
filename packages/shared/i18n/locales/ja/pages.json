@@ -172,12 +172,12 @@
         ]
       },
       "partners": {
-        "title": "パートナープログラム",
-        "lead": "GitHub 連携、モジュールホスティング、コミュニティプラットフォームとの技術連携。",
+        "title": "パートナー企業",
+        "lead": "導入支援と、すでに OpenOrgOS を動かしている組織への連絡先。",
         "planned": [
-          "GitHub OAuth・リポ",
-          "モジュールレジストリ",
-          "技術オンボーディング"
+          "パートナー一覧",
+          "導入支援",
+          "運用経験の共有"
         ]
       },
       "contact": {
@@ -245,6 +245,22 @@
       "standard-committee": "標準委員会",
       "module-leads": "モジュールリード"
     }
+  },
+  "partners": {
+    "title": "パートナー企業",
+    "lead": "導入支援・トラブル対応と、すでに OpenOrgOS を動かしている組織への連絡先です。",
+    "back": "← OpenOrgOS について",
+    "supportTitle": "導入支援・トラブル対応が必要ですか？",
+    "supportBody": "公開ドキュメントや Demo だけでは足りない場合、導入支援・トラブル対応・本番導入の相談は開発者までご連絡ください。",
+    "contactLabel": "連絡先",
+    "contactEmail": "k.lab.masa@gmail.com",
+    "directoryTitle": "すでに導入している組織",
+    "directoryBody": "運用経験を共有できるパートナー企業を、ここに掲載していきます（掲載希望の組織から順次）。",
+    "directoryEmpty": "パートナー一覧は準備中です。当面は上記の連絡先をご利用ください。",
+    "relatedTitle": "関連",
+    "relatedImplStatus": "いまできること",
+    "relatedInstall": "OrgOS インストール",
+    "relatedDemo": "Demo を試す"
   },
   "experts": {
     "title": "専門家ディレクトリ",

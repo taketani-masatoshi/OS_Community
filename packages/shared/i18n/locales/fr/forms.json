@@ -45,7 +45,11 @@
     "error": "Erreur",
     "orgRequiredNote": "Les candidatures OpenOrgOS Operator (OOO) exigent une organisation déclarée (numéro d'entreprise). En attente suffit pour postuler ; l'émission exige une vérification admin.",
     "orgSettingsLink": "Lier l'organisation",
-    "orgRequiredError": "Liez votre organisation avec un numéro d'entreprise avant de postuler à OpenOrgOS Operator."
+    "orgRequiredError": "Liez votre organisation avec un numéro d'entreprise avant de postuler à OpenOrgOS Operator.",
+    "orgSelectLabel": "Organisation à opérer",
+    "orgSelectPlaceholder": "Sélectionner l'organisation",
+    "orgPendingBadge": "Vérification en attente",
+    "orgVerifiedBadge": "Vérifié"
   },
   "githubConnect": {
     "label": "URL du dépôt GitHub",

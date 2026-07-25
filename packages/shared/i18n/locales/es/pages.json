@@ -494,5 +494,20 @@
     "emptyChecklists": "Ninguna lista coincide con los filtros.",
     "international": "Internacional",
     "expertsLink": "Directorio de personas"
+  },
+  "partners": {
+    "back": "← Acerca de",
+    "relatedTitle": "Relacionados",
+    "title": "Organizaciones asociadas",
+    "lead": "Apoyo a la introducción, resolución de problemas y contactos de organizaciones que ya ejecutan OpenOrgOS.",
+    "supportTitle": "¿Necesita apoyo de introducción o resolución de problemas?",
+    "supportBody": "Si necesita apoyo de introducción, resolución de problemas o consejos más allá de la documentación pública y la demo, contacte al desarrollador.",
+    "contactLabel": "Contacto",
+    "directoryTitle": "Organizaciones que ya ejecutan OpenOrgOS",
+    "directoryBody": "Esta página listará organizaciones asociadas que pueden compartir experiencia operativa. Las entradas aparecen cuando los socios optan por participar.",
+    "directoryEmpty": "Los listados de socios se están preparando. Mientras tanto, use el contacto de arriba.",
+    "relatedImplStatus": "Qué está activo hoy",
+    "relatedInstall": "Instalación de OrgOS",
+    "relatedDemo": "Probar la demo"
   }
 }

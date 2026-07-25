@@ -56,6 +56,7 @@
   "INVALID_STATUS": "所属は審査中ではありません",
   "ORG_AFFILIATION_REQUIRED": "OpenOrgOS Operator 申請の前に、法人番号で所属組織を連携してください",
   "ORG_AFFILIATION_NOT_VERIFIED": "OpenOrgOS Operator 発行には、所属組織の管理者承認が必要です",
+  "ORGANIZATION_REQUIRED": "この Operator 認定の対象組織を選択してください",
   "GITHUB_APP_NOT_CONFIGURED": "GitHub App が設定されていません",
   "GITHUB_INSTALL_URL_UNAVAILABLE": "インストール URL を取得できません",
   "WEBHOOK_INVALID_SIGNATURE": "署名が無効です",

@@ -98,6 +98,13 @@ export async function bootstrapFounder(options?: { githubLogin?: string; name?: 
     });
   }
 
+  const defaultOperatorId =
+    process.env.COMMUNITY_DEFAULT_ORGOS_OPERATOR_ID?.trim() || "OP-001";
+  await prisma.user.update({
+    where: { id: founder.id },
+    data: { orgosOperatorId: defaultOperatorId },
+  });
+
   const standard = await prisma.committee.findUnique({ where: { slug: STANDARD_COMMITTEE_SLUG } });
   if (standard) {
     await prisma.committeeMember.upsert({

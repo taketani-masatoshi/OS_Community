@@ -59,5 +59,6 @@
   "ALREADY_CLAIMED": "This organization is already claimed on your account",
   "INVALID_STATUS": "Affiliation is not pending review",
   "ORG_AFFILIATION_REQUIRED": "Link an organization with a corporate number before applying for OpenOrgOS Operator",
-  "ORG_AFFILIATION_NOT_VERIFIED": "Organization affiliation must be verified before issuing OpenOrgOS Operator"
+  "ORG_AFFILIATION_NOT_VERIFIED": "Organization affiliation must be verified before issuing OpenOrgOS Operator",
+  "ORGANIZATION_REQUIRED": "Select the organization this Operator certification applies to"
 }

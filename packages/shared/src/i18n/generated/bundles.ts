@@ -38,7 +38,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "join": "Join",
       "signIn": "Sign in",
       "signOut": "Sign out",
-      "myPage": "My Page"
+      "myPage": "My Page",
+      "memberHub": "Workspace",
+      "proposeModule": "Propose a module",
+      "proposeModuleShort": "Propose"
     },
     "hero": {
       "learnMore": "Learn more",
@@ -377,7 +380,7 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
     },
     "login": {
       "title": "Sign in",
-      "desc": "Sign in with your Google account (OpenOrgOS login ID). Link GitHub and LinkedIn afterward from Connections.",
+      "desc": "Sign in with your Google account (OpenOrgOS login ID). You will choose a Google account each time; after signing out of Community, Google may also ask you to re-enter your password. Link GitHub and LinkedIn afterward from Connections.",
       "signInGoogle": "Sign in with Google",
       "signInGithub": "Sign in with GitHub",
       "signInLinkedIn": "Sign in with LinkedIn",
@@ -513,10 +516,14 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "githubReposLinked": "repos linked",
       "linkedinViewProfile": "View on LinkedIn",
       "editProfile": "Edit profile",
-      "actionsTitle": "Quick links",
+      "actionsTitle": "Member procedures",
       "actionSettings": "Account settings",
       "actionPublicProfile": "Public profile",
       "actionLearning": "Learning",
+      "actionCommittees": "Join a committee",
+      "actionCertifications": "Certifications",
+      "workspaceTitle": "Member workspace",
+      "workspaceLead": "As a signed-in Community member you can join committees, take module roles, propose modules, and follow Operator (OOO) operations. Public marketing pages stay available after sign-out.",
       "privateVideosTitle": "Member learning videos",
       "privateVideosDesc": "Private YouTube viewing keys — shown on your account home after sign-in. Watch embedded below or open on YouTube with the key.",
       "privateVideosKeyLabel": "Viewing key",
@@ -526,19 +533,23 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "actionModules": "Join a module",
       "actionProposeModule": "Propose a module",
       "onboardingTitle": "Your next steps",
-      "onboardingSub": "Start with these three — details and advanced settings are below when you need them.",
+      "onboardingSub": "Link your Google / OpenOrg ID, claim your organization with a corporate number, then apply for OpenOrgOS Operator (OOO).",
       "onboardingStepProfile": "Complete your profile",
-      "onboardingStepProfileBody": "Add your name, specialty, and region so committees can recognize you.",
+      "onboardingStepProfileBody": "Confirm the name and contact details on the Google account you signed in with.",
+      "onboardingStepOrg": "Claim your organization",
+      "onboardingStepOrgBody": "Link a Japanese corporate number to this Google ID. That claim is the OOO tenant scope an administrator verifies.",
+      "onboardingStepOoo": "Apply for OpenOrgOS Operator",
+      "onboardingStepOooBody": "After the organization claim, apply for OOO so Wire and budget operations attach to that tenant.",
       "onboardingStepBrowse": "Browse modules",
       "onboardingStepBrowseBody": "Find a module that matches your interests before applying.",
-      "onboardingStepParticipate": "Apply or propose",
-      "onboardingStepParticipateBody": "Request a contributor role or register a community proposal module.",
+      "onboardingStepParticipate": "Join committees or propose modules",
+      "onboardingStepParticipateBody": "With identity and organization in place, join a committee or propose a module.",
       "onboardingStepDone": "Done",
       "onboardingShowDetails": "Show account details",
       "onboardingProgress": "{done}/{total} complete",
       "welcomeTitle": "Welcome, {name}",
-      "welcomeBody": "Start by browsing one module in a field that interests you.",
-      "welcomeCta": "See recommended modules",
+      "welcomeBody": "First link your organization (corporate number) to this Google ID, then apply for OOO.",
+      "welcomeCta": "Claim organization",
       "wildModulesTitle": "Community proposal modules",
       "wildModulesDesc": "Modules you registered as author. Promotion and GitHub links are on each module detail page.",
       "wildModulesEmpty": "No community proposal modules yet.",
@@ -557,6 +568,29 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "committeeRequestsEmpty": "No committee applications yet.",
       "committeeRequestsApplyLink": "Browse committees",
       "reviewPendingBadge": "Committee review ({count})",
+      "adminTitle": "Administration",
+      "adminDesc": "You are a site administrator. Manage members, roles, and committees.",
+      "adminManageUsers": "Manage members",
+      "adminDashboard": "Admin dashboard",
+      "opsTitle": "Operations hub",
+      "opsDesc": "Organizations you can operate as OpenOrgOS Operator (OOO), plus Wire and forecast/actuals entry points.",
+      "opsEmpty": "No OOO organization scope yet. Claim an organization and apply for Operator certification.",
+      "opsClaimOrg": "Claim organization",
+      "opsApplyOoo": "Apply for OOO",
+      "opsOrgLabel": "Corporate number",
+      "opsCertLabel": "Certificate",
+      "opsExpiresLabel": "Expires",
+      "opsWireTitle": "Wire / protocol",
+      "opsWireDesc": "Open Wire Console on OrgOS Operator Console when it is running in Docker. Community still hosts governance docs.",
+      "opsWireConsole": "Open Wire Console",
+      "opsWireProtocol": "Trusted operators",
+      "opsWireGovernance": "Governance",
+      "opsYojitsuTitle": "Forecast & actuals (予実)",
+      "opsYojitsuDesc": "Yojitsu source of truth stays in the OrgOS tenant (YAML + CLI). Steward Chat Today shows KPI when Operator Console is up.",
+      "opsYojitsuConsole": "Open Today (予実 KPI)",
+      "opsYojitsuGuide": "Module & Agent guide",
+      "opsYojitsuInstall": "OrgOS install",
+      "opsConsoleOffline": "OrgOS Operator Console is not reachable right now. Use the Community docs below, or start the console on this machine.",
       "permissionsDetails": "GitHub permissions (details)",
       "profileTitle": "Profile",
       "overviewTitle": "Overview",
@@ -1093,7 +1127,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "join": "参加する",
       "signIn": "ログイン",
       "signOut": "ログアウト",
-      "myPage": "マイページ"
+      "myPage": "マイページ",
+      "memberHub": "ワークスペース",
+      "proposeModule": "モジュールを提案",
+      "proposeModuleShort": "提案"
     },
     "hero": {
       "learnMore": "くわしく",
@@ -1432,7 +1469,7 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
     },
     "login": {
       "title": "ログイン",
-      "desc": "Google アカウント（OpenOrgOS ログイン ID）でサインインしてください。GitHub / LinkedIn はログイン後に Connections から連携できます。",
+      "desc": "Google アカウント（OpenOrgOS ログイン ID）でサインインします。毎回アカウント選択が表示されます。Community からサインアウトした直後は、Google 側でパスワード再入力を求められることがあります。GitHub / LinkedIn はログイン後に Connections から連携できます。",
       "signInGoogle": "Google でログイン",
       "signInGithub": "GitHub でログイン",
       "signInLinkedIn": "LinkedIn でログイン",
@@ -1568,10 +1605,14 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "githubReposLinked": "リポジトリ連携済み",
       "linkedinViewProfile": "LinkedIn で見る",
       "editProfile": "プロフィール編集",
-      "actionsTitle": "ショートカット",
+      "actionsTitle": "メンバー手続き",
       "actionSettings": "アカウント設定",
       "actionPublicProfile": "公開プロフィール",
       "actionLearning": "学習",
+      "actionCommittees": "委員会に参加",
+      "actionCertifications": "認定",
+      "workspaceTitle": "メンバー・ワークスペース",
+      "workspaceLead": "ログイン中は Community メンバーとして、委員会参加・モジュール役割・提案・OOO 運用に進めます。ログアウト後は公開の状況閲覧に戻ります。",
       "privateVideosTitle": "会員向け学習動画",
       "privateVideosDesc": "ログイン後にのみ表示されるプライベート YouTube の視聴キーです。下で埋め込み再生できます。制限がある場合はキーで YouTube を開いてください。",
       "privateVideosKeyLabel": "視聴キー",
@@ -1581,19 +1622,23 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "actionModules": "モジュール参加",
       "actionProposeModule": "モジュールを提案",
       "onboardingTitle": "次にやること",
-      "onboardingSub": "まずはこの3つから。詳しい設定は必要になったら下の「詳細を表示」へ。",
+      "onboardingSub": "Google / OpenOrg ID を確認し、法人番号で組織を申告してから OpenOrgOS Operator（OOO）を申請します。",
       "onboardingStepProfile": "プロフィールを完成させる",
-      "onboardingStepProfileBody": "名前・専門分野・地域を入力すると、委員会から認識されやすくなります。",
+      "onboardingStepProfileBody": "ログインに使った Google アカウントの氏名・連絡先を確認してください。",
+      "onboardingStepOrg": "組織を申告する",
+      "onboardingStepOrgBody": "この Google ID に日本の法人番号を紐づけます。管理者が確認する OOO テナント範囲になります。",
+      "onboardingStepOoo": "OpenOrgOS Operator を申請",
+      "onboardingStepOooBody": "組織申告のあと OOO を申請し、Wire・予実をそのテナントに紐づけます。",
       "onboardingStepBrowse": "モジュールを見る",
       "onboardingStepBrowseBody": "興味のある分野のモジュールを探してから応募しましょう。",
-      "onboardingStepParticipate": "応募または提案",
-      "onboardingStepParticipateBody": "コントリビュータに応募するか、コミュニティ提案モジュールを登録します。",
+      "onboardingStepParticipate": "委員会参加またはモジュール提案",
+      "onboardingStepParticipateBody": "ID と組織の連携後に、委員会参加やモジュール提案へ進みます。",
       "onboardingStepDone": "完了",
       "onboardingShowDetails": "アカウントの詳細を表示",
       "onboardingProgress": "{done}/{total} 完了",
       "welcomeTitle": "{name} さん、ようこそ",
-      "welcomeBody": "まずモジュールを1つ見て、興味のある分野から始めましょう。",
-      "welcomeCta": "おすすめモジュールを見る",
+      "welcomeBody": "まずこの Google ID に組織（法人番号）を紐づけ、続いて OOO を申請してください。",
+      "welcomeCta": "組織を申告する",
       "wildModulesTitle": "コミュニティ提案モジュール",
       "wildModulesDesc": "あなたが author として登録した提案モジュール。昇格申請や GitHub 連携は各モジュール詳細から。",
       "wildModulesEmpty": "登録した提案モジュールはまだありません。",
@@ -1612,6 +1657,29 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "committeeRequestsEmpty": "委員会への申請はまだありません。",
       "committeeRequestsApplyLink": "委員会一覧",
       "reviewPendingBadge": "委員会審査 ({count})",
+      "adminTitle": "管理者メニュー",
+      "adminDesc": "あなたはサイト管理者です。メンバー・ロール・委員会を管理できます。",
+      "adminManageUsers": "メンバー管理",
+      "adminDashboard": "管理ダッシュボード",
+      "opsTitle": "運用ハブ",
+      "opsDesc": "OpenOrgOS Operator（OOO）として運用できる組織と、Wire・予実への入口です。",
+      "opsEmpty": "まだ OOO の組織スコープがありません。所属を申告し、Operator 認定を申請してください。",
+      "opsClaimOrg": "所属組織を申告",
+      "opsApplyOoo": "OOO を申請",
+      "opsOrgLabel": "法人番号",
+      "opsCertLabel": "認定番号",
+      "opsExpiresLabel": "有効期限",
+      "opsWireTitle": "Wire / プロトコル",
+      "opsWireDesc": "Docker で Operator Console が起動していれば Wire Console を開けます。Community 側はガバナンス案内も提供します。",
+      "opsWireConsole": "Wire Console を開く",
+      "opsWireProtocol": "Trusted Operator",
+      "opsWireGovernance": "ガバナンス",
+      "opsYojitsuTitle": "予実管理",
+      "opsYojitsuDesc": "予実の正本は OrgOS テナント（YAML + CLI）です。Operator Console の Steward Chat Today で KPI を確認できます。",
+      "opsYojitsuConsole": "Today（予実 KPI）を開く",
+      "opsYojitsuGuide": "Module / Agent ガイド",
+      "opsYojitsuInstall": "OrgOS インストール",
+      "opsConsoleOffline": "OrgOS Operator Console に現在接続できません。下の Community ドキュメントを使うか、このマシンで Console を起動してください。",
       "permissionsDetails": "GitHub 権限（詳細）",
       "profileTitle": "プロフィール",
       "overviewTitle": "概要",
@@ -2148,7 +2216,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "join": "Participar",
       "signIn": "Entrar",
       "signOut": "Sair",
-      "myPage": "Minha Página"
+      "myPage": "Minha Página",
+      "memberHub": "Espaço de trabalho",
+      "proposeModule": "Propor um módulo",
+      "proposeModuleShort": "Propor"
     },
     "hero": {
       "learnMore": "Saiba Mais",
@@ -2623,10 +2694,14 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "githubReposLinked": "repositórios vinculados",
       "linkedinViewProfile": "Ver no LinkedIn",
       "editProfile": "Editar perfil",
-      "actionsTitle": "Atalhos",
+      "actionsTitle": "Procedimentos de membro",
       "actionSettings": "Definições da conta",
       "actionPublicProfile": "Perfil público",
       "actionLearning": "Aprendizagem",
+      "actionCommittees": "Entrar num comité",
+      "actionCertifications": "Certificações",
+      "workspaceTitle": "Espaço de membro",
+      "workspaceLead": "Como membro com sessão iniciada, pode entrar em comités, assumir papéis em módulos, propor módulos e seguir operações OOO. As páginas públicas ficam disponíveis após terminar sessão.",
       "privateVideosTitle": "Vídeos de aprendizado para membros",
       "privateVideosDesc": "Chaves de visualização do YouTube privado — exibidas na sua página após o login. Assista abaixo ou abra no YouTube com a chave.",
       "privateVideosKeyLabel": "Chave de visualização",
@@ -2639,6 +2714,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "onboardingSub": "Comece com estes três — detalhes e configurações avançadas estão abaixo quando precisar.",
       "onboardingStepProfile": "Complete o seu perfil",
       "onboardingStepProfileBody": "Adicione nome, especialidade e região para que os comitês possam reconhecê-lo.",
+      "onboardingStepOrg": "Declarar a organização",
+      "onboardingStepOrgBody": "Associe um número de pessoa coletiva japonês a este Google ID. Essa declaração é o âmbito do tenant OOO que um administrador verifica.",
+      "onboardingStepOoo": "Candidatar-se a OpenOrgOS Operator",
+      "onboardingStepOooBody": "Após declarar a organização, candidate-se a OOO para ligar Wire e orçamento a esse tenant.",
       "onboardingStepBrowse": "Ver módulos →",
       "onboardingStepBrowseBody": "Encontre um módulo que corresponda aos seus interesses antes de se candidatar.",
       "onboardingStepParticipate": "Candidatar ou propor",
@@ -2667,6 +2746,29 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "committeeRequestsEmpty": "Ainda não há candidaturas de comitê.",
       "committeeRequestsApplyLink": "Ver comitês",
       "reviewPendingBadge": "Revisão do comitê ({count})",
+      "adminTitle": "Administração",
+      "adminDesc": "Você é administrador do site. Gerencie membros, papéis e comitês.",
+      "adminManageUsers": "Gerenciar membros",
+      "adminDashboard": "Painel de administração",
+      "opsTitle": "Hub de operações",
+      "opsDesc": "Organizações que pode operar como OpenOrgOS Operator (OOO), mais entradas para Wire e previsão/realizado.",
+      "opsEmpty": "Ainda sem âmbito de organização OOO. Declare uma organização e candidate-se a Operator.",
+      "opsClaimOrg": "Declarar organização",
+      "opsApplyOoo": "Candidatar-se a OOO",
+      "opsOrgLabel": "Número corporativo",
+      "opsCertLabel": "Certificado",
+      "opsExpiresLabel": "Expira",
+      "opsWireTitle": "Wire / protocolo",
+      "opsWireDesc": "A Community acolhe governação e operadores de confiança. O transporte Wire entre orgs corre no OrgOS.",
+      "opsWireConsole": "Abrir Wire Console",
+      "opsWireProtocol": "Operadores de confiança",
+      "opsWireGovernance": "Governança",
+      "opsYojitsuTitle": "Previsão e realizado",
+      "opsYojitsuDesc": "Yojitsu vive no seu tenant OrgOS (YAML + CLI). Use a documentação da Community para instalar e operar.",
+      "opsYojitsuConsole": "Abrir Today (KPI 予実)",
+      "opsYojitsuGuide": "Guia Module & Agent",
+      "opsYojitsuInstall": "Instalação OrgOS",
+      "opsConsoleOffline": "O Operator Console do OrgOS não está acessível agora. Use a documentação da Community abaixo, ou inicie o console nesta máquina.",
       "permissionsDetails": "Permissões GitHub (detalhes)",
       "profileTitle": "Perfil",
       "overviewTitle": "Visão geral",
@@ -3203,7 +3305,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "join": "Unirse",
       "signIn": "Iniciar sesión",
       "signOut": "Cerrar sesión",
-      "myPage": "Mi Página"
+      "myPage": "Mi Página",
+      "memberHub": "Espacio de trabajo",
+      "proposeModule": "Proponer un módulo",
+      "proposeModuleShort": "Proponer"
     },
     "hero": {
       "learnMore": "Más Información",
@@ -3678,10 +3783,14 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "githubReposLinked": "repositorios vinculados",
       "linkedinViewProfile": "Ver en LinkedIn",
       "editProfile": "Editar perfil",
-      "actionsTitle": "Accesos rápidos",
+      "actionsTitle": "Trámites de miembro",
       "actionSettings": "Ajustes de cuenta",
       "actionPublicProfile": "Perfil público",
       "actionLearning": "Aprendizaje",
+      "actionCommittees": "Unirse a un comité",
+      "actionCertifications": "Certificaciones",
+      "workspaceTitle": "Espacio de miembro",
+      "workspaceLead": "Como miembro con sesión iniciada puede unirse a comités, asumir roles de módulo, proponer módulos y seguir operaciones OOO. Las páginas públicas siguen disponibles tras cerrar sesión.",
       "privateVideosTitle": "Vídeos de aprendizaje para miembros",
       "privateVideosDesc": "Claves de visualización de YouTube privado — visibles en tu página tras iniciar sesión. Míralos abajo o abre YouTube con la clave.",
       "privateVideosKeyLabel": "Clave de visualización",
@@ -3694,6 +3803,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "onboardingSub": "Empieza con estos tres — los detalles y la configuración avanzada están abajo cuando los necesites.",
       "onboardingStepProfile": "Completa tu perfil",
       "onboardingStepProfileBody": "Añade tu nombre, especialidad y región para que los comités puedan reconocerte.",
+      "onboardingStepOrg": "Declarar la organización",
+      "onboardingStepOrgBody": "Vincule un número corporativo japonés a este Google ID. Esa declaración es el alcance del tenant OOO que verifica un administrador.",
+      "onboardingStepOoo": "Solicitar OpenOrgOS Operator",
+      "onboardingStepOooBody": "Tras declarar la organización, solicite OOO para vincular Wire y presupuesto a ese tenant.",
       "onboardingStepBrowse": "Ver módulos →",
       "onboardingStepBrowseBody": "Encuentra un módulo que se ajuste a tus intereses antes de solicitar.",
       "onboardingStepParticipate": "Solicitar o proponer",
@@ -3722,6 +3835,29 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "committeeRequestsEmpty": "Aún no hay solicitudes de comité.",
       "committeeRequestsApplyLink": "Ver comités",
       "reviewPendingBadge": "Revisión del comité ({count})",
+      "adminTitle": "Administración",
+      "adminDesc": "Eres administrador del sitio. Gestiona miembros, roles y comités.",
+      "adminManageUsers": "Gestionar miembros",
+      "adminDashboard": "Panel de administración",
+      "opsTitle": "Centro de operaciones",
+      "opsDesc": "Organizaciones que puede operar como OpenOrgOS Operator (OOO), más entradas a Wire y previsión/real.",
+      "opsEmpty": "Aún no hay alcance de organización OOO. Reclame una organización y solicite la certificación Operator.",
+      "opsClaimOrg": "Reclamar organización",
+      "opsApplyOoo": "Solicitar OOO",
+      "opsOrgLabel": "Número corporativo",
+      "opsCertLabel": "Certificado",
+      "opsExpiresLabel": "Caduca",
+      "opsWireTitle": "Wire / protocolo",
+      "opsWireDesc": "Community ofrece gobernanza y operadores de confianza. El transporte Wire entre orgs corre en OrgOS.",
+      "opsWireConsole": "Abrir Wire Console",
+      "opsWireProtocol": "Operadores de confianza",
+      "opsWireGovernance": "Gobernanza",
+      "opsYojitsuTitle": "Previsión y real",
+      "opsYojitsuDesc": "Yojitsu vive en su tenant OrgOS (YAML + CLI). Use la documentación de Community para instalar y operar.",
+      "opsYojitsuConsole": "Abrir Today (KPI 予実)",
+      "opsYojitsuGuide": "Guía Module & Agent",
+      "opsYojitsuInstall": "Instalación OrgOS",
+      "opsConsoleOffline": "Operator Console de OrgOS no es alcanzable ahora. Use la documentación de Community abajo, o inicie el console en esta máquina.",
       "permissionsDetails": "Permisos GitHub (detalles)",
       "profileTitle": "Perfil",
       "overviewTitle": "Resumen",
@@ -4258,7 +4394,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "join": "加入",
       "signIn": "登录",
       "signOut": "退出",
-      "myPage": "我的页面"
+      "myPage": "我的页面",
+      "memberHub": "工作区",
+      "proposeModule": "提议模块",
+      "proposeModuleShort": "提议"
     },
     "hero": {
       "learnMore": "了解更多",
@@ -4733,10 +4872,14 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "githubReposLinked": "已关联仓库",
       "linkedinViewProfile": "在 LinkedIn 上查看",
       "editProfile": "编辑资料",
-      "actionsTitle": "快捷链接",
+      "actionsTitle": "成员手续",
       "actionSettings": "账户设置",
       "actionPublicProfile": "公开资料",
       "actionLearning": "学习",
+      "actionCommittees": "加入委员会",
+      "actionCertifications": "认证",
+      "workspaceTitle": "成员工作区",
+      "workspaceLead": "登录后可作为 Community 成员加入委员会、申请模块角色、提议模块并跟进 OOO 运营。退出登录后仍可浏览公开页面。",
       "privateVideosTitle": "会员学习视频",
       "privateVideosDesc": "私人 YouTube 观看密钥 — 登录后在「我的页面」显示。可在下方嵌入播放，或使用密钥在 YouTube 打开。",
       "privateVideosKeyLabel": "观看密钥",
@@ -4749,6 +4892,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "onboardingSub": "从这三个开始 — 需要时可在下方查看详情和高级设置。",
       "onboardingStepProfile": "完善你的个人资料",
       "onboardingStepProfileBody": "填写姓名、专业领域和地区，以便委员会识别你。",
+      "onboardingStepOrg": "申报组织",
+      "onboardingStepOrgBody": "将日本法人番号关联到此 Google ID。该申报是管理员核验的 OOO 租户范围。",
+      "onboardingStepOoo": "申请 OpenOrgOS Operator",
+      "onboardingStepOooBody": "组织申报后申请 OOO，以便将 Wire 与预算运营绑定到该租户。",
       "onboardingStepBrowse": "浏览模块 →",
       "onboardingStepBrowseBody": "在申请前找到符合你兴趣的模块。",
       "onboardingStepParticipate": "申请或提案",
@@ -4777,6 +4924,29 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "committeeRequestsEmpty": "暂无委员会申请。",
       "committeeRequestsApplyLink": "浏览委员会",
       "reviewPendingBadge": "委员会审查 ({count})",
+      "adminTitle": "管理",
+      "adminDesc": "你是站点管理员。可管理成员、角色与委员会。",
+      "adminManageUsers": "管理成员",
+      "adminDashboard": "管理后台",
+      "opsTitle": "运营中心",
+      "opsDesc": "可作为 OpenOrgOS Operator（OOO）运营的组织，以及 Wire 与预算实绩入口。",
+      "opsEmpty": "尚无 OOO 组织范围。请申报所属组织并申请 Operator 认证。",
+      "opsClaimOrg": "申报所属组织",
+      "opsApplyOoo": "申请 OOO",
+      "opsOrgLabel": "法人番号",
+      "opsCertLabel": "证书编号",
+      "opsExpiresLabel": "有效期至",
+      "opsWireTitle": "Wire / 协议",
+      "opsWireDesc": "Community 提供治理与可信运营者视图。跨组织 Wire 传输在 OrgOS 上运行。",
+      "opsWireConsole": "打开 Wire Console",
+      "opsWireProtocol": "可信运营者",
+      "opsWireGovernance": "治理",
+      "opsYojitsuTitle": "预算与实绩",
+      "opsYojitsuDesc": "预算实绩位于 OrgOS 租户（YAML + CLI）。请用 Community 文档安装与运营。",
+      "opsYojitsuConsole": "打开 Today（预算 KPI）",
+      "opsYojitsuGuide": "Module / Agent 指南",
+      "opsYojitsuInstall": "OrgOS 安装",
+      "opsConsoleOffline": "目前无法连接 OrgOS Operator Console。请使用下方 Community 文档，或在本机启动 Console。",
       "permissionsDetails": "GitHub 权限（详情）",
       "profileTitle": "个人资料",
       "overviewTitle": "概览",
@@ -5313,7 +5483,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "join": "Liitu",
       "signIn": "Logi sisse",
       "signOut": "Logi välja",
-      "myPage": "Minu leht"
+      "myPage": "Minu leht",
+      "memberHub": "Tööala",
+      "proposeModule": "Paku moodulit",
+      "proposeModuleShort": "Paku"
     },
     "hero": {
       "learnMore": "Lisateave",
@@ -5788,10 +5961,14 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "githubReposLinked": "repositooriumid ühendatud",
       "linkedinViewProfile": "Vaata LinkedInis",
       "editProfile": "Muuda profiili",
-      "actionsTitle": "Otseteed",
+      "actionsTitle": "Liikme toimingud",
       "actionSettings": "Konto seaded",
       "actionPublicProfile": "Avalik profiil",
       "actionLearning": "Õppimine",
+      "actionCommittees": "Liitu komiteega",
+      "actionCertifications": "Sertifikaadid",
+      "workspaceTitle": "Liikme tööala",
+      "workspaceLead": "Sisseloginud liikmena saate liituda komiteedega, võtta moodulirolle, pakkuda mooduleid ja jälgida OOO toiminguid. Avalikud lehed jäävad pärast väljalogimist kättesaadavaks.",
       "privateVideosTitle": "Liikmete õppevideod",
       "privateVideosDesc": "Privaatsed YouTube'i vaatamisvõtmed — nähtavad pärast sisselogimist minu lehel. Vaata allpool või ava YouTube'is võtmega.",
       "privateVideosKeyLabel": "Vaatamisvõti",
@@ -5804,6 +5981,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "onboardingSub": "Alusta nende kolmega — üksikasjad ja täpsemad seaded on allpool, kui neid vajad.",
       "onboardingStepProfile": "Täienda oma profiili",
       "onboardingStepProfileBody": "Lisa oma nimi, eriala ja piirkond, et komiteed saaksid sind tuvastada.",
+      "onboardingStepOrg": "Esitage organisatsioon",
+      "onboardingStepOrgBody": "Seostage Jaapani ettevõtte number selle Google ID-ga. See on OOO rentniku ulatus, mille administraator kinnitab.",
+      "onboardingStepOoo": "Taotlege OpenOrgOS Operatorit",
+      "onboardingStepOooBody": "Pärast organisatsiooni esitamist taotlege OOO, et Wire ja eelarve seotaks selle rentnikuga.",
       "onboardingStepBrowse": "Sirvi mooduleid →",
       "onboardingStepBrowseBody": "Leia enne taotlemist moodul, mis vastab sinu huvidele.",
       "onboardingStepParticipate": "Taotle või paku välja",
@@ -5832,6 +6013,29 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "committeeRequestsEmpty": "Komitee taotlusi pole veel.",
       "committeeRequestsApplyLink": "Sirvi komiteesid",
       "reviewPendingBadge": "Komitee läbivaatus ({count})",
+      "adminTitle": "Haldus",
+      "adminDesc": "Oled saidi administraator. Halda liikmeid, rolle ja komiteesid.",
+      "adminManageUsers": "Halda liikmeid",
+      "adminDashboard": "Halduspaneel",
+      "opsTitle": "Operatsioonikeskus",
+      "opsDesc": "Organisatsioonid, mida saate hallata OpenOrgOS Operatorina (OOO), ning Wire ja eelarve/tegeliku sissepääsud.",
+      "opsEmpty": "OOO organisatsiooni ulatust pole veel. Esitage organisatsioon ja taotlege Operatori sertifikaati.",
+      "opsClaimOrg": "Esita organisatsioon",
+      "opsApplyOoo": "Taotle OOO-d",
+      "opsOrgLabel": "Ettevõtte number",
+      "opsCertLabel": "Sertifikaat",
+      "opsExpiresLabel": "Aegub",
+      "opsWireTitle": "Wire / protokoll",
+      "opsWireDesc": "Community pakub juhtimist ja usaldusväärseid operaatoreid. Organisatsioonidevaheline Wire jookseb OrgOS-is.",
+      "opsWireConsole": "Ava Wire Console",
+      "opsWireProtocol": "Usaldusväärsed operaatorid",
+      "opsWireGovernance": "Juhtimine",
+      "opsYojitsuTitle": "Eelarve ja tegelik",
+      "opsYojitsuDesc": "Yojitsu elab teie OrgOS tenantis (YAML + CLI). Kasutage Community dokumente paigaldamiseks ja haldamiseks.",
+      "opsYojitsuConsole": "Ava Today (予実 KPI)",
+      "opsYojitsuGuide": "Module & Agent juhend",
+      "opsYojitsuInstall": "OrgOS paigaldus",
+      "opsConsoleOffline": "OrgOS Operator Console ei ole praegu kättesaadav. Kasutage allolevat Community dokumentatsiooni või käivitage console selles masinas.",
       "permissionsDetails": "GitHubi õigused (detailid)",
       "profileTitle": "Profiil",
       "overviewTitle": "Ülevaade",
@@ -6368,7 +6572,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "join": "Rejoindre",
       "signIn": "Se connecter",
       "signOut": "Se déconnecter",
-      "myPage": "Ma page"
+      "myPage": "Ma page",
+      "memberHub": "Espace de travail",
+      "proposeModule": "Proposer un module",
+      "proposeModuleShort": "Proposer"
     },
     "hero": {
       "learnMore": "En savoir plus",
@@ -6843,10 +7050,14 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "githubReposLinked": "dépôts liés",
       "linkedinViewProfile": "Voir sur LinkedIn",
       "editProfile": "Modifier le profil",
-      "actionsTitle": "Raccourcis",
+      "actionsTitle": "Démarches membre",
       "actionSettings": "Paramètres du compte",
       "actionPublicProfile": "Profil public",
       "actionLearning": "Apprentissage",
+      "actionCommittees": "Rejoindre un comité",
+      "actionCertifications": "Certifications",
+      "workspaceTitle": "Espace membre",
+      "workspaceLead": "Connecté, vous pouvez rejoindre des comités, prendre des rôles de module, proposer des modules et suivre les opérations OOO. Les pages publiques restent disponibles après déconnexion.",
       "privateVideosTitle": "Vidéos d'apprentissage réservées aux membres",
       "privateVideosDesc": "Clés de visionnage YouTube privées — affichées sur votre page après connexion. Regardez ci-dessous ou ouvrez YouTube avec la clé.",
       "privateVideosKeyLabel": "Clé de visionnage",
@@ -6859,6 +7070,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "onboardingSub": "Commencez par ces trois — les détails et paramètres avancés sont en dessous quand vous en avez besoin.",
       "onboardingStepProfile": "Complétez votre profil",
       "onboardingStepProfileBody": "Ajoutez votre nom, spécialité et région pour que les comités puissent vous identifier.",
+      "onboardingStepOrg": "Déclarer l’organisation",
+      "onboardingStepOrgBody": "Liez un numéro d’entreprise japonais à cet Google ID. Cette déclaration est le périmètre tenant OOO qu’un administrateur vérifie.",
+      "onboardingStepOoo": "Demander OpenOrgOS Operator",
+      "onboardingStepOooBody": "Après la déclaration d’organisation, demandez OOO pour rattacher Wire et le budget à ce tenant.",
       "onboardingStepBrowse": "Parcourir les modules →",
       "onboardingStepBrowseBody": "Trouvez un module qui correspond à vos intérêts avant de postuler.",
       "onboardingStepParticipate": "Candidater ou proposer",
@@ -6887,6 +7102,29 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "committeeRequestsEmpty": "Aucune candidature de comité pour l'instant.",
       "committeeRequestsApplyLink": "Parcourir les comités",
       "reviewPendingBadge": "Révision du comité ({count})",
+      "adminTitle": "Administration",
+      "adminDesc": "Vous êtes administrateur du site. Gérez les membres, les rôles et les comités.",
+      "adminManageUsers": "Gérer les membres",
+      "adminDashboard": "Tableau de bord admin",
+      "opsTitle": "Hub opérations",
+      "opsDesc": "Organisations que vous pouvez opérer en tant qu'OpenOrgOS Operator (OOO), plus les entrées Wire et prévision/réalisé.",
+      "opsEmpty": "Pas encore de périmètre d'organisation OOO. Déclarez une organisation et postulez à Operator.",
+      "opsClaimOrg": "Déclarer l'organisation",
+      "opsApplyOoo": "Postuler à OOO",
+      "opsOrgLabel": "Numéro d'entreprise",
+      "opsCertLabel": "Certificat",
+      "opsExpiresLabel": "Expire",
+      "opsWireTitle": "Wire / protocole",
+      "opsWireDesc": "Community héberge la gouvernance et les opérateurs de confiance. Le transport Wire inter-org tourne sur OrgOS.",
+      "opsWireConsole": "Ouvrir Wire Console",
+      "opsWireProtocol": "Opérateurs de confiance",
+      "opsWireGovernance": "Gouvernance",
+      "opsYojitsuTitle": "Prévision et réalisé",
+      "opsYojitsuDesc": "Yojitsu vit dans votre tenant OrgOS (YAML + CLI). Utilisez la doc Community pour installer et opérer.",
+      "opsYojitsuConsole": "Ouvrir Today (KPI 予実)",
+      "opsYojitsuGuide": "Guide Module & Agent",
+      "opsYojitsuInstall": "Installation OrgOS",
+      "opsConsoleOffline": "Operator Console OrgOS n'est pas joignable pour le moment. Utilisez la doc Community ci-dessous, ou démarrez la console sur cette machine.",
       "permissionsDetails": "Permissions GitHub (détails)",
       "profileTitle": "Profil",
       "overviewTitle": "Aperçu",
@@ -7423,7 +7661,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "join": "Mitmachen",
       "signIn": "Anmelden",
       "signOut": "Abmelden",
-      "myPage": "Meine Seite"
+      "myPage": "Meine Seite",
+      "memberHub": "Arbeitsbereich",
+      "proposeModule": "Modul vorschlagen",
+      "proposeModuleShort": "Vorschlagen"
     },
     "hero": {
       "learnMore": "Mehr erfahren",
@@ -7898,10 +8139,14 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "githubReposLinked": "Repositories verknüpft",
       "linkedinViewProfile": "Auf LinkedIn anzeigen",
       "editProfile": "Profil bearbeiten",
-      "actionsTitle": "Shortcuts",
+      "actionsTitle": "Mitgliederverfahren",
       "actionSettings": "Kontoeinstellungen",
       "actionPublicProfile": "Öffentliches Profil",
       "actionLearning": "Lernen",
+      "actionCommittees": "Komitee beitreten",
+      "actionCertifications": "Zertifizierungen",
+      "workspaceTitle": "Mitglieder-Arbeitsbereich",
+      "workspaceLead": "Als angemeldetes Mitglied können Sie Komitees beitreten, Modulrollen übernehmen, Module vorschlagen und OOO-Betrieb verfolgen. Öffentliche Seiten bleiben nach Abmeldung sichtbar.",
       "privateVideosTitle": "Lernvideos für Mitglieder",
       "privateVideosDesc": "Private YouTube-Anzeigeschlüssel — nach Anmeldung auf Meine Seite sichtbar. Unten eingebettet ansehen oder mit Schlüssel auf YouTube öffnen.",
       "privateVideosKeyLabel": "Anzeigeschlüssel",
@@ -7914,6 +8159,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "onboardingSub": "Beginne mit diesen drei — Details und erweiterte Einstellungen sind unten, wenn du sie brauchst.",
       "onboardingStepProfile": "Dein Profil vervollständigen",
       "onboardingStepProfileBody": "Gib deinen Namen, deine Spezialität und Region an, damit Komitees dich erkennen können.",
+      "onboardingStepOrg": "Organisation anmelden",
+      "onboardingStepOrgBody": "Verknüpfen Sie eine japanische Unternehmensnummer mit dieser Google-ID. Diese Anmeldung ist der OOO-Tenant-Umfang, den ein Administrator prüft.",
+      "onboardingStepOoo": "OpenOrgOS Operator beantragen",
+      "onboardingStepOooBody": "Nach der Organisationsanmeldung beantragen Sie OOO, damit Wire und Budget an diesen Tenant gebunden werden.",
       "onboardingStepBrowse": "Module durchsuchen →",
       "onboardingStepBrowseBody": "Finde ein Modul, das deinen Interessen entspricht, bevor du dich bewirbst.",
       "onboardingStepParticipate": "Bewerben oder vorschlagen",
@@ -7942,6 +8191,29 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "committeeRequestsEmpty": "Noch keine Komiteeanträge.",
       "committeeRequestsApplyLink": "Komitees durchsuchen",
       "reviewPendingBadge": "Komiteeüberprüfung ({count})",
+      "adminTitle": "Verwaltung",
+      "adminDesc": "Sie sind Site-Administrator. Verwalten Sie Mitglieder, Rollen und Gremien.",
+      "adminManageUsers": "Mitglieder verwalten",
+      "adminDashboard": "Admin-Dashboard",
+      "opsTitle": "Betriebshub",
+      "opsDesc": "Organisationen, die Sie als OpenOrgOS Operator (OOO) betreiben können, plus Einstiege zu Wire und Forecast/Ist.",
+      "opsEmpty": "Noch kein OOO-Organisationsumfang. Melden Sie eine Organisation und beantragen Sie die Operator-Zertifizierung.",
+      "opsClaimOrg": "Organisation melden",
+      "opsApplyOoo": "OOO beantragen",
+      "opsOrgLabel": "Unternehmensnummer",
+      "opsCertLabel": "Zertifikat",
+      "opsExpiresLabel": "Läuft ab",
+      "opsWireTitle": "Wire / Protokoll",
+      "opsWireDesc": "Community bietet Governance und Trusted Operators. Cross-Org-Wire läuft auf OrgOS.",
+      "opsWireConsole": "Wire Console öffnen",
+      "opsWireProtocol": "Trusted Operators",
+      "opsWireGovernance": "Governance",
+      "opsYojitsuTitle": "Forecast und Ist",
+      "opsYojitsuDesc": "Yojitsu liegt in Ihrem OrgOS-Tenant (YAML + CLI). Nutzen Sie Community-Docs zur Installation und zum Betrieb.",
+      "opsYojitsuConsole": "Today öffnen (予実-KPI)",
+      "opsYojitsuGuide": "Module-&-Agent-Leitfaden",
+      "opsYojitsuInstall": "OrgOS-Installation",
+      "opsConsoleOffline": "OrgOS Operator Console ist derzeit nicht erreichbar. Nutzen Sie die Community-Docs unten, oder starten Sie die Console auf diesem Rechner.",
       "permissionsDetails": "GitHub-Berechtigungen (Details)",
       "profileTitle": "Profil",
       "overviewTitle": "Überblick",
@@ -8478,7 +8750,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "join": "Присоединиться",
       "signIn": "Войти",
       "signOut": "Выйти",
-      "myPage": "Моя страница"
+      "myPage": "Моя страница",
+      "memberHub": "Рабочая область",
+      "proposeModule": "Предложить модуль",
+      "proposeModuleShort": "Предложить"
     },
     "hero": {
       "learnMore": "Узнать больше",
@@ -8953,10 +9228,14 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "githubReposLinked": "репозитории связаны",
       "linkedinViewProfile": "Посмотреть в LinkedIn",
       "editProfile": "Редактировать профиль",
-      "actionsTitle": "Быстрые ссылки",
+      "actionsTitle": "Процедуры участника",
       "actionSettings": "Настройки аккаунта",
       "actionPublicProfile": "Публичный профиль",
       "actionLearning": "Обучение",
+      "actionCommittees": "Вступить в комитет",
+      "actionCertifications": "Сертификации",
+      "workspaceTitle": "Рабочая область участника",
+      "workspaceLead": "Войдя в систему, вы можете вступать в комитеты, брать роли модулей, предлагать модули и следить за операциями OOO. Публичные страницы доступны после выхода.",
       "privateVideosTitle": "Обучающие видео для участников",
       "privateVideosDesc": "Ключи просмотра приватного YouTube — отображаются на моей странице после входа. Смотрите ниже или откройте YouTube по ключу.",
       "privateVideosKeyLabel": "Ключ просмотра",
@@ -8969,6 +9248,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "onboardingSub": "Начните с этих трёх — детали и расширенные настройки ниже, когда они вам понадобятся.",
       "onboardingStepProfile": "Заполните свой профиль",
       "onboardingStepProfileBody": "Укажите имя, специальность и регион, чтобы комитеты могли вас распознать.",
+      "onboardingStepOrg": "Заявить организацию",
+      "onboardingStepOrgBody": "Привяжите японский корпоративный номер к этому Google ID. Заявка — область OOO-тенанта, которую проверяет администратор.",
+      "onboardingStepOoo": "Подать заявку на OpenOrgOS Operator",
+      "onboardingStepOooBody": "После заявления организации подайте заявку на OOO, чтобы Wire и бюджет были привязаны к этому тенанту.",
       "onboardingStepBrowse": "Смотреть модули →",
       "onboardingStepBrowseBody": "Найдите модуль, соответствующий вашим интересам, перед подачей заявки.",
       "onboardingStepParticipate": "Подать заявку или предложить",
@@ -8997,6 +9280,29 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "committeeRequestsEmpty": "Заявок в комитет пока нет.",
       "committeeRequestsApplyLink": "Просмотр комитетов",
       "reviewPendingBadge": "Проверка комитета ({count})",
+      "adminTitle": "Администрирование",
+      "adminDesc": "Вы администратор сайта. Управляйте участниками, ролями и комитетами.",
+      "adminManageUsers": "Управление участниками",
+      "adminDashboard": "Панель администратора",
+      "opsTitle": "Операционный хаб",
+      "opsDesc": "Организации, которыми вы можете управлять как OpenOrgOS Operator (OOO), плюс входы в Wire и план/факт.",
+      "opsEmpty": "Пока нет области организации OOO. Заявите организацию и подайте на сертификацию Operator.",
+      "opsClaimOrg": "Заявить организацию",
+      "opsApplyOoo": "Подать на OOO",
+      "opsOrgLabel": "Корпоративный номер",
+      "opsCertLabel": "Сертификат",
+      "opsExpiresLabel": "Истекает",
+      "opsWireTitle": "Wire / протокол",
+      "opsWireDesc": "Community даёт управление и доверенных операторов. Межорганизационный Wire работает на OrgOS.",
+      "opsWireConsole": "Открыть Wire Console",
+      "opsWireProtocol": "Доверенные операторы",
+      "opsWireGovernance": "Управление",
+      "opsYojitsuTitle": "План и факт",
+      "opsYojitsuDesc": "Yojitsu живёт в вашем тенанте OrgOS (YAML + CLI). Используйте документацию Community для установки и эксплуатации.",
+      "opsYojitsuConsole": "Открыть Today (KPI 予実)",
+      "opsYojitsuGuide": "Руководство Module & Agent",
+      "opsYojitsuInstall": "Установка OrgOS",
+      "opsConsoleOffline": "OrgOS Operator Console сейчас недоступен. Используйте документацию Community ниже или запустите консоль на этой машине.",
       "permissionsDetails": "Права GitHub (подробно)",
       "profileTitle": "Профиль",
       "overviewTitle": "Обзор",
@@ -9682,12 +9988,12 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
           ]
         },
         "partners": {
-          "title": "Partner Program",
-          "lead": "GitHub integration, module hosting, and technical partnership with the community platform.",
+          "title": "Partner organizations",
+          "lead": "Introduction support and contacts for organizations already running OpenOrgOS.",
           "planned": [
-            "GitHub OAuth & repos",
-            "Module registry",
-            "Technical onboarding"
+            "Partner directory",
+            "Introduction support",
+            "Operational experience sharing"
           ]
         },
         "contact": {
@@ -9755,6 +10061,22 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
         "standard-committee": "Standard Committee",
         "module-leads": "Module Leads"
       }
+    },
+    "partners": {
+      "title": "Partner organizations",
+      "lead": "Introduction support, troubleshooting, and contacts for organizations already running OpenOrgOS.",
+      "back": "← About",
+      "supportTitle": "Need introduction or troubleshooting help?",
+      "supportBody": "If you need introduction support, troubleshooting, or advice beyond the public docs and demo, contact the developer.",
+      "contactLabel": "Contact",
+      "contactEmail": "k.lab.masa@gmail.com",
+      "directoryTitle": "Organizations already running OpenOrgOS",
+      "directoryBody": "This page will list partner organizations that can share operational experience. Entries appear as partners opt in.",
+      "directoryEmpty": "Partner listings are being prepared. Until then, use the contact above.",
+      "relatedTitle": "Related",
+      "relatedImplStatus": "What is live today",
+      "relatedInstall": "OrgOS install",
+      "relatedDemo": "Try the demo"
     },
     "experts": {
       "title": "Expert Directory",
@@ -10269,12 +10591,12 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
           ]
         },
         "partners": {
-          "title": "パートナープログラム",
-          "lead": "GitHub 連携、モジュールホスティング、コミュニティプラットフォームとの技術連携。",
+          "title": "パートナー企業",
+          "lead": "導入支援と、すでに OpenOrgOS を動かしている組織への連絡先。",
           "planned": [
-            "GitHub OAuth・リポ",
-            "モジュールレジストリ",
-            "技術オンボーディング"
+            "パートナー一覧",
+            "導入支援",
+            "運用経験の共有"
           ]
         },
         "contact": {
@@ -10342,6 +10664,22 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
         "standard-committee": "標準委員会",
         "module-leads": "モジュールリード"
       }
+    },
+    "partners": {
+      "title": "パートナー企業",
+      "lead": "導入支援・トラブル対応と、すでに OpenOrgOS を動かしている組織への連絡先です。",
+      "back": "← OpenOrgOS について",
+      "supportTitle": "導入支援・トラブル対応が必要ですか？",
+      "supportBody": "公開ドキュメントや Demo だけでは足りない場合、導入支援・トラブル対応・本番導入の相談は開発者までご連絡ください。",
+      "contactLabel": "連絡先",
+      "contactEmail": "k.lab.masa@gmail.com",
+      "directoryTitle": "すでに導入している組織",
+      "directoryBody": "運用経験を共有できるパートナー企業を、ここに掲載していきます（掲載希望の組織から順次）。",
+      "directoryEmpty": "パートナー一覧は準備中です。当面は上記の連絡先をご利用ください。",
+      "relatedTitle": "関連",
+      "relatedImplStatus": "いまできること",
+      "relatedInstall": "OrgOS インストール",
+      "relatedDemo": "Demo を試す"
     },
     "experts": {
       "title": "専門家ディレクトリ",
@@ -10859,9 +11197,9 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
           "title": "Programa de Parceiros",
           "lead": "Integração com GitHub, hospedagem de módulos e parceria técnica com a plataforma comunitária.",
           "planned": [
-            "GitHub OAuth & repos",
-            "Module registry",
-            "Technical onboarding"
+            "Partner directory",
+            "Introduction support",
+            "Operational experience sharing"
           ]
         },
         "contact": {
@@ -10929,6 +11267,22 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
         "standard-committee": "Comitê de Padrões",
         "module-leads": "Líderes de Módulo"
       }
+    },
+    "partners": {
+      "title": "Organizações parceiras",
+      "lead": "Apoio à introdução, resolução de problemas e contactos de organizações que já operam o OpenOrgOS.",
+      "back": "← Sobre",
+      "supportTitle": "Precisa de apoio à introdução ou resolução de problemas?",
+      "supportBody": "Se precisar de apoio à introdução, resolução de problemas ou aconselhamento além da documentação pública e da demo, contacte o programador.",
+      "contactLabel": "Contacto",
+      "contactEmail": "k.lab.masa@gmail.com",
+      "directoryTitle": "Organizações que já operam o OpenOrgOS",
+      "directoryBody": "Esta página listará organizações parceiras que podem partilhar experiência operacional. As entradas aparecem à medida que os parceiros optam por participar.",
+      "directoryEmpty": "As listagens de parceiros estão a ser preparadas. Até lá, use o contacto acima.",
+      "relatedTitle": "Relacionados",
+      "relatedImplStatus": "O que está ativo hoje",
+      "relatedInstall": "Instalação do OrgOS",
+      "relatedDemo": "Experimentar a demo"
     },
     "experts": {
       "title": "Diretório de Especialistas",
@@ -11446,9 +11800,9 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
           "title": "Programa de Socios",
           "lead": "Integración con GitHub, alojamiento de módulos y asociación técnica con la plataforma comunitaria.",
           "planned": [
-            "GitHub OAuth & repos",
-            "Module registry",
-            "Technical onboarding"
+            "Partner directory",
+            "Introduction support",
+            "Operational experience sharing"
           ]
         },
         "contact": {
@@ -11516,6 +11870,22 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
         "standard-committee": "Comité de estándares",
         "module-leads": "Líderes de Módulo"
       }
+    },
+    "partners": {
+      "title": "Organizaciones asociadas",
+      "lead": "Apoyo a la introducción, resolución de problemas y contactos de organizaciones que ya ejecutan OpenOrgOS.",
+      "back": "← Acerca de",
+      "supportTitle": "¿Necesita apoyo de introducción o resolución de problemas?",
+      "supportBody": "Si necesita apoyo de introducción, resolución de problemas o consejos más allá de la documentación pública y la demo, contacte al desarrollador.",
+      "contactLabel": "Contacto",
+      "contactEmail": "k.lab.masa@gmail.com",
+      "directoryTitle": "Organizaciones que ya ejecutan OpenOrgOS",
+      "directoryBody": "Esta página listará organizaciones asociadas que pueden compartir experiencia operativa. Las entradas aparecen cuando los socios optan por participar.",
+      "directoryEmpty": "Los listados de socios se están preparando. Mientras tanto, use el contacto de arriba.",
+      "relatedTitle": "Relacionados",
+      "relatedImplStatus": "Qué está activo hoy",
+      "relatedInstall": "Instalación de OrgOS",
+      "relatedDemo": "Probar la demo"
     },
     "experts": {
       "title": "Directorio de Expertos",
@@ -12033,9 +12403,9 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
           "title": "合作伙伴计划",
           "lead": "GitHub 集成、模块托管和社区平台技术合作。",
           "planned": [
-            "GitHub OAuth & repos",
-            "Module registry",
-            "Technical onboarding"
+            "Partner directory",
+            "Introduction support",
+            "Operational experience sharing"
           ]
         },
         "contact": {
@@ -12103,6 +12473,22 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
         "standard-committee": "标准委员会",
         "module-leads": "模块负责人"
       }
+    },
+    "partners": {
+      "title": "合作组织",
+      "lead": "导入支持、故障排查，以及已在运行 OpenOrgOS 的组织联系方式。",
+      "back": "← 关于",
+      "supportTitle": "需要导入支持或故障排查？",
+      "supportBody": "若公开文档与演示仍不够，需要导入支持、故障排查或生产建议，请联系开发者。",
+      "contactLabel": "联系",
+      "contactEmail": "k.lab.masa@gmail.com",
+      "directoryTitle": "已在运行 OpenOrgOS 的组织",
+      "directoryBody": "本页将列出可分享运营经验的合作组织；经同意后陆续登载。",
+      "directoryEmpty": "合作伙伴名录准备中。目前请使用上方联系方式。",
+      "relatedTitle": "相关",
+      "relatedImplStatus": "当前可用内容",
+      "relatedInstall": "OrgOS 安装",
+      "relatedDemo": "试用演示"
     },
     "experts": {
       "title": "专家目录",
@@ -12620,9 +13006,9 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
           "title": "Partnerluseprogramm",
           "lead": "GitHubi integratsioon, moodulite majutus ja tehniline partnerlus kogukonna platvormiga.",
           "planned": [
-            "GitHub OAuth & repos",
-            "Module registry",
-            "Technical onboarding"
+            "Partner directory",
+            "Introduction support",
+            "Operational experience sharing"
           ]
         },
         "contact": {
@@ -12690,6 +13076,22 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
         "standard-committee": "Standardikomitee",
         "module-leads": "Mooduli juhid"
       }
+    },
+    "partners": {
+      "title": "Partnerorganisatsioonid",
+      "lead": "Käivitustoetus, tõrkeotsing ja kontaktid organisatsioonidele, kes juba kasutavad OpenOrgOS-i.",
+      "back": "← Teave",
+      "supportTitle": "Vajate käivitustuge või tõrkeotsingut?",
+      "supportBody": "Kui vajate käivitustuge, tõrkeotsingut või nõu peale avalikke dokumente ja demot, võtke ühendust arendajaga.",
+      "contactLabel": "Kontakt",
+      "contactEmail": "k.lab.masa@gmail.com",
+      "directoryTitle": "Organisatsioonid, kes juba kasutavad OpenOrgOS-i",
+      "directoryBody": "Siin loetletakse partnerorganisatsioonid, kes saavad jagada kasutuskogemust. Kirjed ilmuvad partnerite nõusolekul.",
+      "directoryEmpty": "Partnerite loend on ettevalmistamisel. Seni kasutage ülaltoodud kontakti.",
+      "relatedTitle": "Seotud",
+      "relatedImplStatus": "Mis on täna olemas",
+      "relatedInstall": "OrgOS-i paigaldus",
+      "relatedDemo": "Proovi demot"
     },
     "experts": {
       "title": "Ekspertide kataloog",
@@ -13207,9 +13609,9 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
           "title": "Programme Partenaire",
           "lead": "Intégration GitHub, hébergement de modules et partenariat technique avec la plateforme communautaire.",
           "planned": [
-            "GitHub OAuth & repos",
-            "Module registry",
-            "Technical onboarding"
+            "Partner directory",
+            "Introduction support",
+            "Operational experience sharing"
           ]
         },
         "contact": {
@@ -13277,6 +13679,22 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
         "standard-committee": "Comité des normes",
         "module-leads": "Responsables de modules"
       }
+    },
+    "partners": {
+      "title": "Organisations partenaires",
+      "lead": "Aide à l'introduction, dépannage et contacts des organisations déjà en production OpenOrgOS.",
+      "back": "← À propos",
+      "supportTitle": "Besoin d'aide à l'introduction ou de dépannage ?",
+      "supportBody": "Si vous avez besoin d'aide à l'introduction, de dépannage ou de conseils au-delà de la doc publique et de la démo, contactez le développeur.",
+      "contactLabel": "Coordonnées",
+      "contactEmail": "k.lab.masa@gmail.com",
+      "directoryTitle": "Organisations déjà en production OpenOrgOS",
+      "directoryBody": "Cette page listera les organisations partenaires pouvant partager leur expérience. Les entrées apparaissent au fur et à mesure des inscriptions.",
+      "directoryEmpty": "La liste des partenaires est en préparation. En attendant, utilisez le contact ci-dessus.",
+      "relatedTitle": "Associés",
+      "relatedImplStatus": "Ce qui est disponible aujourd'hui",
+      "relatedInstall": "Installation OrgOS",
+      "relatedDemo": "Essayer la démo"
     },
     "experts": {
       "title": "Annuaire des experts",
@@ -13794,9 +14212,9 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
           "title": "Partnerprogramm",
           "lead": "GitHub-Integration, Modul-Hosting und technische Partnerschaft mit der Community-Plattform.",
           "planned": [
-            "GitHub OAuth & repos",
-            "Module registry",
-            "Technical onboarding"
+            "Partner directory",
+            "Introduction support",
+            "Operational experience sharing"
           ]
         },
         "contact": {
@@ -13864,6 +14282,22 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
         "standard-committee": "Standardkomitee",
         "module-leads": "Modul-Leitende"
       }
+    },
+    "partners": {
+      "title": "Partnerorganisationen",
+      "lead": "Einführungsunterstützung, Fehlerbehebung und Kontakte zu Organisationen, die OpenOrgOS bereits betreiben.",
+      "back": "← Über uns",
+      "supportTitle": "Brauchen Sie Einführungsunterstützung oder Fehlerbehebung?",
+      "supportBody": "Wenn Sie Einführungsunterstützung, Fehlerbehebung oder Beratung über die öffentliche Doku und Demo hinaus brauchen, kontaktieren Sie den Entwickler.",
+      "contactLabel": "Kontakt",
+      "contactEmail": "k.lab.masa@gmail.com",
+      "directoryTitle": "Organisationen, die OpenOrgOS bereits betreiben",
+      "directoryBody": "Hier werden Partnerorganisationen gelistet, die Betriebserfahrung teilen können. Einträge erscheinen, sobald Partner zustimmen.",
+      "directoryEmpty": "Die Partnerliste wird vorbereitet. Bis dahin nutzen Sie den Kontakt oben.",
+      "relatedTitle": "Verwandte",
+      "relatedImplStatus": "Was heute verfügbar ist",
+      "relatedInstall": "OrgOS-Installation",
+      "relatedDemo": "Demo ausprobieren"
     },
     "experts": {
       "title": "Expertenverzeichnis",
@@ -14381,9 +14815,9 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
           "title": "Партнёрская программа",
           "lead": "Интеграция с GitHub, хостинг модулей и техническое партнёрство с платформой сообщества.",
           "planned": [
-            "GitHub OAuth & repos",
-            "Module registry",
-            "Technical onboarding"
+            "Partner directory",
+            "Introduction support",
+            "Operational experience sharing"
           ]
         },
         "contact": {
@@ -14451,6 +14885,22 @@ export const PAGE_MESSAGES: Record<UiReadyLocale, PageMessages> = {
         "standard-committee": "Комитет стандартов",
         "module-leads": "Ведущие модулей"
       }
+    },
+    "partners": {
+      "title": "Организации-партнёры",
+      "lead": "Поддержка внедрения, устранение неполадок и контакты организаций, уже работающих с OpenOrgOS.",
+      "back": "← О нас",
+      "supportTitle": "Нужна поддержка внедрения или устранение неполадок?",
+      "supportBody": "Если нужна поддержка внедрения, устранение неполадок или советы сверх публичной документации и демо — свяжитесь с разработчиком.",
+      "contactLabel": "Контакт",
+      "contactEmail": "k.lab.masa@gmail.com",
+      "directoryTitle": "Организации, уже работающие с OpenOrgOS",
+      "directoryBody": "Здесь будут организации-партнёры, готовые делиться опытом эксплуатации. Записи появляются по согласию партнёров.",
+      "directoryEmpty": "Список партнёров готовится. Пока используйте контакт выше.",
+      "relatedTitle": "Связанные",
+      "relatedImplStatus": "Что доступно сегодня",
+      "relatedInstall": "Установка OrgOS",
+      "relatedDemo": "Попробовать демо"
     },
     "experts": {
       "title": "Каталог экспертов",
@@ -15621,9 +16071,13 @@ export const FORM_MESSAGES: Record<UiReadyLocale, FormMessages> = {
       "placeholder": "Setup experience, modules owned, validate track record, etc.",
       "submit": "Apply",
       "error": "Error",
-      "orgRequiredNote": "OpenOrgOS Operator (OOO) applications require a claimed organization (corporate number). Pending review is enough to apply; issuance requires admin verification.",
+      "orgRequiredNote": "OpenOrgOS Operator (OOO) applications require a claimed organization (corporate number). Pending review is enough to apply; issuance requires admin verification. The selected organization is stored as the OOO management scope.",
       "orgSettingsLink": "Link organization",
       "orgRequiredError": "Link your organization with a corporate number before applying for OpenOrgOS Operator.",
+      "orgSelectLabel": "Organization to operate",
+      "orgSelectPlaceholder": "Select organization",
+      "orgPendingBadge": "Pending verification",
+      "orgVerifiedBadge": "Verified",
       "types": {
         "STEWARD_OPERATOR": "OpenOrgOS Operator (OOO)",
         "STEWARD_DESIGNER": "OpenOrgOS Designer (OOD)"
@@ -15731,9 +16185,13 @@ export const FORM_MESSAGES: Record<UiReadyLocale, FormMessages> = {
       "placeholder": "セットアップ経験、担当モジュール、validate 実績など",
       "submit": "申請する",
       "error": "エラー",
-      "orgRequiredNote": "OpenOrgOS Operator（OOO）申請には、法人番号による所属申告が必要です。申請は審査中でも可能で、発行には管理者の承認が必要です。",
+      "orgRequiredNote": "OpenOrgOS Operator（OOO）申請には、法人番号による所属申告が必要です。申請は審査中でも可能で、発行には管理者の承認が必要です。選択した組織が OOO の管理対象として保存されます。",
       "orgSettingsLink": "所属組織を連携",
       "orgRequiredError": "OpenOrgOS Operator を申請する前に、法人番号で所属組織を連携してください。",
+      "orgSelectLabel": "運用する組織",
+      "orgSelectPlaceholder": "組織を選択",
+      "orgPendingBadge": "承認待ち",
+      "orgVerifiedBadge": "承認済み",
       "types": {
         "STEWARD_OPERATOR": "OpenOrgOS Operator (OOO)",
         "STEWARD_DESIGNER": "OpenOrgOS Designer (OOD)"
@@ -15844,6 +16302,10 @@ export const FORM_MESSAGES: Record<UiReadyLocale, FormMessages> = {
       "orgRequiredNote": "Candidaturas a OpenOrgOS Operator (OOO) exigem organização declarada (número corporativo). Revisão pendente basta para candidatar; a emissão exige verificação admin.",
       "orgSettingsLink": "Ligar organização",
       "orgRequiredError": "Ligue a organização com número corporativo antes de candidatar-se a OpenOrgOS Operator.",
+      "orgSelectLabel": "Organização a operar",
+      "orgSelectPlaceholder": "Selecionar organização",
+      "orgPendingBadge": "Verificação pendente",
+      "orgVerifiedBadge": "Verificado",
       "types": {
         "STEWARD_OPERATOR": "OpenOrgOS Operator (OOO)",
         "STEWARD_DESIGNER": "OpenOrgOS Designer (OOD)"
@@ -15954,6 +16416,10 @@ export const FORM_MESSAGES: Record<UiReadyLocale, FormMessages> = {
       "orgRequiredNote": "Las solicitudes de OpenOrgOS Operator (OOO) requieren una organización declarada (número corporativo). Pendiente basta para solicitar; la emisión requiere verificación admin.",
       "orgSettingsLink": "Vincular organización",
       "orgRequiredError": "Vincule su organización con número corporativo antes de solicitar OpenOrgOS Operator.",
+      "orgSelectLabel": "Organización a operar",
+      "orgSelectPlaceholder": "Seleccionar organización",
+      "orgPendingBadge": "Verificación pendiente",
+      "orgVerifiedBadge": "Verificado",
       "types": {
         "STEWARD_OPERATOR": "OpenOrgOS Operator (OOO)",
         "STEWARD_DESIGNER": "OpenOrgOS Designer (OOD)"
@@ -16064,6 +16530,10 @@ export const FORM_MESSAGES: Record<UiReadyLocale, FormMessages> = {
       "orgRequiredNote": "OpenOrgOS Operator（OOO）申请需要已申报所属组织（法人番号）。审核中即可申请；签发需管理员核验。",
       "orgSettingsLink": "关联所属组织",
       "orgRequiredError": "申请 OpenOrgOS Operator 前请先用法人番号关联所属组织。",
+      "orgSelectLabel": "运营组织",
+      "orgSelectPlaceholder": "选择组织",
+      "orgPendingBadge": "待核验",
+      "orgVerifiedBadge": "已验证",
       "types": {
         "STEWARD_OPERATOR": "OpenOrgOS Operator (OOO)",
         "STEWARD_DESIGNER": "OpenOrgOS Designer (OOD)"
@@ -16174,6 +16644,10 @@ export const FORM_MESSAGES: Record<UiReadyLocale, FormMessages> = {
       "orgRequiredNote": "OpenOrgOS Operator (OOO) taotlused nõuavad organisatsiooni (ettevõtte number). Ülevaatamine piisab taotlemiseks; väljastamine nõuab admin kinnitust.",
       "orgSettingsLink": "Seo organisatsioon",
       "orgRequiredError": "Seoge organisatsioon ettevõtte numbriga enne OpenOrgOS Operatori taotlemist.",
+      "orgSelectLabel": "Hallatav organisatsioon",
+      "orgSelectPlaceholder": "Vali organisatsioon",
+      "orgPendingBadge": "Ootel kinnitus",
+      "orgVerifiedBadge": "Kinnitatud",
       "types": {
         "STEWARD_OPERATOR": "OpenOrgOS Operator (OOO)",
         "STEWARD_DESIGNER": "OpenOrgOS Designer (OOD)"
@@ -16284,6 +16758,10 @@ export const FORM_MESSAGES: Record<UiReadyLocale, FormMessages> = {
       "orgRequiredNote": "Les candidatures OpenOrgOS Operator (OOO) exigent une organisation déclarée (numéro d'entreprise). En attente suffit pour postuler ; l'émission exige une vérification admin.",
       "orgSettingsLink": "Lier l'organisation",
       "orgRequiredError": "Liez votre organisation avec un numéro d'entreprise avant de postuler à OpenOrgOS Operator.",
+      "orgSelectLabel": "Organisation à opérer",
+      "orgSelectPlaceholder": "Sélectionner l'organisation",
+      "orgPendingBadge": "Vérification en attente",
+      "orgVerifiedBadge": "Vérifié",
       "types": {
         "STEWARD_OPERATOR": "OpenOrgOS Operator (OOO)",
         "STEWARD_DESIGNER": "OpenOrgOS Designer (OOD)"
@@ -16394,6 +16872,10 @@ export const FORM_MESSAGES: Record<UiReadyLocale, FormMessages> = {
       "orgRequiredNote": "OpenOrgOS Operator (OOO)-Bewerbungen erfordern eine gemeldete Organisation (Unternehmensnummer). Ausstehend reicht zum Bewerben; Ausstellung braucht Admin-Prüfung.",
       "orgSettingsLink": "Organisation verknüpfen",
       "orgRequiredError": "Verknüpfen Sie Ihre Organisation mit Unternehmensnummer vor der Bewerbung um OpenOrgOS Operator.",
+      "orgSelectLabel": "Zu betreibende Organisation",
+      "orgSelectPlaceholder": "Organisation wählen",
+      "orgPendingBadge": "Prüfung ausstehend",
+      "orgVerifiedBadge": "Verifiziert",
       "types": {
         "STEWARD_OPERATOR": "OpenOrgOS Operator (OOO)",
         "STEWARD_DESIGNER": "OpenOrgOS Designer (OOD)"
@@ -16504,6 +16986,10 @@ export const FORM_MESSAGES: Record<UiReadyLocale, FormMessages> = {
       "orgRequiredNote": "Заявки OpenOrgOS Operator (OOO) требуют заявленной организации (корпоративный номер). Ожидание достаточно для подачи; выдача требует проверки админом.",
       "orgSettingsLink": "Привязать организацию",
       "orgRequiredError": "Привяжите организацию с корпоративным номером перед подачей на OpenOrgOS Operator.",
+      "orgSelectLabel": "Организация для управления",
+      "orgSelectPlaceholder": "Выберите организацию",
+      "orgPendingBadge": "Ожидает проверки",
+      "orgVerifiedBadge": "Подтверждено",
       "types": {
         "STEWARD_OPERATOR": "OpenOrgOS Operator (OOO)",
         "STEWARD_DESIGNER": "OpenOrgOS Designer (OOD)"
@@ -16615,7 +17101,8 @@ export const ERROR_MESSAGES: Record<UiReadyLocale, Record<string, string>> = {
     "ALREADY_CLAIMED": "This organization is already claimed on your account",
     "INVALID_STATUS": "Affiliation is not pending review",
     "ORG_AFFILIATION_REQUIRED": "Link an organization with a corporate number before applying for OpenOrgOS Operator",
-    "ORG_AFFILIATION_NOT_VERIFIED": "Organization affiliation must be verified before issuing OpenOrgOS Operator"
+    "ORG_AFFILIATION_NOT_VERIFIED": "Organization affiliation must be verified before issuing OpenOrgOS Operator",
+    "ORGANIZATION_REQUIRED": "Select the organization this Operator certification applies to"
   },
   "ja": {
     "UNAUTHORIZED": "認可されていません",
@@ -16678,7 +17165,8 @@ export const ERROR_MESSAGES: Record<UiReadyLocale, Record<string, string>> = {
     "ALREADY_CLAIMED": "この組織はすでにアカウントに申告済みです",
     "INVALID_STATUS": "所属は審査中ではありません",
     "ORG_AFFILIATION_REQUIRED": "OpenOrgOS Operator 申請の前に、法人番号で所属組織を連携してください",
-    "ORG_AFFILIATION_NOT_VERIFIED": "OpenOrgOS Operator 発行には、所属組織の管理者承認が必要です"
+    "ORG_AFFILIATION_NOT_VERIFIED": "OpenOrgOS Operator 発行には、所属組織の管理者承認が必要です",
+    "ORGANIZATION_REQUIRED": "この Operator 認定の対象組織を選択してください"
   },
   "pt": {
     "UNAUTHORIZED": "Não autorizado",
@@ -16741,7 +17229,8 @@ export const ERROR_MESSAGES: Record<UiReadyLocale, Record<string, string>> = {
     "ALREADY_CLAIMED": "Esta organização já está declarada na sua conta",
     "INVALID_STATUS": "A afiliação não está em revisão",
     "ORG_AFFILIATION_REQUIRED": "Ligue uma organização com número corporativo antes de candidatar-se a OpenOrgOS Operator",
-    "ORG_AFFILIATION_NOT_VERIFIED": "A afiliação deve ser verificada antes de emitir OpenOrgOS Operator"
+    "ORG_AFFILIATION_NOT_VERIFIED": "A afiliação deve ser verificada antes de emitir OpenOrgOS Operator",
+    "ORGANIZATION_REQUIRED": "Selecione a organização a que se aplica esta certificação Operator"
   },
   "es": {
     "UNAUTHORIZED": "No autorizado",
@@ -16804,7 +17293,8 @@ export const ERROR_MESSAGES: Record<UiReadyLocale, Record<string, string>> = {
     "ALREADY_CLAIMED": "Esta organización ya está declarada en su cuenta",
     "INVALID_STATUS": "La afiliación no está en revisión",
     "ORG_AFFILIATION_REQUIRED": "Vincule una organización con número corporativo antes de solicitar OpenOrgOS Operator",
-    "ORG_AFFILIATION_NOT_VERIFIED": "La afiliación debe verificarse antes de emitir OpenOrgOS Operator"
+    "ORG_AFFILIATION_NOT_VERIFIED": "La afiliación debe verificarse antes de emitir OpenOrgOS Operator",
+    "ORGANIZATION_REQUIRED": "Seleccione la organización a la que aplica esta certificación Operator"
   },
   "zh": {
     "UNAUTHORIZED": "未授权",
@@ -16867,7 +17357,8 @@ export const ERROR_MESSAGES: Record<UiReadyLocale, Record<string, string>> = {
     "ALREADY_CLAIMED": "此组织已在您的账户上申报",
     "INVALID_STATUS": "所属不在审核中",
     "ORG_AFFILIATION_REQUIRED": "申请 OpenOrgOS Operator 前请先用法人番号关联所属组织",
-    "ORG_AFFILIATION_NOT_VERIFIED": "签发 OpenOrgOS Operator 前必须核验所属组织"
+    "ORG_AFFILIATION_NOT_VERIFIED": "签发 OpenOrgOS Operator 前必须核验所属组织",
+    "ORGANIZATION_REQUIRED": "请选择此 Operator 认证适用的组织"
   },
   "et": {
     "UNAUTHORIZED": "Autoriseerimata",
@@ -16930,7 +17421,8 @@ export const ERROR_MESSAGES: Record<UiReadyLocale, Record<string, string>> = {
     "ALREADY_CLAIMED": "See organisatsioon on teie kontol juba esitatud",
     "INVALID_STATUS": "Seos ei ole ülevaatamisel",
     "ORG_AFFILIATION_REQUIRED": "Seoge organisatsioon ettevõtte numbriga enne OpenOrgOS Operatori taotlemist",
-    "ORG_AFFILIATION_NOT_VERIFIED": "Organisatsiooni seos peab olema kinnitatud enne OpenOrgOS Operatori väljastamist"
+    "ORG_AFFILIATION_NOT_VERIFIED": "Organisatsiooni seos peab olema kinnitatud enne OpenOrgOS Operatori väljastamist",
+    "ORGANIZATION_REQUIRED": "Valige organisatsioon, millele see Operatori sertifikaat kehtib"
   },
   "fr": {
     "UNAUTHORIZED": "Non autorisé",
@@ -16993,7 +17485,8 @@ export const ERROR_MESSAGES: Record<UiReadyLocale, Record<string, string>> = {
     "ALREADY_CLAIMED": "Cette organisation est déjà déclarée sur votre compte",
     "INVALID_STATUS": "L'affiliation n'est pas en cours d'examen",
     "ORG_AFFILIATION_REQUIRED": "Liez une organisation avec un numéro d'entreprise avant de postuler à OpenOrgOS Operator",
-    "ORG_AFFILIATION_NOT_VERIFIED": "L'affiliation doit être vérifiée avant d'émettre OpenOrgOS Operator"
+    "ORG_AFFILIATION_NOT_VERIFIED": "L'affiliation doit être vérifiée avant d'émettre OpenOrgOS Operator",
+    "ORGANIZATION_REQUIRED": "Sélectionnez l'organisation concernée par cette certification Operator"
   },
   "de": {
     "UNAUTHORIZED": "Nicht autorisiert",
@@ -17056,7 +17549,8 @@ export const ERROR_MESSAGES: Record<UiReadyLocale, Record<string, string>> = {
     "ALREADY_CLAIMED": "Diese Organisation ist bereits auf Ihrem Konto gemeldet",
     "INVALID_STATUS": "Zugehörigkeit ist nicht in Prüfung",
     "ORG_AFFILIATION_REQUIRED": "Verknüpfen Sie eine Organisation mit Unternehmensnummer vor der Bewerbung um OpenOrgOS Operator",
-    "ORG_AFFILIATION_NOT_VERIFIED": "Organisationszugehörigkeit muss vor Ausstellung von OpenOrgOS Operator verifiziert sein"
+    "ORG_AFFILIATION_NOT_VERIFIED": "Organisationszugehörigkeit muss vor Ausstellung von OpenOrgOS Operator verifiziert sein",
+    "ORGANIZATION_REQUIRED": "Wählen Sie die Organisation für diese Operator-Zertifizierung"
   },
   "ru": {
     "UNAUTHORIZED": "Не авторизован",
@@ -17119,7 +17613,8 @@ export const ERROR_MESSAGES: Record<UiReadyLocale, Record<string, string>> = {
     "ALREADY_CLAIMED": "Эта организация уже заявлена в вашем аккаунте",
     "INVALID_STATUS": "Принадлежность не на проверке",
     "ORG_AFFILIATION_REQUIRED": "Привяжите организацию с корпоративным номером перед подачей на OpenOrgOS Operator",
-    "ORG_AFFILIATION_NOT_VERIFIED": "Принадлежность к организации должна быть подтверждена перед выдачей OpenOrgOS Operator"
+    "ORG_AFFILIATION_NOT_VERIFIED": "Принадлежность к организации должна быть подтверждена перед выдачей OpenOrgOS Operator",
+    "ORGANIZATION_REQUIRED": "Выберите организацию, к которой относится эта сертификация Operator"
   }
 } as Record<UiReadyLocale, Record<string, string>>;
 
