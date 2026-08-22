@@ -1,56 +1,84 @@
 # OrgOS Operator Console (Wire Web + Steward Chat / 予実 Today)
 #
+# Baked image (deploy/operator/Dockerfile) — not bind-mounted node:22.
 # Runs alongside Community. Does NOT replace web:3000.
-# Bind is localhost-only (demo/dev auth). Do not expose 0.0.0.0 without production auth.
+# Bind is localhost-only. Do not expose 0.0.0.0 on the host without production auth.
 #
-# Usage:
-#   docker compose -f docker-compose.yml -f docker-compose.operator.yml --profile operator up -d operator-console
-#   open http://127.0.0.1:9470/        # Chat + 予実 Today KPI
-#   open http://127.0.0.1:9470/wire/   # Wire Console
+# Usage (preferred — single entry):
+#   ./scripts/start-local-stack.sh
 #
-# Prerequisites: sibling OS_Steward checkout.
-# Prefer starting Operator Console on the **host** (Mac) when developing:
-#   cd ../OS_Steward && npm run operator-console:build && \
-#   ORGOS_TENANT=mal npm run orgos -- operator console start --host 127.0.0.1 --port 9470
-# Docker profile below mounts host node_modules and often fails on linux/arm64 rollup natives.
-# Env: STEWARD_HOST_PATH, ORGOS_TENANT (default mal), NEXT_PUBLIC_OPERATOR_CONSOLE_URL on web.
+# Manual:
+#   docker compose -f docker-compose.yml \
+#     -f docker-compose.operator.yml \
+#     -f docker-compose.local.yml \
+#     --profile operator up -d --build
+#   open http://localhost:9470/        # Chat + 予実 Today KPI (PassKey: use localhost, not 127.0.0.1)
+#   open http://localhost:9470/wire/   # Wire Console (login PassKey)
+#   open http://localhost:4178/enroll  # Settlement PassKey UI
 #
-# If http://127.0.0.1:9470/health already responds (host console),
-# skip this container (port conflict). MyPage probes via OPERATOR_CONSOLE_HEALTH_URL.
+# Prerequisites: sibling OS_Steward checkout (STEWARD_HOST_PATH).
+# Host npm fallback (Docker unavailable only):
+#   cd ../OS_Steward && ./scripts/start-operator-console-local.sh
+#
+# Env: STEWARD_HOST_PATH, ORGOS_TENANT (default mal), Community .env OIDC secrets.
 
 services:
   operator-console:
     profiles: ["operator"]
-    image: node:22-bookworm
-    working_dir: /app
+    build:
+      context: ${STEWARD_HOST_PATH:-../OS_Steward}
+      dockerfile: deploy/operator/Dockerfile
+    image: orgos-operator-console:local
+    working_dir: /opt/orgos
     env_file:
       - path: .env
         required: false
     environment:
-      # Local Mac mini operator — not production fail-closed
       ORGOS_ENV: ${ORGOS_OPERATOR_ENV:-development}
       ORGOS_TENANT: ${ORGOS_TENANT:-mal}
-      ORGOS_WORKSPACE: /app
-      ORGOS_HOME: /app
+      ORGOS_WORKSPACE: /workspace
+      ORGOS_HOME: /opt/orgos
       OPERATOR_CONSOLE_HOST: "0.0.0.0"
       OPERATOR_CONSOLE_PORT: "9470"
-      # Localhost-only publish; keep auth relaxed for CEO laptop use
-      STEWARD_CHAT_AUTH: ${STEWARD_CHAT_AUTH:-0}
-      WIRE_CONSOLE_AUTH: ${WIRE_CONSOLE_AUTH:-dev}
+      # Login PassKey (Mac / platform authenticator)
+      STEWARD_CHAT_AUTH: ${STEWARD_CHAT_AUTH:-1}
+      WIRE_CONSOLE_AUTH: ${WIRE_CONSOLE_AUTH:-prod}
+      WIRE_CONSOLE_PROD_ADAPTER: ${WIRE_CONSOLE_PROD_ADAPTER:-webauthn}
+      WIRE_CONSOLE_WEBAUTHN_RP_ID: ${WIRE_CONSOLE_WEBAUTHN_RP_ID:-localhost}
+      WIRE_CONSOLE_WEBAUTHN_ORIGIN: ${WIRE_CONSOLE_WEBAUTHN_ORIGIN:-http://localhost:9470}
+      WIRE_CONSOLE_WEBAUTHN_ALLOW_REGISTER: ${WIRE_CONSOLE_WEBAUTHN_ALLOW_REGISTER:-0}
+      # Settlement PassKey — same console RP (ADR 0037); approve site is help-only
+      ORGOS_SETTLEMENT_STEPUP: ${ORGOS_SETTLEMENT_STEPUP:-1}
+      ORGOS_SETTLEMENT_APPROVE_ORIGIN: ${ORGOS_SETTLEMENT_APPROVE_ORIGIN:-http://localhost:4178}
       # Community SSO handoff (set COMMUNITY_CONSOLE_OIDC_* in Community .env)
       WIRE_CONSOLE_OIDC_ISSUER: ${COMMUNITY_CONSOLE_OIDC_ISSUER:-https://community.oorgos.org}
       WIRE_CONSOLE_OIDC_AUDIENCE: ${COMMUNITY_CONSOLE_OIDC_AUDIENCE:-orgos-operator-console}
       WIRE_CONSOLE_OIDC_HS256_SECRET: ${COMMUNITY_CONSOLE_OIDC_HS256_SECRET:-}
       WIRE_CONSOLE_OIDC_ALLOW_HS256: ${WIRE_CONSOLE_OIDC_ALLOW_HS256:-1}
       ORGOS_MCP_AUTH: ${ORGOS_MCP_AUTH:-0}
-      ORGOS_LLM_MOCK: ${ORGOS_LLM_MOCK:-1}
-      ORGOS_CSRF: ${ORGOS_CSRF:-0}
+      ORGOS_CSRF: ${ORGOS_CSRF:-1}
       ORGOS_RATE_LIMIT: ${ORGOS_RATE_LIMIT:-0}
+      # Ollama on host (optional). Set ORGOS_LLM_MOCK=1 to skip.
+      ORGOS_LLM_MOCK: ${ORGOS_LLM_MOCK:-0}
+      ORGOS_LLM_PROVIDER: ${ORGOS_LLM_PROVIDER:-openai-compatible}
+      ORGOS_LLM_API_URL: ${ORGOS_LLM_API_URL:-http://host.docker.internal:11434/v1}
+      ORGOS_LLM_API_KEY: ${ORGOS_LLM_API_KEY:-ollama}
+      ORGOS_LLM_MODEL: ${ORGOS_LLM_MODEL:-gemma4:latest}
+      ORGOS_LLM_STRUCTURED: ${ORGOS_LLM_STRUCTURED:-0}
       NODE_OPTIONS: "--max-old-space-size=4096"
     volumes:
-      - ${STEWARD_HOST_PATH:-../OS_Steward}:/app
+      # Tenant YAML / workspace only — Core stays inside the image
+      - ${STEWARD_HOST_PATH:-../OS_Steward}:/workspace
+      # SPA dist from host so UI rebuilds apply without image rebuild
+      - ${STEWARD_HOST_PATH:-../OS_Steward}/apps/wire-console/dist-combined:/opt/orgos/apps/wire-console/dist-combined:ro
+      - ${STEWARD_HOST_PATH:-../OS_Steward}/apps/steward-chat/dist:/opt/orgos/apps/steward-chat/dist:ro
+      # Core JS from host after `npm run build:package` (PassKey config API etc.)
+      - ${STEWARD_HOST_PATH:-../OS_Steward}/packages/orgos-cli/dist:/opt/orgos/dist:ro
     ports:
-      - "127.0.0.1:9470:9470"
+      # Host port overridable when :9470 is occupied by a foreign orgos-demo
+      - "127.0.0.1:${OPERATOR_CONSOLE_HOST_PORT:-9470}:9470"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     healthcheck:
       test:
         [
@@ -62,11 +90,5 @@ services:
       interval: 15s
       timeout: 5s
       retries: 12
-      start_period: 180s
+      start_period: 90s
     restart: unless-stopped
-    command: >
-      sh -c "
-        if [ ! -d node_modules ]; then npm ci; fi &&
-        npm run operator-console:build &&
-        npm run orgos -- operator console start --host 0.0.0.0 --port 9470
-      "
