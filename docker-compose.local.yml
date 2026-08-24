@@ -1,0 +1,26 @@
+# Local integrated stack overlay (Community + Operator + settlement approve UI)
+#
+#   ./scripts/start-local-stack.sh
+#   # or:
+#   docker compose -f docker-compose.yml \
+#     -f docker-compose.operator.yml \
+#     -f docker-compose.local.yml \
+#     --profile operator up -d
+#
+# Vercel is not used. localhost:4178 is help-only (ceremony is 127.0.0.1:9470).
+
+services:
+  approve:
+    image: nginx:alpine
+    profiles: ["operator"]
+    ports:
+      - "127.0.0.1:4178:80"
+    volumes:
+      - ./sites/approve:/usr/share/nginx/html:ro
+      - ./deploy/approve-nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://127.0.0.1/"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped

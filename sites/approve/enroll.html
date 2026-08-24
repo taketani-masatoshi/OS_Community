@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>決済鍵の登録手順 — OpenOrgOS</title>
+    <meta
+      name="description"
+      content="高額承認用 PassKey は Operator Console から登録します。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/approve.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="inner">
+        <a class="brand" href="https://oorgos.org">OpenOrgOS</a>
+        <a href="/">ヘルプ</a>
+      </div>
+    </header>
+
+    <section class="lf-hero lf-hero-compact">
+      <div class="lf-hero-inner">
+        <h1 class="lf-hero-title-sm">登録はコンソールで</h1>
+        <p class="lf-hero-lead">このページでは PassKey を作成しません。</p>
+      </div>
+    </section>
+
+    <main class="page-wrap">
+      <section class="lf-card">
+        <ol class="enroll-inline-steps">
+          <li>http://localhost:9470 で Touch ID ログイン（127.0.0.1 不可）</li>
+          <li>「iPhone で登録」を押す</li>
+          <li>ブラウザの QR を iPhone で読む</li>
+        </ol>
+        <div class="actions">
+          <a class="btn btn-primary" href="http://localhost:9470/">コンソールを開く</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

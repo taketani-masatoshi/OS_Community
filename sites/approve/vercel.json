@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/enroll", "destination": "/enroll.html" },
+    { "source": "/a", "destination": "/index.html" }
+  ]
+}

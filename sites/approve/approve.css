@@ -1,0 +1,356 @@
+/* Settlement PassKey pages — oorgos.org tokens (Instrument Sans / Newsreader) */
+:root {
+  --ink: #1d1d1f;
+  --ink-soft: #6e6e73;
+  --muted: #6e6e73;
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --accent-soft: rgba(0, 113, 227, 0.12);
+  --surface: #f5f5f7;
+  --surface-elevated: #ffffff;
+  --section-alt: #eef1f6;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.12);
+  --max-width: 560px;
+  --page-gutter: 24px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --radius-md: 12px;
+  --radius-pill: 980px;
+  --success: #065f46;
+  --danger: #b91c1c;
+  --font-sans: "Instrument Sans", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", "Yu Gothic UI", sans-serif;
+  --font-display: Newsreader, Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--surface);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 52px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+}
+
+.site-header .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 52px;
+  padding: 0 var(--page-gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.brand:hover {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.lf-hero {
+  padding: var(--space-8) var(--page-gutter) var(--space-6);
+  background:
+    radial-gradient(120% 80% at 70% -10%, rgba(0, 113, 227, 0.18), transparent 55%),
+    radial-gradient(90% 70% at 10% 100%, rgba(0, 51, 102, 0.12), transparent 50%),
+    linear-gradient(180deg, var(--section-alt) 0%, var(--surface) 72%);
+}
+
+.lf-hero-inner,
+.page-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.page-wrap {
+  padding: 0 var(--page-gutter) var(--space-8);
+}
+
+.lf-hero-title-sm {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin: 0 0 var(--space-3);
+  line-height: 1.25;
+}
+
+.lf-hero-lead {
+  color: var(--ink-soft);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.auth-steps {
+  margin: 0 0 var(--space-5);
+  padding-left: var(--space-5);
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+}
+
+.auth-steps li {
+  margin-bottom: var(--space-2);
+}
+
+.lf-card,
+.card {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.meta {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.meta div {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: var(--space-2);
+  font-size: 0.95rem;
+}
+
+.meta dt {
+  color: var(--muted);
+  margin: 0;
+}
+
+.meta dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+.badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-4);
+}
+
+.badge-muted {
+  background: var(--section-alt);
+  color: var(--muted);
+}
+
+.badge-ok {
+  background: #ecfdf5;
+  color: var(--success);
+}
+
+.badge-err {
+  background: #fef2f2;
+  color: var(--danger);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-pill);
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.btn:hover {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.site-header a:not(.brand) {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.form-status {
+  font-size: 0.9rem;
+  margin-top: var(--space-3);
+}
+
+.form-status-ok {
+  color: var(--success);
+}
+
+.form-status-err {
+  color: var(--danger);
+}
+
+.form-row {
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.form-row label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.form-row input {
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  font: inherit;
+}
+
+.form-help {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  margin: 0 0 var(--space-3);
+}
+
+.advanced {
+  margin: 0 0 var(--space-4);
+}
+
+.advanced summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.advanced summary::-webkit-details-marker {
+  display: none;
+}
+
+.key-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+  margin: 0 0 var(--space-5);
+}
+
+.key-pair-item {
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-elevated);
+}
+
+.key-pair-item.is-here {
+  box-shadow: inset 4px 0 0 var(--accent);
+}
+
+.key-pair-device {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.key-pair-item strong {
+  font-weight: 600;
+}
+
+.enroll-inline-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  list-style: none;
+  counter-reset: enroll-step;
+}
+
+.enroll-inline-steps li {
+  counter-increment: enroll-step;
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+.enroll-inline-steps li::before {
+  content: counter(enroll-step) ".";
+  margin-right: var(--space-1);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.approve-empty {
+  color: var(--ink-soft);
+}
+
+.approve-empty p {
+  margin: 0 0 var(--space-4);
+}

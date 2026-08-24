@@ -89,29 +89,27 @@ docker compose up -d --force-recreate cloudflared-inc
 
 ### Operator Console（Wire Web + 予実 Today）
 
-Community の `web:3000` とは別に、OrgOS **Operator Console**（`:9470`）を並走する。
+Community の `web:3000` とは別に、OrgOS **Operator Console** を並走する。
 
 | URL | 内容 |
 |-----|------|
-| http://127.0.0.1:9470/ | Steward Chat · **Today（予実 KPI）** |
-| http://127.0.0.1:9470/wire/ | **Wire Console** |
+| http://127.0.0.1:9470/ | Steward Chat · **Today（予実 KPI）**（:9470 占有時は :9471） |
+| http://127.0.0.1:9470/wire/ | **Wire Console**（ログイン PassKey） |
+| http://localhost:4178/enroll | 決済 PassKey UI（localhost · Vercel 不要） |
 
-**推奨（Mac ホスト）:** Docker で OS_Steward の `node_modules` をマウントすると rollup native 不一致でビルド失敗しやすい。ホスト起動を優先する。
+**推奨（統合 Docker）:** baked Operator イメージ + approve nginx + Community を一括起動する。Colima が止まっているとコンテナ全体が落ちる（community 530）。
 
 ```bash
-cd /Users/kk/OS_Steward
-npm run operator-console:build   # 初回・SPA 変更時
-ORGOS_ENV=development ORGOS_TENANT=mal ORGOS_WORKSPACE=/Users/kk/OS_Steward \
-  STEWARD_CHAT_AUTH=0 WIRE_CONSOLE_AUTH=dev ORGOS_LLM_MOCK=1 \
-  npm run orgos -- operator console start --host 127.0.0.1 --port 9470
-
-curl -sf http://127.0.0.1:9470/health
+cd /Users/kk/OS_Community
+./scripts/start-local-stack.sh --ensure   # Colima + compose（再ビルドなし）
+./scripts/install-local-stack-launchagent.sh  # ログイン時 Colima + 3分おき監視（初回のみ）
 ```
 
 Community `.env`:
 
 - `NEXT_PUBLIC_OPERATOR_CONSOLE_URL=http://127.0.0.1:9470`（ブラウザ用）
-- `OPERATOR_CONSOLE_HEALTH_URL=http://host.docker.internal:9470`（Docker web からの到達確認）
+- `OPERATOR_CONSOLE_HEALTH_URL=http://operator-console:9470`（compose DNS）
+- Settlement（localhost）: Operator 側 `ORGOS_SETTLEMENT_RP_ID=localhost` · `ORGOS_SETTLEMENT_APPROVE_ORIGIN=http://localhost:4178`
 - Community → Console SSO（二重ログイン解消）:
   - `COMMUNITY_CONSOLE_OIDC_HS256_SECRET`（Console の `WIRE_CONSOLE_OIDC_HS256_SECRET` と同一）
   - `COMMUNITY_CONSOLE_OIDC_ISSUER`（例: `https://community.oorgos.org` — Console の `WIRE_CONSOLE_OIDC_ISSUER` と一致）
@@ -119,22 +117,11 @@ Community `.env`:
 - テナント `data/org/operators.yaml` に Google ログインと同じ `email` を登録（または `User.orgosOperatorId`）
 - My Page の Wire／予実は `/ops/console/start` → Console `/auth/community-handoff`（仮の UserID／passkey 不要）
 
-ホスト起動例（SSO 付き）:
-
-```bash
-cd /Users/kk/OS_Steward
-export WIRE_CONSOLE_OIDC_ISSUER=https://community.oorgos.org
-export WIRE_CONSOLE_OIDC_AUDIENCE=orgos-operator-console
-export WIRE_CONSOLE_OIDC_HS256_SECRET='<same-as-community>'
-export WIRE_CONSOLE_OIDC_ALLOW_HS256=1
-ORGOS_ENV=development ORGOS_TENANT=mal ORGOS_WORKSPACE=/Users/kk/OS_Steward \
-  STEWARD_CHAT_AUTH=1 WIRE_CONSOLE_AUTH=dev ORGOS_LLM_MOCK=1 \
-  npm run orgos -- operator console start --host 127.0.0.1 --port 9470
-```
+**フォールバック（Docker 不可時のみ）:** `OS_Steward/scripts/start-operator-console-local.sh`（:9470 占有時は代替ポートへ逃げず失敗する）。
 
 マイページ運用ハブは `/health` が取れないとき **Console の primary CTA を出さず**、ドキュメントリンクと「未起動」注記のみにする（死リンク防止）。
 
-`docker-compose.operator.yml` プロファイルは実験用。失敗時はホスト起動に戻す。
+正本イメージは `OS_Steward/deploy/operator/Dockerfile`（`orgos-operator-console:local`）。旧 `node:22` bind-mount は廃止。
 ### 安定化チェック（短）
 
 ```bash
@@ -143,8 +130,9 @@ curl -sf https://community.oorgos.org/api/health
 # schema 変更後
 docker compose up -d --force-recreate web
 docker compose up -d --force-recreate cloudflared-inc
-# Console
-curl -sf http://127.0.0.1:9470/health
+# Console（統合スタック）
+curl -sf http://127.0.0.1:9470/health || curl -sf http://127.0.0.1:9471/health
+curl -sf -o /dev/null -w "%{http_code}\n" http://127.0.0.1:4178/
 # oorgos.org
 curl -sf -o /dev/null -w "%{http_code}\n" https://oorgos.org/
 ```
