@@ -32,7 +32,7 @@ export default async function GettingStartedPage() {
       id: "propose",
       title: g.stepProposeTitle,
       body: g.stepProposeBody,
-      href: session?.user ? "/wild-modules/register" : "/login?callbackUrl=/wild-modules/register",
+      href: session?.user ? "/wild-modules/register" : "/login/start?callbackUrl=/wild-modules/register",
       cta: g.stepProposeCta,
       intent: "propose",
     },
@@ -46,7 +46,7 @@ export default async function GettingStartedPage() {
           <p className="lf-hero-lead">{g.lead}</p>
           {!session?.user && (
             <div className="lf-hero-actions">
-              <Link href="/login?callbackUrl=/getting-started" className="btn btn-ghost btn-sm">
+              <Link href="/login/start?callbackUrl=/getting-started" className="btn btn-ghost btn-sm">
                 {t.nav.signIn}
               </Link>
             </div>

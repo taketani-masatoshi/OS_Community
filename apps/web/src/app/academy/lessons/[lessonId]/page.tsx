@@ -128,7 +128,7 @@ export default async function AcademyLessonPage({
         ) : (
           <p className="page-desc">
             {a.signInPromptBefore}{" "}
-            <Link href={`/login?callbackUrl=/academy/lessons/${lesson.id}`}>{a.signInLink}</Link>
+            <Link href={`/login/start?callbackUrl=/academy/lessons/${lesson.id}`}>{a.signInLink}</Link>
             {a.signInPromptAfter}
           </p>
         )}

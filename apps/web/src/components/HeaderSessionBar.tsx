@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { getSessionDisplayName, isSignedInSession } from "@/lib/session-display";
 import { ClientSignOutButton } from "@/components/ClientSignOutButton";
+import { loginStartHref } from "@/lib/login-href";
 
 type Labels = {
   signIn: string;
   signOut: string;
   myPage: string;
   admin: string;
-  proposeModule: string;
 };
 
 export function HeaderSessionBar({
@@ -20,8 +20,10 @@ export function HeaderSessionBar({
   labels: Labels;
   serverSessionInfo?: { userName: string; isAdmin: boolean } | null;
 }) {
-  const { data: session } = useSession();
-  const isSignedIn = isSignedInSession(session);
+  const { data: session, status } = useSession();
+  const clientSignedIn = isSignedInSession(session);
+  // Prefer server session so the header does not flash "Sign in" after login.
+  const isSignedIn = Boolean(serverSessionInfo) || clientSignedIn || status === "authenticated";
   const clientIsAdmin =
     session?.user?.siteRole === "ADMIN" || session?.user?.siteRole === "CERT_REVIEWER";
   const isAdmin = serverSessionInfo?.isAdmin ?? clientIsAdmin;
@@ -31,7 +33,7 @@ export function HeaderSessionBar({
 
   if (!isSignedIn) {
     return (
-      <Link href="/login?callbackUrl=/getting-started" className="btn btn-primary btn-sm">
+      <Link href={loginStartHref("/mypage")} className="btn btn-primary btn-sm">
         {labels.signIn}
       </Link>
     );
@@ -39,15 +41,13 @@ export function HeaderSessionBar({
 
   return (
     <>
-      {isAdmin && <Link href="/admin">{labels.admin}</Link>}
-      <Link href="/wild-modules/register" className="btn btn-ghost btn-sm">
-        {labels.proposeModule}
-      </Link>
-      <Link href="/mypage" className="btn btn-ghost btn-sm">
-        {labels.myPage}
-      </Link>
+      {isAdmin && (
+        <Link href="/admin" className="btn btn-primary btn-sm">
+          {labels.admin}
+        </Link>
+      )}
       {userName && <span className="site-nav-user">{userName}</span>}
-      <ClientSignOutButton label={labels.signOut} />
+      <ClientSignOutButton label={labels.signOut} className="btn btn-primary btn-sm" />
     </>
   );
 }
@@ -55,8 +55,9 @@ export function HeaderSessionBar({
 export function useHeaderSessionInfo(
   serverSessionInfo?: { userName: string; isAdmin: boolean } | null,
 ) {
-  const { data: session } = useSession();
-  const isSignedIn = isSignedInSession(session);
+  const { data: session, status } = useSession();
+  const isSignedIn =
+    Boolean(serverSessionInfo) || isSignedInSession(session) || status === "authenticated";
   if (serverSessionInfo) return serverSessionInfo;
   if (!isSignedIn || !session?.user) return null;
   const isAdmin =

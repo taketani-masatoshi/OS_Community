@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Try OrgOS Demo — OpenOrgOS</title>
+    <meta
+      name="description"
+      content="Run the OpenOrgOS (OrgOS) demo on your Mac with Docker. Pull the public GHCR image and open Chat and Wire on localhost."
+    />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Same tokens as oorgos.org overview + OrgOS demo Chat/Wire */
+      :root {
+        --ink: #1d1d1f;
+        --ink-soft: #6e6e73;
+        --navy: #003366;
+        --accent: #0071e3;
+        --accent-soft: rgba(0, 113, 227, 0.12);
+        --surface: #f5f5f7;
+        --surface-elevated: #ffffff;
+        --border: rgba(0, 0, 0, 0.08);
+        --code-bg: #0a1628;
+        --code-fg: #f5f5f7;
+        --max-width: 980px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 24px;
+        --space-6: 32px;
+        --space-7: 40px;
+        --space-8: 48px;
+        --page-gutter: 24px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        font-family: "Instrument Sans", "Helvetica Neue", Helvetica, sans-serif;
+        background: var(--surface);
+        color: var(--ink);
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      html:lang(ja) body {
+        font-family:
+          "Instrument Sans",
+          "Hiragino Sans",
+          "Hiragino Kaku Gothic ProN",
+          "Noto Sans JP",
+          "Yu Gothic UI",
+          Meiryo,
+          sans-serif;
+      }
+
+      html:lang(zh) body {
+        font-family:
+          "Instrument Sans",
+          "PingFang SC",
+          "Microsoft YaHei",
+          "Noto Sans SC",
+          sans-serif;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: saturate(180%) blur(16px);
+        -webkit-backdrop-filter: saturate(180%) blur(16px);
+        background: rgba(245, 245, 247, 0.72);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .site-header-inner,
+      .shell {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
+      }
+
+      .site-header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+        min-height: 52px;
+      }
+
+      .brand {
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        text-decoration: none;
+      }
+
+      .brand:hover {
+        text-decoration: none;
+        color: var(--navy);
+      }
+
+      .header-nav {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+      }
+
+      .header-nav a {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--ink-soft);
+      }
+
+      .header-nav a[aria-current="page"] {
+        color: var(--ink);
+      }
+
+      .lang-select-wrap {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+      }
+
+      .lang-select-label {
+        font-size: 0.75rem;
+        color: var(--ink-soft);
+      }
+
+      .lang-select {
+        font: inherit;
+        font-size: 0.875rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0.35rem 0.5rem;
+        background: #fff;
+        color: var(--ink);
+      }
+
+      .hero {
+        padding: var(--space-8) 0 var(--space-7);
+        background:
+          radial-gradient(120% 80% at 10% 0%, rgba(0, 113, 227, 0.1), transparent 55%),
+          linear-gradient(180deg, #ffffff 0%, var(--surface) 100%);
+      }
+
+      .hero-kicker {
+        margin: 0 0 var(--space-3);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .hero h1 {
+        margin: 0 0 var(--space-4);
+        font-family: Newsreader, Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        color: var(--ink);
+      }
+
+      .hero-lead {
+        margin: 0;
+        max-width: 38rem;
+        font-size: 1.125rem;
+        color: var(--ink-soft);
+      }
+
+      .section {
+        padding: var(--space-7) 0;
+      }
+
+      .panel {
+        padding: var(--space-6);
+        border-radius: 24px;
+        background: var(--surface-elevated);
+        border: 1px solid var(--border);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.04);
+      }
+
+      .panel + .panel {
+        margin-top: var(--space-5);
+      }
+
+      .panel h2 {
+        margin: 0 0 var(--space-3);
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .panel p {
+        margin: 0 0 var(--space-4);
+        color: var(--ink-soft);
+      }
+
+      .panel p:last-child {
+        margin-bottom: 0;
+      }
+
+      .steps {
+        list-style: none;
+        margin: 0 0 var(--space-5);
+        padding: 0;
+        display: grid;
+        gap: var(--space-4);
+      }
+
+      .steps li {
+        display: grid;
+        grid-template-columns: 2rem 1fr;
+        gap: var(--space-3);
+        align-items: start;
+        color: var(--ink-soft);
+      }
+
+      .steps strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .step-index {
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.8125rem;
+        font-weight: 700;
+      }
+
+      .code-block {
+        position: relative;
+        margin: 0 0 var(--space-4);
+        border-radius: 16px;
+        background: var(--code-bg);
+        color: var(--code-fg);
+        overflow: auto;
+      }
+
+      .code-block pre {
+        margin: 0;
+        padding: var(--space-5);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.8125rem;
+        line-height: 1.6;
+        white-space: pre;
+      }
+
+      .code-label {
+        margin: 0 0 var(--space-2);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .urls {
+        display: grid;
+        gap: var(--space-2);
+        margin: var(--space-4) 0 0;
+        padding: var(--space-4);
+        border-radius: 12px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        font-size: 0.9375rem;
+      }
+
+      .urls code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.8125rem;
+      }
+
+      .explain {
+        margin: 0 0 var(--space-4);
+        padding: var(--space-4) var(--space-5);
+        border-radius: 16px;
+        background: var(--accent-soft);
+        border: 1px solid rgba(0, 113, 227, 0.18);
+        color: var(--ink);
+        font-size: 0.9375rem;
+      }
+
+      .explain p {
+        margin: 0 0 var(--space-3);
+        color: var(--ink);
+      }
+
+      .explain p:last-child {
+        margin-bottom: 0;
+      }
+
+      .link-list {
+        list-style: none;
+        margin: 0 0 var(--space-4);
+        padding: 0;
+        display: grid;
+        gap: var(--space-3);
+      }
+
+      .link-list li {
+        padding: var(--space-3) var(--space-4);
+        border-radius: 12px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .link-list a {
+        font-weight: 600;
+      }
+
+      .link-list span {
+        display: block;
+        margin-top: 0.25rem;
+        font-size: 0.875rem;
+        color: var(--ink-soft);
+      }
+
+      .note {
+        margin-top: var(--space-4);
+        font-size: 0.875rem;
+        color: var(--ink-soft);
+      }
+
+      kbd {
+        display: inline-block;
+        padding: 0.1rem 0.4rem;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: #fff;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.8125rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.75rem 1.25rem;
+        border-radius: 980px;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .btn:hover {
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: #0077ed;
+      }
+
+      .btn-ghost {
+        background: transparent;
+        color: var(--ink);
+        border: 1px solid var(--border);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        margin-top: var(--space-5);
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--border);
+        background: #fff;
+        padding: var(--space-5) 0;
+        margin-top: var(--space-6);
+      }
+
+      .site-footer-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--space-3);
+        font-size: 0.8125rem;
+        color: var(--ink-soft);
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --page-gutter: 16px;
+        }
+
+        .panel {
+          padding: var(--space-5);
+          border-radius: 20px;
+        }
+
+        .code-block pre {
+          padding: var(--space-4);
+          font-size: 0.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="/">OpenOrgOS</a>
+        <div class="header-nav">
+          <a href="/" data-i18n="navOverview">Overview</a>
+          <a href="/demo" aria-current="page" data-i18n="navDemo">Demo</a>
+          <a href="https://community.oorgos.org" data-i18n="navCommunity">Community</a>
+          <div class="lang-select-wrap">
+            <label class="lang-select-label" for="lang-select" data-i18n="langLabel"
+              >Language</label
+            >
+            <select id="lang-select" class="lang-select" aria-label="Language">
+              <option value="en">English</option>
+              <option value="ja">日本語</option>
+              <option value="zh">中文</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="shell">
+        <p class="hero-kicker" data-i18n="kicker">Demo</p>
+        <h1 data-i18n="title">Try OrgOS on your Mac</h1>
+        <p class="hero-lead" data-i18n="lead"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="panel">
+          <h2 data-i18n="step1Title">1. Docker</h2>
+          <p data-i18n="step1Lead" data-i18n-html></p>
+          <ol class="steps">
+            <li>
+              <span class="step-index" aria-hidden="true">1</span>
+              <span data-i18n="step1a" data-i18n-html></span>
+            </li>
+            <li>
+              <span class="step-index" aria-hidden="true">2</span>
+              <span data-i18n="step1b" data-i18n-html></span>
+            </li>
+            <li>
+              <span class="step-index" aria-hidden="true">3</span>
+              <span data-i18n="step1c" data-i18n-html></span>
+            </li>
+          </ol>
+          <p class="note" data-i18n="step1Safe"></p>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="step2Title">2. Run</h2>
+          <p data-i18n="step2Lead" data-i18n-html></p>
+          <div class="code-block" tabindex="0">
+            <pre><code>docker pull --platform linux/amd64 ghcr.io/taketani-masatoshi/orgos-demo:0.8.0-beta.2
+docker run --rm --platform linux/amd64 -p 127.0.0.1:9470:9470 ghcr.io/taketani-masatoshi/orgos-demo:0.8.0-beta.2</code></pre>
+          </div>
+          <p class="note" data-i18n="step2Note"></p>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="step3Title">3. Open</h2>
+          <div class="urls">
+            <div>
+              <strong>Chat</strong> —
+              <a href="http://127.0.0.1:9470/"><code>http://127.0.0.1:9470/</code></a>
+            </div>
+            <div>
+              <strong>Wire</strong> —
+              <a href="http://127.0.0.1:9470/wire/"
+                ><code>http://127.0.0.1:9470/wire/</code></a
+              >
+            </div>
+          </div>
+          <p class="note" data-i18n="step3Note" data-i18n-html></p>
+          <div class="actions">
+            <a class="btn btn-ghost" href="/" data-i18n="ctaHome"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="shell site-footer-inner">
+        <span data-i18n="footerCopy">© OpenOrgOS Community</span>
+        <span>oorgos.org/demo</span>
+      </div>
+    </footer>
+
+    <script>
+      const copy = {
+        en: {
+          pageTitle: "Try OrgOS — OpenOrgOS",
+          metaDescription: "Run the OrgOS demo on an Apple silicon Mac with Docker Desktop.",
+          navOverview: "Overview",
+          navDemo: "Demo",
+          navCommunity: "Community",
+          langLabel: "Language",
+          kicker: "Demo",
+          title: "Try OrgOS on your Mac",
+          lead: "Apple silicon Mac (M1–M4) only.",
+          step1Title: "1. Install Docker",
+          step1Lead:
+            'Download from the <a href="https://docs.docker.com/desktop/setup/install/mac-install/">official Docker site</a> (Apple silicon).',
+          step1a: "Download Docker Desktop.",
+          step1b: "Drag it to Applications.",
+          step1c: "Open Docker and wait until it starts.",
+          step1Safe:
+            "The demo stays inside Docker. It does not change your other Mac folders.",
+          step2Title: "2. Run",
+          step2Lead: 'Open <strong>Terminal</strong>, paste these two lines, press Return.',
+          step2Note: "First run may take a few minutes. This Mac only (127.0.0.1).",
+          step3Title: "3. Open in your browser",
+          step3Note: "Stop: <kbd>Control</kbd>+<kbd>C</kbd> in Terminal.",
+          ctaHome: "Back",
+          footerCopy: "© OpenOrgOS Community",
+        },
+        ja: {
+          pageTitle: "OrgOS を試す — OpenOrgOS",
+          metaDescription: "Apple silicon Mac と Docker Desktop で OrgOS デモを起動します。",
+          navOverview: "概要",
+          navDemo: "デモ",
+          navCommunity: "Community",
+          langLabel: "言語",
+          kicker: "デモ",
+          title: "Mac で OrgOS を試す",
+          lead: "対象は Apple silicon Mac（M1–M4）のみです。",
+          step1Title: "1. Docker を入れる",
+          step1Lead:
+            '<a href="https://docs.docker.com/desktop/setup/install/mac-install/">公式サイト</a>からダウンロードしてください（Apple silicon）。',
+          step1a: "Docker Desktop をダウンロードする。",
+          step1b: "アプリケーションへドラッグする。",
+          step1c: "Docker を開いて起動を待つ。",
+          step1Safe:
+            "デモは Docker の中だけで動きます。ほかのフォルダはいじりません。",
+          step2Title: "2. 動かす",
+          step2Lead: "<strong>ターミナル</strong>を開き、下の2行を貼り付けて Return。",
+          step2Note: "初回は数分かかることがあります。この Mac だけで開きます（127.0.0.1）。",
+          step3Title: "3. ブラウザで開く",
+          step3Note: "止める: ターミナルで <kbd>Control</kbd>+<kbd>C</kbd>。",
+          ctaHome: "戻る",
+          footerCopy: "© OpenOrgOS Community",
+        },
+        zh: {
+          pageTitle: "试用 OrgOS — OpenOrgOS",
+          metaDescription: "在 Apple silicon Mac 上用 Docker Desktop 运行 OrgOS 演示。",
+          navOverview: "概览",
+          navDemo: "演示",
+          navCommunity: "Community",
+          langLabel: "语言",
+          kicker: "演示",
+          title: "在 Mac 上试用 OrgOS",
+          lead: "仅支持 Apple silicon Mac（M1–M4）。",
+          step1Title: "1. 安装 Docker",
+          step1Lead:
+            '请从<a href="https://docs.docker.com/desktop/setup/install/mac-install/">官方网站</a>下载（Apple silicon）。',
+          step1a: "下载 Docker Desktop。",
+          step1b: "拖到应用程序。",
+          step1c: "打开 Docker，等待启动完成。",
+          step1Safe: "演示只在 Docker 内运行，不会改动你的其他文件夹。",
+          step2Title: "2. 运行",
+          step2Lead: "打开<strong>终端</strong>，粘贴下面两行并回车。",
+          step2Note: "首次可能需要几分钟。仅本机可访问（127.0.0.1）。",
+          step3Title: "3. 在浏览器打开",
+          step3Note: "停止：在终端按 <kbd>Control</kbd>+<kbd>C</kbd>。",
+          ctaHome: "返回",
+          footerCopy: "© OpenOrgOS Community",
+        },
+      };
+
+      function detectLang() {
+        const saved = localStorage.getItem("oorgos-lang");
+        if (saved === "en" || saved === "ja" || saved === "zh") return saved;
+        const browser = (navigator.language || "").toLowerCase();
+        if (browser.startsWith("ja")) return "ja";
+        if (browser.startsWith("zh")) return "zh";
+        return "en";
+      }
+
+      function applyLang(lang) {
+        const strings = copy[lang] || copy.en;
+        document.documentElement.lang = lang;
+        document.title = strings.pageTitle;
+        document
+          .querySelector('meta[name="description"]')
+          .setAttribute("content", strings.metaDescription);
+
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const value = strings[key];
+          if (value == null) return;
+          if (el.hasAttribute("data-i18n-html")) {
+            el.innerHTML = value;
+          } else {
+            el.textContent = value;
+          }
+        });
+
+        const langSelect = document.getElementById("lang-select");
+        if (langSelect) langSelect.value = lang;
+        localStorage.setItem("oorgos-lang", lang);
+      }
+
+      document.getElementById("lang-select")?.addEventListener("change", (event) => {
+        applyLang(event.target.value);
+      });
+
+      applyLang(detectLang());
+    </script>
+  </body>
+</html>

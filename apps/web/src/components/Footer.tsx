@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { BRAND, getFooterAboutLinks, getPageMessages, isSkeletonSitePath } from "@os-community/shared";
 import { getT } from "@/lib/i18n";
+import { getAuthSession } from "@/lib/session";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { FooterSocialLinks } from "@/components/FooterSocialLinks";
+import { loginStartHref } from "@/lib/login-href";
 
 function FooterLinkItem({
   href,
@@ -25,39 +27,59 @@ function FooterLinkItem({
 
 export async function Footer() {
   const { locale, messages: t } = await getT();
+  const session = await getAuthSession();
+  const signedIn = Boolean(session?.user);
   const pages = getPageMessages(locale);
   const aboutLinks = getFooterAboutLinks(locale)
     .filter((link) => !isSkeletonSitePath(link.href))
     .slice(0, 4);
 
-  const participateLinks = [
-    { href: "/getting-started", label: t.nav.gettingStarted },
-    { href: "/modules", label: t.nav.modules },
-    { href: "/committees", label: t.nav.committees },
-    { href: "/wild-modules/register", label: t.mypage.actionProposeModule },
-  ];
+  const homeHref = signedIn ? "/mypage" : "/";
+
+  const participateLinks = signedIn
+    ? [
+        { href: "/mypage", label: t.nav.memberHub },
+        { href: "/committees", label: t.nav.committees },
+        { href: "/modules", label: t.nav.modules },
+        { href: "/wild-modules/register", label: t.nav.proposeModuleShort },
+      ]
+    : [
+        { href: "/getting-started", label: t.nav.gettingStarted },
+        { href: "/modules", label: t.nav.modules },
+        { href: "/committees", label: t.nav.committees },
+        { href: loginStartHref("/mypage"), label: t.nav.signIn },
+      ];
 
   const resourceLinks = [
     { href: "/learning", label: t.nav.learning },
     { href: "/standards", label: t.nav.standards },
     { href: "/governance", label: t.nav.governance },
-    { href: "/github", label: t.footer.developerLink },
+    { href: "/certifications", label: t.nav.certification },
   ];
 
-  const exploreLinks = [
-    { href: "/about", label: t.nav.about },
-    { href: "/agents", label: t.nav.agents },
-    { href: "/experts", label: t.nav.experts },
-    { href: "/compliance", label: pages.compliance.title },
-    { href: "/certifications", label: t.nav.certification },
-  ].filter((link) => !isSkeletonSitePath(link.href));
+  const exploreLinks = (
+    signedIn
+      ? [
+          { href: "/settings/organization", label: t.settings.organization },
+          { href: "/settings/profile", label: t.nav.myPage },
+          { href: "/about", label: t.nav.about },
+          { href: "/github", label: t.footer.developerLink },
+        ]
+      : [
+          { href: "/about", label: t.nav.about },
+          { href: "/agents", label: t.nav.agents },
+          { href: "/experts", label: t.nav.experts },
+          { href: "/compliance", label: pages.compliance.title },
+          { href: "/github", label: t.footer.developerLink },
+        ]
+  ).filter((link) => !isSkeletonSitePath(link.href));
 
   return (
     <footer className="site-footer site-footer-slim">
       <div className="site-footer-inner">
         <div className="site-footer-layout site-footer-slim-layout">
           <aside className="site-footer-aside">
-            <Link href="/" className="site-footer-logo">
+            <Link href={homeHref} className="site-footer-logo">
               {BRAND.name}
             </Link>
             <p className="site-footer-about-desc">{t.brand.tagline}</p>

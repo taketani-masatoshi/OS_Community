@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { headers } from "next/headers";
 import { BRAND } from "@os-community/shared";
 import { getT } from "@/lib/i18n";
@@ -36,7 +35,8 @@ export default async function LoginPage({
   const authError = !dbAvailable
     ? l.errorDatabaseUnavailable
     : resolveLoginAuthErrorMessage(error, l, locale);
-  const afterLogin = "/settings/profile?callbackUrl=" + encodeURIComponent(redirectTo);
+  // Go straight to the intended destination (mypage etc.) — profile nudge lives on mypage.
+  const afterLogin = redirectTo;
   const googleCallback = resolveGoogleOAuthCredentials().callbackUrl;
   const authBaseUrl = getAuthBaseUrl();
   const headerStore = await headers();
@@ -101,12 +101,6 @@ export default async function LoginPage({
             </form>
           )}
         </div>
-        <p className="page-muted-note" style={{ marginTop: "1.25rem" }}>
-          {l.connectionsHint}{" "}
-          <Link href="/settings/connections" className="btn btn-primary btn-sm">
-            {l.connectionsLink}
-          </Link>
-        </p>
       </div>
     </section>
   );

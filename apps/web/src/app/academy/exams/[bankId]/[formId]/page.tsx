@@ -45,7 +45,7 @@ export default async function CertificationExamPage({
   }
 
   if (!session?.user) {
-    redirect(`/login?callbackUrl=/academy/exams/${bankId}/${formId}`);
+    redirect(`/login/start?callbackUrl=/academy/exams/${bankId}/${formId}`);
   }
 
   try {

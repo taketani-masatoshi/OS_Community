@@ -147,7 +147,7 @@ export function GettingStartedWizard({
       {!isSignedIn && (
         <p className="section-cta">
           <Link
-            href={`/login?callbackUrl=${encodeURIComponent(`/getting-started?step=${active + 1}&intent=${current.intent}`)}`}
+            href={`/login/start?callbackUrl=${encodeURIComponent(`/getting-started?step=${active + 1}&intent=${current.intent}`)}`}
             className="btn btn-primary btn-sm"
           >
             {labels.flowSignIn}
