@@ -788,5 +788,21 @@
     "iso37000SectionTitle": "OrgOS e ISO 37000",
     "iso37000SectionLead": "Implante o OrgOS e configure sua organização na inicialização. Essa base fornece um fundamento prático para autodeclaração de governança alinhada à ISO 37000. A OpenOrgOS Community não emite certificados ISO de terceiros. Um OpenOrgOS Operator (OOO) normalmente lidera o caminho.",
     "iso37000SectionCta": "Ler a orientação"
+  },
+  "wireNodePage": {
+    "applyTitle": "Pedido de nó Wire",
+    "applyLead": "C4-W1 · Registar um nó Wire para revisão de governação",
+    "applyDesc": "Envie identidade do tenant, e-mail Wire opcional, número corporativo e URL do gateway. O Steward valida pk-DID e duplicados antes da fila pendente.",
+    "reviewTitle": "Revisão de governação do nó Wire",
+    "reviewLead": "C4-W2 · Fila pendente do CHAIR do comité",
+    "reviewDesc": "Aprovar ou rejeitar pedidos pendentes de registo de nó Wire. As decisões propagam-se ao wire-trust-registry do Steward quando ligado.",
+    "governanceTitle": "Governação do nó Wire",
+    "governanceLead": "C4-W2 · Fila pendente do CHAIR e rasto de auditoria",
+    "governanceDesc": "Rever pedidos pendentes de nó Wire, aprovar ou rejeitar, e inspecionar o rasto de auditoria. Requer CHAIR do comité ou ADMIN do site.",
+    "applyLink": "Pedir nó Wire",
+    "reviewLink": "Rever pedidos pendentes",
+    "lifecycleLink": "Ciclo de vida do pedido",
+    "governanceLink": "← Governação",
+    "jurisdictionLink": "Registo de jurisdição"
   }
 }

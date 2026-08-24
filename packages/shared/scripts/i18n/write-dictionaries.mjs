@@ -20,6 +20,7 @@ import { GETTING_STARTED_ORGOS_TRANSLATIONS } from "./getting-started-orgos-tran
 import { ADMIN_COMMITTEE_TRANSLATIONS } from "./admin-committee-translations.mjs";
 import { COMPLIANCE_REGISTRY_TRANSLATIONS } from "./compliance-registry-translations.mjs";
 import { STEWARD_PROTOCOL_VOCABULARY_TRANSLATIONS } from "./steward-protocol-vocabulary-translations.mjs";
+import { WIRE_NODE_PAGE_TRANSLATIONS } from "./wire-node-page-translations.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DICT_DIR = path.resolve(__dirname, "../../i18n/dictionary");
@@ -56,6 +57,7 @@ for (const [locale, dict] of Object.entries(TRANSLATIONS)) {
     ...(ADMIN_COMMITTEE_TRANSLATIONS[locale] ?? {}),
     ...(COMPLIANCE_REGISTRY_TRANSLATIONS[locale] ?? {}),
     ...(STEWARD_PROTOCOL_VOCABULARY_TRANSLATIONS[locale] ?? {}),
+    ...(WIRE_NODE_PAGE_TRANSLATIONS[locale] ?? {}),
   };
   const filePath = path.join(DICT_DIR, `${locale}.json`);
   fs.mkdirSync(DICT_DIR, { recursive: true });
