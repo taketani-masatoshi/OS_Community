@@ -42,6 +42,7 @@
   --ink-muted: var(--ink-soft);
   --surface-raised: var(--surface-elevated);
   --alt-section: var(--section-alt);
+  --surface-alt: var(--section-alt);
   --border-emphasis: var(--border-strong);
   --accent-muted: var(--accent-soft);
 
@@ -135,6 +136,7 @@ html[data-theme="dark"] {
   --ink-muted: var(--ink-soft);
   --surface-raised: var(--surface-elevated);
   --alt-section: var(--section-alt);
+  --surface-alt: var(--section-alt);
   --border-emphasis: var(--border-strong);
   --accent-muted: var(--accent-soft);
   --shadow-soft: 0 20px 48px rgba(0, 0, 0, 0.45);
