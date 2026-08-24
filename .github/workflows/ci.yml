@@ -100,7 +100,7 @@ jobs:
       - run: npm install
       - run: npm run db:generate
       - run: npm run push -w @os-community/db
-      - run: npm run db:seed
+      - run: npm run seed -w @os-community/db
       - run: bash scripts/sync-steward-protocol.sh
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e -w @os-community/web -- e2e/resilience.spec.ts e2e/governance-protocol.spec.ts e2e/wire-node-governance.spec.ts e2e/orgos-mail-connect.spec.ts
