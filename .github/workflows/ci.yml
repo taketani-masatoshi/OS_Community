@@ -98,6 +98,7 @@ jobs:
           cache: npm
 
       - run: npm install
+      - run: cp .env.example .env
       - run: npm run db:generate
       - run: npm run push -w @os-community/db
       - run: npm run seed -w @os-community/db
