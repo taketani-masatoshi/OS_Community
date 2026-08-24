@@ -8,6 +8,10 @@
 
 **Boundary:** Overview CTAs are plain links. Community liveness is owned by Mac mini / Tunnel ops — never by browser `fetch` from this site.
 
+**Design:** [`design-system.css`](./design-system.css) is the canonical public design system for both this Vercel site and the Community Next.js app. It owns the restrained palette, Instrument Sans + Newsreader type scale, spacing, radii, focus treatment, and button sizes. Product-specific CSS may define layout, but must consume these tokens instead of redefining them.
+
+**Demo page:** [`/demo`](./demo.html) — Apple silicon Mac + Docker Desktop (Intel Mac not supported).
+
 **Setup runbook:** [`docs/oorgos-subdomain-setup.md`](../../docs/oorgos-subdomain-setup.md)  
 **Architecture:** [`docs/vercel-macmini-architecture.md`](../../docs/vercel-macmini-architecture.md)
 
