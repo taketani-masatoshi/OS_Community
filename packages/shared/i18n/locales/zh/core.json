@@ -389,7 +389,7 @@
     "adminManageUsers": "管理成员",
     "adminDashboard": "管理后台",
     "opsTitle": "运营中心",
-    "opsDesc": "可作为 OpenOrgOS Operator（OOO）运营的组织，以及 Wire 与预算实绩入口。",
+    "opsDesc": "可作为 OpenOrgOS Operator（OOO）运营的组织，以及 Wire、预算实绩、秘书与 Steward 入口。",
     "opsEmpty": "尚无 OOO 组织范围。请申报所属组织并申请 Operator 认证。",
     "opsClaimOrg": "申报所属组织",
     "opsApplyOoo": "申请 OOO",
@@ -414,7 +414,14 @@
     "onboardingStepOrg": "申报组织",
     "onboardingStepOrgBody": "将日本法人番号关联到此 Google ID。该申报是管理员核验的 OOO 租户范围。",
     "onboardingStepOoo": "申请 OpenOrgOS Operator",
-    "onboardingStepOooBody": "组织申报后申请 OOO，以便将 Wire 与预算运营绑定到该租户。"
+    "onboardingStepOooBody": "组织申报后申请 OOO，以便将 Wire 与预算运营绑定到该租户。",
+    "opsSecretaryTitle": "秘书",
+    "opsSecretaryDesc": "Operator Console 上的秘书 Agent 聊天 — 在 Agent 边界内的通信与高管支持。",
+    "opsSecretaryConsole": "打开秘书",
+    "opsStewardTitle": "执行 Steward",
+    "opsStewardDesc": "Operator Console 上的 Executive Steward 聊天 — 仪表盘与 Agent 摘要（不直接读取租户 YAML）。",
+    "opsStewardConsole": "打开 Steward",
+    "opsAgentGuide": "Module / Agent 指南"
   },
   "committeesPage": {
     "desc": "每个人类可读的规则模块设有委员会；标准委员会统管 OrgOS Standard。",
@@ -701,7 +708,17 @@
     "orgSaved": "已提交审核",
     "orgErrorGeneric": "无法保存所属申报",
     "orgErrorInvalidNumber": "请输入有效的 13 位日本法人番号",
-    "orgEmpty": "尚未关联所属组织。"
+    "orgEmpty": "尚未关联所属组织。",
+    "appearance": "外观",
+    "appearanceDesc": "选择浅色、深色，或跟随系统默认。",
+    "appearanceLegend": "风格",
+    "themeLight": "浅色",
+    "themeLightHint": "明亮背景，与 oorgos.org 一致。",
+    "themeDark": "深色",
+    "themeDarkHint": "适合弱光环境的深色背景。",
+    "themeSystem": "系统默认",
+    "themeSystemHint": "跟随本设备的浅色/深色设置。",
+    "appearanceNote": "保存在本设备，并应用于整个站点。"
   },
   "agentsPage": {
     "filterAll": "全部",

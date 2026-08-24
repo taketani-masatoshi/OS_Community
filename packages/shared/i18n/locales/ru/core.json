@@ -389,7 +389,7 @@
     "adminManageUsers": "Управление участниками",
     "adminDashboard": "Панель администратора",
     "opsTitle": "Операционный хаб",
-    "opsDesc": "Организации, которыми вы можете управлять как OpenOrgOS Operator (OOO), плюс входы в Wire и план/факт.",
+    "opsDesc": "Организации, которыми вы можете управлять как OpenOrgOS Operator (OOO), плюс входы в Wire, план/факт, секретаря и Steward.",
     "opsEmpty": "Пока нет области организации OOO. Заявите организацию и подайте на сертификацию Operator.",
     "opsClaimOrg": "Заявить организацию",
     "opsApplyOoo": "Подать на OOO",
@@ -414,7 +414,14 @@
     "onboardingStepOrg": "Заявить организацию",
     "onboardingStepOrgBody": "Привяжите японский корпоративный номер к этому Google ID. Заявка — область OOO-тенанта, которую проверяет администратор.",
     "onboardingStepOoo": "Подать заявку на OpenOrgOS Operator",
-    "onboardingStepOooBody": "После заявления организации подайте заявку на OOO, чтобы Wire и бюджет были привязаны к этому тенанту."
+    "onboardingStepOooBody": "После заявления организации подайте заявку на OOO, чтобы Wire и бюджет были привязаны к этому тенанту.",
+    "opsSecretaryTitle": "Секретарь",
+    "opsSecretaryDesc": "Чат агента-секретаря в Operator Console — переписка и поддержка руководства в границах агента.",
+    "opsSecretaryConsole": "Открыть секретаря",
+    "opsStewardTitle": "Исполнительный Steward",
+    "opsStewardDesc": "Чат Executive Steward в Operator Console — дашборд и сводки агентов (без прямого YAML тенанта).",
+    "opsStewardConsole": "Открыть Steward",
+    "opsAgentGuide": "Руководство Module & Agent"
   },
   "committeesPage": {
     "desc": "Комитет на каждый модуль правил; Стандартный комитет управляет OrgOS Standard.",
@@ -701,7 +708,17 @@
     "orgSaved": "Отправлено на проверку",
     "orgErrorGeneric": "Не удалось сохранить заявку",
     "orgErrorInvalidNumber": "Введите действительный 13-значный японский корпоративный номер",
-    "orgEmpty": "Организация ещё не связана."
+    "orgEmpty": "Организация ещё не связана.",
+    "appearance": "Оформление",
+    "appearanceDesc": "Выберите светлый, тёмный стиль или настройку системы.",
+    "appearanceLegend": "Стиль",
+    "themeLight": "Светлый стиль",
+    "themeLightHint": "Светлый фон, как на oorgos.org.",
+    "themeDark": "Тёмный стиль",
+    "themeDarkHint": "Тёмный фон для слабого освещения.",
+    "themeSystem": "Как в системе",
+    "themeSystemHint": "Следует светлой/тёмной теме этого устройства.",
+    "appearanceNote": "Сохраняется на этом устройстве и применяется ко всему сайту."
   },
   "agentsPage": {
     "filterAll": "Все",

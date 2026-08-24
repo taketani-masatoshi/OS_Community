@@ -389,7 +389,7 @@
     "adminManageUsers": "Gérer les membres",
     "adminDashboard": "Tableau de bord admin",
     "opsTitle": "Hub opérations",
-    "opsDesc": "Organisations que vous pouvez opérer en tant qu'OpenOrgOS Operator (OOO), plus les entrées Wire et prévision/réalisé.",
+    "opsDesc": "Organisations que vous pouvez opérer en tant qu'OpenOrgOS Operator (OOO), plus les entrées Wire, prévision/réalisé, Secrétaire et Steward.",
     "opsEmpty": "Pas encore de périmètre d'organisation OOO. Déclarez une organisation et postulez à Operator.",
     "opsClaimOrg": "Déclarer l'organisation",
     "opsApplyOoo": "Postuler à OOO",
@@ -414,7 +414,14 @@
     "onboardingStepOrg": "Déclarer l’organisation",
     "onboardingStepOrgBody": "Liez un numéro d’entreprise japonais à cet Google ID. Cette déclaration est le périmètre tenant OOO qu’un administrateur vérifie.",
     "onboardingStepOoo": "Demander OpenOrgOS Operator",
-    "onboardingStepOooBody": "Après la déclaration d’organisation, demandez OOO pour rattacher Wire et le budget à ce tenant."
+    "onboardingStepOooBody": "Après la déclaration d’organisation, demandez OOO pour rattacher Wire et le budget à ce tenant.",
+    "opsSecretaryTitle": "Secrétaire",
+    "opsSecretaryDesc": "Chat Agent Secrétaire sur Operator Console — correspondance et soutien exécutif dans les limites de l'agent.",
+    "opsSecretaryConsole": "Ouvrir Secrétaire",
+    "opsStewardTitle": "Steward Exécutif",
+    "opsStewardDesc": "Chat Executive Steward sur Operator Console — tableau de bord et synthèses d'agents (sans YAML tenant direct).",
+    "opsStewardConsole": "Ouvrir Steward",
+    "opsAgentGuide": "Guide Module & Agent"
   },
   "committeesPage": {
     "desc": "Un comité par module de règles ; le Comité Standard gouverne l'OrgOS Standard.",
@@ -701,7 +708,17 @@
     "orgSaved": "Soumis pour examen",
     "orgErrorGeneric": "Impossible d'enregistrer la déclaration",
     "orgErrorInvalidNumber": "Saisissez un numéro d'entreprise japonais valide à 13 chiffres",
-    "orgEmpty": "Aucune organisation liée pour l'instant."
+    "orgEmpty": "Aucune organisation liée pour l'instant.",
+    "appearance": "Apparence",
+    "appearanceDesc": "Choisissez un style clair, un style sombre, ou le réglage système.",
+    "appearanceLegend": "Thème",
+    "themeLight": "Style clair",
+    "themeLightHint": "Fond clair, comme oorgos.org.",
+    "themeDark": "Style sombre",
+    "themeDarkHint": "Fond sombre pour les environnements peu éclairés.",
+    "themeSystem": "Valeur système",
+    "themeSystemHint": "Suit le mode clair/sombre de cet appareil.",
+    "appearanceNote": "Enregistré sur cet appareil et appliqué à tout le site."
   },
   "agentsPage": {
     "filterAll": "Tous",

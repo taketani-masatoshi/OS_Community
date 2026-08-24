@@ -389,7 +389,7 @@
     "adminManageUsers": "Mitglieder verwalten",
     "adminDashboard": "Admin-Dashboard",
     "opsTitle": "Betriebshub",
-    "opsDesc": "Organisationen, die Sie als OpenOrgOS Operator (OOO) betreiben können, plus Einstiege zu Wire und Forecast/Ist.",
+    "opsDesc": "Organisationen, die Sie als OpenOrgOS Operator (OOO) betreiben können, plus Einstiege zu Wire, Forecast/Ist, Sekretär und Steward.",
     "opsEmpty": "Noch kein OOO-Organisationsumfang. Melden Sie eine Organisation und beantragen Sie die Operator-Zertifizierung.",
     "opsClaimOrg": "Organisation melden",
     "opsApplyOoo": "OOO beantragen",
@@ -414,7 +414,14 @@
     "onboardingStepOrg": "Organisation anmelden",
     "onboardingStepOrgBody": "Verknüpfen Sie eine japanische Unternehmensnummer mit dieser Google-ID. Diese Anmeldung ist der OOO-Tenant-Umfang, den ein Administrator prüft.",
     "onboardingStepOoo": "OpenOrgOS Operator beantragen",
-    "onboardingStepOooBody": "Nach der Organisationsanmeldung beantragen Sie OOO, damit Wire und Budget an diesen Tenant gebunden werden."
+    "onboardingStepOooBody": "Nach der Organisationsanmeldung beantragen Sie OOO, damit Wire und Budget an diesen Tenant gebunden werden.",
+    "opsSecretaryTitle": "Sekretär",
+    "opsSecretaryDesc": "Sekretär-Agent-Chat auf Operator Console — Korrespondenz und Executive-Unterstützung innerhalb der Agent-Grenzen.",
+    "opsSecretaryConsole": "Sekretär öffnen",
+    "opsStewardTitle": "Leitender Steward",
+    "opsStewardDesc": "Executive-Steward-Chat auf Operator Console — Dashboard und Agent-Zusammenfassungen (kein direktes Tenant-YAML).",
+    "opsStewardConsole": "Steward öffnen",
+    "opsAgentGuide": "Module-&-Agent-Leitfaden"
   },
   "committeesPage": {
     "desc": "Ein Komitee pro Regelmodul; das Standard-Komitee verwaltet OrgOS Standard.",
@@ -701,7 +708,17 @@
     "orgSaved": "Zur Prüfung eingereicht",
     "orgErrorGeneric": "Organisationsanspruch konnte nicht gespeichert werden",
     "orgErrorInvalidNumber": "Geben Sie eine gültige 13-stellige japanische Unternehmensnummer ein",
-    "orgEmpty": "Noch keine Organisation verknüpft."
+    "orgEmpty": "Noch keine Organisation verknüpft.",
+    "appearance": "Erscheinungsbild",
+    "appearanceDesc": "Wählen Sie hell, dunkel oder die Systemvorgabe.",
+    "appearanceLegend": "Stil",
+    "themeLight": "Heller Stil",
+    "themeLightHint": "Heller Hintergrund, wie oorgos.org.",
+    "themeDark": "Dunkler Stil",
+    "themeDarkHint": "Dunkler Hintergrund für wenig Licht.",
+    "themeSystem": "Systemstandard",
+    "themeSystemHint": "Folgt der Hell-/Dunkel-Einstellung dieses Geräts.",
+    "appearanceNote": "Wird auf diesem Gerät gespeichert und gilt für die ganze Website."
   },
   "agentsPage": {
     "filterAll": "Alle",
