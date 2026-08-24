@@ -389,7 +389,7 @@
     "adminManageUsers": "Halda liikmeid",
     "adminDashboard": "Halduspaneel",
     "opsTitle": "Operatsioonikeskus",
-    "opsDesc": "Organisatsioonid, mida saate hallata OpenOrgOS Operatorina (OOO), ning Wire ja eelarve/tegeliku sissepääsud.",
+    "opsDesc": "Organisatsioonid, mida saate hallata OpenOrgOS Operatorina (OOO), ning Wire, eelarve/tegeliku, sekretäri ja Stewardi sissepääsud.",
     "opsEmpty": "OOO organisatsiooni ulatust pole veel. Esitage organisatsioon ja taotlege Operatori sertifikaati.",
     "opsClaimOrg": "Esita organisatsioon",
     "opsApplyOoo": "Taotle OOO-d",
@@ -414,7 +414,14 @@
     "onboardingStepOrg": "Esitage organisatsioon",
     "onboardingStepOrgBody": "Seostage Jaapani ettevõtte number selle Google ID-ga. See on OOO rentniku ulatus, mille administraator kinnitab.",
     "onboardingStepOoo": "Taotlege OpenOrgOS Operatorit",
-    "onboardingStepOooBody": "Pärast organisatsiooni esitamist taotlege OOO, et Wire ja eelarve seotaks selle rentnikuga."
+    "onboardingStepOooBody": "Pärast organisatsiooni esitamist taotlege OOO, et Wire ja eelarve seotaks selle rentnikuga.",
+    "opsSecretaryTitle": "Sekretär",
+    "opsSecretaryDesc": "Sekretäri-agendi vestlus Operator Console'is — kirjavahetus ja juhtkonna tugi agendi piirides.",
+    "opsSecretaryConsole": "Ava sekretär",
+    "opsStewardTitle": "Täidesaatev Steward",
+    "opsStewardDesc": "Executive Stewardi vestlus Operator Console'is — juhtpaneel ja agendi kokkuvõtted (ilma otsese tenant YAML-ita).",
+    "opsStewardConsole": "Ava Steward",
+    "opsAgentGuide": "Module & Agent juhend"
   },
   "committeesPage": {
     "desc": "Üks komitee iga reegliimooduli kohta; standardkomitee haldab OrgOS Standardit.",
@@ -701,7 +708,17 @@
     "orgSaved": "Esitatud ülevaatamiseks",
     "orgErrorGeneric": "Organisatsiooni taotlust ei saanud salvestada",
     "orgErrorInvalidNumber": "Sisestage kehtiv 13-kohaline Jaapani ettevõtte number",
-    "orgEmpty": "Organisatsiooni pole veel seotud."
+    "orgEmpty": "Organisatsiooni pole veel seotud.",
+    "appearance": "Välimus",
+    "appearanceDesc": "Valige hele, tume või süsteemi vaikesäte.",
+    "appearanceLegend": "Stiil",
+    "themeLight": "Hele stiil",
+    "themeLightHint": "Hele taust, nagu oorgos.org.",
+    "themeDark": "Tume stiil",
+    "themeDarkHint": "Tume taust hämarasse keskkonda.",
+    "themeSystem": "Süsteemi vaikesäte",
+    "themeSystemHint": "Järgib selle seadme heledat/tumedat sätet.",
+    "appearanceNote": "Salvestatakse sellesse seadmesse ja rakendub kogu saidil."
   },
   "agentsPage": {
     "filterAll": "Kõik",

@@ -60,12 +60,14 @@ export async function Footer() {
   const exploreLinks = (
     signedIn
       ? [
+          { href: "/settings/appearance", label: t.settings.appearance },
           { href: "/settings/organization", label: t.settings.organization },
           { href: "/settings/profile", label: t.nav.myPage },
           { href: "/about", label: t.nav.about },
           { href: "/github", label: t.footer.developerLink },
         ]
       : [
+          { href: "/settings/appearance", label: t.settings.appearance },
           { href: "/about", label: t.nav.about },
           { href: "/agents", label: t.nav.agents },
           { href: "/experts", label: t.nav.experts },
