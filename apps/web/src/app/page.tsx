@@ -67,15 +67,12 @@ export default async function HomePage() {
             <Link href="/getting-started" className="btn btn-primary btn-lg btn-block-mobile">
               {h.primaryCta}
             </Link>
-          </div>
-          {!isSignedIn && (
-            <p className="lf-hero-subcta">
-              {h.primaryCtaSub}{" "}
-              <Link href="/login?callbackUrl=/getting-started" className="hero-inline-link">
+            {!isSignedIn && (
+              <Link href="/login?callbackUrl=/getting-started" className="btn btn-ghost btn-lg">
                 {t.nav.signIn}
               </Link>
-            </p>
-          )}
+            )}
+          </div>
         </div>
       </section>
 

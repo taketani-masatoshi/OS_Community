@@ -42,7 +42,10 @@
     "statementLabel": "Enesedeklaratsioon · kogemus",
     "placeholder": "Seadistuskogemus, hallatavad moodulid, valideerimise ajalugu jne.",
     "submit": "Taotle",
-    "error": "Viga"
+    "error": "Viga",
+    "orgRequiredNote": "OpenOrgOS Operator (OOO) taotlused nõuavad organisatsiooni (ettevõtte number). Ülevaatamine piisab taotlemiseks; väljastamine nõuab admin kinnitust.",
+    "orgSettingsLink": "Seo organisatsioon",
+    "orgRequiredError": "Seoge organisatsioon ettevõtte numbriga enne OpenOrgOS Operatori taotlemist."
   },
   "githubConnect": {
     "label": "GitHubi repositooriumi URL",

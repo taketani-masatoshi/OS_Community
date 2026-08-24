@@ -42,7 +42,10 @@
     "statementLabel": "Autodeclaración · experiencia",
     "placeholder": "Experiencia de configuración, módulos propios, historial de validación, etc.",
     "submit": "Solicitar",
-    "error": "Error del sistema"
+    "error": "Error del sistema",
+    "orgRequiredNote": "Las solicitudes de OpenOrgOS Operator (OOO) requieren una organización declarada (número corporativo). Pendiente basta para solicitar; la emisión requiere verificación admin.",
+    "orgSettingsLink": "Vincular organización",
+    "orgRequiredError": "Vincule su organización con número corporativo antes de solicitar OpenOrgOS Operator."
   },
   "githubConnect": {
     "label": "URL del repositorio de GitHub",

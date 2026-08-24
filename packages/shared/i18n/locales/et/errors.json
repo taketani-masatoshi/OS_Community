@@ -53,5 +53,11 @@
   "GITHUB_APP_NOT_CONFIGURED": "GitHub App pole seadistatud",
   "GITHUB_INSTALL_URL_UNAVAILABLE": "Installi URL pole saadaval",
   "WEBHOOK_INVALID_SIGNATURE": "Vigane allkiri",
-  "ACADEMY_UPSTREAM_ERROR": "Akadeemia teenuse viga"
+  "ACADEMY_UPSTREAM_ERROR": "Akadeemia teenuse viga",
+  "INVALID_CORPORATE_NUMBER": "Kehtetu Jaapani ettevõtte number",
+  "LEGAL_NAME_REQUIRED": "Juriidiline nimi on kohustuslik",
+  "ALREADY_CLAIMED": "See organisatsioon on teie kontol juba esitatud",
+  "INVALID_STATUS": "Seos ei ole ülevaatamisel",
+  "ORG_AFFILIATION_REQUIRED": "Seoge organisatsioon ettevõtte numbriga enne OpenOrgOS Operatori taotlemist",
+  "ORG_AFFILIATION_NOT_VERIFIED": "Organisatsiooni seos peab olema kinnitatud enne OpenOrgOS Operatori väljastamist"
 }

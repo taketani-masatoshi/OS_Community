@@ -50,6 +50,8 @@ export default async function SettingsProfilePage({
           </p>
         )}
         <p className="page-muted-note" style={{ marginTop: "0.5rem" }}>
+          <Link href="/settings/organization">{t.settings.organization}</Link>
+          {" · "}
           <Link href="/settings/connections">{t.settings.connections}</Link>
         </p>
       </div>

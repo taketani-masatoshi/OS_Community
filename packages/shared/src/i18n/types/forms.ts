@@ -44,14 +44,17 @@ export type FormMessages = {
     errorPending: string;
     errorForbidden: string;
   };
-  certification: {
-    typeLabel: string;
-    statementLabel: string;
-    placeholder: string;
-    submit: string;
-    error: string;
-    types: { STEWARD_OPERATOR: string; STEWARD_DESIGNER: string };
-  };
+    certification: {
+      typeLabel: string;
+      statementLabel: string;
+      placeholder: string;
+      submit: string;
+      error: string;
+      orgRequiredNote: string;
+      orgSettingsLink: string;
+      orgRequiredError: string;
+      types: { STEWARD_OPERATOR: string; STEWARD_DESIGNER: string };
+    };
   githubConnect: {
     label: string;
     placeholder: string;

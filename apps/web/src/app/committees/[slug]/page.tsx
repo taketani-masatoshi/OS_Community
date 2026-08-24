@@ -121,34 +121,34 @@ export default async function CommitteeDetailPage({ params }: { params: Promise<
           <h1 className="lf-hero-title-sm">{getCommitteeDisplayName(committee, locale)}</h1>
           <p className="lf-hero-lead">{description}</p>
           {domainLabel && (
-            <p className="page-muted-note" style={{ color: "var(--hero-muted)" }}>
+            <p className="page-muted-note" style={{ color: "var(--ink-soft)" }}>
               {domainLabel}
             </p>
           )}
-          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.75rem" }}>
+          <div className="lf-hero-actions">
             {committee.module && (
-              <Link href={`/modules/${committee.module.slug}`} className="btn btn-outline-light btn-sm">
+              <Link href={`/modules/${committee.module.slug}`} className="btn btn-primary btn-sm">
                 {committee.module.name}
               </Link>
             )}
             {canReview && (
-              <Link href={`/committees/${slug}/review`} className="btn btn-outline-light btn-sm">
+              <Link href={`/committees/${slug}/review`} className="btn btn-ghost btn-sm">
                 {reviewCtaLabel}
               </Link>
             )}
             {isStandard && (
-              <Link href="/standards" className="btn btn-outline-light btn-sm">
+              <Link href="/standards" className="btn btn-ghost btn-sm">
                 {t.home.lifecycleCta}
               </Link>
             )}
             {isDomain && (
-              <Link href="/governance" className="btn btn-outline-light btn-sm">
+              <Link href="/governance" className="btn btn-ghost btn-sm">
                 {t.about.governanceCta}
               </Link>
             )}
           </div>
           {isStandard && (
-            <p className="page-muted-note" style={{ color: "var(--hero-muted)", marginTop: "1rem" }}>
+            <p className="page-muted-note" style={{ color: "var(--ink-soft)", marginTop: "1rem" }}>
               {cp.hierarchyNote}
             </p>
           )}

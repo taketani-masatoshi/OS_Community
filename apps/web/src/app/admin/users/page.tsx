@@ -17,23 +17,31 @@ import { AdminUserStatusActions } from "@/components/AdminUserStatusActions";
 import { AdminAuditExportButton } from "@/components/AdminAuditExportButton";
 import { BootstrapFounderButton } from "@/components/BootstrapFounderButton";
 
-function buildAdminUsersHref(params: { q?: string; role?: string; page?: number }) {
+function buildAdminUsersHref(params: {
+  q?: string;
+  role?: string;
+  affiliation?: string;
+  page?: number;
+}) {
   const sp = new URLSearchParams();
   if (params.q) sp.set("q", params.q);
   if (params.role) sp.set("role", params.role);
+  if (params.affiliation) sp.set("affiliation", params.affiliation);
   if (params.page && params.page > 1) sp.set("page", String(params.page));
   const qs = sp.toString();
   return qs ? `/admin/users?${qs}` : "/admin/users";
 }
 
-function displayUser(user: { name?: string | null; githubLogin?: string | null }) {
-  return user.githubLogin ?? user.name ?? "—";
+function displayUser(user: { name?: string | null; githubLogin?: string | null; email?: string | null }) {
+  return user.name ?? user.githubLogin ?? user.email ?? "—";
 }
+
+const AFFILIATION_FILTERS = ["pending", "verified", "none"] as const;
 
 export default async function AdminUsersPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; role?: string; page?: string }>;
+  searchParams: Promise<{ q?: string; role?: string; affiliation?: string; page?: string }>;
 }) {
   await requireRole(["ADMIN"], "/admin/users");
   const session = await auth();
@@ -45,15 +53,20 @@ export default async function AdminUsersPage({
   const roleFilter = ALLOWED_SITE_ROLES.includes(params.role as SiteRole)
     ? (params.role as SiteRole)
     : undefined;
+  const affiliationFilter = AFFILIATION_FILTERS.includes(
+    params.affiliation as (typeof AFFILIATION_FILTERS)[number],
+  )
+    ? (params.affiliation as (typeof AFFILIATION_FILTERS)[number])
+    : undefined;
   const page = Math.max(1, Number.parseInt(params.page ?? "1", 10) || 1);
 
   const [{ users, total, totalPages, page: effectivePage, pageClamped }, auditLogs] = await Promise.all([
-    listUsersForAdmin({ q: q || undefined, role: roleFilter, page }),
+    listUsersForAdmin({ q: q || undefined, role: roleFilter, affiliation: affiliationFilter, page }),
     listRecentRoleAuditLogs(25),
   ]);
 
   if (pageClamped) {
-    redirect(buildAdminUsersHref({ q, role: roleFilter, page: effectivePage }));
+    redirect(buildAdminUsersHref({ q, role: roleFilter, affiliation: affiliationFilter, page: effectivePage }));
   }
 
   const from = total === 0 ? 0 : (effectivePage - 1) * ADMIN_USERS_PAGE_SIZE + 1;
@@ -69,6 +82,12 @@ export default async function AdminUsersPage({
     errorLastAdmin: u.adminUsersErrorLastAdmin,
     errorNotFound: u.adminUsersErrorNotFound,
   };
+
+  function affiliationStatusLabel(status: string) {
+    if (status === "VERIFIED") return u.adminUsersAffiliationVerified;
+    if (status === "REJECTED") return u.adminUsersAffiliationRejected;
+    return u.adminUsersAffiliationPending;
+  }
 
   return (
     <>
@@ -108,6 +127,16 @@ export default async function AdminUsersPage({
               </option>
             ))}
           </select>
+          <select
+            name="affiliation"
+            defaultValue={affiliationFilter ?? ""}
+            aria-label={u.adminUsersTableAffiliation}
+          >
+            <option value="">{u.adminUsersFilterAllAffiliations}</option>
+            <option value="pending">{u.adminUsersFilterAffiliationPending}</option>
+            <option value="verified">{u.adminUsersFilterAffiliationVerified}</option>
+            <option value="none">{u.adminUsersFilterAffiliationNone}</option>
+          </select>
           <button type="submit" className="btn btn-primary btn-sm">
             {u.adminUsersApplyFilters}
           </button>
@@ -125,72 +154,91 @@ export default async function AdminUsersPage({
                 <thead>
                   <tr>
                     <th>{u.adminUsersTableName}</th>
-                    <th>{u.adminUsersTableGithub}</th>
+                    <th>{u.adminUsersTableEmail}</th>
+                    <th>{u.adminUsersTableGoogle}</th>
+                    <th>{u.adminUsersTableAffiliation}</th>
                     <th>{u.adminUsersTableRole}</th>
                     <th>{u.adminUsersTableStatus}</th>
-                    <th>{u.adminUsersTableStats}</th>
                     <th>{u.adminUsersTableActions}</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {users.map((user) => (
-                    <tr key={user.id}>
-                      <td>
-                        <strong>{user.name ?? "—"}</strong>
-                      </td>
-                      <td>{user.githubLogin ?? "—"}</td>
-                      <td>
-                        <span className="badge badge-default">{roleLabels[user.siteRole]}</span>
-                      </td>
-                      <td>
-                        <span
-                          className={`badge ${user.accountStatus === "SUSPENDED" ? "badge-danger" : "badge-default"}`}
-                        >
-                          {user.accountStatus === "SUSPENDED"
-                            ? u.adminUsersStatusSuspended
-                            : u.adminUsersStatusActive}
-                        </span>
-                      </td>
-                      <td style={{ fontSize: "0.82rem", color: "var(--muted)" }}>
-                        {user._count.moduleRoles} {u.statsModules} · {user._count.certifications} {u.statsCerts} ·{" "}
-                        {user._count.committeeMemberships} {u.statsCommittees}
-                      </td>
-                      <td>
-                        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                          <Link href={getUserProfilePath(user)} className="btn btn-primary btn-sm">
-                            {u.adminUsersViewProfile}
-                          </Link>
-                          {session?.user && (
+                  {users.map((user) => {
+                    const primaryAff = user.orgAffiliations[0];
+                    return (
+                      <tr key={user.id}>
+                        <td>
+                          <strong>{user.name ?? "—"}</strong>
+                        </td>
+                        <td style={{ fontSize: "0.85rem" }}>{user.email ?? "—"}</td>
+                        <td>
+                          {user.accounts.length > 0 ? u.adminUsersGoogleYes : u.adminUsersGoogleNo}
+                        </td>
+                        <td style={{ fontSize: "0.82rem" }}>
+                          {primaryAff ? (
                             <>
-                              <AdminUserRoleForm
-                                actorId={session.user.id}
-                                userId={user.id}
-                                currentRole={user.siteRole}
-                                roleLabels={roleLabels}
-                                labels={formLabels}
-                              />
-                              <AdminUserStatusActions
-                                userId={user.id}
-                                actorId={session.user.id}
-                                accountStatus={user.accountStatus}
-                                labels={{
-                                  suspend: u.adminUsersSuspend,
-                                  restore: u.adminUsersRestore,
-                                  delete: u.adminUsersDelete,
-                                  confirmSuspend: u.adminUsersConfirmSuspend,
-                                  confirmDelete: u.adminUsersConfirmDelete,
-                                  errorGeneric: u.adminUsersErrorGeneric,
-                                  errorLastAdmin: u.adminUsersErrorLastAdmin,
-                                  errorSelfAction: u.adminUsersErrorSelfAction,
-                                  saved: u.adminUsersRoleSaved,
-                                }}
-                              />
+                              <div>{primaryAff.organization.legalName}</div>
+                              <div className="page-muted-note">
+                                {primaryAff.organization.corporateNumber} ·{" "}
+                                {affiliationStatusLabel(primaryAff.status)}
+                              </div>
                             </>
+                          ) : (
+                            "—"
                           )}
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
+                        </td>
+                        <td>
+                          <span className="badge badge-default">{roleLabels[user.siteRole]}</span>
+                        </td>
+                        <td>
+                          <span
+                            className={`badge ${user.accountStatus === "SUSPENDED" ? "badge-danger" : "badge-default"}`}
+                          >
+                            {user.accountStatus === "SUSPENDED"
+                              ? u.adminUsersStatusSuspended
+                              : u.adminUsersStatusActive}
+                          </span>
+                        </td>
+                        <td>
+                          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                            <Link href={`/admin/users/${user.id}`} className="btn btn-primary btn-sm">
+                              {u.adminUsersViewDetail}
+                            </Link>
+                            <Link href={getUserProfilePath(user)} className="btn btn-ghost btn-sm">
+                              {u.adminUsersViewProfile}
+                            </Link>
+                            {session?.user && (
+                              <>
+                                <AdminUserRoleForm
+                                  actorId={session.user.id}
+                                  userId={user.id}
+                                  currentRole={user.siteRole}
+                                  roleLabels={roleLabels}
+                                  labels={formLabels}
+                                />
+                                <AdminUserStatusActions
+                                  userId={user.id}
+                                  actorId={session.user.id}
+                                  accountStatus={user.accountStatus}
+                                  labels={{
+                                    suspend: u.adminUsersSuspend,
+                                    restore: u.adminUsersRestore,
+                                    delete: u.adminUsersDelete,
+                                    confirmSuspend: u.adminUsersConfirmSuspend,
+                                    confirmDelete: u.adminUsersConfirmDelete,
+                                    errorGeneric: u.adminUsersErrorGeneric,
+                                    errorLastAdmin: u.adminUsersErrorLastAdmin,
+                                    errorSelfAction: u.adminUsersErrorSelfAction,
+                                    saved: u.adminUsersRoleSaved,
+                                  }}
+                                />
+                              </>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -202,7 +250,15 @@ export default async function AdminUsersPage({
                 style={{ display: "flex", gap: "0.75rem", marginTop: "1.5rem", alignItems: "center" }}
               >
                 {effectivePage > 1 ? (
-                  <Link href={buildAdminUsersHref({ q, role: roleFilter, page: effectivePage - 1 })} className="btn btn-ghost btn-sm">
+                  <Link
+                    href={buildAdminUsersHref({
+                      q,
+                      role: roleFilter,
+                      affiliation: affiliationFilter,
+                      page: effectivePage - 1,
+                    })}
+                    className="btn btn-ghost btn-sm"
+                  >
                     {u.adminUsersPrevPage}
                   </Link>
                 ) : (
@@ -214,7 +270,15 @@ export default async function AdminUsersPage({
                   {effectivePage} / {totalPages}
                 </span>
                 {effectivePage < totalPages ? (
-                  <Link href={buildAdminUsersHref({ q, role: roleFilter, page: effectivePage + 1 })} className="btn btn-ghost btn-sm">
+                  <Link
+                    href={buildAdminUsersHref({
+                      q,
+                      role: roleFilter,
+                      affiliation: affiliationFilter,
+                      page: effectivePage + 1,
+                    })}
+                    className="btn btn-ghost btn-sm"
+                  >
                     {u.adminUsersNextPage}
                   </Link>
                 ) : (

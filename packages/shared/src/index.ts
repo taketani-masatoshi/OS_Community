@@ -11,3 +11,4 @@ export * from "./founder";
 export * from "./leadership";
 export * from "./cloud-agent-protocol";
 export * from "./compliance-registry";
+export * from "./corporate-number";
