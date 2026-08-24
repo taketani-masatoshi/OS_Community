@@ -77,8 +77,8 @@ jobs:
     env:
       DATABASE_URL: postgresql://oscommunity:oscommunity@localhost:5432/oscommunity
       AUTH_SECRET: ci-test-secret-minimum-32-characters-long
-      AUTH_URL: http://127.0.0.1:3000
-      PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
+      AUTH_URL: http://127.0.0.1:3001
+      PLAYWRIGHT_BASE_URL: http://127.0.0.1:3001
       RATE_LIMIT_DISABLED: "1"
 
     steps:
@@ -99,6 +99,7 @@ jobs:
 
       - run: npm install
       - run: cp .env.example .env
+      - run: npm run i18n:sync
       - run: npm run db:generate
       - run: npm run push -w @os-community/db
       - run: npm run seed -w @os-community/db
