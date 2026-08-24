@@ -788,5 +788,21 @@
     "iso37000SectionTitle": "OrgOS и ISO 37000",
     "iso37000SectionLead": "Разверните OrgOS и настройте организацию при инициализации. Эта база даёт практическую основу для самодекларации управления, согласованной с ISO 37000. OpenOrgOS Community не выдаёт сторонние ISO-сертификаты. Путь обычно ведёт OpenOrgOS Operator (OOO).",
     "iso37000SectionCta": "Читать руководство"
+  },
+  "wireNodePage": {
+    "applyTitle": "Заявка на узел Wire",
+    "applyLead": "C4-W1 · Зарегистрировать узел Wire для проверки комитетом",
+    "applyDesc": "Отправьте идентификатор арендатора, опциональный Wire email, корпоративный номер и URL шлюза. Steward проверяет pk-DID и дубликаты перед очередью.",
+    "reviewTitle": "Проверка управления узлом Wire",
+    "reviewLead": "C4-W2 · Очередь CHAIR комитета",
+    "reviewDesc": "Одобрить или отклонить ожидающие заявки на регистрацию узла Wire. Решения попадают в Steward wire-trust-registry при подключении.",
+    "governanceTitle": "Управление узлом Wire",
+    "governanceLead": "C4-W2 · Очередь CHAIR комитета и аудит-след",
+    "governanceDesc": "Проверьте ожидающие заявки узла Wire, одобрите или отклоните и просмотрите аудит решений. Требуется CHAIR комитета или ADMIN сайта.",
+    "applyLink": "Подать заявку на узел Wire",
+    "reviewLink": "Проверить ожидающие заявки",
+    "lifecycleLink": "Жизненный цикл заявки",
+    "governanceLink": "← Управление",
+    "jurisdictionLink": "Реестр юрисдикций"
   }
 }
