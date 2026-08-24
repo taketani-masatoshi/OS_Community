@@ -19,32 +19,33 @@
       href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/design-system.css" />
+    <script>
+      (function () {
+        var k = "oorgos-theme",
+          p = "system";
+        try {
+          var c = document.cookie.match(/(?:^|; )oorgos-theme=([^;]*)/);
+          if (c) p = decodeURIComponent(c[1]);
+          else {
+            var s = localStorage.getItem(k);
+            if (s) p = s;
+          }
+        } catch (e) {}
+        if (p !== "light" && p !== "dark") p = "system";
+        var r =
+          p === "system"
+            ? window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light"
+            : p;
+        var el = document.documentElement;
+        el.setAttribute("data-theme", r);
+        el.setAttribute("data-theme-pref", p);
+        el.style.colorScheme = r;
+      })();
+    </script>
     <style>
-      /* Design tokens shared with OrgOS demo Chat/Wire (OpenOrgOS apps/shared/oorgos-theme.css) */
-      :root {
-        --ink: #1d1d1f;
-        --ink-soft: #6e6e73;
-        --navy: #003366;
-        --navy-deep: #0a1628;
-        --accent: #0071e3;
-        --accent-soft: rgba(0, 113, 227, 0.12);
-        --surface: #f5f5f7;
-        --surface-elevated: #ffffff;
-        --border: rgba(0, 0, 0, 0.08);
-        --max-width: 980px;
-        --space-2: 8px;
-        --space-3: 12px;
-        --space-4: 16px;
-        --space-5: 24px;
-        --space-6: 32px;
-        --space-7: 40px;
-        --space-8: 48px;
-        --space-9: 64px;
-        --space-10: 80px;
-        --page-gutter: 24px;
-        --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
-      }
-
       * {
         box-sizing: border-box;
       }
@@ -60,7 +61,7 @@
       }
 
       body {
-        font-family: "Instrument Sans", "Helvetica Neue", Helvetica, sans-serif;
+        font-family: var(--font-sans);
         background: var(--surface);
         color: var(--ink);
         line-height: 1.55;
@@ -177,7 +178,7 @@
         min-width: 7.5rem;
         padding: 0.375rem 1.75rem 0.375rem 0.625rem;
         border: 1px solid var(--border);
-        border-radius: 980px;
+        border-radius: var(--radius-pill);
         background: rgba(255, 255, 255, 0.8)
           url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236e6e73' d='M2 4l4 4 4-4'/%3E%3C/svg%3E")
           no-repeat right 0.625rem center;
@@ -298,9 +299,9 @@
         justify-content: center;
         min-height: 44px;
         padding: 0.75rem 1.375rem;
-        border-radius: 980px;
+        border-radius: var(--radius-pill);
         font: inherit;
-        font-size: 1rem;
+        font-size: var(--text-sm);
         font-weight: 600;
         letter-spacing: -0.01em;
         text-decoration: none;
@@ -322,11 +323,11 @@
       .btn-primary {
         background: var(--accent);
         color: #fff;
-        box-shadow: 0 8px 24px rgba(0, 113, 227, 0.28);
+        box-shadow: var(--shadow-action);
       }
 
       .btn-primary:hover {
-        background: #0077ed;
+        background: var(--accent-hover);
       }
 
       .btn-primary:focus-visible {
