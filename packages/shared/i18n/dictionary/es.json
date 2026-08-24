@@ -755,6 +755,18 @@
   "protocol.vocabulary.moduleRoleRequest": "Solicitud de rol de módulo",
   "protocol.vocabulary.reviewAuditTrail": "Pista de auditoría de revisión",
   "protocol.vocabulary.jurisdictionRegistry": "Registro de jurisdicción del comité",
-  "protocol.vocabulary.wireNodeApplication": "Solicitud de nodo Wire",
-  "protocol.vocabulary.wireNodeReview": "Revisión de gobernanza de nodo Wire"
+  "Wire node application": "Solicitud de nodo Wire",
+  "C4-W1 · Register a Wire node for committee governance review": "C4-W1 · Registrar un nodo Wire para revisión de gobernanza",
+  "Submit tenant identity, optional wire email, corporate number, and gateway URL. Steward validates pk-DID and duplicate checks before the request enters the pending queue.": "Envíe identidad del tenant, correo Wire opcional, número corporativo y URL de puerta de enlace. Steward valida pk-DID y duplicados antes de la cola pendiente.",
+  "Wire node governance review": "Revisión de gobernanza del nodo Wire",
+  "C4-W2 · Committee CHAIR pending queue": "C4-W2 · Cola pendiente del CHAIR del comité",
+  "Approve or reject pending wire node registration requests. Decisions propagate to Steward wire-trust-registry when connected.": "Aprobar o rechazar solicitudes pendientes de registro de nodo Wire. Las decisiones se propagan al wire-trust-registry de Steward cuando está conectado.",
+  "Wire node governance": "Gobernanza del nodo Wire",
+  "C4-W2 · Committee CHAIR pending queue and audit trail": "C4-W2 · Cola pendiente del CHAIR y pista de auditoría",
+  "Review pending wire node applications, approve or reject, and inspect the decision audit trail. Requires committee CHAIR or site ADMIN.": "Revisar solicitudes pendientes de nodo Wire, aprobar o rechazar, e inspeccionar la pista de auditoría. Requiere CHAIR del comité o ADMIN del sitio.",
+  "Apply for wire node": "Solicitar nodo Wire",
+  "Review pending requests": "Revisar solicitudes pendientes",
+  "Application lifecycle": "Ciclo de vida de la solicitud",
+  "← Governance": "← Gobernanza",
+  "Jurisdiction registry": "Registro de jurisdicción"
 }

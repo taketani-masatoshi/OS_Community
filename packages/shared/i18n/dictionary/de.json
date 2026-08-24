@@ -755,6 +755,18 @@
   "protocol.vocabulary.moduleRoleRequest": "Modulrollenantrag",
   "protocol.vocabulary.reviewAuditTrail": "Prüfungs-Audit-Trail",
   "protocol.vocabulary.jurisdictionRegistry": "Rechtsraum-Register des Komitees",
-  "protocol.vocabulary.wireNodeApplication": "Wire-Knoten-Antrag",
-  "protocol.vocabulary.wireNodeReview": "Wire-Knoten-Governance-Prüfung"
+  "Wire node application": "Wire-Knoten-Antrag",
+  "C4-W1 · Register a Wire node for committee governance review": "C4-W1 · Wire-Knoten für Gremienprüfung registrieren",
+  "Submit tenant identity, optional wire email, corporate number, and gateway URL. Steward validates pk-DID and duplicate checks before the request enters the pending queue.": "Senden Sie Tenant-Identität, optionale Wire-E-Mail, Unternehmensnummer und Gateway-URL. Steward prüft pk-DID und Duplikate vor der Warteschlange.",
+  "Wire node governance review": "Wire-Knoten-Governance-Prüfung",
+  "C4-W2 · Committee CHAIR pending queue": "C4-W2 · Ausschuss-CHAIR-Warteschlange",
+  "Approve or reject pending wire node registration requests. Decisions propagate to Steward wire-trust-registry when connected.": "Ausstehende Wire-Knoten-Registrierungen genehmigen oder ablehnen. Entscheidungen gehen bei Verbindung an Steward wire-trust-registry.",
+  "Wire node governance": "Wire-Knoten-Governance",
+  "C4-W2 · Committee CHAIR pending queue and audit trail": "C4-W2 · Ausschuss-CHAIR-Warteschlange und Audit-Trail",
+  "Review pending wire node applications, approve or reject, and inspect the decision audit trail. Requires committee CHAIR or site ADMIN.": "Ausstehende Wire-Knoten-Anträge prüfen, genehmigen oder ablehnen und den Entscheidungspfad einsehen. Erfordert Ausschuss-CHAIR oder Site-ADMIN.",
+  "Apply for wire node": "Wire-Knoten beantragen",
+  "Review pending requests": "Ausstehende Anträge prüfen",
+  "Application lifecycle": "Antragslebenszyklus",
+  "← Governance": "← Steuerung",
+  "Jurisdiction registry": "Rechtsraum-Register"
 }

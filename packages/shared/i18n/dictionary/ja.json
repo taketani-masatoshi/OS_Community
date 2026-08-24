@@ -710,6 +710,18 @@
   "protocol.vocabulary.moduleRoleRequest": "モジュールロール申請",
   "protocol.vocabulary.reviewAuditTrail": "レビュー監査証跡",
   "protocol.vocabulary.jurisdictionRegistry": "委員会法域レジストリ",
-  "protocol.vocabulary.wireNodeApplication": "Wire ノード申請",
-  "protocol.vocabulary.wireNodeReview": "Wire ノードガバナンス審査"
+  "Wire node application": "Wire ノード申請",
+  "C4-W1 · Register a Wire node for committee governance review": "C4-W1 · Wire ノード登録と委員会ガバナンス審査",
+  "Submit tenant identity, optional wire email, corporate number, and gateway URL. Steward validates pk-DID and duplicate checks before the request enters the pending queue.": "テナント ID、任意の Wire メール・法人番号・ゲートウェイ URL を送信します。Steward が pk-DID と重複チェック後、pending キューに載せます。",
+  "Wire node governance review": "Wire ノードガバナンス審査",
+  "C4-W2 · Committee CHAIR pending queue": "C4-W2 · 委員会 CHAIR pending キュー",
+  "Approve or reject pending wire node registration requests. Decisions propagate to Steward wire-trust-registry when connected.": "pending の Wire ノード登録申請を承認または却下します。接続時は Steward wire-trust-registry に反映されます。",
+  "Wire node governance": "Wire ノードガバナンス",
+  "C4-W2 · Committee CHAIR pending queue and audit trail": "C4-W2 · 委員会 CHAIR pending キューと監査証跡",
+  "Review pending wire node applications, approve or reject, and inspect the decision audit trail. Requires committee CHAIR or site ADMIN.": "pending の Wire ノード申請を審査・承認/却下し、決定の監査証跡を確認します。委員会 CHAIR またはサイト ADMIN が必要です。",
+  "Apply for wire node": "Wire ノード申請",
+  "Review pending requests": "pending 申請を審査",
+  "Application lifecycle": "申請ライフサイクル",
+  "← Governance": "← 運営",
+  "Jurisdiction registry": "法域レジストリ"
 }

@@ -755,6 +755,18 @@
   "protocol.vocabulary.moduleRoleRequest": "Mooduli rolli taotlus",
   "protocol.vocabulary.reviewAuditTrail": "Ülevaatuse auditi jälg",
   "protocol.vocabulary.jurisdictionRegistry": "Komitee jurisdiktsiooni register",
-  "protocol.vocabulary.wireNodeApplication": "Wire sõlme taotlus",
-  "protocol.vocabulary.wireNodeReview": "Wire sõlme juhtimise ülevaatus"
+  "Wire node application": "Wire-sõlme taotlus",
+  "C4-W1 · Register a Wire node for committee governance review": "C4-W1 · Registreeri Wire-sõlm komitee ülevaatamiseks",
+  "Submit tenant identity, optional wire email, corporate number, and gateway URL. Steward validates pk-DID and duplicate checks before the request enters the pending queue.": "Esitage rentniku identiteet, valikuline Wire-e-post, ettevõtte number ja lüüsi URL. Steward kontrollib pk-DID ja duplikaadid enne ootejärjekorda.",
+  "Wire node governance review": "Wire-sõlme valitsemise ülevaatus",
+  "C4-W2 · Committee CHAIR pending queue": "C4-W2 · Komitee CHAIR ootejärjekord",
+  "Approve or reject pending wire node registration requests. Decisions propagate to Steward wire-trust-registry when connected.": "Kinnita või lükka tagasi ootel Wire-sõlme registreerimistaotlused. Otsused jõuavad Steward wire-trust-registrysse ühenduse korral.",
+  "Wire node governance": "Wire-sõlme valitsemine",
+  "C4-W2 · Committee CHAIR pending queue and audit trail": "C4-W2 · Komitee CHAIR ootejärjekord ja auditijälg",
+  "Review pending wire node applications, approve or reject, and inspect the decision audit trail. Requires committee CHAIR or site ADMIN.": "Vaadake üle ootel Wire-sõlme taotlused, kinnitage või lükake tagasi ning kontrollige otsuste auditijälge. Nõuab komitee CHAIR või saidi ADMIN.",
+  "Apply for wire node": "Taotle Wire-sõlme",
+  "Review pending requests": "Vaata ootel taotlusi",
+  "Application lifecycle": "Taotluse elutsükkel",
+  "← Governance": "← Valitsemine",
+  "Jurisdiction registry": "Õigusruumi register"
 }

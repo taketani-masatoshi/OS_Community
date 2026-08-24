@@ -755,6 +755,18 @@
   "protocol.vocabulary.moduleRoleRequest": "Demande de rôle module",
   "protocol.vocabulary.reviewAuditTrail": "Piste d'audit de revue",
   "protocol.vocabulary.jurisdictionRegistry": "Registre de juridiction du comité",
-  "protocol.vocabulary.wireNodeApplication": "Demande de nœud Wire",
-  "protocol.vocabulary.wireNodeReview": "Revue de gouvernance nœud Wire"
+  "Wire node application": "Demande de nœud Wire",
+  "C4-W1 · Register a Wire node for committee governance review": "C4-W1 · Enregistrer un nœud Wire pour revue de gouvernance",
+  "Submit tenant identity, optional wire email, corporate number, and gateway URL. Steward validates pk-DID and duplicate checks before the request enters the pending queue.": "Soumettez l'identité du locataire, e-mail Wire optionnel, numéro d'entreprise et URL de passerelle. Steward valide pk-DID et les doublons avant la file d'attente.",
+  "Wire node governance review": "Revue de gouvernance du nœud Wire",
+  "C4-W2 · Committee CHAIR pending queue": "C4-W2 · File d'attente CHAIR du comité",
+  "Approve or reject pending wire node registration requests. Decisions propagate to Steward wire-trust-registry when connected.": "Approuver ou rejeter les demandes d'enregistrement de nœud Wire en attente. Les décisions se propagent au wire-trust-registry Steward si connecté.",
+  "Wire node governance": "Gouvernance du nœud Wire",
+  "C4-W2 · Committee CHAIR pending queue and audit trail": "C4-W2 · File d'attente CHAIR et piste d'audit",
+  "Review pending wire node applications, approve or reject, and inspect the decision audit trail. Requires committee CHAIR or site ADMIN.": "Examiner les demandes de nœud Wire en attente, approuver ou rejeter, et consulter la piste d'audit. Nécessite CHAIR du comité ou ADMIN du site.",
+  "Apply for wire node": "Demander un nœud Wire",
+  "Review pending requests": "Examiner les demandes en attente",
+  "Application lifecycle": "Cycle de vie de la demande",
+  "← Governance": "← Gouvernance",
+  "Jurisdiction registry": "Registre de juridiction"
 }
