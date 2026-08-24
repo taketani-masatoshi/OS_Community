@@ -19,28 +19,12 @@
       href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/design-system.css" />
     <style>
-      /* Same tokens as oorgos.org overview + OrgOS demo Chat/Wire */
+      /* Demo-only code colors. Public foundations live in design-system.css. */
       :root {
-        --ink: #1d1d1f;
-        --ink-soft: #6e6e73;
-        --navy: #003366;
-        --accent: #0071e3;
-        --accent-soft: rgba(0, 113, 227, 0.12);
-        --surface: #f5f5f7;
-        --surface-elevated: #ffffff;
-        --border: rgba(0, 0, 0, 0.08);
-        --code-bg: #0a1628;
-        --code-fg: #f5f5f7;
-        --max-width: 980px;
-        --space-2: 8px;
-        --space-3: 12px;
-        --space-4: 16px;
-        --space-5: 24px;
-        --space-6: 32px;
-        --space-7: 40px;
-        --space-8: 48px;
-        --page-gutter: 24px;
+        --code-bg: var(--ink);
+        --code-fg: var(--surface);
       }
 
       * {
@@ -54,7 +38,7 @@
       }
 
       body {
-        font-family: "Instrument Sans", "Helvetica Neue", Helvetica, sans-serif;
+        font-family: var(--font-sans);
         background: var(--surface);
         color: var(--ink);
         line-height: 1.55;
@@ -184,7 +168,7 @@
 
       .hero h1 {
         margin: 0 0 var(--space-4);
-        font-family: Newsreader, Georgia, "Times New Roman", serif;
+        font-family: var(--font-display);
         font-size: clamp(2rem, 4vw, 2.75rem);
         font-weight: 500;
         letter-spacing: -0.03em;
@@ -371,11 +355,11 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 44px;
-        padding: 0.75rem 1.25rem;
-        border-radius: 980px;
-        font-size: 0.9375rem;
-        font-weight: 600;
+        min-height: var(--control-height);
+        padding: var(--control-padding-y) var(--control-padding-x);
+        border-radius: var(--radius-pill);
+        font-size: var(--text-sm);
+        font-weight: var(--weight-semibold);
         border: none;
         cursor: pointer;
         text-decoration: none;
@@ -391,7 +375,7 @@
       }
 
       .btn-primary:hover {
-        background: #0077ed;
+        background: var(--accent-hover);
       }
 
       .btn-ghost {
@@ -496,8 +480,8 @@
           <h2 data-i18n="step2Title">2. Run</h2>
           <p data-i18n="step2Lead" data-i18n-html></p>
           <div class="code-block" tabindex="0">
-            <pre><code>docker pull --platform linux/amd64 ghcr.io/taketani-masatoshi/orgos-demo:0.8.0-beta.2
-docker run --rm --platform linux/amd64 -p 127.0.0.1:9470:9470 ghcr.io/taketani-masatoshi/orgos-demo:0.8.0-beta.2</code></pre>
+            <pre><code>docker pull --platform linux/amd64 ghcr.io/taketani-masatoshi/orgos-demo:0.8.0-beta.3
+docker run --rm --platform linux/amd64 -p 127.0.0.1:9470:9470 ghcr.io/taketani-masatoshi/orgos-demo:0.8.0-beta.3</code></pre>
           </div>
           <p class="note" data-i18n="step2Note"></p>
         </div>
