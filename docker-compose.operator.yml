@@ -1,0 +1,72 @@
+# OrgOS Operator Console (Wire Web + Steward Chat / 予実 Today)
+#
+# Runs alongside Community. Does NOT replace web:3000.
+# Bind is localhost-only (demo/dev auth). Do not expose 0.0.0.0 without production auth.
+#
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.operator.yml --profile operator up -d operator-console
+#   open http://127.0.0.1:9470/        # Chat + 予実 Today KPI
+#   open http://127.0.0.1:9470/wire/   # Wire Console
+#
+# Prerequisites: sibling OS_Steward checkout.
+# Prefer starting Operator Console on the **host** (Mac) when developing:
+#   cd ../OS_Steward && npm run operator-console:build && \
+#   ORGOS_TENANT=mal npm run orgos -- operator console start --host 127.0.0.1 --port 9470
+# Docker profile below mounts host node_modules and often fails on linux/arm64 rollup natives.
+# Env: STEWARD_HOST_PATH, ORGOS_TENANT (default mal), NEXT_PUBLIC_OPERATOR_CONSOLE_URL on web.
+#
+# If http://127.0.0.1:9470/health already responds (host console),
+# skip this container (port conflict). MyPage probes via OPERATOR_CONSOLE_HEALTH_URL.
+
+services:
+  operator-console:
+    profiles: ["operator"]
+    image: node:22-bookworm
+    working_dir: /app
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # Local Mac mini operator — not production fail-closed
+      ORGOS_ENV: ${ORGOS_OPERATOR_ENV:-development}
+      ORGOS_TENANT: ${ORGOS_TENANT:-mal}
+      ORGOS_WORKSPACE: /app
+      ORGOS_HOME: /app
+      OPERATOR_CONSOLE_HOST: "0.0.0.0"
+      OPERATOR_CONSOLE_PORT: "9470"
+      # Localhost-only publish; keep auth relaxed for CEO laptop use
+      STEWARD_CHAT_AUTH: ${STEWARD_CHAT_AUTH:-0}
+      WIRE_CONSOLE_AUTH: ${WIRE_CONSOLE_AUTH:-dev}
+      # Community SSO handoff (set COMMUNITY_CONSOLE_OIDC_* in Community .env)
+      WIRE_CONSOLE_OIDC_ISSUER: ${COMMUNITY_CONSOLE_OIDC_ISSUER:-https://community.oorgos.org}
+      WIRE_CONSOLE_OIDC_AUDIENCE: ${COMMUNITY_CONSOLE_OIDC_AUDIENCE:-orgos-operator-console}
+      WIRE_CONSOLE_OIDC_HS256_SECRET: ${COMMUNITY_CONSOLE_OIDC_HS256_SECRET:-}
+      WIRE_CONSOLE_OIDC_ALLOW_HS256: ${WIRE_CONSOLE_OIDC_ALLOW_HS256:-1}
+      ORGOS_MCP_AUTH: ${ORGOS_MCP_AUTH:-0}
+      ORGOS_LLM_MOCK: ${ORGOS_LLM_MOCK:-1}
+      ORGOS_CSRF: ${ORGOS_CSRF:-0}
+      ORGOS_RATE_LIMIT: ${ORGOS_RATE_LIMIT:-0}
+      NODE_OPTIONS: "--max-old-space-size=4096"
+    volumes:
+      - ${STEWARD_HOST_PATH:-../OS_Steward}:/app
+    ports:
+      - "127.0.0.1:9470:9470"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:9470/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 12
+      start_period: 180s
+    restart: unless-stopped
+    command: >
+      sh -c "
+        if [ ! -d node_modules ]; then npm ci; fi &&
+        npm run operator-console:build &&
+        npm run orgos -- operator console start --host 0.0.0.0 --port 9470
+      "

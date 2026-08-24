@@ -494,5 +494,20 @@
     "emptyChecklists": "Aucune liste ne correspond aux filtres.",
     "international": "Mondial",
     "expertsLink": "Annuaire des personnes"
+  },
+  "partners": {
+    "back": "← À propos",
+    "relatedTitle": "Associés",
+    "title": "Organisations partenaires",
+    "lead": "Aide à l'introduction, dépannage et contacts des organisations déjà en production OpenOrgOS.",
+    "supportTitle": "Besoin d'aide à l'introduction ou de dépannage ?",
+    "supportBody": "Si vous avez besoin d'aide à l'introduction, de dépannage ou de conseils au-delà de la doc publique et de la démo, contactez le développeur.",
+    "contactLabel": "Coordonnées",
+    "directoryTitle": "Organisations déjà en production OpenOrgOS",
+    "directoryBody": "Cette page listera les organisations partenaires pouvant partager leur expérience. Les entrées apparaissent au fur et à mesure des inscriptions.",
+    "directoryEmpty": "La liste des partenaires est en préparation. En attendant, utilisez le contact ci-dessus.",
+    "relatedImplStatus": "Ce qui est disponible aujourd'hui",
+    "relatedInstall": "Installation OrgOS",
+    "relatedDemo": "Essayer la démo"
   }
 }

@@ -45,7 +45,11 @@
     "error": "Ошибка",
     "orgRequiredNote": "Заявки OpenOrgOS Operator (OOO) требуют заявленной организации (корпоративный номер). Ожидание достаточно для подачи; выдача требует проверки админом.",
     "orgSettingsLink": "Привязать организацию",
-    "orgRequiredError": "Привяжите организацию с корпоративным номером перед подачей на OpenOrgOS Operator."
+    "orgRequiredError": "Привяжите организацию с корпоративным номером перед подачей на OpenOrgOS Operator.",
+    "orgSelectLabel": "Организация для управления",
+    "orgSelectPlaceholder": "Выберите организацию",
+    "orgPendingBadge": "Ожидает проверки",
+    "orgVerifiedBadge": "Подтверждено"
   },
   "githubConnect": {
     "label": "URL репозитория GitHub",

@@ -17,12 +17,26 @@ export function isNewParticipant(input: {
   );
 }
 
+/** Setup incomplete until Google/profile identity and org claim are done. */
+export function needsSetupChecklist(input: {
+  profileComplete: boolean;
+  hasOrgAffiliation: boolean;
+  hasOooCert: boolean;
+}): boolean {
+  return !input.profileComplete || !input.hasOrgAffiliation || !input.hasOooCert;
+}
+
+/**
+ * Initial path: Google/OpenOrg ID + profile → corporate-number org claim → OOO → participation.
+ */
 export function buildOnboardingSteps(input: {
   mp: Messages["mypage"];
   profileComplete: boolean;
+  hasOrgAffiliation: boolean;
+  hasOooCert: boolean;
   hasParticipation: boolean;
 }): OnboardingStepView[] {
-  const { mp, profileComplete, hasParticipation } = input;
+  const { mp, profileComplete, hasOrgAffiliation, hasOooCert, hasParticipation } = input;
 
   return [
     {
@@ -34,19 +48,27 @@ export function buildOnboardingSteps(input: {
       done: profileComplete,
     },
     {
-      id: "browse",
-      title: mp.onboardingStepBrowse,
-      body: mp.onboardingStepBrowseBody,
-      href: "/modules#registry",
-      cta: mp.browseModules.replace(" →", ""),
-      done: hasParticipation,
+      id: "org",
+      title: mp.onboardingStepOrg,
+      body: mp.onboardingStepOrgBody,
+      href: "/settings/organization",
+      cta: mp.opsClaimOrg,
+      done: hasOrgAffiliation,
+    },
+    {
+      id: "ooo",
+      title: mp.onboardingStepOoo,
+      body: mp.onboardingStepOooBody,
+      href: "/certifications/apply",
+      cta: mp.opsApplyOoo,
+      done: hasOooCert,
     },
     {
       id: "participate",
       title: mp.onboardingStepParticipate,
       body: mp.onboardingStepParticipateBody,
-      href: "/modules#registry",
-      cta: mp.actionModules,
+      href: "/committees",
+      cta: mp.actionCommittees,
       done: hasParticipation,
     },
   ];

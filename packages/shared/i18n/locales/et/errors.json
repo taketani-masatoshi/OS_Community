@@ -59,5 +59,6 @@
   "ALREADY_CLAIMED": "See organisatsioon on teie kontol juba esitatud",
   "INVALID_STATUS": "Seos ei ole ülevaatamisel",
   "ORG_AFFILIATION_REQUIRED": "Seoge organisatsioon ettevõtte numbriga enne OpenOrgOS Operatori taotlemist",
-  "ORG_AFFILIATION_NOT_VERIFIED": "Organisatsiooni seos peab olema kinnitatud enne OpenOrgOS Operatori väljastamist"
+  "ORG_AFFILIATION_NOT_VERIFIED": "Organisatsiooni seos peab olema kinnitatud enne OpenOrgOS Operatori väljastamist",
+  "ORGANIZATION_REQUIRED": "Valige organisatsioon, millele see Operatori sertifikaat kehtib"
 }

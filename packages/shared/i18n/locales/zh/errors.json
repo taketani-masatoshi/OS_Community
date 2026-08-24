@@ -59,5 +59,6 @@
   "ALREADY_CLAIMED": "此组织已在您的账户上申报",
   "INVALID_STATUS": "所属不在审核中",
   "ORG_AFFILIATION_REQUIRED": "申请 OpenOrgOS Operator 前请先用法人番号关联所属组织",
-  "ORG_AFFILIATION_NOT_VERIFIED": "签发 OpenOrgOS Operator 前必须核验所属组织"
+  "ORG_AFFILIATION_NOT_VERIFIED": "签发 OpenOrgOS Operator 前必须核验所属组织",
+  "ORGANIZATION_REQUIRED": "请选择此 Operator 认证适用的组织"
 }

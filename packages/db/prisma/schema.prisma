@@ -135,6 +135,8 @@ model User {
   specialty     String?
   region        String?
   organization  String?
+  /** Explicit link to tenant operators.yaml operator_id (Console SSO). */
+  orgosOperatorId String?
   profileCompletedAt DateTime?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
@@ -181,7 +183,9 @@ model Organization {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
-  affiliations OrgAffiliation[]
+  affiliations          OrgAffiliation[]
+  certifications        Certification[]
+  certificationApplications CertificationApplication[]
 
   @@unique([jurisdiction, corporateNumber])
   @@index([corporateNumber])
@@ -441,6 +445,7 @@ model ModuleRoleRequest {
 model Certification {
   id              String              @id @default(cuid())
   userId          String
+  organizationId  String?
   type            CertificationType
   certificateNo   String              @unique
   status          CertificationStatus @default(APPROVED)
@@ -449,22 +454,30 @@ model Certification {
   revokedAt       DateTime?
   notes           String?
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization Organization? @relation(fields: [organizationId], references: [id], onDelete: SetNull)
+
+  @@index([organizationId])
+  @@index([userId, type])
 }
 
 model CertificationApplication {
-  id          String              @id @default(cuid())
-  userId      String
-  type        CertificationType
-  status      CertificationStatus @default(PENDING)
-  statement   String?
-  reviewNote  String?
-  reviewerId  String?
-  createdAt   DateTime            @default(now())
-  updatedAt   DateTime            @updatedAt
+  id             String              @id @default(cuid())
+  userId         String
+  organizationId String?
+  type           CertificationType
+  status         CertificationStatus @default(PENDING)
+  statement      String?
+  reviewNote     String?
+  reviewerId     String?
+  createdAt      DateTime            @default(now())
+  updatedAt      DateTime            @updatedAt
 
-  user     User  @relation("Applicant", fields: [userId], references: [id], onDelete: Cascade)
-  reviewer User? @relation("CertReviewer", fields: [reviewerId], references: [id])
+  user         User          @relation("Applicant", fields: [userId], references: [id], onDelete: Cascade)
+  reviewer     User?         @relation("CertReviewer", fields: [reviewerId], references: [id])
+  organization Organization? @relation(fields: [organizationId], references: [id], onDelete: SetNull)
+
+  @@index([organizationId])
 }
 
 model WildModuleRegistration {

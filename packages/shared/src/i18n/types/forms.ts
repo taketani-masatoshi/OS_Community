@@ -53,6 +53,10 @@ export type FormMessages = {
       orgRequiredNote: string;
       orgSettingsLink: string;
       orgRequiredError: string;
+      orgSelectLabel: string;
+      orgSelectPlaceholder: string;
+      orgPendingBadge: string;
+      orgVerifiedBadge: string;
       types: { STEWARD_OPERATOR: string; STEWARD_DESIGNER: string };
     };
   githubConnect: {
