@@ -62,7 +62,7 @@ OpenOrgOS は **三つの独立した層** から成ります。ある層の進�
 | テナント内運用（Skill、CLI、Agent、Module） | 導入済み OrgOS で **利用可能** |
 | **Org Event リレー**（組織間ゲートウェイ） | **Pilot P2** — mal Wire pilot · relay/Gateway systemd（OrgOS 参照実装） |
 | `community.oorgos.org` 上の Wire エンドポイント | **提供しない** — Community はレジストリ/ガバナンス。Wire ハブではない |
-| **Eco / Trusted operators UI** | **稼働中（2026-07）** — `/protocol/trusted-operators` · `/protocol/jurisdiction` · `/governance/sla` · Steward mirror |
+| **Eco / Trusted operators UI** | **稼働中（2026-07）** — `/protocol/trusted-operators` · `/protocol/jurisdiction` · `/protocol/wire-node/*` · `/governance/sla` · Steward mirror |
 
 リレー提供時も **法域固有ゲートウェイの代替にはならない** — 参加組織間で **OpenOrgOS 形式のイベント** を運ぶ層です。
 
@@ -137,6 +137,11 @@ X-Road 参加環境で OpenOrgOS 連携が必要な場合は、**法域モジュ
 | Academy トラック | **一部** — Academy サービス設定に依存 |
 | Commercial Hub / 決済 | **本サイト外** |
 | Wire / Org Event 受信 | **本サイト外** |
+| Protocol SLA ダッシュボード | **稼働中** — [/governance/sla](/governance/sla) |
+| Trusted operators レジストリ | **稼働中** — [/protocol/trusted-operators](/protocol/trusted-operators) |
+| 申請ライフサイクルハブ | **稼働中** — [/governance/lifecycle](/governance/lifecycle) |
+| Wire ノード申請（C4-W1） | **稼働中** — [/protocol/wire-node/apply](/protocol/wire-node/apply) |
+| Wire ノードガバナンス審査（C4-W2） | **稼働中** — [/protocol/wire-node/review](/protocol/wire-node/review) |
 
 インフラ: 概要は [oorgos.org](https://oorgos.org)。Community はスチュワード運用 + Cloudflare Tunnel（手順はリポ `docs/`）。
 
@@ -174,6 +179,7 @@ X-Road 参加環境で OpenOrgOS 連携が必要な場合は、**法域モジュ
 |----------|--------|
 | Module ecosystem（Hub フェーズ） | [/content/module-ecosystem](/content/module-ecosystem) |
 | Module / Agent / Wire 用語 | [/content/module-and-agent](/content/module-and-agent) |
+| 設計思想（AIA・言語汎用性） | [/content/design-philosophy](/content/design-philosophy) |
 | ミッション・グローバルプロトコル | [/content/mission](/content/mission) |
 | モジュールレジストリ | [/modules](/modules) |
 | ガバナンス | [/governance](/governance) |

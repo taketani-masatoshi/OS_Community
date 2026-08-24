@@ -1,11 +1,26 @@
 ---
-title: OrgOS with AI Agents (Cursor)
-description: Use Cursor and AI agents to understand and operate OrgOS through natural language.
+title: OrgOS with AI Agents (AIA)
+description: Build and operate OrgOS with AIA and other AI agents — natural language, human approval, deterministic CLI.
 ---
 
-> **Overview:** [What is OrgOS?](/learning#about-orgos) on the Learning hub — deterministic software you operate via LLMs and AI agents in natural language.
+> **Overview:** [What is OrgOS?](/learning#about-orgos) on the Learning hub — deterministic software you operate via LLMs and AI agents in natural language.  
+> **Design context:** [Design Philosophy](/content/design-philosophy) — AIA is our primary tool; Cursor, Claude Code, Copilot, and custom agents are equally valid.
 
 **Prerequisite:** [OrgOS Install & Digital Twin Setup](/content/orgos-install-setup) completed, or a working local tenant.
+
+## What is AIA?
+
+**AIA** — **A**I **A**gent assistants — is the name OpenOrgOS uses for AI agent environments that read the steward repository, explain structure, draft configurations, and help operators navigate OrgOS in natural language.
+
+| Tool | Notes |
+|------|-------|
+| **AIA** | Primary workflow for building and operating OpenOrgOS |
+| **Cursor** | Documented below; attach `.cursor/rules` |
+| **Claude Code** | Same patterns with project instructions |
+| **GitHub Copilot** | Useful for in-editor drafts; same approval gates |
+| **Custom agents** | Valid with repository access and safety rules |
+
+**AIA is preferred in our workflow, not mandatory.** The architecture is agent-agnostic: agents draft; humans approve; CLI and Skills execute deterministically.
 
 ## What agents do
 
@@ -24,7 +39,7 @@ Agents do **not** replace governance. Approvals, delegations, and audit rules st
 ```text
 You (natural language)
     ↓
-Cursor Agent (reads repo + tools)
+AI Agent — AIA, Cursor, Claude Code, Copilot, …
     ↓
 Steward repo — agent.manifest.yaml, modules, scripts
     ↓
