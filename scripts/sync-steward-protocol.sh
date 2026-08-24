@@ -6,6 +6,10 @@ STEWARD="${STEWARD_ORGOS_ROOT:-$ROOT/../OS_Steward}"
 DEST="${STEWARD_PROTOCOL_MIRROR:-$ROOT/apps/web/public/steward-protocol}"
 
 if [[ ! -d "$STEWARD" ]]; then
+  if [[ -f "$DEST/wire-trust-registry.yaml" ]]; then
+    echo "Steward repo not found at $STEWARD — using committed mirror in $DEST"
+    exit 0
+  fi
   echo "Steward repo not found at $STEWARD" >&2
   exit 1
 fi
