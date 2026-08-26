@@ -14,6 +14,7 @@ type AppSession = Session & {
     id: string;
     siteRole?: SiteRole | string | null;
     profileComplete?: boolean;
+    primaryEmail?: string | null;
   };
 };
 

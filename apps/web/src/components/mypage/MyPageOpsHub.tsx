@@ -14,6 +14,8 @@ type Props = {
   consoleBaseUrl?: string | null;
   /** When false, hide Console primary CTAs (unreachable / not running). */
   consoleReachable?: boolean;
+  /** OOO-certified CEO / site admin — link to Console account management. */
+  showOperatorAdminLink?: boolean;
   labels: {
     title: string;
     desc: string;
@@ -33,7 +35,19 @@ type Props = {
     yojitsuConsole: string;
     yojitsuGuide: string;
     yojitsuInstall: string;
+    secretaryTitle: string;
+    secretaryDesc: string;
+    secretaryConsole: string;
+    stewardTitle: string;
+    stewardDesc: string;
+    stewardConsole: string;
+    runsTitle: string;
+    runsDesc: string;
+    runsConsole: string;
     consoleOffline: string;
+    operatorAdminTitle: string;
+    operatorAdminDesc: string;
+    operatorAdminLink: string;
   };
 };
 
@@ -46,12 +60,19 @@ export function MyPageOpsHub({
   operatorOrgs,
   consoleBaseUrl,
   consoleReachable = false,
+  showOperatorAdminLink = false,
   labels,
 }: Props) {
   const consoleUrl = consoleBaseUrl?.trim() || null;
   const showConsoleCtas = Boolean(consoleUrl && consoleReachable);
   const wireConsoleHref = showConsoleCtas ? consoleStartHref("/wire/") : null;
   const yojitsuConsoleHref = showConsoleCtas ? consoleStartHref("/") : null;
+  const operatorAdminHref = showConsoleCtas && showOperatorAdminLink
+    ? consoleStartHref("/?account=1")
+    : null;
+  const secretaryHref = showConsoleCtas ? consoleStartHref("/secretary/") : null;
+  const stewardHref = showConsoleCtas ? consoleStartHref("/steward/") : null;
+  const runsHref = showConsoleCtas ? consoleStartHref("/runs/") : null;
   const showOfflineNote = Boolean(consoleUrl && !consoleReachable);
 
   return (
@@ -102,6 +123,23 @@ export function MyPageOpsHub({
         </p>
       )}
 
+      {operatorAdminHref && (
+        <div className="lf-card" style={{ marginTop: "var(--space-5)" }}>
+          <h3 className="mypage-ops-link-title">{labels.operatorAdminTitle}</h3>
+          <p className="page-muted-note">{labels.operatorAdminDesc}</p>
+          <div className="mypage-ops-actions">
+            <a
+              href={operatorAdminHref}
+              className="btn btn-primary btn-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {labels.operatorAdminLink}
+            </a>
+          </div>
+        </div>
+      )}
+
       <div className="mypage-ops-links lf-card-grid" style={{ marginTop: "var(--space-5)" }}>
         <div className="lf-card">
           <h3 className="mypage-ops-link-title">{labels.wireTitle}</h3>
@@ -145,6 +183,54 @@ export function MyPageOpsHub({
             <Link href="/content/orgos-install-setup" className="btn btn-ghost btn-sm">
               {labels.yojitsuInstall}
             </Link>
+          </div>
+        </div>
+        <div className="lf-card">
+          <h3 className="mypage-ops-link-title">{labels.secretaryTitle}</h3>
+          <p className="page-muted-note">{labels.secretaryDesc}</p>
+          <div className="mypage-ops-actions">
+            {secretaryHref && (
+              <a
+                href={secretaryHref}
+                className="btn btn-primary btn-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {labels.secretaryConsole}
+              </a>
+            )}
+          </div>
+        </div>
+        <div className="lf-card">
+          <h3 className="mypage-ops-link-title">{labels.stewardTitle}</h3>
+          <p className="page-muted-note">{labels.stewardDesc}</p>
+          <div className="mypage-ops-actions">
+            {stewardHref && (
+              <a
+                href={stewardHref}
+                className="btn btn-primary btn-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {labels.stewardConsole}
+              </a>
+            )}
+          </div>
+        </div>
+        <div className="lf-card">
+          <h3 className="mypage-ops-link-title">{labels.runsTitle}</h3>
+          <p className="page-muted-note">{labels.runsDesc}</p>
+          <div className="mypage-ops-actions">
+            {runsHref && (
+              <a
+                href={runsHref}
+                className="btn btn-primary btn-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {labels.runsConsole}
+              </a>
+            )}
           </div>
         </div>
       </div>

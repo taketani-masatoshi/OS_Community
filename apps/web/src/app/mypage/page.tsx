@@ -31,11 +31,14 @@ import { isCommitteeMembershipRequestAvailable } from "@/lib/prisma-committee-mo
 import { isLinkedInAuthConfigured, isGithubAuthConfigured } from "@/lib/auth-env";
 import { localizeMypageCopy, localizeSettingsCopy } from "@/lib/identity/login-copy";
 import { connectGithubAccount, connectLinkedInAccount } from "@/app/settings/connections/actions";
+import { MyPageOpsHub } from "@/components/mypage/MyPageOpsHub";
+import { getConsoleHandoffConfig } from "@/lib/console-handoff";
+import { isOperatorConsoleReachable } from "@/lib/operator-console-health";
 
 export default async function MyPage({
   searchParams,
 }: {
-  searchParams: Promise<{ linked?: string }>;
+  searchParams: Promise<{ linked?: string; console_handoff?: string }>;
 }) {
   const session = await requireAuth();
   const params = await searchParams;
@@ -48,6 +51,9 @@ export default async function MyPage({
 
   const communities = await getUserCommunities(userId);
 
+  const siteRole = String(session.user.siteRole ?? "");
+  const isSiteAdmin = siteRole === "ADMIN" || siteRole === "CERT_REVIEWER";
+
   const [
     { githubConnections },
     permissionRows,
@@ -59,6 +65,7 @@ export default async function MyPage({
     identity,
     layers,
     persona,
+    oooCert,
   ] = await Promise.all([
     getUserDashboardData(userId),
     getUserPermissionRows(userId, locale),
@@ -91,6 +98,16 @@ export default async function MyPage({
     getLinkedIdentity(userId),
     getUserLayerStatus(userId),
     getUserCommunityPersona(userId),
+    prisma.certification.findFirst({
+      where: {
+        userId,
+        type: "STEWARD_OPERATOR",
+        status: "APPROVED",
+        revokedAt: null,
+        expiresAt: { gt: new Date() },
+      },
+      select: { id: true },
+    }),
   ]);
 
   const consolidated = consolidatePermissions(permissionRows, locale);
@@ -125,6 +142,21 @@ export default async function MyPage({
 
   const mp = localizeMypageCopy(t.mypage, locale);
   const s = localizeSettingsCopy(t.settings, locale);
+  const consoleCfg = getConsoleHandoffConfig();
+  const consoleReachable = await isOperatorConsoleReachable(consoleCfg.consoleBaseUrl);
+  const handoffError =
+    params.console_handoff === "forbidden"
+      ? mp.opsConsoleHandoffForbidden
+      : params.console_handoff === "misconfigured"
+        ? mp.opsConsoleHandoffMisconfigured
+        : params.console_handoff === "no_email"
+          ? mp.opsConsoleHandoffNoEmail
+          : params.console_handoff === "domain"
+            ? mp.opsConsoleHandoffDomain
+            : params.console_handoff === "archived"
+              ? mp.opsConsoleHandoffArchived
+              : null;
+  const showOperatorAdminLink = Boolean(oooCert || isSiteAdmin);
   const linkedInConfigured = isLinkedInAuthConfigured();
   const githubConfigured = isGithubAuthConfigured();
 
@@ -384,6 +416,52 @@ export default async function MyPage({
             <p>{s.githubLinkedNotice}</p>
           </div>
         )}
+
+        {handoffError && (
+          <div className="mypage-alert" role="alert">
+            <p>{handoffError}</p>
+          </div>
+        )}
+
+        <MyPageOpsHub
+          operatorOrgs={[]}
+          consoleBaseUrl={consoleCfg.consoleBaseUrl}
+          consoleReachable={consoleReachable}
+          showOperatorAdminLink={showOperatorAdminLink}
+          labels={{
+            title: mp.opsTitle,
+            desc: mp.opsDesc,
+            empty: mp.opsEmpty,
+            claimOrg: mp.opsClaimOrg,
+            applyOoo: mp.opsApplyOoo,
+            orgLabel: mp.opsOrgLabel,
+            certLabel: mp.opsCertLabel,
+            expiresLabel: mp.opsExpiresLabel,
+            wireTitle: mp.opsWireTitle,
+            wireDesc: mp.opsWireDesc,
+            wireConsole: mp.opsWireConsole,
+            wireProtocol: mp.opsWireProtocol,
+            wireGovernance: mp.opsWireGovernance,
+            yojitsuTitle: mp.opsYojitsuTitle,
+            yojitsuDesc: mp.opsYojitsuDesc,
+            yojitsuConsole: mp.opsYojitsuConsole,
+            yojitsuGuide: mp.opsYojitsuGuide,
+            yojitsuInstall: mp.opsYojitsuInstall,
+            secretaryTitle: mp.opsSecretaryTitle,
+            secretaryDesc: mp.opsSecretaryDesc,
+            secretaryConsole: mp.opsSecretaryConsole,
+            stewardTitle: mp.opsStewardTitle,
+            stewardDesc: mp.opsStewardDesc,
+            stewardConsole: mp.opsStewardConsole,
+            runsTitle: mp.opsRunsTitle,
+            runsDesc: mp.opsRunsDesc,
+            runsConsole: mp.opsRunsConsole,
+            consoleOffline: mp.opsConsoleOffline,
+            operatorAdminTitle: mp.opsOperatorAdminTitle,
+            operatorAdminDesc: mp.opsOperatorAdminDesc,
+            operatorAdminLink: mp.opsOperatorAdminLink,
+          }}
+        />
 
         {profileIncomplete && (
           <div className="mypage-alert">

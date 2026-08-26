@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
   buildConsoleHandoffUrl,
+  getConsoleHandoffConfig,
   mintConsoleHandoffIdToken,
   safeConsoleNextPath,
 } from "./console-handoff";
@@ -16,6 +17,7 @@ describe("console-handoff", () => {
       "AUTH_URL",
       "NEXT_PUBLIC_SITE_URL",
       "NEXT_PUBLIC_OPERATOR_CONSOLE_URL",
+      "OPERATOR_CONSOLE_HANDOFF_URL",
     ]) {
       prev[k] = process.env[k];
     }
@@ -23,6 +25,7 @@ describe("console-handoff", () => {
     process.env.COMMUNITY_CONSOLE_OIDC_ISSUER = "https://community.oorgos.org";
     process.env.COMMUNITY_CONSOLE_OIDC_AUDIENCE = "orgos-operator-console";
     process.env.NEXT_PUBLIC_OPERATOR_CONSOLE_URL = "http://127.0.0.1:9470";
+    delete process.env.OPERATOR_CONSOLE_HANDOFF_URL;
   });
 
   afterEach(() => {
@@ -66,5 +69,12 @@ describe("console-handoff", () => {
     expect(safeConsoleNextPath("/wire/")).toBe("/wire/");
     expect(safeConsoleNextPath("https://evil.example/")).toBe("/");
     expect(safeConsoleNextPath("//evil")).toBe("/");
+  });
+
+  it("prefers OPERATOR_CONSOLE_HANDOFF_URL over the public console URL", () => {
+    process.env.NEXT_PUBLIC_OPERATOR_CONSOLE_URL = "https://operator.oorgos.org";
+    process.env.OPERATOR_CONSOLE_HANDOFF_URL = "http://127.0.0.1:9470";
+    expect(getConsoleHandoffConfig().consoleBaseUrl).toBe("http://127.0.0.1:9470");
+    expect(getConsoleHandoffConfig().configured).toBe(true);
   });
 });

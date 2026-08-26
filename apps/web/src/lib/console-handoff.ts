@@ -35,7 +35,10 @@ export function getConsoleHandoffConfig(): {
   audience: string;
   consoleBaseUrl: string | null;
 } {
-  const consoleBaseUrl = process.env.NEXT_PUBLIC_OPERATOR_CONSOLE_URL?.trim() || null;
+  const consoleBaseUrl =
+    process.env.OPERATOR_CONSOLE_HANDOFF_URL?.trim() ||
+    process.env.NEXT_PUBLIC_OPERATOR_CONSOLE_URL?.trim() ||
+    null;
   const iss = issuer();
   const secret = hs256Secret();
   return {
