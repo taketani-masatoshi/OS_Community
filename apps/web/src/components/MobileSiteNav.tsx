@@ -9,6 +9,8 @@ import type { Locale } from "@os-community/shared";
 type Props = {
   locale: Locale;
   navItems: { href: string; label: string }[];
+  overviewHref: string;
+  consoleHref: string;
   serverSessionInfo?: { userName: string; isAdmin: boolean } | null;
   labels: {
     menu: string;
@@ -19,16 +21,27 @@ type Props = {
     myPage?: string;
     admin?: string;
     proposeModule?: string;
+    overview: string;
+    console: string;
   };
 };
 
-export function MobileSiteNav({ locale, navItems, serverSessionInfo, labels }: Props) {
+export function MobileSiteNav({
+  locale,
+  navItems,
+  overviewHref,
+  consoleHref,
+  serverSessionInfo,
+  labels,
+}: Props) {
   const sessionInfo = useHeaderSessionInfo(serverSessionInfo);
 
   return (
     <SiteNav
       locale={locale}
       navItems={navItems}
+      overviewHref={overviewHref}
+      consoleHref={consoleHref}
       labels={labels}
       session={sessionInfo}
       signOutButton={<ClientSignOutButton label={labels.signOut} />}

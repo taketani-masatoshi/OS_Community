@@ -7,6 +7,8 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { DesktopOverflowNav } from "@/components/DesktopOverflowNav";
 import { HeaderSessionBar } from "@/components/HeaderSessionBar";
 import { MobileSiteNav } from "@/components/MobileSiteNav";
+import { EcosystemNavLinks } from "@/components/EcosystemNavLinks";
+import { consoleStartPath, overviewUrl } from "@/lib/ecosystem-links";
 
 const primaryNavKeys = [
   { href: "/", key: "home" as const },
@@ -29,6 +31,8 @@ export async function Header() {
       : null;
 
   const navItems = primaryNavKeys.map((l) => ({ href: l.href, label: t.nav[l.key] }));
+  const overviewHref = overviewUrl();
+  const consoleHref = consoleStartPath("/");
 
   return (
     <header className="site-header">
@@ -38,6 +42,8 @@ export async function Header() {
             locale={locale}
             navItems={navItems}
             serverSessionInfo={serverSessionInfo}
+            overviewHref={overviewHref}
+            consoleHref={consoleHref}
             labels={{
               menu: t.nav.menu,
               close: t.nav.close,
@@ -47,6 +53,8 @@ export async function Header() {
               myPage: t.nav.myPage,
               admin: t.nav.admin,
               proposeModule: t.mypage.actionProposeModule,
+              overview: t.nav.overview,
+              console: t.nav.console,
             }}
           />
           <Link href="/" className="site-logo">
@@ -60,6 +68,13 @@ export async function Header() {
         </div>
 
         <div className="site-header-actions site-nav-desktop">
+          <EcosystemNavLinks
+            overviewHref={overviewHref}
+            overviewLabel={t.nav.overview}
+            consoleHref={consoleHref}
+            consoleLabel={t.nav.console}
+            className="ecosystem-nav ecosystem-nav-desktop"
+          />
           <LanguageSwitcher current={locale} ariaLabel={t.common.languageLabel} />
           <HeaderSessionBar
             serverSessionInfo={serverSessionInfo}

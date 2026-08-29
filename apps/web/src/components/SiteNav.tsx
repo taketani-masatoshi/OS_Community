@@ -5,12 +5,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Locale } from "@os-community/shared";
 import { LanguageSelect } from "@/components/LanguageSelect";
+import { EcosystemNavLinks } from "@/components/EcosystemNavLinks";
 
 export type NavItem = { href: string; label: string };
 
 type SiteNavProps = {
   locale: Locale;
   navItems: NavItem[];
+  overviewHref: string;
+  consoleHref: string;
   labels: {
     menu: string;
     close: string;
@@ -20,6 +23,8 @@ type SiteNavProps = {
     myPage?: string;
     admin?: string;
     proposeModule?: string;
+    overview: string;
+    console: string;
   };
   session: {
     userName: string;
@@ -28,7 +33,15 @@ type SiteNavProps = {
   signOutButton: ReactNode;
 };
 
-export function SiteNav({ locale, navItems, labels, session, signOutButton }: SiteNavProps) {
+export function SiteNav({
+  locale,
+  navItems,
+  overviewHref,
+  consoleHref,
+  labels,
+  session,
+  signOutButton,
+}: SiteNavProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -85,6 +98,15 @@ export function SiteNav({ locale, navItems, labels, session, signOutButton }: Si
             )}
           </nav>
 
+          <EcosystemNavLinks
+            overviewHref={overviewHref}
+            overviewLabel={labels.overview}
+            consoleHref={consoleHref}
+            consoleLabel={labels.console}
+            onNavigate={() => setOpen(false)}
+            className="ecosystem-nav ecosystem-nav-drawer"
+          />
+
           <div className="site-nav-actions">
             <label className="lang-select-wrap">
               <LanguageSelect
@@ -115,7 +137,11 @@ export function SiteNav({ locale, navItems, labels, session, signOutButton }: Si
                 {signOutButton}
               </>
             ) : (
-              <Link href="/login" className="btn btn-primary btn-sm" onClick={() => setOpen(false)}>
+              <Link
+                href="/login?callbackUrl=/mypage"
+                className="btn btn-primary btn-sm"
+                onClick={() => setOpen(false)}
+              >
                 {labels.signIn}
               </Link>
             )}
