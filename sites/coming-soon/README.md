@@ -8,6 +8,8 @@
 
 **Boundary:** Overview CTAs are plain links. Community liveness is owned by Mac mini / Tunnel ops — never by browser `fetch` from this site.
 
+**Generated assets:** `ecosystem-links.js` (Console / Community URLs) and `locale-bridge.js` (shared `oorgos-locale` cookie, ja/en only) come from `packages/shared`. Run `npm run overview:links` at the repo root after changing `brand-links.ts` or the locale contract, then redeploy. Console login always starts at Community (`/ops/console/start`), never at `operator.oorgos.org`.
+
 Fonts are self-hosted (OFL Instrument Sans / Newsreader). Pages do not load Google Fonts or other third-party origins. CSP is `default-src 'self'` with `connect-src 'none'` (no browser fetches). Scripts are external files only (no `'unsafe-inline'`).
 
 **Design:** [`design-system.css`](./design-system.css) is the canonical public design system for both this Vercel site and the Community Next.js app. It owns the restrained palette, Instrument Sans + Newsreader type scale, spacing, radii, focus treatment, and button sizes. Product-specific CSS may define layout, but must consume these tokens instead of redefining them.

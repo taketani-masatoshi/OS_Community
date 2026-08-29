@@ -1,10 +1,9 @@
-import { BRAND_LINKS } from "@os-community/shared";
+import { BRAND_LINKS, consoleStartQueryPath } from "@os-community/shared";
 import { safeConsoleNextPath } from "./console-handoff";
 
 /** Relative Community SSO start → Operator Console handoff. */
 export function consoleStartPath(nextPath = "/"): string {
-  const next = safeConsoleNextPath(nextPath);
-  return `/ops/console/start?next=${encodeURIComponent(next)}`;
+  return consoleStartQueryPath(safeConsoleNextPath(nextPath));
 }
 
 export function overviewUrl(): string {

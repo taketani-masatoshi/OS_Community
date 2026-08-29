@@ -14,7 +14,8 @@
     "i18n:build": "node scripts/i18n/build-i18n.mjs",
     "i18n:check": "node scripts/i18n/check-i18n.mjs --strict",
     "i18n:check:api": "node scripts/i18n/check-api-errors.mjs",
-    "i18n:sync": "npm run i18n:dict && npm run i18n:fill && npm run i18n:build && npm run i18n:check && npm run i18n:check:api"
+    "i18n:sync": "npm run i18n:dict && npm run i18n:fill && npm run i18n:build && npm run i18n:check && npm run i18n:check:api",
+    "overview:links": "tsx scripts/generate-overview-links.ts"
   },
   "devDependencies": {
     "tsx": "^4.19.4"

@@ -81,49 +81,15 @@ const copy = {
   },
 };
 
-function readCookie(name) {
-  try {
-    const m = document.cookie.match(
-      new RegExp("(?:^|; )" + name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "=([^;]*)")
-    );
-    return m ? decodeURIComponent(m[1]) : null;
-  } catch (e) {
-    return null;
-  }
+/** Locale cookie contract lives in /locale-bridge.js (generated from packages/shared). */
+const SUPPORTED_LANGS = ["en", "ja", "zh"];
+
+function detectLang() {
+  return window.OORGOS_LOCALE ? window.OORGOS_LOCALE.detect(SUPPORTED_LANGS) : "en";
 }
 
 function writeSharedLocale(lang) {
-  try {
-    localStorage.setItem("oorgos-locale", lang);
-    localStorage.setItem("oorgos-lang", lang);
-  } catch (e) {}
-  try {
-    const host = location.hostname.toLowerCase();
-    const parts = [
-      "oorgos-locale=" + encodeURIComponent(lang),
-      "path=/",
-      "max-age=" + 60 * 60 * 24 * 365,
-      "SameSite=Lax",
-    ];
-    if (host === "oorgos.org" || host.endsWith(".oorgos.org")) {
-      parts.push("Domain=.oorgos.org");
-    }
-    if (location.protocol === "https:") parts.push("Secure");
-    document.cookie = parts.join(";");
-  } catch (e) {}
-}
-
-function detectLang() {
-  const fromCookie = readCookie("oorgos-locale");
-  if (fromCookie === "en" || fromCookie === "ja" || fromCookie === "zh") return fromCookie;
-  const savedLocale = localStorage.getItem("oorgos-locale");
-  if (savedLocale === "en" || savedLocale === "ja" || savedLocale === "zh") return savedLocale;
-  const saved = localStorage.getItem("oorgos-lang");
-  if (saved === "en" || saved === "ja" || saved === "zh") return saved;
-  const browser = (navigator.language || "").toLowerCase();
-  if (browser.startsWith("ja")) return "ja";
-  if (browser.startsWith("zh")) return "zh";
-  return "en";
+  if (window.OORGOS_LOCALE) window.OORGOS_LOCALE.write(lang);
 }
 
 function applyLang(lang) {

@@ -26,12 +26,18 @@
           <a href="/" aria-current="page" data-i18n="navOverview">Overview</a>
           <a href="/demo" data-nav-optional data-i18n="navDemo">Demo</a>
           <a
-            href="https://community.oorgos.org/ops/console/start?next=/" rel="noopener noreferrer"
+            href="https://community.oorgos.org/ops/console/start?next=%2F" rel="noopener noreferrer"
+            data-ecosystem-link="consoleStart"
             data-nav-optional
             data-i18n="navConsole"
             >Console</a
           >
-          <a href="https://community.oorgos.org" rel="noopener noreferrer" data-i18n="navCommunity">Community</a>
+          <a
+            href="https://community.oorgos.org" rel="noopener noreferrer"
+            data-ecosystem-link="community"
+            data-i18n="navCommunity"
+            >Community</a
+          >
           <div class="lang-select-wrap">
             <select id="lang-select" class="lang-select" aria-label="Language">
               <option value="en">English</option>
@@ -52,7 +58,8 @@
         <div class="hero-cta">
           <a
             class="btn btn-primary"
-            href="https://community.oorgos.org/ops/console/start?next=/" rel="noopener noreferrer"
+            href="https://community.oorgos.org/ops/console/start?next=%2F" rel="noopener noreferrer"
+            data-ecosystem-link="consoleStart"
             data-i18n="heroCta"
             >Open console</a
           >
@@ -179,7 +186,8 @@
           </ol>
           <a
             class="btn btn-primary"
-            href="https://community.oorgos.org/ops/console/start?next=/" rel="noopener noreferrer"
+            href="https://community.oorgos.org/ops/console/start?next=%2F" rel="noopener noreferrer"
+            data-ecosystem-link="consoleStart"
             data-i18n="tryCta"
             >Open console</a
           >
@@ -226,6 +234,7 @@
           <a
             class="btn btn-primary community-visit-btn"
             href="https://community.oorgos.org" rel="noopener noreferrer"
+            data-ecosystem-link="community"
             data-i18n="communityVisitBtn"
             >Visit Community</a
           >
@@ -240,6 +249,8 @@
       </div>
     </footer>
 
+    <script src="/ecosystem-links.js" defer></script>
+    <script src="/locale-bridge.js" defer></script>
     <script src="/overview-i18n.js" defer></script>
   </body>
 </html>

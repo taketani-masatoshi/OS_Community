@@ -27,6 +27,7 @@
     "i18n:check": "npm run i18n:check -w @os-community/shared",
     "i18n:check:api": "npm run i18n:check:api -w @os-community/shared",
     "i18n:sync": "npm run i18n:sync -w @os-community/shared",
+    "overview:links": "npm run overview:links -w @os-community/shared",
     "test": "npm run test -w @os-community/web",
     "test:e2e": "bash scripts/test-e2e.sh",
     "smoke:prod": "bash scripts/smoke-prod.sh",

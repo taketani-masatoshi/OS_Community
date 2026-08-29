@@ -98,7 +98,32 @@ CLOUDFLARE_TUNNEL_TOKEN=eyJ...
 | OAuth シークレット | Mac `.env` のみ |
 | セッション Cookie | `community.oorgos.org` のみ |
 
-`oorgos.org` と `community.oorgos.org` は別オリジン。Cookie は共有しない。
+`oorgos.org` と `community.oorgos.org` は別オリジン。**セッション・認証 Cookie は共有しない。** 共有するのは UI 設定のみ。
+
+### 5.1 Cookie 契約（正本: [`packages/shared/src/locale-bridge.ts`](../packages/shared/src/locale-bridge.ts)）
+
+| Cookie | 誰が書く | Domain | 用途 |
+|--------|----------|--------|------|
+| `oorgos-locale` | 概要 · Community · Console | `.oorgos.org` | Console UI（**ja / en のみ**） |
+| `oorgos-lang` | Community（Console は自オリジンのみ） | なし（host-only） | Community の全 locale（de · zh 等） |
+| `oorgos-theme` | 各サーフェス | `.oorgos.org` | 外観 |
+| `locale`（旧） | 書かない | — | 残留分を Max-Age=0 で失効 |
+| セッション | Community / Console が各自 | なし | **共有しない** |
+
+概要サイトは ja/en 以外（zh 等）を選んでも共有 Cookie には `en` を書き、ページ locale は自オリジンの localStorage に保持する。
+
+### 5.2 Console ログイン入口
+
+Operator Console のログインは常に Community 発。`operator.oorgos.org` を起点にしない。
+
+```text
+https://community.oorgos.org/ops/console/start?next=%2F
+  → Community セッション → 短命 id_token → operator.oorgos.org/auth/community-handoff
+```
+
+概要サイトの Console / Community リンクは [`sites/coming-soon/ecosystem-links.js`](../sites/coming-soon/ecosystem-links.js)（`npm run overview:links` で `packages/shared` から生成）に従う。
+
+**localhost では繋がらない:** `http://localhost:3000` は `.oorgos.org` Cookie を受け取れないため、概要↔Community の言語引き継ぎは確認できない。横断確認は `https://community.oorgos.org` で行う。
 
 ---
 
@@ -108,9 +133,10 @@ CLOUDFLARE_TUNNEL_TOKEN=eyJ...
 |------|------|
 | `www.oorgos.org` → Vercel | ✅ |
 | サブドメイン構成ドキュメント | ✅ |
-| `oorgos.org` apex → Vercel | ⏳ DNS + Vercel ドメイン追加 |
-| `community.oorgos.org` → Tunnel | ⏳ ダッシュボード + `.env` |
-| OAuth on `community.*` | ⏳ |
+| `oorgos.org` apex → Vercel | ✅ |
+| `community.oorgos.org` → Tunnel | ✅ |
+| OAuth on `community.*` | ✅ |
+| 横断 locale Cookie 契約（§5.1） | ✅ |
 
 ---
 

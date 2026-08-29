@@ -12,3 +12,5 @@ export * from "./leadership";
 export * from "./cloud-agent-protocol";
 export * from "./compliance-registry";
 export * from "./locale-bridge";
+export * from "./overview-links";
+export * from "./overview-locale-script";

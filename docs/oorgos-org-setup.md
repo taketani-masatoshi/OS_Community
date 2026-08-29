@@ -53,7 +53,7 @@ curl -sI https://community.oorgos.org/api/health
 
 ### 再起動（Web 変更後・502 時）
 
-`cloudflared-inc` は `network_mode: "service:web"` のため、**`docker compose restart` だけだと Tunnel が Cloudflare エッジに再接続できず 502 になる**ことがある（ログ: `dial tcp ...:7844: network is unreachable`）。`localhost:3000` が 200 でも公開 URL が 502 のときは cloudflared を **再作成**する。
+`cloudflared-inc` は `network_mode: "service:web"` のため、**web だけ再作成すると Tunnel が古いネットワーク名前空間に残り、公開 URL が 502 / 530（error 1033）になる**。ログは `7844: network is unreachable` や IPv6 `udp [::]`。`localhost:3000` が 200 でも公開 URL が死んでいるときは cloudflared を **再作成**する（`docker compose restart` では足りない）。connector は IPv4 + HTTP/2（`--edge-ip-version 4 --protocol http2`）。
 
 ```bash
 cd /Users/kk/OS_Community
@@ -78,6 +78,13 @@ docker logs os_community-cloudflared-inc-1 2>&1 | tail -5   # Registered tunnel 
 **本番デプロイ（Mac mini）:** `bash scripts/deploy-mac-mini.sh` — web 起動待ち後に `cloudflared-inc` を force-recreate する。
 
 **Vercel（oorgos.org）:** `cd sites/coming-soon && npx vercel@latest deploy --prod --yes`（**ホーム `~` から実行しない**）。概要ページは Community を probe しない。
+
+### 概要 ↔ Community の継ぎ目
+
+- Console 入口は常に `https://community.oorgos.org/ops/console/start?next=%2F`。`operator.oorgos.org` を起点にしない
+- 概要サイトのリンクと locale Cookie は `packages/shared` から生成する。`brand-links.ts` 変更後は **`npm run overview:links`** を実行して `sites/coming-soon/ecosystem-links.js` · `locale-bridge.js` を更新し、Vercel に再デプロイする
+- 横断で共有するのは `oorgos-locale`（ja/en）と `oorgos-theme` のみ。セッションは共有しない。詳細: [`vercel-macmini-architecture.md`](./vercel-macmini-architecture.md) §5.1
+- **`http://localhost:3000` では言語の引き継ぎを確認できない**（`.oorgos.org` Cookie が付かない）。横断確認は `https://community.oorgos.org` で行う
 
 ## 5. OAuth
 

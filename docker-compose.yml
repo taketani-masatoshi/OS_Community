@@ -28,6 +28,11 @@ services:
       - "3000:3000"
     environment:
       NODE_OPTIONS: "--max-old-space-size=4096"
+      # Bind-mounted sources do not emit inotify events to the container, so dev
+      # builds went stale (e.g. /api/locale served the previous compile).
+      WATCHPACK_POLLING: ${WATCHPACK_POLLING:-1}
+      CHOKIDAR_USEPOLLING: ${CHOKIDAR_USEPOLLING:-1}
+      CHOKIDAR_INTERVAL: ${CHOKIDAR_INTERVAL:-1000}
       DATABASE_URL: postgresql://oscommunity:oscommunity@db:5432/oscommunity
       AUTH_SECRET: ${AUTH_SECRET:-dev-secret-change-in-production}
       # Browser URL must match AUTH_URL for OAuth (see docs/google-oauth-setup.md).
@@ -79,6 +84,12 @@ services:
     command:
       - tunnel
       - --no-autoupdate
+      # Colima/Mac では IPv6 dual-stack QUIC が 7844: network is unreachable になりやすい。
+      # web 再作成後は必ず force-recreate すること（network_mode: service:web）。
+      - --edge-ip-version
+      - "4"
+      - --protocol
+      - http2
       - run
       - --token
       - ${CLOUDFLARE_TUNNEL_TOKEN:?Set CLOUDFLARE_TUNNEL_TOKEN in .env — see docs/oorgos-org-setup.md}
