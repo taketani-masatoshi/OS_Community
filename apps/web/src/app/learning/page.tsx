@@ -99,7 +99,7 @@ export default async function LearningPage() {
           {iso37000Doc && (
             <p className="learning-related-links">
               <Link href={`/content/${iso37000Doc.meta.id}`}>{iso37000Doc.meta.title}</Link>
-              {iso37000Doc.description ? ` — ${iso37000Doc.description}` : null}
+              {iso37000Doc.meta.description ? ` — ${iso37000Doc.meta.description}` : null}
             </p>
           )}
         </section>

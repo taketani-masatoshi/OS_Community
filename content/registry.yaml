@@ -71,6 +71,15 @@ entries:
     status: published
     order: 8
 
+  - id: iso-37000-orgos
+    title: OrgOS and ISO 37000
+    description: How OrgOS initialization supports ISO 37000–aligned governance self-declaration
+    file: published/docs/iso-37000-orgos.md
+    route: /content/iso-37000-orgos
+    category: docs
+    status: published
+    order: 9
+
   - id: startup-setup
     title: Getting Started
     description: 導入ガイド（外部生成）

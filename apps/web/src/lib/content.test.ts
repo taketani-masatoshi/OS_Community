@@ -27,4 +27,17 @@ describe("getContentById locale resolution", () => {
     expect(doc?.content).toContain("Privacy Policy");
     expect(doc?.content).toContain("community.oorgos.org");
   });
+
+  it("loads published ISO 37000 guidance", () => {
+    const en = getContentById("iso-37000-orgos", "en");
+    expect(en).not.toBeNull();
+    expect(en?.entry.status).toBe("published");
+    expect(en?.content).toContain("ISO 37000");
+    expect(en?.content).toContain("self-declaration");
+    expect(en?.content).toContain("orgos governance principles");
+    const ja = getContentById("iso-37000-orgos", "ja");
+    expect(ja).not.toBeNull();
+    expect(ja?.content).toContain("自己宣言");
+    expect(ja?.content).toContain("第三者 ISO 認証ではありません");
+  });
 });
