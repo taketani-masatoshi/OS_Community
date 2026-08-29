@@ -11,6 +11,8 @@ import {
   resolveLoginAuthErrorMessage,
 } from "@/lib/auth-env";
 import { signInWithGoogle } from "@/app/login/actions";
+import { isConsoleStartCallback } from "@/lib/console-login-intent";
+import { overviewUrl } from "@/lib/ecosystem-links";
 
 function safeCallbackUrl(raw?: string): string {
   if (!raw || !raw.startsWith("/") || raw.startsWith("//")) return "/mypage";
@@ -28,6 +30,7 @@ export default async function LoginPage({
 }) {
   const { callbackUrl, error } = await searchParams;
   const redirectTo = safeCallbackUrl(callbackUrl);
+  const consoleLogin = isConsoleStartCallback(redirectTo);
   const { locale, messages: t } = await getT();
   const l = t.login;
   const googleConfigured = isGoogleAuthConfigured();
@@ -36,7 +39,10 @@ export default async function LoginPage({
   const authError = !dbAvailable
     ? l.errorDatabaseUnavailable
     : resolveLoginAuthErrorMessage(error, l, locale);
-  const afterLogin = "/settings/profile?callbackUrl=" + encodeURIComponent(redirectTo);
+  // Console intent: continue straight to /ops/console/start (no profile detour).
+  const afterLogin = consoleLogin
+    ? redirectTo
+    : "/settings/profile?callbackUrl=" + encodeURIComponent(redirectTo);
   const googleCallback = resolveGoogleOAuthCredentials().callbackUrl;
   const authBaseUrl = getAuthBaseUrl();
   const headerStore = await headers();
@@ -56,9 +62,14 @@ export default async function LoginPage({
     <section className="lf-hero lf-hero-compact">
       <div className="lf-hero-inner">
         <h1 className="lf-hero-title-sm">
-          {l.title} — {BRAND.community}
+          {consoleLogin ? l.consoleTitle : `${l.title} — ${BRAND.community}`}
         </h1>
-        <p className="lf-hero-lead">{l.desc}</p>
+        <p className="lf-hero-lead">{consoleLogin ? l.consoleDesc : l.desc}</p>
+        {consoleLogin ? (
+          <p className="page-muted-note" style={{ marginBottom: "var(--space-4)" }}>
+            {l.consoleKeyHint}
+          </p>
+        ) : null}
         {!primaryLoginConfigured && (
           <div className="login-auth-notice" role="alert">
             <p className="form-error">{l.providersNotConfigured}</p>
@@ -101,12 +112,20 @@ export default async function LoginPage({
             </form>
           )}
         </div>
-        <p className="page-muted-note" style={{ marginTop: "1.25rem" }}>
-          {l.connectionsHint}{" "}
-          <Link href="/settings/connections" className="btn btn-primary btn-sm">
-            {l.connectionsLink}
-          </Link>
-        </p>
+        {consoleLogin ? (
+          <p className="page-muted-note section-actions" style={{ marginTop: "var(--space-5)" }}>
+            <a href={overviewUrl()}>{l.consoleOverviewLink}</a>
+            {" · "}
+            <Link href="/">{l.consoleCommunityHome}</Link>
+          </p>
+        ) : (
+          <p className="page-muted-note" style={{ marginTop: "1.25rem" }}>
+            {l.connectionsHint}{" "}
+            <Link href="/settings/connections" className="btn btn-primary btn-sm">
+              {l.connectionsLink}
+            </Link>
+          </p>
+        )}
       </div>
     </section>
   );

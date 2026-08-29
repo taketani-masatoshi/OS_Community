@@ -71,7 +71,7 @@ export default async function HomePage() {
           {!isSignedIn && (
             <p className="lf-hero-subcta">
               {h.primaryCtaSub}{" "}
-              <Link href="/login?callbackUrl=/getting-started" className="hero-inline-link">
+              <Link href="/login?callbackUrl=/mypage" className="hero-inline-link">
                 {t.nav.signIn}
               </Link>
             </p>

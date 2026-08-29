@@ -31,7 +31,7 @@ export function HeaderSessionBar({
 
   if (!isSignedIn) {
     return (
-      <Link href="/login?callbackUrl=/getting-started" className="btn btn-primary btn-sm">
+      <Link href="/login?callbackUrl=/mypage" className="btn btn-primary btn-sm">
         {labels.signIn}
       </Link>
     );

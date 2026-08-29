@@ -8,6 +8,8 @@ import {
   safeConsoleNextPath,
 } from "@/lib/console-handoff";
 import { isOooLoginEmailAllowed } from "@/lib/ooo-login-email";
+import { getLocale } from "@/lib/i18n";
+import { toConsoleUiLocale } from "@os-community/shared";
 
 /**
  * GET /ops/console/start?next=/wire/
@@ -25,7 +27,7 @@ export async function GET(req: Request) {
   const cfg = getConsoleHandoffConfig();
   if (!cfg.configured || !cfg.consoleBaseUrl) {
     return NextResponse.redirect(
-      new URL("/mypage?console_handoff=misconfigured", url.origin),
+      new URL("/ops/console/blocked?reason=misconfigured", url.origin),
     );
   }
 
@@ -40,7 +42,7 @@ export async function GET(req: Request) {
     select: { id: true },
   });
   if (!operatorCert && !isSiteAdmin) {
-    return NextResponse.redirect(new URL("/mypage?console_handoff=forbidden", url.origin));
+    return NextResponse.redirect(new URL("/ops/console/blocked?reason=forbidden", url.origin));
   }
 
   const dbUser = await prisma.user.findUnique({
@@ -59,10 +61,10 @@ export async function GET(req: Request) {
 
   const email = dbUser?.email?.trim() || session.user.primaryEmail?.trim() || "";
   if (!email) {
-    return NextResponse.redirect(new URL("/mypage?console_handoff=no_email", url.origin));
+    return NextResponse.redirect(new URL("/ops/console/blocked?reason=no_email", url.origin));
   }
   if (!isOooLoginEmailAllowed(email)) {
-    return NextResponse.redirect(new URL("/mypage?console_handoff=domain", url.origin));
+    return NextResponse.redirect(new URL("/ops/console/blocked?reason=domain", url.origin));
   }
 
   const minted = mintConsoleHandoffIdToken({
@@ -73,9 +75,11 @@ export async function GET(req: Request) {
   });
   if (typeof minted !== "string") {
     return NextResponse.redirect(
-      new URL("/mypage?console_handoff=misconfigured", url.origin),
+      new URL("/ops/console/blocked?reason=misconfigured", url.origin),
     );
   }
 
-  return NextResponse.redirect(buildConsoleHandoffUrl(cfg.consoleBaseUrl, minted, next));
+  return NextResponse.redirect(
+    buildConsoleHandoffUrl(cfg.consoleBaseUrl, minted, next, toConsoleUiLocale(await getLocale())),
+  );
 }
