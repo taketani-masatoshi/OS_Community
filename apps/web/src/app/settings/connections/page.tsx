@@ -13,11 +13,12 @@ import { LinkedInDisconnectButton } from "@/components/settings/LinkedInDisconne
 import { GitHubConnectAccountButton } from "@/components/settings/GitHubConnectAccountButton";
 import { ConnectionLinkRefresh } from "@/components/settings/ConnectionLinkRefresh";
 import { connectGithubAccount, connectLinkedInAccount } from "@/app/settings/connections/actions";
+import { isTenantMailConnectShipped } from "@/lib/orgos-mail";
 
 export default async function SettingsConnectionsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ linked?: string }>;
+  searchParams: Promise<{ linked?: string; orgos_mail?: string; tenant_id?: string; nonce?: string }>;
 }) {
   const session = await requireAuth("/settings/connections");
   const { locale, messages: t } = await getT();
@@ -38,6 +39,10 @@ export default async function SettingsConnectionsPage({
   const linkedIn = resolveLinkedInOAuthCredentials();
   const linkedInConfigured = linkedIn.configured;
   const githubConfigured = isGithubAuthConfigured();
+  const mailShipped = isTenantMailConnectShipped();
+  const mailTenant = params.tenant_id?.trim() ?? "";
+  const mailNonce = params.nonce?.trim() ?? "";
+  const mailBindReady = Boolean(mailTenant && mailNonce);
 
   return (
     <>
@@ -55,6 +60,11 @@ export default async function SettingsConnectionsPage({
       {params.linked === "github" && (
         <p className="membership-policy-callout" style={{ marginBottom: "1rem" }}>
           {s.githubLinkedNotice}
+        </p>
+      )}
+      {params.orgos_mail === "linked" && (
+        <p className="membership-policy-callout" style={{ marginBottom: "1rem" }}>
+          {s.layerMailLinkedNotice}
         </p>
       )}
 
@@ -181,6 +191,27 @@ export default async function SettingsConnectionsPage({
                 </li>
               ))}
             </ul>
+          )}
+        </IdentityLayerCard>
+
+        <IdentityLayerCard
+          title={s.layerMailTitle}
+          status={params.orgos_mail === "linked" ? s.layerStatusComplete : s.layerStatusIncomplete}
+          complete={params.orgos_mail === "linked"}
+          action={
+            mailShipped && mailBindReady ? (
+              <IdentityLayerLink
+                href={`/api/integrations/orgos-mail/start?tenant_id=${encodeURIComponent(mailTenant)}&nonce=${encodeURIComponent(mailNonce)}`}
+                label={s.layerMailAction}
+              />
+            ) : undefined
+          }
+        >
+          <p className="page-muted-note">{s.layerMailBody}</p>
+          {!mailShipped ? (
+            <p className="page-muted-note">{s.layerMailNotShipped}</p>
+          ) : mailBindReady ? null : (
+            <p className="page-muted-note">{s.layerMailBindMissing}</p>
           )}
         </IdentityLayerCard>
       </div>
