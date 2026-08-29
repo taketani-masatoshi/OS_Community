@@ -41,9 +41,14 @@ services:
       AUTH_LINKEDIN_SECRET: ${AUTH_LINKEDIN_SECRET:-}
       NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
       CONTENT_ROOT: /app/content
+      # Local volume can start empty; tracked migrations are incremental-only.
+      RUN_DB_PUSH: ${RUN_DB_PUSH:-1}
       ACADEMY_API_URL: ${ACADEMY_API_URL:-http://host.docker.internal:8787}
       ACADEMY_INTERNAL_TOKEN: ${ACADEMY_INTERNAL_TOKEN:-dev-internal-token}
       STEWARD_REPO_PATH: ${STEWARD_REPO_PATH:-/steward}
+      # OOO / Operator Console SSO domain gate (empty = Community does not extra-restrict)
+      OOO_LOGIN_EMAIL_DOMAINS: ${OOO_LOGIN_EMAIL_DOMAINS:-}
+      OOO_LOGIN_EMAIL_GRANDFATHER: ${OOO_LOGIN_EMAIL_GRANDFATHER:-}
     volumes:
       - .:/app
       - /app/node_modules

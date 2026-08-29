@@ -21,6 +21,10 @@ Mac Docker Web（`:3000`）を **https://community.oorgos.org** で公開する�
 
 **削除すること**: `oorgos.org`（apex）や `www` の Public Hostname（Vercel に移行済みのため）
 
+**Operator Console（任意）**: `operator.oorgos.org` → `http://operator-console:9470`  
+DNS + Tunnel 一括: `./scripts/configure-operator-oorgos-org.sh`（要 `CF_API_TOKEN`）  
+手順: `../OS_Steward/docs/org-os/operator-console-https-runbook.md`
+
 ## 2. Mac `.env`
 
 ```bash
@@ -73,7 +77,7 @@ docker logs os_community-cloudflared-inc-1 2>&1 | tail -5   # Registered tunnel 
 
 **本番デプロイ（Mac mini）:** `bash scripts/deploy-mac-mini.sh` — web 起動待ち後に `cloudflared-inc` を force-recreate する。
 
-**Vercel（oorgos.org）:** `cd sites/coming-soon && npx vercel@latest deploy --prod --yes`（**ホーム `~` から実行しない**）。Community 稼働表示はブラウザから `community.oorgos.org/api/health` を CORS で確認（Vercel サーバーからは Tunnel に届かない）。
+**Vercel（oorgos.org）:** `cd sites/coming-soon && npx vercel@latest deploy --prod --yes`（**ホーム `~` から実行しない**）。概要ページは Community を probe しない。
 
 ## 5. OAuth
 

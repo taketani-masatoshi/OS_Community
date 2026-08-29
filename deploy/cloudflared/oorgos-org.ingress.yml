@@ -1,9 +1,12 @@
-# community.oorgos.org → Community web (host port 3000)
-# Apex/www on Vercel — docs/oorgos-subdomain-setup.md
+# Reference for Zero Trust Public Hostname (token-run cloudflared uses dashboard routes).
+# Tunnel: oorgos-org · docs/oorgos-org-setup.md · OS_Steward docs/org-os/operator-console-https-runbook.md
 
-tunnel: acca19b1-31b7-47c8-8a3f-fb80a71e5a2c
+tunnel: 683a2039-939a-4e0a-9e4f-3591accfcf13
 
 ingress:
   - hostname: community.oorgos.org
-    service: http://host.docker.internal:3000
+    # cloudflared-inc uses network_mode: service:web
+    service: http://127.0.0.1:3000
+  - hostname: operator.oorgos.org
+    service: http://operator-console:9470
   - service: http_status:404
