@@ -21,7 +21,7 @@ test.describe("Governance & standards public pages", () => {
 
   test("governance page shows localized roles in Japanese", async ({ page, context }) => {
     await context.addCookies([
-      { name: "locale", value: "ja", domain: "127.0.0.1", path: "/" },
+      { name: "oorgos-lang", value: "ja", domain: "127.0.0.1", path: "/" },
     ]);
     const res = await page.goto("/governance");
     expect(res?.status()).toBe(200);

@@ -1,9 +1,6 @@
 "use client";
 
-import { useTransition } from "react";
-import { useRouter } from "next/navigation";
 import { LOCALE_GROUPS, persistCrossSurfaceLocaleClient, type Locale } from "@os-community/shared";
-import { setLocaleCookie } from "@/app/actions/locale";
 
 type LanguageSelectProps = {
   current: Locale;
@@ -13,6 +10,22 @@ type LanguageSelectProps = {
   ariaLabel?: string;
 };
 
+function persistLocaleOnServer(next: Locale): void {
+  const body = JSON.stringify({ locale: next });
+  try {
+    void fetch("/api/locale", {
+      method: "POST",
+      credentials: "same-origin",
+      cache: "no-store",
+      keepalive: true,
+      headers: { "content-type": "application/json" },
+      body,
+    });
+  } catch {
+    /* Client cookies already persist. Reload must not wait on this. */
+  }
+}
+
 export function LanguageSelect({
   current,
   className = "lang-select",
@@ -20,28 +33,20 @@ export function LanguageSelect({
   onChange,
   ariaLabel = "Language",
 }: LanguageSelectProps) {
-  const router = useRouter();
-  const [pending, startTransition] = useTransition();
-
   function change(next: Locale) {
-    if (next === current || pending) return;
-
-    startTransition(async () => {
-      persistCrossSurfaceLocaleClient(next);
-      await setLocaleCookie(next);
-      onChange?.(next);
-      router.refresh();
-    });
+    if (next === current) return;
+    persistCrossSurfaceLocaleClient(next);
+    persistLocaleOnServer(next);
+    onChange?.(next);
+    window.location.reload();
   }
 
   return (
     <select
       id={id}
       value={current}
-      disabled={pending}
       onChange={(e) => change(e.target.value as Locale)}
       aria-label={ariaLabel}
-      aria-busy={pending}
       className={className}
     >
       {LOCALE_GROUPS.map((group) => (
