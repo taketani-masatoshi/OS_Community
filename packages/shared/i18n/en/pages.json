@@ -31,7 +31,11 @@
     "notFound": "Page not found",
     "contact": {
       "title": "Contact Us",
-      "body": "For community inquiries, use GitHub Issues. Tenant data and per-org operations are out of scope."
+      "body": "OpenOrgOS is built and run by one person, for one real company. If you also keep a company running by yourself, write a short email — a person reads every message.",
+      "wanted": "Best fit: you already handle your own expenses, budget, and approvals.",
+      "notOpen": "Not open yet: proposals to build new modules together.",
+      "emailCta": "Send an email",
+      "githubNote": "For bugs in the code or the docs, GitHub Issues is faster. Tenant data and per-company operations stay out of scope here."
     },
     "brand": {
       "title": "OpenOrgOS Brand Guidelines",

@@ -30,7 +30,11 @@
     "notFound": "页面未找到",
     "contact": {
       "title": "联系我们",
-      "body": "社区相关咨询请使用 GitHub Issues。租户数据与单组织运营支持不在范围内。"
+      "body": "OpenOrgOS 由一个人为一家真实公司构建并运行。如果你也在独自把一家公司维持下去，请写一封简短的邮件 — 每封都由真人阅读。",
+      "wanted": "最合适的人：自己处理报销、预算与审批。",
+      "notOpen": "暂不受理：共同开发新模块的提案。",
+      "emailCta": "发送邮件",
+      "githubNote": "代码或文档的缺陷，用 GitHub Issues 更快。租户数据与单组织运营支持不在此范围内。"
     },
     "brand": {
       "title": "OpenOrgOS 品牌指南",

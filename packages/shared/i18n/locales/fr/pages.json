@@ -30,7 +30,11 @@
     "notFound": "Page introuvable",
     "contact": {
       "title": "Nous contacter",
-      "body": "Pour les demandes communautaires, utilisez GitHub Issues. Les données des locataires et les opérations par organisation sont hors périmètre."
+      "body": "OpenOrgOS est conçu et exploité par une seule personne, pour une vraie entreprise. Si vous faites aussi tourner une entreprise seul, écrivez un court e-mail — une personne lit chaque message.",
+      "wanted": "Profil idéal : vous gérez déjà vos dépenses, votre budget et vos validations.",
+      "notOpen": "Pas encore ouvert : les propositions de construire de nouveaux modules ensemble.",
+      "emailCta": "Envoyer un e-mail",
+      "githubNote": "Pour les bugs du code ou de la documentation, GitHub Issues est plus rapide. Les données des locataires et les opérations par entreprise restent hors périmètre ici."
     },
     "brand": {
       "title": "Charte graphique OpenOrgOS",

@@ -1,6 +1,8 @@
 /** External links — update when official social / store accounts are live. */
 export const BRAND_LINKS = {
   store: "https://store.openorgos.org",
+  /** Public inbox shown on the overview site and /about/contact (forwarded via Cloudflare). */
+  contactEmail: "hello@oorgos.org",
   social: {
     x: "https://x.com/OpenOrgOS",
     facebook: "https://www.facebook.com/OpenOrgOS",

@@ -215,6 +215,49 @@ cd sites/coming-soon && npx vercel@latest deploy --prod --yes
 
 ---
 
+## 8. 公開メール `hello@oorgos.org`（Email Routing）
+
+概要ページと Community のお問い合わせに出す唯一の連絡先。**フォームは置かない**ため、この転送が届かないと入口が無くなる。
+
+転送先（普段読んでいる受信箱）は Cloudflare 側のみに保持し、**このリポジトリには書かない**。
+
+### 8-A. 既存 MX の確認（先に必ず）
+
+```bash
+dig +short MX oorgos.org
+```
+
+他社メール（Google Workspace 等）の MX が出た場合、Email Routing の MX で**上書きしない**。同一ドメインで MX は共存できないため、その時は導入を止めて構成を決め直す。
+
+### 8-B. 有効化
+
+1. https://dash.cloudflare.com/ → **oorgos.org** → **Email** → **Email Routing**
+2. **Destination addresses** に普段の受信箱を追加 → 届いた確認メールを承認
+3. **Routing rules** に追加:
+
+| Custom address | Action | Destination |
+|----------------|--------|-------------|
+| `hello@oorgos.org` | Send to an email | 承認済みの受信箱 |
+
+4. Cloudflare が案内する **MX / TXT (SPF)** をゾーンに反映（同画面の «Add records automatically» で可）
+
+### 8-C. 確認（サイト公開より先）
+
+```bash
+dig +short MX oorgos.org       # Cloudflare の mx レコードが 3 件
+dig +short TXT oorgos.org      # spf1 include:_spf.mx.cloudflare.net
+```
+
+外部アカウント（携帯キャリアや別の Gmail など）から `hello@oorgos.org` へ送り、受信箱に届くことを確認する。**届いてから** Vercel を再デプロイする。
+
+| 症状 | 確認 |
+|------|------|
+| 送信が bounce する | Destination の確認メールを承認済みか / MX が反映済みか |
+| 迷惑メールに入る | TXT (SPF) が入っているか |
+| 何も届かない | ルールが `hello@` で有効（Enabled）か |
+
+---
+
 ### 502 が出るとき（Tunnel 接続済みなのに `error code: 502`）
 
 **症状**: `cloudflared` は Healthy、localhost:3000 は OK、公開 URL だけ 502。

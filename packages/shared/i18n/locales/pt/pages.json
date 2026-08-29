@@ -30,7 +30,11 @@
     "notFound": "Página não encontrada",
     "contact": {
       "title": "Contato",
-      "body": "Para consultas sobre a comunidade, use o GitHub Issues. Dados de tenants e operações por organização estão fora do escopo."
+      "body": "OpenOrgOS é construído e operado por uma pessoa, para uma empresa real. Se você também mantém uma empresa funcionando sozinho, escreva um e-mail curto — uma pessoa lê cada mensagem.",
+      "wanted": "Perfil ideal: você já cuida das próprias despesas, orçamento e aprovações.",
+      "notOpen": "Ainda não aberto: propostas para construir novos módulos em conjunto.",
+      "emailCta": "Enviar e-mail",
+      "githubNote": "Para falhas no código ou na documentação, o GitHub Issues é mais rápido. Dados de tenants e operações por empresa seguem fora do escopo aqui."
     },
     "brand": {
       "title": "Diretrizes de marca OpenOrgOS",

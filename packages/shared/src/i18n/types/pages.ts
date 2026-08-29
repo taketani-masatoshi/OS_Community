@@ -29,7 +29,14 @@ export type PageMessages = {
     back: string;
     join: string;
     notFound: string;
-    contact: { title: string; body: string };
+    contact: {
+      title: string;
+      body: string;
+      wanted: string;
+      notOpen: string;
+      emailCta: string;
+      githubNote: string;
+    };
     brand: { title: string; body: string };
     inclusion: { title: string; body: string };
     careers: { title: string; body: string };

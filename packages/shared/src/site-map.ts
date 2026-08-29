@@ -53,7 +53,7 @@ export const SITE_PAGES: SitePageEntry[] = [
   { id: "about", path: "/about", section: "about", readiness: "live" },
   { id: "leadership", path: "/about/leadership", section: "about", readiness: "live" },
   { id: "brand", path: "/about/brand", section: "about", readiness: "live" },
-  { id: "contact", path: "/about/contact", section: "about", readiness: "partial", skeletonKey: "contact" },
+  { id: "contact", path: "/about/contact", section: "about", readiness: "live" },
   { id: "inclusion", path: "/about/inclusion", section: "about", readiness: "partial", skeletonKey: "inclusion" },
   { id: "careers", path: "/about/careers", section: "about", readiness: "partial", skeletonKey: "careers" },
   {

@@ -30,7 +30,11 @@
     "notFound": "Seite nicht gefunden",
     "contact": {
       "title": "Kontakt",
-      "body": "Für Community-Anfragen bitte GitHub Issues verwenden. Mandantendaten und organisationsspezifische Operationen sind nicht abgedeckt."
+      "body": "OpenOrgOS wird von einer Person für ein echtes Unternehmen gebaut und betrieben. Wenn du ein Unternehmen ebenfalls allein am Laufen hältst, schreibe eine kurze E-Mail — jede Nachricht liest ein Mensch.",
+      "wanted": "Passt am besten, wenn du Ausgaben, Budget und Genehmigungen selbst erledigst.",
+      "notOpen": "Noch nicht offen: Vorschläge, gemeinsam neue Module zu bauen.",
+      "emailCta": "E-Mail senden",
+      "githubNote": "Für Fehler im Code oder in der Dokumentation ist GitHub Issues schneller. Mandantendaten und unternehmensspezifische Operationen bleiben hier außerhalb des Umfangs."
     },
     "brand": {
       "title": "OpenOrgOS Markenrichtlinien",

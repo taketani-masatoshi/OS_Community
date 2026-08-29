@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getPageMessages } from "@os-community/shared";
+import { BRAND_LINKS, getPageMessages } from "@os-community/shared";
 import { getLocale } from "@/lib/i18n";
 import { getContentById } from "@/lib/content";
 import { MarkdownContent } from "@/components/MarkdownContent";
@@ -27,6 +27,7 @@ export default async function AboutSubPage({ params }: { params: Promise<{ slug:
   }
 
   const page = sub[slug];
+  const contact = sub.contact;
   const brandDoc = slug === "brand" ? getContentById("brand-guidelines", locale) : null;
 
   return (
@@ -45,14 +46,30 @@ export default async function AboutSubPage({ params }: { params: Promise<{ slug:
           <div className="prose-docs">
             <MarkdownContent content={brandDoc.content} />
           </div>
+        ) : slug === "contact" ? (
+          <>
+            <p style={{ maxWidth: 640, lineHeight: 1.7 }}>{contact.wanted}</p>
+            <p style={{ maxWidth: 640, lineHeight: 1.7 }}>{contact.notOpen}</p>
+            <p className="section-actions">
+              <a href={`mailto:${BRAND_LINKS.contactEmail}`} className="btn btn-primary btn-sm">
+                {contact.emailCta}
+              </a>
+            </p>
+            <p style={{ maxWidth: 640, lineHeight: 1.7 }}>{BRAND_LINKS.contactEmail}</p>
+            <p className="page-muted-note" style={{ maxWidth: 640 }}>
+              {contact.githubNote}
+            </p>
+          </>
         ) : (
           <p style={{ maxWidth: 640, lineHeight: 1.7 }}>{page.body}</p>
         )}
-        <p style={{ marginTop: "2rem" }}>
-          <Link href="/login" className="btn btn-primary">
-            {sub.join}
-          </Link>
-        </p>
+        {slug === "contact" ? null : (
+          <p style={{ marginTop: "2rem" }}>
+            <Link href="/login" className="btn btn-primary">
+              {sub.join}
+            </Link>
+          </p>
+        )}
       </div>
     </>
   );

@@ -30,7 +30,11 @@
     "notFound": "Lehte ei leitud",
     "contact": {
       "title": "Võta meiega ühendust",
-      "body": "Kogukonnaga seotud päringuteks kasutage GitHub Issues-t. Rentnike andmed ja organisatsioonispetsiifilised toimingud ei kuulu meie pädevusse."
+      "body": "OpenOrgOS-i ehitab ja käitab üks inimene ühe päris ettevõtte jaoks. Kui hoiad ka sina ettevõtet üksi käigus, kirjuta lühike e-kiri — iga sõnumi loeb inimene.",
+      "wanted": "Sobib kõige paremini, kui haldad ise oma kulusid, eelarvet ja kinnitusi.",
+      "notOpen": "Veel ei ole avatud: ettepanekud uute moodulite koos ehitamiseks.",
+      "emailCta": "Saada e-kiri",
+      "githubNote": "Koodi või dokumentatsiooni vigade puhul on GitHub Issues kiirem. Rentnike andmed ja ettevõttepõhised toimingud jäävad siin väljapoole."
     },
     "brand": {
       "title": "OpenOrgOS brändi juhised",
