@@ -34,11 +34,12 @@ import { connectGithubAccount, connectLinkedInAccount } from "@/app/settings/con
 import { MyPageOpsHub } from "@/components/mypage/MyPageOpsHub";
 import { getConsoleHandoffConfig } from "@/lib/console-handoff";
 import { isOperatorConsoleReachable } from "@/lib/operator-console-health";
+import { getOperatorOrgRows } from "@/lib/operator-org-rows";
 
 export default async function MyPage({
   searchParams,
 }: {
-  searchParams: Promise<{ linked?: string; console_handoff?: string }>;
+  searchParams: Promise<{ linked?: string }>;
 }) {
   const session = await requireAuth();
   const params = await searchParams;
@@ -144,18 +145,8 @@ export default async function MyPage({
   const s = localizeSettingsCopy(t.settings, locale);
   const consoleCfg = getConsoleHandoffConfig();
   const consoleReachable = await isOperatorConsoleReachable(consoleCfg.consoleBaseUrl);
-  const handoffError =
-    params.console_handoff === "forbidden"
-      ? mp.opsConsoleHandoffForbidden
-      : params.console_handoff === "misconfigured"
-        ? mp.opsConsoleHandoffMisconfigured
-        : params.console_handoff === "no_email"
-          ? mp.opsConsoleHandoffNoEmail
-          : params.console_handoff === "domain"
-            ? mp.opsConsoleHandoffDomain
-            : params.console_handoff === "archived"
-              ? mp.opsConsoleHandoffArchived
-              : null;
+  const operatorOrgs = await getOperatorOrgRows(userId);
+  const canOpenConsole = Boolean(oooCert || isSiteAdmin);
   const showOperatorAdminLink = Boolean(oooCert || isSiteAdmin);
   const linkedInConfigured = isLinkedInAuthConfigured();
   const githubConfigured = isGithubAuthConfigured();
@@ -417,16 +408,11 @@ export default async function MyPage({
           </div>
         )}
 
-        {handoffError && (
-          <div className="mypage-alert" role="alert">
-            <p>{handoffError}</p>
-          </div>
-        )}
-
         <MyPageOpsHub
-          operatorOrgs={[]}
+          operatorOrgs={operatorOrgs}
           consoleBaseUrl={consoleCfg.consoleBaseUrl}
           consoleReachable={consoleReachable}
+          canOpenConsole={canOpenConsole}
           showOperatorAdminLink={showOperatorAdminLink}
           labels={{
             title: mp.opsTitle,
@@ -434,6 +420,8 @@ export default async function MyPage({
             empty: mp.opsEmpty,
             claimOrg: mp.opsClaimOrg,
             applyOoo: mp.opsApplyOoo,
+            openConsole: mp.opsOpenConsole,
+            openConsoleDesc: mp.opsOpenConsoleDesc,
             orgLabel: mp.opsOrgLabel,
             certLabel: mp.opsCertLabel,
             expiresLabel: mp.opsExpiresLabel,

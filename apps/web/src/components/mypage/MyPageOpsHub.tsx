@@ -12,8 +12,10 @@ type Props = {
   operatorOrgs: OperatorOrgRow[];
   /** OrgOS Operator Console base URL (e.g. http://127.0.0.1:9470). Empty = docs-only. */
   consoleBaseUrl?: string | null;
-  /** When false, hide Console primary CTAs (unreachable / not running). */
+  /** When false, show offline note but keep SSO start links. */
   consoleReachable?: boolean;
+  /** OOO-certified or site admin — show primary console CTA and hide empty-org gate. */
+  canOpenConsole?: boolean;
   /** OOO-certified CEO / site admin — link to Console account management. */
   showOperatorAdminLink?: boolean;
   labels: {
@@ -22,6 +24,8 @@ type Props = {
     empty: string;
     claimOrg: string;
     applyOoo: string;
+    openConsole: string;
+    openConsoleDesc: string;
     orgLabel: string;
     certLabel: string;
     expiresLabel: string;
@@ -60,20 +64,22 @@ export function MyPageOpsHub({
   operatorOrgs,
   consoleBaseUrl,
   consoleReachable = false,
+  canOpenConsole = false,
   showOperatorAdminLink = false,
   labels,
 }: Props) {
   const consoleUrl = consoleBaseUrl?.trim() || null;
-  const showConsoleCtas = Boolean(consoleUrl && consoleReachable);
-  const wireConsoleHref = showConsoleCtas ? consoleStartHref("/wire/") : null;
-  const yojitsuConsoleHref = showConsoleCtas ? consoleStartHref("/") : null;
-  const operatorAdminHref = showConsoleCtas && showOperatorAdminLink
-    ? consoleStartHref("/?account=1")
-    : null;
-  const secretaryHref = showConsoleCtas ? consoleStartHref("/secretary/") : null;
-  const stewardHref = showConsoleCtas ? consoleStartHref("/steward/") : null;
-  const runsHref = showConsoleCtas ? consoleStartHref("/runs/") : null;
+  const showConsoleLinks = Boolean(consoleUrl);
+  const primaryConsoleHref = showConsoleLinks ? consoleStartHref("/") : null;
+  const wireConsoleHref = showConsoleLinks ? consoleStartHref("/wire/") : null;
+  const yojitsuConsoleHref = showConsoleLinks ? consoleStartHref("/") : null;
+  const operatorAdminHref =
+    showConsoleLinks && showOperatorAdminLink ? consoleStartHref("/?account=1") : null;
+  const secretaryHref = showConsoleLinks ? consoleStartHref("/secretary/") : null;
+  const stewardHref = showConsoleLinks ? consoleStartHref("/steward/") : null;
+  const runsHref = showConsoleLinks ? consoleStartHref("/runs/") : null;
   const showOfflineNote = Boolean(consoleUrl && !consoleReachable);
+  const showEmptyOrgCard = operatorOrgs.length === 0 && !canOpenConsole;
 
   return (
     <section className="mypage-section" aria-labelledby="mypage-ops-heading">
@@ -84,7 +90,24 @@ export function MyPageOpsHub({
         {labels.desc}
       </p>
 
-      {operatorOrgs.length === 0 ? (
+      {canOpenConsole && primaryConsoleHref && (
+        <div className="lf-card" style={{ marginBottom: "var(--space-5)" }}>
+          <h3 className="mypage-ops-link-title">{labels.openConsole}</h3>
+          <p className="page-muted-note">{labels.openConsoleDesc}</p>
+          <div className="mypage-ops-actions">
+            <a href={primaryConsoleHref} className="btn btn-primary btn-sm">
+              {labels.openConsole}
+            </a>
+          </div>
+          {showOfflineNote && (
+            <p className="page-muted-note" role="status" style={{ marginTop: "var(--space-3)" }}>
+              {labels.consoleOffline}
+            </p>
+          )}
+        </div>
+      )}
+
+      {showEmptyOrgCard ? (
         <div className="mypage-ops-empty lf-card">
           <p className="page-muted-note" style={{ margin: 0 }}>
             {labels.empty}
@@ -98,7 +121,7 @@ export function MyPageOpsHub({
             </Link>
           </div>
         </div>
-      ) : (
+      ) : operatorOrgs.length > 0 ? (
         <ul className="mypage-ops-org-list">
           {operatorOrgs.map((org) => (
             <li key={org.organizationId + org.certificateNo} className="lf-card mypage-ops-org-card">
@@ -115,9 +138,9 @@ export function MyPageOpsHub({
             </li>
           ))}
         </ul>
-      )}
+      ) : null}
 
-      {showOfflineNote && (
+      {showOfflineNote && !canOpenConsole && (
         <p className="page-muted-note" role="status" style={{ marginTop: "var(--space-4)" }}>
           {labels.consoleOffline}
         </p>
@@ -128,12 +151,7 @@ export function MyPageOpsHub({
           <h3 className="mypage-ops-link-title">{labels.operatorAdminTitle}</h3>
           <p className="page-muted-note">{labels.operatorAdminDesc}</p>
           <div className="mypage-ops-actions">
-            <a
-              href={operatorAdminHref}
-              className="btn btn-primary btn-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={operatorAdminHref} className="btn btn-primary btn-sm">
               {labels.operatorAdminLink}
             </a>
           </div>
@@ -146,12 +164,7 @@ export function MyPageOpsHub({
           <p className="page-muted-note">{labels.wireDesc}</p>
           <div className="mypage-ops-actions">
             {wireConsoleHref && (
-              <a
-                href={wireConsoleHref}
-                className="btn btn-primary btn-sm"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={wireConsoleHref} className="btn btn-ghost btn-sm">
                 {labels.wireConsole}
               </a>
             )}
@@ -168,12 +181,7 @@ export function MyPageOpsHub({
           <p className="page-muted-note">{labels.yojitsuDesc}</p>
           <div className="mypage-ops-actions">
             {yojitsuConsoleHref && (
-              <a
-                href={yojitsuConsoleHref}
-                className="btn btn-primary btn-sm"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={yojitsuConsoleHref} className="btn btn-ghost btn-sm">
                 {labels.yojitsuConsole}
               </a>
             )}
@@ -190,12 +198,7 @@ export function MyPageOpsHub({
           <p className="page-muted-note">{labels.secretaryDesc}</p>
           <div className="mypage-ops-actions">
             {secretaryHref && (
-              <a
-                href={secretaryHref}
-                className="btn btn-primary btn-sm"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={secretaryHref} className="btn btn-ghost btn-sm">
                 {labels.secretaryConsole}
               </a>
             )}
@@ -206,12 +209,7 @@ export function MyPageOpsHub({
           <p className="page-muted-note">{labels.stewardDesc}</p>
           <div className="mypage-ops-actions">
             {stewardHref && (
-              <a
-                href={stewardHref}
-                className="btn btn-primary btn-sm"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={stewardHref} className="btn btn-ghost btn-sm">
                 {labels.stewardConsole}
               </a>
             )}
@@ -222,12 +220,7 @@ export function MyPageOpsHub({
           <p className="page-muted-note">{labels.runsDesc}</p>
           <div className="mypage-ops-actions">
             {runsHref && (
-              <a
-                href={runsHref}
-                className="btn btn-primary btn-sm"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={runsHref} className="btn btn-ghost btn-sm">
                 {labels.runsConsole}
               </a>
             )}
