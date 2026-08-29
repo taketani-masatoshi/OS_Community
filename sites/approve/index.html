@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>決済 PassKey のヘルプ — OpenOrgOS</title>
+    <meta
+      name="description"
+      content="高額承認の PassKey は Operator Console 上でブラウザの QR を使います。"
+    />
+    <link rel="stylesheet" href="/fonts.css" />
+    <link rel="stylesheet" href="/approve.css" />
+    <script src="/theme-boot.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="inner">
+        <a class="brand" href="https://oorgos.org" rel="noopener noreferrer">OpenOrgOS</a>
+        <a href="/enroll">登録の手順</a>
+      </div>
+    </header>
+
+    <section class="lf-hero lf-hero-compact">
+      <div class="lf-hero-inner">
+        <h1 class="lf-hero-title-sm">決済 PassKey（ヘルプ）</h1>
+        <p class="lf-hero-lead">
+          承認も登録も、このページでは行いません。Operator Console でブラウザの QR を使います。
+        </p>
+      </div>
+    </section>
+
+    <main class="page-wrap">
+      <section class="lf-card">
+        <ol class="enroll-inline-steps">
+          <li>Mac でコンソールを開く（<strong>http://localhost:9470</strong> — 127.0.0.1 不可）</li>
+          <li>「iPhone で登録」または高額承認を押す</li>
+          <li>ブラウザの QR を iPhone のカメラで読む（Bluetooth オン）</li>
+        </ol>
+        <p class="form-help">
+          Google / GitHub / Apple と同じ FIDO hybrid です。自前の URL 用 QR は使いません。
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="http://localhost:9470/wire/">コンソールを開く</a>
+          <a class="btn btn-ghost" href="/enroll">登録の手順</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
