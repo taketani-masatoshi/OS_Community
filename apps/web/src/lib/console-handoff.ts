@@ -94,10 +94,18 @@ export function safeConsoleNextPath(raw: string | null): string {
   return raw;
 }
 
-export function buildConsoleHandoffUrl(consoleBaseUrl: string, token: string, next: string): string {
+export function buildConsoleHandoffUrl(
+  consoleBaseUrl: string,
+  token: string,
+  next: string,
+  uiLocale?: string,
+): string {
   const base = consoleBaseUrl.replace(/\/+$/, "");
   const url = new URL("/auth/community-handoff", `${base}/`);
   url.searchParams.set("token", token);
   url.searchParams.set("next", next);
+  if (uiLocale === "ja" || uiLocale === "en") {
+    url.searchParams.set("ui_locale", uiLocale);
+  }
   return url.toString();
 }

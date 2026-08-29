@@ -1,8 +1,16 @@
 import { cookies, headers } from "next/headers";
 import { unstable_noStore as noStore } from "next/cache";
-import { getMessages, resolveLocale, LOCALES, type Locale } from "@os-community/shared";
+import {
+  getMessages,
+  resolveLocale,
+  LOCALES,
+  OORGOS_UI_LOCALE_COOKIE,
+  COMMUNITY_LOCALE_COOKIE,
+  isConsoleUiLocale,
+  type Locale,
+} from "@os-community/shared";
 
-export const LOCALE_COOKIE = "locale";
+export const LOCALE_COOKIE = COMMUNITY_LOCALE_COOKIE;
 
 function resolveLocaleFromAcceptLanguage(acceptLanguage: string | null): Locale | null {
   if (!acceptLanguage) return null;
@@ -16,8 +24,11 @@ function resolveLocaleFromAcceptLanguage(acceptLanguage: string | null): Locale 
 export async function getLocale(): Promise<Locale> {
   noStore();
   const store = await cookies();
-  const fromCookie = store.get(LOCALE_COOKIE)?.value;
-  if (fromCookie) return resolveLocale(fromCookie);
+  const fromCommunity = store.get(COMMUNITY_LOCALE_COOKIE)?.value;
+  if (fromCommunity) return resolveLocale(fromCommunity);
+
+  const fromConsole = store.get(OORGOS_UI_LOCALE_COOKIE)?.value;
+  if (isConsoleUiLocale(fromConsole)) return fromConsole;
 
   const headerStore = await headers();
   const fromHeader = resolveLocaleFromAcceptLanguage(headerStore.get("accept-language"));

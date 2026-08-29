@@ -65,10 +65,29 @@ describe("console-handoff", () => {
     expect(url).toContain("next=%2Fwire%2F");
   });
 
+  it("includes ui_locale when provided", () => {
+    const url = buildConsoleHandoffUrl("http://127.0.0.1:9470", "tok", "/", "ja");
+    expect(url).toContain("ui_locale=ja");
+  });
+
   it("sanitizes next path", () => {
     expect(safeConsoleNextPath("/wire/")).toBe("/wire/");
     expect(safeConsoleNextPath("https://evil.example/")).toBe("/");
     expect(safeConsoleNextPath("//evil")).toBe("/");
+  });
+
+  it("allows console start path as login callback", () => {
+    const start = "/ops/console/start?next=%2F";
+    expect(start.startsWith("/") && !start.startsWith("//")).toBe(true);
+    expect(buildConsoleHandoffUrl("http://127.0.0.1:9470", "tok", "/")).toContain(
+      "/auth/community-handoff",
+    );
+  });
+
+  it("console start href stays same-tab relative path", () => {
+    const href = `/ops/console/start?next=${encodeURIComponent("/")}`;
+    expect(href).toBe("/ops/console/start?next=%2F");
+    expect(href.startsWith("http")).toBe(false);
   });
 
   it("prefers OPERATOR_CONSOLE_HANDOFF_URL over the public console URL", () => {

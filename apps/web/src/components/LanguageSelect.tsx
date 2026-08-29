@@ -2,7 +2,7 @@
 
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { LOCALE_GROUPS, type Locale } from "@os-community/shared";
+import { LOCALE_GROUPS, persistCrossSurfaceLocaleClient, type Locale } from "@os-community/shared";
 import { setLocaleCookie } from "@/app/actions/locale";
 
 type LanguageSelectProps = {
@@ -27,6 +27,7 @@ export function LanguageSelect({
     if (next === current || pending) return;
 
     startTransition(async () => {
+      persistCrossSurfaceLocaleClient(next);
       await setLocaleCookie(next);
       onChange?.(next);
       router.refresh();
@@ -46,10 +47,7 @@ export function LanguageSelect({
       {LOCALE_GROUPS.map((group) => (
         <optgroup key={group.tier} label={group.label}>
           {group.locales.map((locale) => (
-            <option
-              key={locale.code}
-              value={locale.code}
-            >
+            <option key={locale.code} value={locale.code}>
               {locale.label}
             </option>
           ))}
