@@ -29,7 +29,9 @@
     "gettingStartedShort": "Alusta",
     "proposeModule": "Paku moodulit",
     "memberHub": "Tööala",
-    "proposeModuleShort": "Paku"
+    "proposeModuleShort": "Paku",
+    "overview": "Ülevaade",
+    "console": "Konsool"
   },
   "hero": {
     "learnMore": "Lisateave",
@@ -187,7 +189,12 @@
     "redirectUriHint": "Registreeri see suunamise URI Google Cloud Console'is: {callbackUrl}",
     "hostMismatchHint": "Ava brauseris {expectedUrl} (praegu: {currentHost}). URL peab vastama AUTH_URL-le.",
     "errorRedirectUri": "Google'i suunamise URI ei ühti. Ava sait samal URL-il mis AUTH_URL ja registreeri allolev tagasiheli URI Google Cloud Console'is.",
-    "errorSignInWithGoogleFirst": "Logi esmalt sisse Google'iga, seejärel ühenda GitHub või LinkedIn jaotises Ühendused."
+    "errorSignInWithGoogleFirst": "Logi esmalt sisse Google'iga, seejärel ühenda GitHub või LinkedIn jaotises Ühendused.",
+    "consoleTitle": "Logi sisse konsooli avamiseks",
+    "consoleDesc": "Pärast sisselogimist jätkate ettevõtte Operator Console'i (Chat, Wire ja eelarve/tegelik).",
+    "consoleOverviewLink": "Ülevaade",
+    "consoleKeyHint": "Ettevõtte Google’i sisselogimine on peamine võti. PassKey on konsolli naasmiseks sellel seadmel.",
+    "consoleCommunityHome": "Community avaleht"
   },
   "common": {
     "backAbout": "← Teave",
@@ -425,7 +432,19 @@
     "opsConsoleHandoffForbidden": "Operator Console'i sisenemiseks on vaja saidi administraatorit või kinnitatud OOO sertifikaati.",
     "opsConsoleHandoffMisconfigured": "Operator Console'i ühendus pole seadistatud.",
     "opsConsoleHandoffNoEmail": "Operator Console'i avamiseks on vaja sisselogimise e-posti aadressi.",
-    "opsConsoleHandoffDomain": "Operator Console'i SSO on piiratud selle organisatsiooni sisselogimise e-posti domeeniga."
+    "opsConsoleHandoffDomain": "Operator Console'i SSO on piiratud selle organisatsiooni sisselogimise e-posti domeeniga.",
+    "opsConsoleHandoffNoEmailAction": "Täienda oma profiili",
+    "opsOpenConsole": "Avage konsool",
+    "opsOpenConsoleDesc": "Logige Community sisse ja avage ettevõtte Operator Console — Chat, Wire ja eelarve/tegelik samal hostil.",
+    "opsRunsTitle": "Käivituse olek",
+    "opsRunsDesc": "Töölaua vaade Operator Console'is — kanban plaani, agendi ja oleku järgi.",
+    "opsRunsConsole": "Avage käivituse olek",
+    "opsConsoleHandoffForbiddenAction": "Taotlege OOO sertifikaati",
+    "opsConsoleHandoffDomainAction": "Kontrollige sisselogimise e-posti",
+    "opsConsoleHandoffArchived": "Selle organisatsiooni Operator Console on arhiveeritud. SSO pole saadaval.",
+    "opsOperatorAdminTitle": "Operaatorite haldus",
+    "opsOperatorAdminDesc": "Kutsuge operaatorid, vaadake login_policy ja hallake registrit (ainult CEO/kinnitaja).",
+    "opsOperatorAdminLink": "Avage konto haldus"
   },
   "committeesPage": {
     "desc": "Üks komitee iga reegliimooduli kohta; standardkomitee haldab OrgOS Standardit.",
@@ -722,7 +741,14 @@
     "themeDarkHint": "Tume taust hämarasse keskkonda.",
     "themeSystem": "Süsteemi vaikesäte",
     "themeSystemHint": "Järgib selle seadme heledat/tumedat sätet.",
-    "appearanceNote": "Salvestatakse sellesse seadmesse ja rakendub kogu saidil."
+    "appearanceNote": "Salvestatakse sellesse seadmesse ja rakendub kogu saidil.",
+    "layerMailTitle": "OrgOS e-post",
+    "layerMailBody": "Ühendage Gmail, et ettevõtte Operator Console saaks saata kinnitatud kirju. Märgid jäävad ettevõtte tööruumi, mitte Communitysse.",
+    "layerMailAction": "Ühenda Gmail",
+    "layerMailNotShipped": "OrgOS e-posti ühendus pole selles Communitys veel lubatud.",
+    "layerMailNeedLink": "Avage operaatori CLI ühenduslink (mail setup gmail --community-link).",
+    "layerMailLinkedNotice": "Gmail on OrgOS e-posti jaoks ühendatud.",
+    "layerMailBindMissing": "See leht vajab operaatori ühenduslinki (üürnik ja nonce)."
   },
   "agentsPage": {
     "filterAll": "Kõik",
@@ -876,5 +902,25 @@
     "lifecycleLink": "Taotluse elutsükkel",
     "governanceLink": "← Valitsemine",
     "jurisdictionLink": "Õigusruumi register"
+  },
+  "consoleHandoff": {
+    "overview": "Ülevaade",
+    "forbiddenAction": "Taotle sertifitseerimist",
+    "domainAction": "Muuda profiili",
+    "noEmailAction": "Muuda profiili",
+    "title": "Konsooli ei saa avada",
+    "retry": "Proovi Console uuesti",
+    "communityHome": "Community avaleht",
+    "myPage": "Minu leht",
+    "forbiddenTitle": "Vajalik on operaatori juurdepääs",
+    "forbiddenBody": "Community konto on sisse logitud, kuid ettevõtte Operator Console’i avamiseks on vaja kinnitatud Steward Operator (või OOO) sertifikaati või saidi administraatori rolli.",
+    "domainTitle": "Vajalik on ettevõtte e-post",
+    "domainBody": "Operator Console’i sisselogimine on piiratud ettevõtte deklareeritud e-posti domeeniga. Uuendage peamist e-posti või paluge CEO-l sisselogimise domeenid seadistada.",
+    "noEmailTitle": "E-post puudub",
+    "noEmailBody": "Operator Console’i avamiseks on vaja kinnitatud e-posti. Lisage e-post profiilile.",
+    "misconfiguredTitle": "Console’i ülekanne pole seadistatud",
+    "misconfiguredBody": "Community ei jõua veel Operator Console’ini. Paluge administraatoril seadistada OPERATOR_CONSOLE_HANDOFF_URL ja OIDC saladused.",
+    "archivedTitle": "Organisatsioon on arhiveeritud",
+    "archivedBody": "See tenant on arhiveeritud. Operator Console’i sisselogimine pole saadaval."
   }
 }

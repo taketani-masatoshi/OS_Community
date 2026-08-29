@@ -53,5 +53,8 @@
   "GITHUB_APP_NOT_CONFIGURED": "GitHub App が設定されていません",
   "GITHUB_INSTALL_URL_UNAVAILABLE": "インストール URL を取得できません",
   "WEBHOOK_INVALID_SIGNATURE": "署名が無効です",
-  "ACADEMY_UPSTREAM_ERROR": "Academy サービスエラー"
+  "ACADEMY_UPSTREAM_ERROR": "Academy サービスエラー",
+  "FEATURE_NOT_SHIPPED": "この機能はまだ有効になっていません",
+  "ORGOS_MAIL_NOT_CONFIGURED": "OrgOS メール用の Gmail OAuth が設定されていません",
+  "STEWARD_UNAVAILABLE": "会社の Operator ワークスペースに接続できませんでした"
 }

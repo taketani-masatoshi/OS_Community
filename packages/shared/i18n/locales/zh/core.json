@@ -29,7 +29,9 @@
     "gettingStartedShort": "开始",
     "proposeModule": "提议模块",
     "memberHub": "工作区",
-    "proposeModuleShort": "提议"
+    "proposeModuleShort": "提议",
+    "overview": "概览",
+    "console": "控制台"
   },
   "hero": {
     "learnMore": "了解更多",
@@ -187,7 +189,12 @@
     "redirectUriHint": "在 Google Cloud Console 中注册此重定向 URI：{callbackUrl}",
     "hostMismatchHint": "在浏览器中打开 {expectedUrl}（当前：{currentHost}）。URL 必须与 AUTH_URL 一致。",
     "errorRedirectUri": "Google 重定向 URI 不匹配。请在与 AUTH_URL 相同的 URL 打开站点，并在 Google Cloud Console 中注册下方显示的回调 URI。",
-    "errorSignInWithGoogleFirst": "请先使用 Google 登录，然后在「连接」中关联 GitHub 或 LinkedIn。"
+    "errorSignInWithGoogleFirst": "请先使用 Google 登录，然后在「连接」中关联 GitHub 或 LinkedIn。",
+    "consoleTitle": "登录以打开控制台",
+    "consoleDesc": "登录后将进入公司 Operator Console（Chat、Wire 与预实）。",
+    "consoleOverviewLink": "概览",
+    "consoleKeyHint": "公司 Google 登录是本钥。PassKey 用于在本设备返回控制台。",
+    "consoleCommunityHome": "Community 首页"
   },
   "common": {
     "backAbout": "← 关于",
@@ -425,7 +432,19 @@
     "opsConsoleHandoffForbidden": "进入 Operator Console 需要站点管理员或已批准的 OOO 认证。",
     "opsConsoleHandoffMisconfigured": "Operator Console 对接尚未配置。",
     "opsConsoleHandoffNoEmail": "打开 Operator Console 需要登录邮箱。",
-    "opsConsoleHandoffDomain": "Operator Console 的 SSO 仅限本组织的登录邮箱域名。"
+    "opsConsoleHandoffDomain": "Operator Console 的 SSO 仅限本组织的登录邮箱域名。",
+    "opsConsoleHandoffNoEmailAction": "完善你的个人资料",
+    "opsOpenConsole": "打开控制台",
+    "opsOpenConsoleDesc": "通过 Community 登录并打开公司 Operator Console — Chat、Wire 与预实同一主机。",
+    "opsRunsTitle": "运行状态",
+    "opsRunsDesc": "Operator Console 上的工作看板 — 按计划、代理与状态分列。",
+    "opsRunsConsole": "打开运行状态",
+    "opsConsoleHandoffForbiddenAction": "申请 OOO 认证",
+    "opsConsoleHandoffDomainAction": "检查登录邮箱",
+    "opsConsoleHandoffArchived": "该组织的 Operator Console 已归档，无法 SSO。",
+    "opsOperatorAdminTitle": "操作员管理",
+    "opsOperatorAdminDesc": "邀请常勤操作员、审查登录策略并管理注册表（仅 CEO/审批者）。",
+    "opsOperatorAdminLink": "打开账户管理"
   },
   "committeesPage": {
     "desc": "每个人类可读的规则模块设有委员会；标准委员会统管 OrgOS Standard。",
@@ -722,7 +741,14 @@
     "themeDarkHint": "适合弱光环境的深色背景。",
     "themeSystem": "系统默认",
     "themeSystemHint": "跟随本设备的浅色/深色设置。",
-    "appearanceNote": "保存在本设备，并应用于整个站点。"
+    "appearanceNote": "保存在本设备，并应用于整个站点。",
+    "layerMailTitle": "OrgOS 邮件",
+    "layerMailBody": "连接 Gmail，以便公司 Operator Console 发送已批准的对外邮件。令牌保存在公司工作区，不会留在 Community。",
+    "layerMailAction": "连接 Gmail",
+    "layerMailNotShipped": "此 Community 尚未启用 OrgOS 邮件连接。",
+    "layerMailNeedLink": "请打开运营 CLI 提供的连接链接（mail setup gmail --community-link）。",
+    "layerMailLinkedNotice": "已为 OrgOS 邮件连接 Gmail。",
+    "layerMailBindMissing": "此页面需要运营方提供的连接链接（租户与 nonce）。"
   },
   "agentsPage": {
     "filterAll": "全部",
@@ -876,5 +902,25 @@
     "lifecycleLink": "申请生命周期",
     "governanceLink": "← 治理",
     "jurisdictionLink": "法域注册表"
+  },
+  "consoleHandoff": {
+    "overview": "概览",
+    "forbiddenAction": "申请资格认证",
+    "domainAction": "编辑资料",
+    "noEmailAction": "编辑资料",
+    "title": "无法打开控制台",
+    "retry": "再次打开 Console",
+    "communityHome": "Community 首页",
+    "myPage": "我的页面",
+    "forbiddenTitle": "需要操作员权限",
+    "forbiddenBody": "您已登录 Community，但打开公司 Operator Console 需要已批准的 Steward Operator（或 OOO）认证，或站点管理员角色。",
+    "domainTitle": "需要公司邮箱",
+    "domainBody": "Operator Console 登录仅限公司声明的邮箱域名。请更新主邮箱，或请 CEO 设置登录域名。",
+    "noEmailTitle": "缺少邮箱",
+    "noEmailBody": "打开 Operator Console 需要已验证邮箱。请在个人资料中添加邮箱。",
+    "misconfiguredTitle": "未配置控制台交接",
+    "misconfiguredBody": "Community 尚无法连接 Operator Console。请管理员设置 OPERATOR_CONSOLE_HANDOFF_URL 和 OIDC 密钥。",
+    "archivedTitle": "组织已归档",
+    "archivedBody": "此租户已归档。无法登录 Operator Console。"
   }
 }

@@ -29,7 +29,9 @@
     "gettingStartedShort": "Começar",
     "proposeModule": "Propor um módulo",
     "memberHub": "Espaço de trabalho",
-    "proposeModuleShort": "Propor"
+    "proposeModuleShort": "Propor",
+    "overview": "Visão geral",
+    "console": "Consola"
   },
   "hero": {
     "learnMore": "Saiba Mais",
@@ -187,7 +189,12 @@
     "redirectUriHint": "Registre este URI de redirecionamento no Google Cloud Console: {callbackUrl}",
     "hostMismatchHint": "Abra {expectedUrl} no navegador (você está em {currentHost}). A URL deve corresponder a AUTH_URL.",
     "errorRedirectUri": "URI de redirecionamento do Google incompatível. Abra o site na mesma URL que AUTH_URL e registre o URI de callback abaixo no Google Cloud Console.",
-    "errorSignInWithGoogleFirst": "Entre primeiro com Google e conecte GitHub ou LinkedIn em Conexões."
+    "errorSignInWithGoogleFirst": "Entre primeiro com Google e conecte GitHub ou LinkedIn em Conexões.",
+    "consoleTitle": "Entrar para abrir o console",
+    "consoleDesc": "Após entrar, você continuará para o Operator Console da empresa (Chat, Wire e orçamento/realizado).",
+    "consoleOverviewLink": "Visão geral",
+    "consoleKeyHint": "O login Google da empresa é a chave principal. PassKey serve para voltar ao console neste dispositivo.",
+    "consoleCommunityHome": "Início da Community"
   },
   "common": {
     "backAbout": "← Sobre",
@@ -425,7 +432,19 @@
     "opsConsoleHandoffForbidden": "O Operator Console exige um administrador do site ou uma certificação OOO aprovada.",
     "opsConsoleHandoffMisconfigured": "A ligação do Operator Console não está configurada.",
     "opsConsoleHandoffNoEmail": "É necessário um e-mail de início de sessão para abrir o Operator Console.",
-    "opsConsoleHandoffDomain": "O SSO do Operator Console está limitado ao domínio de e-mail de início de sessão desta organização."
+    "opsConsoleHandoffDomain": "O SSO do Operator Console está limitado ao domínio de e-mail de início de sessão desta organização.",
+    "opsConsoleHandoffNoEmailAction": "Complete o seu perfil",
+    "opsOpenConsole": "Abrir console",
+    "opsOpenConsoleDesc": "Inicie sessão na Community e abra o Operator Console da empresa — Chat, Wire e orçamento/realizado no mesmo host.",
+    "opsRunsTitle": "Estado de execução",
+    "opsRunsDesc": "Quadro de trabalho no Operator Console — kanban por plano, agente e estado.",
+    "opsRunsConsole": "Abrir estado de execução",
+    "opsConsoleHandoffForbiddenAction": "Candidate-se à certificação OOO",
+    "opsConsoleHandoffDomainAction": "Verificar e-mail de entrada",
+    "opsConsoleHandoffArchived": "O Operator Console desta organização está arquivado. SSO indisponível.",
+    "opsOperatorAdminTitle": "Gestão de operadores",
+    "opsOperatorAdminDesc": "Convide operadores, revise login_policy e gerencie o registro (apenas CEO/aprovador).",
+    "opsOperatorAdminLink": "Abrir gestão de conta"
   },
   "committeesPage": {
     "desc": "Um comitê por módulo de regras; o Comitê Padrão governa o OrgOS Standard.",
@@ -722,7 +741,14 @@
     "themeDarkHint": "Fundo escuro para ambientes com pouca luz.",
     "themeSystem": "Padrão do sistema",
     "themeSystemHint": "Segue o claro/escuro deste dispositivo.",
-    "appearanceNote": "Guardado neste dispositivo e aplicado em todo o sítio."
+    "appearanceNote": "Guardado neste dispositivo e aplicado em todo o sítio.",
+    "layerMailTitle": "Correio OrgOS",
+    "layerMailBody": "Ligue o Gmail para o Operator Console da empresa enviar correspondência aprovada. Os tokens ficam no workspace da empresa, não na Community.",
+    "layerMailAction": "Ligar Gmail",
+    "layerMailNotShipped": "A ligação de correio OrgOS ainda não está ativada nesta Community.",
+    "layerMailNeedLink": "Abra o link de ligação do CLI do operador (mail setup gmail --community-link).",
+    "layerMailLinkedNotice": "Gmail ligado para o correio OrgOS.",
+    "layerMailBindMissing": "Esta página precisa do link de ligação do operador (inquilino e nonce)."
   },
   "agentsPage": {
     "filterAll": "Todos",
@@ -876,5 +902,25 @@
     "lifecycleLink": "Ciclo de vida do pedido",
     "governanceLink": "← Governação",
     "jurisdictionLink": "Registo de jurisdição"
+  },
+  "consoleHandoff": {
+    "overview": "Visão geral",
+    "forbiddenAction": "Solicitar certificação",
+    "domainAction": "Editar perfil",
+    "noEmailAction": "Editar perfil",
+    "title": "Não é possível abrir o console",
+    "retry": "Tentar o Console novamente",
+    "communityHome": "Início da Community",
+    "myPage": "Minha página",
+    "forbiddenTitle": "Acesso de operador necessário",
+    "forbiddenBody": "Sua conta Community está autenticada, mas abrir o Operator Console da empresa exige certificação Steward Operator (ou OOO) aprovada, ou papel de administrador do site.",
+    "domainTitle": "E-mail da empresa necessário",
+    "domainBody": "O login no Operator Console está limitado ao domínio de e-mail declarado da empresa. Atualize o e-mail principal ou peça ao CEO para definir os domínios de login.",
+    "noEmailTitle": "E-mail ausente",
+    "noEmailBody": "É necessário um e-mail verificado para abrir o Operator Console. Adicione um e-mail no perfil.",
+    "misconfiguredTitle": "A transferência do Console não está configurada",
+    "misconfiguredBody": "A Community ainda não alcança o Operator Console. Peça a um administrador para definir OPERATOR_CONSOLE_HANDOFF_URL e os segredos OIDC.",
+    "archivedTitle": "Organização arquivada",
+    "archivedBody": "Este tenant está arquivado. O login no Operator Console não está disponível."
   }
 }

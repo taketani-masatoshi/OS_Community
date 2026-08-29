@@ -53,5 +53,8 @@
   "GITHUB_APP_NOT_CONFIGURED": "GitHub App не настроен",
   "GITHUB_INSTALL_URL_UNAVAILABLE": "URL установки недоступен",
   "WEBHOOK_INVALID_SIGNATURE": "Недействительная подпись",
-  "ACADEMY_UPSTREAM_ERROR": "Ошибка сервиса Academy"
+  "ACADEMY_UPSTREAM_ERROR": "Ошибка сервиса Academy",
+  "FEATURE_NOT_SHIPPED": "Эта функция ещё не включена",
+  "ORGOS_MAIL_NOT_CONFIGURED": "Gmail OAuth для почты OrgOS не настроен",
+  "STEWARD_UNAVAILABLE": "Не удалось связаться с Operator-пространством компании"
 }

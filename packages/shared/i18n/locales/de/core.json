@@ -29,7 +29,9 @@
     "gettingStartedShort": "Starten",
     "proposeModule": "Modul vorschlagen",
     "memberHub": "Arbeitsbereich",
-    "proposeModuleShort": "Vorschlagen"
+    "proposeModuleShort": "Vorschlagen",
+    "overview": "Überblick",
+    "console": "Konsole"
   },
   "hero": {
     "learnMore": "Mehr erfahren",
@@ -187,7 +189,12 @@
     "redirectUriHint": "Registrieren Sie diese Redirect-URI in der Google Cloud Console: {callbackUrl}",
     "hostMismatchHint": "Öffnen Sie {expectedUrl} im Browser (Sie sind auf {currentHost}). Die URL muss AUTH_URL entsprechen.",
     "errorRedirectUri": "Google-Redirect-URI stimmt nicht überein. Öffnen Sie die Website unter derselben URL wie AUTH_URL und registrieren Sie die unten gezeigte Callback-URI in der Google Cloud Console.",
-    "errorSignInWithGoogleFirst": "Melden Sie sich zuerst mit Google an und verbinden Sie GitHub oder LinkedIn unter Verbindungen."
+    "errorSignInWithGoogleFirst": "Melden Sie sich zuerst mit Google an und verbinden Sie GitHub oder LinkedIn unter Verbindungen.",
+    "consoleTitle": "Anmelden, um die Konsole zu öffnen",
+    "consoleDesc": "Nach der Anmeldung gelangen Sie zur Operator Console Ihres Unternehmens (Chat, Wire und Plan/Ist).",
+    "consoleOverviewLink": "Überblick",
+    "consoleKeyHint": "Die Unternehmens-Google-Anmeldung ist der Primärschlüssel. PassKey dient der Rückkehr zur Konsole auf diesem Gerät.",
+    "consoleCommunityHome": "Community-Startseite"
   },
   "common": {
     "backAbout": "← Über uns",
@@ -425,7 +432,19 @@
     "opsConsoleHandoffForbidden": "Operator Console erfordert einen Site-Administrator oder eine genehmigte OOO-Zertifizierung.",
     "opsConsoleHandoffMisconfigured": "Die Operator-Console-Anbindung ist nicht konfiguriert.",
     "opsConsoleHandoffNoEmail": "Zum Öffnen der Operator Console ist eine Anmelde-E-Mail erforderlich.",
-    "opsConsoleHandoffDomain": "Das SSO der Operator Console ist auf die Anmelde-E-Mail-Domain dieser Organisation beschränkt."
+    "opsConsoleHandoffDomain": "Das SSO der Operator Console ist auf die Anmelde-E-Mail-Domain dieser Organisation beschränkt.",
+    "opsConsoleHandoffNoEmailAction": "Dein Profil vervollständigen",
+    "opsOpenConsole": "Konsole öffnen",
+    "opsOpenConsoleDesc": "Melden Sie sich bei Community an und öffnen Sie den Operator Console Ihres Unternehmens — Chat, Wire und Plan/Ist auf einem Host.",
+    "opsRunsTitle": "Ausführungsstatus",
+    "opsRunsDesc": "Arbeitsboard im Operator Console — Kanban nach Plan, Agent und Status.",
+    "opsRunsConsole": "Ausführungsstatus öffnen",
+    "opsConsoleHandoffForbiddenAction": "OOO-Zertifizierung beantragen",
+    "opsConsoleHandoffDomainAction": "Anmelde-E-Mail prüfen",
+    "opsConsoleHandoffArchived": "Der Operator Console dieser Organisation ist archiviert. SSO nicht verfügbar.",
+    "opsOperatorAdminTitle": "Operator-Verwaltung",
+    "opsOperatorAdminDesc": "Operatoren einladen, login_policy prüfen und Registry verwalten (nur CEO/Genehmiger).",
+    "opsOperatorAdminLink": "Account-Verwaltung öffnen"
   },
   "committeesPage": {
     "desc": "Ein Komitee pro Regelmodul; das Standard-Komitee verwaltet OrgOS Standard.",
@@ -722,7 +741,14 @@
     "themeDarkHint": "Dunkler Hintergrund für wenig Licht.",
     "themeSystem": "Systemstandard",
     "themeSystemHint": "Folgt der Hell-/Dunkel-Einstellung dieses Geräts.",
-    "appearanceNote": "Wird auf diesem Gerät gespeichert und gilt für die ganze Website."
+    "appearanceNote": "Wird auf diesem Gerät gespeichert und gilt für die ganze Website.",
+    "layerMailTitle": "OrgOS-Mail",
+    "layerMailBody": "Verbinden Sie Gmail, damit die Operator Console der Firma genehmigte Korrespondenz senden kann. Token bleiben im Firmen-Workspace, nicht in der Community.",
+    "layerMailAction": "Gmail verbinden",
+    "layerMailNotShipped": "Die OrgOS-Mail-Verbindung ist in dieser Community noch nicht aktiviert.",
+    "layerMailNeedLink": "Öffnen Sie den Verbindungslink aus der Operator-CLI (mail setup gmail --community-link).",
+    "layerMailLinkedNotice": "Gmail für OrgOS-Mail verbunden.",
+    "layerMailBindMissing": "Diese Seite braucht den Verbindungslink des Operators (Mandant und Nonce)."
   },
   "agentsPage": {
     "filterAll": "Alle",
@@ -876,5 +902,25 @@
     "lifecycleLink": "Antragslebenszyklus",
     "governanceLink": "← Steuerung",
     "jurisdictionLink": "Rechtsraum-Register"
+  },
+  "consoleHandoff": {
+    "overview": "Überblick",
+    "forbiddenAction": "Zertifizierung beantragen",
+    "domainAction": "Profil bearbeiten",
+    "noEmailAction": "Profil bearbeiten",
+    "title": "Konsole kann nicht geöffnet werden",
+    "retry": "Console erneut versuchen",
+    "communityHome": "Community-Startseite",
+    "myPage": "Meine Seite",
+    "forbiddenTitle": "Operator-Zugang erforderlich",
+    "forbiddenBody": "Ihr Community-Konto ist angemeldet, aber zum Öffnen der Unternehmens-Operator-Console ist eine genehmigte Steward-Operator- (oder OOO-) Zertifizierung oder eine Site-Admin-Rolle erforderlich.",
+    "domainTitle": "Unternehmens-E-Mail erforderlich",
+    "domainBody": "Die Anmeldung an der Operator Console ist auf die deklarierte E-Mail-Domain Ihres Unternehmens beschränkt. Aktualisieren Sie Ihre Primär-E-Mail oder bitten Sie den CEO, Login-Domains festzulegen.",
+    "noEmailTitle": "E-Mail fehlt",
+    "noEmailBody": "Zum Öffnen der Operator Console ist eine verifizierte E-Mail erforderlich. Fügen Sie eine E-Mail in Ihrem Profil hinzu.",
+    "misconfiguredTitle": "Console-Übergabe ist nicht konfiguriert",
+    "misconfiguredBody": "Community erreicht die Operator Console noch nicht. Bitten Sie einen Administrator, OPERATOR_CONSOLE_HANDOFF_URL und OIDC-Geheimnisse zu setzen.",
+    "archivedTitle": "Organisation archiviert",
+    "archivedBody": "Dieser Tenant ist archiviert. Die Anmeldung an der Operator Console ist nicht verfügbar."
   }
 }

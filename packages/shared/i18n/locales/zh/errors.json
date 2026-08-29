@@ -53,5 +53,8 @@
   "GITHUB_APP_NOT_CONFIGURED": "GitHub App 未配置",
   "GITHUB_INSTALL_URL_UNAVAILABLE": "安装 URL 不可用",
   "WEBHOOK_INVALID_SIGNATURE": "签名无效",
-  "ACADEMY_UPSTREAM_ERROR": "学院服务错误"
+  "ACADEMY_UPSTREAM_ERROR": "学院服务错误",
+  "FEATURE_NOT_SHIPPED": "此功能尚未启用",
+  "ORGOS_MAIL_NOT_CONFIGURED": "尚未配置 OrgOS 邮件的 Gmail OAuth",
+  "STEWARD_UNAVAILABLE": "无法连接到公司 Operator 工作区"
 }

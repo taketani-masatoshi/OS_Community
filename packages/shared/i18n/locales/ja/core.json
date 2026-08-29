@@ -30,7 +30,9 @@
     "myPage": "マイページ",
     "memberHub": "ワークスペース",
     "proposeModule": "モジュールを提案",
-    "proposeModuleShort": "提案"
+    "proposeModuleShort": "提案",
+    "overview": "概要",
+    "console": "コンソール"
   },
   "hero": {
     "learnMore": "くわしく",
@@ -348,6 +350,13 @@
     "githubConnect": "GitHub アカウントを連携",
     "githubConnectError": "GitHub を連携できませんでした。Connections から再試行してください。",
     "githubLinkedNotice": "GitHub アカウントを連携しました。",
+    "layerMailTitle": "OrgOS メール",
+    "layerMailBody": "会社の Operator Console から承認済みの対外メールを送るために Gmail を連携します。トークンは Community ではなく会社ワークスペースに保存されます。",
+    "layerMailAction": "Gmail を連携",
+    "layerMailNotShipped": "この Community では OrgOS メール連携はまだ有効ではありません。",
+    "layerMailNeedLink": "オペレーター CLI（mail setup gmail --community-link）の連携 URL を開いてください。",
+    "layerMailLinkedNotice": "OrgOS メール用に Gmail を連携しました。",
+    "layerMailBindMissing": "このページにはオペレーターが発行した連携リンク（テナントと nonce）が必要です。",
     "organization": "所属組織",
     "organizationDesc": "勤務先・運営法人を日本の法人番号で申告します。管理者が確認します。",
     "organizationOperatorNote": "OpenOrgOS Operator（OOO）認定の申請前に必要です:",
@@ -378,6 +387,8 @@
   },
   "login": {
     "title": "ログイン",
+    "consoleTitle": "会社コンソールを開くためにサインイン",
+    "consoleDesc": "サインイン後、会社の Operator Console（Chat・Wire・予実）へ進みます。",
     "desc": "Google アカウント（OpenOrgOS ログイン ID）でサインインします。毎回アカウント選択が表示されます。Community からサインアウトした直後は、Google 側でパスワード再入力を求められることがあります。GitHub / LinkedIn はログイン後に Connections から連携できます。",
     "signInGoogle": "Google でログイン",
     "signInGithub": "GitHub でログイン",
@@ -398,7 +409,10 @@
     "errorDefault": "ログインに失敗しました。もう一度お試しください。",
     "errorSessionInvalid": "セッションの有効期限が切れました。再度ログインしてください。",
     "errorDatabaseUnavailable": "サインインは現在ご利用いただけません。しばらくしてから再度お試しください。",
-    "githubNotConfigured": "GitHub 連携は現在ご利用いただけません。"
+    "githubNotConfigured": "GitHub 連携は現在ご利用いただけません。",
+    "consoleKeyHint": "会社 Google サインインが本鍵です。PassKey はこの端末からコンソールへ戻るための第2鍵です。",
+    "consoleOverviewLink": "概要",
+    "consoleCommunityHome": "Community ホーム"
   },
   "common": {
     "joinCommunity": "コミュニティに参加",
@@ -571,6 +585,8 @@
     "opsEmpty": "まだ OOO の組織スコープがありません。所属を申告し、Operator 認定を申請してください。",
     "opsClaimOrg": "所属組織を申告",
     "opsApplyOoo": "OOO を申請",
+    "opsOpenConsole": "コンソールを開く",
+    "opsOpenConsoleDesc": "Community でサインインし、会社の Operator Console（Chat・Wire・予実）を開きます。",
     "opsOrgLabel": "法人番号",
     "opsCertLabel": "認定番号",
     "opsExpiresLabel": "有効期限",
@@ -596,9 +612,12 @@
     "opsAgentGuide": "Module / Agent ガイド",
     "opsConsoleOffline": "OrgOS Operator Console に現在接続できません。下の Community ドキュメントを使うか、このマシンで Console を起動してください。",
     "opsConsoleHandoffForbidden": "Operator Console に入るにはサイト管理者または OOO 認定が必要です。",
+    "opsConsoleHandoffForbiddenAction": "OOO 認定を申請",
     "opsConsoleHandoffMisconfigured": "Operator Console 連携の設定が不足しています。",
     "opsConsoleHandoffNoEmail": "Console 連携にはメールアドレスが必要です。",
+    "opsConsoleHandoffNoEmailAction": "プロフィールを完成する",
     "opsConsoleHandoffDomain": "Operator Console の SSO は、この組織のログインメールドメインに限られます。",
+    "opsConsoleHandoffDomainAction": "サインインメールを確認",
     "opsConsoleHandoffArchived": "この組織の Operator Console は archived 状態のため SSO できません。",
     "opsOperatorAdminTitle": "オペレーター管理",
     "opsOperatorAdminDesc": "常勤オペレーターの招待・login_policy 確認・名簿管理（CEO / 承認者のみ）。",
@@ -925,5 +944,25 @@
         "description": "日常ワークフロー、引き継ぎ、運用上のフォロースルーを担います。"
       }
     }
+  },
+  "consoleHandoff": {
+    "title": "コンソールを開けません",
+    "retry": "もう一度 Console を開く",
+    "overview": "概要",
+    "communityHome": "Community ホーム",
+    "forbiddenTitle": "オペレーター権限が必要です",
+    "forbiddenBody": "Community にはサインイン済みですが、会社の Operator Console を開くには承認済みの Steward Operator（または OOO）認定、もしくはサイト管理者ロールが必要です。",
+    "forbiddenAction": "資格認定を申請",
+    "domainTitle": "会社メールが必要です",
+    "domainBody": "Operator Console のサインインは、会社が宣言したメールドメインに限られます。主メールを更新するか、CEO にログインドメイン設定を依頼してください。",
+    "domainAction": "プロフィールを編集",
+    "noEmailTitle": "メールがありません",
+    "noEmailBody": "Operator Console を開くには確認済みメールが必要です。プロフィールにメールを追加してください。",
+    "noEmailAction": "プロフィールを編集",
+    "misconfiguredTitle": "コンソール連携が未設定です",
+    "misconfiguredBody": "Community から Operator Console にまだ接続できません。管理者に OPERATOR_CONSOLE_HANDOFF_URL と OIDC シークレットの設定を依頼してください。",
+    "archivedTitle": "組織はアーカイブ済みです",
+    "archivedBody": "このテナントはアーカイブ済みです。Operator Console へのサインインは利用できません。",
+    "myPage": "マイページ"
   }
 }

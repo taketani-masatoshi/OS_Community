@@ -53,5 +53,8 @@
   "GITHUB_APP_NOT_CONFIGURED": "GitHub App pole seadistatud",
   "GITHUB_INSTALL_URL_UNAVAILABLE": "Installi URL pole saadaval",
   "WEBHOOK_INVALID_SIGNATURE": "Vigane allkiri",
-  "ACADEMY_UPSTREAM_ERROR": "Akadeemia teenuse viga"
+  "ACADEMY_UPSTREAM_ERROR": "Akadeemia teenuse viga",
+  "FEATURE_NOT_SHIPPED": "See funktsioon pole veel lubatud",
+  "ORGOS_MAIL_NOT_CONFIGURED": "OrgOS e-posti Gmail OAuth pole seadistatud",
+  "STEWARD_UNAVAILABLE": "Ettevõtte Operatori tööruumile ei õnnestunud ühenduda"
 }

@@ -29,7 +29,9 @@
     "gettingStartedShort": "Начать",
     "proposeModule": "Предложить модуль",
     "memberHub": "Рабочая область",
-    "proposeModuleShort": "Предложить"
+    "proposeModuleShort": "Предложить",
+    "overview": "Обзор",
+    "console": "Консоль"
   },
   "hero": {
     "learnMore": "Узнать больше",
@@ -187,7 +189,12 @@
     "redirectUriHint": "Зарегистрируйте этот URI перенаправления в Google Cloud Console: {callbackUrl}",
     "hostMismatchHint": "Откройте {expectedUrl} в браузере (сейчас: {currentHost}). URL должен совпадать с AUTH_URL.",
     "errorRedirectUri": "URI перенаправления Google не совпадает. Откройте сайт по тому же URL, что и AUTH_URL, и зарегистрируйте callback URI ниже в Google Cloud Console.",
-    "errorSignInWithGoogleFirst": "Сначала войдите через Google, затем подключите GitHub или LinkedIn в разделе Подключения."
+    "errorSignInWithGoogleFirst": "Сначала войдите через Google, затем подключите GitHub или LinkedIn в разделе Подключения.",
+    "consoleTitle": "Войти, чтобы открыть консоль",
+    "consoleDesc": "После входа вы перейдёте в Operator Console компании (Chat, Wire и план/факт).",
+    "consoleOverviewLink": "Обзор",
+    "consoleKeyHint": "Вход через корпоративный Google — основной ключ. PassKey нужен для возврата в консоль на этом устройстве.",
+    "consoleCommunityHome": "Главная Community"
   },
   "common": {
     "backAbout": "← О нас",
@@ -425,7 +432,19 @@
     "opsConsoleHandoffForbidden": "Для входа в Operator Console нужны права администратора сайта или одобренная сертификация OOO.",
     "opsConsoleHandoffMisconfigured": "Связка Operator Console не настроена.",
     "opsConsoleHandoffNoEmail": "Для открытия Operator Console нужен адрес электронной почты входа.",
-    "opsConsoleHandoffDomain": "SSO Operator Console ограничен доменом корпоративной почты этой организации."
+    "opsConsoleHandoffDomain": "SSO Operator Console ограничен доменом корпоративной почты этой организации.",
+    "opsConsoleHandoffNoEmailAction": "Заполните свой профиль",
+    "opsOpenConsole": "Открыть консоль",
+    "opsOpenConsoleDesc": "Войдите через Community и откройте Operator Console компании — Chat, Wire и план/факт на одном хосте.",
+    "opsRunsTitle": "Статус выполнения",
+    "opsRunsDesc": "Рабочая панель в Operator Console — kanban по плану, агенту и статусу.",
+    "opsRunsConsole": "Открыть статус выполнения",
+    "opsConsoleHandoffForbiddenAction": "Подать на сертификацию OOO",
+    "opsConsoleHandoffDomainAction": "Проверить email входа",
+    "opsConsoleHandoffArchived": "Operator Console этой организации архивирован. SSO недоступен.",
+    "opsOperatorAdminTitle": "Управление операторами",
+    "opsOperatorAdminDesc": "Пригласите операторов, проверьте login_policy и управляйте реестром (только CEO/утверждающий).",
+    "opsOperatorAdminLink": "Открыть управление аккаунтом"
   },
   "committeesPage": {
     "desc": "Комитет на каждый модуль правил; Стандартный комитет управляет OrgOS Standard.",
@@ -722,7 +741,14 @@
     "themeDarkHint": "Тёмный фон для слабого освещения.",
     "themeSystem": "Как в системе",
     "themeSystemHint": "Следует светлой/тёмной теме этого устройства.",
-    "appearanceNote": "Сохраняется на этом устройстве и применяется ко всему сайту."
+    "appearanceNote": "Сохраняется на этом устройстве и применяется ко всему сайту.",
+    "layerMailTitle": "Почта OrgOS",
+    "layerMailBody": "Подключите Gmail, чтобы Operator Console компании отправлял одобренную корреспонденцию. Токены остаются в рабочем пространстве компании, не в Community.",
+    "layerMailAction": "Подключить Gmail",
+    "layerMailNotShipped": "Подключение почты OrgOS в этом Community ещё не включено.",
+    "layerMailNeedLink": "Откройте ссылку подключения из CLI оператора (mail setup gmail --community-link).",
+    "layerMailLinkedNotice": "Gmail подключён для почты OrgOS.",
+    "layerMailBindMissing": "Этой странице нужна ссылка подключения от оператора (тенант и nonce)."
   },
   "agentsPage": {
     "filterAll": "Все",
@@ -876,5 +902,25 @@
     "lifecycleLink": "Жизненный цикл заявки",
     "governanceLink": "← Управление",
     "jurisdictionLink": "Реестр юрисдикций"
+  },
+  "consoleHandoff": {
+    "overview": "Обзор",
+    "forbiddenAction": "Подать заявку на сертификацию",
+    "domainAction": "Редактировать профиль",
+    "noEmailAction": "Редактировать профиль",
+    "title": "Не удалось открыть консоль",
+    "retry": "Открыть Console снова",
+    "communityHome": "Главная Community",
+    "myPage": "Моя страница",
+    "forbiddenTitle": "Требуется доступ оператора",
+    "forbiddenBody": "Вы вошли в Community, но для открытия Operator Console компании нужна одобренная сертификация Steward Operator (или OOO) либо роль администратора сайта.",
+    "domainTitle": "Требуется корпоративный email",
+    "domainBody": "Вход в Operator Console ограничен объявленным почтовым доменом компании. Обновите основной email или попросите CEO задать домены входа.",
+    "noEmailTitle": "Нет email",
+    "noEmailBody": "Для открытия Operator Console нужен подтверждённый email. Добавьте email в профиле.",
+    "misconfiguredTitle": "Передача в Console не настроена",
+    "misconfiguredBody": "Community пока не может достучаться до Operator Console. Попросите администратора задать OPERATOR_CONSOLE_HANDOFF_URL и секреты OIDC.",
+    "archivedTitle": "Организация в архиве",
+    "archivedBody": "Этот тенант в архиве. Вход в Operator Console недоступен."
   }
 }

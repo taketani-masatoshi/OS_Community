@@ -33,6 +33,8 @@ export type Messages = {
     memberHub: string;
     proposeModule: string;
     proposeModuleShort: string;
+    overview: string;
+    console: string;
   };
   hero: {
     learnMore: string;
@@ -247,6 +249,13 @@ export type Messages = {
     githubConnect: string;
     githubConnectError: string;
     githubLinkedNotice: string;
+    layerMailTitle: string;
+    layerMailBody: string;
+    layerMailAction: string;
+    layerMailNotShipped: string;
+    layerMailNeedLink: string;
+    layerMailLinkedNotice: string;
+    layerMailBindMissing: string;
     organization: string;
     organizationDesc: string;
     organizationOperatorNote: string;
@@ -267,14 +276,25 @@ export type Messages = {
   };
   login: {
     title: string;
+    consoleTitle: string;
+    consoleDesc: string;
+    consoleKeyHint: string;
+    consoleOverviewLink: string;
+    consoleCommunityHome: string;
     desc: string;
     signInGoogle: string;
     signInGithub: string;
     signInLinkedIn: string;
     signInCta: string;
+    connectionsHint: string;
+    connectionsLink: string;
+    redirectUriHint: string;
+    hostMismatchHint: string;
     providersNotConfigured: string;
     errorConfiguration: string;
     errorOAuthCallback: string;
+    errorRedirectUri: string;
+    errorSignInWithGoogleFirst: string;
     errorAccessDenied: string;
     errorAccountNotLinked: string;
     errorAccountSuspended: string;
@@ -282,6 +302,26 @@ export type Messages = {
     errorDatabaseUnavailable: string;
     errorDefault: string;
     githubNotConfigured: string;
+  };
+  consoleHandoff: {
+    title: string;
+    retry: string;
+    overview: string;
+    communityHome: string;
+    myPage: string;
+    forbiddenTitle: string;
+    forbiddenBody: string;
+    forbiddenAction: string;
+    domainTitle: string;
+    domainBody: string;
+    domainAction: string;
+    noEmailTitle: string;
+    noEmailBody: string;
+    noEmailAction: string;
+    misconfiguredTitle: string;
+    misconfiguredBody: string;
+    archivedTitle: string;
+    archivedBody: string;
   };
   common: {
     backAbout: string;
@@ -387,6 +427,8 @@ export type Messages = {
     opsEmpty: string;
     opsClaimOrg: string;
     opsApplyOoo: string;
+    opsOpenConsole: string;
+    opsOpenConsoleDesc: string;
     opsOrgLabel: string;
     opsCertLabel: string;
     opsExpiresLabel: string;
@@ -412,9 +454,12 @@ export type Messages = {
     opsAgentGuide: string;
     opsConsoleOffline: string;
     opsConsoleHandoffForbidden: string;
+    opsConsoleHandoffForbiddenAction: string;
     opsConsoleHandoffMisconfigured: string;
     opsConsoleHandoffNoEmail: string;
+    opsConsoleHandoffNoEmailAction: string;
     opsConsoleHandoffDomain: string;
+    opsConsoleHandoffDomainAction: string;
     permissionsDetails: string;
     profileTitle: string;
     overviewTitle: string;

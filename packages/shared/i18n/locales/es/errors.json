@@ -53,5 +53,8 @@
   "GITHUB_APP_NOT_CONFIGURED": "GitHub App no está configurado",
   "GITHUB_INSTALL_URL_UNAVAILABLE": "URL de instalación no disponible",
   "WEBHOOK_INVALID_SIGNATURE": "Firma no válida",
-  "ACADEMY_UPSTREAM_ERROR": "Error del servicio de la Academia"
+  "ACADEMY_UPSTREAM_ERROR": "Error del servicio de la Academia",
+  "FEATURE_NOT_SHIPPED": "Esta función aún no está habilitada",
+  "ORGOS_MAIL_NOT_CONFIGURED": "OAuth de Gmail no está configurado para el correo OrgOS",
+  "STEWARD_UNAVAILABLE": "No se pudo alcanzar el workspace Operator de la empresa"
 }
