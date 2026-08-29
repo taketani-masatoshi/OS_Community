@@ -5,6 +5,8 @@ dist/
 .env.local
 .env.*.local
 .env.cloud
+.env.bak
+.env.*.bak
 *.log
 .DS_Store
 coverage/
@@ -12,3 +14,4 @@ coverage/
 apps/web/e2e/.auth/
 prisma/*.db
 deploy/certs/
+apps/web/tsconfig.tsbuildinfo
