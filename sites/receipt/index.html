@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpenOrgOS Receipt Verify</title>
+    <meta
+      name="description"
+      content="Verify a signed OpenOrgOS QR receipt (適格請求書) in your browser. The fragment never leaves your device."
+    />
+    <link rel="stylesheet" href="/fonts.css" />
+    <link rel="stylesheet" href="/receipt.css" />
+    <script src="/theme-boot.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="inner">
+        <a class="brand" href="https://oorgos.org" rel="noopener noreferrer">OpenOrgOS</a>
+        <div class="lang-select-wrap">
+          <select id="lang-select" class="lang-select" aria-label="Language">
+            <option value="ja">日本語</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-wrap">
+      <section class="lf-hero lf-hero-compact">
+        <h1 class="lf-hero-title-sm" data-i18n="title">領収書の検証</h1>
+        <p class="lf-hero-lead" data-i18n="lead">
+          URL の # 以降だけを使い、ブラウザ内で署名を検証します。サーバーには送信されません。
+        </p>
+      </section>
+
+      <div id="status" class="badge badge-muted" role="status" data-i18n="waiting">
+        リンクを読み取り中…
+      </div>
+
+      <article id="card" class="lf-card lf-card-full" hidden>
+        <dl class="meta">
+          <div>
+            <dt data-i18n="receiptId">領収書番号</dt>
+            <dd id="receipt-id"></dd>
+          </div>
+          <div>
+            <dt data-i18n="issuer">発行者</dt>
+            <dd id="issuer"></dd>
+          </div>
+          <div>
+            <dt data-i18n="regNo">登録番号</dt>
+            <dd id="reg-no"></dd>
+          </div>
+          <div>
+            <dt data-i18n="recipient">宛名</dt>
+            <dd id="recipient"></dd>
+          </div>
+          <div>
+            <dt data-i18n="txDate">取引日</dt>
+            <dd id="tx-date"></dd>
+          </div>
+          <div>
+            <dt data-i18n="digest">digest</dt>
+            <dd id="digest" class="mono"></dd>
+          </div>
+        </dl>
+
+        <h2 data-i18n="lines">明細</h2>
+        <table class="lines">
+          <thead>
+            <tr>
+              <th data-i18n="colDesc">品目</th>
+              <th data-i18n="colRate">税率</th>
+              <th data-i18n="colAmount">税込</th>
+            </tr>
+          </thead>
+          <tbody id="lines-body"></tbody>
+        </table>
+
+        <h2 data-i18n="taxTotals">税率別合計</h2>
+        <ul id="tax-totals" class="tax-totals"></ul>
+
+        <p class="total">
+          <span data-i18n="total">合計（税込）</span>
+          <strong id="total"></strong>
+        </p>
+
+        <p class="note" data-i18n="signedNote">
+          この内容は発行元の Ed25519 署名で保護されています。
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <span>receipt.oorgos.org · OrgOS.jp.receipt.v1</span>
+      </div>
+    </footer>
+
+    <script type="module" src="/verify.js"></script>
+  </body>
+</html>
