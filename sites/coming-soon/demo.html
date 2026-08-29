@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Try OrgOS Demo — OpenOrgOS</title>
+    <meta
+      name="description"
+      content="Run the OpenOrgOS (OrgOS) demo on your Mac with Docker. Pull the public GHCR image and open Chat and Wire on localhost."
+    />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/fonts.css" />
+    <link rel="stylesheet" href="/design-system.css" />
+    <link rel="stylesheet" href="/demo.css" />
+    <script src="/theme-boot.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="/">OpenOrgOS</a>
+        <div class="header-nav">
+          <a href="/" data-i18n="navOverview">Overview</a>
+          <a href="/demo" aria-current="page" data-i18n="navDemo">Demo</a>
+          <a
+            href="https://community.oorgos.org/ops/console/start?next=/" rel="noopener noreferrer"
+            data-nav-optional
+            data-i18n="navConsole"
+            >Console</a
+          >
+          <a href="https://community.oorgos.org" rel="noopener noreferrer" data-i18n="navCommunity">Community</a>
+          <div class="lang-select-wrap">
+            <select id="lang-select" class="lang-select" aria-label="Language">
+              <option value="en">English</option>
+              <option value="ja">日本語</option>
+              <option value="zh">中文</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="shell">
+        <p class="hero-kicker" data-i18n="kicker">Demo</p>
+        <h1 data-i18n="title">Try OrgOS on your Mac</h1>
+        <p class="hero-lead" data-i18n="lead">Apple silicon Mac (M1–M4) only.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="panel">
+          <h2 data-i18n="step1Title">1. Docker</h2>
+          <p data-i18n="step1Lead" data-i18n-html>
+            Download from the <a href="https://docs.docker.com/desktop/setup/install/mac-install/">official Docker site</a> (Apple silicon).
+          </p>
+          <ol class="steps">
+            <li>
+              <span class="step-index" aria-hidden="true">1</span>
+              <span data-i18n="step1a" data-i18n-html">Download Docker Desktop.</span>
+            </li>
+            <li>
+              <span class="step-index" aria-hidden="true">2</span>
+              <span data-i18n="step1b" data-i18n-html">Drag it to Applications.</span>
+            </li>
+            <li>
+              <span class="step-index" aria-hidden="true">3</span>
+              <span data-i18n="step1c" data-i18n-html">Open Docker and wait until it starts.</span>
+            </li>
+          </ol>
+          <p class="note" data-i18n="step1Safe">
+            The demo stays inside Docker. It does not change your other Mac folders.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="step2Title">2. Run</h2>
+          <p data-i18n="step2Lead" data-i18n-html>
+            Open <strong>Terminal</strong>, paste these two lines, press Return.
+          </p>
+          <div class="code-block" tabindex="0">
+            <pre><code>docker pull --platform linux/amd64 ghcr.io/taketani-masatoshi/orgos-demo:0.8.0-beta.3
+docker run --rm --platform linux/amd64 -p 127.0.0.1:9470:9470 ghcr.io/taketani-masatoshi/orgos-demo:0.8.0-beta.3</code></pre>
+          </div>
+          <p class="note" data-i18n="step2Note">
+            First run may take a few minutes. This Mac only (127.0.0.1).
+          </p>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="step3Title">3. Open</h2>
+          <div class="urls">
+            <div>
+              <strong>Chat</strong> —
+              <a href="http://127.0.0.1:9470/"><code>http://127.0.0.1:9470/</code></a>
+            </div>
+            <div>
+              <strong>Wire</strong> —
+              <a href="http://127.0.0.1:9470/wire/"
+                ><code>http://127.0.0.1:9470/wire/</code></a
+              >
+            </div>
+          </div>
+          <p class="note" data-i18n="step3Note" data-i18n-html>
+            Stop: <kbd>Control</kbd>+<kbd>C</kbd> in Terminal.
+          </p>
+          <div class="actions">
+            <a class="btn btn-ghost" href="/" data-i18n="ctaHome">Back</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="shell site-footer-inner">
+        <span data-i18n="footerCopy">© OpenOrgOS Community</span>
+        <a href="mailto:hello@oorgos.org">hello@oorgos.org</a>
+      </div>
+    </footer>
+
+    <script src="/demo-i18n.js" defer></script>
+  </body>
+</html>
