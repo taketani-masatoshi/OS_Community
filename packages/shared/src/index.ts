@@ -12,6 +12,7 @@ export * from "./leadership";
 export * from "./cloud-agent-protocol";
 export * from "./compliance-registry";
 export * from "./locale-bridge";
-export * from "./overview-asset-stamp";
+// Overview-site build tooling (`overview-asset-stamp` / `overview-locale-script`)
+// stays out of the barrel: it reaches for node:crypto, and client components
+// import this file.
 export * from "./overview-links";
-export * from "./overview-locale-script";
