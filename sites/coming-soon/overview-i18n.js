@@ -64,8 +64,7 @@ const copy = {
     joinPoint1: "Send a short email. No form, no sign-up.",
     joinPoint2:
       "Best fit: you already handle your own expenses, budget, and approvals.",
-    joinPoint3: "Not open yet: proposals to build new modules together.",
-    joinCta: "Email hello@oorgos.org",
+    joinCta: "Send an email",
     joinNote: "A person reads every message. Replies may take a few days.",
     communityTitle: "OpenOrgOS Community",
     communityBody:
@@ -142,8 +141,7 @@ const copy = {
       "OpenOrgOS は、一人が実際の会社のために作り、動かしています。同じように一人で会社を回している方の、やり方を聞かせてください。",
     joinPoint1: "短いメールで十分です。フォームも登録もありません。",
     joinPoint2: "合うのは、経費・予算・承認を自分でやっている方です。",
-    joinPoint3: "まだ受けていません: 新しいモジュールを一緒に作る提案。",
-    joinCta: "hello@oorgos.org にメール",
+    joinCta: "メールする",
     joinNote: "全部人が読みます。返事に数日かかることがあります。",
     communityTitle: "OpenOrgOS Community",
     communityBody:
@@ -219,8 +217,7 @@ const copy = {
       "OpenOrgOS 由一个人为一家真实公司构建并运行。如果你也在独自把一家公司维持下去，我想听听你的做法。",
     joinPoint1: "一封简短邮件即可。无表单，无注册。",
     joinPoint2: "最合适的人：自己处理报销、预算与审批。",
-    joinPoint3: "暂不受理：共同开发新模块的提案。",
-    joinCta: "邮件至 hello@oorgos.org",
+    joinCta: "发邮件",
     joinNote: "每封邮件都由真人阅读，回复可能需要几天。",
     communityTitle: "OpenOrgOS Community",
     communityBody:
