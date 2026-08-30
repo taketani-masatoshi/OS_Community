@@ -83,6 +83,8 @@ docker logs os_community-cloudflared-inc-1 2>&1 | tail -5   # Registered tunnel 
 
 - Console 入口は常に `https://community.oorgos.org/ops/console/start?next=%2F`。`operator.oorgos.org` を起点にしない
 - 概要サイトのリンクと locale Cookie は `packages/shared` から生成する。`brand-links.ts` 変更後は **`npm run overview:links`** を実行して `sites/coming-soon/ecosystem-links.js` · `locale-bridge.js` を更新し、Vercel に再デプロイする
+- **概要サイトの css/js を編集したら必ず `npm run overview:links`**。css/js は 1 日キャッシュされる一方 HTML はされないため、同コマンドが `<link>` / `<script>` の URL に内容ハッシュを打つ。忘れると新しい HTML が訪問者の古いスクリプトで動く（新設セクションが翻訳されない等）。スタンプが古いとテストが落ちる
+- Vercel デプロイは `--scope open-org-os` を付ける（省略すると `Not authorized`）
 - 横断で共有するのは `oorgos-locale`（ja/en）と `oorgos-theme` のみ。セッションは共有しない。詳細: [`vercel-macmini-architecture.md`](./vercel-macmini-architecture.md) §5.1
 - **`http://localhost:3000` では言語の引き継ぎを確認できない**（`.oorgos.org` Cookie が付かない）。横断確認は `https://community.oorgos.org` で行う
 

@@ -32,7 +32,7 @@ describe("overview-links", () => {
       it("loads the generated links before the i18n script", () => {
         const html = read(page);
         const links = html.indexOf(`/${OVERVIEW_LINKS_FILENAME}`);
-        const i18n = html.search(/src="\/(overview|demo)-i18n\.js"/);
+        const i18n = html.search(/src="\/(overview|demo)-i18n\.js[?"]/);
         expect(links).toBeGreaterThan(-1);
         expect(i18n).toBeGreaterThan(links);
       });

@@ -8,7 +8,9 @@
 
 **Boundary:** Overview CTAs are plain links. Community liveness is owned by Mac mini / Tunnel ops — never by browser `fetch` from this site.
 
-**Generated assets:** `ecosystem-links.js` (Console / Community URLs) and `locale-bridge.js` (shared `oorgos-locale` cookie, ja/en only) come from `packages/shared`. Run `npm run overview:links` at the repo root after changing `brand-links.ts` or the locale contract, then redeploy. Console login always starts at Community (`/ops/console/start`), never at `operator.oorgos.org`.
+**Generated assets:** `ecosystem-links.js` (Console / Community URLs) and `locale-bridge.js` (shared `oorgos-locale` cookie, ja/en only) come from `packages/shared`. Run `npm run overview:links` at the repo root after changing `brand-links.ts` or the locale contract, then redeploy.
+
+**Always run `npm run overview:links` after editing any css/js here.** css/js are cached for a day while the HTML is not, so the same command stamps a content hash into every `<link>` / `<script>` URL. Without it a page can ship new markup against a visitor's cached script — which is how a new section once rendered untranslated. A test fails when a stamp is stale. Console login always starts at Community (`/ops/console/start`), never at `operator.oorgos.org`.
 
 Fonts are self-hosted (OFL Instrument Sans / Newsreader). Pages do not load Google Fonts or other third-party origins. CSP is `default-src 'self'` with `connect-src 'none'` (no browser fetches). Scripts are external files only (no `'unsafe-inline'`).
 
