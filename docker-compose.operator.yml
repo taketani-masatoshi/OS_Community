@@ -79,7 +79,8 @@ services:
       ORGOS_LLM_MODEL: ${ORGOS_LLM_MODEL:-gemma4:latest}
       ORGOS_LLM_STRUCTURED: ${ORGOS_LLM_STRUCTURED:-0}
       ORGOS_LLM_MAX_TOKENS: ${ORGOS_LLM_MAX_TOKENS:-2048}
-      ORGOS_LLM_TIMEOUT_MS: ${ORGOS_LLM_TIMEOUT_MS:-120000}
+      # Stay under Cloudflare's ~100s proxy wait so chat returns 200, not "chat 502".
+      ORGOS_LLM_TIMEOUT_MS: ${ORGOS_LLM_TIMEOUT_MS:-90000}
       NODE_OPTIONS: "--max-old-space-size=4096"
     volumes:
       # Tenant YAML / workspace only — Core + SPA stay inside the image

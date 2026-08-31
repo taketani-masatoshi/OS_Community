@@ -74,7 +74,9 @@ ensure_steward_console_dist() {
       "$steward/src/lib/steward-chat/answer-memory.ts" \
       "$steward/src/lib/steward-chat/faq-index.ts" \
       "$steward/src/lib/steward-chat/chat-feedback.ts" \
-      "$steward/src/lib/steward-chat/chat-thread.ts")"
+      "$steward/src/lib/steward-chat/chat-thread.ts" \
+      "$steward/src/lib/operator-runtime/llm-chat.ts" \
+      "$steward/src/lib/operator-runtime/llm-api.ts")"
     (( src_age > cli_age )) && need_cli=1
   fi
 
@@ -151,16 +153,22 @@ stop_ghost_demo() {
 
 wait_http() {
   local url="$1" label="$2" n="${3:-60}"
-  local i body
+  local i code body tmp
+  tmp="$(mktemp)"
   for i in $(seq 1 "$n"); do
-    body="$(curl -s -m 2 --noproxy '*' "$url" 2>/dev/null || true)"
-    if [[ "$body" == *'"ok":true'* ]] || [[ "$(curl -s -m 2 -o /dev/null -w '%{http_code}' --noproxy '*' "$url" 2>/dev/null)" == "200" ]]; then
+    code="$(curl -sS -m 20 -o "$tmp" -w '%{http_code}' --noproxy '*' "$url" 2>/dev/null || echo 000)"
+    body="$(cat "$tmp" 2>/dev/null || true)"
+    # Community health is {"status":"ok"}; console is {"ok":true}; approve is HTML.
+    # A 2s curl used to miss both: /api/health is ~2s in Docker Next.js.
+    if [[ "$code" == "200" ]]; then
       echo "OK $label — $url"
-      [[ -n "$body" ]] && echo "   $body"
+      [[ -n "$body" && "$body" == *"{"* ]] && echo "   ${body:0:180}"
+      rm -f "$tmp"
       return 0
     fi
     sleep 2
   done
+  rm -f "$tmp"
   die "timeout waiting for $label ($url)"
 }
 

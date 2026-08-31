@@ -2,7 +2,11 @@
 
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-import { getSessionDisplayName, isSignedInSession } from "@/lib/session-display";
+import {
+  getSessionDisplayName,
+  isHeaderSignedIn,
+  isSignedInSession,
+} from "@/lib/session-display";
 import { ClientSignOutButton } from "@/components/ClientSignOutButton";
 
 type Labels = {
@@ -21,7 +25,7 @@ export function HeaderSessionBar({
   serverSessionInfo?: { userName: string; isAdmin: boolean } | null;
 }) {
   const { data: session } = useSession();
-  const isSignedIn = isSignedInSession(session);
+  const isSignedIn = isHeaderSignedIn(session, serverSessionInfo);
   const clientIsAdmin =
     session?.user?.siteRole === "ADMIN" || session?.user?.siteRole === "CERT_REVIEWER";
   const isAdmin = serverSessionInfo?.isAdmin ?? clientIsAdmin;

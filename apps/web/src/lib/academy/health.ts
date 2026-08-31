@@ -13,14 +13,14 @@ export async function checkAcademyHealth(): Promise<AcademyHealth> {
   }
 
   const url = `${baseUrl.replace(/\/$/, "")}/ready`;
-  const timeoutMs = Number(process.env.ACADEMY_API_TIMEOUT_MS ?? 10_000);
+  const timeoutMs = Number(process.env.ACADEMY_API_TIMEOUT_MS ?? 800);
   const started = Date.now();
 
   try {
     const res = await fetch(url, {
       method: "GET",
       cache: "no-store",
-      signal: AbortSignal.timeout(Math.min(timeoutMs, 5000)),
+      signal: AbortSignal.timeout(Math.min(Math.max(timeoutMs, 200), 2000)),
     });
     if (!res.ok) {
       return {

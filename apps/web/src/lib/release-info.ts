@@ -39,6 +39,17 @@ const DEFAULT_SECURITY =
 const DEFAULT_CHANNEL_URL =
   "https://raw.githubusercontent.com/taketani-masatoshi/OS_Community/main/channel/latest.json";
 
+const CHANNEL_CACHE_TTL_MS = 5 * 60 * 1000;
+const CHANNEL_NEGATIVE_TTL_MS = 30 * 1000;
+
+type ChannelCache = { at: number; feed: ChannelFeed | null };
+const channelCacheByUrl = new Map<string, ChannelCache>();
+
+/** Test-only: health must not hit GitHub on every probe. */
+export function resetChannelFeedCache(): void {
+  channelCacheByUrl.clear();
+}
+
 function readVersionFile(): string | null {
   try {
     const candidates = [
@@ -98,19 +109,29 @@ export function getRunningChannel(): string {
 }
 
 async function fetchChannelFeed(url: string): Promise<ChannelFeed | null> {
+  const now = Date.now();
+  const cached = channelCacheByUrl.get(url);
+  const ttl = cached?.feed ? CHANNEL_CACHE_TTL_MS : CHANNEL_NEGATIVE_TTL_MS;
+  if (cached && now - cached.at < ttl) {
+    return cached.feed;
+  }
+
+  let feed: ChannelFeed | null = null;
   try {
     const res = await fetch(url, {
       headers: { Accept: "application/json" },
-      signal: AbortSignal.timeout(4_000),
+      signal: AbortSignal.timeout(1_500),
       cache: "no-store",
     });
-    if (!res.ok) return null;
-    const data = (await res.json()) as ChannelFeed;
-    if (!data?.latest || !data?.channel) return null;
-    return data;
+    if (res.ok) {
+      const data = (await res.json()) as ChannelFeed;
+      if (data?.latest && data?.channel) feed = data;
+    }
   } catch {
-    return null;
+    feed = null;
   }
+  channelCacheByUrl.set(url, { at: now, feed });
+  return feed;
 }
 
 export async function getReleaseInfo(): Promise<ReleaseInfo> {

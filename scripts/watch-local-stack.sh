@@ -20,14 +20,14 @@ echo $$ >"$lock"
 trap 'rm -f "$lock"' EXIT
 
 healthy() {
-  local body
-  body="$(curl -s -m 3 --noproxy '*' http://127.0.0.1:3000/api/health 2>/dev/null || true)"
-  [[ "$body" == *'"status":"ok"'* ]] || [[ "$body" == *'"ok":true'* ]] || return 1
+  local body code
+  # /api/health is ~2s in Docker Next.js; a 3s cap raced and retriggered --ensure.
+  body="$(curl -s -m 20 --noproxy '*' http://127.0.0.1:3000/api/health 2>/dev/null || true)"
+  [[ "$body" == *'"status":"ok"'* ]] || [[ "$body" == *'"status":"degraded"'* ]] || return 1
   local oc
-  oc="$(curl -s -m 2 --noproxy '*' http://127.0.0.1:9470/health 2>/dev/null || true)"
+  oc="$(curl -s -m 8 --noproxy '*' http://127.0.0.1:9470/health 2>/dev/null || true)"
   [[ "$oc" == *'"ok":true'* ]] || return 1
-  local code
-  code="$(curl -s -m 2 -o /dev/null -w '%{http_code}' --noproxy '*' http://127.0.0.1:4178/ 2>/dev/null || true)"
+  code="$(curl -s -m 8 -o /dev/null -w '%{http_code}' --noproxy '*' http://127.0.0.1:4178/ 2>/dev/null || true)"
   [[ "$code" == "200" ]]
 }
 
