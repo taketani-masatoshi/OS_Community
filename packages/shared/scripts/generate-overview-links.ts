@@ -13,7 +13,25 @@ import {
 } from "../src/overview-locale-script";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const overviewDir = resolve(here, "../../../sites/coming-soon");
+const defaultOverviewDir = resolve(here, "../../../sites/coming-soon");
+
+/** Explicit --dir / OVERVIEW_DIR wins; otherwise Community sites/coming-soon. */
+export function resolveOverviewDir(
+  argv: string[] = process.argv.slice(2),
+  env: NodeJS.ProcessEnv = process.env,
+  fallback = defaultOverviewDir,
+): string {
+  const eq = argv.find((arg) => arg.startsWith("--dir="));
+  if (eq) return resolve(eq.slice("--dir=".length));
+  const idx = argv.indexOf("--dir");
+  const next = idx >= 0 ? argv[idx + 1] : undefined;
+  if (next && !next.startsWith("-")) return resolve(next);
+  const fromEnv = env.OVERVIEW_DIR?.trim();
+  if (fromEnv) return resolve(fromEnv);
+  return fallback;
+}
+
+const overviewDir = resolveOverviewDir();
 const pages = ["index.html", "demo.html", "404.html"];
 
 const assets: [string, string][] = [
