@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "predev": "npm run i18n:build -w @os-community/shared",
-    "dev": "bash scripts/ensure-db.sh && bash scripts/guard-dev-build.mjs && set -a && . ./.env && set +a && AUTH_URL=http://localhost:3000 NEXT_PUBLIC_SITE_URL=http://localhost:3000 npm run dev -w @os-community/web",
+    "dev": "bash scripts/ensure-db.sh && node scripts/guard-dev-build.mjs && set -a && . ./.env && set +a && AUTH_URL=http://localhost:3000 NEXT_PUBLIC_SITE_URL=http://localhost:3000 npm run dev -w @os-community/web",
     "dev:start": "bash scripts/dev-start.sh",
     "dev:local": "npm run dev",
     "prebuild": "npm run i18n:build -w @os-community/shared",
