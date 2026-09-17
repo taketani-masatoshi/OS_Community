@@ -7,9 +7,9 @@
 #   ./scripts/start-local-stack.sh --ensure  # Colima + compose up (rebuild host SPA/CLI if stale)
 #   ./scripts/start-local-stack.sh --down
 #
-# Operator Console (:9470) mounts host OS_Steward SPA + CLI dist. If those are
-# stale, Good/Bad and /chat/v1/feedback never appear — this script rebuilds them
-# when sources are newer (or dist is missing).
+# Operator Console (host :4000 → container :9470) mounts host OS_Steward SPA + CLI dist.
+# If those are stale, Good/Bad and /chat/v1/feedback never appear — this script rebuilds
+# them when sources are newer (or dist is missing).
 #
 set -euo pipefail
 export PATH="/opt/homebrew/bin:/opt/homebrew/opt/colima/bin:/usr/local/bin:/usr/bin:/bin:${PATH:-}"
@@ -17,6 +17,21 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/opt/colima/bin:/usr/local/bin:/usr/
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
+# Shell env wins, then Community .env, then sibling OS_Steward.
+# Without this, `./scripts/start-local-stack.sh` ignores .env and remounts the
+# default checkout — Operator Console would drop snapshot JSON / latest SPA.
+if [[ -z "${STEWARD_HOST_PATH:-}" && -f "$ROOT/.env" ]]; then
+  _line="$(grep -E '^STEWARD_HOST_PATH=' "$ROOT/.env" | tail -1 || true)"
+  if [[ -n "$_line" ]]; then
+    STEWARD_HOST_PATH="${_line#STEWARD_HOST_PATH=}"
+    STEWARD_HOST_PATH="${STEWARD_HOST_PATH%$'\r'}"
+    STEWARD_HOST_PATH="${STEWARD_HOST_PATH#\"}"
+    STEWARD_HOST_PATH="${STEWARD_HOST_PATH%\"}"
+    STEWARD_HOST_PATH="${STEWARD_HOST_PATH#\'}"
+    STEWARD_HOST_PATH="${STEWARD_HOST_PATH%\'}"
+  fi
+  unset _line
+fi
 STEWARD_HOST_PATH="${STEWARD_HOST_PATH:-$(cd "$ROOT/../OS_Steward" 2>/dev/null && pwd || echo "$ROOT/../OS_Steward")}"
 export STEWARD_HOST_PATH
 
@@ -31,7 +46,7 @@ COMPOSE=(
 die() { echo "ERROR: $*" >&2; exit 1; }
 
 # Host-mounted SPA / CLI dist must stay newer than sources (Docker volume overlay).
-# Empty or stale dist → Good/Bad UI and /chat/v1/feedback never appear on :9470.
+# Empty or stale dist → Good/Bad UI and /chat/v1/feedback never appear on host :4000.
 newest_mtime() {
   local newest=0 f m
   for f in "$@"; do
@@ -57,9 +72,12 @@ ensure_steward_console_dist() {
       "$steward/apps/steward-chat/src/AgentChatPage.tsx" \
       "$steward/apps/steward-chat/src/ChatFeedbackButtons.tsx" \
       "$steward/apps/steward-chat/src/ChatSettingsPage.tsx" \
+      "$steward/apps/steward-chat/src/ExecutiveHomePage.tsx" \
+      "$steward/apps/steward-chat/src/AnalyticsDashboardPage.tsx" \
       "$steward/apps/steward-chat/src/agentChatStore.ts" \
       "$steward/apps/steward-chat/src/api.ts" \
       "$steward/apps/steward-chat/src/steward-copy.ts" \
+      "$steward/apps/steward-chat/src/ops-pages-copy.ts" \
       "$steward/apps/steward-chat/src/app.css")"
     (( src_age > spa_age )) && need_spa=1
   fi
@@ -71,6 +89,8 @@ ensure_steward_console_dist() {
     cli_age="$(newest_mtime "$cli_marker")"
     src_age="$(newest_mtime \
       "$steward/src/lib/steward-chat/routes/chat-api.ts" \
+      "$steward/src/lib/steward-chat/routes/analytics-api.ts" \
+      "$steward/src/lib/executive-home/console-snapshot.ts" \
       "$steward/src/lib/steward-chat/answer-memory.ts" \
       "$steward/src/lib/steward-chat/faq-index.ts" \
       "$steward/src/lib/steward-chat/chat-feedback.ts" \
@@ -189,17 +209,17 @@ up_services() {
   echo "Force-recreate cloudflared (avoid 502 after restart)…"
   "${COMPOSE[@]}" up -d --force-recreate cloudflared-inc
   echo "Waiting for operator-console…"
-  wait_http "http://127.0.0.1:9470/health" "Operator Console" 90
+  wait_http "http://127.0.0.1:4000/health" "Operator Console" 90
   echo "Waiting for approve UI…"
-  wait_http "http://127.0.0.1:4178/" "Settlement approve" 30
+  wait_http "http://127.0.0.1:5500/" "Settlement approve" 30
   echo "Checking community.oorgos.org…"
   local code
   code="$(curl -s -m 8 -o /dev/null -w '%{http_code}' https://community.oorgos.org/api/health || true)"
   echo "community.oorgos.org/api/health → $code (expect 200)"
   echo ""
   echo "Stack ready:"
-  echo "  Chat/Wire:  http://127.0.0.1:9470/  ·  https://operator.oorgos.org/"
-  echo "  Approve:    http://localhost:4178/enroll"
+  echo "  Chat/Wire:  http://127.0.0.1:4000/  ·  https://operator.oorgos.org/"
+  echo "  Approve:    http://localhost:5500/enroll"
   echo "  Community:  http://127.0.0.1:3000/  ·  https://community.oorgos.org/"
   "${COMPOSE[@]}" ps
 }

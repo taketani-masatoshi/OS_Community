@@ -748,7 +748,15 @@
     "layerMailNotShipped": "Подключение почты OrgOS в этом Community ещё не включено.",
     "layerMailNeedLink": "Откройте ссылку подключения из CLI оператора (mail setup gmail --community-link).",
     "layerMailLinkedNotice": "Gmail подключён для почты OrgOS.",
-    "layerMailBindMissing": "Этой странице нужна ссылка подключения от оператора (тенант и nonce)."
+    "layerMailBindMissing": "Этой странице нужна ссылка подключения от оператора (тенант и nonce).",
+    "layerConnectorsTitle": "Интеграции OrgOS",
+    "layerConnectorsBody": "Подключите Slack, Asana или Google Drive, чтобы Operator Console компании могла публиковать сообщения, зеркалить задачи и сохранять читаемые копии. Токены остаются в рабочем пространстве компании, а не в Community.",
+    "layerConnectorSlackAction": "Подключить Slack",
+    "layerConnectorAsanaAction": "Подключить Asana",
+    "layerConnectorDriveAction": "Подключить Google Drive",
+    "layerConnectorsNotShipped": "Интеграции OrgOS пока не включены в этой Community.",
+    "layerConnectorsBindMissing": "Для этой страницы нужна ссылка подключения из Operator Console (tenant и nonce).",
+    "layerConnectorsLinkedNotice": "Подключено для интеграций OrgOS."
   },
   "agentsPage": {
     "filterAll": "Все",

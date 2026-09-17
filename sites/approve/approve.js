@@ -4,5 +4,5 @@
  */
 document.getElementById("status")?.remove();
 console.info(
-  "[approve] Ceremony moved to Operator Console. Open http://localhost:9470/"
+  "[approve] Ceremony moved to Operator Console. Open http://localhost:4000/"
 );

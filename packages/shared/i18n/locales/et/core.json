@@ -748,7 +748,15 @@
     "layerMailNotShipped": "OrgOS e-posti ühendus pole selles Communitys veel lubatud.",
     "layerMailNeedLink": "Avage operaatori CLI ühenduslink (mail setup gmail --community-link).",
     "layerMailLinkedNotice": "Gmail on OrgOS e-posti jaoks ühendatud.",
-    "layerMailBindMissing": "See leht vajab operaatori ühenduslinki (üürnik ja nonce)."
+    "layerMailBindMissing": "See leht vajab operaatori ühenduslinki (üürnik ja nonce).",
+    "layerConnectorsTitle": "OrgOS-i integratsioonid",
+    "layerConnectorsBody": "Ühenda Slack, Asana või Google Drive, et ettevõtte Operator Console saaks postitada, ülesandeid peegeldada ja loetavaid koopiaid salvestada. Tokenid jäävad ettevõtte tööruumi, mitte Communitysse.",
+    "layerConnectorSlackAction": "Ühenda Slack",
+    "layerConnectorAsanaAction": "Ühenda Asana",
+    "layerConnectorDriveAction": "Ühenda Google Drive",
+    "layerConnectorsNotShipped": "OrgOS-i integratsioonid pole selles Communitys veel lubatud.",
+    "layerConnectorsBindMissing": "See leht vajab Operator Console'i ühenduslinki (tenant ja nonce).",
+    "layerConnectorsLinkedNotice": "Ühendatud OrgOS-i integratsioonide jaoks."
   },
   "agentsPage": {
     "filterAll": "Kõik",

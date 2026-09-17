@@ -12,9 +12,9 @@
 #     -f docker-compose.operator.yml \
 #     -f docker-compose.local.yml \
 #     --profile operator up -d --build
-#   open http://127.0.0.1:9470/        # Chat + 予実 Today KPI
-#   open http://127.0.0.1:9470/wire/   # Wire Console (login PassKey)
-#   open http://localhost:4178/enroll  # Settlement PassKey UI
+#   open http://127.0.0.1:4000/        # Chat + 予実 Today KPI
+#   open http://127.0.0.1:4000/wire/   # Wire Console (login PassKey)
+#   open http://localhost:5500/enroll  # Settlement PassKey UI
 #
 # Prerequisites: sibling OS_Steward checkout (STEWARD_HOST_PATH).
 # Host npm fallback (Docker unavailable only):
@@ -47,7 +47,7 @@ services:
       WIRE_CONSOLE_ALLOW_DEV_LOGIN: ${WIRE_CONSOLE_ALLOW_DEV_LOGIN:-1}
       WIRE_CONSOLE_PROD_ADAPTER: ${WIRE_CONSOLE_PROD_ADAPTER:-webauthn}
       WIRE_CONSOLE_WEBAUTHN_RP_ID: ${WIRE_CONSOLE_WEBAUTHN_RP_ID:-localhost}
-      WIRE_CONSOLE_WEBAUTHN_ORIGIN: ${WIRE_CONSOLE_WEBAUTHN_ORIGIN:-http://localhost:9470}
+      WIRE_CONSOLE_WEBAUTHN_ORIGIN: ${WIRE_CONSOLE_WEBAUTHN_ORIGIN:-http://localhost:4000}
       WIRE_CONSOLE_WEBAUTHN_ALLOW_REGISTER: ${WIRE_CONSOLE_WEBAUTHN_ALLOW_REGISTER:-1}
       WIRE_CONSOLE_WEBAUTHN_ALLOW_OPEN_BOOTSTRAP: ${WIRE_CONSOLE_WEBAUTHN_ALLOW_OPEN_BOOTSTRAP:-1}
       # Second login passkey (e.g. Mac + iPhone backup) — max 2 per operator; SSO remains primary
@@ -55,7 +55,7 @@ services:
       # Settlement PassKey (localhost approve UI — not Vercel)
       ORGOS_SETTLEMENT_STEPUP: ${ORGOS_SETTLEMENT_STEPUP:-1}
       ORGOS_SETTLEMENT_RP_ID: ${ORGOS_SETTLEMENT_RP_ID:-localhost}
-      ORGOS_SETTLEMENT_APPROVE_ORIGIN: ${ORGOS_SETTLEMENT_APPROVE_ORIGIN:-http://localhost:4178}
+      ORGOS_SETTLEMENT_APPROVE_ORIGIN: ${ORGOS_SETTLEMENT_APPROVE_ORIGIN:-http://localhost:5500}
       # Community SSO handoff (set COMMUNITY_CONSOLE_OIDC_* in Community .env)
       WIRE_CONSOLE_OIDC_ISSUER: ${COMMUNITY_CONSOLE_OIDC_ISSUER:-https://community.oorgos.org}
       WIRE_CONSOLE_OIDC_AUDIENCE: ${COMMUNITY_CONSOLE_OIDC_AUDIENCE:-orgos-operator-console}
@@ -92,7 +92,7 @@ services:
       - ${STEWARD_HOST_PATH:-../OS_Steward}/apps/steward-chat/dist:/opt/orgos/apps/steward-chat/dist:ro
       - ${STEWARD_HOST_PATH:-../OS_Steward}/packages/orgos-cli/dist:/opt/orgos/dist:ro
     ports:
-      - "127.0.0.1:9470:9470"
+      - "127.0.0.1:4000:9470"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     healthcheck:
