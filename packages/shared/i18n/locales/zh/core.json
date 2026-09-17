@@ -748,7 +748,15 @@
     "layerMailNotShipped": "此 Community 尚未启用 OrgOS 邮件连接。",
     "layerMailNeedLink": "请打开运营 CLI 提供的连接链接（mail setup gmail --community-link）。",
     "layerMailLinkedNotice": "已为 OrgOS 邮件连接 Gmail。",
-    "layerMailBindMissing": "此页面需要运营方提供的连接链接（租户与 nonce）。"
+    "layerMailBindMissing": "此页面需要运营方提供的连接链接（租户与 nonce）。",
+    "layerConnectorsTitle": "OrgOS 外部集成",
+    "layerConnectorsBody": "连接 Slack、Asana 或 Google Drive，使公司的 Operator Console 能够发布消息、镜像任务并保存可读副本。令牌保存在公司工作区，而不是 Community。",
+    "layerConnectorSlackAction": "连接 Slack",
+    "layerConnectorAsanaAction": "连接 Asana",
+    "layerConnectorDriveAction": "连接 Google Drive",
+    "layerConnectorsNotShipped": "此 Community 尚未启用 OrgOS 外部集成。",
+    "layerConnectorsBindMissing": "此页面需要 Operator Console 提供的连接链接（tenant 与 nonce）。",
+    "layerConnectorsLinkedNotice": "已连接 OrgOS 外部集成。"
   },
   "agentsPage": {
     "filterAll": "全部",

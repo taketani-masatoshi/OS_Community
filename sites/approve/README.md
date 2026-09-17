@@ -13,8 +13,8 @@ Fonts are self-hosted. CSP is `default-src 'self'` with `connect-src 'none'`.
 ```bash
 cd /Users/kk/OS_Community
 ./scripts/start-local-stack.sh
-# help: http://localhost:4178/
-# ceremony: http://127.0.0.1:9470/
+# help: http://localhost:5500/
+# ceremony: http://127.0.0.1:4000/
 ```
 
 `ORGOS_SETTLEMENT_APPROVE_ORIGIN` may still point here for deprecated `qr_url`

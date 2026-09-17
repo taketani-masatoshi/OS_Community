@@ -14,11 +14,19 @@ import { GitHubConnectAccountButton } from "@/components/settings/GitHubConnectA
 import { ConnectionLinkRefresh } from "@/components/settings/ConnectionLinkRefresh";
 import { connectGithubAccount, connectLinkedInAccount } from "@/app/settings/connections/actions";
 import { isTenantMailConnectShipped } from "@/lib/orgos-mail";
+import { shippedConnectors, type ConnectorProvider } from "@/lib/orgos-connectors";
 
 export default async function SettingsConnectionsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ linked?: string; orgos_mail?: string; tenant_id?: string; nonce?: string }>;
+  searchParams: Promise<{
+    linked?: string;
+    orgos_mail?: string;
+    tenant_id?: string;
+    nonce?: string;
+    connector?: string;
+    status?: string;
+  }>;
 }) {
   const session = await requireAuth("/settings/connections");
   const { locale, messages: t } = await getT();
@@ -43,6 +51,13 @@ export default async function SettingsConnectionsPage({
   const mailTenant = params.tenant_id?.trim() ?? "";
   const mailNonce = params.nonce?.trim() ?? "";
   const mailBindReady = Boolean(mailTenant && mailNonce);
+  const connectors = shippedConnectors();
+  const connectorActionLabel: Record<ConnectorProvider, string> = {
+    slack: s.layerConnectorSlackAction,
+    asana: s.layerConnectorAsanaAction,
+    gdrive: s.layerConnectorDriveAction,
+  };
+  const connectorLinked = params.status === "linked" ? params.connector : undefined;
 
   return (
     <>
@@ -65,6 +80,11 @@ export default async function SettingsConnectionsPage({
       {params.orgos_mail === "linked" && (
         <p className="membership-policy-callout" style={{ marginBottom: "1rem" }}>
           {s.layerMailLinkedNotice}
+        </p>
+      )}
+      {connectorLinked && (
+        <p className="membership-policy-callout" style={{ marginBottom: "1rem" }}>
+          {s.layerConnectorsLinkedNotice}
         </p>
       )}
 
@@ -212,6 +232,30 @@ export default async function SettingsConnectionsPage({
             <p className="page-muted-note">{s.layerMailNotShipped}</p>
           ) : mailBindReady ? null : (
             <p className="page-muted-note">{s.layerMailBindMissing}</p>
+          )}
+        </IdentityLayerCard>
+
+        <IdentityLayerCard
+          title={s.layerConnectorsTitle}
+          status={connectorLinked ? s.layerStatusComplete : s.layerStatusIncomplete}
+          complete={Boolean(connectorLinked)}
+        >
+          <p className="page-muted-note">{s.layerConnectorsBody}</p>
+          {connectors.length === 0 ? (
+            <p className="page-muted-note">{s.layerConnectorsNotShipped}</p>
+          ) : !mailBindReady ? (
+            <p className="page-muted-note">{s.layerConnectorsBindMissing}</p>
+          ) : (
+            <ul className="mypage-status-list">
+              {connectors.map((provider) => (
+                <li key={provider} className="mypage-status-item">
+                  <IdentityLayerLink
+                    href={`/api/integrations/orgos-connectors/${provider}/start?tenant_id=${encodeURIComponent(mailTenant)}&nonce=${encodeURIComponent(mailNonce)}`}
+                    label={connectorActionLabel[provider]}
+                  />
+                </li>
+              ))}
+            </ul>
           )}
         </IdentityLayerCard>
       </div>

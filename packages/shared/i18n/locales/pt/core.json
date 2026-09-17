@@ -748,7 +748,15 @@
     "layerMailNotShipped": "A ligação de correio OrgOS ainda não está ativada nesta Community.",
     "layerMailNeedLink": "Abra o link de ligação do CLI do operador (mail setup gmail --community-link).",
     "layerMailLinkedNotice": "Gmail ligado para o correio OrgOS.",
-    "layerMailBindMissing": "Esta página precisa do link de ligação do operador (inquilino e nonce)."
+    "layerMailBindMissing": "Esta página precisa do link de ligação do operador (inquilino e nonce).",
+    "layerConnectorsTitle": "Integrações do OrgOS",
+    "layerConnectorsBody": "Conecte Slack, Asana ou Google Drive para que a Operator Console da empresa possa publicar, replicar tarefas e guardar cópias legíveis. Os tokens ficam no espaço da empresa, não na Community.",
+    "layerConnectorSlackAction": "Conectar Slack",
+    "layerConnectorAsanaAction": "Conectar Asana",
+    "layerConnectorDriveAction": "Conectar Google Drive",
+    "layerConnectorsNotShipped": "As integrações do OrgOS ainda não estão ativadas nesta Community.",
+    "layerConnectorsBindMissing": "Esta página precisa de um link de conexão da Operator Console (tenant e nonce).",
+    "layerConnectorsLinkedNotice": "Conectado para as integrações do OrgOS."
   },
   "agentsPage": {
     "filterAll": "Todos",
