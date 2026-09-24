@@ -256,6 +256,14 @@ export type Messages = {
     layerMailNeedLink: string;
     layerMailLinkedNotice: string;
     layerMailBindMissing: string;
+    layerConnectorsTitle: string;
+    layerConnectorsBody: string;
+    layerConnectorSlackAction: string;
+    layerConnectorAsanaAction: string;
+    layerConnectorDriveAction: string;
+    layerConnectorsNotShipped: string;
+    layerConnectorsBindMissing: string;
+    layerConnectorsLinkedNotice: string;
     organization: string;
     organizationDesc: string;
     organizationOperatorNote: string;
