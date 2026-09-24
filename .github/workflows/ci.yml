@@ -101,7 +101,15 @@ jobs:
       - run: npm run db:generate
       - run: npm run push -w @os-community/db
       - run: npm run seed -w @os-community/db
-      - run: bash scripts/sync-steward-protocol.sh
+      - name: Sync Steward protocol mirror
+        run: |
+          if [[ -f "${{ github.workspace }}/orgos-steward/package.json" ]]; then
+            STEWARD_ORGOS_ROOT="${{ github.workspace }}/orgos-steward" bash scripts/sync-steward-protocol.sh
+          elif [[ -f "${{ github.workspace }}/../OS_Steward/package.json" ]]; then
+            STEWARD_ORGOS_ROOT="${{ github.workspace }}/../OS_Steward" bash scripts/sync-steward-protocol.sh
+          else
+            echo "::warning::Steward repo missing — set vars.STEWARD_REPO for protocol sync; continuing without it."
+          fi
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e -w @os-community/web -- e2e/resilience.spec.ts e2e/governance-protocol.spec.ts e2e/wire-node-governance.spec.ts e2e/orgos-mail-connect.spec.ts
       - name: Write Community integration flags (Steward eco cap)
