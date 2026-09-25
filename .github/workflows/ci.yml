@@ -86,6 +86,7 @@ jobs:
       DATABASE_URL: postgresql://oscommunity:oscommunity@localhost:5432/oscommunity
       AUTH_SECRET: ci-test-secret-minimum-32-characters-long
       AUTH_URL: http://127.0.0.1:3000
+      PLAYWRIGHT_PORT: "3000"
       PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
       RATE_LIMIT_DISABLED: "1"
 
