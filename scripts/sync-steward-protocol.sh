@@ -2,7 +2,7 @@
 # Sync Steward publish/protocol mirror into Community (local dev · CI).
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-STEWARD="${STEWARD_ORGOS_ROOT:-$ROOT/../OS_Steward}"
+STEWARD="${STEWARD_ORGOS_ROOT:-$ROOT/../Core}"
 DEST="${STEWARD_PROTOCOL_MIRROR:-$ROOT/apps/web/public/steward-protocol}"
 
 if [[ ! -d "$STEWARD" ]]; then
@@ -10,11 +10,14 @@ if [[ ! -d "$STEWARD" ]]; then
   exit 1
 fi
 
-cd "$STEWARD"
-if [[ -x "$STEWARD/package.json" ]]; then
-  npm run orgos -- protocol community export 2>/dev/null || cp -f "$STEWARD/steward/platform/protocol/trusted-operators.yaml" "$STEWARD/publish/protocol/" 2>/dev/null || true
-fi
+# Consume an existing export. Generating it is a separate Core operation.
+for name in community-readiness.json community-sla.json trusted-operators.yaml wire-node-governance.yaml community-wire-node-api.json community-tenant-mail-api.json; do
+  if [[ ! -s "$STEWARD/publish/protocol/$name" ]]; then
+    echo "Required Core protocol export missing or empty: $name" >&2
+    exit 1
+  fi
+done
 mkdir -p "$DEST"
-cp -f "$STEWARD/publish/protocol/"* "$DEST/" 2>/dev/null || true
+cp -f "$STEWARD/publish/protocol/"* "$DEST/"
 echo "✓ Synced → $DEST"
 ls -la "$DEST"
