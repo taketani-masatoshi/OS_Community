@@ -20,10 +20,27 @@ env:
   IMAGE_NAME: ${{ github.repository_owner }}/os-community-web
 
 jobs:
+  quality:
+    uses: ./.github/workflows/ci.yml
+    with:
+      require_steward: true
+    permissions:
+      contents: read
+
   publish:
+    needs: quality
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/download-artifact@v4
+        with:
+          name: tested-protocol-${{ github.sha }}
+          path: ${{ runner.temp }}/tested-protocol
+      - name: Restore and verify the exact E2E protocol files
+        run: node scripts/protocol-artifact.mjs restore "$RUNNER_TEMP/tested-protocol"
 
       - name: Resolve version
         id: ver

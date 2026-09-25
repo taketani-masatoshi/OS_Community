@@ -5,6 +5,12 @@ on:
     branches: [main, master]
   pull_request:
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      require_steward:
+        description: Require a pinned Core checkout for release integration checks
+        type: boolean
+        default: false
 
 jobs:
   build:
@@ -40,9 +46,11 @@ jobs:
           cache: npm
 
       - run: npm ci
+      - run: node --test scripts/tests/protocol-artifact.test.mjs
+      - run: test -f .env || cp .env.example .env
       - run: npm run i18n:sync
       - run: npm run db:generate
-      - run: npm run db:push -w @os-community/db
+      - run: npm run push -w @os-community/db
       - run: npm run lint
       - run: npm run test -w @os-community/web -- --run
       - run: npm test -w @os-community/academy-client
@@ -78,17 +86,28 @@ jobs:
       DATABASE_URL: postgresql://oscommunity:oscommunity@localhost:5432/oscommunity
       AUTH_SECRET: ci-test-secret-minimum-32-characters-long
       AUTH_URL: http://127.0.0.1:3000
+      PLAYWRIGHT_PORT: "3000"
       PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
       RATE_LIMIT_DISABLED: "1"
 
     steps:
       - uses: actions/checkout@v4
 
+      - name: Require the release integration target
+        if: inputs.require_steward == true
+        env:
+          STEWARD_REPO: ${{ vars.STEWARD_REPO }}
+          STEWARD_REF: ${{ vars.STEWARD_REF }}
+        run: |
+          test -n "$STEWARD_REPO" || { echo 'Set vars.STEWARD_REPO for release integration checks'; exit 1; }
+          [[ "$STEWARD_REF" =~ ^[0-9a-fA-F]{40}$ ]] || { echo 'Set vars.STEWARD_REF to the tested Core commit SHA'; exit 1; }
+
       - name: Checkout OrgOS Steward (when vars.STEWARD_REPO set)
         if: vars.STEWARD_REPO != ''
         uses: actions/checkout@v4
         with:
           repository: ${{ vars.STEWARD_REPO }}
+          ref: ${{ vars.STEWARD_REF }}
           path: orgos-steward
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -99,11 +118,27 @@ jobs:
 
       - run: npm ci
       - run: npm run db:generate
-      - run: npm run db:push -w @os-community/db
-      - run: npm run db:seed -w @os-community/db
+      - run: test -f .env || cp .env.example .env
+      - run: npm run push -w @os-community/db
+      - run: npm run seed -w @os-community/db
       - run: bash scripts/sync-steward-protocol.sh
+        if: vars.STEWARD_REPO != ''
+        env:
+          STEWARD_ORGOS_ROOT: ${{ github.workspace }}/orgos-steward
       - run: npx playwright install --with-deps chromium
+      - name: Capture the protocol files used by E2E
+        if: vars.STEWARD_REPO != ''
+        run: SOURCE_CORE_SHA="$(git -C orgos-steward rev-parse HEAD)" node scripts/protocol-artifact.mjs capture "$RUNNER_TEMP/tested-protocol"
       - run: npm run test:e2e -w @os-community/web -- e2e/resilience.spec.ts e2e/governance-protocol.spec.ts e2e/wire-node-governance.spec.ts e2e/orgos-mail-connect.spec.ts
+      - name: Verify E2E did not change the captured protocol
+        if: vars.STEWARD_REPO != ''
+        run: node scripts/protocol-artifact.mjs verify "$RUNNER_TEMP/tested-protocol"
+      - uses: actions/upload-artifact@v4
+        if: vars.STEWARD_REPO != ''
+        with:
+          name: tested-protocol-${{ github.sha }}
+          path: ${{ runner.temp }}/tested-protocol/
+          if-no-files-found: error
       - name: Write Community integration flags (Steward eco cap)
         env:
           COMMUNITY_E2E_GREEN: "1"
@@ -116,8 +151,24 @@ jobs:
             echo "::warning::Steward repo missing — set vars.STEWARD_REPO for full eco-cap write; continuing without it."
           fi
 
+  protocol-handoff:
+    needs: e2e
+    if: vars.STEWARD_REPO != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/download-artifact@v4
+        with:
+          name: tested-protocol-${{ github.sha }}
+          path: ${{ runner.temp }}/tested-protocol
+      - name: Verify artifact handoff in a fresh checkout without publishing
+        run: node scripts/protocol-artifact.mjs restore "$RUNNER_TEMP/tested-protocol"
+
   deploy:
-    needs: [build, docker-build]
+    needs: [build, docker-build, e2e]
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-28T22:12:34.827Z",
+  "generatedAt": "2026-09-25T04:04:24.109Z",
   "api": {
-    "total": 29,
+    "total": 43,
     "rawJsonRoutes": [],
     "directAuthRoutes": [],
     "withoutReadJsonBody": []
@@ -11,9 +11,9 @@
     "adminLayout": true
   },
   "tests": {
-    "libModules": 69,
-    "libTestFiles": 24,
-    "e2eSpecs": 7,
+    "libModules": 83,
+    "libTestFiles": 34,
+    "e2eSpecs": 10,
     "hasResilienceSpec": true
   },
   "quality": {

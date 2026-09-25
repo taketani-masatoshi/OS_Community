@@ -1,7 +1,21 @@
 import { defineConfig, devices } from "@playwright/test";
 import path from "path";
 
-const e2ePort = process.env.PLAYWRIGHT_PORT ?? "3001";
+function resolveE2ePort(): string {
+  if (process.env.PLAYWRIGHT_PORT) return process.env.PLAYWRIGHT_PORT;
+  const base = process.env.PLAYWRIGHT_BASE_URL;
+  if (base) {
+    try {
+      const port = new URL(base).port;
+      if (port) return port;
+    } catch {
+      /* fall through */
+    }
+  }
+  return "3001";
+}
+
+const e2ePort = resolveE2ePort();
 const e2eBaseUrl = process.env.PLAYWRIGHT_BASE_URL ?? `http://127.0.0.1:${e2ePort}`;
 
 export default defineConfig({
@@ -34,7 +48,7 @@ export default defineConfig({
     command: `bash ../../scripts/with-env.sh npm run dev -w @os-community/web -- --port ${e2ePort}`,
     url: e2eBaseUrl,
     reuseExistingServer: !process.env.CI,
-    timeout: 120_000,
+    timeout: 180_000,
     env: {
       AUTH_URL: e2eBaseUrl,
       NEXT_PUBLIC_SITE_URL: e2eBaseUrl,

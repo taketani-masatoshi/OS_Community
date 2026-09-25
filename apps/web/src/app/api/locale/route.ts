@@ -4,6 +4,7 @@ import {
   resolveLocale,
 } from "@os-community/shared";
 import { apiErrorResponse } from "@/lib/api-error";
+import { readJsonBody } from "@/lib/api-body";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -40,13 +41,9 @@ export async function POST(req: Request) {
     return apiErrorResponse("VALIDATION", 403);
   }
 
-  let raw: unknown = null;
-  try {
-    raw = await req.json();
-  } catch {
-    return apiErrorResponse("VALIDATION", 400);
-  }
-  const locale = typeof raw === "object" && raw && "locale" in raw ? String((raw as { locale: unknown }).locale) : "";
+  const bodyResult = await readJsonBody<{ locale?: unknown }>(req);
+  if (bodyResult instanceof Response) return bodyResult;
+  const locale = typeof bodyResult.locale === "string" ? bodyResult.locale : "";
   const resolved = resolveLocale(locale);
   const res = NextResponse.json({ ok: true, locale: resolved });
   for (const line of localeSetCookieHeaders({
