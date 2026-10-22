@@ -434,7 +434,10 @@
     "developerLink": "開発者向け（GitHub）",
     "slimParticipateTitle": "参加する",
     "slimResourcesTitle": "リソース",
-    "slimExploreTitle": "もっと知る"
+    "slimExploreTitle": "もっと知る",
+    "licenseNoticeLead": "OpenOrgOS は GPL v2 ライセンスで配布されています。商用ライセンス、特許の許諾、法人向けのお問い合わせについては",
+    "licenseNoticeLink": "利用約款",
+    "licenseNoticeTail": "をご確認ください。"
   },
   "purposes": [
     {

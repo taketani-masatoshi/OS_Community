@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { BRAND, getFooterAboutLinks, getPageMessages, isSkeletonSitePath } from "@os-community/shared";
+import {
+  BRAND,
+  BRAND_LINKS,
+  getFooterAboutLinks,
+  getPageMessages,
+  isSkeletonSitePath,
+} from "@os-community/shared";
 import { getT } from "@/lib/i18n";
 import { getAuthSession } from "@/lib/session";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -146,6 +152,14 @@ export async function Footer() {
         <div className="site-footer-bottom">
           © {new Date().getFullYear()} {BRAND.name} {t.brand.community}. {t.footer.copyright}
         </div>
+
+        <p className="site-footer-license">
+          {t.footer.licenseNoticeLead}
+          <a href={BRAND_LINKS.termsOfService} target="_blank" rel="noopener noreferrer">
+            {t.footer.licenseNoticeLink}
+          </a>
+          {t.footer.licenseNoticeTail}
+        </p>
       </div>
     </footer>
   );

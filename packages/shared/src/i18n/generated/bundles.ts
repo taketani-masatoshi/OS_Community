@@ -466,7 +466,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "developerLink": "Developers (GitHub)",
       "slimParticipateTitle": "Participate",
       "slimResourcesTitle": "Resources",
-      "slimExploreTitle": "Explore"
+      "slimExploreTitle": "Explore",
+      "licenseNoticeLead": "OpenOrgOS is distributed under the GPL v2 License. For commercial licensing, patent permissions, or enterprise inquiries, please review our ",
+      "licenseNoticeLink": "Terms of Service",
+      "licenseNoticeTail": "."
     },
     "purposes": [
       {
@@ -1601,7 +1604,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "developerLink": "開発者向け（GitHub）",
       "slimParticipateTitle": "参加する",
       "slimResourcesTitle": "リソース",
-      "slimExploreTitle": "もっと知る"
+      "slimExploreTitle": "もっと知る",
+      "licenseNoticeLead": "OpenOrgOS は GPL v2 ライセンスで配布されています。商用ライセンス、特許の許諾、法人向けのお問い合わせについては",
+      "licenseNoticeLink": "利用約款",
+      "licenseNoticeTail": "をご確認ください。"
     },
     "purposes": [
       {
@@ -2736,7 +2742,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "developerLink": "Desenvolvedores (GitHub)",
       "slimParticipateTitle": "Participar",
       "slimResourcesTitle": "Recursos",
-      "slimExploreTitle": "Explorar"
+      "slimExploreTitle": "Explorar",
+      "licenseNoticeLead": "O OpenOrgOS é distribuído sob a licença GPL v2. Para licenciamento comercial, permissões de patentes ou consultas empresariais, consulte nossos ",
+      "licenseNoticeLink": "Termos de Serviço",
+      "licenseNoticeTail": "."
     },
     "purposes": [
       {
@@ -3871,7 +3880,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "developerLink": "Desarrolladores (GitHub)",
       "slimParticipateTitle": "Participar",
       "slimResourcesTitle": "Recursos",
-      "slimExploreTitle": "Explorar"
+      "slimExploreTitle": "Explorar",
+      "licenseNoticeLead": "OpenOrgOS se distribuye bajo la licencia GPL v2. Para licencias comerciales, permisos de patentes o consultas empresariales, consulte nuestros ",
+      "licenseNoticeLink": "Términos de servicio",
+      "licenseNoticeTail": "."
     },
     "purposes": [
       {
@@ -5006,7 +5018,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "developerLink": "开发者（GitHub）",
       "slimParticipateTitle": "参与",
       "slimResourcesTitle": "资源",
-      "slimExploreTitle": "探索"
+      "slimExploreTitle": "探索",
+      "licenseNoticeLead": "OpenOrgOS 以 GPL v2 许可证发布。如需商业许可、专利授权或企业咨询，请查阅我们的",
+      "licenseNoticeLink": "服务条款",
+      "licenseNoticeTail": "。"
     },
     "purposes": [
       {
@@ -6141,7 +6156,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "developerLink": "Arendajad (GitHub)",
       "slimParticipateTitle": "Osale",
       "slimResourcesTitle": "Ressursid",
-      "slimExploreTitle": "Avasta"
+      "slimExploreTitle": "Avasta",
+      "licenseNoticeLead": "OpenOrgOS-i levitatakse GPL v2 litsentsi alusel. Kommertslitsentside, patendilubade või ettevõtete päringute korral tutvuge meie ",
+      "licenseNoticeLink": "teenusetingimustega",
+      "licenseNoticeTail": "."
     },
     "purposes": [
       {
@@ -7276,7 +7294,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "developerLink": "Développeurs (GitHub)",
       "slimParticipateTitle": "Participer",
       "slimResourcesTitle": "Ressources",
-      "slimExploreTitle": "Explorer"
+      "slimExploreTitle": "Explorer",
+      "licenseNoticeLead": "OpenOrgOS est distribué sous licence GPL v2. Pour les licences commerciales, les autorisations de brevets ou les demandes d’entreprise, veuillez consulter nos ",
+      "licenseNoticeLink": "Conditions d’utilisation",
+      "licenseNoticeTail": "."
     },
     "purposes": [
       {
@@ -8411,7 +8432,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "developerLink": "Entwickler (GitHub)",
       "slimParticipateTitle": "Teilnehmen",
       "slimResourcesTitle": "Ressourcen",
-      "slimExploreTitle": "Erkunden"
+      "slimExploreTitle": "Erkunden",
+      "licenseNoticeLead": "OpenOrgOS wird unter der GPL-v2-Lizenz verbreitet. Für kommerzielle Lizenzen, Patentgenehmigungen oder Unternehmensanfragen lesen Sie bitte unsere ",
+      "licenseNoticeLink": "Nutzungsbedingungen",
+      "licenseNoticeTail": "."
     },
     "purposes": [
       {
@@ -9546,7 +9570,10 @@ export const MESSAGES: Record<UiReadyLocale, Messages> = {
       "developerLink": "Разработчики (GitHub)",
       "slimParticipateTitle": "Участвовать",
       "slimResourcesTitle": "Ресурсы",
-      "slimExploreTitle": "Исследовать"
+      "slimExploreTitle": "Исследовать",
+      "licenseNoticeLead": "OpenOrgOS распространяется по лицензии GPL v2. По вопросам коммерческого лицензирования, патентных разрешений или корпоративных запросов ознакомьтесь с нашими ",
+      "licenseNoticeLink": "Условиями обслуживания",
+      "licenseNoticeTail": "."
     },
     "purposes": [
       {

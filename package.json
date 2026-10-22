@@ -1,6 +1,7 @@
 {
   "name": "os-community",
   "private": true,
+  "license": "GPL-2.0-only",
   "workspaces": [
     "apps/*",
     "packages/*"

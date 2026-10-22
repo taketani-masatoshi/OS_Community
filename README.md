@@ -95,3 +95,9 @@ Caddy は開発用の自己署名 CA を使うため、初回はブラウザが�
 ```
 
 実行後、ブラウザを再起動して `https://localhost` を開いてください（Keychain への追加でパスワード入力が求められます）。
+
+---
+
+## License
+
+OpenOrgOS is distributed under the [GNU General Public License v2.0 only](LICENSE) (`GPL-2.0-only`). For commercial licensing, patent permissions, or enterprise inquiries, please review our [Terms of Service](TERMS_OF_SERVICE.md). Contributions are accepted under the Contributor License Agreement in Article 7 of the Terms of Service.

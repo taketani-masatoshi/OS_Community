@@ -9,6 +9,8 @@ export const BRAND_LINKS = {
   store: "https://store.openorgos.org",
   /** Public inbox shown on the overview site and /about/contact (forwarded via Cloudflare). */
   contactEmail: "hello@oorgos.org",
+  /** Software license terms (GPL v2, commercial license, patents, CLA). */
+  termsOfService: "https://github.com/taketani-masatoshi/OpenOrgOS/blob/main/TERMS_OF_SERVICE.md",
   social: {
     x: "https://x.com/OpenOrgOS",
     facebook: "https://www.facebook.com/OpenOrgOS",

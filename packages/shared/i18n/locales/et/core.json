@@ -216,7 +216,10 @@
     "developerLink": "Arendajad (GitHub)",
     "slimParticipateTitle": "Osale",
     "slimResourcesTitle": "Ressursid",
-    "slimExploreTitle": "Avasta"
+    "slimExploreTitle": "Avasta",
+    "licenseNoticeLead": "OpenOrgOS-i levitatakse GPL v2 litsentsi alusel. Kommertslitsentside, patendilubade või ettevõtete päringute korral tutvuge meie ",
+    "licenseNoticeLink": "teenusetingimustega",
+    "licenseNoticeTail": "."
   },
   "purposes": [
     {

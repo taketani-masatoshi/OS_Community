@@ -2215,6 +2215,21 @@ a:hover {
   font-size: 0.78rem;
 }
 
+.site-footer-license {
+  margin: var(--space-2) 0 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+}
+
+.site-footer-license a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.site-footer-license a:hover {
+  color: var(--accent);
+}
+
 /* Leadership directory (LF /about/leadership inspired) */
 .leadership-page {
   padding-top: 0.5rem;

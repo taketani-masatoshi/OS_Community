@@ -344,6 +344,9 @@ export type Messages = {
     slimParticipateTitle: string;
     slimResourcesTitle: string;
     slimExploreTitle: string;
+    licenseNoticeLead: string;
+    licenseNoticeLink: string;
+    licenseNoticeTail: string;
   };
   purposes: { id: string; titleEn: string; title: string; body: string; href: string }[];
   principles: { id: string; titleEn: string; title: string; body: string }[];

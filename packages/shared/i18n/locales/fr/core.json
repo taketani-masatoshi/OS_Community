@@ -216,7 +216,10 @@
     "developerLink": "Développeurs (GitHub)",
     "slimParticipateTitle": "Participer",
     "slimResourcesTitle": "Ressources",
-    "slimExploreTitle": "Explorer"
+    "slimExploreTitle": "Explorer",
+    "licenseNoticeLead": "OpenOrgOS est distribué sous licence GPL v2. Pour les licences commerciales, les autorisations de brevets ou les demandes d’entreprise, veuillez consulter nos ",
+    "licenseNoticeLink": "Conditions d’utilisation",
+    "licenseNoticeTail": "."
   },
   "purposes": [
     {

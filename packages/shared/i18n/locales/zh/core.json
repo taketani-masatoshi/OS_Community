@@ -216,7 +216,10 @@
     "developerLink": "开发者（GitHub）",
     "slimParticipateTitle": "参与",
     "slimResourcesTitle": "资源",
-    "slimExploreTitle": "探索"
+    "slimExploreTitle": "探索",
+    "licenseNoticeLead": "OpenOrgOS 以 GPL v2 许可证发布。如需商业许可、专利授权或企业咨询，请查阅我们的",
+    "licenseNoticeLink": "服务条款",
+    "licenseNoticeTail": "。"
   },
   "purposes": [
     {
